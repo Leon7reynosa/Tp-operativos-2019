@@ -17,10 +17,6 @@
 
 #include "utils.h"
 
-	t_log* lissandraLogger;
-
-	t_config* lissandraConfig;
-
 	//Por ahora pongo aca
 
 	/*
@@ -64,11 +60,11 @@
 		void drop( void /* char *nombre_tabla */);
 
 
-void iniciar_log(void);
+t_log* iniciar_log(void);
 
-void leer_consola(void);
+void leer_consola(t_log*);
 
-void leer_config(void);
+t_config* leer_config(void);
 
 void terminar_programa(int);
 

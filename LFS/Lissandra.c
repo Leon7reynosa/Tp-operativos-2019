@@ -9,43 +9,53 @@
 
 int main(void){
 
-	int conexion;
-	char* ip;
-	char* puerto;
+	//int conexion;
 
-	iniciar_log();
+	t_log* lissandraLogger;
 
-	leer_config();
+	t_config* lissandraConfig;
 
-	leer_consola();
+	lissandraLogger = iniciar_log();
 
-	ip = config_get_string_value(lissandraConfig, "PUERTO");
-	puerto = config_get_string_value(lissandraConfig , "IP");
+	lissandraConfig = leer_config();
 
-	crear_conexion(ip, puerto);
-
+	config_remove_key(lissandraConfig,"TRAP ");
+	//config_set_value(lissandraConfig,"TRAP","Soy un valor");
+	if(config_save(lissandraConfig) == -1){
+		exit(2);
+	}
 	char* valor;
 
-	valor = config_get_string_value(lissandraConfig, "TRAP");
+	valor = config_get_string_value(lissandraConfig , "TRAP");
 
-	enviar_mensaje(valor, conexion);
+	log_info(lissandraLogger,valor);
 
-	terminar_programa(conexion);
 
-	printf("hola chinito, by Giuli <3");
+	leer_consola(lissandraLogger);
+
+	//conexion = crear_conexion(config_get_string_value(lissandraConfig, "IP"),
+	//							  config_get_string_value(lissandraConfig , "PUERTO"));
+
+	//enviar_mensaje(valor, conexion);
+
+
+
+	//liberar_conexion(conexion);
+	log_destroy(lissandraLogger);
+	config_destroy(lissandraConfig);
 
 	return EXIT_SUCCESS;
 }
 
 
-void iniciar_log(){
+t_log* iniciar_log(){
 
 	char* lisandra_ruta = "LFS.log";
 
-	lissandraLogger = log_create(lisandra_ruta , "Lissandrovichoide de rucula" , 1 , LOG_LEVEL_INFO);
+	return log_create(lisandra_ruta , "Lissandrovichoide de rucula" , 1 , LOG_LEVEL_INFO);
 }
 
-void leer_consola()
+void leer_consola(t_log* logger)
 {
 	char* leido;
 
@@ -54,7 +64,7 @@ void leer_consola()
 
 	while(*leido != '\0') {
 
-		log_info(lissandraLogger, leido);
+		log_info(logger, leido);
 		free(leido);
 		leido = readline(">");
 	}
@@ -64,19 +74,8 @@ void leer_consola()
 }
 
 
-void leer_config(){
-	char* valor;
+t_config* leer_config(){
+	return  config_create("LFS/Lissandra.config");
 
-	lissandraConfig = config_create("Lissandra.config");
-
-	valor = config_get_string_value(lissandraConfig , "CLAVE");
-
-	log_info(lissandraLogger, valor);
-}
-
-void terminar_programa(int conexion){
-	liberar_conexion(conexion);
-	log_destroy(lissandraLogger);
-	config_destroy(lissandraConfig);
 }
 
