@@ -19,6 +19,8 @@
 
 	t_log* lissandraLogger;
 
+	t_config* lissandraConfig;
+
 	//Por ahora pongo aca
 
 	/*
@@ -65,5 +67,9 @@
 void iniciar_log(void);
 
 void leer_consola(void);
+
+void leer_config(void);
+
+void terminar_programa(int);
 
 #endif /* LISSANDRA_H_ */
