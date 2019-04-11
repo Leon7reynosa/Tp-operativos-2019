@@ -22,6 +22,7 @@ typedef enum
 	PAQUETE
 }op_code;
 
+
 typedef struct
 {
 	int size;

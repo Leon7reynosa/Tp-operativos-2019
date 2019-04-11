@@ -18,7 +18,7 @@
 #include "utils.h"
 
 
-
+void terminar_programa(int);
 
 
 #endif /* LFS_COMPACTADOR_H_ */
