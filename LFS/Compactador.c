@@ -6,3 +6,11 @@
  */
 
 #include"Compactador.h"
+
+int main(){
+
+
+
+
+	return EXIT_SUCCESS;
+}
