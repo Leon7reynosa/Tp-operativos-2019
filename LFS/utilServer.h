@@ -17,10 +17,27 @@
 #include<commons/collections/list.h>
 #include<string.h>
 
+typedef enum
+{
+	MENSAJE,
+	PAQUETE
+}op_code;
+
+
+typedef struct
+{
+	int size;
+	void* stream;
+} t_buffer;
+
+typedef struct
+{
+	op_code codigo_operacion;
+	t_buffer* buffer;
+} t_paquete;
+
 #define IP "127.0.0.1"
 #define PUERTO "4444"
-
-t_log* logger;
 
 void* recibir_buffer(int*, int);
 
