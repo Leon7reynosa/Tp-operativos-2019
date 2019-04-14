@@ -87,9 +87,9 @@ void* recibir_buffer(int* size, int socket_cliente){
 
 	recv(socket_cliente,size,sizeof(int),MSG_WAITALL);
 	//ver aca si necesita espacio para /0
-	buffer = malloc(20);
+	buffer = malloc(*size);
 	//[MENSAJE]
-	recv(socket_cliente,buffer,19,MSG_WAITALL);
+	recv(socket_cliente,buffer, *size,MSG_WAITALL);
 
 	return buffer;
 }
