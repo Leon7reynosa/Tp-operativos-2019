@@ -27,6 +27,5 @@ int main (void){
 	liberar_conexion(conexion);
 
 
-
 	return 1;
 }

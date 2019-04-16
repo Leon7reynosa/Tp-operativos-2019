@@ -6,6 +6,7 @@
  */
 
 #include "Lissandra.h"
+#include "LissandraAPI.h"
 
 int main(void){
 
