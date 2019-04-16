@@ -4,13 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../pool.c 
+../pool.c \
+../utilServer.c \
+../utils.c 
 
 OBJS += \
-./pool.o 
+./pool.o \
+./utilServer.o \
+./utils.o 
 
 C_DEPS += \
-./pool.d 
+./pool.d \
+./utilServer.d \
+./utils.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

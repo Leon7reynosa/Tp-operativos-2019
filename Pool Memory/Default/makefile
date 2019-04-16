@@ -22,19 +22,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: TP\ Operativos\ -\ Pool\ Memory
+all: TP\ Operativos\ -\ PoolMemoria
 
 # Tool invocations
-TP\ Operativos\ -\ Pool\ Memory: $(OBJS) $(USER_OBJS)
+TP\ Operativos\ -\ PoolMemoria: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "TP Operativos - Pool Memory" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "TP Operativos - PoolMemoria" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) "TP Operativos - Pool Memory"
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) "TP Operativos - PoolMemoria"
 	-@echo ' '
 
 .PHONY: all clean dependents
