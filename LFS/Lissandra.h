@@ -61,7 +61,7 @@
 	//	void drop( void /* char *nombre_tabla */);
 
 
-t_log* iniciar_log(void);
+t_log* iniciar_log_server(void);
 
 void leer_consola(t_log*);
 

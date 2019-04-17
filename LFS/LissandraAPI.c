@@ -7,7 +7,7 @@
 
 #include "LissandraAPI.h"
 
-void realizarSelect(char* nombreTabla , int key){
+void select(char* nombreTabla , int key){
 
 }
 

@@ -18,7 +18,7 @@
 #include<string.h>
 
 
-	void realizarSelect(char* , int);
+	void select(char* , int);
 
 	void insert(char*, int, int, char*);
 

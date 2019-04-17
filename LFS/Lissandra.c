@@ -10,16 +10,14 @@
 
 int main(void){
 
-	t_log* serverLogger;
+	t_log* serverLogger = iniciar_log_server();
 
-	t_config* lissandraConfig;
+	t_config* lissandraConfig; //Todavia sin usar
 
-	void iterator(char* value)
+	void iterator(char* value)	//Esta función todavia no esta en uso
 	{
 		printf("%s\n", value);
 	}
-
-	serverLogger = log_create("server.log", "Servidor", 1, LOG_LEVEL_DEBUG);
 
 	int server_fd = iniciar_servidor();
 	log_info(serverLogger, "Servidor listo para recibir al cliente");
@@ -90,3 +88,6 @@ int main(void){
 
 }
 
+t_log* iniciar_log_server(void){
+	  		return log_create("server.log", "Servidor", 1, LOG_LEVEL_DEBUG);
+}
