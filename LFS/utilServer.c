@@ -28,6 +28,7 @@ int iniciar_servidor(void)
             continue;
 
         if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
+        	perror("error en el bind");
             close(socket_servidor);
             continue;
         }
@@ -52,9 +53,12 @@ int esperar_cliente(int socket_servidor)
 	t_log* serverLogger = log_create("server.log", "Servidor", 1, LOG_LEVEL_DEBUG);
 
 
-	int socket_cliente = accept(socket_servidor, (struct sockaddr*) &dir_cliente, &tam_direccion);
+	int socket_cliente;
+	if((socket_cliente = accept(socket_servidor, (struct sockaddr*) &dir_cliente, &tam_direccion)) == -1){
+		perror("Error al aceptar el cliente");
+	};
 
-	log_info(serverLogger, "Se conecto un cliente!");
+	log_info(serverLogger, "Se conecto el cliente: %s\n", inet_ntoa(dir_cliente.sin_addr));
 
 	log_destroy(serverLogger);
 

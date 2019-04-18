@@ -63,13 +63,4 @@
 
 t_log* iniciar_log_server(void);
 
-void leer_consola(t_log*);
-
-t_config* leer_config(void);
-
-void terminar_programa(int);
-
-void* recibir_buffer(int*, int);
-
-
 #endif /* LISSANDRA_H_ */

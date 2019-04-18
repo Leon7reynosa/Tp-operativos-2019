@@ -12,7 +12,7 @@ int main(void){
 
 	t_log* serverLogger = iniciar_log_server();
 
-	t_config* lissandraConfig; //Todavia sin usar
+	//t_config* lissandraConfig; //Todavia sin usar
 
 	void iterator(char* value)	//Esta función todavia no esta en uso
 	{
@@ -20,70 +20,61 @@ int main(void){
 	}
 
 	int server_fd = iniciar_servidor();
-	log_info(serverLogger, "Servidor listo para recibir al cliente");
-	int cliente_fd = esperar_cliente(server_fd);
 
 
-		//while(1)
-		//{
-			//por protocolo voy a tener un cod_op que me indica que es.
-			int cod_op = recibir_operacion(cliente_fd);
+		while(1)
+		{
 
-			switch(cod_op){
+			log_info(serverLogger, "Servidor listo para recibir nuevo cliente");
+			int cliente_fd = esperar_cliente(server_fd);
 
-			//recibo el mensaje normal si el cod_op es 0
-			case MENSAJE:
-				recibir_mensaje(cliente_fd);
-				break;
+			if(!fork()){
 
-			//si es -1 lo desconecto (convencion nuestra)
-			case -1:
-				log_error(serverLogger,"el cliente se desconecto.");
-				return EXIT_SUCCESS;
+				log_info(serverLogger, "Soy el proceso hijo, voy a recibir y mandar un mensaje");
+
+				close(server_fd);
+
+				//por protocolo voy a tener un cod_op que me indica que es.
+				int cod_op = recibir_operacion(cliente_fd);
+
+				switch(cod_op){
+
+				//recibo el mensaje normal si el cod_op es 0
+				case MENSAJE:
+					recibir_mensaje(cliente_fd);
+					break;
+
+				//si es -1 lo desconecto (convencion nuestra)
+				case -1:
+					log_error(serverLogger,"el cliente se desconecto.");
+					return EXIT_SUCCESS;
 				//cliente_fd = esperar_cliente(server_fd);
-				break;
-			default:
-				log_info(serverLogger,"Paso algo raro.");
-				break;
+					break;
+				default:
+					log_info(serverLogger,"Paso algo raro.");
+					break;
+				}
+
+				char* mensaje = "Listo!";
+
+				int tamanio = strlen(mensaje);
+				log_info(serverLogger , "%d" , tamanio);
+				log_info(serverLogger , "%s" , mensaje);
+
+
+				send(cliente_fd,mensaje,strlen(mensaje) + 1,0);
+				send(cliente_fd,"Chau nv",8,0);
+
+				close(cliente_fd);
+				printf("Termina el proceso hijo.");
+				exit(0);
+
 			}
+
 			close(cliente_fd);
-			close(server_fd);
-			return EXIT_SUCCESS;
-			//}
 
-	/*
-	//lissandraLogger = iniciar_log();
+		}
 
-	//lissandraConfig = leer_config();
-
-	//config_remove_key(lissandraConfig,"TRAP ");
-	//config_set_value(lissandraConfig,"TRAP","Soy un valor");
-	if(config_save(lissandraConfig) == -1){
-		exit(2);
-	}
-
-	char* valor;
-
-	valor = config_get_string_value(lissandraConfig , "TRAP");
-
-	log_info(lissandraLogger,valor);
-
-	/*
-	leer_consola(lissandraLogger);
-
-	conexion = crear_conexion(config_get_string_value(lissandraConfig, "IP"),
-								  config_get_string_value(lissandraConfig , "PUERTO"));
-
-	enviar_mensaje(valor, conexion);
-
-
-
-	//liberar_conexion(conexion);
-	log_destroy(lissandraLogger);
-	config_destroy(lissandraConfig);
-
-	liberar_conexion(server_fd);
-	*/
 	return EXIT_SUCCESS;
 
 }

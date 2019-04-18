@@ -7,9 +7,9 @@
 
 #include "LissandraAPI.h"
 
-void select(char* nombreTabla , int key){
+//void select(char* nombreTabla , int key){
 
-}
+//}
 
 void insert(char* nombreTabla , int timeStamp , int key , char* valor){
 
