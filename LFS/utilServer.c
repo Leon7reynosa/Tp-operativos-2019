@@ -13,13 +13,15 @@ int iniciar_servidor(void)
 
 	t_log* serverLogger = log_create("server.log", "Servidor", 1, LOG_LEVEL_DEBUG);
 
-    struct addrinfo hints, *servinfo, *p;
+    struct addrinfo hints, *servinfo, *p; //contienen información de la direccion
+    									 //del servicio solicitado
 
-    memset(&hints, 0, sizeof(hints));
+    memset(&hints, 0, sizeof(hints)); //iniciarlo como genérico
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
+    //traduce el nombre del servicio para establecer la direccion del socket
     getaddrinfo(IP, PUERTO, &hints, &servinfo);
 
     for (p=servinfo; p != NULL; p = p->ai_next)
@@ -50,8 +52,8 @@ int esperar_cliente(int socket_servidor)
 {
 	struct sockaddr_in dir_cliente;
 	int tam_direccion = sizeof(struct sockaddr_in);
-	t_log* serverLogger = log_create("server.log", "Servidor", 1, LOG_LEVEL_DEBUG);
-
+	t_log* serverLogger = log_create("server.log", "Servidor", 1, LOG_LEVEL_INFO);
+	//Hay que usar LOG_LEVEL_INFO, xq abajo esta log_info xd
 
 	int socket_cliente;
 	if((socket_cliente = accept(socket_servidor, (struct sockaddr*) &dir_cliente, &tam_direccion)) == -1){

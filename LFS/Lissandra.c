@@ -47,7 +47,7 @@ int main(void){
 				//si es -1 lo desconecto (convencion nuestra)
 				case -1:
 					log_error(serverLogger,"el cliente se desconecto.");
-					return EXIT_SUCCESS;
+					return EXIT_FAILURE;
 				//cliente_fd = esperar_cliente(server_fd);
 					break;
 				default:
