@@ -20,9 +20,11 @@ int main (void){
 
 	conexion = crear_conexion( ip , puerto );
 
-	char* valor = "Chino sos un cochino";
+	//char* valor = "Chino sos un cochino";
 
-	enviar_mensaje(valor , conexion);
+	//enviar_mensaje(valor , conexion);
+
+	esperar_cliente(conexion);
 
 	liberar_conexion(conexion);
 
