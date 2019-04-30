@@ -3,6 +3,7 @@
 	<name>TP Operativos - Pool Memory</name>
 	<comment></comment>
 	<projects>
+		<project>sharedLibrary</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

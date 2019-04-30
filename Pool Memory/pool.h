@@ -14,9 +14,8 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<readline/readline.h>
+#include"Servidor/servidor.h"
 
-//#include "utilServer.h"
-
-#include "utils.h"
+void creacion_del_config(t_config* g_config);
 
 #endif /* POOL_H_ */

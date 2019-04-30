@@ -14,8 +14,8 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<readline/readline.h>
-#include "creacionConfig/configCreate.h"
-#include "cliente/utilCliente.h"
+#include<Cliente/cliente.h>
+#include<commons/config.h>
 
 char* obtenerIp(void);
 char* obtenerPuerto (void);

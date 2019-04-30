@@ -8,45 +8,30 @@
 #include "kernel.h"
 
 int main (){
-	char* ip = obtenerIp();
-	char* puerto = obtenerPuerto();
-	char* mensaje = "hola chino";
+	t_config* g_config;
+	int conexion;
+	int puerto;
+	char* ip;
 
-	int socket_kernel = crear_conexion( ip , puerto );
+	creacion_del_config(g_config);
+	g_config = config_create("kernel.config");
 
-	send(socket_kernel , mensaje, strlen(mensaje) + 1 , 0);
+	ip = config_get_string_value(g_config, "IP");
+	puerto = config_get_int_value(g_config, "PUERTO");
 
-	liberar_conexion(socket_kernel);
+	conexion = conectar_servidor(ip,puerto);
+
+	printf("Bye\n");
+	config_destroy(g_config);
 	return EXIT_SUCCESS;
 }
 
-char* obtenerIp (){
+void creacion_del_config(t_config* g_config){
 
-	char* ip;
+	g_config = config_create("kernel.config");
 
-	t_config* kernel_config;
-
-	kernel_config = config_create("kernel.config");
-
-	ip = config_get_string_value(kernel_config , "IP");
-
-	config_destroy(kernel_config);
-
-	return ip;
-}
-
-char* obtenerPuerto (){
-
-	char* puerto;
-
-	t_config* kernel_config;
-
-	kernel_config = config_create("kernel.config");
-
-	puerto = config_get_string_value(kernel_config , "PUERTO");
-
-	config_destroy(kernel_config);
-
-	return puerto;
-
+	config_set_value(g_config, "IP", "127.0.0.1");
+	config_set_value(g_config, "PUERTO", "4444");
+	config_save(g_config);
+	config_destroy(g_config);
 }

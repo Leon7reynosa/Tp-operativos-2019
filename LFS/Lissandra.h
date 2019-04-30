@@ -14,24 +14,8 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<readline/readline.h>
+#include"Servidor/servidor.h"
 
-//#include "utils.h"
-#include "utilServer.h"
-
-	//Por ahora pongo aca
-
-	/*
-	 * typedef struct{
-	 * 		key (Tiene q ser uint 16)
-	 * 		value
-	 * 		timestamp
-	 *
-	 * 		} dato
-	 *
-	 */
-
-
-
-t_log* iniciar_log_server(void);
+void creacion_del_config(t_config* g_config);
 
 #endif /* LISSANDRA_H_ */

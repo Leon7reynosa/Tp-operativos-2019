@@ -6,79 +6,42 @@
  */
 
 #include "Lissandra.h"
-#include "LissandraAPI.h"
 
 int main(void){
 
-	t_log* serverLogger = iniciar_log_server();
+	int socket_sv;
+	char* ip;
+	int puerto;
+	t_config* g_config;
 
-	//t_config* lissandraConfig; //Todavia sin usar
+	g_config = config_create("lissandra.config");
+	creacion_del_config(g_config);
 
-	void iterator(char* value)	//Esta función todavia no esta en uso
-	{
-		printf("%s\n", value);
-	}
+	ip = config_get_string_value(g_config, "IP");
+	puerto = config_get_int_value(g_config, "PUERTO");
 
-	int server_fd = iniciar_servidor();
+	printf("IP = %s\n",ip);
+	printf("PUERTO = %d\n",puerto);
 
+	socket_sv = iniciar_servidor( ip ,puerto );
 
-		while(1)
-		{
-
-			log_info(serverLogger, "Servidor listo para recibir nuevo cliente");
-			int cliente_fd = esperar_cliente(server_fd);
-
-			if(!fork()){
-
-				log_info(serverLogger, "Soy el proceso hijo, voy a recibir y mandar un mensaje");
-
-				close(server_fd);
-
-				//por protocolo voy a tener un cod_op que me indica que es.
-				int cod_op = recibir_operacion(cliente_fd);
-
-				switch(cod_op){
-
-				//recibo el mensaje normal si el cod_op es 0
-				case MENSAJE:
-					recibir_mensaje(cliente_fd);
-					break;
-
-				//si es -1 lo desconecto (convencion nuestra)
-				case -1:
-					log_error(serverLogger,"el cliente se desconecto.");
-					return EXIT_FAILURE;
-				//cliente_fd = esperar_cliente(server_fd);
-					break;
-				default:
-					log_info(serverLogger,"Paso algo raro.");
-					break;
-				}
-
-				char* mensaje = "Listo!";
-
-				int tamanio = strlen(mensaje);
-				log_info(serverLogger , "%d" , tamanio);
-				log_info(serverLogger , "%s" , mensaje);
+	aceptar_conexion(socket_sv);
 
 
-				send(cliente_fd,mensaje,strlen(mensaje) + 1,0);
-				send(cliente_fd,"Chau nv",8,0);
 
-				close(cliente_fd);
-				printf("Termina el proceso hijo.");
-				exit(0);
-
-			}
-
-			close(cliente_fd);
-
-		}
-
+	printf("Bye\n");
+	close(socket_sv);
+	config_destroy(g_config);
 	return EXIT_SUCCESS;
-
 }
 
-t_log* iniciar_log_server(void){
-	  		return log_create("server.log", "Servidor", 1, LOG_LEVEL_DEBUG);
+void creacion_del_config(t_config* g_config){
+
+	g_config = config_create("lissandra.config");
+
+	config_set_value(g_config, "IP", "127.0.0.1");
+	config_set_value(g_config, "PUERTO", "4445");
+	config_save(g_config);
+	config_destroy(g_config);
+
 }

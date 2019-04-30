@@ -8,6 +8,8 @@ RM := rm
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Servidor/subdir.mk
+-include Cliente/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -22,19 +24,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: TP\ -\ Pool
+all: Pool\ Memory
 
 # Tool invocations
-TP\ -\ Pool: $(OBJS) $(USER_OBJS)
+Pool\ Memory: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "TP - Pool" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "Pool Memory" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) "TP - Pool"
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) "Pool Memory"
 	-@echo ' '
 
 .PHONY: all clean dependents

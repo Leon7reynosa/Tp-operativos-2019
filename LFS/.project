@@ -3,6 +3,7 @@
 	<name>LFS</name>
 	<comment></comment>
 	<projects>
+		<project>utilidades</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
