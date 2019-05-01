@@ -10,6 +10,7 @@
 int main(void){
 
 	int socket_sv;
+	int socket_pool;
 	char* ip;
 	int puerto;
 
@@ -20,7 +21,9 @@ int main(void){
 
 	socket_sv = iniciar_servidor( ip ,puerto );
 
-	aceptar_conexion(socket_sv);
+	socket_pool = aceptar_conexion(socket_sv);
+
+	recibir_mensaje(socket_pool);
 
 	close(socket_sv);
 	config_destroy(g_config);

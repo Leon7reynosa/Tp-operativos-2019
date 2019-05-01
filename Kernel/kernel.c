@@ -16,6 +16,9 @@ int main (){
 
 	conexion = conectar_servidor(ip,puerto);
 
+	while(1){
+		mandar_mensaje(conexion);
+	}
 	config_destroy(g_config);
 	return EXIT_SUCCESS;
 }

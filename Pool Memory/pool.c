@@ -10,22 +10,49 @@
 
 int main (void){
 
+	pthread_t conexion_kernel;
+	pthread_t conexion_lissandra;
 
-	int socket_sv;
-	int puerto;
-	char* ip;
 
-	obtener_puerto_ip(&puerto,&ip);
+	pthread_create(&conexion_kernel , NULL , conectar_kernel , NULL);
+	pthread_create(&conexion_lissandra, NULL, conectar_lissandra, NULL);
 
-	printf("puerto = %d\n", puerto);
-	printf("ip = %s\n", ip);
+
+	pthread_join(conexion_kernel , NULL);
+	pthread_join(conexion_lissandra , NULL);
+
+
+	return EXIT_SUCCESS;
+}
+
+void* conectar_kernel(){
+
+	int puerto = 4444;
+	char* ip = "127.0.0.1";
+	int socket_cliente;
 
 	socket_sv = iniciar_servidor(ip, puerto);
 
-	aceptar_conexion(socket_sv);
 
+	socket_cliente = aceptar_conexion(socket_sv);
 
-	config_destroy(g_config);
+	while(1){
+		recibir_mensaje(socket_cliente);
+	}
+
 	close(socket_sv);
-	return EXIT_SUCCESS;
+	return NULL;
+}
+
+void* conectar_lissandra(){
+
+	int puerto = 4445;
+	char* ip = "127.0.0.1";
+
+	conexion_lissandra = conectar_servidor(ip,puerto);
+
+	mandar_mensaje(conexion_lissandra);
+
+	close(conexion_lissandra);
+	return  NULL;
 }
