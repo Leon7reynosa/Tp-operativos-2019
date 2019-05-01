@@ -12,10 +12,9 @@
 #include<stdlib.h>
 #include<commons/log.h>
 #include<commons/string.h>
-#include<commons/config.h>
 #include<readline/readline.h>
 #include"Servidor/servidor.h"
+#include"Config/configuracion.h"
 
-void creacion_del_config(t_config* g_config);
 
 #endif /* LISSANDRA_H_ */
