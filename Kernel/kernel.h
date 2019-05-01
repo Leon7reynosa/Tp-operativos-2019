@@ -13,10 +13,12 @@
 #include<commons/log.h>
 #include<commons/string.h>
 #include<readline/readline.h>
-#include<Cliente/cliente.h>
+#include"Cliente/cliente.h"
 #include<commons/config.h>
 #include"Config/configuracion.h"
 
+#include"Mensajeria/mandar.h"
+#include"Mensajeria/recibir.h"
 
 
 

@@ -12,12 +12,18 @@
 #include<stdlib.h>
 #include<commons/log.h>
 #include<commons/string.h>
-//#include<commons/config.h>
+#include<commons/config.h>
 #include<readline/readline.h>
 
-#include "Config/configuracion.h"
-#include"Servidor/servidor.h"
+#include<sys/time.h>
+#include<sys/types.h>
+#include<sys/unistd.h>
 
-void creacion_del_config(t_config* g_config);
+#include"Config/configuracion.h"
+#include"Servidor/servidor.h"
+#include"Mensajeria/mandar.h"
+#include"Mensajeria/recibir.h"
+
+void creacion_del_config();
 
 #endif /* POOL_H_ */

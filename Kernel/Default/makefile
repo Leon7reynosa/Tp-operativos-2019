@@ -8,6 +8,8 @@ RM := rm
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Mensajeria/subdir.mk
+-include Config/subdir.mk
 -include Cliente/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -23,19 +25,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: Kernel
+all: TP\ Operativos\ -\ Kernel
 
 # Tool invocations
-Kernel: $(OBJS) $(USER_OBJS)
+TP\ Operativos\ -\ Kernel: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "Kernel" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "TP Operativos - Kernel" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) Kernel
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) "TP Operativos - Kernel"
 	-@echo ' '
 
 .PHONY: all clean dependents

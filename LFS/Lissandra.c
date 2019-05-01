@@ -22,6 +22,8 @@ int main(void){
 
 	aceptar_conexion(socket_sv);
 
+	while(1){}
+
 	close(socket_sv);
 	config_destroy(g_config);
 	return EXIT_SUCCESS;

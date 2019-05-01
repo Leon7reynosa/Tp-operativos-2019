@@ -21,8 +21,8 @@
 #include<netdb.h>
 #include<signal.h>
 
-
-int iniciar_servidor(char* ip, int puerto);
+//saque el char* ip;
+int iniciar_servidor(int puerto);
 int aceptar_conexion(int);
 
 #endif /* CLIENTE_SERVIDOR_H_ */

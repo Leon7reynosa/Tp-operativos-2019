@@ -7,7 +7,7 @@
 
 #include"servidor.h"
 
-int iniciar_servidor(char* ip,int puerto){
+int iniciar_servidor(int puerto){
 
 	//Estructura que contiene la info del servidor
 	struct sockaddr_in server_addr;
@@ -20,7 +20,8 @@ int iniciar_servidor(char* ip,int puerto){
 	//defino un puerto cualquiera y lo paso a su representacion binaria
 	server_addr.sin_port = htons(puerto);
 	//le asigno la direccion del pc que estoy usando
-	inet_aton(ip,&(server_addr.sin_addr.s_addr));
+	server_addr.sin_addr.s_addr = INADDR_ANY;
+	//inet_aton(ip,&(server_addr.sin_addr.s_addr));
 	//seteo el resto de la estructura en 0
 	memset(&(server_addr.sin_zero),'\0',8);
 	//creo el socket servidor para escuchar

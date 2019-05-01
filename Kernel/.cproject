@@ -47,12 +47,6 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.2087171246;cdt.managedbuild.toolchain.gnu.base.2087171246.1980941067;cdt.managedbuild.tool.gnu.c.compiler.base.1645874763;cdt.managedbuild.tool.gnu.c.compiler.input.157303121">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Kernel.null.1509855456" name="Kernel"/>
 	</storageModule>
@@ -62,5 +56,8 @@
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/Kernel"/>
 		</configuration>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 </cproject>

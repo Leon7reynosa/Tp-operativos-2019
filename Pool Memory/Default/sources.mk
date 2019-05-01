@@ -15,6 +15,7 @@ C_DEPS :=
 SUBDIRS := \
 Cliente \
 Config \
+Mensajeria \
 Servidor \
 . \
 
