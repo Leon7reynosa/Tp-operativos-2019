@@ -14,7 +14,11 @@ int main(void){
 	char* ip;
 	int puerto;
 
+
+
 	obtener_puerto_ip(&puerto,&ip);
+
+	realizar_select("Tablas/Tabla_A" , 233);
 
 	printf("IP = %s\n",ip);
 	printf("PUERTO = %d\n",puerto);
