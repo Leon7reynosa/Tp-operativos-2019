@@ -14,12 +14,17 @@ int main(void){
 	char* ip;
 	int puerto;
 
-
+	memtable = malloc(sizeof(tabla_memtable));
 
 	obtener_puerto_ip(&puerto,&ip);
 
 	realizar_select("Tablas/Tabla_A" , 233);
 
+	insert("Tablas/Tabla_A", 7 , "HOLITAS" ,  1400 );
+	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
+
+
+	/*
 	printf("IP = %s\n",ip);
 	printf("PUERTO = %d\n",puerto);
 
@@ -31,6 +36,9 @@ int main(void){
 
 	close(socket_sv);
 	config_destroy(g_config);
+	*/
+
+	free(memtable);
 	return EXIT_SUCCESS;
 }
 

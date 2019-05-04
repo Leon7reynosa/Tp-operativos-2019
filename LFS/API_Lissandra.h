@@ -16,10 +16,12 @@
 #include<time.h>
 #include<commons/config.h>
 
+
+
 typedef struct{
 
 	int key;
-	int valor;
+	char* value;
 	time_t timestamp;
 
 }dato_t;
@@ -27,22 +29,29 @@ typedef struct{
 typedef struct{
 
 	dato_t dato_t;
-	bloque_tabla* dato_sig;
+	struct bloque_tabla *dato_sig;
 
 }bloque_tabla;
 
+
+
 typedef struct{
 
-	 bloque_tabla bloques;
-	 tabla_memtable* sig_tabla;
+	char* nombre_tabla; //uso un string para ver el nombre de la tabla, si quieren despues cambienlo
+	bloque_tabla* primer_bloque;
+	struct tabla_memtable* sig_tabla;
 
 }tabla_memtable;
 
-void insert(char* ,int , char*,unsigned);
+void insert(char* ,int , char*,time_t);
 void realizar_select(char*, int);
 void setear_metadata(void);
 int existe_la_tabla(char*);
 int calcular_particion(int, int);
 void obtener_metadata(char**, int*, int*);
+dato_t *crear_dato(int , char* , time_t );
+//bloque_tabla *existe_en_memtable(char* );
+void ingresar_a_memtable(dato_t*, char* );
+//bloque_tabla* crear_tabla(char*, dato_t*);
 
 #endif /* API_LISSANDRA_H_ */
