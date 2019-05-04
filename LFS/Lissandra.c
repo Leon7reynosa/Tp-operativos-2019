@@ -14,7 +14,7 @@ int main(void){
 	char* ip;
 	int puerto;
 
-	memtable = malloc(sizeof(tabla_memtable));
+
 
 	obtener_puerto_ip(&puerto,&ip);
 
@@ -37,8 +37,6 @@ int main(void){
 	close(socket_sv);
 	config_destroy(g_config);
 	*/
-
-	free(memtable);
 	return EXIT_SUCCESS;
 }
 

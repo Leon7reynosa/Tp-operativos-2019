@@ -24,6 +24,7 @@ typedef struct{
 	char* value;
 	time_t timestamp;
 
+
 }dato_t;
 
 typedef struct{
@@ -46,12 +47,14 @@ typedef struct{
 void insert(char* ,int , char*,time_t);
 void realizar_select(char*, int);
 void setear_metadata(void);
-int existe_la_tabla(char*);
+int encontrar_tabla(char*);
 int calcular_particion(int, int);
 void obtener_metadata(char**, int*, int*);
 dato_t *crear_dato(int , char* , time_t );
 //bloque_tabla *existe_en_memtable(char* );
 void ingresar_a_memtable(dato_t*, char* );
-//bloque_tabla* crear_tabla(char*, dato_t*);
+tabla_memtable* crear_tabla(char* tabla);
+tabla_memtable* ultima_posicion_memtable(void);
+tabla_memtable* encontrar_memtable(char* tabla);
 
 #endif /* API_LISSANDRA_H_ */

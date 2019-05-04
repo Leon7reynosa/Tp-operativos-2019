@@ -8,7 +8,7 @@
 #include "API_Lissandra.h"
 
 //la hago global aca por ahora, despues vemos como usarla
-tabla_memtable *memtable;
+tabla_memtable* memtable;
 
 
 void realizar_select(char* nombre_tabla , int key ){
@@ -72,85 +72,108 @@ void insert(char* nombre_tabla , int key , char* valor, time_t timestamp ){
 
 void ingresar_a_memtable(dato_t *dato_ingresar, char* tabla_ingresar){
 
-	bloque_tabla* lista_tabla = existe_en_memtable(tabla_ingresar);
+	tabla_memtable* tabla = encontrar_memtable(tabla_ingresar);
+	bloque_tabla* bloque_nuevo = malloc(sizeof(bloque_tabla));
 
-	if(lista_tabla == NULL){
+	if(tabla == NULL){
 		printf("no existis todavia bro \n\n");
-		//le tengo que pasar el lista_tabla?
-		//lista_tabla = crear_tabla(tabla_ingresar, dato_ingresar);
+		tabla = crear_tabla(tabla_ingresar);
 	}
 
-	lista_tabla->dato_sig = NULL;
-	lista_tabla->dato_t = dato_ingresar;
+	bloque_nuevo->dato_sig = NULL;
+	bloque_nuevo->dato_t = *dato_ingresar;
+
+	ingresar_bloque(bloque_nuevo, tabla);
 
 
-	//ahi quedaria almacenado en la ultima posicion de memoria
 }
 
 
-/*##########################
-bloque_tabla* crear_tabla(char* tabla, dato_t* dato){
+void ingresar_bloque(tabla_memtable* tabla, bloque_tabla* bloque){
 
+	bloque_tabla* aux;
 
-	//HAY QUE HACER ESTO
-	//me tiene que retornar el bloque de memoria de la tabla donde voy
-	// a ingresar el dato (tratemos de que sea en la ultima posicion de memoria
-}
-############################3*/
-
-
-
-bloque_tabla* existe_en_memtable(char* tabla){
-
-	tabla_memtable* aux = memtable->sig_tabla;
-	tabla_memtable* siguiente;
-	bloque_tabla* encontrado;
-	bloque_tabla* aux_bloque;
+	aux = tabla->primer_bloque;
 
 	if(aux == NULL){
+		tabla->primer_bloque = bloque;
 
-		aux->nombre_tabla = tabla;
-		aux->primer_bloque = encontrado;
-		aux->sig_tabla = NULL;
-
-		memtable->sig_tabla = aux;
+		return;
 	}
 
-
-
-		while( aux != NULL ){
-
-			if(strcmp(aux->nombre_tabla , tabla)){
-				//si lo encuentra una tabla que sea con el mismo nombre, asiga la lista a encontrado
-				encontrado = aux->primer_bloque;
-
-				encontrado = ultima_posicion(aux->primer_bloque);
-
-				return encontrado;
-			}else{
-				siguiente = aux->sig_tabla;
-				aux = siguiente;
-			}
-		}
-
-		//si no la encuentra devuelve NULL
-		return encontrado;
+	while(aux->dato_sig != NULL){
+		aux = aux->dato_sig;
+	}
+	aux->dato_sig = bloque;
 }
 
-bloque_tabla* ultima_posicion(bloque_tabla* primer_posicion){
 
-	//aca hay que hacer que nos devuelva la ultima posicion donde vamos a almacenar
+
+//nos crea una tabla y la pone al final de la memtable, nos devuelve el puntero a esa tabla
+tabla_memtable* crear_tabla(char* tabla){
+
+	tabla_memtable* ultima_posicion;
+	tabla_memtable* nueva_tabla;
+
+	ultima_posicion = ultima_posicion_memtable();
+
+	nueva_tabla = malloc(sizeof(tabla_memtable));
+
+	nueva_tabla->nombre_tabla = tabla;
+	nueva_tabla->primer_bloque = NULL;
+	nueva_tabla->sig_tabla = NULL;
+
+	ultima_posicion->sig_tabla = nueva_tabla;
+
+
+	return nueva_tabla;
+}
+
+
+tabla_memtable* ultima_posicion_memtable(){
+
+	tabla_memtable* aux;
+	aux = memtable;
+
+	while(aux->sig_tabla !=  NULL){
+		aux = aux->sig_tabla;
+	}
+
+	return aux;
+}
+
+
+
+//nos devuelve null si no existe la tabla en la memtable
+tabla_memtable* encontrar_memtable(char* tabla){
+
+	tabla_memtable* encontrada = memtable;
+
+		while( encontrada != NULL ){
+			if(strcmp(encontrada->nombre_tabla , tabla)){
+				return encontrada;
+			}else{
+				encontrada = encontrada->sig_tabla;
+			}
+		}
+	return encontrada;
+}
+
+
+/*#################################################################
+//nos devuelve el ultimo bloque de tabla guardado
+bloque_tabla* ultima_posicion_bloque(tabla_memtable* tabla){
+
 	bloque_tabla* ultima;
 
-	ultima = primer_posicion->dato_sig;
+	ultima = tabla->primer_bloque;
 	while(ultima->dato_sig != NULL){
 
 		ultima = ultima->dato_sig;
 	}
-
 	return ultima;
 }
-
+#########################################################################*/
 
 //crea un nuevo dato del tipo dato_t
 dato_t* crear_dato(int clave, char* valor, time_t tiempo){
