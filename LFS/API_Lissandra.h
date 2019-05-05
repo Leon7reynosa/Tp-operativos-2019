@@ -1,3 +1,4 @@
+
 /*
  * API_Lissandra.h
  *
@@ -8,6 +9,8 @@
 #ifndef API_LISSANDRA_H_
 #define API_LISSANDRA_H_
 
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -15,7 +18,6 @@
 #include<errno.h>
 #include<time.h>
 #include<commons/config.h>
-
 
 
 typedef struct{
@@ -29,12 +31,10 @@ typedef struct{
 
 typedef struct{
 
-	dato_t dato_t;
+	dato_t* dato_t;
 	struct bloque_tabla *dato_sig;
 
 }bloque_tabla;
-
-
 
 typedef struct{
 
@@ -44,17 +44,23 @@ typedef struct{
 
 }tabla_memtable;
 
+tabla_memtable* conseguirMemtable();
 void insert(char* ,int , char*,time_t);
 void realizar_select(char*, int);
 void setear_metadata(void);
-int encontrar_tabla(char*);
+//int encontrar_tabla(char*);
 int calcular_particion(int, int);
 void obtener_metadata(char**, int*, int*);
-dato_t *crear_dato(int , char* , time_t );
+//dato_t *crear_dato(int , char* , time_t );
 //bloque_tabla *existe_en_memtable(char* );
-void ingresar_a_memtable(dato_t*, char* );
-tabla_memtable* crear_tabla(char* tabla);
-tabla_memtable* ultima_posicion_memtable(void);
-tabla_memtable* encontrar_memtable(char* tabla);
+//void ingresar_a_memtable(dato_t*, char* );
+//tabla_memtable* crear_tabla(char* tabla);
+//tabla_memtable* ultima_posicion_memtable(void);
+//tabla_memtable* encontrar_memtable(char* tabla);
+
+bloque_tabla* crear_bloque(dato_t* dato);
+dato_t* crear_dato(int clave, char* valor, time_t tiempo);
+void poner_bloque_en_tabla(char* nombre_tabla , bloque_tabla* bloque_ingresar);
+void crear_tabla_en_memtable(char* nombre_tabla);
 
 #endif /* API_LISSANDRA_H_ */
