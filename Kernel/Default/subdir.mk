@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../API_Kernel.c \
 ../kernel.c 
 
 OBJS += \
+./API_Kernel.o \
 ./kernel.o 
 
 C_DEPS += \
+./API_Kernel.d \
 ./kernel.d 
 
 

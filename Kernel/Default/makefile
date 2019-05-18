@@ -25,19 +25,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: Kernel
+all: TP\ -\ Kernel
 
 # Tool invocations
-Kernel: $(OBJS) $(USER_OBJS)
+TP\ -\ Kernel: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "Kernel" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "TP - Kernel" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) Kernel
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) "TP - Kernel"
 	-@echo ' '
 
 .PHONY: all clean dependents

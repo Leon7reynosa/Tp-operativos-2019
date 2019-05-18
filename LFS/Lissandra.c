@@ -12,27 +12,37 @@ int main(void){
 
 	int socket_sv;
 	int socket_pool;
-	char* ip;
+	char* ip = "lol";
 	int puerto;
+	char aux[3];
 
-	obtener_puerto_ip(&puerto,&ip);
+	strcat(aux, *ip);
+	printf("%s", aux);
 
-	realizar_select("Tablas/Tabla_A" , 233);
 
-	insert("Tablas/Tabla_A", 7 , "HOLITAS" ,  1400 );
-	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
-	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
-	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
-	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
+//	obtener_puerto_ip(&puerto,&ip);
 
-	insert("Tablas/Tabla_B", 8 , "FEDETEAMO" ,  1450 );
-	insert("Tablas/Tabla_B", 74 , "TEQUIERO3000" ,  1450 );
-	insert("Tablas/Tabla_B", 1 , "HOLALALO" ,  1450 );
+//	realizar_select("Tablas/Tabla_A" , 233);
+
+//	insert("Tablas/Tabla_A", 7 , "HOLITAS" ,  1400 );
+//	create("Tablas/Tabla_B", "SHC", 1, 50);
+//	describe();
+//	crear_Binario("Tablas/Tabla_A", 7, "HOLITAS", 1400);
+//	verificar_Binario();
+
+//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
+//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
+//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
+//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
+
+//	insert("Tablas/Tabla_B", 8 , "FEDETEAMO" ,  1450 );
+//	insert("Tablas/Tabla_B", 74 , "TEQUIERO3000" ,  1450 );
+//	insert("Tablas/Tabla_B", 1 , "HOLALALO" ,  1450 );
 
 	///////////////////////////////////////////////////////////////////////
 	//ESTO ES PARA PROBAR QUE SE INSERTEN BIEN LAS COSAS EN LA MEMTABLE
 	//Esta funcion es unicamente para que la API_Lissandra nos envie la memtable y podamos recorrerla
-	tabla_memtable* aux = conseguirMemtable();
+/*	tabla_memtable* aux = conseguirMemtable();
 	bloque_tabla* auxbloque;
 	while(aux != 0){
 		auxbloque = aux->primer_bloque;
@@ -49,6 +59,7 @@ int main(void){
 
 		printf("asd \n");
 	}
+*/
 	////////////////////////////////////////////////////////////////////////
 
 	/*

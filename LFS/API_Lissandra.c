@@ -7,6 +7,7 @@
 
 #include "API_Lissandra.h"
 
+
 //la hago global aca por ahora, despues vemos como usarla
 tabla_memtable* memtable = NULL;
 
@@ -44,6 +45,49 @@ void realizar_select(char* nombre_tabla , int key ){
 
 }
 
+void create(char* nombre_tabla, char* criterio, int numero_Particiones, int tiempo_Compactacion){
+	if(existe_la_tabla(nombre_tabla)){
+		//Se guardará el resultado en un .log y se retorna error con dicho resultado
+	}
+	mkdir(nombre_tabla, 0700); //Anda
+//	crear_metadata(criterio, numero_Particiones, tiempo_Compactacion); //Arreglar esto
+	//Crear binario con respecto a las particiones y agregar un bloque a cada uno
+}
+
+void describe(){
+	struct dirent* de;
+	DIR* dr = opendir("Tablas");
+	if(dr == NULL){
+		printf("No se pudo abrir el directorio mencionado\n");
+	}
+
+	while((de = readdir(dr)) != NULL){
+		printf("%s\n", de->d_name);
+//		obtener_metadata_de_tabla(de->d_name);
+	}
+
+	closedir(dr);
+}
+
+int existe_la_tabla(char* tabla){
+	DIR* dir = opendir(tabla);
+	if(dir){
+		return dir;
+	}else {
+		printf("El directorio no existe");
+		return dir;
+	}
+	closedir(dir);
+}
+/*
+void obtener_metadata_de_tabla(char* nombre_tabla){
+	char prefijo[7] = "Tablas/";
+	char path[14];
+
+	t_config* metadata = config_create()
+
+}
+*/
 
 
 //tabla 1   tabla 2   ...
@@ -52,7 +96,7 @@ void realizar_select(char* nombre_tabla , int key ){
 //memtable
 void insert(char* nombre_tabla , int key , char* valor, time_t timestamp ){
 
-	dato_t *dato_ingresar;
+	dato_t* dato_ingresar;
 	bloque_tabla* mostrar_bloque;
 	dato_t* mostrar_dato;
 
@@ -70,11 +114,11 @@ void insert(char* nombre_tabla , int key , char* valor, time_t timestamp ){
 		printf("dato_valor: %s\n\n" , dato_ingresar->value);
 
 		ingresar_a_memtable(dato_ingresar, nombre_tabla);
-		printf("FUNCIONO CORRECTAMENTE\n\n\n");
+		printf("FUNCIONO CORRECTAMENTE\n\n");
 
 		mostrar_bloque = memtable->primer_bloque;
 
-		printf("key: %s" , memtable->primer_bloque->dato_t->value);
+		printf("Se creo que bloque con key: %s\n" , memtable->primer_bloque->dato_t->value);
 
 		/*tabla_memtable* aux = memtable;
 		bloque_tabla* auxbloque = aux->primer_bloque;
@@ -169,7 +213,7 @@ void poner_bloque_en_tabla(char* nombre_tabla , bloque_tabla* bloque_ingresar){
 bloque_tabla* crear_bloque(dato_t* dato_ingresar){
 	bloque_tabla* nuevo_bloque = malloc(sizeof(bloque_tabla));
 
-	printf("dato: %d", dato_ingresar->key);
+	printf("Se creo el bloque con dato: %d\n", dato_ingresar->key);
 
 	nuevo_bloque->dato_sig = NULL;
 	nuevo_bloque->dato_t = dato_ingresar;
@@ -207,7 +251,27 @@ void obtener_metadata(char** consistencia , int* particion, int* tiempo_compacta
 
 	*tiempo_compactacion = config_get_int_value(metadata_config, "COMPACTION_TIME");
 }
+/*
+void crear_metadata(char* consistencia, int particion, int tiempo_Compactacion){
+	t_config* metadata_config;
+	char laconchadetumadreleon[20];
+	FILE *aux = fopen("Tablas/Tabla_B/Metadata.config", "w");
+	fclose(aux);
+	metadata_config = config_create("Tablas/Tabla_B/Metadata.config");
+	config_set_value(metadata_config,"CONSISTENCY", consistencia);
 
+	itoa(particion,laconchadetumadreleon,10);
+
+	config_set_value(metadata_config, "PARTITIONS", laconchadetumadreleon);
+
+	itoa(tiempo_Compactacion,laconchadetumadreleon,10);
+
+	config_set_value(metadata_config, "COMPACTION_TIME", laconchadetumadreleon);
+	config_save(metadata_config);
+	config_destroy(metadata_config);
+
+}
+*/
 
 
 dato_t* crear_dato(int clave, char* valor, time_t tiempo){
@@ -223,19 +287,32 @@ dato_t* crear_dato(int clave, char* valor, time_t tiempo){
 
 
 
-int existe_la_tabla(char* tabla){
 
-	DIR* dir = opendir(tabla);
 
-	if(dir){
-		return dir;
-	}else {
-		printf("El directorio no existe");
-		return dir;
-	}
-	closedir(dir);
+void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp/*, int particion*/){
+	dato_t datoAux;
+	datoAux.key = key;
+	datoAux.value = valor;
+	datoAux.timestamp = timestamp;
+
+	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "wb");
+	fwrite(&datoAux,sizeof(dato_t), 1, f);
+	printf("Se guardo con exito (creo xD)\n");
+	fclose(f);
+	printf("Se cerro el archivo\n\n");
 }
-
+/*
+void verificar_Binario(){ //ANDA :D
+	dato_t datoAux;
+	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "rb");
+	fread(&datoAux, sizeof(dato_t), 1, f);
+	printf("Binario leido con exito\n--Resultados--\n");
+	printf("Key leida: %i\n", datoAux.key);
+	printf("Value leido: %s\n", datoAux.value);
+	printf("Timestamp leido: %i\n", datoAux.timestamp);
+	fclose(f);
+}
+*/
 
 
 
