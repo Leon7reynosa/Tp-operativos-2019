@@ -20,18 +20,13 @@
 #include<commons/config.h>
 #include<string.h>
 #include<sys/stat.h>
-#include<dirent.h>
+#include"Metadata/metadata.h"
 
-typedef enum criterio{
-	SC, //Strong Consistency
-	SHC, // Strong Hash Consistency
-	EC //Eventual Consistency
-}criterio_t;
-
+#define TAMANIO_MAX_VALUE 50
 typedef struct{
 
 	int key;
-	char* value;
+	char value[TAMANIO_MAX_VALUE];
 	time_t timestamp;
 
 }dato_t;
@@ -56,22 +51,21 @@ void insert(char* ,int , char*,time_t);
 void create(char* nombre_tabla, char* criterio, int numero_Particiones, int tiempo_Compactacion);
 void realizar_select(char*, int);
 void describe();
-void setear_metadata(void);
+void describe_especifico(char*);
 //int encontrar_tabla(char*);
 int calcular_particion(int, int);
-void obtener_metadata(char**, int*, int*);
-void crear_metadata(char* consistencia, int particion, int tiempo_Compactacion);
 //dato_t *crear_dato(int , char* , time_t );
 //bloque_tabla *existe_en_memtable(char* );
 //void ingresar_a_memtable(dato_t*, char* );
 //tabla_memtable* crear_tabla(char* tabla);
 //tabla_memtable* ultima_posicion_memtable(void);
 //tabla_memtable* encontrar_memtable(char* tabla);
-
 bloque_tabla* crear_bloque(dato_t* dato);
 dato_t* crear_dato(int clave, char* valor, time_t tiempo);
 void poner_bloque_en_tabla(char* nombre_tabla , bloque_tabla* bloque_ingresar);
 void crear_tabla_en_memtable(char* nombre_tabla);
 void crear_Binario(char* ,int , char*,time_t);
 void verificar_Binario();
+//char* obtenerPathTabla(char* nombre_Tabla);
+
 #endif /* API_LISSANDRA_H_ */

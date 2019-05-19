@@ -17,23 +17,22 @@ tabla_memtable* conseguirMemtable(){
 
 void realizar_select(char* nombre_tabla , int key ){
 
-	int particion_objetivo; //en que particion de la tabla tengo que buscar
-	int particiones_metadata, tiempo_compactacion;
+	metadata_t metadata;
 	char* consistencia;
 
 	if(existe_la_tabla(nombre_tabla)){
 
 		printf("SI EXISTE YUPII :D\n\n");
 
-		obtener_metadata (&consistencia , &particiones_metadata, &tiempo_compactacion);
+		metadata = obtener_metadata(nombre_tabla);
 
-		printf("CONSISTENCY = %s\n", consistencia);
-		printf("PARTICIONES = %d\n" , particiones_metadata);
-		printf("TIEMPO DE COMPACTACION = %d\n" , tiempo_compactacion);
+		printf("CONSISTENCY = %i\n", metadata.consistencia);
+		printf("PARTICIONES = %d\n" , metadata.particion);
+		printf("TIEMPO DE COMPACTACION = %d\n" , metadata.compactacion);
 
-		particion_objetivo = calcular_particion(particiones_metadata , key);
+		//particion_objetivo = calcular_particion(particiones_metadata , key);
 
-		printf("PARTICION OBJETIVO = %d\n\n" , particion_objetivo);
+		//printf("PARTICION OBJETIVO = %d\n\n" , particion_objetivo);
 
 
 	}else{
@@ -62,32 +61,40 @@ void describe(){
 	}
 
 	while((de = readdir(dr)) != NULL){
-		printf("%s\n", de->d_name);
-//		obtener_metadata_de_tabla(de->d_name);
+		if(de->d_name[0] != '.'){
+			//puts(de->d_name);
+			printf("%s\n", de->d_name);
+			mostrar_metadata_de_tabla(de->d_name);
+		}
 	}
-
 	closedir(dr);
 }
 
+void describe_especifico(char* nombre_tabla){
+	DIR* dr = opendir("Tablas");
+	printf("---------- Tabla:  %s -----------\n" , nombre_tabla);
+	if(existe_la_tabla(nombre_tabla)){
+		mostrar_metadata_de_tabla(nombre_tabla);
+	}
+
+}
+
+
+
 int existe_la_tabla(char* tabla){
-	DIR* dir = opendir(tabla);
+
+	char* path_tabla = obtenerPathTabla(tabla);
+
+	DIR* dir = opendir(path_tabla);
 	if(dir){
 		return dir;
 	}else {
-		printf("El directorio no existe");
+		printf("El directorio no existe\n");
 		return dir;
 	}
 	closedir(dir);
 }
-/*
-void obtener_metadata_de_tabla(char* nombre_tabla){
-	char prefijo[7] = "Tablas/";
-	char path[14];
 
-	t_config* metadata = config_create()
-
-}
-*/
 
 
 //tabla 1   tabla 2   ...
@@ -99,19 +106,17 @@ void insert(char* nombre_tabla , int key , char* valor, time_t timestamp ){
 	dato_t* dato_ingresar;
 	bloque_tabla* mostrar_bloque;
 	dato_t* mostrar_dato;
+	metadata_t metadata_aux;
 
 	int particiones_metadata, tiempo_compactacion;
 	char* consistencia;
 
 	if(existe_la_tabla(nombre_tabla)){
 
-		printf("SI EXISTE LA TABLA :D \n\n");
-		obtener_metadata (&consistencia , &particiones_metadata, &tiempo_compactacion);
+		printf("SI EXISTE LA TABLA :D \n");
+		metadata_aux = obtener_metadata(nombre_tabla);
 
 		dato_ingresar = crear_dato(key, valor, timestamp);
-
-		printf("dato_key: %d\n" , dato_ingresar->key);
-		printf("dato_valor: %s\n\n" , dato_ingresar->value);
 
 		ingresar_a_memtable(dato_ingresar, nombre_tabla);
 		printf("FUNCIONO CORRECTAMENTE\n\n");
@@ -125,7 +130,7 @@ void insert(char* nombre_tabla , int key , char* valor, time_t timestamp ){
 		while(aux != NULL){
 			printf("Nombre tabla: %s \n", aux->nombre_tabla);
 			while(auxbloque != NULL){
-				printf("Key: %d \n", (aux->primer_bloque->dato_t).key);
+				printf("Key: %d \n", (aux->primer_bloque->dato_t)->key);
 				auxbloque = aux->primer_bloque->dato_sig;
 			}
 			printf("\n\n");
@@ -239,60 +244,22 @@ int existe_en_memtable(char* nombre_tabla){
 }
 
 
-void obtener_metadata(char** consistencia , int* particion, int* tiempo_compactacion){
-
-	t_config* metadata_config;
-
-	metadata_config = config_create("Tablas/Tabla_A/Metadata.config");
-
-	*consistencia = config_get_string_value(metadata_config,"CONSISTENCY");
-
-	*particion = config_get_int_value(metadata_config, "PARTITIONS");
-
-	*tiempo_compactacion = config_get_int_value(metadata_config, "COMPACTION_TIME");
-}
-/*
-void crear_metadata(char* consistencia, int particion, int tiempo_Compactacion){
-	t_config* metadata_config;
-	char laconchadetumadreleon[20];
-	FILE *aux = fopen("Tablas/Tabla_B/Metadata.config", "w");
-	fclose(aux);
-	metadata_config = config_create("Tablas/Tabla_B/Metadata.config");
-	config_set_value(metadata_config,"CONSISTENCY", consistencia);
-
-	itoa(particion,laconchadetumadreleon,10);
-
-	config_set_value(metadata_config, "PARTITIONS", laconchadetumadreleon);
-
-	itoa(tiempo_Compactacion,laconchadetumadreleon,10);
-
-	config_set_value(metadata_config, "COMPACTION_TIME", laconchadetumadreleon);
-	config_save(metadata_config);
-	config_destroy(metadata_config);
-
-}
-*/
-
-
 dato_t* crear_dato(int clave, char* valor, time_t tiempo){
 
 	dato_t* nuevo = (dato_t*) malloc(sizeof(dato_t));
 
 	nuevo->key = clave;
-	nuevo->value = valor;
+	strcpy(nuevo->value, valor);
 	nuevo->timestamp = tiempo;
 
 	return nuevo;
 }
 
 
-
-
-
 void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp/*, int particion*/){
 	dato_t datoAux;
 	datoAux.key = key;
-	datoAux.value = valor;
+	strcpy(datoAux.value, valor);
 	datoAux.timestamp = timestamp;
 
 	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "wb");
@@ -301,19 +268,75 @@ void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp/
 	fclose(f);
 	printf("Se cerro el archivo\n\n");
 }
-/*
-void verificar_Binario(){ //ANDA :D
+
+
+
+
+/*void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp, int particion){
 	dato_t datoAux;
+	datoAux.key = key;
+	datoAux.value = valor;
+	datoAux.timestamp = timestamp;
+
+	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "wb");
+	fwrite(&(datoAux.key),sizeof(dato_t), 1, f);
+	fputs(datoAux.value, f);
+	fwrite(&(datoAux.timestamp),sizeof(time_t), 1, f);
+	printf("Se guardo con exito (creo xD)\n");
+	fclose(f);
+	printf("Se cerro el archivo\n\n");
+}*/
+
+void verificar_Binario(){ //ANDA :D
+	dato_t datoAux2;
 	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "rb");
-	fread(&datoAux, sizeof(dato_t), 1, f);
-	printf("Binario leido con exito\n--Resultados--\n");
-	printf("Key leida: %i\n", datoAux.key);
-	printf("Value leido: %s\n", datoAux.value);
-	printf("Timestamp leido: %i\n", datoAux.timestamp);
+
+	fread(&datoAux2, sizeof(dato_t), 1, f);
+
+	while(!feof(f)) {
+
+		printf("Binario leido con exito\n--Resultados--\n");
+		printf("Key leida: %i\n", datoAux2.key);
+		printf("Value leido: %s\n", datoAux2.value);
+		printf("Timestamp leido: %i\n", datoAux2.timestamp);
+
+		fread(&datoAux2, sizeof(dato_t), 1, f);
+	}
 	fclose(f);
 }
-*/
+/*
+char* obtenerPathTabla(char* nombre_Tabla){
+	char aux_nombreTabla[strlen(nombre_Tabla) + 1];
+	aux_nombreTabla[strlen(nombre_Tabla) + 1] = '\0';
+	char prefijo[] = "Tablas/";
+	char extension[] = "/";
 
+	int cantidad = strlen(nombre_Tabla) + strlen(prefijo) + strlen(extension) + 1;
+
+	char aux_path[cantidad];
+	char* path = malloc(cantidad);
+
+	strcpy(aux_nombreTabla, nombre_Tabla);
+	//printf("1 %s\n",aux_path);
+
+	strcpy(aux_path, prefijo);
+	printf("2 %s\n",aux_path);
+
+	strcat(aux_path, aux_nombreTabla);
+	printf("3 %s\n",aux_path);
+
+
+
+	strcat(aux_path, extension);
+	printf("4 %s\n",aux_path);
+
+	strcpy(path,aux_path);
+	printf("? %s\n", path);
+	return path;
+
+
+}
+*/
 
 
 /*##################################################################33
@@ -455,22 +478,7 @@ int calcular_particion( int particion_metadata ,int key){
 
 
 
-void setear_metadata(){
 
-	printf("HOLA");
-
-	t_config* metadata_config;
-
-	metadata_config = config_create("Tablas/Tabla_B/Metadata.config");
-
-	config_set_value(metadata_config, "CONSISTENCY", "SC");
-	config_set_value(metadata_config, "PARTITIONS", "1");
-	config_set_value(metadata_config, "COMPACTION_TIME" , "300");
-	config_save(metadata_config);
-	config_destroy(metadata_config);
-
-	printf("se configuro el metadata lol\n");
-}
 
 
 

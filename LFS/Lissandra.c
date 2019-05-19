@@ -14,30 +14,19 @@ int main(void){
 	int socket_pool;
 	char* ip = "lol";
 	int puerto;
-	char aux[3];
-
-	strcat(aux, *ip);
-	printf("%s", aux);
 
 
 //	obtener_puerto_ip(&puerto,&ip);
 
-//	realizar_select("Tablas/Tabla_A" , 233);
+	//realizar_select("Tabla_A" , 233);
 
-//	insert("Tablas/Tabla_A", 7 , "HOLITAS" ,  1400 );
+	insert("Tabla_A", 7 , "HOLITAS" ,  1400 );
+	insert("Tabla_A", 29 , "Segundo" ,  1450 );
+	insert("Tabla_B", 73 , "CHINO COCHINO" ,  140);
 //	create("Tablas/Tabla_B", "SHC", 1, 50);
-//	describe();
+//	describe_especifico("Tabla_A");
 //	crear_Binario("Tablas/Tabla_A", 7, "HOLITAS", 1400);
 //	verificar_Binario();
-
-//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
-//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
-//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
-//	insert("Tablas/Tabla_A", 8 , "CHAUSITO" ,  1450 );
-
-//	insert("Tablas/Tabla_B", 8 , "FEDETEAMO" ,  1450 );
-//	insert("Tablas/Tabla_B", 74 , "TEQUIERO3000" ,  1450 );
-//	insert("Tablas/Tabla_B", 1 , "HOLALALO" ,  1450 );
 
 	///////////////////////////////////////////////////////////////////////
 	//ESTO ES PARA PROBAR QUE SE INSERTEN BIEN LAS COSAS EN LA MEMTABLE
