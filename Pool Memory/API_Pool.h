@@ -46,7 +46,7 @@ typedef struct{
 
 typedef struct{
 
-	char* tabla;
+	char* tabla; //ESTO DESPUES TIENE QUE SER EL PATH
 	pagina* primera_pagina;
 	struct segmento* siguiente_segmento;
 

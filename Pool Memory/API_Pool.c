@@ -11,8 +11,14 @@ segmento* memoria_principal = NULL;
 
 void select(char* nombre_tabla, int key){
 
-	if(existe_segmento(nombre_tabla)){
+	dato_t dato_a_buscar;
+	segmento* segmento_tabla;
 
+	if(existe_segmento(nombre_tabla, &segmento_tabla)){
+
+		dato_a_buscar = buscar_key(key,segmento_tabla);
+
+		printf("Value : %s\n" , dato_a_buscar->value;);
 
 	}else{
 
@@ -35,6 +41,7 @@ void select(char* nombre_tabla, int key){
 
 }
 
+/////////////////////////////////////////////////////////////////////////////
 
 void insert(char* nombre_tabla, int key, char* value){
 
@@ -42,19 +49,96 @@ void insert(char* nombre_tabla, int key, char* value){
 
 }
 
-int existe_segmento(char* nombre_tabla){
+////////////////////////////////////////////////////////////////////////////
+
+dato_t* buscar_key(int key, segmento* segmento_tabla){
+
+	pagina* pagina_con_dato;
+	dato_t dato_encontrado;
+
+	if(existe_pagina(key,segmento_tabla,&pagina_con_dato)){
+
+		dato_encontrado = pagina_con_dato->dato;
+
+	}
+	else{
+
+		dato_encontrado = pedir_key_a_LFS(key, segmento_tabla->tabla);
+	}
+
+	return dato_encontrado;
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
+/*Si existe la pagina que tenga esta key, en este segmento de tabla; se la asigno a
+pagina_con_dato y y la funcion devuelve 1 (verdadero)
+*/
+int existe_pagina(int key,segmento* segmento_tabla,pagina** pagina_con_dato){
+
+	pagina* pagina_aux = segmento_tabla->primera_pagina;
+
+	while(pagina_aux != NULL){
+
+		if(strcmp(key, pagina_aux->dato->key) == 0){
+			pagina_con_dato = pagina_aux;
+			return 1;
+		}
+		else{
+			pagina_aux = pagina_aux->siguiente_pagina;
+		}
+
+	}
+
+	pagina_con_dato = NULL;
+
+	return 0;
+
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////
+
+/*Si existe un segmento en la memoria principal, que tenga asociado el nombre de esta
+ * tabla, se la asigno a segmento_encontrado y devuelvo 1 (verdadero)
+ *
+ * */
+int existe_segmento(char* nombre_tabla, segmento** segmento_encontrado){
 
 	segmento* segmento_tabla;
 	segmento_tabla = memoria_principal;
 
 	while(segmento_tabla != NULL){
-		if(Strcmp(segmento_tabla->tabla , nombre_tabla) == 0){
+		if(strcmp(segmento_tabla->tabla , nombre_tabla) == 0){
 
+			segmento_encontrado = segmento_tabla;
 			return 1;
 		}else{
 			segmento_tabla = segmento_tabla->siguiente_segmento;
 		}
 	}
 
+	segmento_encontrado = NULL;
+
 	return 0;
 }
+
+//////////////////////////////////////////////////////////////////////////////
+
+dato_t pedir_key_a_LFS(int key, char* nombre_tabla){
+
+	dato_t dato_recibido;
+
+	/*proximamente
+	 * aca deberia de, a la vez que le pedimos la key, recibirla y agregar la pagina
+	 * a la memoria en dicha tabla
+	 * Saludos!
+	 * */
+
+	return dato_recibido;
+}
+
+//////////////////////////////////////////////////////////////////////////////

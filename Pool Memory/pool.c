@@ -10,6 +10,7 @@
 
 int main (void){
 
+	/*
 	pthread_t conexion_kernel;
 	pthread_t conexion_lissandra;
 
@@ -20,6 +21,13 @@ int main (void){
 
 	pthread_join(conexion_kernel , NULL);
 	pthread_join(conexion_lissandra , NULL);
+	*/
+
+	// esto es del handshake, tabla_A y tabla_B
+	int cantidad_tablas = 2;
+
+	memoria_principal = malloc(sizeof(segmento) * cantidad_tablas);
+
 
 
 	return EXIT_SUCCESS;

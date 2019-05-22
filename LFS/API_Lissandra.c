@@ -270,23 +270,6 @@ void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp/
 }
 
 
-
-
-/*void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp, int particion){
-	dato_t datoAux;
-	datoAux.key = key;
-	datoAux.value = valor;
-	datoAux.timestamp = timestamp;
-
-	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "wb");
-	fwrite(&(datoAux.key),sizeof(dato_t), 1, f);
-	fputs(datoAux.value, f);
-	fwrite(&(datoAux.timestamp),sizeof(time_t), 1, f);
-	printf("Se guardo con exito (creo xD)\n");
-	fclose(f);
-	printf("Se cerro el archivo\n\n");
-}*/
-
 void verificar_Binario(){ //ANDA :D
 	dato_t datoAux2;
 	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "rb");
@@ -455,20 +438,6 @@ tabla_memtable* encontrar_memtable(char* tabla){
 	return aux;
 }
 
-
-
-//Crea una nueva tabla que va a ser parte de la lista
-bloque_tabla* crear_bloque_tabla(dato_t dato_insertar ){
-
-	bloque_tabla* nueva_tabla;
-
-	nueva_tabla = (bloque_tabla* ) malloc(sizeof(bloque_tabla));
-
-	nueva_tabla->dato_t = dato_insertar;
-	nueva_tabla->dato_sig = NULL;
-
-	return nueva_tabla;
-}
 */
 
 
