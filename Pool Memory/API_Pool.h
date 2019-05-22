@@ -8,7 +8,53 @@
 #ifndef API_POOL_H_
 #define API_POOL_H_
 
-select(char* nombre_tabla, int key);
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<dirent.h>
+#include<errno.h>
+#include<time.h>
+#include<commons/config.h>
+#include<string.h>
+#include<sys/stat.h>
+
+#define TAMANIO_MAX_VALUE 50
+
+typedef enum{
+
+	FALSE,
+	TRUE
+
+}bool;
+
+typedef struct{
+
+	int key;
+	char value[TAMANIO_MAX_VALUE];
+	time_t timestamp;
+
+}dato_t;
+
+typedef struct{
+
+	int numero_pagina;
+	dato_t dato;
+	bool flag_modificado;
+	struct pagina* siguiente_pagina;
+
+}pagina;
+
+typedef struct{
+
+	char* tabla;
+	pagina* primera_pagina;
+	struct segmento* siguiente_segmento;
+
+}segmento;
+
+
+
+void select(char* nombre_tabla, int key);
 /*
  * 1)Verificar si existe el segmento de la tabla solicitada y buscar en las paginas
  * del mismo si contiene la key solicitada. Si la contiene, devuelve su valor y
@@ -21,7 +67,7 @@ select(char* nombre_tabla, int key);
  * full, ejecutar el Journal de la memoria
  */
 
-insert(char* nombre_tabla, int key, char* value);
+void insert(char* nombre_tabla, int key, char* value);
 
 
 #endif /* API_POOL_H_ */
