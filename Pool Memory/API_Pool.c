@@ -7,25 +7,27 @@
 
 #include "API_Pool.h"
 
-segmento* memoria_principal = NULL;
 
-void select(char* nombre_tabla, int key){
+void realizar_select(char* nombre_tabla, int key){
 
-	dato_t dato_a_buscar;
+	dato_t* dato_a_buscar;
 	segmento* segmento_tabla;
 
 	if(existe_segmento(nombre_tabla, &segmento_tabla)){
 
+		printf("existe el segmento vieja! : %s\n", segmento_tabla->tabla);
+		printf("busco la key! \n");
+
 		dato_a_buscar = buscar_key(key,segmento_tabla);
 
-		printf("Value : %s\n" , dato_a_buscar->value;);
+		printf("Value : %s\n" , dato_a_buscar->value);
 
 	}else{
-
+		printf("No existe el segmento! \n");
 
 	}
 
-
+	free(dato_a_buscar);
 
 	/*
 	 * 1)Verificar si existe el segmento de la tabla solicitada y buscar en las paginas
@@ -54,11 +56,12 @@ void insert(char* nombre_tabla, int key, char* value){
 dato_t* buscar_key(int key, segmento* segmento_tabla){
 
 	pagina* pagina_con_dato;
-	dato_t dato_encontrado;
+	dato_t* dato_encontrado = malloc(sizeof(dato_t));
 
 	if(existe_pagina(key,segmento_tabla,&pagina_con_dato)){
 
-		dato_encontrado = pagina_con_dato->dato;
+		printf("existe la pagina numero: %d que tiene la key numero: %d\n",pagina_con_dato->numero_pagina,pagina_con_dato->dato.key);
+		*dato_encontrado = pagina_con_dato->dato;
 
 	}
 	else{
@@ -76,14 +79,15 @@ dato_t* buscar_key(int key, segmento* segmento_tabla){
 /*Si existe la pagina que tenga esta key, en este segmento de tabla; se la asigno a
 pagina_con_dato y y la funcion devuelve 1 (verdadero)
 */
-int existe_pagina(int key,segmento* segmento_tabla,pagina** pagina_con_dato){
+int existe_pagina(int key, segmento* segmento_tabla,pagina** pagina_con_dato){
 
 	pagina* pagina_aux = segmento_tabla->primera_pagina;
 
 	while(pagina_aux != NULL){
 
-		if(strcmp(key, pagina_aux->dato->key) == 0){
-			pagina_con_dato = pagina_aux;
+		if(pagina_aux->dato.key == key){
+			printf("existe la pagina con esa key! \n");
+			*pagina_con_dato = pagina_aux;
 			return 1;
 		}
 		else{
@@ -92,7 +96,7 @@ int existe_pagina(int key,segmento* segmento_tabla,pagina** pagina_con_dato){
 
 	}
 
-	pagina_con_dato = NULL;
+	*pagina_con_dato = NULL;
 
 	return 0;
 
@@ -114,23 +118,27 @@ int existe_segmento(char* nombre_tabla, segmento** segmento_encontrado){
 	while(segmento_tabla != NULL){
 		if(strcmp(segmento_tabla->tabla , nombre_tabla) == 0){
 
-			segmento_encontrado = segmento_tabla;
+			*segmento_encontrado = segmento_tabla;
 			return 1;
 		}else{
 			segmento_tabla = segmento_tabla->siguiente_segmento;
 		}
 	}
 
-	segmento_encontrado = NULL;
+	*segmento_encontrado = NULL;
 
 	return 0;
 }
 
 //////////////////////////////////////////////////////////////////////////////
 
-dato_t pedir_key_a_LFS(int key, char* nombre_tabla){
+dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
-	dato_t dato_recibido;
+	dato_t* dato_recibido = malloc(sizeof(dato_t));
+
+
+
+
 
 	/*proximamente
 	 * aca deberia de, a la vez que le pedimos la key, recibirla y agregar la pagina

@@ -18,19 +18,22 @@
 #include<string.h>
 #include<sys/stat.h>
 
+#include"Config/configuracion.h"
+
 #define TAMANIO_MAX_VALUE 50
 
 typedef enum{
+	SELECT, INSERT
+}request;
 
-	FALSE,
-	TRUE
-
-}bool;
+typedef enum{
+	FALSE, TRUE
+} boolean;
 
 typedef struct{
 
 	int key;
-	char value[TAMANIO_MAX_VALUE];
+	char* value;
 	time_t timestamp;
 
 }dato_t;
@@ -39,7 +42,7 @@ typedef struct{
 
 	int numero_pagina;
 	dato_t dato;
-	bool flag_modificado;
+	boolean flag_modificado;
 	struct pagina* siguiente_pagina;
 
 }pagina;
@@ -52,22 +55,14 @@ typedef struct{
 
 }segmento;
 
+int tamanio_memoria;
+segmento* memoria_principal;
 
 
-void select(char* nombre_tabla, int key);
-/*
- * 1)Verificar si existe el segmento de la tabla solicitada y buscar en las paginas
- * del mismo si contiene la key solicitada. Si la contiene, devuelve su valor y
- * finaliza el proceso
- * 2)Si no la contiene, enviar la solicitud a FileSystem para obtener el valor
- * solicitado y almacenarlo
- * 3)Una vez obtenido, se debe solicitar una nueva pagina libre para almacenar
- * el mismo. En caso de no disponer de una pagina libre, se debe ejecutar el
- * algoritmo de reemplazo y, en caso de no poder efectuarlo por estar la memoria
- * full, ejecutar el Journal de la memoria
- */
-
+void realizar_select(char* nombre_tabla, int key);
 void insert(char* nombre_tabla, int key, char* value);
+dato_t* buscar_key(int key, segmento* segmento_tabla);
+dato_t* pedir_key_a_LFS(int key, char* nombre_tabla);
 
 
 #endif /* API_POOL_H_ */

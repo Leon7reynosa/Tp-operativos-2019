@@ -17,13 +17,14 @@
 #include<readline/readline.h>
 
 #include"Mensajeria/mensajes.h"
-#include"Config/configuracion.h"
 #include"Servidor/servidor.h"
+#include"API_Pool.h"
 
 int socket_sv;
 int conexion_lissandra;
 
 void* conectar_lissandra(void);
 void* conectar_kernel(void);
+void pruebita();//Luego borrar
 
 #endif /* POOL_H_ */
