@@ -6,7 +6,7 @@
  */
 
 #include"mensajes.h"
-
+/*
 void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
 
 	void* msg_Ser = malloc(bytes);
@@ -20,6 +20,28 @@ void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
 	//4hola
 	return msg_Ser;
 }
+*/
+
+void* serializar_mensaje(operacion_select* bufferA_serializar, int bytes){
+
+	void* msg_Ser = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->pedido),sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size_tabla),sizeof(int));
+	desplazamiento +=sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,bufferA_serializar->nombre_tabla,bufferA_serializar->size_tabla);
+	desplazamiento +=bufferA_serializar->size_tabla;
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->key),sizeof(int));
+	desplazamiento += sizeof(int);
+
+	return msg_Ser;
+}
+
 
 void mandar_mensaje(int conexion){
 
@@ -44,6 +66,37 @@ void mandar_mensaje(int conexion){
 
 }
 
+void enviar_request_select(int conexion, char* nombre_tabla, int key){
+
+	operacion_select* bufferA_serializar = malloc(sizeof(operacion_select)); //t_stream = int size, void* buffer
+
+	bufferA_serializar->size_tabla = strlen(nombre_tabla) + 1;
+
+	bufferA_serializar->pedido = SELECT;
+	bufferA_serializar->key = key;
+	bufferA_serializar->nombre_tabla = malloc(bufferA_serializar->size_tabla);
+
+	memcpy(bufferA_serializar->nombre_tabla,nombre_tabla,bufferA_serializar->size_tabla);
+
+	void* buffer_serializado;
+	//OPERACION + TAMAÑO_TABLA + TABLA + KEY
+	int bytes = sizeof(int) + sizeof(int) + bufferA_serializar->size_tabla + sizeof(int);
+
+	buffer_serializado = serializar_mensaje(bufferA_serializar, bytes);
+
+	send(conexion, buffer_serializado, bytes, 0);
+
+	free(buffer_serializado);
+	eliminar_operacion_select(bufferA_serializar);
+
+}
+
+void eliminar_operacion_select(operacion_select* buffer){
+
+	free(buffer->nombre_tabla);
+	free(buffer);
+
+}
 
 
 void eliminar_tStream(t_stream* tStream){

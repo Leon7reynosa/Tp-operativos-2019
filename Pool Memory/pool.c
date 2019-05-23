@@ -15,18 +15,14 @@ int main (void){
 
 	pruebita();
 
-
-
-
 	printf("Vamos con el select \n\n");
 	realizar_select("Tabla_A",1);
 
-
+	pthread_t conexion_lissandra;
 
 
 	/*
 	pthread_t conexion_kernel;
-	pthread_t conexion_lissandra;
 
 
 	pthread_create(&conexion_kernel , NULL , conectar_kernel , NULL);
@@ -34,11 +30,11 @@ int main (void){
 
 
 	pthread_join(conexion_kernel , NULL);
-	pthread_join(conexion_lissandra , NULL);
 	*/
 
-
 	// esto es del handshake, tabla_A y tabla_B
+
+	pthread_join(conexion_lissandra , NULL);
 
 	return EXIT_SUCCESS;
 }

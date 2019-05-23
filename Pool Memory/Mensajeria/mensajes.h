@@ -29,9 +29,24 @@ typedef struct{
 
 }t_stream;
 
-void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
+typedef enum{
+	SELECT,
+	INSERT
+}request;
+
+
+typedef struct{
+	request pedido;
+	int size_tabla;
+	void* nombre_tabla;
+	int key;
+
+}operacion_select;
+
+//void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
 void mandar_mensaje(int conexion);
 void eliminar_tStream(t_stream* tStream);
+void* serializar_mensaje(operacion_select* bufferA_serializar, int bytes);
 
 
 #endif /* MENSAJES_H_ */

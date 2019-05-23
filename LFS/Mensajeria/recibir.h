@@ -28,9 +28,24 @@ typedef enum{
 	MENSAJE
 }cod_op;
 
+typedef enum{
+	SELECT,
+	INSERT
+}request;
+
+
+typedef struct{
+	request pedido;
+	int size_tabla;
+	void* nombre_tabla;
+	int key;
+
+}operacion_select;
+
 void recibir_mensaje(int conexion);
 void* recibir_buffer(int* size,int conexion);
 cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);
+operacion_select* recibir_solicitud(int conexion);
 
 #endif /* RECIBIR_H_ */

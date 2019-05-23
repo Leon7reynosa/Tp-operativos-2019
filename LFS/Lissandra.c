@@ -15,7 +15,9 @@ int main(void){
 	char* ip = "lol";
 	int puerto;
 
+	pthread_t conexion_memoria;
 
+	pthread_create(&conexion_memoria , NULL , (void**)conectar_memoria, NULL);
 
 
 
@@ -69,5 +71,27 @@ int main(void){
 	close(socket_sv);
 	config_destroy(g_config);
 	*/
+	pthread_join(conexion_memoria, NULL);
 	return EXIT_SUCCESS;
 }
+
+void* conectar_memoria(){
+
+	int puerto = 4445;
+	char* ip = "127.0.0.1";
+	int socket_cliente;
+	socket_sv = iniciar_servidor(ip, puerto);
+
+
+	socket_cliente = aceptar_conexion(socket_sv);
+
+	while(1){
+
+		operacion_select* datos_select = recibir_solicitud(socket_cliente);
+
+	}
+
+	close(socket_sv);
+	return NULL;
+}
+

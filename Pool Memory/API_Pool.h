@@ -22,9 +22,7 @@
 
 #define TAMANIO_MAX_VALUE 50
 
-typedef enum{
-	SELECT, INSERT
-}request;
+
 
 typedef enum{
 	FALSE, TRUE

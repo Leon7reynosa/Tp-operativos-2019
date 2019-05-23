@@ -20,5 +20,8 @@
 
 #include"API_Lissandra.h"
 
+int socket_sv;
+void* conectar_memoria(void);
+
 
 #endif /* LISSANDRA_H_ */
