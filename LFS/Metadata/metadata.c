@@ -29,6 +29,9 @@ metadata_t obtener_metadata(char* nombre_tabla){
 	obtener_metadata.consistencia = EC;
 	}
 
+	printf("consistencia: %d\n",obtener_metadata.consistencia);
+	printf("particion: %d\n",obtener_metadata.particion);
+	printf("compactacion: %d\n",obtener_metadata.compactacion);
 
 	return obtener_metadata;
 }
@@ -109,24 +112,26 @@ char* obtenerPathTabla(char* nombre_Tabla){
 
 	return path;
 }
-/*
-void crear_metadata(char* consistencia, int particion, int tiempo_Compactacion){
+
+void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion){
 	t_config* metadata_config;
-	char laconchadetumadreleon[20];
-	FILE *aux = fopen("Tablas/Tabla_B/Metadata.config", "w");
-	fclose(aux);
-	metadata_config = config_create("Tablas/Tabla_B/Metadata.config");
+	char* particionAux, tiempo_compactacionAux;
+	char* pathMetadata = obtener_path_metadata_de_tabla(nombre_tabla);
+
+	snprintf(particionAux, sizeof(particion), "%i", particion);
+	snprintf(tiempo_compactacionAux, sizeof(tiempo_Compactacion), "%i", tiempo_Compactacion);
+
+	printf("Particion = %s\nTiempo Compactacion = %s\n", particionAux, tiempo_compactacionAux);
+
+	metadata_config = config_create(pathMetadata);
+	config_save_in_file(metadata_config, pathMetadata);
+
 	config_set_value(metadata_config,"CONSISTENCY", consistencia);
+	config_set_value(metadata_config, "PARTITIONS", particionAux);
+	config_set_value(metadata_config, "COMPACTION_TIME", tiempo_compactacionAux);
 
-	itoa(particion,laconchadetumadreleon,10);
-
-	config_set_value(metadata_config, "PARTITIONS", laconchadetumadreleon);
-
-	itoa(tiempo_Compactacion,laconchadetumadreleon,10);
-
-	config_set_value(metadata_config, "COMPACTION_TIME", laconchadetumadreleon);
 	config_save(metadata_config);
 	config_destroy(metadata_config);
 
 }
-*/
+

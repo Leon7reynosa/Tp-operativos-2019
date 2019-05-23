@@ -46,10 +46,13 @@ void realizar_select(char* nombre_tabla , int key ){
 
 void create(char* nombre_tabla, char* criterio, int numero_Particiones, int tiempo_Compactacion){
 	if(existe_la_tabla(nombre_tabla)){
+		printf("Ya existe :( \n");
+		exit(1);
 		//Se guardará el resultado en un .log y se retorna error con dicho resultado
 	}
-	mkdir(nombre_tabla, 0700); //Anda
-//	crear_metadata(criterio, numero_Particiones, tiempo_Compactacion); //Arreglar esto
+	char* pathDeTabla = obtenerPathTabla(nombre_tabla);
+	mkdir(pathDeTabla, 0700); //Anda
+	crear_metadata(nombre_tabla, criterio, numero_Particiones, tiempo_Compactacion); //Arreglar esto
 	//Crear binario con respecto a las particiones y agregar un bloque a cada uno
 }
 
@@ -87,12 +90,12 @@ int existe_la_tabla(char* tabla){
 
 	DIR* dir = opendir(path_tabla);
 	if(dir){
-		return dir;
+		return 1;
 	}else {
 		printf("El directorio no existe\n");
-		return dir;
 	}
 	closedir(dir);
+	return 0;
 }
 
 
