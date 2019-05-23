@@ -44,6 +44,8 @@ void mandar_mensaje(int conexion){
 
 }
 
+
+
 void eliminar_tStream(t_stream* tStream){
 
 	free(tStream->buffer);

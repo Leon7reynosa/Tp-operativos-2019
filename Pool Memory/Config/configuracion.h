@@ -21,5 +21,6 @@ t_config* g_config;
 
 void creacion_del_config(void);
 void obtener_puerto_ip(int* puerto, char** ip);
+int obtener_tamanio_memoria(void);
 
 #endif /* CONFIGURACION_H_ */
