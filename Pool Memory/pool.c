@@ -16,7 +16,6 @@ int main (void){
 	pruebita();
 
 	printf("Vamos con el select \n\n");
-	realizar_select("Tabla_A",1);
 
 	pthread_t conexion_lissandra;
 
@@ -26,13 +25,15 @@ int main (void){
 
 
 	pthread_create(&conexion_kernel , NULL , conectar_kernel , NULL);
-	pthread_create(&conexion_lissandra, NULL, conectar_lissandra, NULL);
 
 
 	pthread_join(conexion_kernel , NULL);
 	*/
 
 	// esto es del handshake, tabla_A y tabla_B
+
+	pthread_create(&conexion_lissandra, NULL, conectar_lissandra, NULL);
+	realizar_select("Tabla_A",1);
 
 	pthread_join(conexion_lissandra , NULL);
 
@@ -64,8 +65,8 @@ void* conectar_lissandra(){
 	char* ip = "127.0.0.1";
 
 	conexion_lissandra = conectar_servidor(ip,puerto);
-
-	mandar_mensaje(conexion_lissandra);
+	enviar_request_select(conexion_lissandra, "Tabla_A",2456);
+	//mandar_mensaje(conexion_lissandra);
 
 	close(conexion_lissandra);
 	return  NULL;

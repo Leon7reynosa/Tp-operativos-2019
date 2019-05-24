@@ -22,6 +22,9 @@
 
 #define TAMANIO_MAX_VALUE 50
 
+int socket_sv;
+int conexion_lissandra;
+
 
 
 typedef enum{

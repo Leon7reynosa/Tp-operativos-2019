@@ -40,4 +40,5 @@ void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int t
 char* obtener_path_metadata_de_tabla(char* nombre_Tabla);
 void mostrar_metadata_de_tabla(char*);
 char* obtenerPathTabla(char* nombre_Tabla);
+char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion);
 #endif /* METADATA_METADATA_H_ */

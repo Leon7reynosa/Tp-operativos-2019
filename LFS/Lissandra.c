@@ -15,9 +15,12 @@ int main(void){
 	char* ip = "lol";
 	int puerto;
 
-	pthread_t conexion_memoria;
 
-	pthread_create(&conexion_memoria , NULL , (void**)conectar_memoria, NULL);
+
+
+//	pthread_t conexion_memoria;
+
+//	pthread_create(&conexion_memoria , NULL , (void**)conectar_memoria, NULL);
 
 
 
@@ -30,7 +33,7 @@ int main(void){
 	insert("Tabla_B", 73 , "CHINO COCHINO" ,  140);
 	*/
 
-	create("Tabla_M", "SHC", 1, 50);
+	//create("Tabla_M", "SHC", 1, 50);
 //	describe_especifico("Tabla_A");
 //	crear_Binario("Tablas/Tabla_A", 7, "HOLITAS", 1400);
 //	verificar_Binario();
@@ -71,10 +74,17 @@ int main(void){
 	close(socket_sv);
 	config_destroy(g_config);
 	*/
-	pthread_join(conexion_memoria, NULL);
-	return EXIT_SUCCESS;
-}
 
+//	pthread_join(conexion_memoria, NULL);
+	printf("hola :D\n");
+	char* final = obtenerPath_ParticionTabla("Tabla_C", 1);
+	printf("final: %s\n" , final);
+	printf("Adios D:\n");
+
+	return EXIT_SUCCESS;
+
+}
+/*
 void* conectar_memoria(){
 
 	int puerto = 4445;
@@ -85,13 +95,20 @@ void* conectar_memoria(){
 
 	socket_cliente = aceptar_conexion(socket_sv);
 
-	while(1){
+	//while(1){  el while no espera a recibir una solicitud nueva, manda muchas veces lo mismo
 
 		operacion_select* datos_select = recibir_solicitud(socket_cliente);
+		printf("la tabla recibida es: %s\n" , datos_select->nombre_tabla );
+		printf("la key solicitada es: %d\n\n " , datos_select->key);
 
-	}
+		realizar_select();
+
+		free(datos_select);
+
+	//}
 
 	close(socket_sv);
 	return NULL;
 }
 
+*/

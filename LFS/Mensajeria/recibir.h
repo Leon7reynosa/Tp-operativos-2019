@@ -35,7 +35,7 @@ typedef enum{
 
 
 typedef struct{
-	request pedido;
+	int pedido;
 	int size_tabla;
 	void* nombre_tabla;
 	int key;

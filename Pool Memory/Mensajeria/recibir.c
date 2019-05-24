@@ -86,6 +86,18 @@ void recibir_mensaje(int conexion){
 	free(buffer);
 
 }
+/*
+recibir_request_LFS(int conexion ){
 
+	dato_t* dato_recibido = malloc(sizeof(dato_t));
+
+	if(recv(conexion,&(dato_recibido->key),sizeof(int),0) == -1){
+		perror("Fallo al recibir la solicitud.");
+	}
+
+	printf("la key recibida es: %d", dato_recibido->key);
+
+}
+*/
 
 

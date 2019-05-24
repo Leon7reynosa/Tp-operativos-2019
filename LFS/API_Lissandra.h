@@ -68,6 +68,7 @@ void poner_bloque_en_tabla(char* nombre_tabla , bloque_tabla* bloque_ingresar);
 void crear_tabla_en_memtable(char* nombre_tabla);
 void crear_Binario(char* ,int , char*,time_t);
 void verificar_Binario();
+
 //char* obtenerPathTabla(char* nombre_Tabla);
 
 #endif /* API_LISSANDRA_H_ */

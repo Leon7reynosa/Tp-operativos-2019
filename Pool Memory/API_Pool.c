@@ -136,6 +136,9 @@ dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
 	dato_t* dato_recibido = malloc(sizeof(dato_t));
 
+	//enviar_request_select(conexion_lissandra, nombre_tabla , key);
+
+	//dato_recibido = recibir_request_LFS(conexion_lissandra);
 
 
 

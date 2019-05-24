@@ -20,8 +20,6 @@
 #include"Servidor/servidor.h"
 #include"API_Pool.h"
 
-int socket_sv;
-int conexion_lissandra;
 
 void* conectar_lissandra(void);
 void* conectar_kernel(void);

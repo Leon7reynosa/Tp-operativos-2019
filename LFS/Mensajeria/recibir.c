@@ -63,36 +63,38 @@ void desconectar_cliente(int conexion){
 operacion_select* recibir_solicitud(int conexion){
 
 	operacion_select* datos = malloc(sizeof(operacion_select));
-	int solicitud;
-	int size_tabla;
-	char* nombre_tabla;
-	int key;
 
-	if(recv(conexion,solicitud,sizeof(int),0) == -1){
+
+	printf("\n\n\n");
+
+	if(recv(conexion,&(datos->pedido),sizeof(int),0) == -1){
 		perror("Fallo al recibir la solicitud.");
 	}
 
-	datos->pedido = solicitud;
+	printf("\neste numero es: %d\n" , datos->pedido);
 
-	if(recv(conexion,size_tabla,sizeof(int),0) == -1){
+	if(recv(conexion,&(datos->size_tabla),sizeof(int),0) == -1){
 		perror("Fallo al recibir el tamanio.");
 	}
 
-	datos->size_tabla = size_tabla;
-	nombre_tabla = malloc(size_tabla);
+	printf("el tamaño de la tabla es: %d\n", datos->size_tabla);
 
-	if(recv(conexion,nombre_tabla,size_tabla,0) == -1){
+	void* nombre_tabla = malloc(datos->size_tabla);
+
+	if(recv(conexion,nombre_tabla,datos->size_tabla,0) == -1){
 		perror("Fallo al recibir el mensaje");
 	}
+
+	printf("el nombre de la tabla es= %s\n" , nombre_tabla);
 
 	datos->nombre_tabla = malloc(datos->size_tabla);
 	memcpy(datos->nombre_tabla , nombre_tabla , datos->size_tabla);
 
-	if(recv(conexion,key,sizeof(int),0) == -1){
+	if(recv(conexion,&(datos->key),sizeof(int),0) == -1){
 		perror("Fallo al recibir la key.");
 	}
 
-	datos->key = key;
+	printf("este key es: %i\n" , datos->key);
 
 	return datos;
 }

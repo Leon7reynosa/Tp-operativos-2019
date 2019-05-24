@@ -19,6 +19,8 @@ void realizar_select(char* nombre_tabla , int key ){
 
 	metadata_t metadata;
 	char* consistencia;
+	FILE *particion;
+	dato_t datoAux;
 
 	if(existe_la_tabla(nombre_tabla)){
 
@@ -30,10 +32,26 @@ void realizar_select(char* nombre_tabla , int key ){
 		printf("PARTICIONES = %d\n" , metadata.particion);
 		printf("TIEMPO DE COMPACTACION = %d\n" , metadata.compactacion);
 
-		//particion_objetivo = calcular_particion(particiones_metadata , key);
+		int particion_objetivo = calcular_particion(metadata.particion , key);
 
-		//printf("PARTICION OBJETIVO = %d\n\n" , particion_objetivo);
+		printf("PARTICION OBJETIVO = %d\n\n" , particion_objetivo);
 
+		particion = fopen(obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo), "rb");
+
+		fread(&datoAux, sizeof(dato_t), 1, particion);
+		while(!feof(particion)){
+			//tengo en cuenta que en las particiones hay keys diferentes
+			if(datoAux.key == key){
+				break;
+			}
+			fread(&datoAux, sizeof(dato_t), 1, particion);
+		}
+
+		//buscar en archivos temporales y en memoria temporal
+		//FALTA HACER LO DEL LOS ARCHIVOS TEMP XDXD
+
+		//CUANDO TENGAMOS TODO, COMPARAR EL QUE TENGA EL TIMESTAMP MAS ALTO Y
+		// DEVOLVER ESE
 
 	}else{
 
@@ -43,6 +61,8 @@ void realizar_select(char* nombre_tabla , int key ){
 
 
 }
+
+
 
 void create(char* nombre_tabla, char* criterio, int numero_Particiones, int tiempo_Compactacion){
 	if(existe_la_tabla(nombre_tabla)){

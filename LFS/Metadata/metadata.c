@@ -113,6 +113,43 @@ char* obtenerPathTabla(char* nombre_Tabla){
 	return path;
 }
 
+char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
+	char* aux = malloc(sizeof(obtenerPathTabla(nombre_tabla)));
+	aux = obtenerPathTabla(nombre_tabla);
+
+	printf("aux : %s \n" , aux); //si le sacamos esto nos tira cualquier cosa .-.
+	char auxTablaSinParticion[strlen(aux) + 1];
+	char* particionAux1 = malloc(sizeof(particion));
+	char extension[] = ".bin"; //AGREGADO
+
+
+	snprintf(particionAux1, sizeof(particion), "%i", particion);
+
+	//AGREGADO STRLEN(EXTENSION)
+	int cantidad = strlen(aux) + strlen(particionAux1) + strlen(extension) + 1;
+
+	char particionAux2[strlen(particionAux1) +sizeof(extension) + 1];
+	char pathAux[cantidad];
+
+	char* pathFinal = malloc(cantidad);
+
+	strcpy(auxTablaSinParticion, aux);
+	strcpy(particionAux2, particionAux1);
+	strcat(pathAux, auxTablaSinParticion);
+	printf("patron 1: %s\n" , pathAux);
+	strcat(pathAux, particionAux2);
+	printf("patron 2: %s\n" , pathAux);
+	strcat(pathAux, extension); //AGREGADO
+	printf("patron 3: %s\n" , pathAux);
+
+	strcpy(pathFinal, pathAux);
+
+	//printf("\n%s", pathFinal);
+
+	return pathFinal;
+
+}
+
 void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion){
 	t_config* metadata_config;
 	char* particionAux, tiempo_compactacionAux;

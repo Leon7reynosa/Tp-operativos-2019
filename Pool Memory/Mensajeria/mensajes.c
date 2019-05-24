@@ -80,7 +80,7 @@ void enviar_request_select(int conexion, char* nombre_tabla, int key){
 
 	void* buffer_serializado;
 	//OPERACION + TAMAÑO_TABLA + TABLA + KEY
-	int bytes = sizeof(int) + sizeof(int) + bufferA_serializar->size_tabla + sizeof(int);
+	int bytes = sizeof(int) + bufferA_serializar->size_tabla + sizeof(int) + sizeof(int);
 
 	buffer_serializado = serializar_mensaje(bufferA_serializar, bytes);
 
