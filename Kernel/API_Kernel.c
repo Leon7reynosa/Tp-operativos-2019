@@ -58,6 +58,6 @@ void enviar_insert(int conexion, char* nombre_tabla, u_int16_t key, char* value,
 
 	free(buffer_serializado);
 
-//	eliminar_operacion_insert(bufferA_Serializar); FALTA
+	eliminar_operacion_insert(bufferA_Serializar);
 
 }

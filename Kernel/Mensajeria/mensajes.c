@@ -86,6 +86,12 @@ void eliminar_operacion_select(operacion_select* buffer){
 
 }
 
+void eliminar_operacion_insert(operacion_insert* buffer){
+	free(buffer->nombre_tabla);
+	free(buffer->value);
+	free(buffer);
+}
+
 void eliminar_tStream(t_stream* tStream){
 
 	free(tStream->buffer);

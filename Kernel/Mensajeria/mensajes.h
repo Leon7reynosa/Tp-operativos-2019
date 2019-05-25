@@ -60,6 +60,7 @@ void* serializar_mensaje_insert(operacion_insert* bufferA_serializar, int bytes)
 void mandar_mensaje(int conexion);
 void eliminar_tStream(t_stream* tStream);
 void eliminar_operacion_select(operacion_select* buffer);
+void eliminar_operacion_insert(operacion_insert* buffer);
 
 
 #endif /* MENSAJES_H_ */
