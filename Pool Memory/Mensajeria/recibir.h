@@ -28,7 +28,17 @@ typedef enum{
 	MENSAJE
 }cod_op;
 
+typedef struct{
+
+
+	int key;
+	char* value;
+	time_t timestamp;
+
+}dato_t;
+
 void recibir_mensaje(int conexion);
+void recibir_request_LFS(int conexion );
 void* recibir_buffer(int* size,int conexion);
 cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);

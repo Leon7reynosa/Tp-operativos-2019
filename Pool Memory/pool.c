@@ -65,9 +65,11 @@ void* conectar_lissandra(){
 	char* ip = "127.0.0.1";
 
 	conexion_lissandra = conectar_servidor(ip,puerto);
-	enviar_request_select(conexion_lissandra, "Tabla_A",2456);
+	enviar_request_select(conexion_lissandra, "Tabla_A",7);
 	//mandar_mensaje(conexion_lissandra);
 
+
+	recibir_request_LFS(conexion_lissandra);
 	close(conexion_lissandra);
 	return  NULL;
 }

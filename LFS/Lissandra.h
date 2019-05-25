@@ -14,7 +14,6 @@
 #include<commons/string.h>
 #include<readline/readline.h>
 
-#include"Mensajeria/recibir.h"
 #include"Servidor/servidor.h"
 #include"Config/configuracion.h"
 

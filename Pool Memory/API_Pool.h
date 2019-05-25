@@ -19,6 +19,8 @@
 #include<sys/stat.h>
 
 #include"Config/configuracion.h"
+#include"Mensajeria/recibir.h"
+#include"Mensajeria/mensajes.h"
 
 #define TAMANIO_MAX_VALUE 50
 
@@ -31,6 +33,7 @@ typedef enum{
 	FALSE, TRUE
 } boolean;
 
+/*
 typedef struct{
 
 	int key;
@@ -38,6 +41,7 @@ typedef struct{
 	time_t timestamp;
 
 }dato_t;
+*/
 
 typedef struct{
 

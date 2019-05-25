@@ -21,7 +21,10 @@
 #include<string.h>
 #include<sys/stat.h>
 #include"Metadata/metadata.h"
+#include"Mensajeria/recibir.h"
+#include"Mensajeria/mensajes.h"
 
+/*
 #define TAMANIO_MAX_VALUE 50
 
 
@@ -32,6 +35,7 @@ typedef struct{
 	time_t timestamp;
 
 }dato_t;
+*/
 
 typedef struct{
 
@@ -48,12 +52,17 @@ typedef struct{
 
 }tabla_memtable;
 
+//////////////////////Request del Lissandra/////////////////////////////////////////
+
 tabla_memtable* conseguirMemtable();
 void insert(char* ,int , char*,time_t);
 void create(char* nombre_tabla, char* criterio, int numero_Particiones, int tiempo_Compactacion);
-void realizar_select(char*, int);
+dato_t* realizar_select(char*, int);
 void describe();
 void describe_especifico(char*);
+
+////////////////////////////////////////////////////////////////////////////////////
+
 //int encontrar_tabla(char*);
 int calcular_particion(int, int);
 //dato_t *crear_dato(int , char* , time_t );
@@ -68,6 +77,7 @@ void poner_bloque_en_tabla(char* nombre_tabla , bloque_tabla* bloque_ingresar);
 void crear_tabla_en_memtable(char* nombre_tabla);
 void crear_Binario(char* ,int , char*,time_t);
 void verificar_Binario();
+dato_t* buscar_dato_en_binario(int key);
 
 //char* obtenerPathTabla(char* nombre_Tabla);
 

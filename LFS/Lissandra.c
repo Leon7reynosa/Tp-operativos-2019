@@ -15,12 +15,12 @@ int main(void){
 	char* ip = "lol";
 	int puerto;
 
+	ingresar_A_Un_binario("Tabla_A" , 7);
 
 
+	pthread_t conexion_memoria;
 
-//	pthread_t conexion_memoria;
-
-//	pthread_create(&conexion_memoria , NULL , (void**)conectar_memoria, NULL);
+	pthread_create(&conexion_memoria , NULL , conectar_memoria, NULL);
 
 
 
@@ -62,8 +62,6 @@ int main(void){
 	////////////////////////////////////////////////////////////////////////
 
 	/*
-	printf("IP = %s\n",ip);
-	printf("PUERTO = %d\n",puerto);
 
 	socket_sv = iniciar_servidor( ip ,puerto );
 
@@ -74,23 +72,23 @@ int main(void){
 	close(socket_sv);
 	config_destroy(g_config);
 	*/
+	//realizar_select("Tabla_A" , 7);
 
-//	pthread_join(conexion_memoria, NULL);
-	printf("hola :D\n");
-	char* final = obtenerPath_ParticionTabla("Tabla_C", 1);
-	printf("final: %s\n" , final);
-	printf("Adios D:\n");
+	pthread_join(conexion_memoria, NULL);
+	//char* final = obtenerPath_ParticionTabla("Tabla_C", 1);
+
 
 	return EXIT_SUCCESS;
 
 }
-/*
+
 void* conectar_memoria(){
 
 	int puerto = 4445;
 	char* ip = "127.0.0.1";
 	int socket_cliente;
 	socket_sv = iniciar_servidor(ip, puerto);
+	dato_t* select_enviar = malloc(sizeof(dato_t));
 
 
 	socket_cliente = aceptar_conexion(socket_sv);
@@ -101,9 +99,14 @@ void* conectar_memoria(){
 		printf("la tabla recibida es: %s\n" , datos_select->nombre_tabla );
 		printf("la key solicitada es: %d\n\n " , datos_select->key);
 
-		realizar_select();
+		select_enviar = realizar_select(datos_select->nombre_tabla, datos_select->key);
+
+		printf("\n\nlo que recibe es : %s\n\n" , select_enviar->value);
+
+		mandar_select(socket_cliente, select_enviar);
 
 		free(datos_select);
+
 
 	//}
 
@@ -111,4 +114,4 @@ void* conectar_memoria(){
 	return NULL;
 }
 
-*/
+

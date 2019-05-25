@@ -29,10 +29,6 @@ metadata_t obtener_metadata(char* nombre_tabla){
 	obtener_metadata.consistencia = EC;
 	}
 
-	printf("consistencia: %d\n",obtener_metadata.consistencia);
-	printf("particion: %d\n",obtener_metadata.particion);
-	printf("compactacion: %d\n",obtener_metadata.compactacion);
-
 	return obtener_metadata;
 }
 
@@ -120,13 +116,12 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 	printf("aux : %s \n" , aux); //si le sacamos esto nos tira cualquier cosa .-.
 	char auxTablaSinParticion[strlen(aux) + 1];
 	char* particionAux1 = malloc(sizeof(particion));
-	char extension[] = ".bin"; //AGREGADO
+	char extension[] = ".bin";
 
 
 	snprintf(particionAux1, sizeof(particion), "%i", particion);
 
-	//AGREGADO STRLEN(EXTENSION)
-	int cantidad = strlen(aux) + strlen(particionAux1) + strlen(extension) + 1;
+	int cantidad = strlen(aux) + strlen(particionAux1) + strlen(extension) +1;
 
 	char particionAux2[strlen(particionAux1) +sizeof(extension) + 1];
 	char pathAux[cantidad];
@@ -134,7 +129,9 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 	char* pathFinal = malloc(cantidad);
 
 	strcpy(auxTablaSinParticion, aux);
+	printf("el importante: %s\n" , auxTablaSinParticion);
 	strcpy(particionAux2, particionAux1);
+	printf("el importante: %s\n" , particionAux2);
 	strcat(pathAux, auxTablaSinParticion);
 	printf("patron 1: %s\n" , pathAux);
 	strcat(pathAux, particionAux2);

@@ -86,18 +86,43 @@ void recibir_mensaje(int conexion){
 	free(buffer);
 
 }
-/*
-recibir_request_LFS(int conexion ){
+
+void recibir_request_LFS(int conexion ){
 
 	dato_t* dato_recibido = malloc(sizeof(dato_t));
 
 	if(recv(conexion,&(dato_recibido->key),sizeof(int),0) == -1){
 		perror("Fallo al recibir la solicitud.");
 	}
+	int size;
+	//int* size = malloc(sizeof(int));
 
-	printf("la key recibida es: %d", dato_recibido->key);
+	if(recv(conexion,&size,sizeof(int),0) == -1){
+		perror("Fallo al recibir la solicitud.");
+	}
+
+	printf("lololo - tamaño del value: %d\n",size);
+
+	void* buffer = malloc(size);
+
+	if(recv(conexion,buffer,size,0) == -1){
+			perror("Fallo al recibir la solicitud.");
+		}
+
+	/*memcpy(buffer,dato_recibido->value,size);
+	*((dato_recibido->value) + 1) = '\0';
+	*/
+	if(recv(conexion,&(dato_recibido->timestamp),sizeof(int),0) == -1){
+				perror("Fallo al recibir la solicitud.");
+	}
+	printf("ESTO ES LO QUE LLEGO DEL LFS \n\n");
+	printf("la key recibida es: %d\n", dato_recibido->key);
+	printf("tamaño del value: %d\n",size);
+	printf("tamaño del value: %d\n",&size);
+	//printf("el value: %s\n",dato_recibido->value);
+	printf("timestamp: %d\n",dato_recibido->timestamp);
 
 }
-*/
+
 
 

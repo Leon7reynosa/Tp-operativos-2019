@@ -21,6 +21,47 @@ void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
 	return msg_Ser;
 }
 
+void* serializar_dato_t(dato_t* dato_a_serializar){
+
+	//KEY-TAMANIOVALOR-VALOR-TIMESTAMṔ
+	int bytes = sizeof(int) + sizeof(int) + sizeof(dato_a_serializar->value) + sizeof(time_t);
+	void* serializado = malloc(bytes);
+	int desplazamiento = 0;
+
+	printf("el valor es: %s\n", dato_a_serializar->value);
+	printf("el timestamp es: %d\n" , dato_a_serializar->timestamp );
+	int tamanio = strlen(dato_a_serializar->value);
+	printf("el tamanio es: %d\n", tamanio );
+
+	memcpy(serializado + desplazamiento , &(dato_a_serializar->key) , sizeof(int));
+	desplazamiento += sizeof(int);
+
+	 //si no le llega bien, el problema esta aca
+
+	memcpy(serializado + desplazamiento , tamanio , sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(serializado + desplazamiento , dato_a_serializar->value , tamanio );
+	desplazamiento += sizeof(int);
+
+	memcpy(serializado + desplazamiento , &(dato_a_serializar->timestamp) , sizeof(time_t));
+	desplazamiento += sizeof(time_t);
+
+	return serializado;
+}
+
+void mandar_select(int conexion , dato_t* dato){
+
+	printf("dato value: %s\n" , dato->value);
+
+	void* buffer = serializar_dato_t(dato);
+
+	send(conexion, buffer, sizeof(buffer) , 0);
+
+	free(buffer);
+
+}
+
 void mandar_mensaje(int conexion){
 
 	char* buffer = readline(">>");
