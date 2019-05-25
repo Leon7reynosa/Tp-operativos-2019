@@ -39,7 +39,7 @@ typedef struct{
 	request pedido;
 	int size_tabla;
 	void* nombre_tabla;
-	int key;
+	u_int16_t key;
 
 }operacion_select;
 

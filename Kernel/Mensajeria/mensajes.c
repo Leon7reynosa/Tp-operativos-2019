@@ -7,20 +7,55 @@
 
 #include"mensajes.h"
 
-void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
+void* serializar_mensaje_select(operacion_select* bufferA_serializar, int bytes){
 
 	void* msg_Ser = malloc(bytes);
 	int desplazamiento = 0;
 
-	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size),sizeof(int));
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->pedido),sizeof(int));
 	desplazamiento += sizeof(int);
-	//4 .
-	memcpy(msg_Ser + desplazamiento,bufferA_serializar->buffer,bufferA_serializar->size);
-	desplazamiento += bufferA_serializar->size;
-	//4hola
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size_tabla),sizeof(int));
+	desplazamiento +=sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,bufferA_serializar->nombre_tabla,bufferA_serializar->size_tabla);
+	desplazamiento +=bufferA_serializar->size_tabla;
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->key),sizeof(u_int16_t));
+	desplazamiento += sizeof(u_int16_t);
+
 	return msg_Ser;
 }
 
+void* serializar_mensaje_insert(operacion_insert* bufferA_serializar, int bytes){
+	void* msg_Ser = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->pedido),sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size_tabla),sizeof(int));
+	desplazamiento +=sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,bufferA_serializar->nombre_tabla,bufferA_serializar->size_tabla);
+	desplazamiento +=bufferA_serializar->size_tabla;
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->key),sizeof(u_int16_t));
+	desplazamiento += sizeof(u_int16_t);
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->size_value), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento, bufferA_serializar->value, bufferA_serializar->size_value);
+	desplazamiento += bufferA_serializar->size_value;
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->timestamp), sizeof(time_t));
+	desplazamiento += sizeof(time_t);
+
+
+	return msg_Ser;
+}
+/*
 void mandar_mensaje(int conexion){
 
 	char* buffer = readline(">>");
@@ -41,6 +76,13 @@ void mandar_mensaje(int conexion){
 
 	free(buffer_serializado);
 	eliminar_tStream(bufferA_serializar);
+
+}
+*/
+void eliminar_operacion_select(operacion_select* buffer){
+
+	free(buffer->nombre_tabla);
+	free(buffer);
 
 }
 

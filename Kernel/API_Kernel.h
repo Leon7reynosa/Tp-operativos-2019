@@ -2,6 +2,7 @@
 #define API_KERNEL_H_
 
 #include<time.h>
+#include"Mensajeria/mensajes.h"
 
 typedef enum criterio{
 	SC, //Strong Consistency
@@ -27,14 +28,16 @@ typedef struct{
 }tabla_memtable;
 
 
-select(char* nombre_tabla, int key);
+void enviar_select(int conexion, char* nombre_tabla, u_int16_t key);
+void enviar_insert(int conexion, char* nombre_tabla, u_int16_t key, char* value, time_t timestamp);
+/*
 insert(char* nombre_tabla, int key, char* value, time_t timestamp);
-insert(char* nombre_tabla, int key, char* value);
+insertSinTimestamp(char* nombre_tabla, int key, char* value);
 create(char* nombre_tabla, criterio_t tipoConsistencia, int numeroParticiones, tiempoCompactacion); //ver tipo tiempoCompactacion
-describe();
+describeSinParametro();
 describe(char* nombre_tabla);
 journal();
 metrics();
 add(int cantidad, criterio_t criterio);
-
+*/
 #endif /* API_KERNEL_H_ */
