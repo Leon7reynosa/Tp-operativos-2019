@@ -21,42 +21,75 @@ void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
 	return msg_Ser;
 }
 
-void* serializar_dato_t(dato_t* dato_a_serializar){
+void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes){
 
-	//KEY-TAMANIOVALOR-VALOR-TIMESTAMṔ
-	int bytes = sizeof(int) + sizeof(int) + sizeof(dato_a_serializar->value) + sizeof(time_t);
-	void* serializado = malloc(bytes);
+	void* dato_serializado;
+
+	t_dato_serializado* dato_aux = malloc(dato_serializado);
+
+	/* en vez de tabla es value, esta mal el nombre*/
+	dato_aux->tabla = malloc(sizeof(t_stream));
+
+	memcpy(&(dato_aux->key), &(dato_a_serializar->key), sizeof(int));
+
+	dato_aux->tabla->size = strlen(dato_a_serializar->value) + 1;
+
+	dato_aux->tabla->buffer = malloc(dato_aux->tabla->size);
+
+	memcpy(dato_aux->tabla->buffer, dato_a_serializar->value, dato_aux->tabla->size);
+
+	memcpy(&(dato_aux->timestamp), &(dato_a_serializar->timestamp), sizeof(int));
+
+	*bytes = 3*sizeof(int) + dato_aux->tabla->size;
+
+	dato_serializado = malloc(*bytes);
+
+	printf("PRUEBAS LEON \n");
+	printf("KEY = %d\n",dato_aux->key);
+	printf("SIZE = %d\n",dato_aux->tabla->size);
+
+	char* value = malloc(dato_aux->tabla->size);
+	memcpy(value, dato_aux->tabla->buffer, dato_aux->tabla->size);
+
+	printf("VALUE = %s\n",value);
+	printf("TIMESTAMP = %d\n",dato_aux->timestamp);
+
+	free(value);
+
 	int desplazamiento = 0;
 
-	printf("el valor es: %s\n", dato_a_serializar->value);
-	printf("el timestamp es: %d\n" , dato_a_serializar->timestamp );
-	int tamanio = strlen(dato_a_serializar->value);
-	printf("el tamanio es: %d\n", tamanio );
-
-	memcpy(serializado + desplazamiento , &(dato_a_serializar->key) , sizeof(int));
+	memcpy(dato_serializado + desplazamiento, &(dato_aux->key), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	 //si no le llega bien, el problema esta aca
-
-	memcpy(serializado + desplazamiento , tamanio , sizeof(int));
+	memcpy(dato_serializado + desplazamiento, &(dato_aux->tabla->size), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(serializado + desplazamiento , dato_a_serializar->value , tamanio );
+	memcpy(dato_serializado + desplazamiento, dato_aux->tabla->buffer, dato_aux->tabla->size);
+	desplazamiento += dato_aux->tabla->size;
+
+	memcpy(dato_serializado + desplazamiento, &(dato_aux->timestamp), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(serializado + desplazamiento , &(dato_a_serializar->timestamp) , sizeof(time_t));
-	desplazamiento += sizeof(time_t);
+	free(dato_aux->tabla->buffer);
+	free(dato_aux->tabla);
+	free(dato_aux);
 
-	return serializado;
+	return dato_serializado;
+
 }
 
 void mandar_select(int conexion , dato_t* dato){
 
-	printf("dato value: %s\n" , dato->value);
+	int bytes;
+	void* buffer;
 
-	void* buffer = serializar_dato_t(dato);
+	buffer = serializar_dato_t(dato, &bytes);
 
-	send(conexion, buffer, sizeof(buffer) , 0);
+	printf("SE SERIALIZO TODO PIOLA WACHIM\n");
+
+	send(conexion, buffer, bytes, 0);
+
+	printf("SE MANDO TODO PIOLA WACHIM\n");
 
 	free(buffer);
 

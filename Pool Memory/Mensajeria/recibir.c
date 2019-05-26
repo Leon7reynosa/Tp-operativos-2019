@@ -89,38 +89,59 @@ void recibir_mensaje(int conexion){
 
 void recibir_request_LFS(int conexion ){
 
-	dato_t* dato_recibido = malloc(sizeof(dato_t));
+	t_dato_recibido* dato_recibido = malloc(sizeof(t_dato_recibido));
 
-	if(recv(conexion,&(dato_recibido->key),sizeof(int),0) == -1){
-		perror("Fallo al recibir la solicitud.");
+	dato_recibido->value = malloc(sizeof(t_stream_recibido));
+
+	int bytes = recv(conexion,&(dato_recibido->key),sizeof(int),MSG_WAITALL);
+
+	printf("RECIBI %d bytes \n",bytes);
+	printf("KEY %d\n",dato_recibido->key);
+
+	if(bytes == -1){
+		perror("NO RECIBIO LA KEY;");
 	}
-	int size;
-	//int* size = malloc(sizeof(int));
 
-	if(recv(conexion,&size,sizeof(int),0) == -1){
-		perror("Fallo al recibir la solicitud.");
+	///////////////////////////////////////////////////////////////////////////////////
+	bytes = recv(conexion, &(dato_recibido->value->size),sizeof(int),MSG_WAITALL);
+
+	printf("RECIBI %d bytes \n",bytes);
+	printf("SIZE %d\n",dato_recibido->value->size);
+
+	if(bytes == -1){
+			perror("NO RECIBIO EL TAMANIO DEL VALUE;");
 	}
 
-	printf("lololo - tamaño del value: %d\n",size);
+	//////////////////////////////////////////////////////////////////////////////
 
-	void* buffer = malloc(size);
+	dato_recibido->value->value = malloc(dato_recibido->value->size);
 
-	if(recv(conexion,buffer,size,0) == -1){
-			perror("Fallo al recibir la solicitud.");
-		}
+	bytes = recv(conexion, dato_recibido->value->value, dato_recibido->value->size,MSG_WAITALL);
 
-	/*memcpy(buffer,dato_recibido->value,size);
-	*((dato_recibido->value) + 1) = '\0';
-	*/
-	if(recv(conexion,&(dato_recibido->timestamp),sizeof(int),0) == -1){
-				perror("Fallo al recibir la solicitud.");
+	printf("RECIBI %d bytes \n",bytes);
+
+	char* value;
+
+	value = dato_recibido->value->value;
+
+	printf("VALUE %s\n",value);
+
+	if(bytes == -1){
+			perror("NO RECIBIO EL VALUE;");
 	}
-	printf("ESTO ES LO QUE LLEGO DEL LFS \n\n");
-	printf("la key recibida es: %d\n", dato_recibido->key);
-	printf("tamaño del value: %d\n",size);
-	printf("tamaño del value: %d\n",&size);
-	//printf("el value: %s\n",dato_recibido->value);
-	printf("timestamp: %d\n",dato_recibido->timestamp);
+
+	///////////////////////////////////////////////////////////////////////////////////
+
+	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(int),MSG_WAITALL);
+
+	printf("RECIBI %d bytes \n",bytes);
+	printf("TIMESTAMP %d\n",dato_recibido->timestamp);
+
+	if(bytes == -1){
+			perror("NO RECIBIO EL TAMANIO DEL VALUE;");
+	}
+
+
 
 }
 

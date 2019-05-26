@@ -37,6 +37,22 @@ typedef struct{
 
 }dato_t;
 
+typedef struct{
+
+	int size;
+	void* value;
+
+}t_stream_recibido;
+
+typedef struct{
+
+
+	int key;
+	t_stream_recibido* value;
+	time_t timestamp;
+
+}t_dato_recibido;
+
 void recibir_mensaje(int conexion);
 void recibir_request_LFS(int conexion );
 void* recibir_buffer(int* size,int conexion);

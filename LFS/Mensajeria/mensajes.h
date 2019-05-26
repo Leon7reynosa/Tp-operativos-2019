@@ -41,8 +41,18 @@ typedef struct{
 
 }t_stream;
 
+typedef struct{
+
+	int key;
+	t_stream* tabla;
+	time_t timestamp;
+
+}t_dato_serializado;
+
+
+
 void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
-void* serializar_dato_t(dato_t* dato_a_serializar);
+void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes);
 void mandar_mensaje(int conexion);
 void mandar_select(int conexion , dato_t* dato);
 void eliminar_tStream(t_stream* tStream);

@@ -101,7 +101,7 @@ void* conectar_memoria(){
 
 		select_enviar = realizar_select(datos_select->nombre_tabla, datos_select->key);
 
-		printf("\n\nlo que recibe es : %s\n\n" , select_enviar->value);
+
 
 		mandar_select(socket_cliente, select_enviar);
 
