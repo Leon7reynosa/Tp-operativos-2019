@@ -87,7 +87,7 @@ void recibir_mensaje(int conexion){
 
 }
 
-void recibir_request_LFS(int conexion ){
+t_dato_recibido* recibir_request_LFS(int conexion ){
 
 	t_dato_recibido* dato_recibido = malloc(sizeof(t_dato_recibido));
 
@@ -135,13 +135,13 @@ void recibir_request_LFS(int conexion ){
 	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(int),MSG_WAITALL);
 
 	printf("RECIBI %d bytes \n",bytes);
-	printf("TIMESTAMP %d\n",dato_recibido->timestamp);
+	printf("TIMESTAMP %d\n\n",dato_recibido->timestamp);
 
 	if(bytes == -1){
 			perror("NO RECIBIO EL TAMANIO DEL VALUE;");
 	}
 
-
+	return dato_recibido ;
 
 }
 

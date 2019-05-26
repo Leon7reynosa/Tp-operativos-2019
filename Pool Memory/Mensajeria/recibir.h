@@ -54,7 +54,7 @@ typedef struct{
 }t_dato_recibido;
 
 void recibir_mensaje(int conexion);
-void recibir_request_LFS(int conexion );
+t_dato_recibido* recibir_request_LFS(int conexion );
 void* recibir_buffer(int* size,int conexion);
 cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);

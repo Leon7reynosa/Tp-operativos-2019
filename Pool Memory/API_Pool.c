@@ -134,13 +134,15 @@ int existe_segmento(char* nombre_tabla, segmento** segmento_encontrado){
 
 dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
-	dato_t* dato_recibido = malloc(sizeof(dato_t));
+	dato_t* dato_return;
 
-	//enviar_request_select(conexion_lissandra, nombre_tabla , key);
+	t_dato_recibido* dato_recibido = malloc(sizeof(t_dato_recibido));
 
-	//dato_recibido = recibir_request_LFS(conexion_lissandra);
+	enviar_request_select(conexion_lissandra, nombre_tabla , key);
 
+	dato_recibido = recibir_request_LFS(conexion_lissandra);
 
+	dato_return = convertir_a_dato_t(dato_recibido);
 
 
 	/*proximamente
@@ -149,7 +151,19 @@ dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 	 * Saludos!
 	 * */
 
-	return dato_recibido;
+	return dato_return;
+}
+
+dato_t* convertir_a_dato_t(t_dato_recibido* dato_recibido){
+
+	dato_t* dato_return = malloc(sizeof(dato_t));
+
+	dato_return->key = dato_recibido->key;
+	dato_return->value = dato_recibido->value->value;
+	dato_return->timestamp = dato_recibido->timestamp;
+
+	return dato_return;
+
 }
 
 //////////////////////////////////////////////////////////////////////////////

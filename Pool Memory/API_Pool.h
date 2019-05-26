@@ -68,6 +68,7 @@ void realizar_select(char* nombre_tabla, int key);
 void insert(char* nombre_tabla, int key, char* value);
 dato_t* buscar_key(int key, segmento* segmento_tabla);
 dato_t* pedir_key_a_LFS(int key, char* nombre_tabla);
+dato_t* convertir_a_dato_t(t_dato_recibido* dato_recibido);
 
 
 #endif /* API_POOL_H_ */
