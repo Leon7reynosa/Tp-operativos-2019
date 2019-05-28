@@ -43,6 +43,8 @@ typedef struct{
 }dato_t;
 */
 
+
+
 typedef struct{
 
 	int numero_pagina;
@@ -55,12 +57,13 @@ typedef struct{
 typedef struct{
 
 	char* tabla; //ESTO DESPUES TIENE QUE SER EL PATH
-	pagina* primera_pagina;
+	pagina* primera_pagina[];
 	struct segmento* siguiente_segmento;
 
 }segmento;
 
 int tamanio_memoria;
+int cantidad de paginas =
 segmento* memoria_principal;
 
 
@@ -69,6 +72,8 @@ void insert(char* nombre_tabla, int key, char* value);
 dato_t* buscar_key(int key, segmento* segmento_tabla);
 dato_t* pedir_key_a_LFS(int key, char* nombre_tabla);
 dato_t* convertir_a_dato_t(t_dato_recibido* dato_recibido);
+void crear_nueva_pagina(segmento* tabla, dato_t* nuevos_datos);
+pagina* ultima_pagina(segmento* tabla);
 
 
 #endif /* API_POOL_H_ */

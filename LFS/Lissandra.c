@@ -17,10 +17,14 @@ int main(void){
 
 	ingresar_A_Un_binario("Tabla_A" , 7);
 
+	char* prueba = obtenerPath_ParticionTabla("Tabla_A" , 1);
 
-	pthread_t conexion_memoria;
 
-	pthread_create(&conexion_memoria , NULL , conectar_memoria, NULL);
+	printf("\nel path es:  %s\n" , prueba);
+
+	//pthread_t conexion_memoria;
+
+	//pthread_create(&conexion_memoria , NULL , conectar_memoria, NULL);
 
 
 
@@ -74,7 +78,7 @@ int main(void){
 	*/
 	//realizar_select("Tabla_A" , 7);
 
-	pthread_join(conexion_memoria, NULL);
+	//pthread_join(conexion_memoria, NULL);
 	//char* final = obtenerPath_ParticionTabla("Tabla_C", 1);
 
 

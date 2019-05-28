@@ -144,6 +144,7 @@ dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
 	dato_return = convertir_a_dato_t(dato_recibido);
 
+	liberar_dato_recibido(dato_recibido);
 
 	/*proximamente
 	 * aca deberia de, a la vez que le pedimos la key, recibirla y agregar la pagina
@@ -153,6 +154,8 @@ dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
 	return dato_return;
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 dato_t* convertir_a_dato_t(t_dato_recibido* dato_recibido){
 
@@ -166,4 +169,61 @@ dato_t* convertir_a_dato_t(t_dato_recibido* dato_recibido){
 
 }
 
+/////////////////////////////////////////////////////////////////////////////
+
+void liberar_dato_recibido(t_dato_recibido* dato_recibido){
+
+	free(dato_recibido->value->value);
+	free(dato_recibido->value);
+	free(dato_recibido);
+
+}
+
 //////////////////////////////////////////////////////////////////////////////
+
+void crear_nueva_pagina(segmento* tabla, dato_t* nuevos_datos){
+
+	pagina* pagina_nueva = malloc(sizeof(pagina));
+	pagina_nueva->dato = *nuevos_datos;
+	pagina_nueva->flag_modificado = FALSE;
+
+	pagina* pagina_final = ultima_pagina(tabla);
+
+	if(pagina_final == NULL){
+
+		pagina_nueva->numero_pagina = 1;
+
+	}
+	else{
+		pagina_nueva->numero_pagina = pagina_final->numero_pagina + 1;
+
+	}
+	pagina_nueva->siguiente_pagina = NULL;
+
+	ingresar_pagina_a_memoria(tabla , pagina_nueva);
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+void ingresar_pagina_a_memoria(segmento* tabla, pagina* dato_ingresar){
+
+	pagina* pagina_final = ultima_pagina(tabla);
+
+}
+
+pagina* ultima_pagina(segmento* tabla){
+
+	pagina* pagina_auxiliar = tabla->primera_pagina;
+
+	//no existe siquiera una pagina d'ouh (primera pagina no existe)
+	if(pagina_auxiliar == NULL){
+		return NULL;
+	}
+
+	while(pagina_auxiliar->siguiente_pagina != NULL){
+		pagina_auxiliar = pagina_auxiliar->siguiente_pagina;
+	}
+
+	return pagina_auxiliar;
+}

@@ -110,38 +110,36 @@ char* obtenerPathTabla(char* nombre_Tabla){
 }
 
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
-	char* aux = malloc(sizeof(obtenerPathTabla(nombre_tabla)));
-	aux = obtenerPathTabla(nombre_tabla);
+	char* pathTabla;
+	pathTabla = obtenerPathTabla(nombre_tabla);
 
-	printf("aux : %s \n" , aux); //si le sacamos esto nos tira cualquier cosa .-.
-	char auxTablaSinParticion[strlen(aux) + 1];
-	char* particionAux1 = malloc(sizeof(particion));
+	char tablaSinParticion[strlen(pathTabla) + 1];
+	char* particionPuntero = malloc(sizeof(particion));
 	char extension[] = ".bin";
 
+	snprintf(particionPuntero, sizeof(particion), "%i", particion);
 
-	snprintf(particionAux1, sizeof(particion), "%i", particion);
+	int cantidad = strlen(pathTabla) + strlen(particionPuntero) + strlen(extension) +1;
 
-	int cantidad = strlen(aux) + strlen(particionAux1) + strlen(extension) +1;
-
-	char particionAux2[strlen(particionAux1) +sizeof(extension) + 1];
+	char particionArray[strlen(particionPuntero) +sizeof(extension) + 1];
 	char pathAux[cantidad];
 
 	char* pathFinal = malloc(cantidad);
 
-	strcpy(auxTablaSinParticion, aux);
-	printf("el importante: %s\n" , auxTablaSinParticion);
-	strcpy(particionAux2, particionAux1);
-	printf("el importante: %s\n" , particionAux2);
-	strcat(pathAux, auxTablaSinParticion);
-	printf("patron 1: %s\n" , pathAux);
-	strcat(pathAux, particionAux2);
-	printf("patron 2: %s\n" , pathAux);
-	strcat(pathAux, extension); //AGREGADO
-	printf("patron 3: %s\n" , pathAux);
+	strcpy(tablaSinParticion, pathTabla);
+
+	strcpy(particionArray, particionPuntero);
+
+	strcpy(pathAux, tablaSinParticion);
+
+	strcat(pathAux, particionArray);
+
+	strcat(pathAux, extension);
 
 	strcpy(pathFinal, pathAux);
 
-	//printf("\n%s", pathFinal);
+	free(particionPuntero);
+	free(pathTabla);
 
 	return pathFinal;
 

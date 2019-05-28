@@ -7,7 +7,6 @@
 
 #include "API_Lissandra.h"
 
-//la hago global aca por ahora, despues vemos como usarla
 tabla_memtable* memtable = NULL;
 
 tabla_memtable* conseguirMemtable(){
@@ -20,7 +19,9 @@ dato_t* realizar_select(char* nombre_tabla , int key ){
 
 	metadata_t metadata;
 	char* consistencia;
-	dato_t* datoAux;;
+	dato_t* datoMasReciente;
+	dato_t*dato_auxiliar;
+	char* path_tabla;
 
 	if(existe_la_tabla(nombre_tabla)){
 
@@ -32,23 +33,48 @@ dato_t* realizar_select(char* nombre_tabla , int key ){
 
 		int particion_objetivo = calcular_particion(metadata.particion , key);
 
+		path_tabla = obtenerPath_ParticionTabla(nombre_tabla , particion_objetivo);
+
 		printf("Particion objetivo: %d\n\n" , particion_objetivo);
 
-		datoAux = buscar_dato_en_binario(key);
+		datoMasReciente = buscar_dato_en_binario(path_tabla ,key);
+
+		/*
+		dato_auxiliar = buscar_dato_en_memtable(key);
+
+		if(datoMasReciente->timestamp > dato_auxiliar->timestamp){
+			//con este if comparamos cual tiene el timestamp mas grande
+			datoMasReciente = dato_auxiliar;
+
+		}
+	*/
+
+
+
+
 		/*
 		 * Falta buscar en la memtable. y encontrar el que tenga el timestamp mas grande
 		 * y en los temporales
 		 */
 
-		printf("\n\nValor encontrado: %s\n\n" , datoAux->value );
-		printf("\n\nKey encontrado: %i\n\n" , datoAux->key );
+		printf("\n\nValor encontrado: %s\n\n" , datoMasReciente->value );
+		printf("\n\nKey encontrado: %i\n\n" , datoMasReciente->key );
 
 	}else{
 		printf("No existe la tabla\n");
 	}
 
-	return datoAux;
+	free(path_tabla);
+
+	return datoMasReciente;
 }
+
+/*
+dato_t* buscar_dato_en_memtable(int key){
+
+
+}
+*/
 
 void create(char* nombre_tabla, char* criterio, int numero_Particiones, int tiempo_Compactacion){
 	if(existe_la_tabla(nombre_tabla)){
@@ -159,12 +185,7 @@ void ingresar_A_Un_binario(char* nombre_tabla, int key){
 	fclose(archivo);
 }
 
-
 void ingresar_a_memtable(dato_t* dato_ingresar, char* nombre_tabla){
-	allocar_memoria(nombre_tabla, dato_ingresar);
-}
-
-void allocar_memoria(char* nombre_tabla , dato_t* dato_ingresar){
 
 	bloque_tabla* nuevo_bloque;
 	nuevo_bloque = crear_bloque(dato_ingresar);
@@ -175,7 +196,6 @@ void allocar_memoria(char* nombre_tabla , dato_t* dato_ingresar){
 		memtable->primer_bloque = nuevo_bloque;
 		memtable->sig_tabla = NULL;
 	}else if(existe_en_memtable(nombre_tabla)){
-		printf("entro en el else if\n");
 		poner_bloque_en_tabla(nombre_tabla, nuevo_bloque);
 
 	}else {
@@ -209,15 +229,12 @@ void poner_bloque_en_tabla(char* nombre_tabla , bloque_tabla* bloque_ingresar){
 	printf("nombre memtable: %s\n",nombre_tabla);
 
 	while(strcmp(aux->nombre_tabla , nombre_tabla) != 0){
-		printf("entro en el while 1");
 		aux = aux->sig_tabla;
 	}
-	printf("mitad\n");
 	bloque_tabla* ultimo_bloque = aux->primer_bloque;
 	printf("algo del bloque: %d \n", ultimo_bloque->dato_t->key);
 
 	while(ultimo_bloque->dato_sig != NULL){
-		printf("entro en el while 2");
 		ultimo_bloque = ultimo_bloque->dato_sig;
 	}
 	ultimo_bloque->dato_sig = bloque_ingresar;
@@ -266,25 +283,26 @@ dato_t* crear_dato(int clave, char* valor, time_t tiempo){
 }
 
 
-void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp/*, int particion*/){
+void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp, int particion){
 	dato_t datoAux;
 	datoAux.key = key;
 	strcpy(datoAux.value, valor);
 	datoAux.timestamp = timestamp;
+	char* pathTabla = obtenerPath_ParticionTabla(nombre_tabla, particion);
 
-	FILE *f = fopen("Tablas/Tabla_A/particion.bin", "wb");
+	FILE *f = fopen(pathTabla, "wb");
 	fwrite(&datoAux,sizeof(dato_t), 1, f);
 	printf("Se guardo con exito (creo xD)\n");
 	fclose(f);
 	printf("Se cerro el archivo\n\n");
 }
 
-dato_t* buscar_dato_en_binario(int key){
+dato_t* buscar_dato_en_binario(char* path_tabla, int key){
 	FILE *archivo;
 
 	dato_t* datoAux = malloc(sizeof(dato_t));
 
-	archivo = fopen("Tablas/Tabla_A/0.bin", "rb");
+	archivo = fopen(path_tabla, "rb");
 
 	fread(datoAux, sizeof(dato_t), 1, archivo);
 	while(!feof(archivo)){
