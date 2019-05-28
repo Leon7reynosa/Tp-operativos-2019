@@ -31,7 +31,11 @@ typedef struct{
 
 typedef enum{
 	SELECT,
-	INSERT
+	INSERT,
+	CREATE,
+	DESCRIBE,
+	DROP,
+	JOURNAL
 }request;
 
 
@@ -54,13 +58,42 @@ typedef struct{
 
 }operacion_insert;
 
+typedef struct{
+	request pedido;
+	int size_tabla;
+	void* nombre_tabla;
+	criterio_t criterio;
+	int numero_particiones;
+	int tiempo_compactacion;
+}operacion_create;
+
+typedef struct{
+	request pedido;
+	int size_tabla;
+	void* nombre_tabla;
+}operacion_describe;
+
+typedef struct{
+	request pedido;
+	int size_tabla;
+	void* nombre_tabla;
+}operacion_drop;
+
+
 //void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
 void* serializar_mensaje_select(operacion_select* bufferA_serializar, int bytes);
 void* serializar_mensaje_insert(operacion_insert* bufferA_serializar, int bytes);
+void* serializar_mensaje_create(operacion_create* bufferA_serializar, int bytes);
+void* serializar_mensaje_describe(operacion_create* bufferA_serializar, int bytes);
+void* serializar_mensaje_drop(operacion_drop* bufferA_serializar, int bytes);
+void* serializar_mensaje_journal();
 void mandar_mensaje(int conexion);
 void eliminar_tStream(t_stream* tStream);
 void eliminar_operacion_select(operacion_select* buffer);
 void eliminar_operacion_insert(operacion_insert* buffer);
+void eliminar_operacion_create(operacion_create* buffer);
+void eliminar_operacion_describe(operacion_describe* buffer);
+void eliminar_operacion_drop(operacion_describe* buffer);
 
 
 #endif /* MENSAJES_H_ */

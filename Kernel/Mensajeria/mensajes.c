@@ -55,6 +55,73 @@ void* serializar_mensaje_insert(operacion_insert* bufferA_serializar, int bytes)
 
 	return msg_Ser;
 }
+
+void* serializar_mensaje_create(operacion_create* bufferA_serializar, int bytes){
+	void* msg_Ser = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->pedido), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size_tabla),sizeof(int));
+	desplazamiento +=sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,bufferA_serializar->nombre_tabla,bufferA_serializar->size_tabla);
+	desplazamiento +=bufferA_serializar->size_tabla;
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->criterio), sizeof(criterio_t));
+	desplazamiento += sizeof(criterio_t);
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->numero_particiones), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->tiempo_compactacion), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	return msg_Ser;
+}
+
+void* serializar_mensaje_describe(operacion_create* bufferA_serializar, int bytes){
+	void* msg_Ser = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->pedido), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size_tabla),sizeof(int));
+	desplazamiento +=sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,bufferA_serializar->nombre_tabla,bufferA_serializar->size_tabla);
+	desplazamiento +=bufferA_serializar->size_tabla;
+
+	return msg_Ser;
+}
+
+void* serializar_mensaje_drop(operacion_drop* bufferA_serializar, int bytes){
+	void* msg_Ser = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(msg_Ser + desplazamiento, &(bufferA_serializar->pedido), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size_tabla),sizeof(int));
+	desplazamiento +=sizeof(int);
+
+	memcpy(msg_Ser + desplazamiento,bufferA_serializar->nombre_tabla,bufferA_serializar->size_tabla);
+	desplazamiento +=bufferA_serializar->size_tabla;
+
+	return msg_Ser;
+}
+
+void* serializar_mensaje_journal(){
+	void* msg_Ser = malloc(sizeof(int));
+
+	memcpy(msg_Ser, &(JOURNAL), sizeof(int));
+
+
+	return msg_Ser;
+}
+
 /*
 void mandar_mensaje(int conexion){
 
@@ -80,7 +147,6 @@ void mandar_mensaje(int conexion){
 }
 */
 void eliminar_operacion_select(operacion_select* buffer){
-
 	free(buffer->nombre_tabla);
 	free(buffer);
 
@@ -89,6 +155,21 @@ void eliminar_operacion_select(operacion_select* buffer){
 void eliminar_operacion_insert(operacion_insert* buffer){
 	free(buffer->nombre_tabla);
 	free(buffer->value);
+	free(buffer);
+}
+
+void eliminar_operacion_create(operacion_create* buffer){
+	free(buffer->nombre_tabla);
+	free(buffer);
+}
+
+void eliminar_operacion_describe(operacion_describe* buffer){
+	free(buffer->nombre_tabla);
+	free(buffer);
+}
+
+void eliminar_operacion_drop(operacion_describe* buffer){
+	free(buffer->nombre_tabla);
 	free(buffer);
 }
 

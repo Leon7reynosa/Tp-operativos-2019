@@ -30,6 +30,9 @@ typedef struct{
 
 void enviar_select(int conexion, char* nombre_tabla, u_int16_t key);
 void enviar_insert(int conexion, char* nombre_tabla, u_int16_t key, char* value, time_t timestamp);
+void enviar_create(int conexion, char* nombre_tabla, criterio_t criterio, int numero_particiones, int tiempo_compactacion);
+void enviar_describe(int conexion, char* nombre_tabla);
+
 /*
 insert(char* nombre_tabla, int key, char* value, time_t timestamp);
 insertSinTimestamp(char* nombre_tabla, int key, char* value);
