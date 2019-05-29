@@ -75,9 +75,12 @@ bloque_tabla* crear_bloque(dato_t* dato);
 dato_t* crear_dato(int clave, char* valor, time_t tiempo);
 void poner_bloque_en_tabla(char* nombre_tabla , bloque_tabla* bloque_ingresar);
 void crear_tabla_en_memtable(char* nombre_tabla);
-void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp, int particion);
+void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp);
 void verificar_Binario();
 dato_t* buscar_dato_en_binario(char* path_tabla, int key);
+tabla_memtable* dame_la_tabla_de_memtable(char* nombre_tabla);
+dato_t* buscar_dato_en_memtable(char* nombre_tabla , int key);
+dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato);
 
 //char* obtenerPathTabla(char* nombre_Tabla);
 

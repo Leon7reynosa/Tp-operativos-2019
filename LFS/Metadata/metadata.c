@@ -83,6 +83,7 @@ void setear_metadata(){
 	config_destroy(metadata_config);
 
 	printf("se configuro el metadata lol\n");
+
 }
 
 char* obtenerPathTabla(char* nombre_Tabla){
