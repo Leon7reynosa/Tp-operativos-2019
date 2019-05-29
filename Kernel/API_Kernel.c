@@ -61,3 +61,86 @@ void enviar_insert(int conexion, char* nombre_tabla, u_int16_t key, char* value,
 	eliminar_operacion_insert(bufferA_Serializar);
 
 }
+
+void enviar_create(int conexion, char* nombre_tabla, criterio_t criterio, int numero_particiones, int tiempo_compactacion){
+	operacion_create* bufferA_Serializar = malloc(sizeof(operacion_create));
+
+	bufferA_Serializar->size_tabla = strlen(nombre_tabla) + 1;
+
+	bufferA_Serializar->pedido = CREATE;
+	bufferA_Serializar->criterio = criterio;
+	bufferA_Serializar->numero_particiones = numero_particiones;
+	bufferA_Serializar->tiempo_compactacion = tiempo_compactacion;
+
+	bufferA_Serializar->nombre_tabla = malloc(bufferA_Serializar->size_tabla);
+
+	memcpy(bufferA_Serializar->nombre_tabla, nombre_tabla, bufferA_Serializar->size_tabla);
+
+	void* buffer_serializado;
+	//OPERACION + TAMAÑO_TABLA + TABLA + PEDIDO + CRITERIO + NUMERO_PART + TIEMPO_COMP
+	int bytes = sizeof(int) + bufferA_Serializar->size_tabla + sizeof(int) + sizeof(criterio_t) + sizeof(int) + sizeof(int);
+
+	buffer_serializado = serializar_mensaje_create(bufferA_Serializar, bytes);
+
+	send(conexion, buffer_serializado, bytes, 0);
+
+	free(buffer_serializado);
+
+	eliminar_operacion_create(bufferA_Serializar);
+
+}
+
+void enviar_describe(int conexion, char* nombre_tabla){
+	operacion_describe* bufferA_Serializar = malloc(sizeof(operacion_describe));
+
+	bufferA_Serializar->size_tabla = strlen(nombre_tabla) + 1;
+
+	bufferA_Serializar->pedido = DESCRIBE;
+
+	bufferA_Serializar->nombre_tabla = malloc(bufferA_Serializar->size_tabla);
+
+	memcpy(bufferA_Serializar->nombre_tabla, nombre_tabla, bufferA_Serializar->size_tabla);
+
+	void* buffer_serializado;
+	//OPERACION + TAMAÑO_TABLA + TABLA
+	int bytes = sizeof(int) + bufferA_Serializar->size_tabla + sizeof(int);
+
+	buffer_serializado = serializar_mensaje_describe(bufferA_Serializar, bytes);
+
+	send(conexion, buffer_serializado, bytes, 0);
+
+	free(buffer_serializado);
+
+	eliminar_operacion_describe(bufferA_Serializar);
+}
+
+void enviar_drop(int conexion, char* nombre_tabla){
+	operacion_drop* bufferA_Serializar = malloc(sizeof(operacion_drop));
+
+	bufferA_Serializar->size_tabla = strlen(nombre_tabla) + 1;
+
+	bufferA_Serializar->pedido = DROP;
+	bufferA_Serializar->nombre_tabla = malloc(bufferA_Serializar->size_tabla);
+
+	memcpy(bufferA_Serializar->nombre_tabla, nombre_tabla, bufferA_Serializar->size_tabla);
+
+	void* buffer_serializado;
+	//OPERACION + TAMAÑO_TABLA + TABLA
+	int bytes = sizeof(int) + bufferA_Serializar->size_tabla + sizeof(int);
+
+	buffer_serializado = serializar_mensaje_describe(bufferA_Serializar, bytes);
+
+	send(conexion, buffer_serializado, bytes, 0);
+
+	free(buffer_serializado);
+
+	eliminar_operacion_drop(bufferA_Serializar);
+}
+
+void enviar_journal(int conexion){
+	void* buffer_serializado;
+
+	buffer_serializado = serializar_mensaje_journal();
+
+	send(conexion, buffer_serializado, sizeof(int), 0);
+}
