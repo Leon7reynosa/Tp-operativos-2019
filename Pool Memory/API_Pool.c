@@ -10,37 +10,18 @@
 
 void realizar_select(char* nombre_tabla, int key){
 
-	dato_t* dato_a_buscar;
+	dato_tt* dato_a_buscar;
 	segmento* segmento_tabla;
 
 	if(existe_segmento(nombre_tabla, &segmento_tabla)){
 
-		printf("existe el segmento vieja! : %s\n", segmento_tabla->tabla);
-		printf("busco la key! \n");
-
 		dato_a_buscar = buscar_key(key,segmento_tabla);
-
-		printf("Value : %s\n" , dato_a_buscar->value);
 
 	}else{
 		printf("No existe el segmento! \n");
-
 	}
 
 	free(dato_a_buscar);
-
-	/*
-	 * 1)Verificar si existe el segmento de la tabla solicitada y buscar en las paginas
-	 * del mismo si contiene la key solicitada. Si la contiene, devuelve su valor y
-	 * finaliza el proceso
-	 * 2)Si no la contiene, enviar la solicitud a FileSystem para obtener el valor
-	 * solicitado y almacenarlo
-	 * 3)Una vez obtenido, se debe solicitar una nueva pagina libre para almacenar
-	 * el mismo. En caso de no disponer de una pagina libre, se debe ejecutar el
-	 * algoritmo de reemplazo y, en caso de no poder efectuarlo por estar la memoria
-	 * full, ejecutar el Journal de la memoria
-	 */
-
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -56,17 +37,17 @@ void insert(char* nombre_tabla, int key, char* value){
 dato_t* buscar_key(int key, segmento* segmento_tabla){
 
 	pagina* pagina_con_dato;
-	dato_t* dato_encontrado = malloc(sizeof(dato_t));
+	dato_tt* dato_encontrado;
 
 	if(existe_pagina(key,segmento_tabla,&pagina_con_dato)){
 
-		printf("existe la pagina numero: %d que tiene la key numero: %d\n",pagina_con_dato->numero_pagina,pagina_con_dato->dato.key);
-		*dato_encontrado = pagina_con_dato->dato;
+		printf("existe la pagina numero: %d que tiene la key numero: %d\n",pagina_con_dato->numero_pagina,pagina_con_dato->dato_en_Memoria->key);
+		dato_encontrado = pagina_con_dato->dato_en_Memoria;
 
 	}
 	else{
-
 		dato_encontrado = pedir_key_a_LFS(key, segmento_tabla->tabla);
+		//y si no existe en el fileSystem?
 	}
 
 	return dato_encontrado;
@@ -76,17 +57,14 @@ dato_t* buscar_key(int key, segmento* segmento_tabla){
 
 ////////////////////////////////////////////////////////////////////////////
 
-/*Si existe la pagina que tenga esta key, en este segmento de tabla; se la asigno a
-pagina_con_dato y y la funcion devuelve 1 (verdadero)
-*/
 int existe_pagina(int key, segmento* segmento_tabla,pagina** pagina_con_dato){
 
 	pagina* pagina_aux = segmento_tabla->primera_pagina;
 
 	while(pagina_aux != NULL){
 
-		if(pagina_aux->dato.key == key){
-			printf("existe la pagina con esa key! \n");
+		if(pagina_aux->dato_en_Memoria->key == key){
+			printf("existe la pagina con la referencia a memoria de esa key! \n");
 			*pagina_con_dato = pagina_aux;
 			return 1;
 		}
@@ -113,15 +91,18 @@ int existe_pagina(int key, segmento* segmento_tabla,pagina** pagina_con_dato){
 int existe_segmento(char* nombre_tabla, segmento** segmento_encontrado){
 
 	segmento* segmento_tabla;
-	segmento_tabla = memoria_principal;
+	segmento_tabla = tabla_segmentos;
+	//sincronizar ?
+	int tablas_restantes = cant_tablas;
 
-	while(segmento_tabla != NULL){
+	while(tablas_restantes > 0){
 		if(strcmp(segmento_tabla->tabla , nombre_tabla) == 0){
 
 			*segmento_encontrado = segmento_tabla;
 			return 1;
 		}else{
 			segmento_tabla = segmento_tabla->siguiente_segmento;
+			tablas_restantes --;
 		}
 	}
 
@@ -132,9 +113,10 @@ int existe_segmento(char* nombre_tabla, segmento** segmento_encontrado){
 
 //////////////////////////////////////////////////////////////////////////////
 
+//arreglar
 dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
-	dato_t* dato_return;
+	dato_tt* dato_return;
 
 	t_dato_recibido* dato_recibido = malloc(sizeof(t_dato_recibido));
 
@@ -146,11 +128,6 @@ dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
 	liberar_dato_recibido(dato_recibido);
 
-	/*proximamente
-	 * aca deberia de, a la vez que le pedimos la key, recibirla y agregar la pagina
-	 * a la memoria en dicha tabla
-	 * Saludos!
-	 * */
 
 	return dato_return;
 }
@@ -184,23 +161,7 @@ void liberar_dato_recibido(t_dato_recibido* dato_recibido){
 void crear_nueva_pagina(segmento* tabla, dato_t* nuevos_datos){
 
 	pagina* pagina_nueva = malloc(sizeof(pagina));
-	pagina_nueva->dato = *nuevos_datos;
-	pagina_nueva->flag_modificado = FALSE;
 
-	pagina* pagina_final = ultima_pagina(tabla);
-
-	if(pagina_final == NULL){
-
-		pagina_nueva->numero_pagina = 1;
-
-	}
-	else{
-		pagina_nueva->numero_pagina = pagina_final->numero_pagina + 1;
-
-	}
-	pagina_nueva->siguiente_pagina = NULL;
-
-	ingresar_pagina_a_memoria(tabla , pagina_nueva);
 
 }
 
@@ -226,4 +187,14 @@ pagina* ultima_pagina(segmento* tabla){
 	}
 
 	return pagina_auxiliar;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+int index_en_memoria(){
+	int index;
+
+
+
+	return index;
 }

@@ -27,6 +27,14 @@
 int socket_sv;
 int conexion_lissandra;
 
+typedef struct{
+
+
+	int key;
+	char value[51];
+	time_t timestamp;
+
+}dato_tt;
 
 
 typedef enum{
@@ -48,8 +56,8 @@ typedef struct{
 typedef struct{
 
 	int numero_pagina;
-	dato_t dato;
 	boolean flag_modificado;
+	dato_tt* dato_en_Memoria; // tiene que estar dentro de memoria
 	struct pagina* siguiente_pagina;
 
 }pagina;
@@ -57,15 +65,17 @@ typedef struct{
 typedef struct{
 
 	char* tabla; //ESTO DESPUES TIENE QUE SER EL PATH
-	pagina* primera_pagina[];
+	pagina* primera_pagina;
 	struct segmento* siguiente_segmento;
 
 }segmento;
 
 int tamanio_memoria;
-int cantidad de paginas =
-segmento* memoria_principal;
 
+dato_tt* memoria_principal;
+int size_memoria_total;
+
+segmento* tabla_segmentos;
 
 void realizar_select(char* nombre_tabla, int key);
 void insert(char* nombre_tabla, int key, char* value);

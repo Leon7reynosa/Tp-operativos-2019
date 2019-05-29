@@ -7,35 +7,12 @@
 
 #include "pool.h"
 
-
+//int
 
 int main (void){
-	tamanio_memoria = obtener_tamanio_memoria();
-	memoria_principal = malloc(tamanio_memoria);
+	inicializar_memoria();
+	inicializar_tablas();
 
-	pruebita();
-
-	printf("Vamos con el select \n\n");
-
-	pthread_t conexion_lissandra;
-
-
-	/*
-	pthread_t conexion_kernel;
-
-
-	pthread_create(&conexion_kernel , NULL , conectar_kernel , NULL);
-
-
-	pthread_join(conexion_kernel , NULL);
-	*/
-
-	// esto es del handshake, tabla_A y tabla_B
-
-	pthread_create(&conexion_lissandra, NULL, conectar_lissandra, NULL);
-	realizar_select("Tabla_A",1);
-
-	pthread_join(conexion_lissandra , NULL);
 
 	return EXIT_SUCCESS;
 }
@@ -81,29 +58,25 @@ void* conectar_lissandra(){
 	return  NULL;
 }
 
-void pruebita(){
-		segmento* segmento_prueba = malloc(sizeof(segmento));
-		pagina* pagina_prueba = malloc(sizeof(pagina));
+/////////////////////////// INICIALIZAR ESTRUCTURAS ///////////////////////////
+void inicializar_memoria(){
 
-		pagina_prueba->dato.key = 1;
-		pagina_prueba->dato.timestamp = 50;
-		pagina_prueba->dato.value = malloc(TAMANIO_MAX_VALUE);
-		memcpy(pagina_prueba->dato.value,"vamo niubel",strlen("vamo niubel") + 1);
+	size_memoria_total = obtener_tamanio_memoria(); //2048
 
-		printf("VALOR: %s \n" , pagina_prueba->dato.value);
+	int cant_datos = size_memoria_total/sizeof(dato_tt);
 
-		pagina_prueba->numero_pagina = 1;
-		pagina_prueba->flag_modificado = FALSE;
-		pagina_prueba->siguiente_pagina = NULL;
+	int size_real = cant_datos*sizeof(dato_tt);
+
+	int memoria_sin_usar = size_memoria_total - size_real;
+
+	int memoriaFinal = size_memoria_total - memoria_sin_usar;
+
+	memoria_principal = malloc(memoriaFinal);
+
+}
+
+void inicializar_tablas(){
 
 
-		segmento_prueba->primera_pagina = pagina_prueba;
-		segmento_prueba->siguiente_segmento = NULL;
-		segmento_prueba->tabla = "Tabla_A";
 
-		printf("value desde el segmento: %s\n",segmento_prueba->primera_pagina->dato.value);
-
-		memcpy(memoria_principal,segmento_prueba,sizeof(segmento));
-
-		printf("value desde la memoria: %s\n\n",memoria_principal->primera_pagina->dato.value);
 }

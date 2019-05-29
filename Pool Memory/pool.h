@@ -19,7 +19,7 @@
 #include"Servidor/servidor.h"
 #include"API_Pool.h"
 
-
+void inicializar_memoria(void/*luego posible "pool"*/);
 void* conectar_lissandra(void);
 void* conectar_kernel(void);
 void pruebita();//Luego borrar

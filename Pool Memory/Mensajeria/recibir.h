@@ -23,6 +23,7 @@
 #include<signal.h>
 #include<ctype.h>
 
+
 typedef enum{
 	DESCONEXION,
 	MENSAJE
@@ -52,6 +53,8 @@ typedef struct{
 	time_t timestamp;
 
 }t_dato_recibido;
+
+int cant_tablas; //inicialmente me los pasa el fileSystem
 
 void recibir_mensaje(int conexion);
 t_dato_recibido* recibir_request_LFS(int conexion );

@@ -32,7 +32,9 @@ typedef struct{
 typedef enum{
 	SELECT,
 	INSERT,
-	CREATE
+	CREATE,
+	DESCRIBE,
+	DROP
 }request;
 
 
