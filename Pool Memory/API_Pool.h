@@ -22,8 +22,6 @@
 #include"Mensajeria/recibir.h"
 #include"Mensajeria/mensajes.h"
 
-#define TAMANIO_MAX_VALUE 50
-
 int socket_sv;
 int conexion_lissandra;
 
@@ -31,25 +29,15 @@ typedef struct{
 
 
 	int key;
-	char value[51];
+	char* value; //hay que controlar el tamanio maximo!
 	time_t timestamp;
 
-}dato_tt;
+}dato_t;
 
 
 typedef enum{
 	FALSE, TRUE
 } boolean;
-
-/*
-typedef struct{
-
-	int key;
-	char* value;
-	time_t timestamp;
-
-}dato_t;
-*/
 
 
 
@@ -57,7 +45,7 @@ typedef struct{
 
 	int numero_pagina;
 	boolean flag_modificado;
-	dato_tt* dato_en_Memoria; // tiene que estar dentro de memoria
+	dato_t* dato_en_Memoria; // tiene que estar dentro de memoria
 	struct pagina* siguiente_pagina;
 
 }pagina;
@@ -71,9 +59,7 @@ typedef struct{
 }segmento;
 
 int tamanio_memoria;
-
-dato_tt* memoria_principal;
-int size_memoria_total;
+dato_t* memoria_principal;
 
 segmento* tabla_segmentos;
 
@@ -82,8 +68,11 @@ void insert(char* nombre_tabla, int key, char* value);
 dato_t* buscar_key(int key, segmento* segmento_tabla);
 dato_t* pedir_key_a_LFS(int key, char* nombre_tabla);
 dato_t* convertir_a_dato_t(t_dato_recibido* dato_recibido);
-void crear_nueva_pagina(segmento* tabla, dato_t* nuevos_datos);
+void crear_pagina(segmento* tabla, dato_t* nuevos_datos);
 pagina* ultima_pagina(segmento* tabla);
+segmento* ultimo_segmento_tabla();
+void crear_segmento(char* tabla);
+void agregar_segmento_tabla(segmento* segmento);
 
 
 #endif /* API_POOL_H_ */

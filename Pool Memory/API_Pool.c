@@ -10,7 +10,7 @@
 
 void realizar_select(char* nombre_tabla, int key){
 
-	dato_tt* dato_a_buscar;
+	dato_t* dato_a_buscar;
 	segmento* segmento_tabla;
 
 	if(existe_segmento(nombre_tabla, &segmento_tabla)){
@@ -37,7 +37,7 @@ void insert(char* nombre_tabla, int key, char* value){
 dato_t* buscar_key(int key, segmento* segmento_tabla){
 
 	pagina* pagina_con_dato;
-	dato_tt* dato_encontrado;
+	dato_t* dato_encontrado;
 
 	if(existe_pagina(key,segmento_tabla,&pagina_con_dato)){
 
@@ -46,7 +46,8 @@ dato_t* buscar_key(int key, segmento* segmento_tabla){
 
 	}
 	else{
-		dato_encontrado = pedir_key_a_LFS(key, segmento_tabla->tabla);
+		printf("Se lo tenes que pedir al File System \n");
+		//dato_encontrado = pedir_key_a_LFS(key, segmento_tabla->tabla);
 		//y si no existe en el fileSystem?
 	}
 
@@ -57,7 +58,7 @@ dato_t* buscar_key(int key, segmento* segmento_tabla){
 
 ////////////////////////////////////////////////////////////////////////////
 
-int existe_pagina(int key, segmento* segmento_tabla,pagina** pagina_con_dato){
+int existe_pagina(int key, segmento* segmento_tabla, pagina** pagina_con_dato){
 
 	pagina* pagina_aux = segmento_tabla->primera_pagina;
 
@@ -116,7 +117,7 @@ int existe_segmento(char* nombre_tabla, segmento** segmento_encontrado){
 //arreglar
 dato_t* pedir_key_a_LFS(int key, char* nombre_tabla){
 
-	dato_tt* dato_return;
+	dato_t* dato_return;
 
 	t_dato_recibido* dato_recibido = malloc(sizeof(t_dato_recibido));
 
@@ -158,43 +159,93 @@ void liberar_dato_recibido(t_dato_recibido* dato_recibido){
 
 //////////////////////////////////////////////////////////////////////////////
 
-void crear_nueva_pagina(segmento* tabla, dato_t* nuevos_datos){
+void crear_segmento(char* tabla){
 
-	pagina* pagina_nueva = malloc(sizeof(pagina));
+	segmento* nuevo_segmento = malloc(sizeof(segmento));
+	int tamanio_nombre = strlen(tabla) + 1;
+
+	nuevo_segmento->tabla = malloc(tamanio_nombre);
+	strcpy(nuevo_segmento->tabla, tabla);
+
+	nuevo_segmento->primera_pagina = NULL;
+
+	nuevo_segmento->siguiente_segmento = NULL;
+
+	agregar_segmento_tabla(nuevo_segmento);
 
 
 }
 
-////////////////////////////////////////////////////////////////////////////////
+//pasarle un segmento ya creado (allocado en memoria con malloc)
+void agregar_segmento_tabla(segmento* nuevo_segmento){
+	/*si la tabla de segmentos no esta inicializada
+	  la inicializo*/
+	if(tabla_segmentos == NULL){
 
-void ingresar_pagina_a_memoria(segmento* tabla, pagina* dato_ingresar){
+		tabla_segmentos = nuevo_segmento;
 
-	pagina* pagina_final = ultima_pagina(tabla);
+	}else{
+		segmento* segmento_aux;
 
-}
+		segmento_aux = ultimo_segmento_tabla();
 
-pagina* ultima_pagina(segmento* tabla){
-
-	pagina* pagina_auxiliar = tabla->primera_pagina;
-
-	//no existe siquiera una pagina d'ouh (primera pagina no existe)
-	if(pagina_auxiliar == NULL){
-		return NULL;
+		segmento_aux->siguiente_segmento = nuevo_segmento;
 	}
 
-	while(pagina_auxiliar->siguiente_pagina != NULL){
-		pagina_auxiliar = pagina_auxiliar->siguiente_pagina;
+}
+
+// no usar si la tabla de segmentos no esta inicializada
+segmento* ultimo_segmento_tabla(){
+	segmento* ultimo_segmento;
+
+	ultimo_segmento = tabla_segmentos;
+
+	while(ultimo_segmento->siguiente_segmento != NULL ){
+
+		ultimo_segmento = ultimo_segmento->siguiente_segmento;
 	}
 
-	return pagina_auxiliar;
+	return ultimo_segmento;
 }
 
-//////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
-int index_en_memoria(){
-	int index;
+//no usar si el dato_t no esta previamente cargado en memoria!
+void crear_pagina(segmento* tabla, dato_t* datos_pagina){
+
+	pagina* nueva_pagina = malloc(sizeof(pagina));
+
+	nueva_pagina->flag_modificado = FALSE;
+	nueva_pagina->siguiente_pagina = NULL;
+
+	nueva_pagina->dato_en_Memoria = datos_pagina;
+
+	//si no hay ninguna pagina, meto esta como primera
+	if(tabla->primera_pagina == NULL){
+		tabla->primera_pagina = nueva_pagina;
+
+	}else{
+		pagina* pagina_aux;
+		pagina_aux = ultima_pagina(tabla);
+		nueva_pagina->numero_pagina = pagina_aux->numero_pagina + 1;
+		pagina_aux->siguiente_pagina = nueva_pagina;
+	}
 
 
 
-	return index;
 }
+//no usar si no tiene ninguna pagina
+pagina* ultima_pagina(segmento* segmento_tabla){
+
+	pagina* pagina_encontrada;
+
+	pagina_encontrada = segmento_tabla->primera_pagina;
+
+	while(pagina_encontrada->siguiente_pagina != NULL){
+		pagina_encontrada = pagina_encontrada->siguiente_pagina;
+	}
+
+	return pagina_encontrada;
+}
+
+/////////////////////////////////////////////////////////////////////////

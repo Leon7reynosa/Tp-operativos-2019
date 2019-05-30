@@ -31,15 +31,6 @@ typedef enum{
 
 typedef struct{
 
-
-	int key;
-	char* value;
-	time_t timestamp;
-
-}dato_t;
-
-typedef struct{
-
 	int size;
 	void* value;
 

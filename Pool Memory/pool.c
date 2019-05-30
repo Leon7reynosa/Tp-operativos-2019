@@ -7,9 +7,8 @@
 
 #include "pool.h"
 
-//int
-
 int main (void){
+
 	inicializar_memoria();
 	inicializar_tablas();
 
@@ -40,19 +39,10 @@ void* conectar_lissandra(){
 
 	int puerto = 4445;
 	char* ip = "127.0.0.1";
-	dato_t* dato;
 
 	conexion_lissandra = conectar_servidor(ip,puerto);
 	//enviar_request_select(conexion_lissandra, "Tabla_A",7);
 	//mandar_mensaje(conexion_lissandra);
-
-
-	dato = pedir_key_a_LFS(7 , "Tabla_A");
-
-	printf("\n##################Datos Recibidos#################\n");
-	printf("Key: %d\n" , dato->key);
-	printf("Value: %s\n" , dato->value );
-	printf("Timestamp: %d\n" , dato->timestamp);
 
 	close(conexion_lissandra);
 	return  NULL;
@@ -61,15 +51,15 @@ void* conectar_lissandra(){
 /////////////////////////// INICIALIZAR ESTRUCTURAS ///////////////////////////
 void inicializar_memoria(){
 
-	size_memoria_total = obtener_tamanio_memoria(); //2048
+	tamanio_memoria = obtener_tamanio_memoria(); //2048
 
-	int cant_datos = size_memoria_total/sizeof(dato_tt);
+	int cant_datos = tamanio_memoria/sizeof(dato_t);
 
-	int size_real = cant_datos*sizeof(dato_tt);
+	int size_real = cant_datos*sizeof(dato_t);
 
-	int memoria_sin_usar = size_memoria_total - size_real;
+	int memoria_sin_usar = tamanio_memoria - size_real;
 
-	int memoriaFinal = size_memoria_total - memoria_sin_usar;
+	int memoriaFinal = tamanio_memoria - memoria_sin_usar;
 
 	memoria_principal = malloc(memoriaFinal);
 
@@ -77,6 +67,9 @@ void inicializar_memoria(){
 
 void inicializar_tablas(){
 
+	//hardocodeado duro, tendria que salir del handshake
+	crear_segmento("Tabla_A");
+	crear_segmento("Tabla_B");
 
 
 }
