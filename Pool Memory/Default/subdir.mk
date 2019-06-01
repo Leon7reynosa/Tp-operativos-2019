@@ -5,15 +5,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../API_Pool.c \
-../pool.c 
+../manejoDeMemoria.c \
+../pool.c \
+../test1.c 
 
 OBJS += \
 ./API_Pool.o \
-./pool.o 
+./manejoDeMemoria.o \
+./pool.o \
+./test1.o 
 
 C_DEPS += \
 ./API_Pool.d \
-./pool.d 
+./manejoDeMemoria.d \
+./pool.d \
+./test1.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
