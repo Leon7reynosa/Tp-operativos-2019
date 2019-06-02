@@ -16,8 +16,7 @@
 
 #include"Servidor/servidor.h"
 #include"Config/configuracion.h"
-
-#include"API_Lissandra.h"
+#include"requests.h"
 
 int socket_sv;
 void* conectar_memoria(void);
