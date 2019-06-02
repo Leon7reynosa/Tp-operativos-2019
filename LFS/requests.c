@@ -26,7 +26,6 @@
 		 path_tabla = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
 
-
 	 }else{
 
 		 printf("No existe la tabla en el File System\n");
