@@ -44,29 +44,37 @@ t_list* tabla_segmentos;  //en el campo "data" va a contener un puntero a una es
 
 void* memoria_principal;
 
-int memoria_disponible;
+int memoria_disponible;      //Cambia constantemente
 
-int max_value;
+int max_value;               //Se puede llegar a cambiar
 
 int tamanio_memoria;
 
-int max_paginas_memoria;
+int max_paginas_memoria;	// cambia si cambia el tamanio de la pagina
 
-int tamanio_dato_memoria;
+int tamanio_dato_memoria;   //esto se puede llegar a cambiar en tiempo de ejecucion si se cambia el tamanio del value
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////// DEFINICION DE FUNCIONES /////////////////////////////////////////////////////////////////////////////
 
 void inicializar_memoria(void);
 void ingresar_dato_a_memoria(dato_en_memoria* nuevo_dato, void** referencia_a_memoria);
+bool memoria_esta_vacia(void);
+bool hay_espacio_libre_en_memoria(void);
+void encontrar_espacio_libre(void** referencia_a_memoria);
+void* copiar_dato_en_memoria(dato_en_memoria* nuevo_dato, int indice);
+
+
 void inicializar_tabla_segmentos(t_list* tabla_a_inicializar);
 segmento* crear_segmento(char* nombre_tabla);
 void liberar_segmento(segmento* segmento_a_liberar);
 bool existe_segmento(char* tabla, segmento** segmento_encontrado);
+
 void liberar_tabla_paginas(t_list* tabla_a_liberar);
 bool existe_pagina(segmento* segmento_tabla, u_int16_t key, pagina** pagina_encontrado);
 pagina* crear_pagina(dato_en_memoria* nuevo_dato);
 
+void liberar_dato(dato_en_memoria* dato_a_eliminar);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #endif /* MANEJODEMEMORIA_H_ */

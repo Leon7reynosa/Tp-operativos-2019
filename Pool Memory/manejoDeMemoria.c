@@ -17,12 +17,67 @@ void inicializar_memoria(){
 
 	max_paginas_memoria = tamanio_memoria / tamanio_dato_memoria;
 
+	memoria_disponible = tamanio_memoria;
+
 }
 
 void ingresar_dato_a_memoria(dato_en_memoria* nuevo_dato, void** referencia_a_memoria){
 
+	void* espacio_libre;
 
+	if(memoria_esta_vacia()){
+		*referencia_a_memoria = copiar_dato_en_memoria(nuevo_dato , memoria_principal);
+	}
+	else{
 
+		encontrar_espacio_libre(espacio_libre);
+
+	}
+}
+
+bool memoria_esta_vacia(){
+	return (memoria_disponible == tamanio_memoria);
+}
+
+bool hay_espacio_libre_en_memoria(){
+
+	return memoria_disponible >= tamanio_dato_memoria;
+
+}
+
+void encontrar_espacio_libre(void** referencia_a_memoria){
+
+	if(hay_espacio_libre_en_memoria()){
+
+		//buscarEspacioLibre
+
+	}
+	else{
+
+		//empezar Algoritmo de reemplazo
+
+	}
+}
+
+void* copiar_dato_en_memoria(dato_en_memoria* nuevo_dato, void* posicion_memoria){
+
+	void* aux_memoria = posicion_memoria;
+	int desplazamiento = 0;
+
+	memcpy(aux_memoria + desplazamiento, &(nuevo_dato->key), sizeof(u_int16_t) );
+	desplazamiento += sizeof(u_int16_t);
+
+	memcpy(aux_memoria + desplazamiento, nuevo_dato->value, max_value);
+	desplazamiento += max_value;
+
+	memcpy(aux_memoria + desplazamiento, &(nuevo_dato->timestamp), sizeof(time_t));
+	desplazamiento += sizeof(time_t);
+
+	liberar_dato(nuevo_dato);
+
+	memoria_disponible -= sizeof(u_int16_t) - max_value - sizeof(time_t);
+
+	return aux_memoria;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,11 +161,7 @@ bool existe_pagina(segmento* segmento_tabla, u_int16_t key, pagina** pagina_enco
 
 		dato_en_memoria* dato_a_analizar = (dato_en_memoria *)((pagina *)pagina_a_analizar)->referencia_memoria;
 
-		if(dato_a_analizar->key == key){
-			return true;
-		}else{
-			return false;
-		}
+		return dato_a_analizar->key == key;
 
 	}
 
@@ -126,10 +177,20 @@ pagina* crear_pagina(dato_en_memoria* nuevo_dato){
 
 	void* referencia_a_memoria;
 
-	ingresar_dato_a_memoria(nuevo_dato, void** referencia_a_memoria);
+	ingresar_dato_a_memoria(nuevo_dato, &referencia_a_memoria);
 
+	nueva_pagina->referencia_memoria = referencia_a_memoria;
 
+	return nueva_pagina;
 
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////// DATOS ////////////////////////////////////////////////////////////////////////////////////
+
+void liberar_dato(dato_en_memoria* dato_a_liberar){
+
+	free(dato_a_liberar->value);
+	free(dato_a_liberar);
+
+}
