@@ -8,7 +8,10 @@
 #ifndef REQUESTS_H_
 #define REQUESTS_H_
 
-#include"funciones_requests.h"
+#include"comunity_func.h"
+#include"Lissandra.h"
+#include"file_system.h"
+#include"compactador.h"
 
 
 void request_select(char* nombre_tabla , int key);

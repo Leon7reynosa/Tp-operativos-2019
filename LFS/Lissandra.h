@@ -10,16 +10,31 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<commons/log.h>
-#include<commons/string.h>
-#include<readline/readline.h>
+#include<stdbool.h>
+#include<stddef.h>
+#include<unistd.h>
+#include<dirent.h>
+#include<errno.h>
+#include<time.h>
+#include<commons/config.h>
+#include<commons/collections/node.h>
+#include<commons/collections/list.h>
+#include<string.h>
+#include<sys/stat.h>
+#include"Metadata/metadata.h"
 
-#include"Servidor/servidor.h"
-#include"Config/configuracion.h"
-#include"requests.h"
+#include"comunity_func.h"
 
-int socket_sv;
-void* conectar_memoria(void);
+typedef struct{
 
+	char* nombre_tabla;
+	t_list* primer_elemento; //el data va a tener un puntero a dato_t
+
+}memoria_t ;
+
+t_list* dato_memtable; // el data va a tener un puntero a memoria_t
+
+void ingresar_a_memtable(dato_t* dato_a_ingresar, char* nombre_tabla);
+memoria_t* obtener_memoria_tabla(char* nombre_tabla);
 
 #endif /* LISSANDRA_H_ */

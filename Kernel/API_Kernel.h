@@ -4,12 +4,6 @@
 #include<time.h>
 #include"Mensajeria/mensajes.h"
 
-typedef enum criterio{
-	SC, //Strong Consistency
-	SHC, // Strong Hash Consistency
-	EC //Eventual Consistency
-}criterio_t;
-
 typedef struct{
 	int key;
 	char* value;

@@ -116,7 +116,7 @@ void* serializar_mensaje_drop(operacion_drop* bufferA_serializar, int bytes){
 void* serializar_mensaje_journal(){
 	void* msg_Ser = malloc(sizeof(int));
 
-	memcpy(msg_Ser, &(JOURNAL), sizeof(int));
+	memcpy(msg_Ser, (JOURNAL), sizeof(int));
 
 
 	return msg_Ser;

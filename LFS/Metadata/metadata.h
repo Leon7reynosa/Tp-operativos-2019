@@ -15,6 +15,7 @@
 #include<errno.h>
 #include<time.h>
 #include<commons/config.h>
+#include<commons/string.h>
 #include<string.h>
 #include<sys/stat.h>
 

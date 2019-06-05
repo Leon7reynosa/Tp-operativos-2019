@@ -22,6 +22,13 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
+typedef enum criterio{
+	SC, //Strong Consistency
+	SHC, // Strong Hash Consistency
+	EC //Eventual Consistency
+}criterio_t;
+
+
 typedef struct{
 
 	int size;

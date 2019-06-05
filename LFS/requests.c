@@ -70,9 +70,12 @@
 
 	 char* path_tabla = obtenerPathTabla(nombre_tabla);
 
-	 mkdir(path_tabla, 0700);
+	 crear_directorio(path_tabla);
 
 	 crear_metadata(nombre_tabla, criterio, numero_particiones, tiempo_compactacion);
+
+	 crear_archivos_particiones(nombre_tabla, numero_particiones);
+	 //faltaria en esta parte, hacer bien los de los bloques.
 
  }
 

@@ -34,17 +34,11 @@ metadata_t obtener_metadata(char* nombre_tabla){
 
 
 char* obtener_path_metadata_de_tabla(char* nombre_tabla){
-	char* pathTabla = obtenerPathTabla(nombre_tabla);
-	char metadata[] = "Metadata.config";
+	char* path = obtenerPathTabla(nombre_tabla);
+	string_append(&path, "Metadata.config");
 
-	char* pathMetadata = malloc(strlen(pathTabla) + strlen(metadata) + 1);
 
-	strcpy(pathMetadata,pathTabla);
-
-	free(pathTabla);
-	strcat(pathMetadata,metadata);
-
-	return pathMetadata;
+	return path;
 }
 
 void mostrar_metadata_de_tabla(char* nombre_Tabla){
@@ -70,8 +64,6 @@ void mostrar_metadata_de_tabla(char* nombre_Tabla){
 
 void setear_metadata(){
 
-	printf("HOLA");
-
 	t_config* metadata_config;
 
 	metadata_config = config_create("Tablas/Tabla_B/Metadata.config");
@@ -86,75 +78,40 @@ void setear_metadata(){
 
 }
 
-char* obtenerPathTabla(char* nombre_Tabla){
-	char aux_nombreTabla[strlen(nombre_Tabla) + 1];
-	aux_nombreTabla[strlen(nombre_Tabla) + 1] = '\0';
-	char prefijo[] = "Tablas/";
-	char extension[] = "/";
+char* obtenerPathTabla(char* nombre_tabla){
 
-	int cantidad = strlen(nombre_Tabla) + strlen(prefijo) + strlen(extension) + 1;
+	char* path = string_new();
 
-	char aux_path[cantidad];
-	char* path = malloc(cantidad);
+	char *prefijo = "Tablas/";
 
-	strcpy(aux_nombreTabla, nombre_Tabla);
-
-	strcpy(aux_path, prefijo);
-
-	strcat(aux_path, aux_nombreTabla);
-
-	strcat(aux_path, extension);
-
-	strcpy(path,aux_path);
+	string_append(&path, prefijo);
+	string_append(&path, nombre_tabla);
+	string_append(&path, "/");
 
 	return path;
 }
 
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
-	char* pathTabla;
-	pathTabla = obtenerPathTabla(nombre_tabla);
+	char* path = string_new();
+	path = obtenerPathTabla(nombre_tabla);
 
-	char tablaSinParticion[strlen(pathTabla) + 1];
-	char* particionPuntero = malloc(sizeof(particion));
-	char extension[] = ".bin";
+	string_append(&path, string_itoa(particion));
+	string_append(&path, ".bin");
 
-	snprintf(particionPuntero, sizeof(particion), "%i", particion);
 
-	int cantidad = strlen(pathTabla) + strlen(particionPuntero) + strlen(extension) +1;
-
-	char particionArray[strlen(particionPuntero) +sizeof(extension) + 1];
-	char pathAux[cantidad];
-
-	char* pathFinal = malloc(cantidad);
-
-	strcpy(tablaSinParticion, pathTabla);
-
-	strcpy(particionArray, particionPuntero);
-
-	strcpy(pathAux, tablaSinParticion);
-
-	strcat(pathAux, particionArray);
-
-	strcat(pathAux, extension);
-
-	strcpy(pathFinal, pathAux);
-
-	free(particionPuntero);
-	free(pathTabla);
-
-	return pathFinal;
+	return path;
 
 }
 
 void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion){
 	t_config* metadata_config;
-	char* particionAux, tiempo_compactacionAux;
+	char* particionAux = string_new();
+	char* tiempo_compactacionAux = string_new();
 	char* pathMetadata = obtener_path_metadata_de_tabla(nombre_tabla);
 
-	snprintf(particionAux, sizeof(particion), "%i", particion);
-	snprintf(tiempo_compactacionAux, sizeof(tiempo_Compactacion), "%i", tiempo_Compactacion);
+	particionAux = string_itoa(particion);
+	tiempo_compactacionAux = string_itoa(tiempo_Compactacion);
 
-	printf("Particion = %s\nTiempo Compactacion = %s\n", particionAux, tiempo_compactacionAux);
 
 	metadata_config = config_create(pathMetadata);
 	config_save_in_file(metadata_config, pathMetadata);

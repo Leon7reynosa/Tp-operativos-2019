@@ -14,12 +14,14 @@
 #include<commons/string.h>
 #include<readline/readline.h>
 #include<commons/config.h>
+#include<commons/string.h>
+
 
 #include"Config/configuracion.h"
 #include"Cliente/cliente.h"
 #include"Mensajeria/mensajes.h"
 
 
-
+void parsear_LQL(char* path_archivo);
 
 #endif /* KERNEL_H_ */

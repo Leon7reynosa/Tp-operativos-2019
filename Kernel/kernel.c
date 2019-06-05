@@ -7,14 +7,68 @@
 
 #include "kernel.h"
 
-int main (){
-	int conexion;
-	int puerto;
-	char* ip;
+//para ejecutar --> click derecho en carpeta Kenel -> run configurations -> Arguments -> y agregar "lql.txt"
+int main (int argc , char* argv[]){
 
-	obtener_puerto_ip(&puerto,&ip);
+	char* linea_request;
 
-	conexion = conectar_servidor(ip,puerto);
+	for (int i = 1; i < argc ; i++){
+
+
+		linea_request = parsear_LQL(argv[i]);
+
+		/*ahora que tenemos la linea del request del lql(solo la primera linea)
+		 * hay que hacer que identifique que request es, y ejectute con los parametro que tenga
+		 * (el request hay que pedirselo a memoria)
+		 */
+
+	}
+
+
+return EXIT_SUCCESS;
+}
+
+
+
+
+////////////////////// FUNCIONES NUEVAS///////////////////////////////
+
+
+//Por ahora solo lee una linea del archivo.
+char* parsear_LQL(char* path_archivo){
+
+	FILE* archivo_lql = fopen(path_archivo, "r");
+
+	int i = 0;
+
+	char* linea_leida = string_new();
+
+	char caracter;
+	char* caracter_temp;
+
+	caracter = fgetc(archivo_lql);;
+
+	while(caracter != '\n'){
+
+		caracter_temp = string_from_format("%c", caracter);
+
+		string_append(&linea_leida, caracter_temp);
+
+		caracter = fgetc(archivo_lql);
+
+
+	}
+
+	printf("Linea leida: %s\n" , linea_leida);
+
+	fclose(archivo_lql);
+
+	return linea_leida;
+}
+
+
+
+
 
 /*	while(1){
 		mandar_mensaje(conexion);
@@ -77,6 +131,4 @@ int main (){
 	}
 */
 
-	return EXIT_SUCCESS;
-}
 
