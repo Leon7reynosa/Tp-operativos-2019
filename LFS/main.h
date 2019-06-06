@@ -11,6 +11,6 @@
 #include"comunity_func.h"
 #include"requests.h"
 
-
+#include "Config/configuracion.h"
 
 #endif /* MAIN_H_ */

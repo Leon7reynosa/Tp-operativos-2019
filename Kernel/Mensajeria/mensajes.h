@@ -69,7 +69,8 @@ typedef struct{
 	request pedido;
 	int size_tabla;
 	void* nombre_tabla;
-	criterio_t criterio;
+	int size_criterio;
+	void* criterio;
 	int numero_particiones;
 	int tiempo_compactacion;
 }operacion_create;

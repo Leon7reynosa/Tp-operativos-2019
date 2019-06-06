@@ -61,9 +61,12 @@
 
  void request_create(char* nombre_tabla, char* criterio, int numero_particiones, int tiempo_compactacion){
 
+	 string_to_upper(nombre_tabla);
+
 	 if(existe_la_tabla(nombre_tabla)){
 
 		 printf("Ya existe la tabla \n");
+		 //guardar resultado en un archivo de log y retornar error de dicho resultado
 		 exit(1);
 
 	 }

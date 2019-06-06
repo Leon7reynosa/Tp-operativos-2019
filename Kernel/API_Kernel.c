@@ -62,23 +62,25 @@ void enviar_insert(int conexion, char* nombre_tabla, u_int16_t key, char* value,
 
 }
 
-void enviar_create(int conexion, char* nombre_tabla, criterio_t criterio, int numero_particiones, int tiempo_compactacion){
+void enviar_create(int conexion, char* nombre_tabla, char* criterio, int numero_particiones, int tiempo_compactacion){
 	operacion_create* bufferA_Serializar = malloc(sizeof(operacion_create));
 
 	bufferA_Serializar->size_tabla = strlen(nombre_tabla) + 1;
+	bufferA_Serializar->size_criterio = strlen(criterio) + 1;
 
 	bufferA_Serializar->pedido = CREATE;
-	bufferA_Serializar->criterio = criterio;
 	bufferA_Serializar->numero_particiones = numero_particiones;
 	bufferA_Serializar->tiempo_compactacion = tiempo_compactacion;
 
+	bufferA_Serializar->criterio = malloc(bufferA_Serializar->size_criterio);
 	bufferA_Serializar->nombre_tabla = malloc(bufferA_Serializar->size_tabla);
 
 	memcpy(bufferA_Serializar->nombre_tabla, nombre_tabla, bufferA_Serializar->size_tabla);
+	memcpy(bufferA_Serializar->criterio, criterio, bufferA_Serializar->size_criterio);
 
 	void* buffer_serializado;
-	//OPERACION + TAMAÑO_TABLA + TABLA + PEDIDO + CRITERIO + NUMERO_PART + TIEMPO_COMP
-	int bytes = sizeof(int) + bufferA_Serializar->size_tabla + sizeof(int) + sizeof(criterio_t) + sizeof(int) + sizeof(int);
+	//OPERACION + TAMAÑO_TABLA + TABLA + PEDIDO + TAMANIO_CRITERIO + CRITERIO + NUMERO_PART + TIEMPO_COMP
+	int bytes = sizeof(int) + bufferA_Serializar->size_tabla + sizeof(int) + bufferA_Serializar->size_criterio + sizeof(int) + sizeof(int) + sizeof(int);
 
 	buffer_serializado = serializar_mensaje_create(bufferA_Serializar, bytes);
 
