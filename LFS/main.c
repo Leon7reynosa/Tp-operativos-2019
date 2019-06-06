@@ -10,7 +10,7 @@
 
 int main(){
 
-
+	creacion_bitmap();
 
 	return EXIT_SUCCESS;
 }
