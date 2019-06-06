@@ -8,7 +8,12 @@
 #ifndef MEMORIA_H_
 #define MEMORIA_H_
 
+#include<stdio.h>
+#include<stdlib.h>
 #include"segmento.h"
+#include<commons/collections/list.h>
+
+
 
 struct MemoriaEstructura;
 typedef struct MemoriaEstructura* Memoria;

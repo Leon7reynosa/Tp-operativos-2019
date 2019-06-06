@@ -5,20 +5,29 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../API_Pool.c \
-../manejoDeMemoria.c \
+../dato.c \
+../memoria.c \
+../pagina.c \
 ../pool.c \
+../segmento.c \
 ../test1.c 
 
 OBJS += \
 ./API_Pool.o \
-./manejoDeMemoria.o \
+./dato.o \
+./memoria.o \
+./pagina.o \
 ./pool.o \
+./segmento.o \
 ./test1.o 
 
 C_DEPS += \
 ./API_Pool.d \
-./manejoDeMemoria.d \
+./dato.d \
+./memoria.d \
+./pagina.d \
 ./pool.d \
+./segmento.d \
 ./test1.d 
 
 

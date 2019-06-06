@@ -6,21 +6,14 @@
  */
 
 #include"mensajes.h"
-/*
-void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
 
-	void* msg_Ser = malloc(bytes);
-	int desplazamiento = 0;
+struct requestEstructura{
 
-	memcpy(msg_Ser + desplazamiento,&(bufferA_serializar->size),sizeof(int));
-	desplazamiento += sizeof(int);
-	//4 .
-	memcpy(msg_Ser + desplazamiento,bufferA_serializar->buffer,bufferA_serializar->size);
-	desplazamiento += bufferA_serializar->size;
-	//4hola
-	return msg_Ser;
-}
-*/
+	cod_operacion cod_op;
+	int bytes;
+	void* tipo_request;
+
+};
 
 void* serializar_mensaje(operacion_select* bufferA_serializar, int bytes){
 
@@ -65,31 +58,26 @@ void mandar_mensaje(int conexion){
 	eliminar_tStream(bufferA_serializar);
 
 }
+//tipoRequest es una estructura del tipo "request" osea, puede ser selectEstructura, etc, entonces mi idea es depende de lo que llegue, castear a esa estructura
+void enviar_request(cod_operacion cod_op, void* tipoRequest){
 
-void enviar_request_select(int conexion, char* nombre_tabla, int key){
+	void* buffer;
+	int bytes;
 
-	operacion_select* bufferA_serializar = malloc(sizeof(operacion_select)); //t_stream = int size, void* buffer
+	switch(cod_op){
 
-	bufferA_serializar->size_tabla = strlen(nombre_tabla) + 1;
+	case SELECT:
 
-	bufferA_serializar->pedido = SELECT;
-	bufferA_serializar->key = key;
-	bufferA_serializar->nombre_tabla = malloc(bufferA_serializar->size_tabla);
+		//fijense si quieren hacerlo de otra manera
 
-	memcpy(bufferA_serializar->nombre_tabla,nombre_tabla,bufferA_serializar->size_tabla);
+	case INSERT:
 
-	void* buffer_serializado;
-	//OPERACION + TAMAÑO_TABLA + TABLA + KEY
-	int bytes = sizeof(int) + bufferA_serializar->size_tabla + sizeof(int) + sizeof(int);
+	case CREATE:
 
-	buffer_serializado = serializar_mensaje(bufferA_serializar, bytes);
-
-	send(conexion, buffer_serializado, bytes, 0);
-
-	free(buffer_serializado);
-	eliminar_operacion_select(bufferA_serializar);
+	}
 
 }
+
 
 void eliminar_operacion_select(operacion_select* buffer){
 

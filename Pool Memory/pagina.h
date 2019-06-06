@@ -20,5 +20,6 @@ typedef struct PaginaEstructura* Pagina;
 
 Pagina crear_pagina(Dato nuevo_dato);
 void liberar_pagina(Pagina pagina_a_liberar);
+bool esta_libre(Pagina pagina);
 
 #endif /* PAGINA_H_ */

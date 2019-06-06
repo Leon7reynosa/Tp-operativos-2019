@@ -22,6 +22,16 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
+
+typedef enum{
+	SELECT,
+	INSERT,
+	CREATE
+}cod_operacion;
+
+struct requestEstructura;
+typedef struct requestEstructura* request;
+
 typedef struct{
 
 	int size;
@@ -29,27 +39,10 @@ typedef struct{
 
 }t_stream;
 
-typedef enum{
-	SELECT,
-	INSERT,
-	CREATE,
-	DESCRIBE,
-	DROP
-}request;
-
-
-typedef struct{
-	request pedido;
-	int size_tabla;
-	void* nombre_tabla;
-	u_int16_t key;
-
-}operacion_select;
 
 //void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
 void mandar_mensaje(int conexion);
 void eliminar_tStream(t_stream* tStream);
-void* serializar_mensaje(operacion_select* bufferA_serializar, int bytes);
 
 
 #endif /* MENSAJES_H_ */

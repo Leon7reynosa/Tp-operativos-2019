@@ -12,7 +12,6 @@ struct DatoEstructura{
 
 	u_int16_t key;
 	char* value;
-	int tamanio_value;
 	time_t timestamp;
 
 };

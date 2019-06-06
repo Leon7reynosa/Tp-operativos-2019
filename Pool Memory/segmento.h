@@ -8,7 +8,10 @@
 #ifndef SEGMENTO_H_
 #define SEGMENTO_H_
 
+#include<stdio.h>
+#include<stdlib.h>
 #include"pagina.h"
+#include<commons/collections/list.h>
 
 struct  SegmentoEstructura;
 typedef struct SegmentoEstructura* Segmento;

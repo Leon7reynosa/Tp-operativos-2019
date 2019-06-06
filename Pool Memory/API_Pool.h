@@ -22,7 +22,6 @@
 #include"Config/configuracion.h"
 #include"Mensajeria/recibir.h"
 #include"Mensajeria/mensajes.h"
-#include"manejoDeMemoria.h"
 
 //estos dos creo que estarian en servidor y cliente (deberian)
 int socket_sv;
