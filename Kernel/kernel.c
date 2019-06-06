@@ -7,22 +7,47 @@
 
 #include "kernel.h"
 
-//para ejecutar --> click derecho en carpeta Kenel -> run configurations -> Arguments -> y agregar "lql.txt"
+int conexion_lissandra;
+
 int main (int argc , char* argv[]){
 
+	inicializar_cola_exec();
+
 	char* linea_request;
-	int tiempo, particiones, lol;
+	int tiempo;
+	int particiones;
 	char* nombre_tabla = string_new();
 	char* consistencia = string_new();
 
 
 	for (int i = 1; i < argc ; i++){
 
+		FILE* archivo_lql = fopen(argv[i] , "r");
 
-		linea_request = parsear_LQL(argv[i]);
+		parsear_LQL(archivo_lql);
+
+		fclose(archivo_lql);
+
+	}
+
+	//para mostrar lo que hay en la cola_exec
+	for(int j = 0; j < cola_exec->elements_count ; j++){
+
+		linea_request = list_get(cola_exec, j);
+
+		printf("request: %s\n" , linea_request);
+
+		mandar_request(linea_request, conexion_lissandra);
+
+	}
+
+
+
+
+
 
 //		mandar_request(linea_request);
-
+/*
 		obtener_parametros_create(linea_request, nombre_tabla, consistencia, &particiones, &tiempo);
 
 		printf("----------------FUERA DE LA FUNCION ------------\n");
@@ -30,14 +55,11 @@ int main (int argc , char* argv[]){
 		printf("consistencia: %s\n", consistencia);
 		printf("particiones: %i\n", particiones);
 		printf("tiempo: %i\n", tiempo);
-
+*
 		/*ahora que tenemos la linea del request del lql(solo la primera linea)
 		 * hay que hacer que identifique que request es, y ejectute con los parametro que tenga
 		 * (el request hay que pedirselo a memoria)
 		 */
-
-
-	}
 
 
 return 0;
@@ -50,45 +72,56 @@ return 0;
 
 
 //Por ahora solo lee una linea del archivo.
-char* parsear_LQL(char* path_archivo){
+void parsear_LQL(FILE* archivo_lql){
 
-	FILE* archivo_lql = fopen(path_archivo, "r");
 
-	int i = 0;
-
-	char* linea_leida = string_new();
+	//char* linea_leida = string_new();
 
 	char caracter;
 	char* caracter_temp;
 
-	caracter = fgetc(archivo_lql);;
+	caracter = fgetc(archivo_lql);
 
-	while(caracter != '\n'){
+		char* linea_leida = string_new();
 
-		caracter_temp = string_from_format("%c", caracter);
+		while(caracter != EOF){
 
-		string_append(&linea_leida, caracter_temp);
+			caracter_temp = string_from_format("%c", caracter);
 
-		caracter = fgetc(archivo_lql);
+			string_append(&linea_leida, caracter_temp);
 
+			caracter = fgetc(archivo_lql);
 
-	}
+			if(caracter == '\n'){
 
-	printf("Linea leida: %s\n" , linea_leida);
+				printf("Linea leida: %s\n" , linea_leida);
 
-	fclose(archivo_lql);
+				list_add(cola_exec, linea_leida );
 
-	return linea_leida;
+				linea_leida = string_new();
+
+				caracter = fgetc(archivo_lql);
+
+			}
+
+		}
+
+		printf("Linea leida: %s\n" , linea_leida);
+
+		list_add(cola_exec, linea_leida );
+
 }
 
 void mandar_request(char* request_lql, int conexion){
 
 	int cod_request;
 	char* nombre_tabla = string_new();
-	u_int16_t key;
-	char* value = string_new();
+
 	char* consistencia = string_new();
 	int tiempo_compactacion, particiones;
+
+	u_int16_t key;
+	char* value = string_new();
 	time_t timestamp;
 
 
@@ -174,7 +207,7 @@ void obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_t
 void obtener_parametros_create(char* linea_request, char* nombre_tabla, char* criterio, int numero_particiones, int tiempo_compactacion){
 	char* funcion = string_new();
 
-	sscanf(linea_request, "%s %s %s %i %i %i", funcion, nombre_tabla, criterio, numero_particiones, tiempo_compactacion);
+	sscanf(linea_request, "%s %s %s %i %i", funcion, nombre_tabla, criterio, numero_particiones, tiempo_compactacion);
 
 }
 
@@ -189,10 +222,18 @@ void obtener_parametros_describe(char* linea_request){
 
 	sscanf(linea_request, "%s", funcion);
 }
+
 void obtener_parametros_drop(char* linea_request, char* nombre_tabla){
 	char* funcion = string_new();
 
 	sscanf(linea_request, "%s %s", funcion, nombre_tabla);
+}
+
+
+void inicializar_cola_exec(){
+
+	cola_exec = list_create();
+
 }
 
 
