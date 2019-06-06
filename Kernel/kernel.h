@@ -22,6 +22,6 @@
 #include"Mensajeria/mensajes.h"
 
 
-void parsear_LQL(char* path_archivo);
+char* parsear_LQL(char* path_archivo);
 
 #endif /* KERNEL_H_ */
