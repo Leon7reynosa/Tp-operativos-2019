@@ -74,7 +74,7 @@ void request_insert(Memoria memoria, char* tabla, u_int16_t key, char* value ){
 
 	}else{
 
-		//
+		//generar el segmento con el dato solicitando una pagina
 
 	}
 
