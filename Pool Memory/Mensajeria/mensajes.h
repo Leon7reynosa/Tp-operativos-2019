@@ -23,15 +23,6 @@
 #include<readline/history.h>
 
 
-typedef enum{
-	SELECT,
-	INSERT,
-	CREATE
-}cod_operacion;
-
-struct requestEstructura;
-typedef struct requestEstructura* request;
-
 typedef struct{
 
 	int size;

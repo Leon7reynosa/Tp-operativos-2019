@@ -13,6 +13,10 @@
 
 
 struct selectEstructura;
-typedef struct selectEstructura* select;
+typedef struct selectEstructura* select_t;
+
+void* serializar_select(request request_select);
+select_t crear_dato_select(char* tabla, u_int16_t key);
+void liberar_dato(select_t);
 
 #endif /* MENSAJERIA_REQUESTSELECT_H_ */
