@@ -13,14 +13,23 @@
 #include"segmento.h"
 #include<commons/collections/list.h>
 
+struct MemoriaEstructura{
+	void* memoria_contigua;
+	t_list* paginas;
+	t_list* tabla_segmentos;
+	int tamanio;
+	int cant_max_datos;
+	struct MemoriaEstructura* seed;
 
+};
 
-struct MemoriaEstructura;
+//struct MemoriaEstructura;
 typedef struct MemoriaEstructura* Memoria;
 
-void inicializar_memoria(void);
-void inicializar_tabla_segmentos(t_list* nombre_tablas);
+Memoria inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato, t_list* tablas);
+t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar);
 void ingresar_dato_a_memoria(Dato nuevo_dato, void** referencia_a_memoria);
 void encontrar_espacio_libre(void** referencia_a_memoria);
+Dato pedir_dato_al_LFS(char* tabla, int key);
 
 #endif /* MEMORIA_H_ */

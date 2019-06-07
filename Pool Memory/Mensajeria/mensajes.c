@@ -11,6 +11,7 @@
 void enviar_request(cod_operacion cod_op, void* tipoRequest){
 
 	void* buffer;
+	int bytes = 0;
 	request request = crear_request(cod_op, tipoRequest);
 
 
@@ -19,37 +20,31 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 	case SELECT:
 
 		buffer = serializar_select(request);
+		bytes = ((select_t)(request->tipo_request))->bytes;
 		break;
 
 	case INSERT:
 
 		buffer= serializar_insert(request);
+		bytes = ((insert)(request->tipo_request))
+				->bytes;
 		break;
 
 	case CREATE:
 
 		buffer = serializar_create(request);
+		bytes = ((create)(request->tipo_request))->bytes;
 		break;
 
 	default:
 		//no deberia entrar aca
 		break;
 	}
+	send(socket_lissandra, buffer, bytes, 0);
 
-	//Ahora, hay que ver el tema del lissandra, donde tenemos el socket y esas cosas
+	free(buffer);
 
-	/* aca hay que ver como le pasamos los bytes!!, por que me quedo dentro del tipo_dato y es un void* :,c
-	 * capaz hay que ponerlo en la estructura request, envez de en el void* que tiene la estructura request
-	 *
-	 * send(socket_lissandra, buffer, request->tipo_dato, bytes!!, 0);
-	 *
-	 *free(buffer);
-	 *
-	 *liberar_request(request);
-	 *
-	 *
-	 *
-	 */
+	liberar_request(request);
 
 }
 
@@ -65,10 +60,10 @@ void liberar_request(request dato){
 			liberar_dato_insert(dato->tipo_request);
 			break;
 		case CREATE:
-			liberar_dato_inser(dato->tipo_request);
+			liberar_dato_create(dato->tipo_request);
 			break;
 		default:
-			//no deberia entrar aca
+			printf("Algo fallo\n");
 			break;
 
 	}

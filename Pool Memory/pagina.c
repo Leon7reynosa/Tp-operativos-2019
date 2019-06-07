@@ -6,7 +6,7 @@
  */
 
 #include"pagina.h"
-
+/*
 struct PaginaEstructura{
 
 	Dato referencia_memoria;  //no libero esto, por que es memoria!
@@ -15,7 +15,7 @@ struct PaginaEstructura{
 	time_t ultimo_uso;
 
 };
-
+*/
 void liberar_pagina(Pagina pagina_a_liberar){
 
 	free(pagina_a_liberar);
@@ -25,7 +25,7 @@ void liberar_pagina(Pagina pagina_a_liberar){
 
 Pagina crear_pagina(Dato dato_en_memoria){
 
-	struct PaginaEstructura pagina = malloc(sizeof(struct PaginaEstructura));
+	struct PaginaEstructura* pagina = malloc(sizeof(struct PaginaEstructura));
 
 	pagina->referencia_memoria = dato_en_memoria;
 
@@ -80,7 +80,7 @@ Pagina pagina_menos_usada(t_list* paginas){
 
 }
 
-t_list paginas_sin_modificar(t_list* paginas){
+t_list* paginas_sin_modificar(t_list* paginas){
 
 	bool _sin_modificar(Pagina pagina){
 
@@ -89,5 +89,11 @@ t_list paginas_sin_modificar(t_list* paginas){
 	}
 
 	return list_filter(paginas, _sin_modificar);
+
+}
+
+void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
+
+
 
 }

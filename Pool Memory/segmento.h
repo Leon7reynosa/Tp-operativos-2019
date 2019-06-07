@@ -13,7 +13,15 @@
 #include"pagina.h"
 #include<commons/collections/list.h>
 
-struct  SegmentoEstructura;
+struct SegmentoEstructura{
+
+	char* nombre_tabla;
+	t_list* Tabla_paginas; //en el campo "data" va a contener un puntero a una estructura "pagina"
+
+
+};
+
+//struct  SegmentoEstructura;
 typedef struct SegmentoEstructura* Segmento;
 
 Segmento crear_segmento(char* nombre_tabla);

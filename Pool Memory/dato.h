@@ -12,7 +12,15 @@
 #include<stdio.h>
 #include<time.h>
 
-struct DatoEstructura;
+struct DatoEstructura{
+
+	u_int16_t key;
+	char* value;
+	time_t timestamp;
+
+};
+
+//struct DatoEstructura;
 typedef struct DatoEstructura* Dato;
 
 int tamanio_value;   // ver estos dos donde van

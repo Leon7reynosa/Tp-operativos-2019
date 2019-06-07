@@ -6,6 +6,7 @@
  */
 
 #include"requestInsert.h"
+
 /*
 struct insertEstructura{
 
@@ -17,7 +18,6 @@ struct insertEstructura{
 
 };
 */
-
 
 insert decodificar_insert(int conexion){
 
@@ -65,37 +65,6 @@ insert decodificar_insert(int conexion){
 
 }
 
-
-void* serializar_insert(request request_insert){
-
-	insert dato = (insert)(request_insert->tipo_request);
-	void* buffer_serializado = malloc(dato->bytes);
-	int desplazamiento = 0;
-
-
-	memcpy(buffer_serializado + desplazamiento, &(request_insert->cod_op), sizeof(request_insert->cod_op));
-	desplazamiento += sizeof(request_insert->cod_op);
-
-	memcpy(buffer_serializado + desplazamiento, &(dato->tabla->size), sizeof(dato->tabla->size));
-	desplazamiento += sizeof(dato->tabla->size);
-
-	memcpy(buffer_serializado + desplazamiento, dato->tabla->buffer, dato->tabla->size);
-	desplazamiento += dato->tabla->size;
-
-	memcpy(buffer_serializado + desplazamiento, &(dato->key), sizeof(dato->key));
-	desplazamiento += sizeof(dato->key);
-
-	memcpy(buffer_serializado + desplazamiento, &(dato->value->size), sizeof(dato->value->size));
-	desplazamiento += sizeof(dato->value->size);
-
-	memcpy(buffer_serializado + desplazamiento, dato->value->buffer, dato->value->size);
-	desplazamiento += dato->value->size;
-
-	memcpy(buffer_serializado + desplazamiento, &(dato->timestamp), sizeof(dato->timestamp));
-	desplazamiento += sizeof(dato->timestamp);
-
-	return buffer_serializado;
-}
 
 insert crear_dato_insert(char* tabla, u_int16_t key, char* value, time_t timestamp){
 

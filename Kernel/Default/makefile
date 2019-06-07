@@ -8,9 +8,9 @@ RM := rm
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Mensajeria/Cliente/subdir.mk
 -include Mensajeria/subdir.mk
 -include Config/subdir.mk
--include Cliente/subdir.mk
 -include subdir.mk
 -include objects.mk
 

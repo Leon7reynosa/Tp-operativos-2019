@@ -6,7 +6,7 @@
  */
 
 #include"memoria.h"
-
+/*
 struct MemoriaEstructura{
 	void* memoria_contigua;
 	t_list* paginas;
@@ -16,7 +16,7 @@ struct MemoriaEstructura{
 	Memoria seed;
 
 };
-
+*/
 t_list* inicializar_paginas(Memoria memoria){
 
 	int contador = memoria->cant_max_datos;
@@ -180,5 +180,11 @@ Pagina solicitar_pagina(Memoria memoria, Dato nuevo_dato){
 
 	return pagina_solicitada;
 
+}
+
+Dato pedir_dato_al_LFS(char* tabla, int key){
+
+
+	return NULL;
 }
 

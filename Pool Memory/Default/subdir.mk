@@ -9,8 +9,7 @@ C_SRCS += \
 ../memoria.c \
 ../pagina.c \
 ../pool.c \
-../segmento.c \
-../test1.c 
+../segmento.c 
 
 OBJS += \
 ./API_Pool.o \
@@ -18,8 +17,7 @@ OBJS += \
 ./memoria.o \
 ./pagina.o \
 ./pool.o \
-./segmento.o \
-./test1.o 
+./segmento.o 
 
 C_DEPS += \
 ./API_Pool.d \
@@ -27,8 +25,7 @@ C_DEPS += \
 ./memoria.d \
 ./pagina.d \
 ./pool.d \
-./segmento.d \
-./test1.d 
+./segmento.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -6,6 +6,7 @@
  */
 
 #include"requestCreate.h"
+
 /*
 struct createEstructura{
 	int bytes;
@@ -16,7 +17,6 @@ struct createEstructura{
 
 };
 */
-
 create decodificar_create(int conexion){
 
 	int* size_tabla = malloc(sizeof(int));
@@ -64,36 +64,6 @@ create decodificar_create(int conexion){
 	return dato;
 }
 
-void* serializar_create(request request_create){
-
-	create dato_create = (create)(request_create->tipo_request);
-	void* buffer_serializado = malloc(dato_create->bytes);
-	int desplazamiento = 0;
-
-	memcpy(buffer_serializado + desplazamiento, &(request_create->cod_op), sizeof(request_create->cod_op) );
-	desplazamiento +=  sizeof(request_create->cod_op);
-
-	memcpy(buffer_serializado + desplazamiento, &(dato_create->tabla->size), sizeof(dato_create->tabla->size));
-	desplazamiento +=  sizeof(dato_create->tabla->size);
-
-	memcpy(buffer_serializado + desplazamiento, dato_create->tabla->buffer, dato_create->tabla->size);
-	desplazamiento += dato_create->tabla->size;
-
-	memcpy(buffer_serializado + desplazamiento, &(dato_create->consistencia->size), sizeof(dato_create->consistencia->size));
-	desplazamiento += sizeof(dato_create->consistencia->size);
-
-	memcpy(buffer_serializado + desplazamiento, dato_create->consistencia->buffer, dato_create->consistencia->size);
-	desplazamiento += dato_create->consistencia->size;
-
-	memcpy(buffer_serializado + desplazamiento, &(dato_create->numero_particiones), sizeof(dato_create->numero_particiones));
-	desplazamiento += sizeof(dato_create->numero_particiones);
-
-	memcpy(buffer_serializado + desplazamiento, &(dato_create->compactacion), sizeof(dato_create->compactacion));
-	desplazamiento += sizeof(dato_create->compactacion);
-
-	return buffer_serializado;
-
-}
 
 create crear_dato_create(char* tabla, char* consistencia, int particiones, time_t compactacion){
 
@@ -118,6 +88,7 @@ create crear_dato_create(char* tabla, char* consistencia, int particiones, time_
 	return dato;
 
 }
+
 
 void liberar_dato_create(create dato){
 

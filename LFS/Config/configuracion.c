@@ -38,9 +38,11 @@ void creacion_bitmap(){
 //	log_info(); hace falta
 	int archivo;
 	int cantidadDeBloques;
-	char* path = "bitmap.bin";
-	char* bitmap; //al guardarlo en un chat*, obtengo la mas minima relacion de
+	char* path = "./bitmap.txt";
+	char* archivo_en_memoria; //al guardarlo en un chat*, obtengo la mas minima relacion de
 				  // tamanio de todas las demas variables
+
+
 
 	g_config = config_create("fileSystem.config");
 
@@ -48,22 +50,34 @@ void creacion_bitmap(){
 
 	printf("Cantidad de Bloques = %d\n", cantidadDeBloques);
 
+
+
 	//LO CREA PERO NO PASA AL HOLA
-	archivo = open(path, O_RDWR | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
+	archivo = open(path, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	ftruncate(archivo, cantidadDeBloques);
+	struct stat myStat;
 
-	bitmap = mmap(NULL, cantidadDeBloques, PROT_WRITE | PROT_READ | PROT_EXEC, MAP_SHARED, archivo, 0);
+	if(fstat(archivo, &myStat) == -1){
+		perror("No se pudo obtener el tamanio del archivo \n");
+	}
+	printf("Bitmap size = %ld\n", myStat.st_size);
+
+	archivo_en_memoria = mmap(NULL, myStat.st_size, PROT_WRITE | PROT_READ | PROT_EXEC, MAP_SHARED, archivo, 0);
+	printf("hola bbsita! \n");
 	//after the mmap() call has returned, the file descriptor, "archivo", can be closed
 	//without invalidating the mapping
 	close(archivo);
 
-	t_bitarray* bitArray = bitarray_create_with_mode(bitmap, cantidadDeBloques, LSB_FIRST);
+	printf("Mostrando archivo, como array de caracteres ... \n\n");
 
-	for(int i = 0; i < 3; i++){
-		bitarray_set_bit(bitArray, i);
-		bool result = bitarray_test_bit(bitArray, i);
-		printf("%d\n", result);
+	for(int i = 0; i < myStat.st_size; i++){
+		printf("%c", archivo_en_memoria[i]);
 	}
+
+	printf("\n");
+
+	munmap(archivo_en_memoria, myStat.st_size);
 
 
 }

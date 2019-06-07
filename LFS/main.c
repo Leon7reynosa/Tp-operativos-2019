@@ -12,5 +12,37 @@ int main(){
 
 	creacion_bitmap();
 
+	pthread_t conexion_memoria;
+
+	pthread_create(&conexion_memoria , NULL , conectar_memoria, NULL);
+
+
+
+
+	pthread_join(conexion_memoria, NULL);
+
 	return EXIT_SUCCESS;
+}
+
+
+void* conectar_memoria(){
+
+	int puerto = 4445;
+	char* ip = "127.0.0.1";
+	int socket_cliente;
+	int socket_sv = iniciar_servidor(ip, puerto);
+	request request;
+
+	socket_cliente = aceptar_conexion(socket_sv);
+
+	request = recibir_request(socket_cliente);
+
+	printf("codigo de operacion: %d\n" , request->cod_op);
+
+
+
+	//faltaria mandar la respuesta
+
+	close(socket_sv);
+	return NULL;
 }

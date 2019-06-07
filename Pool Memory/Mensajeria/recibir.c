@@ -7,6 +7,53 @@
 
 #include"recibir.h"
 
+
+request recibir_request(int conexion){
+
+	cod_operacion* cod_op = malloc(sizeof(cod_operacion));
+	void* tipo_request;
+	int pene = 0;
+	pene = recv(conexion, cod_op,sizeof(cod_operacion),MSG_WAITALL);
+
+	if(pene == -1){
+			perror("Fallo al recibir el codigo de operacion.");
+		}
+
+	printf("codigo_op : %d\n" , *cod_op);
+	printf("bytes: %d\n",pene);
+
+	switch(*cod_op){
+
+		case SELECT:
+
+			tipo_request = decodificar_select(conexion);
+			break;
+
+		case INSERT:
+
+			tipo_request = decodificar_insert(conexion);
+			break;
+
+		case CREATE:
+
+			tipo_request = decodificar_create(conexion);
+			break;
+
+		default:
+
+			break;
+
+	}
+
+	request request = crear_request(*cod_op, tipo_request);
+
+	return request;
+
+}
+
+
+////////////////////7 FUNCIONES VIEJAS /////////////////////////7
+
 void* recibir_buffer(int* size, int conexion){
 
 	void* buffer;

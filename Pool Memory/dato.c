@@ -7,7 +7,7 @@
 
 
 #include"dato.h"
-
+/*
 struct DatoEstructura{
 
 	u_int16_t key;
@@ -15,7 +15,7 @@ struct DatoEstructura{
 	time_t timestamp;
 
 };
-
+*/
 Dato crear_dato(u_int16_t key, char* value, time_t timestamp){
 
 	struct DatoEstructura* dato = malloc(sizeof(struct DatoEstructura));

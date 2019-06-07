@@ -23,6 +23,8 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
+int socket_lissandra;
+int socket_kernel;
 
 int conectar_servidor(char* ip, int puerto);
 

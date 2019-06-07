@@ -10,7 +10,6 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-
 #include"request.h"
 
 struct insertEstructura{
@@ -27,8 +26,6 @@ struct insertEstructura{
 typedef struct insertEstructura* insert;
 
 insert decodificar_insert(int conexion);
-void* serializar_insert(request request_insert);
 insert crear_dato_insert(char* tabla, u_int16_t key, char* value, time_t timestamp);
-void liberar_dato_insert(insert dato);
 
 #endif /* MENSAJERIA_REQUESTINSERT_H_ */

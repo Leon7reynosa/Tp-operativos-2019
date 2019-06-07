@@ -10,7 +10,6 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-
 #include"request.h"
 
 struct selectEstructura{
@@ -25,8 +24,7 @@ struct selectEstructura{
 typedef struct selectEstructura* select_t;
 
 select_t decodificar_select(int conexion);
-void* serializar_select(request request_select);
 select_t crear_dato_select(char* tabla, u_int16_t key);
-void liberar_dato_select(select_t);
+void liberar_dato(select_t);
 
 #endif /* MENSAJERIA_REQUESTSELECT_H_ */

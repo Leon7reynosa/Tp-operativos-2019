@@ -24,13 +24,13 @@ typedef struct{
 
 }t_stream;
 
-
 struct requestEstructura{
 
 	cod_operacion cod_op;
 	void* tipo_request;
 
 };
+
 
 //struct requestEstructura;
 typedef struct requestEstructura* request;

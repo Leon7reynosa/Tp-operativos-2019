@@ -13,12 +13,15 @@ int main (int argc , char* argv[]){
 
 	inicializar_cola_exec();
 
+
 	char* linea_request;
 	int tiempo;
 	int particiones;
 	char* nombre_tabla = string_new();
 	char* consistencia = string_new();
 
+
+	conexion_lissandra = conectar_servidor("127.0.0.1" , 4446);
 
 	for (int i = 1; i < argc ; i++){
 
@@ -41,6 +44,7 @@ int main (int argc , char* argv[]){
 
 	}
 
+	//LABUREN !
 
 
 
@@ -110,8 +114,11 @@ void parsear_LQL(FILE* archivo_lql){
 
 		list_add(cola_exec, linea_leida );
 
+
 }
 
+
+//no es el mismo que enviar_request
 void mandar_request(char* request_lql, int conexion){
 
 	int cod_request;
@@ -130,16 +137,20 @@ void mandar_request(char* request_lql, int conexion){
 	switch(cod_request){
 		case SELECT:
 			obtener_parametros_select(request_lql, nombre_tabla, &key);
-			enviar_select(conexion, nombre_tabla, key);
+			select_t select_enviar = crear_dato_select(nombre_tabla, key);
+			enviar_request(SELECT, select_enviar);
 			break;
 		case INSERT:
 			obtener_parametros_insert(request_lql, nombre_tabla, &key, value, &timestamp);
-			enviar_insert(conexion, nombre_tabla, key, value, timestamp);
+			insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
+			enviar_request(INSERT, insert_enviar);
 			break;
 		case CREATE:
 			obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion);
-			enviar_create(conexion, nombre_tabla, consistencia, particiones, tiempo_compactacion);
+			create create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, timepo_compactacion);
+			enviar_request(CREATE, create_enviar);
 			break;
+			/*
 		case DROP:
 			obtener_parametros_drop(request_lql, nombre_tabla);
 			enviar_drop(conexion, nombre_tabla);
@@ -148,6 +159,7 @@ void mandar_request(char* request_lql, int conexion){
 			obtener_parametros_describe_de_una_tabla(request_lql, nombre_tabla);
 			enviar_describe(conexion, nombre_tabla);
 			break;
+			*/
 		default:
 			printf("LA REQUEST NO ES VALIDA\n");
 			exit(-1);

@@ -23,15 +23,12 @@
 #include<signal.h>
 #include<ctype.h>
 
+#include "request.h"
+
 typedef enum{
 	DESCONEXION,
 	MENSAJE
 }cod_op;
-
-typedef enum{
-	SELECT,
-	INSERT
-}request;
 
 
 typedef struct{

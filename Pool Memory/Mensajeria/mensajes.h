@@ -22,16 +22,14 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
-
-typedef struct{
-
-	int size;
-	void* buffer;
-
-}t_stream;
+#include"requestCreate.h"
+#include"requestInsert.h"
+#include"requestSelect.h"
+#include"Cliente/cliente.h"
 
 
-//void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
+void enviar_request(cod_operacion cod_op, void* tipoRequest);
+void liberar_request(request dato);
 void mandar_mensaje(int conexion);
 void eliminar_tStream(t_stream* tStream);
 

@@ -6,7 +6,7 @@
  */
 
 #include"segmento.h"
-
+/*
 struct SegmentoEstructura{
 
 	char* nombre_tabla;
@@ -14,7 +14,7 @@ struct SegmentoEstructura{
 
 
 };
-
+*/
 
 Segmento crear_segmento(char* nombre_tabla){
 
@@ -65,7 +65,7 @@ int list_get_index(t_list* lista, void* dato){
 	void* dato_aux;
 
 	for(index = 0 ; index< lista->elements_count ; index++){
-		dato_aux = list_get_element(lista, index);
+		dato_aux = list_get(lista, index);
 
 		if(dato == dato_aux){
 

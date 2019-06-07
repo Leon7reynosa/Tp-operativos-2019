@@ -22,11 +22,13 @@
 #include"Config/configuracion.h"
 #include"Mensajeria/recibir.h"
 #include"Mensajeria/mensajes.h"
+#include"memoria.h"
+
 
 //estos dos creo que estarian en servidor y cliente (deberian)
-int socket_sv;
-int conexion_lissandra;
 
-void request_select(char* tabla, u_int16_t key);
+Dato request_select(Memoria memoria, char* tabla, u_int16_t key);
+void request_insert(Memoria memoria, char* tabla, u_int16_t key, char* value );
+void request_create(Memoria memoria,  char* tabla, char* consistencia, int numero_particiones, int compactacion  );
 
 #endif /* API_POOL_H_ */

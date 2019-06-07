@@ -10,7 +10,6 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-
 #include"request.h"
 
 struct createEstructura{
@@ -22,12 +21,10 @@ struct createEstructura{
 
 };
 
-
 //struct createEstructura;
 typedef struct createEstructura* create;
 
 create decodificar_create(int conexion);
-void* serializar_create(request request_create);
 create crear_dato_create(char* tabla, char* consistencia, int particiones, time_t compactacion);
 void liberar_dato_create(create dato);
 

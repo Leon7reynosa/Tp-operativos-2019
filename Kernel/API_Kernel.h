@@ -21,10 +21,6 @@ typedef struct{
 	struct tabla_memtable* sig_tabla;
 }tabla_memtable;
 
-
-void enviar_select(int conexion, char* nombre_tabla, u_int16_t key);
-void enviar_insert(int conexion, char* nombre_tabla, u_int16_t key, char* value, time_t timestamp);
-void enviar_create(int conexion, char* nombre_tabla, char* criterio, int numero_particiones, int tiempo_compactacion);
 void enviar_describe(int conexion, char* nombre_tabla);
 void enviar_drop(int conexion, char* nombre_tabla);
 void enviar_journal(int conexion);

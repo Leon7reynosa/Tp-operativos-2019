@@ -23,6 +23,8 @@
 #include<signal.h>
 #include<ctype.h>
 
+#include"request.h"
+
 
 typedef enum{
 	DESCONEXION,
@@ -47,6 +49,7 @@ typedef struct{
 
 int cant_tablas; //inicialmente me los pasa el fileSystem
 
+request recibir_request(int conexion);
 void recibir_mensaje(int conexion);
 t_dato_recibido* recibir_request_LFS(int conexion );
 void* recibir_buffer(int* size,int conexion);

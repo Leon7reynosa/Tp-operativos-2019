@@ -7,6 +7,7 @@
 
 
 #include"request.h"
+
 /*
 struct requestEstructura{
 
@@ -15,7 +16,6 @@ struct requestEstructura{
 
 };
 */
-
 request crear_request(cod_operacion cod_op, void* tipo_request){
 
 	struct requestEstructura* nueva_request = malloc(sizeof(struct requestEstructura));

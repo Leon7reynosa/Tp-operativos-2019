@@ -9,8 +9,11 @@
 #define MAIN_H_
 
 #include"comunity_func.h"
-#include"requests.h"
+#include"Mensajeria/request.h"
+#include<pthread.h>
 
 #include "Config/configuracion.h"
+
+void* conectar_memoria(void);
 
 #endif /* MAIN_H_ */

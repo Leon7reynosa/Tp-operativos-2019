@@ -25,7 +25,7 @@ Dato request_select(Memoria memoria, char* tabla, u_int16_t key){
 		}else{
 			printf("Le pido las cosas al LFS \n\n");
 
-			Dato dato_lfs = pedir_dato_al_FS(tabla, key);
+			Dato dato_lfs = pedir_dato_al_LFS(tabla, key);
 
 			pagina_encontrada = solicitar_pagina(memoria , dato_lfs);
 

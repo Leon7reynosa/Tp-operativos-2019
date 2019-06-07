@@ -21,6 +21,7 @@
 #include<netdb.h>
 #include<readline/readline.h>
 #include<readline/history.h>
+#include"request.h"
 
 #define TAMANIO_MAX_VALUE 50
 
@@ -32,14 +33,6 @@ typedef struct{
 	time_t timestamp;
 
 }dato_t;
-
-
-typedef struct{
-
-	int size;
-	void* buffer;
-
-}t_stream;
 
 typedef struct{
 

@@ -18,6 +18,9 @@
 
 #include"Servidor/servidor.h"
 #include"API_Pool.h"
-#include"manejoDeMemoria.h"
+#include"Mensajeria/mensajes.h"
+
+void* conectar_kernel();
+void* conectar_lissandra();
 
 #endif /* POOL_H_ */
