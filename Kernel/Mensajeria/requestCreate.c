@@ -96,13 +96,13 @@ void* serializar_create(request request_create){
 }
 
 create crear_dato_create(char* tabla, char* consistencia, int particiones, time_t compactacion){
-
 	struct createEstructura* dato = malloc(sizeof(struct createEstructura));
 
 	dato->tabla = malloc(sizeof(t_stream));
 	dato->tabla->size = strlen(tabla) + 1;
 	dato->tabla->buffer = malloc(dato->tabla->size);
 	memcpy(dato->tabla->buffer, tabla, dato->tabla->size);
+	printf("holaa\n");
 
 	dato->consistencia = malloc(sizeof(t_stream));
 	dato->consistencia->buffer = malloc(dato->consistencia->size);
@@ -114,6 +114,9 @@ create crear_dato_create(char* tabla, char* consistencia, int particiones, time_
 
 	dato->bytes = sizeof(cod_operacion) + sizeof(dato->tabla->size) + dato->tabla->size + sizeof(dato->consistencia->size) + dato->consistencia->size
 				  + sizeof(dato->numero_particiones) + sizeof(dato->compactacion);
+
+	free(tabla);
+	free(consistencia);
 
 	return dato;
 

@@ -23,7 +23,7 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
-int socket_lissandra;
+int conexion_lissandra;;
 int socket_pool;
 
 
