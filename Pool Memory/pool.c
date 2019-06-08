@@ -32,7 +32,7 @@ void* conectar_kernel(){
 
 	socket_kernel = aceptar_conexion(socket_sv);
 
-	request = recibir_request(socket_cliente);
+	request = recibir_request(socket_kernel);
 
 	printf("codigo de operacion: %d\n" , request->cod_op);
 

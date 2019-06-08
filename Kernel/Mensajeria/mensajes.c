@@ -37,7 +37,7 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 		//no deberia entrar aca
 		break;
 	}
-	send(socket_pool, buffer, bytes, 0);
+	send(conexion_lissandra, buffer, bytes, 0);
 
 	free(buffer);
 
