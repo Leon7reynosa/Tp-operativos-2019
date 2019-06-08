@@ -103,6 +103,23 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 
 }
 
+char* obtenerPath_Bloque(int indice){
+	t_config* g_config = config_create("lissandra.config");
+	char* puntoMontaje = config_get_string_value(g_config, "PUNTO_MONTAJE");
+	char* path = string_new();
+
+	string_append(&path, puntoMontaje);
+	string_append(&path, "/Bloques/");
+	string_append(&path, string_itoa(indice));
+	string_append(&path, ".bin");
+
+	config_destroy(g_config);
+
+	return path;
+
+
+}
+
 void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion){
 	t_config* metadata_config;
 	char* particionAux = string_new();

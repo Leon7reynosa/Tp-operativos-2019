@@ -20,7 +20,10 @@ Segmento crear_segmento(char* nombre_tabla){
 
 	struct SegmentoEstructura* segmento = malloc(sizeof(struct SegmentoEstructura));
 
-	segmento->nombre_tabla = nombre_tabla;
+	int size = strlen(nombre_tabla) + 1;
+
+	segmento->nombre_tabla = malloc(size);
+	memcpy(segmento->nombre_tabla, nombre_tabla, size);
 
 	segmento->Tabla_paginas = list_create();
 
@@ -84,5 +87,13 @@ void sacar_pagina_segmento(Segmento segmento, Pagina pagina){
 	list_remove(segmento->Tabla_paginas, index);
 
 	pagina->flag_en_uso = 0;
+
+}
+
+void agregar_segmento(char* tabla, t_list* tabla_segmentos){
+
+	Segmento nuevo_segmento = crear_segmento(tabla);
+
+	list_add(tabla_segmentos, nuevo_segmento);
 
 }

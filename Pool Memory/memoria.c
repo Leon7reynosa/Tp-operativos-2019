@@ -184,7 +184,12 @@ Pagina solicitar_pagina(Memoria memoria, Dato nuevo_dato){
 
 Dato pedir_dato_al_LFS(char* tabla, int key){
 
+	select_t dato_select = crear_dato_select(tabla, key);
 
-	return NULL;
+	Dato dato_recibido;
+
+	dato_recibido = enviar_request(SELECT, dato_select );
+
+	return dato_recibido;
 }
 

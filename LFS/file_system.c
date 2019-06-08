@@ -43,7 +43,7 @@ void ingresar_A_Un_binario(char* nombre_tabla, dato_t* dato_ingresar, int partic
 }
 
 
-void crear_Binario(char* nombre_tabla , int key , char* valor, time_t timestamp){
+void crear_Binario_tabla(char* nombre_tabla , u_int16_t key , char* valor, time_t timestamp){
 	dato_t datoAux;
 	metadata_t metadata;
 
@@ -80,7 +80,7 @@ void crear_archivos_particiones(char* nombre_tabla, int numero_particiones){
 }
 
 
-dato_t* buscar_dato_en_binario(char* path_tabla, int key){
+dato_t* buscar_dato_en_binario(char* path_tabla, u_int16_t key){
 	FILE *archivo;
 
 	dato_t* datoAux = malloc(sizeof(dato_t));
@@ -101,5 +101,20 @@ dato_t* buscar_dato_en_binario(char* path_tabla, int key){
 	return datoAux;
 }
 
+void llenarBloque(dato_t dato){
+//	int indice = indicePrimerBloqueVacio();
+	int indice = 2;
+	crear_Binario_Bloque(indice, dato);
+}
+
+void crear_Binario_Bloque(int indice, dato_t dato){
+	char* pathBloque = obtenerPath_Bloque(indice);
+	printf("El path es: %s\n", pathBloque);
+	FILE* f = fopen(pathBloque, "w");
+
+	fwrite(&dato, sizeof(dato_t), 1, f);
+
+	fclose(f);
+}
 
 

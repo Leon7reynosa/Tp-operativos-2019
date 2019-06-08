@@ -10,7 +10,12 @@
 
 int main(){
 
-	creacion_bitmap();
+	dato_t* datovich = malloc(sizeof(dato_t));
+	datovich->key = 10;
+	datovich->timestamp = 123456;
+	datovich->value = "Peron es de Liniers";
+
+	llenarBloque(datovich);
 
 	pthread_t conexion_memoria;
 

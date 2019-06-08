@@ -23,6 +23,8 @@ Dato request_select(Memoria memoria, char* tabla, u_int16_t key){
 			printf("El dato (value) encontrado es: %s\n\n", dato_encontrado->value);
 
 		}else{
+
+			//VER ESTO, si se puede hacer una funcion para no repetir logica
 			printf("Le pido las cosas al LFS \n\n");
 
 			Dato dato_lfs = pedir_dato_al_LFS(tabla, key);
@@ -37,8 +39,14 @@ Dato request_select(Memoria memoria, char* tabla, u_int16_t key){
 		}
 
 	}else{
-		// NO EXISTE LA TABLA, SE LA PIDO AL LFS?
+		//VER ESTO
+		/*
+		agregar_segmento(tabla, memoria->tabla_segmentos);
+
+		Dato dato_lfs = pedir_dato_al_LFS(tabla, key);
+
 		printf("No Existe el segmento con dicha tabla \n\n");
+		*/
 	}
 
 	return dato_encontrado;
@@ -63,17 +71,17 @@ void request_insert(Memoria memoria, char* tabla, u_int16_t key, char* value ){
 
 		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
 
-			actualizar_pagina(pagina_encontrada, dato_insert);
+			actualizar_pagina(pagina_encontrada, dato_insert); //VER ESTO
 
 		}else{
 
-			solicitar_pagina(memoria, dato_insert);
+			solicitar_pagina(memoria, dato_insert); //SEGUIR Y VER
 
 		}
 
 
 	}else{
-
+		// DEFINITIVAMENTE VER
 		//generar el segmento con el dato solicitando una pagina
 
 	}
@@ -82,10 +90,11 @@ void request_insert(Memoria memoria, char* tabla, u_int16_t key, char* value ){
 }
 
 
-void request_create(Memoria memoria,  char* tabla, char* consistencia, int numero_particiones, int compactacion  ){
+void request_create(Memoria memoria,  char* tabla, char* consistencia, int numero_particiones, time_t compactacion  ){
 
+	create dato_create = crear_dato_create(tabla, consistencia, numero_particiones, compactacion);
+	enviar_request(CREATE, dato_create);
 
-
-
+	//seguir!
 
 }

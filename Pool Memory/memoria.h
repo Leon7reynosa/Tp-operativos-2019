@@ -13,6 +13,9 @@
 #include"segmento.h"
 #include<commons/collections/list.h>
 
+#include"Mensajeria/requestSelect.h"
+#include"Mensajeria/mensajes.h"
+
 struct MemoriaEstructura{
 	void* memoria_contigua;
 	t_list* paginas;

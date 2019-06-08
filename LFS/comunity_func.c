@@ -7,7 +7,7 @@
 
 #include "comunity_func.h"
 
-int calcular_particion( int particion_metadata ,int key){
+int calcular_particion(int particion_metadata ,int key){
 
 	return key % particion_metadata;
 

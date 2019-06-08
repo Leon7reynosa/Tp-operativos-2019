@@ -15,6 +15,7 @@ void creacion_del_config_lissandra(){
 
 	config_set_value(g_config, "IP", "127.0.0.1");
 	config_set_value(g_config, "PUERTO", "4445");
+	config_set_value(g_config, "PUNTO_MONTAJE", "./LFS");
 	config_save(g_config);
 	config_destroy(g_config);
 
@@ -22,8 +23,8 @@ void creacion_del_config_lissandra(){
 
 void creacion_del_config_file_system(){
 	//FALTA EL PUNTO DE MONTAJE
-	g_config = config_create("fileSystem.config");
-	config_save_in_file(g_config, "LFS/fileSystem.config"); //anda cuando lo creo el archivo aparte, sino no xD
+	g_config = config_create("fileSystem.metadata");
+	config_save_in_file(g_config, "LFS/fileSystem.metadata"); //anda cuando lo creo el archivo aparte, sino no xD
 
 	config_set_value(g_config, "BLOCK_SIZE", "64");
 	config_set_value(g_config, "BLOCKS", "5192");

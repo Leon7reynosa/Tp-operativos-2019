@@ -20,8 +20,11 @@ Dato crear_dato(u_int16_t key, char* value, time_t timestamp){
 
 	struct DatoEstructura* dato = malloc(sizeof(struct DatoEstructura));
 
+	int size = strlen(value) + 1;
+
 	dato->key 	 	= key;
-	dato->value 	= value;
+	dato->value 	= malloc(size);
+	memcpy(dato->value, value, size);
 	dato->timestamp = timestamp;
 
 	return dato;
