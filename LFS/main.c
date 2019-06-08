@@ -15,8 +15,23 @@ int main(){
 	datovich->timestamp = 123456;
 	datovich->value = "Peron es de Liniers";
 
-	llenarBloque(datovich);
+	dato_t datovichSinPuntero;
+		datovichSinPuntero.key = 10;
+		datovichSinPuntero.timestamp = 123456;
+		datovichSinPuntero.value = malloc(strlen("Peron")+1);
+		memcpy(datovichSinPuntero.value, "Peron", strlen("Peron")+1);
 
+	llenarBloque(datovichSinPuntero);
+
+//	crear_Binario_tabla("Tabla_A", 10, "lol", 123456);
+
+	dato_t datoObtenido;
+	FILE* f = fopen("2.bin", "rb");
+	fread(&datoObtenido, sizeof(dato_t), 1, f);
+	printf("\n\n DATOS OBTENIDOS\n");
+	mostrarDato(datoObtenido);
+	fclose(f);
+/*
 	pthread_t conexion_memoria;
 
 	pthread_create(&conexion_memoria , NULL , conectar_memoria, NULL);
@@ -25,7 +40,7 @@ int main(){
 
 
 	pthread_join(conexion_memoria, NULL);
-
+*/
 	return EXIT_SUCCESS;
 }
 

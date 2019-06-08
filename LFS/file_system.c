@@ -61,7 +61,7 @@ void crear_Binario_tabla(char* nombre_tabla , u_int16_t key , char* valor, time_
 
 	FILE *f = fopen(pathTabla, "wb");
 	fwrite(&datoAux,sizeof(dato_t), 1, f);
-
+	printf("ESCRITO CORRECTAMENTE\n");
 	fclose(f);
 
 }
@@ -108,13 +108,29 @@ void llenarBloque(dato_t dato){
 }
 
 void crear_Binario_Bloque(int indice, dato_t dato){
-	char* pathBloque = obtenerPath_Bloque(indice);
-	printf("El path es: %s\n", pathBloque);
-	FILE* f = fopen(pathBloque, "w");
+	char valueAux[strlen(dato.value)];
+	strcpy(valueAux, dato.value);
+//	char* pathBloque = obtenerPath_Bloque(indice);
+	char* pathHard = "2.bin";
 
-	fwrite(&dato, sizeof(dato_t), 1, f);
+	printf("El path es: %s\n", pathHard);
+
+	mostrarDato(dato);
+	printf("El valueAux es: %s\n", valueAux);
+
+	FILE* f = fopen(pathHard, "wb");
+
+	fwrite(&(dato.key), sizeof(dato.key), 1, f);
+	fwrite(&(valueAux), sizeof(dato.value), 1, f);
+	fwrite(&(dato.timestamp), sizeof(dato.timestamp), 1, f);
 
 	fclose(f);
+}
+
+void mostrarDato(dato_t dato){
+	printf("Key: %d\n", dato.key);
+	printf("Value: %s\n", dato.value);
+	printf("Timestamp: %d\n", dato.timestamp);
 }
 
 

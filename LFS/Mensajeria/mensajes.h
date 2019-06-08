@@ -29,7 +29,7 @@
 typedef struct{
 
 	int key;
-	char value[TAMANIO_MAX_VALUE];
+	char* value;
 	time_t timestamp;
 
 }dato_t;

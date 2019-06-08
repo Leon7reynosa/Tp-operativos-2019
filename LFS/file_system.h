@@ -33,5 +33,6 @@ void mostrarEstadosTotales();
 void setearEstado(int numeroBloque, estado estado);
 void llenarBloque(dato_t dato);
 int indicePrimerBloqueVacio(void);
+void mostrarDato(dato_t);
 
 #endif /* FILE_SYSTEM_H_ */
