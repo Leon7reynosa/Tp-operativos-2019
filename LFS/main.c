@@ -10,34 +10,29 @@
 
 int main(){
 
+	//obtener_datos_metadata();
+	//creacion_del_config_fileSystem();
 	dato_t* datovich = malloc(sizeof(dato_t));
 	datovich->key = 10;
 	datovich->timestamp = 123456;
-	datovich->value = "Peron es de Liniers";
-
+	datovich->value = malloc(5);
+	memcpy(datovich->value, "hola", 5);
+	/*
 	dato_t datovichSinPuntero;
 		datovichSinPuntero.key = 10;
 		datovichSinPuntero.timestamp = 123456;
 		datovichSinPuntero.value = string_new();
 		datovichSinPuntero.value = "Peronismo ATR";
-
-	llenarBloque(datovichSinPuntero);
+	*/
 
 //	crear_Binario_tabla("Tabla_A", 10, "lol", 123456);
 
-	dato_t datoObtenido;
-	FILE* f = fopen("2.bin", "r");
 
-	u_int16_t key;
-	char value[51];
-	time_t timestamp;
+	setAllEstados(LIBRE);
+	getAllEstados();
 
-	fread(&datoObtenido, sizeof(bloque_t), 1, f);
-	printf("DATOS OBTENIDOS\n");
-	mostrarDato(datoObtenido);
-
-	fclose(f);
 /*
+/////////////////////////////////////////////////////////////////
 	pthread_t conexion_memoria;
 
 	pthread_create(&conexion_memoria , NULL , conectar_memoria, NULL);

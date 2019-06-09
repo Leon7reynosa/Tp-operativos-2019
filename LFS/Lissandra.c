@@ -16,6 +16,8 @@ void ingresar_a_memtable(dato_t* dato_a_ingresar, char* nombre_tabla){
 
 	list_add(tabla_ingresar->primer_elemento , dato_a_ingresar);
 
+
+
 }
 
 

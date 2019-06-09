@@ -23,10 +23,19 @@
 
 
 t_config* g_config;
+char* magic_number;
+int blocks;
+int block_size;
+int tamanio_value_max;
+int tiempo_dump;
+int puerto_lfs;
+char* punto_montaje;
+int retardo;
+char* ip_lfs;
 
 void creacion_bitmap(void);
-void creacion_del_config_lissandra(void);
-void creacion_del_config_file_system(void);
+void creacion_del_config_fileSystem(void);
+void creacion_del_metadata_fileSystem(void);
 void obtener_puerto_ip(int* puerto, char** ip);
 
 #endif /* CONFIGURACION_H_ */

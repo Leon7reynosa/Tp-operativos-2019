@@ -8,20 +8,21 @@
 #include "configuracion.h"
 
 
-void creacion_del_config_lissandra(){
-
-
-	g_config = config_create("lissandra.config");
+void creacion_del_config_fileSystem(){
+	g_config = config_create("fileSystem.config");
 
 	config_set_value(g_config, "IP", "127.0.0.1");
 	config_set_value(g_config, "PUERTO", "4445");
-	config_set_value(g_config, "PUNTO_MONTAJE", "./LFS");
+	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
+	config_set_value(g_config, "RETARDO", "500");
+	config_set_value(g_config, "TAMANIO_VALUE", "20");
+	config_set_value(g_config, "TIEMPO_DUMP", "5000");
 	config_save(g_config);
 	config_destroy(g_config);
 
 }
 
-void creacion_del_config_file_system(){
+void creacion_del_metadata_fileSystem(){
 	//FALTA EL PUNTO DE MONTAJE
 	g_config = config_create("fileSystem.metadata");
 	config_save_in_file(g_config, "LFS/fileSystem.metadata"); //anda cuando lo creo el archivo aparte, sino no xD
@@ -35,6 +36,7 @@ void creacion_del_config_file_system(){
 }
 
 void creacion_bitmap(){
+	//USAR SOLO AL INICIALIZAR !, SETEA TODO EN 0 (aparentemente xd)
 
 //	log_info(); hace falta
 	int archivo;
@@ -70,8 +72,6 @@ void creacion_bitmap(){
 		write(archivo, 0, sizeof(char));
 	}
 
-	printf("\n");
-
 	munmap(archivo_en_memoria, myStat.st_size);
 
 	close(archivo);
@@ -89,4 +89,31 @@ void obtener_puerto_ip(int* puerto,char** ip){
 	*ip = config_get_string_value(g_config,"IP");
 
 }
+
+void obtener_datos_metadata(){
+	g_config = config_create("fileSystem.metadata");
+	//BLOCK SIZE, BLOCKS, MAGIC
+
+	block_size   = config_get_int_value(g_config, "BLOCK_SIZE");
+	magic_number = config_get_string_value(g_config, "MAGIC_NUMBER");
+	blocks       = config_get_int_value(g_config, "BLOCKS");
+
+	config_destroy(g_config);
+}
+
+void obtener_datos_config(){
+	g_config = config_create("fileSystem.metadata");
+	//BLOCK SIZE, BLOCKS, MAGIC
+
+	tamanio_value_max   = config_get_int_value(g_config, "TAMANIO_VALUE");
+	tiempo_dump         = config_get_string_value(g_config, "TIEMPO_DUMP");
+	puerto_lfs          = config_get_int_value(g_config, "PUERTO");
+	punto_montaje       = config_get_int_value(g_config, "PUNTO_MONTAJE");
+	retardo             = config_get_int_value(g_config, "RETARDO");
+	ip_lfs              = config_get_string_value(g_config, "IP");
+
+	config_destroy(g_config);
+}
+
+
 
