@@ -16,11 +16,23 @@
 #include<readline/readline.h>
 
 
+int puerto_escucha;
+char* ip_lfs;
+int puerto_lfs;
+//char** seeds;
+//int* puertos;
+time_t retardo_memoria;
+time_t retardo_lfs;
+int tamanio;
+time_t tiempo_journal;
+time_t tiempo_gossiping;
+int numero_memoria;
+
+
 t_config* g_config;
 
 
 void creacion_del_config(void);
-void obtener_puerto_ip(int* puerto, char** ip);
-int obtener_tamanio_memoria(void);
+void obtener_datos_config(void);
 
 #endif /* CONFIGURACION_H_ */

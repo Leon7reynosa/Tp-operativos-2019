@@ -44,7 +44,6 @@ void liberar_segmento(Segmento segmento_a_liberar){
 }
 
 bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encontrada){
-
 	t_list* tabla_paginas = segmento_tabla->Tabla_paginas;
 
 	bool _condicion_pagina(void* pagina_a_analizar){
@@ -57,7 +56,7 @@ bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encont
 
 	*pagina_encontrada = list_find(tabla_paginas, _condicion_pagina);
 
-	return *pagina_encontrada != NULL;          // podria poner " ? true : false " para que quede mas entendible, pero es como medio caca
+	return (*pagina_encontrada) != NULL;          // podria poner " ? true : false " para que quede mas entendible, pero es como medio caca
 
 }
 
@@ -95,5 +94,15 @@ void agregar_segmento(char* tabla, t_list* tabla_segmentos){
 	Segmento nuevo_segmento = crear_segmento(tabla);
 
 	list_add(tabla_segmentos, nuevo_segmento);
+
+}
+
+void agregar_pagina(Segmento segmento, Pagina pagina){
+
+	pagina->flag_en_uso = 1;
+
+	list_add(segmento->Tabla_paginas, pagina);
+
+
 
 }

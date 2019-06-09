@@ -27,6 +27,8 @@ Dato crear_dato(u_int16_t key, char* value, time_t timestamp){
 	memcpy(dato->value, value, size);
 	dato->timestamp = timestamp;
 
+	printf("DATO CUANDO FUE CREADO: %s\n", dato->value);
+
 	return dato;
 }
 

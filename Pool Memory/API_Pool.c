@@ -7,38 +7,41 @@
 
 #include "API_Pool.h"
 
-Dato request_select(Memoria memoria, char* tabla, u_int16_t key){
+Dato request_select(char* tabla, u_int16_t key){
 
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
 	Dato dato_encontrado;
 
-	if(existe_segmento(tabla, memoria ,&segmento_tabla)){
+	if(existe_segmento(tabla,&segmento_tabla)){
 
 		printf("Existe el Segmento: %s\n", segmento_tabla->nombre_tabla);
 
 		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
-			dato_encontrado = (Dato)pagina_encontrada->flag_modificado;
+			printf("Existe la pagina!\n");
 
-			printf("El dato (value) encontrado es: %s\n\n", dato_encontrado->value);
+			mostrar_datos(pagina_encontrada);
 
 		}else{
 
 			//VER ESTO, si se puede hacer una funcion para no repetir logica
-			printf("Le pido las cosas al LFS \n\n");
+			printf("Le pido las cosas al LFS \n");
 
+			/*
 			Dato dato_lfs = pedir_dato_al_LFS(tabla, key);
 
-			pagina_encontrada = solicitar_pagina(memoria , dato_lfs);
+			pagina_encontrada = solicitar_pagina(dato_lfs);
 
-			dato_encontrado = pagina_encontrada->referencia_memoria;
+			agregar_pagina(segmento_tabla, pagina_encontrada);
 
-			printf("El dato (Value) encontrado es: %s \n\n", dato_encontrado->value);
+			mostrar_dato(pagina_encontrada);
 
 			liberar_dato(dato_lfs);
+			*/
 		}
 
 	}else{
+		printf("No existe el segmento, lo tenes que crear y pedirle el dato al LFS! \n")
 		//VER ESTO
 		/*
 		agregar_segmento(tabla, memoria->tabla_segmentos);
@@ -52,7 +55,7 @@ Dato request_select(Memoria memoria, char* tabla, u_int16_t key){
 	return dato_encontrado;
 }
 
-void request_insert(Memoria memoria, char* tabla, u_int16_t key, char* value ){
+void request_insert(char* tabla, u_int16_t key, char* value ){
 
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
@@ -63,34 +66,38 @@ void request_insert(Memoria memoria, char* tabla, u_int16_t key, char* value ){
 		return;
 	}
 
-	time_t timestamp; ////// HAY QUE GUARDAR ESTO BIEN CON EL TIEMPO ACTUAL
+	time_t timestamp = 20000; ////// HAY QUE GUARDAR ESTO BIEN CON EL TIEMPO ACTUAL
 
 	dato_insert = crear_dato(key, value, timestamp );
 
-	if(existe_segmento(tabla, memoria, &segmento_tabla)){
-
+	if(existe_segmento(tabla,&segmento_tabla)){
+		printf("Existe el segmento! \n");
 		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
-
+			printf("Existe la pagina! \n");
 			actualizar_pagina(pagina_encontrada, dato_insert); //VER ESTO
 
-		}else{
+			mostrar_datos(pagina_encontrada);
 
-			solicitar_pagina(memoria, dato_insert); //SEGUIR Y VER
+		}else{
+			printf("No existe la pagina, la solicito! \n");
+			pagina_encontrada = solicitar_pagina(dato_insert); //SEGUIR Y VER
+
+			agregar_pagina(segmento_tabla, pagina_encontrada);
+
+			mostrar_datos(pagina_encontrada);
 
 		}
 
 
 	}else{
-		// DEFINITIVAMENTE VER
-		//generar el segmento con el dato solicitando una pagina
-
+		printf("No existe el segmento, deberia crearlo!\n");
 	}
 
 	liberar_dato(dato_insert);
 }
 
 
-void request_create(Memoria memoria,  char* tabla, char* consistencia, int numero_particiones, time_t compactacion  ){
+void request_create(char* tabla, char* consistencia, int numero_particiones, time_t compactacion  ){
 
 	create dato_create = crear_dato_create(tabla, consistencia, numero_particiones, compactacion);
 	enviar_request(CREATE, dato_create);

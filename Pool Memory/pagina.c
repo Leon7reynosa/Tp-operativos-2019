@@ -23,11 +23,11 @@ void liberar_pagina(Pagina pagina_a_liberar){
 }
 
 
-Pagina crear_pagina(Dato dato_en_memoria){
+Pagina crear_pagina(void* posicion_memoria){
 
 	struct PaginaEstructura* pagina = malloc(sizeof(struct PaginaEstructura));
 
-	pagina->referencia_memoria = dato_en_memoria;
+	pagina->referencia_memoria = posicion_memoria;
 
 	pagina->flag_en_uso = 0;
 
@@ -40,8 +40,9 @@ Pagina crear_pagina(Dato dato_en_memoria){
 }
 
 bool esta_libre(Pagina pagina){
+	printf("entre a la funcion esta libre\n");
 
-	return pagina->flag_en_uso;
+	return !(pagina->flag_en_uso);
 }
 
 Pagina pagina_menos_usada(t_list* paginas){
@@ -96,6 +97,21 @@ void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
 
 	guardar_dato_en_memoria(dato_insert, pagina_encontrada->referencia_memoria);
 
-	liberar_dato(dato_insert);
+}
 
+void  mostrar_datos(Pagina pagina){
+
+
+	Dato nuevo_dato = malloc(sizeof(struct DatoEstructura));
+	nuevo_dato->value = malloc(tamanio_value);
+	memcpy(&(nuevo_dato->key), pagina->referencia_memoria, sizeof(u_int16_t));
+	memcpy(&(nuevo_dato->timestamp), (pagina->referencia_memoria) + sizeof(u_int16_t), sizeof(time_t));
+	memcpy(nuevo_dato->value, (pagina->referencia_memoria) + sizeof(u_int16_t) + sizeof(time_t), tamanio_value);
+
+	printf("Ahora voy a imprimir la pagina completa!\n");
+	printf("key: %d\n", nuevo_dato->key);
+	printf("timestamp: %d\n",nuevo_dato->timestamp);
+	printf("value: %s\n", nuevo_dato->value);
+
+	liberar_dato(nuevo_dato);
 }

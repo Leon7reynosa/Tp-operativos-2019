@@ -10,7 +10,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<pthread.h>
+//#include<pthread.h>
 #include<commons/log.h>
 #include<commons/string.h>
 #include<commons/config.h>
@@ -20,7 +20,7 @@
 #include"API_Pool.h"
 #include"Mensajeria/mensajes.h"
 
-void* conectar_kernel();
-void* conectar_lissandra();
+//void* conectar_kernel();
+//void* conectar_lissandra();
 
 #endif /* POOL_H_ */

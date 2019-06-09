@@ -17,7 +17,7 @@ struct MemoriaEstructura{
 
 };
 */
-t_list* inicializar_paginas(Memoria memoria){
+t_list* inicializar_paginas(){
 
 	int contador = memoria->cant_max_datos;
 	t_list* paginas = list_create();
@@ -40,17 +40,16 @@ t_list* inicializar_paginas(Memoria memoria){
 
 }
 
-Memoria inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato, t_list* tablas){
+void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato, t_list* tablas){
 
-	struct MemoriaEstructura* memoria = malloc(sizeof(struct MemoriaEstructura));
-
+	memoria = malloc(sizeof(struct MemoriaEstructura));
 	memoria->memoria_contigua  = malloc(tamanio);
+
 	memoria->tabla_segmentos   = inicializar_tabla_segmentos(tablas);
 	memoria->tamanio 		   = tamanio;
 	memoria->cant_max_datos    = tamanio / tamanio_dato;
 	memoria->paginas		   = inicializar_paginas(memoria);
 
-	return memoria;
 }
 
 t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar){ // tablas a inicializar tiene en "data" un puntero a char*
@@ -72,23 +71,28 @@ t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar){ // tablas a i
 }
 
 
-bool existe_segmento(char* nombre_tabla, Memoria memoria, Segmento* segmento_encontrado){
+bool existe_segmento(char* nombre_tabla, Segmento* segmento_encontrado){
+
+	printf("Me fijo si existe el segmento!\n");
 
 	bool _condicion_de_segmento(void* segmento_a_analizar){
 
 		char* nombre_a_analizar = ((Segmento)segmento_a_analizar)->nombre_tabla;
+		printf("TABLA ANALIZADA: %s\n", nombre_a_analizar);
 
 		return string_equals_ignore_case(nombre_a_analizar, nombre_tabla);
 
 	}
 
+
+
 	*segmento_encontrado = list_find(memoria->tabla_segmentos, _condicion_de_segmento);
 
-	return *segmento_encontrado != NULL;
+	return (*segmento_encontrado) != NULL;
 
 }
 
-Segmento encontrar_segmento_con_pagina(Memoria memoria, Pagina pagina_a_buscar){
+Segmento encontrar_segmento_con_pagina(Pagina pagina_a_buscar){
 
 	Segmento segmento_encontrado;
 
@@ -108,9 +112,9 @@ Segmento encontrar_segmento_con_pagina(Memoria memoria, Pagina pagina_a_buscar){
 
 }
 
-bool hay_pagina_libre(Memoria memoria, Pagina* pagina_solicitada){
+bool hay_pagina_libre(Pagina* pagina_solicitada){
 
-
+	printf("Me fijo si hay una pagina libre! \n");
 	*pagina_solicitada = list_find(memoria->paginas, esta_libre);
 
 	return *pagina_solicitada != NULL;
@@ -127,25 +131,26 @@ void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
 	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->timestamp), sizeof(time_t) );
 	desplazamiento += sizeof(time_t);
 
-	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->value), tamanio_value);
-	desplazamiento += tamanio_value;
+	printf("DATO CUANDO VA A SER COPIADO: %s\n", nuevo_dato->value);
+
+	memcpy(posicion_memoria + desplazamiento, nuevo_dato->value, strlen(nuevo_dato->value) + 1);
 
 }
 
-void realizar_journal(Memoria memoria){
+void realizar_journal(){
 	printf("journal realizado xD mentira crack, no lo hiciste todavia, te tiro un exit de ondis ;) \n");
 	exit(1);
 }
 
 
 
-Pagina realizar_algoritmo_reemplazo(Memoria memoria){
+Pagina realizar_algoritmo_reemplazo(){
 
 	Pagina pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
 	if(pagina_reemplazada == NULL){
 
-		realizar_journal(memoria);
+		realizar_journal();
 
 		pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
@@ -153,28 +158,28 @@ Pagina realizar_algoritmo_reemplazo(Memoria memoria){
 
 	Segmento segmento_modificado;
 
-	segmento_modificado = encontrar_segmento_con_pagina(memoria, pagina_reemplazada);
+	segmento_modificado = encontrar_segmento_con_pagina(pagina_reemplazada);
 
 	sacar_pagina_segmento(segmento_modificado, pagina_reemplazada);
 
 	return pagina_reemplazada;
 }
 
-Pagina solicitar_pagina(Memoria memoria, Dato nuevo_dato){
+Pagina solicitar_pagina(Dato nuevo_dato){
 
 	Pagina pagina_solicitada;
 
-	if(hay_pagina_libre(memoria, &pagina_solicitada)){
-
+	if(hay_pagina_libre(&pagina_solicitada)){
+		printf("Hay una pagina libre, guardo el dato en la referencia que tiene!\n");
 		guardar_dato_en_memoria(nuevo_dato, pagina_solicitada->referencia_memoria);
 
 	}else{
 
-		pagina_solicitada = realizar_algoritmo_reemplazo(memoria);
+		pagina_solicitada = realizar_algoritmo_reemplazo();
 		guardar_dato_en_memoria(nuevo_dato, pagina_solicitada->referencia_memoria);
 
 	}
-
+	printf("Se guardo piola!\n");
 	pagina_solicitada->flag_en_uso = 1;
 
 
@@ -188,7 +193,9 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	Dato dato_recibido;
 
-	dato_recibido = enviar_request(SELECT, dato_select );
+	enviar_request(SELECT, dato_select );
+
+	//dato_recibido = recibir_dato();
 
 	return dato_recibido;
 }
