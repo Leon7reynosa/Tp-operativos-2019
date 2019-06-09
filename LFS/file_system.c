@@ -108,29 +108,76 @@ void llenarBloque(dato_t dato){
 }
 
 void crear_Binario_Bloque(int indice, dato_t dato){
-	char valueAux[strlen(dato.value)];
-	strcpy(valueAux, dato.value);
 //	char* pathBloque = obtenerPath_Bloque(indice);
 	char* pathHard = "2.bin";
 
 	printf("El path es: %s\n", pathHard);
-
+	printf("Datos previos a carga: \n");
 	mostrarDato(dato);
-	printf("El valueAux es: %s\n", valueAux);
+
+	datoAux datoPasaje;
+	datoPasaje.key = dato.key;
+	strcpy(datoPasaje.value, dato.value);
+	datoPasaje.timestamp = dato.timestamp;
+
+
+	char valueAux[strlen(dato.value) + 1];
 
 	FILE* f = fopen(pathHard, "wb");
 
 	fwrite(&(dato.key), sizeof(dato.key), 1, f);
-	fwrite(&(valueAux), sizeof(dato.value), 1, f);
+	fwrite(valueAux, strlen(dato.value) + 1 , 1, f);
 	fwrite(&(dato.timestamp), sizeof(dato.timestamp), 1, f);
 
+	fwrite(&(datoPasaje), sizeof(bloque_t), 1, f);
+
+	printf("#########TERMINADO DE CARGAR#############\n");
 	fclose(f);
+//	setearEstado(2, OCUPADO);
 }
 
 void mostrarDato(dato_t dato){
 	printf("Key: %d\n", dato.key);
 	printf("Value: %s\n", dato.value);
 	printf("Timestamp: %d\n", dato.timestamp);
+}
+
+
+void setearEstado(int indiceBloque, estado estado){
+
+	struct stat myStat;
+
+	int fichero = open("bitmap.bin", O_WRONLY, S_IRUSR | S_IWUSR);
+
+	char* bitmap = mmap(0, myStat.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, fichero, 0);
+
+	if(bitmap == MAP_FAILED){
+		perror("mmap");
+		close(fichero);
+		exit(1);
+	}
+
+	*(bitmap + indiceBloque) = estado;
+
+	close(fichero);
+
+
+}
+
+void getEstado(){
+	int fichero = open("./bitmap.bin", O_RDONLY, S_IRUSR);
+	struct stat myStat;
+	fstat(&myStat.st_size, fichero);
+
+	char* bitmap = mmap(NULL, myStat.st_size, PROT_READ, MAP_SHARED, fichero, 0);
+
+	for(int i = 0; i < 5192; i++){
+		printf("Indice %i = %i\n", i, *(bitmap + i));
+	}
+
+	munmap(bitmap, myStat.st_size);
+
+	close(fichero);
 }
 
 

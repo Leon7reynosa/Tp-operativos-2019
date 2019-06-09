@@ -22,18 +22,11 @@
 #include<string.h>
 #include<sys/stat.h>
 #include"Metadata/metadata.h"
-
-typedef struct{
-
-	int key;
-	char* value;
-	time_t timestamp;
-
-}dato_t;
+#include"Mensajeria/mensajes.h"
 
 
-dato_t* crear_dato(int clave, char* valor, time_t tiempo);
-int calcular_particion( int particion_metadata ,int key);
+dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo);
+int calcular_particion( int particion_metadata ,u_int16_t key);
 dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato);
 
 #endif /* COMUNITY_FUNC_H_ */

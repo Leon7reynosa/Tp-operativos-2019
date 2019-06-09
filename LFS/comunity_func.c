@@ -7,17 +7,17 @@
 
 #include "comunity_func.h"
 
-int calcular_particion(int particion_metadata ,int key){
+int calcular_particion(int particion_metadata ,u_int16_t key){
 
 	return key % particion_metadata;
 
 }
 
-dato_t* crear_dato(int clave, char* valor, time_t tiempo){
+dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo){
 
 	dato_t* nuevo = (dato_t*) malloc(sizeof(dato_t));
 
-	nuevo->key = clave;
+	nuevo->key = key;
 	nuevo->value =  valor;
 	nuevo->timestamp = tiempo;
 

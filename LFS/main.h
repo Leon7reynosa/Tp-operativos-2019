@@ -10,6 +10,7 @@
 
 #include"comunity_func.h"
 #include"Mensajeria/request.h"
+#include"file_system.h"
 #include<pthread.h>
 
 #include "Config/configuracion.h"

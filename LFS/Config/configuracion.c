@@ -39,21 +39,18 @@ void creacion_bitmap(){
 //	log_info(); hace falta
 	int archivo;
 	int cantidadDeBloques;
-	char* path = "./bitmap.txt";
+	char* path = "./bitmap.bin";
 	char* archivo_en_memoria; //al guardarlo en un chat*, obtengo la mas minima relacion de
 				  // tamanio de todas las demas variables
 
 
 
-	g_config = config_create("fileSystem.config");
+	g_config = config_create("fileSystem.metadata");
 
 	cantidadDeBloques = config_get_int_value(g_config, "BLOCKS");
 
 	printf("Cantidad de Bloques = %d\n", cantidadDeBloques);
 
-
-
-	//LO CREA PERO NO PASA AL HOLA
 
 	archivo = open(path, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	ftruncate(archivo, cantidadDeBloques);
@@ -64,21 +61,20 @@ void creacion_bitmap(){
 	}
 	printf("Bitmap size = %ld\n", myStat.st_size);
 
+
 	archivo_en_memoria = mmap(NULL, myStat.st_size, PROT_WRITE | PROT_READ | PROT_EXEC, MAP_SHARED, archivo, 0);
-	printf("hola bbsita! \n");
 	//after the mmap() call has returned, the file descriptor, "archivo", can be closed
 	//without invalidating the mapping
-	close(archivo);
-
-	printf("Mostrando archivo, como array de caracteres ... \n\n");
 
 	for(int i = 0; i < myStat.st_size; i++){
-		printf("%c", archivo_en_memoria[i]);
+		write(archivo, 0, sizeof(char));
 	}
 
 	printf("\n");
 
 	munmap(archivo_en_memoria, myStat.st_size);
+
+	close(archivo);
 
 
 }

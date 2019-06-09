@@ -9,12 +9,19 @@
 #define FILE_SYSTEM_H_
 
 #include"comunity_func.h"
+#include"Config/configuracion.h"
 
 typedef struct {
 	u_int16_t key;
 	char* value;
 	time_t timestamp;
 }bloque_t;
+
+typedef struct{
+	u_int16_t key;
+	char value[50];
+	time_t timestamp;
+}datoAux;
 
 typedef enum{
 	LIBRE,
@@ -31,6 +38,7 @@ dato_t* buscar_dato_en_binario(char* path_tabla, u_int16_t key);
 void estadoDelBloque(int numeroBloque);
 void mostrarEstadosTotales();
 void setearEstado(int numeroBloque, estado estado);
+void getEstado();
 void llenarBloque(dato_t dato);
 int indicePrimerBloqueVacio(void);
 void mostrarDato(dato_t);

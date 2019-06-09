@@ -28,7 +28,7 @@
 
 typedef struct{
 
-	int key;
+	u_int16_t key;
 	char* value;
 	time_t timestamp;
 
