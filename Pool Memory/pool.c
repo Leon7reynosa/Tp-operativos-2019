@@ -22,25 +22,17 @@ int main (void){
 
 	inicializar_memoria(tamanio, tamanio_value, 51 + sizeof(u_int16_t) + sizeof(time_t), lista_tablas);
 
+	int i;
 
-	printf("/////////////////// INSERT /////////////////////\n");
-	request_insert("Tabla_A", 7, "Hola, soy una prueba un poco mas larga.");
-	printf("/////////////////// INSERT /////////////////////\n");
-	request_insert("Tabla_A", 8, "Hola, soy una prueba que parezco corta, pero no deberia ejecutar");
-	printf("/////////////////// INSERT /////////////////////\n");
-	request_insert("Tabla_A", 8, "Soy la tercer prueba, aguante boca");
-	printf("/////////////////// INSERT /////////////////////\n");
-	request_insert("Tabla_B", 10, "IUJU");
-	printf("/////////////////// INSERT /////////////////////\n");
-	request_insert("Tabla_A", 10, "SOY LA QUINTA PRUEBA");
-	printf("/////////////////// SELECT /////////////////////\n");
-	request_select("Tabla_A", 10 );
-	printf("/////////////////// INSERT /////////////////////\n");
-	request_insert("Tabla_A", 10, "Reescribi a la quinta :D");
-	printf("/////////////////// SELECT /////////////////////\n");
-	request_select("Tabla_A", 10 );
-	printf("/////////////////// SELECT /////////////////////\n");
-	request_select("Tabla_A", 7 );
+	printf("Cantidad de paginas: %i\n", memoria->paginas->elements_count);
 
+	for( i = 0; i < 35; i++){
+		printf("/////////////////// INSERT n°%i /////////////////////\n", i + 1);
+		request_insert("Tabla_A", i + 1, "Hola, soy alguna prueba.\n");
+	}
+
+
+
+	printf("Pruebas finalizadas con exito!\n");
 	return EXIT_SUCCESS;
 }

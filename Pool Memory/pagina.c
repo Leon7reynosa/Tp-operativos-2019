@@ -40,7 +40,6 @@ Pagina crear_pagina(void* posicion_memoria){
 }
 
 bool esta_libre(Pagina pagina){
-	printf("entre a la funcion esta libre\n");
 
 	return !(pagina->flag_en_uso);
 }
@@ -50,8 +49,9 @@ Pagina pagina_menos_usada(t_list* paginas){
 	Pagina pagina_encontrada;
 	time_t ts_menor;
 	t_list* paginas_no_modificadas = paginas_sin_modificar(paginas);
+	printf("PAGINAS SIN MODIFICAR: %i\n", paginas_no_modificadas->elements_count);
 
-	if(paginas_no_modificadas == NULL){
+	if(paginas_no_modificadas->elements_count == 0){
 
 		pagina_encontrada = NULL;
 
@@ -83,9 +83,12 @@ Pagina pagina_menos_usada(t_list* paginas){
 
 t_list* paginas_sin_modificar(t_list* paginas){
 
-	bool _sin_modificar(Pagina pagina){
 
-		return pagina->flag_modificado != 1;
+	bool _sin_modificar(void* _pagina){
+
+		Pagina pagina = (Pagina)_pagina;
+
+		return pagina->flag_modificado < 1;
 
 	}
 

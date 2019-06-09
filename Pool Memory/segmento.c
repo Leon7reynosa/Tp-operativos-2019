@@ -47,13 +47,11 @@ bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encont
 	t_list* tabla_paginas = segmento_tabla->Tabla_paginas;
 
 	bool _condicion_pagina(void* pagina_a_analizar){
-
 		Dato dato_a_analizar = (Dato)((Pagina)pagina_a_analizar)->referencia_memoria;
 
 		return dato_a_analizar->key == key;
 
 	}
-
 	*pagina_encontrada = list_find(tabla_paginas, _condicion_pagina);
 
 	return (*pagina_encontrada) != NULL;          // podria poner " ? true : false " para que quede mas entendible, pero es como medio caca

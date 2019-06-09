@@ -41,16 +41,6 @@ void mandar_request(char* request_lql, int conexion){
 			struct createEstructura* create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 			enviar_request(CREATE, create_enviar);
 			break;
-			/*
-		case DROP:
-			obtener_parametros_drop(request_lql, nombre_tabla);
-			enviar_drop(conexion, nombre_tabla);
-			break;
-		case DESCRIBE:
-			obtener_parametros_describe_de_una_tabla(request_lql, nombre_tabla);
-			enviar_describe(conexion, nombre_tabla);
-			break;
-			*/
 		default:
 			printf("LA REQUEST NO ES VALIDA\n");
 			exit(-1);

@@ -20,21 +20,24 @@ struct MemoriaEstructura{
 t_list* inicializar_paginas(){
 
 	int contador = memoria->cant_max_datos;
+	printf("CANT MAX DE DATOS: %i, deberia ser 35", contador);
+	printf("tamanio_dato = %i\n", tamanio_dato);
 	t_list* paginas = list_create();
 	int desplazamiento = 0;
 
 	while(contador > 0){
 
-		Pagina nueva_pagina = crear_pagina((Dato)(memoria->memoria_contigua + desplazamiento));
+		Pagina nueva_pagina = crear_pagina((memoria->memoria_contigua + desplazamiento));
 		desplazamiento += tamanio_dato;
 
 
 		list_add(paginas, nueva_pagina);
-		desplazamiento += tamanio_dato;
 
 		contador--;
 
 	}
+
+	printf("DESPLAZAMIENTO: %i\n", desplazamiento);
 
 	return paginas;
 
@@ -73,12 +76,9 @@ t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar){ // tablas a i
 
 bool existe_segmento(char* nombre_tabla, Segmento* segmento_encontrado){
 
-	printf("Me fijo si existe el segmento!\n");
-
 	bool _condicion_de_segmento(void* segmento_a_analizar){
 
 		char* nombre_a_analizar = ((Segmento)segmento_a_analizar)->nombre_tabla;
-		printf("TABLA ANALIZADA: %s\n", nombre_a_analizar);
 
 		return string_equals_ignore_case(nombre_a_analizar, nombre_tabla);
 
@@ -114,7 +114,6 @@ Segmento encontrar_segmento_con_pagina(Pagina pagina_a_buscar){
 
 bool hay_pagina_libre(Pagina* pagina_solicitada){
 
-	printf("Me fijo si hay una pagina libre! \n");
 	*pagina_solicitada = list_find(memoria->paginas, esta_libre);
 
 	return *pagina_solicitada != NULL;
@@ -131,8 +130,6 @@ void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
 	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->timestamp), sizeof(time_t) );
 	desplazamiento += sizeof(time_t);
 
-	printf("DATO CUANDO VA A SER COPIADO: %s\n", nuevo_dato->value);
-
 	memcpy(posicion_memoria + desplazamiento, nuevo_dato->value, strlen(nuevo_dato->value) + 1);
 
 }
@@ -145,13 +142,13 @@ void realizar_journal(){
 
 
 Pagina realizar_algoritmo_reemplazo(){
-
+	printf("Busco la pagina menos usada!\n");
 	Pagina pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
 	if(pagina_reemplazada == NULL){
-
+		printf("Estan todas las paginas modificadas T.T, Realizar JOURNAL\n");
 		realizar_journal();
-
+		printf("Despues de realizar journal me fijo la menos usada!\n");
 		pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
 	}
@@ -174,11 +171,12 @@ Pagina solicitar_pagina(Dato nuevo_dato){
 		guardar_dato_en_memoria(nuevo_dato, pagina_solicitada->referencia_memoria);
 
 	}else{
-
+		printf("Estan todas en uso!Realizo algoritmo de reemplazo!\n");
 		pagina_solicitada = realizar_algoritmo_reemplazo();
 		guardar_dato_en_memoria(nuevo_dato, pagina_solicitada->referencia_memoria);
 
 	}
+
 	printf("Se guardo piola!\n");
 	pagina_solicitada->flag_en_uso = 1;
 

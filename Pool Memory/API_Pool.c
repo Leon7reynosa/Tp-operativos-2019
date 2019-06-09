@@ -14,12 +14,7 @@ Dato request_select(char* tabla, u_int16_t key){
 	Dato dato_encontrado;
 
 	if(existe_segmento(tabla,&segmento_tabla)){
-
-		printf("Existe el Segmento: %s\n", segmento_tabla->nombre_tabla);
-
 		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
-			printf("Existe la pagina!\n");
-
 			mostrar_datos(pagina_encontrada);
 
 		}else{
@@ -41,7 +36,7 @@ Dato request_select(char* tabla, u_int16_t key){
 		}
 
 	}else{
-		printf("No existe el segmento, lo tenes que crear y pedirle el dato al LFS! \n")
+		printf("No existe el segmento, lo tenes que crear y pedirle el dato al LFS! \n");
 		//VER ESTO
 		/*
 		agregar_segmento(tabla, memoria->tabla_segmentos);
@@ -71,19 +66,20 @@ void request_insert(char* tabla, u_int16_t key, char* value ){
 	dato_insert = crear_dato(key, value, timestamp );
 
 	if(existe_segmento(tabla,&segmento_tabla)){
-		printf("Existe el segmento! \n");
+		printf("Existe el segmento!\n");
 		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
-			printf("Existe la pagina! \n");
+
+			printf("Existe la pagina!\n");
 			actualizar_pagina(pagina_encontrada, dato_insert); //VER ESTO
 
 			mostrar_datos(pagina_encontrada);
 
 		}else{
-			printf("No existe la pagina, la solicito! \n");
+			printf("No existe la pagina!\n");
 			pagina_encontrada = solicitar_pagina(dato_insert); //SEGUIR Y VER
-
 			agregar_pagina(segmento_tabla, pagina_encontrada);
-
+			pagina_encontrada->flag_modificado = 1;
+			printf("LA TABLA A AHORA TIENE %i SEGMENTOS\n", segmento_tabla->Tabla_paginas->elements_count);
 			mostrar_datos(pagina_encontrada);
 
 		}
