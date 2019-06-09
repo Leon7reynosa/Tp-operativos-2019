@@ -7,11 +7,11 @@
 
 #include "requests.h"
 
- void request_select(char* nombre_tabla , int key){
+dato_t* request_select(char* nombre_tabla , int key){
 
-	 dato_t* dato_mas_reciente;
+	 dato_t* dato_binarios;
 
-	 dato_t* dato_auxiliar;
+	 dato_t* dato_memtable;
 
 	 char* path_tabla;
 
@@ -25,14 +25,20 @@
 
 		 path_tabla = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
+         dato_binarios = buscar_dato_en_binario(path_tabla, key);
+
+         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, key);
+
+		 dato_t* dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_binarios);
+
+		 return  dato_mas_nuevo
 
 	 }else{
-
 		 printf("No existe la tabla en el File System\n");
-
 	 }
 
  }
+
 
 
  void request_insert(char* nombre_tabla, int key, char* valor, time_t timestamp){

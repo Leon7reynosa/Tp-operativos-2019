@@ -18,7 +18,8 @@ dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo){
 	dato_t* nuevo = (dato_t*) malloc(sizeof(dato_t));
 
 	nuevo->key = key;
-	nuevo->value =  valor;
+	nuevo->value = malloc(strlen(valor) + 1);
+	memcpy(nuevo->value, valor, strlen(valor) + 1);
 	nuevo->timestamp = tiempo;
 
 	return nuevo;

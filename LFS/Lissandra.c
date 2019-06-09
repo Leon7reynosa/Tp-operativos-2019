@@ -4,60 +4,65 @@
  *  Created on: 8 abr. 2019
  *      Author: utnso
  */
-
 #include "Lissandra.h"
 
+void inicializar_memtable() {
+    memtable = dictionary_create();
+}
+
 //tenemos que hacer que la memtable siempre este inicializada.
-void ingresar_a_memtable(dato_t* dato_a_ingresar, char* nombre_tabla){
+void ingresar_a_memtable(dato_t *dato_a_ingresar, char *nombre_tabla) {
 
-	memoria_t* tabla_ingresar = malloc(sizeof(memoria_t));
+    t_list *lista_tabla;
 
-	tabla_ingresar = obtener_memoria_tabla(nombre_tabla);
+    if (!dictionary_has_key(memtable, nombre_tabla)) {
 
-	list_add(tabla_ingresar->primer_elemento , dato_a_ingresar);
+        lista_tabla = list_create();
+        dictionary_put(memtable, nombre_tabla, lista_tabla);
+        list_add(lista_tabla, dato_a_ingresar);
 
+    }else{
 
+    lista_tabla = dictionary_get(memtable, nombre_tabla);
+    list_add(lista_tabla, dato_a_ingresar);
 
+    }
 }
 
 
-memoria_t* obtener_memoria_tabla(char* nombre_tabla){
 
-	memoria_t* ubicacion_tabla = malloc(sizeof(memoria_t));
-
-	bool encontrado =  false;
-
-	printf("cantidad: %d\n" , dato_memtable->elements_count);
-
-	for(int i = 0 ; i < dato_memtable->elements_count ; i++){
-
-		printf("iteracion : %d\n", i);
-		ubicacion_tabla = (memoria_t*) list_get(dato_memtable, i);
+t_list *obtener_tabla(char *nombre_tabla) {
+    t_list *lista_tabla = (t_list *) dictionary_get(memtable, nombre_tabla);
+    return lista_tabla; //DEVUELVE NULL SI LA TABLA NO EXISTE
+}
 
 
-		printf("contiene: %s\n" ,ubicacion_tabla->nombre_tabla);
 
-		if(strcmp(ubicacion_tabla->nombre_tabla, nombre_tabla) == 0){
+dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key) {
+    t_list *tabla_a_filtrar = obtener_tabla(nombre_tabla);
 
-			i = dato_memtable->elements_count;
+    if (tabla_a_filtrar == NULL) {
+        return NULL;
+    }
 
-			encontrado = true;
+    bool condicion(void *dato) {
+        dato_t *dato_analizar = (dato_t *) dato;
 
-		}
-	}
+        return dato_analizar->key == key;
+    }
 
-	//si no encuentra una lista con el nombre de la tabla, la crea.
-	if(!encontrado){
+    tabla_a_filtrar = list_filter(tabla_a_filtrar, condicion);
 
-		ubicacion_tabla->nombre_tabla = nombre_tabla;
+    bool comparador(void *dato1, void *dato2) {
+        dato_t *dato1_analizar = (dato_t *) dato1;
+        dato_t *dato2_analizar = (dato_t *) dato2;
 
-		ubicacion_tabla->primer_elemento = list_create();
+        return dato1_analizar->timestamp > dato2_analizar->timestamp;
+    }
 
-		list_add(dato_memtable, ubicacion_tabla);
-	}
+    tabla_a_filtrar = list_sorted(tabla_a_filtrar, comparador);
 
-	return ubicacion_tabla;
-
+    return (dato_t *) list_get(tabla_a_filtrar, 0);
 }
 
 

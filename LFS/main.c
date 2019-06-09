@@ -10,38 +10,6 @@
 
 int main(){
 
-	//obtener_datos_metadata();
-	//creacion_del_config_fileSystem();
-	dato_t* datovich = malloc(sizeof(dato_t));
-	datovich->key = 10;
-	datovich->timestamp = 123456;
-	datovich->value = malloc(5);
-	memcpy(datovich->value, "hola", 5);
-	/*
-	dato_t datovichSinPuntero;
-		datovichSinPuntero.key = 10;
-		datovichSinPuntero.timestamp = 123456;
-		datovichSinPuntero.value = string_new();
-		datovichSinPuntero.value = "Peronismo ATR";
-	*/
-
-//	crear_Binario_tabla("Tabla_A", 10, "lol", 123456);
-
-
-	setAllEstados(LIBRE);
-	getAllEstados();
-
-/*
-/////////////////////////////////////////////////////////////////
-	pthread_t conexion_memoria;
-
-	pthread_create(&conexion_memoria , NULL , conectar_memoria, NULL);
-
-
-
-
-	pthread_join(conexion_memoria, NULL);
-*/
 
 
 	return EXIT_SUCCESS;
@@ -49,7 +17,6 @@ int main(){
 
 
 void* conectar_memoria(){
-
 	int puerto = 4445;
 	char* ip = "127.0.0.1";
 	int socket_cliente;

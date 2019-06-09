@@ -25,16 +25,11 @@
 
 #include"comunity_func.h"
 
-typedef struct{
+t_dictionary* memtable;
 
-	char* nombre_tabla;
-	t_list* primer_elemento; //el data va a tener un puntero a dato_t
-
-}memoria_t ;
-
-t_list* dato_memtable; // el data va a tener un puntero a memoria_t
-
+void inicializar_memtable(void);
 void ingresar_a_memtable(dato_t* dato_a_ingresar, char* nombre_tabla);
-memoria_t* obtener_memoria_tabla(char* nombre_tabla);
+t_list* obtener_tabla(char* nombre_tabla);
+dato_t* obtener_dato_con_mayor_timestamp_tabla(char* nombre_tabla, u_int16_t key);
 
 #endif /* LISSANDRA_H_ */
