@@ -23,10 +23,12 @@
 #include<sys/stat.h>
 #include"Metadata/metadata.h"
 #include"Mensajeria/mensajes.h"
+#include"requests.h"
 
-
+void responder_request(request request, int conexion);
 dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo);
 int calcular_particion( int particion_metadata ,u_int16_t key);
+void liberar_dato(dato_t* dato_remove);
 dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato);
 
 #endif /* COMUNITY_FUNC_H_ */

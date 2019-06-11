@@ -21,7 +21,9 @@
 #include<netdb.h>
 #include<readline/readline.h>
 #include<readline/history.h>
-#include"request.h"
+#include"requestSelect.h"
+#include"requestInsert.h"
+#include"requestCreate.h"
 
 #define TAMANIO_MAX_VALUE 50
 

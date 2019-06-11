@@ -25,6 +25,6 @@ typedef struct selectEstructura* select_t;
 
 select_t decodificar_select(int conexion);
 select_t crear_dato_select(char* tabla, u_int16_t key);
-void liberar_dato(select_t);
+void liberar_dato_select(select_t);
 
 #endif /* MENSAJERIA_REQUESTSELECT_H_ */

@@ -142,3 +142,23 @@ void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int t
 
 }
 
+char* obtener_ip(){
+
+	t_config* metadata_config = config_create("lissandra.config");
+	char* ip = config_get_string_value(metadata_config, "IP");
+
+	//config_destroy(metadata_config); (descomentar si funciona)
+	return ip;
+
+}
+
+int obtener_puerto(){
+
+	t_config* metadata_config = config_create("lissandra.config");
+	int puerto = config_get_int_value(metadata_config , "PUERTO");
+
+	//config_destroy(metadata_config);
+	return puerto;
+
+}
+

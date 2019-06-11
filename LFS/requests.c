@@ -31,7 +31,9 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 		 dato_t* dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_binarios);
 
-		 return  dato_mas_nuevo
+		 //faltaria buscar en los temporales.
+
+		 return  dato_mas_nuevo;
 
 	 }else{
 		 printf("No existe la tabla en el File System\n");

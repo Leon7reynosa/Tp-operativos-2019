@@ -12,6 +12,8 @@ int main(){
 
 
 
+
+
 	return EXIT_SUCCESS;
 }
 
@@ -28,6 +30,7 @@ void* conectar_memoria(){
 	request = recibir_request(socket_cliente);
 
 	printf("codigo de operacion: %d\n" , request->cod_op);
+
 
 
 
