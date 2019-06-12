@@ -23,4 +23,6 @@
 //void* conectar_kernel();
 //void* conectar_lissandra();
 
+void pruebas(void);
+
 #endif /* POOL_H_ */

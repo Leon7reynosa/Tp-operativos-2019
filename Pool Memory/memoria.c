@@ -124,15 +124,24 @@ void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
 
 	int desplazamiento = 0;
 
-	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->key), sizeof(nuevo_dato->key));
-	desplazamiento += sizeof(nuevo_dato->key);
-
 	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->timestamp), sizeof(time_t) );
 	desplazamiento += sizeof(time_t);
+
+	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->key), sizeof(nuevo_dato->key));
+	desplazamiento += sizeof(nuevo_dato->key);
 
 	memcpy(posicion_memoria + desplazamiento, nuevo_dato->value, strlen(nuevo_dato->value) + 1);
 
 }
+
+void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
+
+	guardar_dato_en_memoria(dato_insert, pagina_encontrada->referencia_memoria);
+
+	pagina_encontrada->flag_modificado = 1;
+
+}
+
 
 void realizar_journal(){
 	printf("journal realizado xD mentira crack, no lo hiciste todavia, te tiro un exit de ondis ;) \n");
@@ -162,24 +171,18 @@ Pagina realizar_algoritmo_reemplazo(){
 	return pagina_reemplazada;
 }
 
-Pagina solicitar_pagina(Dato nuevo_dato){
+Pagina solicitar_pagina(void){
 
 	Pagina pagina_solicitada;
 
 	if(hay_pagina_libre(&pagina_solicitada)){
 		printf("Hay una pagina libre, guardo el dato en la referencia que tiene!\n");
-		guardar_dato_en_memoria(nuevo_dato, pagina_solicitada->referencia_memoria);
 
 	}else{
 		printf("Estan todas en uso!Realizo algoritmo de reemplazo!\n");
 		pagina_solicitada = realizar_algoritmo_reemplazo();
-		guardar_dato_en_memoria(nuevo_dato, pagina_solicitada->referencia_memoria);
 
 	}
-
-	printf("Se guardo piola!\n");
-	pagina_solicitada->flag_en_uso = 1;
-
 
 	return pagina_solicitada;
 

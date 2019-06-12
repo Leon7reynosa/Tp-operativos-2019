@@ -42,7 +42,8 @@ bool hay_pagina_libre(Pagina* pagina_libre);
 void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria);
 void realizar_journal(void);
 Pagina realizar_algoritmo_reemplazo(void);
-Pagina solicitar_pagina(Dato nuevo_dato);
+Pagina solicitar_pagina(void);
 Dato pedir_dato_al_LFS(char* tabla, int key);
+void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert);
 
 #endif /* MEMORIA_H_ */

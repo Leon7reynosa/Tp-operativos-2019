@@ -15,9 +15,9 @@
 
 struct DatoEstructura{
 
+	time_t timestamp;
 	u_int16_t key;
 	char* value;
-	time_t timestamp;
 
 };
 

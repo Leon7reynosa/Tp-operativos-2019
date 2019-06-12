@@ -22,10 +22,10 @@ Dato crear_dato(u_int16_t key, char* value, time_t timestamp){
 
 	int size = strlen(value) + 1;
 
+	dato->timestamp = timestamp;
 	dato->key 	 	= key;
 	dato->value 	= malloc(size);
 	memcpy(dato->value, value, size);
-	dato->timestamp = timestamp;
 
 	return dato;
 }

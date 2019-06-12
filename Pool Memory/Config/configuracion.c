@@ -10,7 +10,6 @@
 
 void creacion_del_config(){
 
-
 	g_config = config_create("pool.config");
 
 	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
@@ -29,10 +28,12 @@ void creacion_del_config(){
 
 void obtener_datos_config(){
 
+	char* ip_aux;
+
 	g_config = config_create("pool.config");
 
 	puerto_escucha   = config_get_int_value(g_config, "PUERTO_ESCUCHA");
-	ip_lfs		     = config_get_string_value(g_config, "IP_LFS");
+	ip_aux		     = config_get_string_value(g_config, "IP_LFS");
 	puerto_lfs	     = config_get_int_value(g_config, "PUERTO_LFS");
 	retardo_memoria  = config_get_int_value(g_config, "RETARDO_MEMORIA");
 	retardo_lfs      = config_get_int_value(g_config, "RETARDO_LFS");
@@ -40,6 +41,9 @@ void obtener_datos_config(){
 	tiempo_journal   = config_get_int_value(g_config, "TIEMPO_JOURNAL");
 	tiempo_gossiping = config_get_int_value(g_config, "TIEMPO_GOSSIPING");
 	numero_memoria   = config_get_int_value(g_config, "NUMERO_MEMORIA");
+
+	ip_lfs = malloc(strlen(ip_aux) + 1);
+	memcpy(ip_lfs, ip_aux, strlen(ip_aux) + 1);
 
 	//SI HAY ALGO LOCO, ES ESTO DE ABAJO XD
 	config_destroy(g_config);

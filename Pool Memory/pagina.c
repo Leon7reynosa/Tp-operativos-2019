@@ -18,7 +18,8 @@ struct PaginaEstructura{
 */
 void liberar_pagina(Pagina pagina_a_liberar){
 
-	free(pagina_a_liberar);
+	pagina_a_liberar->flag_en_uso = 0;
+	pagina_a_liberar->flag_modificado = 1;
 
 }
 
@@ -96,24 +97,18 @@ t_list* paginas_sin_modificar(t_list* paginas){
 
 }
 
-void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
-
-	guardar_dato_en_memoria(dato_insert, pagina_encontrada->referencia_memoria);
-
-}
-
 void  mostrar_datos(Pagina pagina){
 
 
 	Dato nuevo_dato = malloc(sizeof(struct DatoEstructura));
 	nuevo_dato->value = malloc(tamanio_value);
-	memcpy(&(nuevo_dato->key), pagina->referencia_memoria, sizeof(u_int16_t));
-	memcpy(&(nuevo_dato->timestamp), (pagina->referencia_memoria) + sizeof(u_int16_t), sizeof(time_t));
+	memcpy(&(nuevo_dato->timestamp), pagina->referencia_memoria, sizeof(time_t));
+	memcpy(&(nuevo_dato->key), (pagina->referencia_memoria) + sizeof(time_t), sizeof(u_int16_t));
 	memcpy(nuevo_dato->value, (pagina->referencia_memoria) + sizeof(u_int16_t) + sizeof(time_t), tamanio_value);
 
 	printf("Ahora voy a imprimir la pagina completa!\n");
+	printf("timestamp: %i\n",nuevo_dato->timestamp);
 	printf("key: %d\n", nuevo_dato->key);
-	printf("timestamp: %d\n",nuevo_dato->timestamp);
 	printf("value: %s\n", nuevo_dato->value);
 
 	liberar_dato(nuevo_dato);

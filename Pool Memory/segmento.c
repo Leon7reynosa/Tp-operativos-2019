@@ -30,9 +30,11 @@ Segmento crear_segmento(char* nombre_tabla){
 	return segmento;
 }
 
+//no seria liberar de free, sino liberar de uso! libero todas las paginas!
 void liberar_tabla_paginas(t_list* tabla_paginas){
 
-	list_clean_and_destroy_elements(tabla_paginas, liberar_pagina);
+	list_destroy_and_destroy_elements(tabla_paginas, liberar_pagina);
+
 }
 
 void liberar_segmento(Segmento segmento_a_liberar){

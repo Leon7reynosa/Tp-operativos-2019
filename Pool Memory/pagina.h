@@ -32,7 +32,6 @@ t_list* paginas_sin_modificar(t_list* paginas);
 Pagina crear_pagina(void* posicion_memoria);
 void liberar_pagina(Pagina pagina_a_liberar);
 bool esta_libre(Pagina pagina);
-void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert);
 void mostrar_datos(Pagina pagina);
 
 #endif /* PAGINA_H_ */

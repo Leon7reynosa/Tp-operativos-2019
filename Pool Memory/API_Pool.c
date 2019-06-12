@@ -16,23 +16,21 @@ Dato request_select(char* tabla, u_int16_t key){
 	if(existe_segmento(tabla,&segmento_tabla)){
 		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
 			mostrar_datos(pagina_encontrada);
+			dato_encontrado = (Dato) pagina_encontrada->referencia_memoria;
 
 		}else{
 
 			//VER ESTO, si se puede hacer una funcion para no repetir logica
 			printf("Le pido las cosas al LFS \n");
 
-			/*
 			Dato dato_lfs = pedir_dato_al_LFS(tabla, key);
-
-			pagina_encontrada = solicitar_pagina(dato_lfs);
-
+			/*pagina_encontrada = solicitar_pagina();
 			agregar_pagina(segmento_tabla, pagina_encontrada);
-
 			mostrar_dato(pagina_encontrada);
 
 			liberar_dato(dato_lfs);
 			*/
+			printf("Le mande el mensaje a lissandra\n");
 		}
 
 	}else{
@@ -70,15 +68,14 @@ void request_insert(char* tabla, u_int16_t key, char* value ){
 		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
 
 			printf("Existe la pagina!\n");
-			actualizar_pagina(pagina_encontrada, dato_insert); //VER ESTO
-
+			actualizar_pagina(pagina_encontrada, dato_insert);
 			mostrar_datos(pagina_encontrada);
 
 		}else{
 			printf("No existe la pagina!\n");
-			pagina_encontrada = solicitar_pagina(dato_insert); //SEGUIR Y VER
+			pagina_encontrada = solicitar_pagina(); //SEGUIR Y VER
+			actualizar_pagina(pagina_encontrada, dato_insert);
 			agregar_pagina(segmento_tabla, pagina_encontrada);
-			pagina_encontrada->flag_modificado = 1;
 			printf("LA TABLA A AHORA TIENE %i SEGMENTOS\n", segmento_tabla->Tabla_paginas->elements_count);
 			mostrar_datos(pagina_encontrada);
 
