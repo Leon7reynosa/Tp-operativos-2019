@@ -9,9 +9,11 @@
 #include<commons/string.h>
 #include<commons/collections/list.h>
 #include"Mensajeria/mensajes.h"
+#include"Config/configuracion.h"
+#include"planificador.h"
 
 
-t_list* cola_exec;
+t_queue* cola_new;
 
 typedef struct{
 	u_int16_t key;
@@ -32,7 +34,6 @@ typedef struct{
 
 
 void mandar_request(char* request_lql, int conexion);
-void parsear_LQL(FILE* archivo_lql);
 void obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key);
 void obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value, time_t* timestamp);
 void obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value);

@@ -49,47 +49,20 @@ void mandar_request(char* request_lql, int conexion){
 }
 
 
-//Por ahora solo lee una linea del archivo.
-void parsear_LQL(FILE* archivo_lql){
 
 
-	//char* linea_leida = string_new();
+void ejecutar_cola_exec(t_queue* cola_exec){
 
-	char caracter;
-	char* caracter_temp;
 
-	caracter = fgetc(archivo_lql);
+	for(int i = 0 ; i < quantum; i++){
 
-		char* linea_leida = string_new();
 
-		while(caracter != EOF){
 
-			caracter_temp = string_from_format("%c", caracter);
-
-			string_append(&linea_leida, caracter_temp);
-
-			caracter = fgetc(archivo_lql);
-
-			if(caracter == '\n'){
-
-				printf("Linea leida: %s\n" , linea_leida);
-
-				list_add(cola_exec, linea_leida );
-
-				linea_leida = string_new();
-
-				caracter = fgetc(archivo_lql);
-
-			}
-
-		}
-
-		printf("Linea leida: %s\n" , linea_leida);
-
-		list_add(cola_exec, linea_leida );
+	}
 
 
 }
+
 
 int identificar_request(char* request_lql){
 
@@ -157,11 +130,6 @@ void obtener_parametros_drop(char* linea_request, char* nombre_tabla){
 }
 
 
-void inicializar_cola_exec(){
-
-	cola_exec = list_create();
-
-}
 
 
 /*

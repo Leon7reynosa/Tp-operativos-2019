@@ -10,10 +10,9 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-
+#include<commons/collections/queue.h>
 
 #include"API_Kernel.h"
-#include"Config/configuracion.h"
 #include"Mensajeria/Cliente/cliente.h"
 #include"Mensajeria/mensajes.h"
 

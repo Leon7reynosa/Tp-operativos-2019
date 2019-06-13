@@ -9,63 +9,30 @@
 
 int main (int argc , char* argv[]){
 
-	inicializar_cola_exec();
+	creacion_del_config();
+	obtener_datos_config();
 
 
-	char* linea_request;
-	int tiempo;
-	int particiones;
-	char* nombre_tabla = string_new();
-	char* consistencia = string_new();
-
-
-	conexion_lissandra = conectar_servidor("127.0.0.1" , 4446);
+	t_queue* colas_exec[grado_multiprocesamiento];
+	inicializar_cola_exec(colas_exec , grado_multiprocesamiento);
+	inicializar_cola_new();
+	inicializar_cola_ready();
+	inicializar_cola_exit();
 
 	for (int i = 1; i < argc ; i++){
-
-		FILE* archivo_lql = fopen(argv[i] , "r");
-
-		parsear_LQL(archivo_lql);
-
-		fclose(archivo_lql);
+		// pone los scripts en la cola de new
+		queue_push(cola_new , argv[i]);
 
 	}
 
-	//para mostrar lo que hay en la cola_exec
-	for(int j = 0; j < cola_exec->elements_count ; j++){
+	cola_new_to_ready();
 
-		linea_request = list_get(cola_exec, j);
+	cola_ready_a_exec(colas_exec[0]);
+	cola_ready_a_exec(colas_exec[0]);
+	cola_ready_a_exec(colas_exec[0]);
 
-		printf("request: %s\n" , linea_request);
+	printf("\nFIN DEL PROGRAMA\n");
 
-	}
-
-	linea_request = (char*) list_get(cola_exec, 0);
-
-	printf("holitas\n");
-
-	mandar_request(linea_request, conexion_lissandra);
-
-
-
-
-
-
-
-//		mandar_request(linea_request);
-/*
-		obtener_parametros_create(linea_request, nombre_tabla, consistencia, &particiones, &tiempo);
-
-		printf("----------------FUERA DE LA FUNCION ------------\n");
-		printf("nombre tabla: %s\n", nombre_tabla);
-		printf("consistencia: %s\n", consistencia);
-		printf("particiones: %i\n", particiones);
-		printf("tiempo: %i\n", tiempo);
-*
-		/*ahora que tenemos la linea del request del lql(solo la primera linea)
-		 * hay que hacer que identifique que request es, y ejectute con los parametro que tenga
-		 * (el request hay que pedirselo a memoria)
-		 */
 
 
 return 0;

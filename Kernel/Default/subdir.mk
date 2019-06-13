@@ -5,15 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../API_Kernel.c \
-../kernel.c 
+../kernel.c \
+../planificador.c 
 
 OBJS += \
 ./API_Kernel.o \
-./kernel.o 
+./kernel.o \
+./planificador.o 
 
 C_DEPS += \
 ./API_Kernel.d \
-./kernel.d 
+./kernel.d \
+./planificador.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
