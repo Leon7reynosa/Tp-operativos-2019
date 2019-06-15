@@ -8,12 +8,11 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-#include"comunity_func.h"
-#include"Mensajeria/request.h"
-#include"file_system.h"
+#include"Propiedades_Funcionamiento/comunity_func.h"
+#include"Propiedades_Funcionamiento/Mensajeria/request.h"
+#include"Propiedades_Funcionamiento/file_system.h"
 #include<pthread.h>
-
-#include "Config/configuracion.h"
+#include "Propiedades_Funcionamiento/configuracion.h"
 
 void* conectar_memoria(void);
 

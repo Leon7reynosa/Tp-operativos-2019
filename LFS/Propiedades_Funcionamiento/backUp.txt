@@ -1,0 +1,67 @@
+void llenarBloque(char* dato){
+
+	char** arrayValue = string_split(dato, ";");
+
+	if((strlen(*(arrayValue) + 2)) > tamanio_value_max){
+		//HACER LOG DE ERROR
+		printf("Superas el tamanio maximo\n");
+		exit(-1);
+	}
+
+
+	int indice = buscarPrimerIndiceVacio();
+
+	printf("INDICE ENCONTRADO !!! El indice libre es: %i\n", indice);
+	crear_Binario_Bloque(indice, dato);
+	printf("SE CARGO CORRECTAMENTE EL BLOQUE AL INDICE !!!\n");
+	setEstado(indice, OCUPADO);
+	printf("Estado del indice %i seteado a %i\n", indice, OCUPADO);
+}
+
+void crear_Binario_Bloque(int indice, char* dato){
+	int caracteresTotales = strlen(dato);
+	int recorridoDato = 0;
+	char* pathBloque =  obtenerPath_Bloque(indice);
+	printf("El path del bloque es: %s\n", pathBloque);
+
+	int ficheroBloque = open(pathBloque, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR);
+
+	int punteroBloque = 0;
+	int indiceDatos = 0;
+
+	printf("Buscando posicion de inicio de escritura...\n");
+	punteroBloque = lseek(ficheroBloque, 0, SEEK_END);
+	printf("Posicion encontrada !!! Puntero de bloque = %i\n", punteroBloque);
+	printf("Tamanio del bloque = %i\n", block_size);
+
+	for(caracteresTotales; caracteresTotales >= 0; caracteresTotales--){
+		if(punteroBloque < block_size){
+			write(ficheroBloque, (dato + indiceDatos), sizeof(char));
+			*(dato + recorridoDato) = ' ';
+			punteroBloque++;
+			recorridoDato++;
+			indiceDatos++;
+		}
+
+		else{
+			printf("Entraste al else\n");
+			string_trim_left(&dato); //Remueve todos los caracter vacios de la izquierda
+
+			llenarBloque(dato);
+		}
+
+
+	}
+
+	printf("#########TERMINADO DE CARGAR#############\n");
+	/*
+	fclose(f);
+
+	free(datoPasaje->value);
+	free(datoPasaje);
+	*/
+	printf("Se cargo exitosamente !\n");
+	close(ficheroBloque);
+//	msync(archivoBloque, atributosBloque.st_size, MS_SYNC);
+//	munmap(archivoBloque, atributosBloque.st_size);
+}
