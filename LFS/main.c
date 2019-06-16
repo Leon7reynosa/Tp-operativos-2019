@@ -17,12 +17,13 @@ int main(){
 	dato_t* datito = malloc(sizeof(dato_t));
 	datito->key = 123;
 	datito->timestamp = 123456;
-	datito->value = "k"; //creo q no hace falta el malloc y esas weas
+	datito->value = malloc(strlen("Peron")+1);
+	memcpy(datito->value, "Peron", strlen("Peron")+1);
 
 	char* datoString = datoEnFormatoBloque(datito);
 //	printf("%s\n", datoString);
 
-//	llenarBloque(datoString);
+//	llenarBloque(datoString, 2);
 
 
 	leerBloque(0);

@@ -41,7 +41,7 @@ void mostrarEstadosTotales();
 void setEstado(int numeroBloque, estado estado);
 void setAllEstados(estado estado);
 void getAllEstados();
-void llenarBloque(char* dato);
+void llenarBloque(char* dato, int indice);
 int buscarPrimerIndiceVacio(void);
 void mostrarDato(dato_t* dato);
 void leerDatoDelBloque(int indice);

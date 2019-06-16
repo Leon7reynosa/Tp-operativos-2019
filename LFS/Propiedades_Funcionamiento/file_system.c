@@ -146,7 +146,7 @@ void crear_Binario_Bloque(int indice, char* dato){
 			printf("Entraste al else\n");
 			string_trim_left(&dato); //Remueve todos los caracter vacios de la izquierda
 
-			llenarBloque(dato);
+			llenarBloque(dato, indice);
 		}
 
 
@@ -352,27 +352,28 @@ char* datoEnFormatoBloque(dato_t* dato){
 }
 
 void leerBloque(int indice){
-	char* pathBloque = obtenerPath_Bloque(indice);
+	printf("\n######Iniciando lectura del bloque %i#######\n", indice);
+	char* pathBloque = malloc(strlen(obtenerPath_Bloque(indice)+1));
+	pathBloque = obtenerPath_Bloque(indice);
 	printf("PATTH : %s\n", pathBloque);
 	int archivoBloque = open(pathBloque, O_RDONLY, S_IRUSR);
-	printf("####Bloque %i.bin abierto !####\n", indice);
 
 	int i = 0;
-	char* auxiliar = string_new();
-	printf("Empezando lectura...\n");
+	char* auxiliar = malloc(100);
 	read(archivoBloque,(auxiliar + i), sizeof(char));
-	printf("PRIMER CARACTER: %c\n", *(auxiliar + i));
+	printf("%c", *(auxiliar + i));
 	while(*(auxiliar + i) != '\0'){
 		i++;
 		read(archivoBloque,(auxiliar + i), sizeof(char));
-		printf("%c\n", *(auxiliar + i));
+		printf("%c", *(auxiliar + i));
 	}
 	//La fila vacia es por el \n
 	//printf("%s\n", auxiliar);
 	close(archivoBloque);
-//	free(auxiliar);
+	free(auxiliar);
 	free(pathBloque);
-	printf("###Finalizado lectura del Bloque %i ########\n", indice);
+
+	printf("\n#####Finalizado lectura del Bloque %i ########\n", indice);
 }
 
 int estaBloqueVacio(int indice){

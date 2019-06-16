@@ -107,10 +107,7 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 char* obtenerPath_Bloque(int indice){
 	char* path = string_new();
 
-	printf("PUNTO MONTAJE: %s\n" , punto_montaje);
-
 	string_append(&path, punto_montaje);
-	printf("PUNTO DE MONTAJE DESPUES DE USARLO: %s\n", punto_montaje);
 	string_append(&path, "Bloques/");
 	string_append(&path, string_itoa(indice));
 	string_append(&path, ".bin");
