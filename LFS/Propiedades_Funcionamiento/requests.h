@@ -12,7 +12,7 @@
 #include"Lissandra.h"
 #include"file_system.h"
 #include"compactador.h"
-
+#include"metadata.h"
 
 dato_t* request_select(char* nombre_tabla , int key);
 void request_insert(char* nombre_tabla, int key, char* valor, time_t timestamp);

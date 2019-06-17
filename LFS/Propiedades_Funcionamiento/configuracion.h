@@ -37,5 +37,9 @@ void creacion_bitmap(void);
 void creacion_del_config_fileSystem(void);
 void creacion_del_metadata_fileSystem(void);
 void obtener_puerto_ip(int* puerto, char** ip);
+void obtener_datos_config(void);
+void obtener_datos_metadata(void);
+void crearYObtenerDatos(void);
+void obtenerDatos(void);
 
 #endif /* CONFIGURACION_H_ */

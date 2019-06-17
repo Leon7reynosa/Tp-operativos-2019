@@ -75,7 +75,7 @@ int calcular_particion(int particion_metadata ,u_int16_t key){
 
 dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo){
 
-	dato_t* nuevo = (dato_t*) malloc(sizeof(dato_t));
+	dato_t* nuevo = malloc(sizeof(dato_t));
 
 	nuevo->key = key;
 	nuevo->value = malloc(strlen(valor) + 1);

@@ -13,7 +13,7 @@
 #include<stddef.h>
 #include<commons/config.h>
 #include"Servidor/servidor.h"
-#include"Config/configuracion.h"
+#include"configuracion.h"
 #include"Mensajeria/request.h"
 
 void* conectar_varias_memorias(void);

@@ -10,10 +10,33 @@
 
 int main(){
 
+	crearYObtenerDatos();
+
+//	creacion_bitmap();
+	setEstado(2, LIBRE);
+	dato_t* datito = malloc(sizeof(dato_t));
+	datito->key = 123;
+	datito->timestamp = 123456;
+	datito->value = malloc(strlen("Peron")+1);
+	memcpy(datito->value, "Peron", strlen("Peron")+1);
+
+	char* datoString = datoEnFormatoBloque(datito);
+//	printf("%s\n", datoString);
+
+//	llenarBloque(datoString, 2);
 
 
+	leerBloque(0);
+	leerBloque(1);
+	leerBloque(2);
+/*
+	char* pathBloque = obtenerPath_Bloque(0);
+	int ficheroLectura = open(pathBloque, O_RDONLY, S_IRUSR);
+	int posicion = lseek(ficheroLectura, 0, SEEK_END);
+	printf("La proxima posicion a ocupar de dicho bloque es la posicion: %i\n", posicion);
 
-
+	getAllEstados();
+*/
 	return EXIT_SUCCESS;
 }
 

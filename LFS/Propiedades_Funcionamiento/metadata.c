@@ -82,8 +82,9 @@ char* obtenerPathTabla(char* nombre_tabla){
 
 	char* path = string_new();
 
-	char *prefijo = "Tablas/";
+	char *prefijo = "Tables/";
 
+//	string_append(&path, punto_montaje);
 	string_append(&path, prefijo);
 	string_append(&path, nombre_tabla);
 	string_append(&path, "/");
@@ -104,16 +105,12 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 }
 
 char* obtenerPath_Bloque(int indice){
-	t_config* g_config = config_create("fileSystem.config");
-	char* puntoMontaje = config_get_string_value(g_config, "PUNTO_MONTAJE");
 	char* path = string_new();
 
-	string_append(&path, puntoMontaje);
+	string_append(&path, punto_montaje);
 	string_append(&path, "Bloques/");
 	string_append(&path, string_itoa(indice));
 	string_append(&path, ".bin");
-
-	config_destroy(g_config);
 
 	return path;
 
