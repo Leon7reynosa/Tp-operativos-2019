@@ -39,6 +39,12 @@ request recibir_request(int conexion){
 			tipo_request = decodificar_create(conexion);
 			break;
 
+		case GOSSIP:
+
+			//aca deberiamos pedir que haga el gossip para actualizar la tabla del kernel
+			recibir_gossiping();
+			break;
+
 		default:
 
 			break;

@@ -23,10 +23,17 @@ typedef struct{
 	time_t timestamp;
 }datoAux;
 
+typedef struct{
+	int size;
+	int* bloques;
+}particionContenido;
+
+
 typedef enum{
 	LIBRE,
 	OCUPADO
 }estado;
+
 
 
 int existe_la_tabla(char* tabla);
@@ -35,7 +42,8 @@ void ingresar_A_Un_binario(char* nombre_tabla, dato_t* dato_ingresar, int partic
 void crear_Binario_tabla(char* nombre_tabla , u_int16_t key , char* valor, time_t timestamp);
 void crear_Binario_Bloque(int indiceBloque, char* dato);
 void crear_archivos_particiones(char* path_tabla, int numero_particiones);
-dato_t* buscar_dato_en_binario(char* path_tabla, u_int16_t key);
+dato_t* buscar_dato_en_particion(char* path_tabla, u_int16_t key);
+char* obtenerMapDelBloque_ModoLectura(int indice, int* fichero, struct stat *atributosBloque);
 void estadoDelBloque(int numeroBloque);
 void mostrarEstadosTotales();
 void setEstado(int numeroBloque, estado estado);

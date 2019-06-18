@@ -10,14 +10,13 @@
 
 ////////////////////// FUNCIONES NUEVAS///////////////////////////////
 //no es el mismo que enviar_request
-void mandar_request(char* request_lql, int conexion){
+void mandar_request(char* request_lql){
 
-	printf("holitas2\n");
 	int cod_request;
 	char* nombre_tabla = string_new();
 
 	char* consistencia = string_new();
-	int tiempo_compactacion, particiones;
+	int tiempo_compactacion, particiones, numero_memoria;
 
 	u_int16_t key;
 	char* value = string_new();
@@ -29,39 +28,35 @@ void mandar_request(char* request_lql, int conexion){
 		case SELECT:
 			obtener_parametros_select(request_lql, nombre_tabla, &key);
 			select_t select_enviar = crear_dato_select(nombre_tabla, key);
-			enviar_request(SELECT, select_enviar);
+			//enviar_request(SELECT, select_enviar);
+			printf("---Se realizara el SELECT---\n");
 			break;
 		case INSERT:
 			obtener_parametros_insert(request_lql, nombre_tabla, &key, value, &timestamp);
 			insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
-			enviar_request(INSERT, insert_enviar);
+			//enviar_request(INSERT, insert_enviar);
+			printf("---Se realizara el INSERT---\n");
 			break;
 		case CREATE:
 			obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion);
 			struct createEstructura* create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, tiempo_compactacion);
-			enviar_request(CREATE, create_enviar);
+			//enviar_request(CREATE, create_enviar);
+			printf("---Se realizara el CREATE---\n");
+			break;
+		case ADD:
+			obtener_parametros_add(request_lql, &numero_memoria, consistencia);
+			request_add(numero_memoria, consistencia);
+			//log de que se añadio la memoria correctamente
+			printf("---Se realizara el ADD---\n");
 			break;
 		default:
-			printf("LA REQUEST NO ES VALIDA\n");
-			exit(-1);
+			printf("---LA REQUEST NO ES VALIDA---\n");
+			//exit(-1);
+			break;
 	}
 
 }
 
-
-
-
-void ejecutar_cola_exec(t_queue* cola_exec){
-
-
-	for(int i = 0 ; i < quantum; i++){
-
-
-
-	}
-
-
-}
 
 
 int identificar_request(char* request_lql){
@@ -79,17 +74,22 @@ int identificar_request(char* request_lql){
 	}else if(string_starts_with(request_lql , "CREATE")){
 
 		return CREATE;
+	}else if(string_starts_with(request_lql , "ADD")){
+
+		return ADD;
 	}else{
 		return -1;
 	}
-
 
 }
 
 void obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key){
 	char* funcion = string_new();
 
+
 	sscanf(linea_request, "%s %s %d", funcion, nombre_tabla, key);
+
+	free(funcion);
 
 }
 
@@ -98,6 +98,20 @@ void obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_
 
 	sscanf(linea_request, "%s %s %i %s %i", funcion, nombre_tabla, key, value, timestamp);
 }
+
+void obtener_parametros_add(char* linea_request, int numero_memoria, char* consistencia){
+	char* funcion = string_new();
+	char* memoria = string_new();
+	char* to = string_new();
+
+	sscanf(linea_request, "%s %s %i %s %s", funcion, memoria, numero_memoria, to, consistencia);
+
+	free(funcion);
+	free(memoria);
+	free(to);
+}
+
+
 void obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value){
 	char* funcion = string_new();
 

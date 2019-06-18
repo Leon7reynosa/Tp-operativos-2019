@@ -95,6 +95,7 @@ void* serializar_create(request request_create){
 
 }
 
+//ACA HAY ALGO MAL
 create crear_dato_create(char* tabla, char* consistencia, int particiones, time_t compactacion){
 	struct createEstructura* dato = malloc(sizeof(struct createEstructura));
 

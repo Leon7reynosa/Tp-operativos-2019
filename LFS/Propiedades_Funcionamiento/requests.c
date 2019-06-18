@@ -25,7 +25,7 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 		 path_tabla = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
-         dato_binarios = buscar_dato_en_binario(path_tabla, key);
+         dato_binarios = buscar_dato_en_particion(path_tabla, key);
 
          dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, key);
 
@@ -44,7 +44,7 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 
  void request_insert(char* nombre_tabla, int key, char* valor, time_t timestamp){
-
+	 //faltaria ver cuando no le pasamos el timestamp
 	 dato_t* dato_ingresar;
 	 metadata_t metadata_insert;
 
@@ -61,6 +61,7 @@ dato_t* request_select(char* nombre_tabla , int key){
 	 }else{
 
 		 printf("Fallo el insert. \n");
+		 //aca deberiamos hacer un log de que fallo.
 
 	 }
 
@@ -81,9 +82,11 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 	 char* path_tabla = obtenerPathTabla(nombre_tabla);
 
+	 printf("path: %s\n" , path_tabla);
+
 	 crear_directorio(path_tabla);
 
-	 crear_metadata(nombre_tabla, criterio, numero_particiones, tiempo_compactacion);
+	 crear_metadata(nombre_tabla, criterio, numero_particiones, tiempo_compactacion); //MAL?
 
 	 crear_archivos_particiones(nombre_tabla, numero_particiones);
 	 //faltaria en esta parte, hacer bien los de los bloques.

@@ -65,3 +65,49 @@ void crear_Binario_Bloque(int indice, char* dato){
 //	msync(archivoBloque, atributosBloque.st_size, MS_SYNC);
 //	munmap(archivoBloque, atributosBloque.st_size);
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////77
+
+
+int main(){
+
+	crearYObtenerDatos();
+
+//	creacion_bitmap();
+	setAllEstados(LIBRE);
+	dato_t* datito = malloc(sizeof(dato_t));
+	datito->key = 123;
+	datito->timestamp = 123456;
+	datito->value = malloc(strlen("Peron")+1);
+	memcpy(datito->value, "Peron", strlen("Peron")+1);
+
+	char* datoString = datoEnFormatoBloque(datito);
+//	printf("%s\n", datoString);
+
+//	llenarBloque(datoString, 2);
+
+	leer_Particiones("Tabla_A");
+/*
+	char* pathBloque = obtenerPath_Bloque(0);
+	int ficheroLectura = open(pathBloque, O_RDONLY, S_IRUSR);
+	int posicion = lseek(ficheroLectura, 0, SEEK_END);
+	printf("La proxima posicion a ocupar de dicho bloque es la posicion: %i\n", posicion);
+
+	getAllEstados();
+*/
+	return EXIT_SUCCESS;
+}
+
+
+
+&//////////////////////////////////////
+token = strtok(dato_A_Analizar, limitador);
+
+						datoAuxiliar->timestamp = atoi(token);
+						token = strtok(NULL, limitador);
+						datoAuxiliar->key = atoi(token);
+						token = strtok(NULL, limitador);
+						datoAuxiliar->value = token;
+
+

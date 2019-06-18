@@ -41,11 +41,33 @@ t_queue* parsear_LQL(FILE* archivo_lql){
 
 	}
 
-	//printf("Linea leida: %s\n" , linea_leida);
-
 	queue_push(cola_requests, linea_leida );
 
 	return cola_requests;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+char* parsear_una_linea(FILE* archivo_lql){
+
+
+	char* linea_leida = string_new();
+	char caracter;
+	char* caracter_temp;
+
+	caracter = fgetc(archivo_lql);
+
+	while(caracter != '\n' && caracter != EOF){
+
+		caracter_temp = string_from_format("%c", caracter);
+
+		string_append(&linea_leida, caracter_temp);
+
+		caracter = fgetc(archivo_lql);
+	}
+
+	return linea_leida;
 
 }
 
@@ -62,8 +84,14 @@ void inicializar_cola_exec(t_queue* colas[] , int grado_multiprocesamiento){
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void inicializar_cola_new(){
+void inicializar_cola_new(int argc , char* argv[]){
 	cola_new = queue_create();
+
+	for (int i = 1; i < argc ; i++){
+		// pone los scripts en la cola de new
+		queue_push(cola_new , argv[i]);
+	}
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -81,12 +109,9 @@ void inicializar_cola_exit(){
 ////////////////////////////////////////////////////////////////////////////////
 
 /*
- * Esto deberia pasar una t_list por cada script con distintas requests (char*)
- * y cada t_list se agregaria como elemento de la cola de ready;
+ * vamos a poner en la cola de ready una estructura que tenga el FILE abierto y el path del archivo
  */
 void cola_new_to_ready(){
-
-	FILE* archivo;
 
 	int tamanio_cola_new = queue_size(cola_new);
 
@@ -96,13 +121,9 @@ void cola_new_to_ready(){
 
 		nuevo_lql->path_lql = (char*) queue_pop(cola_new);
 
-		archivo = fopen(nuevo_lql->path_lql , "r");
-
-		nuevo_lql->cola_requests = parsear_LQL(archivo);
+		nuevo_lql->archivo_lql = fopen(nuevo_lql->path_lql , "r");
 
 		queue_push(cola_ready,(void*) nuevo_lql);
-
-		fclose(archivo);
 
 	}
 
@@ -115,7 +136,6 @@ void cola_ready_a_exec(t_queue* cola_exec){
 
 	 t_planificador* siguiente_script = (t_planificador*)queue_pop(cola_ready);
 
-	 cola_exec = siguiente_script->cola_requests;
 
 	 int i = 0;
 

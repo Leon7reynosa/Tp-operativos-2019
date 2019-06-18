@@ -15,6 +15,9 @@
 #include"API_Kernel.h"
 #include"Mensajeria/Cliente/cliente.h"
 #include"Mensajeria/mensajes.h"
+#include"consola.h"
+#include"gossiping.h"
+
 
 
 /*

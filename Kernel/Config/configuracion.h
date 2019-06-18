@@ -22,6 +22,7 @@ int grado_multiprocesamiento;
 int ip_memoria;
 int puerto_memoria;
 int quantum;
+int tiempo_gossiping_kernel;
 
 
 void creacion_del_config(void);

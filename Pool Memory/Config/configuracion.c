@@ -45,6 +45,7 @@ void obtener_datos_config(){
 	ip_lfs = malloc(strlen(ip_aux) + 1);
 	memcpy(ip_lfs, ip_aux, strlen(ip_aux) + 1);
 
+
 	//SI HAY ALGO LOCO, ES ESTO DE ABAJO XD
 	config_destroy(g_config);
 

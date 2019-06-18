@@ -62,36 +62,138 @@ void crear_Binario_tabla(char* nombre_tabla , u_int16_t key , char* valor, time_
 void crear_archivos_particiones(char* nombre_tabla, int numero_particiones){
 
 	FILE* archivo;
+	particionContenido* base = malloc(sizeof(particionContenido));
+	base->size = 0;
+	*(base->bloques) = buscarPrimerIndiceVacio();
 
 	for (int i = 0; i < numero_particiones ; i++ ){
 
-		archivo = fopen(obtenerPath_ParticionTabla(nombre_tabla, i), "wb");
+		printf("%s\n", obtenerPath_ParticionTabla(nombre_tabla, i));
 
+		archivo = fopen(obtenerPath_ParticionTabla(nombre_tabla, i), "wb");
+		printf("hola bb 2\n");
+		fwrite(base, sizeof(base), 1, archivo);
+		printf("Se le asigno el bloque %i a la particion %i\n",*(base->bloques) ,i);
 		fclose(archivo);
 
+		*(base->bloques) = buscarPrimerIndiceVacio();
+	}
+}
+
+void leer_Particiones(char* nombreTabla){
+	DIR* dir;
+	struct dirent *ent;
+	FILE* f;
+	particionContenido auxiliar;
+	int i = 0;
+
+	if((dir = opendir(obtenerPathTabla(nombreTabla))) != NULL){
+		while((ent = readdir(dir)) != NULL){
+			if(ent->d_name != "." && ent->d_name != ".." && ent->d_name != "Metadata.config"){
+				printf("Estamos en el archivo %s\n", ent->d_name);
+				f = fopen(ent->d_name, "rb");
+				fread(&auxiliar, sizeof(particionContenido), 1, f);
+				printf("Size = %i\n", auxiliar.size);
+				printf("Bloques que contiene = ");
+				while(*(auxiliar.bloques + i) != '\0'){
+					printf("%i ", *(auxiliar.bloques + i));
+				}
+				printf("\n");
+
+			}
+
+		}
+		closedir(dir);
+	}
+	else{
+		perror("");
+		exit(-1);
 	}
 }
 
 
-dato_t* buscar_dato_en_binario(char* path_tabla, u_int16_t key){
+dato_t* buscar_dato_en_particion(char* path_tabla, u_int16_t keyABuscar){
 	FILE *archivo;
-
-	dato_t* datoAux = malloc(sizeof(dato_t));
+	dato_t *datoAuxiliar = malloc(sizeof(dato_t));;
+	char* dato_A_Analizar, *c; //ver si hay que hacerle malloc
+	int recorredorArray = 0;
+	int contador_bloque = 0;
+	int contador_particion = 0;
+	char* keyEnString = string_itoa(keyABuscar); //ver si hay que hacer malloc
+	struct stat *atributosBloque = malloc(sizeof(struct stat));
+	int fichero;
+	particionContenido* datoAux = malloc(sizeof(particionContenido));
 
 	archivo = fopen(path_tabla, "rb");
 
 	fread(datoAux, sizeof(dato_t), 1, archivo);
-	while(!feof(archivo)){
-		//tengo en cuenta que en las particiones hay keys diferentes
-		if(datoAux->key == key){
-			break;
+
+	char* mapBloque = obtenerMapDelBloque_ModoLectura(*(datoAux->bloques + recorredorArray), &fichero, atributosBloque);
+
+	while( contador_bloque < atributosBloque->st_size && contador_particion < datoAux->size){
+
+		if(*(mapBloque + contador_bloque) != '\n' ){
+
+			c = *(mapBloque + contador_bloque);
+			string_append(&dato_A_Analizar, c);
+			contador_bloque++;
+			contador_particion++;
+
+		}else{
+
+			if(string_contains(dato_A_Analizar, keyEnString)){
+
+				sscanf(dato_A_Analizar , "%i;%i;%s" , &datoAuxiliar->timestamp ,  &datoAuxiliar->key, datoAuxiliar->value);
+
+				fclose(archivo);
+
+				return datoAuxiliar;
+			}
+
+			else{
+
+				dato_A_Analizar = "";
+
+				contador_bloque++;
+
+				contador_particion++;
+			}
 		}
-		fread(datoAux, sizeof(dato_t), 1, archivo);
+
+		if(contador_bloque == (atributosBloque->st_size)){
+
+			cerrarMapDelBloque(fichero, mapBloque, atributosBloque);
+
+			recorredorArray++;
+
+			contador_bloque = 0;
+
+			mapBloque = obtenerMapDelBloque_ModoLectura(*(datoAux->bloques + recorredorArray), &fichero, atributosBloque);
+
+			break;
+
+		}
 	}
 
 	fclose(archivo);
 
-	return datoAux;
+	return NULL;
+}
+
+
+char* obtenerMapDelBloque_ModoLectura(int indice, int* fichero, struct stat *atributosBloque){
+
+	char *path = obtenerPath_Bloque(indice);
+	int ficheroBloque = open(path, O_RDONLY, S_IRUSR);
+	fstat(ficheroBloque, atributosBloque);
+	char* mapBloque = mmap(NULL, atributosBloque->st_size, PROT_READ, MAP_SHARED, ficheroBloque, 0);
+
+	return mapBloque;
+}
+
+void cerrarMapDelBloque(int fichero, char* map, struct stat *atributosBloque){
+	munmap(map, atributosBloque->st_size);
+	close(fichero);
 }
 
 void llenarBloque(char* dato, int indice){

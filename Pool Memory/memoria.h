@@ -17,13 +17,25 @@
 #include"Mensajeria/requestSelect.h"
 #include"Mensajeria/mensajes.h"
 
+struct seedEstructura{
+	int numero_memoria;
+	char* ip;
+	int puerto;
+
+};
+typedef struct seedEstructura* Seed;
+
+
+
 struct MemoriaEstructura{
+	int numero_memoria;
 	void* memoria_contigua;
 	t_list* paginas;
 	t_list* tabla_segmentos;
 	int tamanio;
 	int cant_max_datos;
-	struct MemoriaEstructura* seed;
+	t_list* seed;            // lista de "Seed"
+	t_list* tabla_gossiping; // va a tener seeds para pasarle
 };
 
 //struct MemoriaEstructura;

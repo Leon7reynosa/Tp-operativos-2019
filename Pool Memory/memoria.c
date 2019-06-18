@@ -55,6 +55,7 @@ void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato, t_li
 
 }
 
+//mirar si LFS me pasa las tablas, o las memorias empiezan siempre con una tabla de segmentos vacia
 t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar){ // tablas a inicializar tiene en "data" un puntero a char*
 
 	t_list* tabla_segmentos = list_create();

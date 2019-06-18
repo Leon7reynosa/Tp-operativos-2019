@@ -33,9 +33,10 @@ typedef struct{
 }tabla_memtable;
 
 
-void mandar_request(char* request_lql, int conexion);
+void mandar_request(char* request_lql);
 void obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key);
 void obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value, time_t* timestamp);
+void obtener_parametros_add(char* linea_request, int numero_memoria, char* consistencia);
 void obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value);
 void obtener_parametros_create(char* linea_request, char* nombre_tabla, char* criterio, int* numero_particiones, int* tiempo_compactacion);
 void obtener_parametros_describe_de_una_tabla(char* linea_request, char* nombre_tabla);

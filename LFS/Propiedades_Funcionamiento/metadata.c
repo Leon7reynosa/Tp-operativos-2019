@@ -82,12 +82,12 @@ char* obtenerPathTabla(char* nombre_tabla){
 
 	char* path = string_new();
 
-	char *prefijo = "Tables/";
+	char *prefijo = "Tablas/";
 
-//	string_append(&path, punto_montaje);
+	string_append(&path, punto_montaje);
 	string_append(&path, prefijo);
 	string_append(&path, nombre_tabla);
-	string_append(&path, "/");
+//	string_append(&path, "/");
 
 	return path;
 }
@@ -96,6 +96,7 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 	char* path = string_new();
 	path = obtenerPathTabla(nombre_tabla);
 
+	string_append(&path, "/");
 	string_append(&path, string_itoa(particion));
 	string_append(&path, ".bin");
 

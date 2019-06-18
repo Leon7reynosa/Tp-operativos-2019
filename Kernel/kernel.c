@@ -9,21 +9,22 @@
 
 int main (int argc , char* argv[]){
 
+	//consola();
+
+
+	/*/////////////////////////////INICIALIZACIONES//////////////////////////////
+
 	creacion_del_config();
 	obtener_datos_config();
 
-
 	t_queue* colas_exec[grado_multiprocesamiento];
+
 	inicializar_cola_exec(colas_exec , grado_multiprocesamiento);
-	inicializar_cola_new();
+	inicializar_cola_new(argc, argv);
 	inicializar_cola_ready();
 	inicializar_cola_exit();
 
-	for (int i = 1; i < argc ; i++){
-		// pone los scripts en la cola de new
-		queue_push(cola_new , argv[i]);
-
-	}
+	/////////////////////////////MAIN//////////////////////////////
 
 	cola_new_to_ready();
 
@@ -33,9 +34,11 @@ int main (int argc , char* argv[]){
 
 	printf("\nFIN DEL PROGRAMA\n");
 
+*/
 
 
-return 0;
+
+	return 0;
 }
 
 

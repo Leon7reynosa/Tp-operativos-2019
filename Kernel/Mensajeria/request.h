@@ -14,7 +14,9 @@
 typedef enum{
 	SELECT,
 	INSERT,
-	CREATE
+	CREATE,
+	GOSSIP,
+	ADD
 }cod_operacion;
 
 typedef struct{
