@@ -9,6 +9,8 @@
 
 int conectar_servidor(char* ip, int puerto){
 
+	int error_conexion;
+
 	int socket_conexion;
 	struct sockaddr_in their_addr;
 	int size_addr = sizeof(struct sockaddr);
@@ -23,9 +25,11 @@ int conectar_servidor(char* ip, int puerto){
 	inet_aton(ip,&(their_addr.sin_addr));
 	bzero(&(their_addr.sin_zero),8);
 
-	if(connect(socket_conexion,(struct sockaddr*)&their_addr,size_addr) == -1){
+	error_conexion = connect(socket_conexion,(struct sockaddr*)&their_addr,size_addr);
+
+	if(error_conexion == -1){
 		perror("Fallo al conectar con el Servidor");
-		exit(1);
+		return error_conexion;
 	}
 
 	int size;
@@ -38,6 +42,7 @@ int conectar_servidor(char* ip, int puerto){
 
 	buffer[size] = '\0';
 	printf("%s",buffer);
+	free(buffer);
 
 	return socket_conexion;
 }

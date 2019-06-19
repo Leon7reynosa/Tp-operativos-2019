@@ -20,9 +20,13 @@ struct MemoriaEstructura{
 t_list* inicializar_paginas(){
 
 	int contador = memoria->cant_max_datos;
-	printf("CANT MAX DE DATOS: %i, deberia ser 35", contador);
+
+	printf("CANT MAX DE DATOS: %i\n", contador);
+
 	printf("tamanio_dato = %i\n", tamanio_dato);
+
 	t_list* paginas = list_create();
+
 	int desplazamiento = 0;
 
 	while(contador > 0){
@@ -122,8 +126,11 @@ bool hay_pagina_libre(Pagina* pagina_solicitada){
 }
 
 void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
+	printf("\nVOY A GUARDAR EL DATO WACHIM\n\n");
 
 	int desplazamiento = 0;
+	int size_value = strlen(nuevo_dato->value);
+	int fragmentacion_interna = tamanio_value - size_value;
 
 	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->timestamp), sizeof(time_t) );
 	desplazamiento += sizeof(time_t);
@@ -131,7 +138,30 @@ void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
 	memcpy(posicion_memoria + desplazamiento, &(nuevo_dato->key), sizeof(nuevo_dato->key));
 	desplazamiento += sizeof(nuevo_dato->key);
 
-	memcpy(posicion_memoria + desplazamiento, nuevo_dato->value, strlen(nuevo_dato->value) + 1);
+	memcpy(posicion_memoria + desplazamiento, nuevo_dato->value, size_value);
+	desplazamiento += strlen(nuevo_dato->value);
+
+	if(fragmentacion_interna){
+
+		printf("FRAGMENTACION DE %i deberia ser 25\n", fragmentacion_interna);
+
+		char nulo = '\0';
+
+		while(fragmentacion_interna > 0){
+
+			memcpy(posicion_memoria + desplazamiento, &nulo, 1);
+
+			desplazamiento++;
+
+			fragmentacion_interna--;
+		}
+
+		printf("FRAGMENTACION DESPUES DE X: %i\n", fragmentacion_interna);
+
+	}
+
+	printf("DESPLAZAMIENTO DESPUES DE SACAR LA FRAGMENTACION_ %i y deberia ser %i\n", desplazamiento, tamanio_dato);
+
 
 }
 

@@ -59,7 +59,13 @@ void request_insert(char* tabla, u_int16_t key, char* value ){
 		return;
 	}
 
-	time_t timestamp = 20000; ////// HAY QUE GUARDAR ESTO BIEN CON EL TIEMPO ACTUAL
+	time_t timestamp = time(NULL);
+
+	if(timestamp < 0){
+		//se pudre todo, el timestamp no esta disponible
+		exit(1);
+	}
+	////// HAY QUE GUARDAR ESTO BIEN CON EL TIEMPO ACTUAL
 
 	dato_insert = crear_dato(key, value, timestamp );
 

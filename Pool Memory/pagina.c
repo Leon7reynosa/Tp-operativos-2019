@@ -99,15 +99,18 @@ t_list* paginas_sin_modificar(t_list* paginas){
 
 void  mostrar_datos(Pagina pagina){
 
-
+	char nulo = '\0';
 	Dato nuevo_dato = malloc(sizeof(struct DatoEstructura));
-	nuevo_dato->value = malloc(tamanio_value);
+
+	nuevo_dato->value = malloc(tamanio_value + 1);
+
 	memcpy(&(nuevo_dato->timestamp), pagina->referencia_memoria, sizeof(time_t));
 	memcpy(&(nuevo_dato->key), (pagina->referencia_memoria) + sizeof(time_t), sizeof(u_int16_t));
 	memcpy(nuevo_dato->value, (pagina->referencia_memoria) + sizeof(u_int16_t) + sizeof(time_t), tamanio_value);
+	memcpy(nuevo_dato->value + tamanio_value, &nulo, 1);
 
 	printf("Ahora voy a imprimir la pagina completa!\n");
-	printf("timestamp: %i\n",nuevo_dato->timestamp);
+	printf("timestamp: %d\n",nuevo_dato->timestamp);
 	printf("key: %d\n", nuevo_dato->key);
 	printf("value: %s\n", nuevo_dato->value);
 

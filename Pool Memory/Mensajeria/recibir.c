@@ -42,7 +42,7 @@ request recibir_request(int conexion){
 		case GOSSIP:
 
 			//aca deberiamos pedir que haga el gossip para actualizar la tabla del kernel
-			recibir_gossiping();
+			//recibir_gossiping();
 			break;
 
 		default:

@@ -6,7 +6,7 @@
  */
 
 #include"gossiping.h"
-
+/*
 void* gossiping(Memoria memoria){
 
 	int cantidad_seeds = list_size(memoria->seed);
@@ -21,9 +21,15 @@ void* gossiping(Memoria memoria){
 
 		socket_seed = conectar_servidor(seed_aux->ip, seed_aux->puerto);
 
-		intercambiar_datos(memoria, socket_seed);
+		if(socket_seed >= 0){
 
-		close(socket_seed);
+			intercambiar_datos(memoria, socket_seed);
+
+			close(socket_seed);
+		}
+		else{
+			//nada, proba otro dia crack! (LOGGEAR que la memoria seed no esta conectada)
+		}
 
 	}
 
@@ -71,7 +77,8 @@ void liberar_dato_memoria(struct MemoriasEstructura* memoria){
 
 }
 
-void liberar_dato_gossiping(struct DatoTablaGossiping* dato){
+void liberar_dato_gossiping(struct Da
+toTablaGossiping* dato){
 
 
 	list_destroy_and_destroy_elements(dato->memorias, liberar_dato_memoria);
@@ -138,3 +145,4 @@ void intercambiar_datos(Memoria memoria, int memoria2){
 
 
 }
+*/

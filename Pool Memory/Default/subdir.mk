@@ -6,6 +6,7 @@
 C_SRCS += \
 ../API_Pool.c \
 ../dato.c \
+../gossiping.c \
 ../memoria.c \
 ../pagina.c \
 ../pool.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 OBJS += \
 ./API_Pool.o \
 ./dato.o \
+./gossiping.o \
 ./memoria.o \
 ./pagina.o \
 ./pool.o \
@@ -22,6 +24,7 @@ OBJS += \
 C_DEPS += \
 ./API_Pool.d \
 ./dato.d \
+./gossiping.d \
 ./memoria.d \
 ./pagina.d \
 ./pool.d \

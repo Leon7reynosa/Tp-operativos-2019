@@ -28,5 +28,6 @@ Segmento crear_segmento(char* nombre_tabla);
 void liberar_segmento(Segmento segmento_a_liberar);
 bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encontrado);
 void sacar_pagina_segmento(Segmento segmento, Pagina pagina);
+void agregar_pagina(Segmento segmento, Pagina pagina);
 
 #endif /* SEGMENTO_H_ */

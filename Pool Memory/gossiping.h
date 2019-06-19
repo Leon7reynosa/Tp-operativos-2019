@@ -11,6 +11,8 @@
 #include"Mensajeria/Cliente/cliente.h"
 #include"Mensajeria/mensajes.h"
 
+#include<commons/collections/list.h>
+
 struct MemoriasEstructura{
 	int numero_memoria;
 	t_stream* ip;
@@ -25,10 +27,5 @@ struct DatoTablaGossiping{
 
 };
 
-/*
- *3
- * tamanio+ip +
- *
-*/
 
 #endif /* GOSSIPING_H_ */
