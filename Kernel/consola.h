@@ -14,7 +14,9 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 #include<commons/string.h>
-#include"API_Kernel.h"
+#include"kernel.h"
+
+void* consola(void);
 
 
 #endif /* CONSOLA_H_ */

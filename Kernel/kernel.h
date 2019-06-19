@@ -10,13 +10,17 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<pthread.h>
+#include<commons/log.h>
 #include<commons/collections/queue.h>
+
 
 #include"API_Kernel.h"
 #include"Mensajeria/Cliente/cliente.h"
 #include"Mensajeria/mensajes.h"
 #include"consola.h"
 #include"gossiping.h"
+
 
 
 

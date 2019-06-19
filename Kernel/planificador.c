@@ -113,17 +113,23 @@ void inicializar_cola_exit(){
  */
 void cola_new_to_ready(){
 
+	FILE* archivo;
+
 	int tamanio_cola_new = queue_size(cola_new);
 
 	for(int i = 0 ; i < tamanio_cola_new ; i++){
 
-		t_planificador* nuevo_lql = malloc(sizeof(t_planificador));
+		t_scripts* nuevo_lql = malloc(sizeof(t_scripts));
 
 		nuevo_lql->path_lql = (char*) queue_pop(cola_new);
 
-		nuevo_lql->archivo_lql = fopen(nuevo_lql->path_lql , "r");
+		archivo = fopen(nuevo_lql->path_lql , "r");
+
+		nuevo_lql->cola_requests = parsear_LQL(archivo);
 
 		queue_push(cola_ready,(void*) nuevo_lql);
+
+		fclose(archivo);
 
 	}
 
@@ -134,7 +140,7 @@ void cola_new_to_ready(){
 //esta funcion deberia repetirse varias veces mientras la cola_ready no este vacia
 void cola_ready_a_exec(t_queue* cola_exec){
 
-	 t_planificador* siguiente_script = (t_planificador*)queue_pop(cola_ready);
+	 t_scripts* siguiente_script = (t_scripts*)queue_pop(cola_ready);
 
 
 	 int i = 0;

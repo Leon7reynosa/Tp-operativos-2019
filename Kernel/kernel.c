@@ -9,16 +9,19 @@
 
 int main (int argc , char* argv[]){
 
-	//consola();
+	/////////////////////////////////VARIABLES/////////////////////////////////
 
+	pthread_t hilo_consola;
 
-	/*/////////////////////////////INICIALIZACIONES//////////////////////////////
+	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
 	creacion_del_config();
 	obtener_datos_config();
 
-	t_queue* colas_exec[grado_multiprocesamiento];
+	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
+	log_info(logger_kernel, "LOGGER CREADO CORRECTAMENTE.");
 
+	t_queue* colas_exec[grado_multiprocesamiento];
 	inicializar_cola_exec(colas_exec , grado_multiprocesamiento);
 	inicializar_cola_new(argc, argv);
 	inicializar_cola_ready();
@@ -26,20 +29,14 @@ int main (int argc , char* argv[]){
 
 	/////////////////////////////MAIN//////////////////////////////
 
-	cola_new_to_ready();
 
-	cola_ready_a_exec(colas_exec[0]);
-	cola_ready_a_exec(colas_exec[0]);
-	cola_ready_a_exec(colas_exec[0]);
+	pthread_create(&hilo_consola , NULL, consola, NULL);
 
-	printf("\nFIN DEL PROGRAMA\n");
-
-*/
-
-
+	pthread_join(hilo_consola , NULL);
 
 	return 0;
 }
+
 
 
 

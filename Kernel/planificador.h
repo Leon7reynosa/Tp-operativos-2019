@@ -17,10 +17,16 @@
 
 typedef struct{
 
-	FILE* archivo_lql;
+	t_queue* cola_requests;
 	char* path_lql;
 
-}t_planificador;
+}t_scripts;
+
+//qq = 4
+
+//a => 1,2,3..
+//b
+//consola => 1, 2, 3, 4
 
 
 t_queue* cola_new;
