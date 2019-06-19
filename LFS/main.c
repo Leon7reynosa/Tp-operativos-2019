@@ -9,10 +9,20 @@
 
 
 int main(){
+	crearYObtenerDatos();
 	creacion_bitmap();
 	setAllEstados(LIBRE);
-	printf("hola bb\n");
-	crear_archivos_particiones("Tabla_A" , 4);
+
+	dato_t* dato = malloc(sizeof(dato_t));
+	dato->key = 12;
+	dato->timestamp = 1111;
+	dato->value = malloc(strlen("Peron")+1);
+	memcpy(dato->value, "Peron", strlen("Peron") + 1);
+
+	char* datoStringueado = datoEnFormatoBloque(dato);
+//	crear_archivos_particiones("Tabla_A" , 4);
+	//llenarBloque(datoStringueado, 0);
+	leer_Particiones("Tabla_A");
 
 	return EXIT_SUCCESS;
 }

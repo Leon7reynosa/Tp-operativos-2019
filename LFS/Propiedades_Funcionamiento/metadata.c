@@ -93,15 +93,14 @@ char* obtenerPathTabla(char* nombre_tabla){
 }
 
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
-	char* path = string_new();
-	path = obtenerPathTabla(nombre_tabla);
+	char* path = obtenerPathTabla(nombre_tabla);
 
 	string_append(&path, "/");
 	string_append(&path, string_itoa(particion));
 	string_append(&path, ".bin");
 
-
 	return path;
+
 
 }
 
@@ -112,6 +111,7 @@ char* obtenerPath_Bloque(int indice){
 	string_append(&path, "Bloques/");
 	string_append(&path, string_itoa(indice));
 	string_append(&path, ".bin");
+
 
 	return path;
 
