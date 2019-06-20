@@ -64,20 +64,24 @@ void crear_archivos_particiones(char* nombre_tabla, int numero_particiones){
 	FILE* archivo;
 	particionContenido* base = malloc(sizeof(particionContenido));
 	base->size = 0;
-	*(base->bloques) = buscarPrimerIndiceVacio();
+	base->bloques = malloc(sizeof(int));
 
+
+	*(base->bloques) = buscarPrimerIndiceVacio();
 	for (int i = 0; i < numero_particiones ; i++ ){
 
-		printf("%s\n", obtenerPath_ParticionTabla(nombre_tabla, i));
-
 		archivo = fopen(obtenerPath_ParticionTabla(nombre_tabla, i), "wb");
-		printf("hola bb 2\n");
-		fwrite(base, sizeof(base), 1, archivo);
+		fwrite(&(base->size), sizeof(int), 1, archivo);
+		fwrite(base->bloques, sizeof(int), 1, archivo);
 		printf("Se le asigno el bloque %i a la particion %i\n",*(base->bloques) ,i);
 		fclose(archivo);
-
+		setEstado(*(base->bloques), OCUPADO);
 		*(base->bloques) = buscarPrimerIndiceVacio();
+
 	}
+
+	free(base->bloques);
+	free(base);
 }
 
 void leer_Particiones(char* nombreTabla){
@@ -85,21 +89,47 @@ void leer_Particiones(char* nombreTabla){
 	struct dirent *ent;
 	FILE* f;
 	particionContenido auxiliar;
+	auxiliar.bloques = malloc(sizeof(int));
+	char* mapBloque;
+	char* pathParaParticion;
+	char* ubicacionesProhibidas[3];
+	ubicacionesProhibidas[0] = ".";
+	ubicacionesProhibidas[1] = "..";
+	ubicacionesProhibidas[2] = "Metadata.config";
+	int *fichero;
+	struct stat *atributosBloque = malloc(sizeof(struct stat));
 	int i = 0;
+	int j = 0;
 
 	if((dir = opendir(obtenerPathTabla(nombreTabla))) != NULL){
 		while((ent = readdir(dir)) != NULL){
-			if(ent->d_name != "." && ent->d_name != ".." && ent->d_name != "Metadata.config"){
+			if(strcmp(ent->d_name, ubicacionesProhibidas[0]) && strcmp(ent->d_name, ubicacionesProhibidas[1]) && strcmp(ent->d_name, ubicacionesProhibidas[2])){
+				pathParaParticion = string_new();
 				printf("Estamos en el archivo %s\n", ent->d_name);
-				f = fopen(ent->d_name, "rb");
-				fread(&auxiliar, sizeof(particionContenido), 1, f);
+				string_append(&pathParaParticion, obtenerPathTabla(nombreTabla));
+				string_append(&pathParaParticion, "/");
+				string_append(&pathParaParticion, ent->d_name);
+				f = fopen(pathParaParticion, "rb");
+				printf("%s\n" , ent->d_name);
+				printf("hola beby\n");
+				fread(&(auxiliar.size), sizeof(int), 1, f);
+				fread(auxiliar.bloques, sizeof(int), 1, f);
 				printf("Size = %i\n", auxiliar.size);
-				printf("Bloques que contiene = ");
+				printf("Bloques que contiene = %i\n ", *(auxiliar.bloques));
 				while(*(auxiliar.bloques + i) != '\0'){
-					printf("%i ", *(auxiliar.bloques + i));
+					printf("####Bloque %i\n####### ", *(auxiliar.bloques + i));
+					mapBloque = obtenerMapDelBloque_ModoLectura(*(auxiliar.bloques + i), fichero, atributosBloque);
+					for(j; j < atributosBloque->st_size; j++){
+						printf("%c", *(mapBloque + j));
+					}
+					printf("\n");
+					cerrarMapDelBloque(fichero, mapBloque, atributosBloque);
+					i++;
+
 				}
 				printf("\n");
 
+				free(pathParaParticion);
 			}
 
 		}
@@ -223,7 +253,6 @@ void crear_Binario_Bloque(int indice, char* dato){
 	int caracteresTotales = strlen(dato);
 	int recorridoDato = 0;
 	char* pathBloque =  obtenerPath_Bloque(indice);
-	printf("El path del bloque es: %s\n", pathBloque);
 
 	int ficheroBloque = open(pathBloque, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR);
 
