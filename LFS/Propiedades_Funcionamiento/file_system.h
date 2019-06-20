@@ -55,5 +55,7 @@ void mostrarDato(dato_t* dato);
 void leerDatoDelBloque(int indice);
 char* datoEnString(dato_t* dato);
 char* datoEnFormatoBloque(dato_t* dato);
+bool estaLleno(int indice);
+dato_t* crearDato(u_int16_t key, time_t timestamp, char* value);
 
 #endif /* FILE_SYSTEM_H_ */

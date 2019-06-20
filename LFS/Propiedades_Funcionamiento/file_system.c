@@ -96,7 +96,7 @@ void leer_Particiones(char* nombreTabla){
 	ubicacionesProhibidas[0] = ".";
 	ubicacionesProhibidas[1] = "..";
 	ubicacionesProhibidas[2] = "Metadata.config";
-	int *fichero;
+	int *fichero = malloc(sizeof(int));
 	struct stat *atributosBloque = malloc(sizeof(struct stat));
 	int i = 0;
 	int j = 0;
@@ -110,28 +110,33 @@ void leer_Particiones(char* nombreTabla){
 				string_append(&pathParaParticion, "/");
 				string_append(&pathParaParticion, ent->d_name);
 				f = fopen(pathParaParticion, "rb");
-				printf("%s\n" , ent->d_name);
-				printf("hola beby\n");
-				fread(&(auxiliar.size), sizeof(int), 1, f);
-				fread(auxiliar.bloques, sizeof(int), 1, f);
-				printf("Size = %i\n", auxiliar.size);
-				printf("Bloques que contiene = %i\n ", *(auxiliar.bloques));
-				while(*(auxiliar.bloques + i) != '\0'){
-					printf("####Bloque %i\n####### ", *(auxiliar.bloques + i));
-					mapBloque = obtenerMapDelBloque_ModoLectura(*(auxiliar.bloques + i), fichero, atributosBloque);
-					for(j; j < atributosBloque->st_size; j++){
-						printf("%c", *(mapBloque + j));
+					fread(&(auxiliar.size), sizeof(int), 1, f);
+					fread(auxiliar.bloques, sizeof(int), 1, f);
+					printf("Size = %i\n", auxiliar.size);
+
+					printf("Bloques que contiene = \n ");
+
+					while(*(auxiliar.bloques + i) >= 0 && *(auxiliar.bloques + i) < 5192){
+						printf("####Bloque %i#######\n", *(auxiliar.bloques + i));
+						mapBloque = obtenerMapDelBloque_ModoLectura(*(auxiliar.bloques + i), fichero, atributosBloque);
+						if(mapBloque == NULL){
+							printf("No hay nada todavia :(\n");
+							close(*fichero);
+						}
+						else{
+
+							for(j = 0; j < atributosBloque->st_size; j++){
+								printf("%c", *(mapBloque + j));
+							}
+							printf("\n");
+							cerrarMapDelBloque(fichero, mapBloque, atributosBloque);
+						}
+						i++;
 					}
-					printf("\n");
-					cerrarMapDelBloque(fichero, mapBloque, atributosBloque);
-					i++;
-
-				}
+					i = 0;
 				printf("\n");
-
 				free(pathParaParticion);
 			}
-
 		}
 		closedir(dir);
 	}
@@ -214,18 +219,23 @@ dato_t* buscar_dato_en_particion(char* path_tabla, u_int16_t keyABuscar){
 char* obtenerMapDelBloque_ModoLectura(int indice, int* fichero, struct stat *atributosBloque){
 
 	char *path = obtenerPath_Bloque(indice);
-	int ficheroBloque = open(path, O_RDONLY, S_IRUSR);
-	fstat(ficheroBloque, atributosBloque);
-	char* mapBloque = mmap(NULL, atributosBloque->st_size, PROT_READ, MAP_SHARED, ficheroBloque, 0);
+	*fichero = open(path, O_RDONLY, S_IRUSR);
+	if(*fichero < 0){
+		return NULL;
+	}
+
+	fstat(*fichero, atributosBloque);
+	char* mapBloque = mmap(NULL, atributosBloque->st_size, PROT_READ, MAP_SHARED, *fichero, 0);
 
 	return mapBloque;
 }
 
-void cerrarMapDelBloque(int fichero, char* map, struct stat *atributosBloque){
+void cerrarMapDelBloque(int* fichero, char* map, struct stat *atributosBloque){
 	munmap(map, atributosBloque->st_size);
-	close(fichero);
+	close(*fichero);
 }
 
+//usar con el ultimo bloque de la particion!
 void llenarBloque(char* dato, int indice){
 
 	char** arrayValue = string_split(dato, ";");
@@ -233,20 +243,20 @@ void llenarBloque(char* dato, int indice){
 	if((strlen(*(arrayValue) + 2)) > tamanio_value_max){
 		//HACER LOG DE ERROR
 		printf("Superas el tamanio maximo\n");
-		exit(-1);
+		return;
 	}
 
-	if(estaBloqueVacio(indice) || noExisteBloque(indice)){ //ver si anda bien
-		crear_Binario_Bloque(indice, dato);
-		printf("SE CARGO CORRECTAMENTE EL BLOQUE AL INDICE !!!\n");
-		setEstado(indice, OCUPADO);
-		printf("Estado del indice %i seteado a %i\n", indice, OCUPADO);
+	if(estaLleno(indice)){
+		printf("\n busco otro bloque para: %s\n", dato);
+		int nuevoIndice = buscarPrimerIndiceVacio();
+		setEstado(nuevoIndice, OCUPADO);
+		llenarBloque(dato ,nuevoIndice);
+
 	}
 	else{
+		printf("\n dato a escribir : %s\n", dato);
 		crear_Binario_Bloque(indice, dato);
 	}
-
-
 }
 
 void crear_Binario_Bloque(int indice, char* dato){
@@ -254,17 +264,17 @@ void crear_Binario_Bloque(int indice, char* dato){
 	int recorridoDato = 0;
 	char* pathBloque =  obtenerPath_Bloque(indice);
 
-	int ficheroBloque = open(pathBloque, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR);
+	int ficheroBloque = open(pathBloque, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
 
-	int punteroBloque = 0;
+	int punteroBloque;
 	int indiceDatos = 0;
 
 	printf("Buscando posicion de inicio de escritura...\n");
+	//El seek_end nos sirve para continuar escribiendo, si es que  hay espacio todavia
 	punteroBloque = lseek(ficheroBloque, 0, SEEK_END);
 	printf("Posicion encontrada !!! Puntero de bloque = %i\n", punteroBloque);
-	printf("Tamanio del bloque = %i\n", block_size);
 
-	for(caracteresTotales; caracteresTotales >= 0; caracteresTotales--){
+	for(caracteresTotales; caracteresTotales > 0; caracteresTotales--){
 		if(punteroBloque < block_size){
 			write(ficheroBloque, (dato + indiceDatos), sizeof(char));
 			*(dato + recorridoDato) = ' ';
@@ -272,12 +282,14 @@ void crear_Binario_Bloque(int indice, char* dato){
 			recorridoDato++;
 			indiceDatos++;
 		}
-
+			//ron\n
 		else{
 			printf("Entraste al else\n");
-			string_trim_left(&dato); //Remueve todos los caracter vacios de la izquierda
-
+			printf("DATO: %s\n", dato);
+			string_trim(&dato); //Remueve todos los caracter vacios de la izquierda
+			printf("\n parte del dato a escribir en otro bloque: %s\n", dato);
 			llenarBloque(dato, indice);
+			break;
 		}
 
 
@@ -483,14 +495,17 @@ char* datoEnFormatoBloque(dato_t* dato){
 }
 
 void leerBloque(int indice){
-	printf("\n######Iniciando lectura del bloque %i#######\n", indice);
 	char* pathBloque = malloc(strlen(obtenerPath_Bloque(indice)+1));
 	pathBloque = obtenerPath_Bloque(indice);
-	printf("PATTH : %s\n", pathBloque);
 	int archivoBloque = open(pathBloque, O_RDONLY, S_IRUSR);
+	if(archivoBloque < 0){
+		printf("\nNo existe el bloque %i\n", indice);
+		return;
+	}
+	printf("######Iniciando lectura del bloque %i#######\n", indice);
 
 	int i = 0;
-	char* auxiliar = malloc(100);
+	char* auxiliar = malloc(tamanioDeValue + 1);
 	read(archivoBloque,(auxiliar + i), sizeof(char));
 	printf("%c", *(auxiliar + i));
 	while(*(auxiliar + i) != '\0'){
@@ -513,10 +528,12 @@ int estaBloqueVacio(int indice){
 	int posicion = lseek(ficheroBloque, 0, SEEK_END);
 
 	if(posicion == 0){
+		printf("El bloque esta vacio\n");
 		return EXIT_SUCCESS;
 	}
 
 	else{
+		printf("El bloque no esta vacio\n");
 		return EXIT_FAILURE;
 	}
 }
@@ -526,12 +543,38 @@ int noExisteBloque(int indice){
 	int ficheroBloque = open(path, O_RDONLY, S_IRUSR);
 
 	if(ficheroBloque == -1){
+		close(ficheroBloque);
+		printf("No existe el bloque\n");
 		return EXIT_SUCCESS;
 	}
 	else{
+		close(ficheroBloque);
+		printf("Existe el bloque\n");
 		return EXIT_FAILURE;
 	}
 
+
+
+}
+
+bool estaLleno(int indice){
+	char* path = obtenerPath_Bloque(indice);
+	int ficheroBloque = open(path, O_RDONLY, S_IRUSR);
+	int puntero = lseek(ficheroBloque, 0, SEEK_END);
+	close(ficheroBloque);
+
+	return (puntero == (block_size));
+
+}
+
+dato_t* crearDato(u_int16_t key, time_t timestamp, char* value){
+	dato_t* dato = malloc(sizeof(dato_t));
+	dato->key = key;
+	dato->timestamp = timestamp;
+	dato->value = malloc(strlen(value)+1);
+	memcpy(dato->value, value, strlen(value)+1);
+
+	return dato;
 }
 
 

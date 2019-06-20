@@ -147,6 +147,7 @@ void crearYObtenerDatos(){
 	creacion_del_metadata_fileSystem();;
 	obtener_datos_config();
 	obtener_datos_metadata();
+	tamanioDeValue = sizeof(u_int16_t) + tamanio_value_max + sizeof(time_t);
 }
 
 void obtenerDatos(){
