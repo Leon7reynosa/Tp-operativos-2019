@@ -10,7 +10,8 @@ C_SRCS += \
 ../gossiping.c \
 ../kernel.c \
 ../planificador.c \
-../request_memoria.c 
+../request_memoria.c \
+../semaforos.c 
 
 OBJS += \
 ./API_Kernel.o \
@@ -19,7 +20,8 @@ OBJS += \
 ./gossiping.o \
 ./kernel.o \
 ./planificador.o \
-./request_memoria.o 
+./request_memoria.o \
+./semaforos.o 
 
 C_DEPS += \
 ./API_Kernel.d \
@@ -28,7 +30,8 @@ C_DEPS += \
 ./gossiping.d \
 ./kernel.d \
 ./planificador.d \
-./request_memoria.d 
+./request_memoria.d \
+./semaforos.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

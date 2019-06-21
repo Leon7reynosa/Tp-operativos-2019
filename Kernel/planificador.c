@@ -9,6 +9,22 @@
 
 ///////////////////////////////////////////////////////////////////////
 
+void* planificador(t_queue* cola_exec[]){
+
+
+
+		for(int i = 0 ; i < grado_multiprocesamiento ; i ++ ){
+
+			ejecutar_cola_exec( cola_exec[i] );
+
+		}
+
+	return NULL;
+
+}
+
+///////////////////////////////////////////////////////////////////////
+
 t_queue* parsear_LQL(FILE* archivo_lql){
 
 	t_queue* cola_requests = queue_create();
@@ -131,6 +147,8 @@ void cola_new_to_ready(){
 
 		fclose(archivo);
 
+		sem_post(&semaforo_ready);
+
 	}
 
 }
@@ -138,45 +156,62 @@ void cola_new_to_ready(){
 ////////////////////////////////////////////////////////////////////////////////
 
 //esta funcion deberia repetirse varias veces mientras la cola_ready no este vacia
-void cola_ready_a_exec(t_queue* cola_exec){
+void ejecutar_cola_exec(t_queue* cola_exec){
 
-	 t_scripts* siguiente_script = (t_scripts*)queue_pop(cola_ready);
+	while(1){
+
+		sem_wait(&semaforo_ready);
+
+		t_scripts* siguiente_script = (t_scripts*)queue_pop(cola_ready);
+
+		cola_exec = siguiente_script->cola_requests;
 
 
-	 int i = 0;
+		int i = 0;
 
-	 while( i < quantum && !queue_is_empty(cola_exec)){
+		while( i < quantum && !queue_is_empty(cola_exec)){
 
 
-		 char* request = (char*)queue_pop(cola_exec);
+			char* request = (char*)queue_pop(cola_exec);
 
-		 printf("Request: %s\n" , request);
+			printf("Request: %s\n" , request);
 
-		// mandar_request(request , socket_pool); //hay que inicializar las conexiones
+			if(!ejecutar_request(request )){
 
-		 //deberia ahora recibir la operacion
+				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST.\n");
 
-		 //si falla, mando a la cola de exit
+				queue_push(cola_exit, siguiente_script);
 
-		 free(request);
-		 i++;
+				break;
 
-	 }
+			}
 
-	 if(queue_is_empty(cola_exec)){
+				 //hay que inicializar las conexiones
+				 //deberia ahora recibir la operacion
 
-		 printf("Ya se completo las request\n");
+			free(request);
+			i++;
 
-		 queue_push(cola_exit, siguiente_script->path_lql);
+		}
 
-	 }else{
+		if(queue_is_empty(cola_exec)){
 
-		 printf("Termino el quantum\n");
+			printf("Ya se completo las request\n");
 
-		 queue_push(cola_ready, siguiente_script);
+			queue_push(cola_exit, siguiente_script);
 
-	 }
+		}else{
 
-	 //si no esta vacia no hago nada
+			printf("Termino el quantum\n");
+
+			queue_push(cola_ready, siguiente_script);
+
+			sem_post(&semaforo_ready);
+
+		}
+
+		menu();
+
+	}
 
 }

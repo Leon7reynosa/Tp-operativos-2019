@@ -14,6 +14,7 @@
 #include<commons/collections/queue.h>
 #include"Config/configuracion.h"
 #include"Mensajeria/Cliente/cliente.h"
+#include"API_Kernel.h"
 
 typedef struct{
 
@@ -22,24 +23,20 @@ typedef struct{
 
 }t_scripts;
 
-//qq = 4
-
-//a => 1,2,3..
-//b
-//consola => 1, 2, 3, 4
 
 
 t_queue* cola_new;
 t_queue* cola_ready;
-t_queue* cola_exit;
+t_queue* cola_exit; //en la cola de exit se almacenararn los t_scripts
 
+void* planificador(t_queue* cola_exec[]);
 t_queue* parsear_LQL(FILE* archivo_lql);
 void inicializar_cola_exec(t_queue* colas[] , int grado_multiprocesamiento);
 void inicializar_cola_new(int argc , char* argv[]);
 void inicializar_cola_ready(void);
 void inicializar_cola_exit(void);
 void cola_new_to_ready(void);
-void cola_ready_a_exec(t_queue* cola_exec);
+void ejecutar_cola_exec(t_queue* cola_exec);
 
 
 #endif /* PLANIFICADOR_H_ */

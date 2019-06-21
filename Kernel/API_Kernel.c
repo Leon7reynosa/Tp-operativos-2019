@@ -10,7 +10,7 @@
 
 ////////////////////// FUNCIONES NUEVAS///////////////////////////////
 //no es el mismo que enviar_request
-void mandar_request(char* request_lql){
+int ejecutar_request(char* request_lql){
 
 	int cod_request;
 	char* nombre_tabla = string_new();
@@ -30,48 +30,51 @@ void mandar_request(char* request_lql){
 		case SELECT:
 			if(obtener_parametros_select(request_lql, nombre_tabla, &key)){
 
-				log_info(logger_kernel, "---Se realizara el SELECT---");
+				log_info(logger_kernel, "---Se realizara el SELECT---\n");
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
 				//enviar_request(SELECT, select_enviar);
-
+				return 1;
 			}
 			break;
 		case INSERT:
 
-			if(obtener_parametros_insert(request_lql, nombre_tabla, &key, value, &timestamp)){
+			if(obtener_parametros_insert(request_lql, nombre_tabla, &key, &value, &timestamp)){
 
-				log_info(logger_kernel, "---Se realizara el INSERT---");
+				log_info(logger_kernel, "---Se realizara el INSERT---\n");
+
 				insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
 				//enviar_request(INSERT, insert_enviar);
-
+				return 1;
 			}
 			break;
 
 		case CREATE:
 			if(obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion)){
 
-				log_info(logger_kernel , "---Se realizara el CREATE---");
+				log_info(logger_kernel , "---Se realizara el CREATE---\n");
 				obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion);
 				//enviar_request(CREATE, create_enviar);
-
+				return 1;
 			}
 			break;
 
 		case ADD:
 			if(obtener_parametros_add(request_lql, &numero_memoria, consistencia)){
 
-				log_info(logger_kernel, "---Se realizara la request ADD---");
+				log_info(logger_kernel, "---Se realizara la request ADD---\n");
 				//request_add(numero_memoria, consistencia);
-				log_info(logger_kernel , "SE AGREGO LA MEMORIA CORRECTAMENTE");
-
+				log_info(logger_kernel , "SE AGREGO LA MEMORIA CORRECTAMENTE\n");
+				return 1;
 			}
 			break;
 
 		default:
-			log_error( logger_kernel ,"-LA REQUEST NO ES VALIDA-");
-			//exit(-1);
+			log_error( logger_kernel ,"-LA REQUEST NO ES VALIDA-\n");
+			return 0;
 			break;
 	}
+
+	return 0;
 
 }
 
@@ -108,7 +111,7 @@ int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t
 	if((sscanf(linea_request, "%s %s %d", funcion, nombre_tabla, key)) != 3){
 
 		//log
-		log_error(logger_kernel, "-LA REQUEST SELECT RECIBIO PARAMETROS INCORRECTOS.-");
+		log_error(logger_kernel, "-LA REQUEST SELECT RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
 
 	}
@@ -117,17 +120,35 @@ int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t
 	return 1;
 }
 
-int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value, time_t* timestamp){
+int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp){
+
+	char** auxiliar;
 	char* funcion = string_new();
 
-	if( (sscanf(linea_request, "%s %s %i %s %i", funcion, nombre_tabla, key, value, timestamp)) != 5){
+	char* comillas = malloc(2);
+	*(comillas) = '"';
 
-		//
-		log_error(logger_kernel , "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-");
+	auxiliar = string_n_split(linea_request, 3, comillas  );
+
+
+	if(sscanf(auxiliar[0] , "%s %s %i" , funcion, nombre_tabla, key) != 3){
+
+		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
-
 	}
 
+	string_append(value , auxiliar[1]);
+
+	if(sscanf(auxiliar[2] , " %d" , timestamp) != 1){
+
+		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
+		return 0;
+	}
+
+
+
+	free(auxiliar);
+	free(comillas);
 	free(funcion);
 	return 1;
 
@@ -141,7 +162,7 @@ int obtener_parametros_add(char* linea_request, int* numero_memoria, char* consi
 	if((sscanf(linea_request, "%s %s %i %s %s", funcion, memoria, numero_memoria, to, consistencia)) != 5){
 
 		//log
-		log_error(logger_kernel , "-LA REQUEST ADD RECIBIO PARAMETROS INCORRECTOS.-");
+		log_error(logger_kernel , "-LA REQUEST ADD RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
 
 	}
@@ -159,7 +180,7 @@ int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_ta
 
 	if( (sscanf(linea_request, "%s %s %i %s %i", funcion, nombre_tabla, key, value)) != 5 ){
 
-		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-");
+		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
 
 	}
@@ -174,7 +195,7 @@ int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* cri
 	if( (sscanf(linea_request, "%s %s %s %i %i", funcion, nombre_tabla, criterio, numero_particiones, tiempo_compactacion)) != 5 ){
 
 		//log
-		log_error( logger_kernel , "-LA REQUEST CREATE RECIBIO PARAMETROS INCORRECTOS.-");
+		log_error( logger_kernel , "-LA REQUEST CREATE RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
 	}
 

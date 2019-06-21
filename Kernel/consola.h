@@ -17,6 +17,7 @@
 #include"kernel.h"
 
 void* consola(void);
+void menu(void);
 
 
 #endif /* CONSOLA_H_ */

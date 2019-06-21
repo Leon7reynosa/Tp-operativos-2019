@@ -11,6 +11,7 @@
 #include"Mensajeria/mensajes.h"
 #include"Config/configuracion.h"
 #include"planificador.h"
+#include"semaforos.h"
 
 t_log* logger_kernel;
 
@@ -35,10 +36,10 @@ typedef struct{
 }tabla_memtable;
 
 
-void mandar_request(char* request_lql);
+int ejecutar_request(char* request_lql);
 int identificar_request(char* request_lql);
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key);
-int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value, time_t* timestamp);
+int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp);
 int obtener_parametros_add(char* linea_request, int* numero_memoria, char* consistencia);
 int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value);
 int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* criterio, int* numero_particiones, int* tiempo_compactacion);
