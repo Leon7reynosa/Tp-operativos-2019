@@ -33,6 +33,8 @@ char* punto_montaje;
 int retardo;
 char* ip_lfs;
 
+int tamanioDeValue;
+
 void creacion_bitmap(void);
 void creacion_del_config_fileSystem(void);
 void creacion_del_metadata_fileSystem(void);
