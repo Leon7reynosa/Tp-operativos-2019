@@ -11,13 +11,13 @@
 
 void* planificador(t_queue* cola_exec[]){
 
+	pthread_t* hilos_exec[grado_multiprocesamiento];
 
+	for(int i = 0 ; i < grado_multiprocesamiento ; i ++ ){
 
-		for(int i = 0 ; i < grado_multiprocesamiento ; i ++ ){
+		pthread_create(&hilos_exec[i] , NULL, ejecutar_cola_exec , cola_exec[i]);
 
-			ejecutar_cola_exec( cola_exec[i] );
-
-		}
+	}
 
 	return NULL;
 
@@ -174,8 +174,6 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			char* request = (char*)queue_pop(cola_exec);
 
-			printf("Request: %s\n" , request);
-
 			if(!ejecutar_request(request )){
 
 				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST.\n");
@@ -200,6 +198,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			queue_push(cola_exit, siguiente_script);
 
+			menu();
+
 		}else{
 
 			printf("Termino el quantum\n");
@@ -210,7 +210,6 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}
 
-		menu();
 
 	}
 

@@ -46,6 +46,6 @@ void menu(){
 	printf("3. CREATE [NOMBRE TABLA] [CONSISTENCIA] [NUMERO PARTICIONES] [TIEMPO COMPACTACION]\n");
 	printf("4. ADD MEMORY [NUMERO MEMORIA] TO [CRITERIO]\n");
 	printf("Escriba una request: ");
-
+	printf("\n");
 }
 

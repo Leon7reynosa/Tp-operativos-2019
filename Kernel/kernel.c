@@ -17,7 +17,11 @@ int main (int argc , char* argv[]){
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
 	creacion_del_config();
+	printf("holas\n");
 	obtener_datos_config();
+	printf("%s\n" , ip_memoria);
+
+	conexion_memoria = conectar_servidor(ip_memoria, puerto_memoria);
 
 	inicializar_semaforo_ready();
 
@@ -30,6 +34,7 @@ int main (int argc , char* argv[]){
 	inicializar_cola_new(argc, argv);
 	inicializar_cola_ready();
 	inicializar_cola_exit();
+
 	/////////////////////////////MAIN//////////////////////////////
 
 
@@ -39,10 +44,11 @@ int main (int argc , char* argv[]){
 
 	pthread_create(&hilo_consola , NULL, consola, NULL);
 
+
+
 	pthread_join(hilo_planificador, NULL);
 
 	pthread_join(hilo_consola , NULL);
-
 
 
 	return 0;

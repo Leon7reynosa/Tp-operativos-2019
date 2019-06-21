@@ -19,7 +19,7 @@
 t_config* g_config;
 
 int grado_multiprocesamiento;
-int ip_memoria;
+char* ip_memoria;
 int puerto_memoria;
 int quantum;
 int tiempo_gossiping_kernel;

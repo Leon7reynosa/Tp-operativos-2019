@@ -36,3 +36,4 @@ void request_add(int numero_memoria, char* consistencia){
 	}
 
 }
+

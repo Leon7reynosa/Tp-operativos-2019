@@ -30,15 +30,20 @@ void creacion_del_config(){
 void obtener_datos_config(){
 
 	g_config = config_create("kernel.config");
+	ip_memoria = string_new();
+	char* ip_auxiliar;
 
 	puerto_memoria = config_get_int_value(g_config, "PUERTO_MEMORIA");
-	ip_memoria = config_get_int_value(g_config, "IP_MEMORIA");
+	ip_auxiliar = config_get_string_value(g_config, "IP_MEMORIA");
 	grado_multiprocesamiento = config_get_int_value(g_config , "GRADO_MULTIPROCESAMIENTO");
 	quantum = config_get_int_value(g_config , "QUANTUM");
 	tiempo_gossiping_kernel = config_get_int_value(g_config , "TIEMPO_GOSSIPING_KERNEL");
 
+	string_append(&ip_memoria, ip_auxiliar);
+
+	free(ip_auxiliar);
+
 	config_destroy(g_config);
 
 }
-
 

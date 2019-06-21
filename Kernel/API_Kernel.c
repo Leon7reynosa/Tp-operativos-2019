@@ -139,12 +139,11 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 
 	string_append(value , auxiliar[1]);
 
-	if(sscanf(auxiliar[2] , " %d" , timestamp) != 1){
+	if((sscanf(auxiliar[2] , " %d" , timestamp) != 1)){
 
 		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
 	}
-
 
 
 	free(auxiliar);
