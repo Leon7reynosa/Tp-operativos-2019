@@ -20,18 +20,12 @@ dato_t* request_select(char* nombre_tabla , int key){
 		 printf("Existe la tabla en el File System\n");
 
 		 metadata_t metadata_tabla = obtener_metadata(nombre_tabla);
-
 		 int particion_objetivo = calcular_particion(metadata_tabla.particion , key);
-
 		 path_tabla = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
-         dato_binarios = buscar_dato_en_particion(path_tabla, key);
-
+		 dato_binarios = buscar_dato_en_particion(path_tabla, key);
          dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, key);
-
 		 dato_t* dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_binarios);
-
-		 //faltaria buscar en los temporales.
 
 		 return  dato_mas_nuevo;
 
