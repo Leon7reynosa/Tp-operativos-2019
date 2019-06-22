@@ -6,7 +6,7 @@
  */
 
 #include"gossiping.h"
-/*
+
 void* gossiping(Memoria memoria){
 
 	int cantidad_seeds = list_size(memoria->seed);
@@ -77,8 +77,7 @@ void liberar_dato_memoria(struct MemoriasEstructura* memoria){
 
 }
 
-void liberar_dato_gossiping(struct Da
-toTablaGossiping* dato){
+void liberar_dato_gossiping(struct DatoTablaGossiping* dato){
 
 
 	list_destroy_and_destroy_elements(dato->memorias, liberar_dato_memoria);
@@ -145,4 +144,4 @@ void intercambiar_datos(Memoria memoria, int memoria2){
 
 
 }
-*/
+

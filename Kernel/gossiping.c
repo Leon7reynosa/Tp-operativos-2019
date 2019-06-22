@@ -13,13 +13,15 @@ void actualizar_gossiping(){
 	int tiempo_ejecucion = tiempo_gossiping_kernel * 1000000;
 	void* buffer ;
 	cod_operacion gossip= GOSSIP;
+	int cantidad_memorias = 0;
 
 	while(1){
 
-
-		buffer = malloc(sizeof(cod_operacion));
+		buffer = malloc(sizeof(cod_operacion) + sizeof(int));
 
 		memcpy(buffer , &gossip , sizeof(cod_operacion) );
+
+		memcpy((buffer +  sizeof(cod_operacion) , &cantidad_memorias , sizeof(int)));
 
 		send(conexion_memoria , buffer, sizeof(cod_operacion) , 0);
 
