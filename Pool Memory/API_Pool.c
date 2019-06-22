@@ -7,6 +7,9 @@
 
 #include "API_Pool.h"
 
+
+
+
 Dato request_select(char* tabla, u_int16_t key){
 
 	Segmento segmento_tabla;

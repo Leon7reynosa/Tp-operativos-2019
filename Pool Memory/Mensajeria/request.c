@@ -26,3 +26,41 @@ request crear_request(cod_operacion cod_op, void* tipo_request){
 	return nueva_request;
 
 }
+
+void liberar_request(request request_a_liberar){
+
+	switch(request_a_liberar->cod_op){
+
+		case SELECT:
+
+			liberar_dato_select(request_a_liberar->tipo_request);
+
+			break;
+		case INSERT:
+
+			liberar_dato_insert(request_a_liberar->tipo_request);
+
+			break;
+
+		case CREATE:
+
+			liberar_dato_create(request_a_liberar->tipo_request);
+
+			break;
+
+		case GOSSIP:
+
+			liberar_dato_gossiping(request_a_liberar->tipo_request);
+
+			break;
+
+		default:
+
+			break;
+
+	}
+
+	free(request_a_liberar);
+
+
+}
