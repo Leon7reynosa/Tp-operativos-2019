@@ -80,6 +80,7 @@ void crear_archivos_particiones(char* nombre_tabla, int numero_particiones){
 
 	}
 
+
 	free(base->bloques);
 	free(base);
 }
@@ -236,7 +237,7 @@ void cerrarMapDelBloque(int* fichero, char* map, struct stat *atributosBloque){
 }
 
 //usar con el ultimo bloque de la particion!
-void llenarBloque(char* dato, int indice){
+void llenarBloque(char* dato, int indice, int particion, char* nombreTabla){
 
 	char** arrayValue = string_split(dato, ";");
 
@@ -250,16 +251,18 @@ void llenarBloque(char* dato, int indice){
 		printf("\n busco otro bloque para: %s\n", dato);
 		int nuevoIndice = buscarPrimerIndiceVacio();
 		setEstado(nuevoIndice, OCUPADO);
-		llenarBloque(dato ,nuevoIndice);
+		llenarBloque(dato, nuevoIndice, particion, nombreTabla);
+		actualizarParticion(particion, nombreTabla, nuevoIndice);
 
 	}
 	else{
 		printf("\n dato a escribir : %s\n", dato);
-		crear_Binario_Bloque(indice, dato);
+		crear_Binario_Bloque(indice, dato, nombreTabla, particion);
+		actualizarParticion(particion, nombreTabla, indice);
 	}
 }
 
-void crear_Binario_Bloque(int indice, char* dato){
+void crear_Binario_Bloque(int indice, char* dato, char* nombreTabla, int particion){
 	int caracteresTotales = strlen(dato);
 	int recorridoDato = 0;
 	char* pathBloque =  obtenerPath_Bloque(indice);
@@ -288,24 +291,14 @@ void crear_Binario_Bloque(int indice, char* dato){
 			printf("DATO: %s\n", dato);
 			string_trim(&dato); //Remueve todos los caracter vacios de la izquierda
 			printf("\n parte del dato a escribir en otro bloque: %s\n", dato);
-			llenarBloque(dato, indice);
+			llenarBloque(dato, indice, particion, nombreTabla);
 			break;
 		}
-
-
 	}
 
 	printf("#########TERMINADO DE CARGAR#############\n");
-	/*
-	fclose(f);
-
-	free(datoPasaje->value);
-	free(datoPasaje);
-	*/
 	printf("Se cargo exitosamente !\n");
 	close(ficheroBloque);
-//	msync(archivoBloque, atributosBloque.st_size, MS_SYNC);
-//	munmap(archivoBloque, atributosBloque.st_size);
 }
 
 void mostrarDato(dato_t* dato){
@@ -576,5 +569,144 @@ dato_t* crearDato(u_int16_t key, time_t timestamp, char* value){
 
 	return dato;
 }
+
+int crearTemporal(char* nombreTabla){
+	int archivo;
+	particionContenido* base = malloc(sizeof(particionContenido));
+	base->size = 0;
+	base->bloques = malloc(sizeof(int));
+
+
+	*(base->bloques) = buscarPrimerIndiceVacio();
+
+	archivo = fopen(obtenerPathTabla(nombreTabla), "w+");
+	fwrite(&(base->size), sizeof(int), 1, archivo);
+	fwrite(base->bloques, sizeof(int), 1, archivo);
+	printf("Se le asigno el bloque %i al temporal\n",*(base->bloques));
+	//no se cierra el archivo
+	setEstado(*(base->bloques), OCUPADO);
+
+	free(base->bloques);
+	free(base);
+
+	return archivo;
+
+
+}
+
+void realizarDump(){
+
+	t_list* dato_de_tabla;
+
+
+	void _crear_temporal(char* tabla, void* _datos){
+
+		dato_de_tabla = (t_list*) _datos;
+
+		int descriptor_temporal;
+
+		descriptor_temporal = crearTemporal(tabla);
+
+		llenarTemporal(descriptor_temporal, dato_de_tabla);
+
+		close(descriptor_temporal);
+
+		list_destroy_and_destroy_elements(dato_de_tabla, eliminar_dato_t);
+
+	}
+
+	dictionary_iterator(memtable, _crear_temporal);
+
+
+
+}
+
+void llenarTemporal(int fd_tmp, t_list* dato_de_tabla){
+
+	void _cargar_a_temportal(dato_t* dato){
+		char* string_dato = datoEnFormatoBloque(dato);
+		particionContenido auxiliar;
+		int recorredorBloques = 0;
+
+		fseek(fd_tmp, 0, SEEK_SET);
+		fread(&(auxiliar.size), sizeof(int), 1, fd_tmp);
+		fread(auxiliar.bloques, sizeof(int), 1, fd_tmp);
+
+		while(*(auxiliar.bloques + recorredorBloques) >= 0 && *(auxiliar.bloques + recorredorBloques) < 5192){
+			if(tamanioDelBloque(*(auxiliar.bloques + recorredorBloques)) == block_size){
+				continue;
+			}
+			else{
+				llenarBloque(string_dato, *(auxiliar.bloques + recorredorBloques)/*, particion, nombreTabla*/);
+			}
+		}
+	}
+	list_iterate(dato_de_tabla, );
+
+
+}
+
+int tamanioDelBloque(int indice){
+	char* path = obtenerPath_Bloque(indice);
+	int descriptorBloque = open(path, O_RDONLY, S_IRUSR);
+
+	int puntero = lseek(descriptorBloque, 0, SEEK_END);
+
+	return puntero;
+}
+
+int cantidadDeBloques(int particion, char* nombreTabla){
+	particionContenido auxiliar;
+	char* path = obtenerPath_ParticionTabla(nombreTabla, particion);
+	FILE* archivoParticion = fopen(path, "rb");
+	fread(&auxiliar.size, sizeof(int), 1, archivoParticion);
+	fread(&auxiliar.bloques, sizeof(int), 1, archivoParticion);
+
+	int contador = 0;
+
+	while(*(auxiliar.bloques + contador) != 0){
+		contador++;
+	}
+
+	return contador;
+
+}
+
+void actualizarParticion(int particion, char* nombreTabla, int indice){
+	char* path = obtenerPath_ParticionTabla(nombreTabla, particion);
+	FILE* archivoParticion = fopen(path, "wb+"); //Abre el binario en lectura y escritura
+												//El contenido es borrado y luego nuevo contenido
+												//Es agregado :D
+	particionContenido auxiliar;
+	int status;
+	int i;
+
+	fread(&auxiliar.size, sizeof(int), 1, archivoParticion);
+	fread(&auxiliar.bloques, sizeof(int), 1, archivoParticion);
+
+	int tamanioBloqueNuevo = tamanioDelBloque(indice);
+	int cantidadDeBloques = cantidadDeBloques(particion, nombreTabla);
+
+	while(*(auxiliar.bloques + i) != 0){
+		if(*(auxiliar.bloques + i) == indice){
+			break;
+		}
+		else{
+			i++;
+		}
+	}
+
+	auxiliar.size = (cantidadDeBloques - 1) * block_size + tamanioBloqueNuevo;
+	*(auxiliar.bloques + i) = indice;
+
+	fwrite(&auxiliar.size, sizeof(int), 1, archivoParticion);
+	fwrite(&auxiliar.bloques, sizeof(int), 1, archivoParticion);
+
+	fclose(archivoParticion);
+}
+
+
+
+
 
 

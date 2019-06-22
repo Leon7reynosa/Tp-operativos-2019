@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../API_Pool.c \
+../conexiones.c \
 ../dato.c \
 ../gossiping.c \
 ../memoria.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 
 OBJS += \
 ./API_Pool.o \
+./conexiones.o \
 ./dato.o \
 ./gossiping.o \
 ./memoria.o \
@@ -23,6 +25,7 @@ OBJS += \
 
 C_DEPS += \
 ./API_Pool.d \
+./conexiones.d \
 ./dato.d \
 ./gossiping.d \
 ./memoria.d \

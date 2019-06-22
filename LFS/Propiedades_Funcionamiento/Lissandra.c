@@ -62,9 +62,16 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
 
     tabla_a_filtrar = list_sorted(tabla_a_filtrar, comparador);
 
-    return (dato_t *) list_get(tabla_a_filtrar, 0);
+    return (dato_t *)list_get(tabla_a_filtrar, 0);
 }
 
+
+void eliminar_dato_t(dato_t* dato ){
+
+	free(dato->value);
+	free(dato);
+
+}
 
 
 

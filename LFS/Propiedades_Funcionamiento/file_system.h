@@ -10,7 +10,9 @@
 
 #include"comunity_func.h"
 #include"configuracion.h"
-
+#include"Lissandra.h"
+#include<stdio.h>
+#include<stdlib.h>
 typedef struct {
 	u_int16_t key;
 	char* value;
@@ -40,7 +42,7 @@ int existe_la_tabla(char* tabla);
 void crear_directorio(char* path_tabla);
 void ingresar_A_Un_binario(char* nombre_tabla, dato_t* dato_ingresar, int particion);
 void crear_Binario_tabla(char* nombre_tabla , u_int16_t key , char* valor, time_t timestamp);
-void crear_Binario_Bloque(int indiceBloque, char* dato);
+void crear_Binario_Bloque(int indice, char* dato, char* nombreTabla, int particion);
 void crear_archivos_particiones(char* path_tabla, int numero_particiones);
 dato_t* buscar_dato_en_particion(char* path_tabla, u_int16_t key);
 char* obtenerMapDelBloque_ModoLectura(int indice, int* fichero, struct stat *atributosBloque);
@@ -49,7 +51,7 @@ void mostrarEstadosTotales();
 void setEstado(int numeroBloque, estado estado);
 void setAllEstados(estado estado);
 void getAllEstados();
-void llenarBloque(char* dato, int indice);
+void llenarBloque(char* dato, int indice, int particion, char* nombreTabla);
 int buscarPrimerIndiceVacio(void);
 void mostrarDato(dato_t* dato);
 void leerDatoDelBloque(int indice);
@@ -57,5 +59,7 @@ char* datoEnString(dato_t* dato);
 char* datoEnFormatoBloque(dato_t* dato);
 bool estaLleno(int indice);
 dato_t* crearDato(u_int16_t key, time_t timestamp, char* value);
-
+void realizarDump(void);
+int tamanioDisponibleDelBloque(int indice);
+void agregarBloqueAParticion(int particion, char* tabla);
 #endif /* FILE_SYSTEM_H_ */

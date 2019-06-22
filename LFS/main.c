@@ -1,12 +1,4 @@
-/*
- * main.c
- *
- *  Created on: 4 jun. 2019
- *      Author: utnso
- */
-
 #include"main.h"
-
 
 int main(){
 	crearYObtenerDatos();
@@ -76,9 +68,6 @@ void* conectar_memoria(){
 	request = recibir_request(socket_cliente);
 
 	printf("codigo de operacion: %d\n" , request->cod_op);
-
-
-
 
 	//faltaria mandar la respuesta
 
