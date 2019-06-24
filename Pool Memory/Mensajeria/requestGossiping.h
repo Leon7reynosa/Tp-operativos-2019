@@ -10,6 +10,8 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<commons/collections/list.h>
+#include"request.h"
 
 struct MemoriasEstructura{
 	int numero_memoria;

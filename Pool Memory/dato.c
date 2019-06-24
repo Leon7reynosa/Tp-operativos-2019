@@ -16,6 +16,34 @@ struct DatoEstructura{
 
 };
 */
+
+Dato decodificar_dato_de_memoria(void* dato_en_memoria){
+
+	Dato dato;
+	time_t timestamp;
+	u_int16_t key;
+
+	char* value = malloc(tamanio_value + 1);
+	int desplazamiento = 0;
+
+	memcpy(dato_en_memoria + desplazamiento, &timestamp, sizeof(time_t));
+	desplazamiento += sizeof(time_t);
+
+	memcpy(dato_en_memoria + desplazamiento, &key, sizeof(u_int16_t));
+	desplazamiento += sizeof(u_int16_t);
+
+	memcpy(dato_en_memoria + desplazamiento, value, tamanio_value);
+	desplazamiento += tamanio_value;
+
+	*(value + tamanio_value + 1) = '\0';
+
+	dato = crear_dato(key, value, timestamp);
+
+	free(value);
+
+	return dato;
+}
+
 Dato crear_dato(u_int16_t key, char* value, time_t timestamp){
 
 	struct DatoEstructura* dato = malloc(sizeof(struct DatoEstructura));

@@ -7,26 +7,68 @@
 
 #include "API_Pool.h"
 
+void trabajar_request(request nueva_request , int conexion){
+
+	Dato dato_select;
+	t_dato* dato_a_enviar;
+
+	switch(nueva_request->cod_op){
+
+		case SELECT:
+
+			dato_select = request_select( (select_t) nueva_request->tipo_request);
+
+			dato_a_enviar = crear_t_dato(dato_select->key, dato_select->timestamp , dato_select->value);
+
+			enviar_dato(dato_a_enviar, conexion);
+
+			liberar_t_dato(dato_a_enviar);
+
+			break;
+		case INSERT:
 
 
 
-Dato request_select(char* tabla, u_int16_t key){
+			break;
+
+		case CREATE:
+
+
+
+			break;
+
+		case GOSSIP:
+
+
+
+			break;
+
+		default:
+
+			break;
+	}
+
+}
+
+
+
+Dato request_select(select_t dato){
 
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
 	Dato dato_encontrado;
 
-	if(existe_segmento(tabla,&segmento_tabla)){
-		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
+	if(existe_segmento(dato->tabla->buffer,&segmento_tabla)){
+		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 			mostrar_datos(pagina_encontrada);
-			dato_encontrado = (Dato) pagina_encontrada->referencia_memoria;
+			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria);
 
 		}else{
 
 			//VER ESTO, si se puede hacer una funcion para no repetir logica
 			printf("Le pido las cosas al LFS \n");
 
-			Dato dato_lfs = pedir_dato_al_LFS(tabla, key);
+			Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
 			/*pagina_encontrada = solicitar_pagina();
 			agregar_pagina(segmento_tabla, pagina_encontrada);
 			mostrar_dato(pagina_encontrada);
@@ -40,9 +82,9 @@ Dato request_select(char* tabla, u_int16_t key){
 		printf("No existe el segmento, lo tenes que crear y pedirle el dato al LFS! \n");
 		//VER ESTO
 		/*
-		agregar_segmento(tabla, memoria->tabla_segmentos);
+		agregar_segmento(dato->tabla->buffer, memoria->tabla_segmentos);
 
-		Dato dato_lfs = pedir_dato_al_LFS(tabla, key);
+		Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
 
 		printf("No Existe el segmento con dicha tabla \n\n");
 		*/
@@ -51,13 +93,13 @@ Dato request_select(char* tabla, u_int16_t key){
 	return dato_encontrado;
 }
 
-void request_insert(char* tabla, u_int16_t key, char* value ){
+void request_insert(insert dato){
 
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
 	Dato dato_insert;
 
-	if(string_length(value) > tamanio_value){
+	if(string_length(dato->value->buffer) > tamanio_value){
 		printf("SEGMENTATION FAULT! Te pasaste en el tamaño del value \n");
 		return;
 	}
@@ -70,11 +112,11 @@ void request_insert(char* tabla, u_int16_t key, char* value ){
 	}
 	////// HAY QUE GUARDAR ESTO BIEN CON EL TIEMPO ACTUAL
 
-	dato_insert = crear_dato(key, value, timestamp );
+	dato_insert = crear_dato(dato->key, dato->value->buffer, timestamp );
 
-	if(existe_segmento(tabla,&segmento_tabla)){
+	if(existe_segmento(dato->tabla->buffer ,&segmento_tabla)){
 		printf("Existe el segmento!\n");
-		if(existe_pagina(segmento_tabla, key, &pagina_encontrada)){
+		if(existe_pagina(segmento_tabla, dato->value->buffer, &pagina_encontrada)){
 
 			printf("Existe la pagina!\n");
 			actualizar_pagina(pagina_encontrada, dato_insert);
@@ -99,9 +141,8 @@ void request_insert(char* tabla, u_int16_t key, char* value ){
 }
 
 
-void request_create(char* tabla, char* consistencia, int numero_particiones, time_t compactacion  ){
+void request_create(create dato_create){
 
-	create dato_create = crear_dato_create(tabla, consistencia, numero_particiones, compactacion);
 	enviar_request(CREATE, dato_create);
 
 	//seguir!

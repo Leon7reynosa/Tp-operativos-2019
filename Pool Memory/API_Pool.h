@@ -27,8 +27,8 @@
 
 //estos dos creo que estarian en servidor y cliente (deberian)
 
-Dato request_select(char* tabla, u_int16_t key);
-void request_insert(char* tabla, u_int16_t key, char* value );
-void request_create(char* tabla, char* consistencia, int numero_particiones, time_t compactacion  );
+Dato request_select(select_t dato);
+void request_insert(insert dato);
+void request_create(create dato_create);
 
 #endif /* API_POOL_H_ */

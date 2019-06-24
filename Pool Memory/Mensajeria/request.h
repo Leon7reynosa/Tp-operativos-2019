@@ -10,6 +10,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include"t_dato.h"
 
 typedef enum{
 	SELECT,
@@ -17,13 +18,6 @@ typedef enum{
 	CREATE,
 	GOSSIP
 }cod_operacion;
-
-typedef struct{
-
-	int size;
-	void* buffer;
-
-}t_stream;
 
 
 struct requestEstructura{

@@ -26,12 +26,13 @@
 #include"requestInsert.h"
 #include"requestSelect.h"
 #include"Cliente/cliente.h"
+#include"t_dato.h"
 
 
 void enviar_request(cod_operacion cod_op, void* tipoRequest);
 void liberar_request(request dato);
 void mandar_mensaje(int conexion);
-void eliminar_tStream(t_stream* tStream);
+void enviar_dato(t_dato* dato, int conexion);
 
 
 #endif /* MENSAJES_H_ */

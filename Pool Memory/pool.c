@@ -72,9 +72,11 @@ int main (void){
 					free(buffer);
 
 				}else{
-					request neuva_request = recibir_request(i);
+					request nueva_request = recibir_request(i);
 
-					//trabajar con la request
+					trabajar_request(nueva_request, i);
+
+					liberar_request(nueva_request);
 
 				}
 
@@ -93,31 +95,31 @@ int main (void){
 	return EXIT_SUCCESS;
 }
 
-void pruebas(void){
-
-	tamanio_value = 49;
-	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
-
-	printf("TAMANIO DEL VALUE: %i\n", tamanio_value);
-	printf("TAMANIO DEL DATO %i\n", tamanio_dato);
-
-	char* tabla_a = "Tabla_A";
-
-	obtener_datos_config();
-
-	t_list* lista_tablas = list_create();
-	list_add(lista_tablas, (void*)tabla_a);
-
-	inicializar_memoria(tamanio, tamanio_value, tamanio_dato, lista_tablas);
-
-	int i;
-	printf("Cantidad de paginas: %i\n", memoria->paginas->elements_count);
-
-	for( i = 0; i < 35; i++){
-			printf("/////////////////// INSERT n°%i /////////////////////\n", i + 1);
-			request_insert("Tabla_A", i + 1, "Hola, soy alguna prueba.");
-	}
-
-
-	printf("Pruebas finalizadas con exito!\n");
-}
+//void pruebas(void){
+//
+//	tamanio_value = 49;
+//	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
+//
+//	printf("TAMANIO DEL VALUE: %i\n", tamanio_value);
+//	printf("TAMANIO DEL DATO %i\n", tamanio_dato);
+//
+//	char* tabla_a = "Tabla_A";
+//
+//	obtener_datos_config();
+//
+//	t_list* lista_tablas = list_create();
+//	list_add(lista_tablas, (void*)tabla_a);
+//
+//	inicializar_memoria(tamanio, tamanio_value, tamanio_dato, lista_tablas);
+//
+//	int i;
+//	printf("Cantidad de paginas: %i\n", memoria->paginas->elements_count);
+//
+//	for( i = 0; i < 35; i++){
+//			printf("/////////////////// INSERT n°%i /////////////////////\n", i + 1);
+//			request_insert("Tabla_A", i + 1, "Hola, soy alguna prueba.");
+//	}
+//
+//
+//	printf("Pruebas finalizadas con exito!\n");
+//}

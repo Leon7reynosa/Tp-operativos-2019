@@ -7,7 +7,7 @@
 
 #include"gossiping.h"
 
-void* gossiping(Memoria memoria){
+void* gossiping(){
 
 	int cantidad_seeds = list_size(memoria->seed);
 	int i ;
@@ -139,9 +139,20 @@ void intercambiar_datos(Memoria memoria, int memoria2){
 
 	enviar_datos(memoria2, memoria->tabla_gossiping);
 
+}
+
+bool existis_en_tabla_gossip(struct MemoriasEstructura* memoria_nuevo){
 
 
+	bool _contiene_memoria(void* _seed){
+
+		Seed seed = (Seed)_seed;
+
+		return seed->numero_memoria == memoria_nuevo->numero_memoria;
 
 
+	}
+
+	return list_any_satisfy(memoria->tabla_gossiping , _contiene_memoria);
 }
 

@@ -26,8 +26,7 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 	case INSERT:
 
 		buffer= serializar_insert(request);
-		bytes = ((insert)(request->tipo_request))
-				->bytes;
+		bytes = ((insert)(request->tipo_request))->bytes;
 		break;
 
 	case CREATE:
@@ -49,26 +48,27 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 }
 
 
-void liberar_request(request dato){
+void enviar_dato(t_dato* dato, int conexion){
 
-	switch(dato->cod_op){
+	int desplazamiento = 0;
+	int bytes = sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
+	void* buffer = malloc(bytes);
 
-		case SELECT:
-			liberar_dato_select(dato->tipo_request);
-			break;
-		case INSERT:
-			liberar_dato_insert(dato->tipo_request);
-			break;
-		case CREATE:
-			liberar_dato_create(dato->tipo_request);
-			break;
-		default:
-			printf("Algo fallo\n");
-			break;
+	memcpy(buffer, &(dato->timestamp) , sizeof(dato->timestamp));
+	desplazamiento += sizeof(dato->timestamp);
 
-	}
+	memcpy(buffer, &(dato->key) , sizeof(dato->key));
+	desplazamiento += sizeof(dato->key);
 
-	free(dato);
+	memcpy(buffer, &(dato->value->size) , sizeof(dato->value->size));
+	desplazamiento += sizeof(dato->value->size);
+
+	memcpy(buffer, dato->value->buffer , dato->value->size);
+	desplazamiento += dato->value->size;
+
+	send(conexion, buffer, bytes, 0);
+
+	free(buffer);
 
 }
 

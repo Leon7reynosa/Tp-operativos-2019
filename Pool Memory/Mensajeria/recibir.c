@@ -140,11 +140,13 @@ void recibir_mensaje(int conexion){
 
 }
 
-t_dato_recibido* recibir_request_LFS(int conexion ){
+//////////////////////////////////////////////////////////////////////////////////////////
 
-	t_dato_recibido* dato_recibido = malloc(sizeof(t_dato_recibido));
+t_dato* recibir_request_LFS(int conexion ){
 
-	dato_recibido->value = malloc(sizeof(t_stream_recibido));
+	t_dato* dato_recibido = malloc(sizeof(t_dato));
+
+	dato_recibido->value = malloc(sizeof(t_stream));
 
 	int bytes = recv(conexion,&(dato_recibido->key),sizeof(int),MSG_WAITALL);
 
@@ -167,15 +169,15 @@ t_dato_recibido* recibir_request_LFS(int conexion ){
 
 	//////////////////////////////////////////////////////////////////////////////
 
-	dato_recibido->value->value = malloc(dato_recibido->value->size);
+	dato_recibido->value->buffer = malloc(dato_recibido->value->size);
 
-	bytes = recv(conexion, dato_recibido->value->value, dato_recibido->value->size,MSG_WAITALL);
+	bytes = recv(conexion, dato_recibido->value->buffer, dato_recibido->value->size,MSG_WAITALL);
 
 	printf("RECIBI %d bytes \n",bytes);
 
 	char* value;
 
-	value = dato_recibido->value->value;
+	value = dato_recibido->value->buffer;
 
 	printf("VALUE %s\n",value);
 
