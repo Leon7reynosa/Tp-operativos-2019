@@ -10,6 +10,8 @@
 
 request recibir_request(int conexion){
 
+	//ACA EN VEZ DE QUE SEA CON MEMORIA_DTO NO SERIA MEJOR USAR SEEDS?
+
 	cod_operacion* cod_op = malloc(sizeof(cod_operacion));
 	void* tipo_request;
 	int pene = 0;

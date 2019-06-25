@@ -22,6 +22,7 @@
 #include"Config/configuracion.h"
 #include"Mensajeria/recibir.h"
 #include"Mensajeria/mensajes.h"
+#include"Mensajeria/requestGossiping.h"
 #include"memoria.h"
 
 

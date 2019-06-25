@@ -14,6 +14,7 @@ void* gossiping(){
 
 	int socket_seed;
 	Seed seed_aux;
+	request datos_gossip;
 
 	for(i = 0 ; i < cantidad_seeds ; i++){
 
@@ -23,7 +24,13 @@ void* gossiping(){
 
 		if(socket_seed >= 0){
 
-			intercambiar_datos(memoria, socket_seed);
+			enviar_datos(socket_seed , memoria->tabla_gossiping);
+
+			datos_gossip = recibir_request(socket_seed);
+
+			actualizar_tabla_gossip((tabla_gossip_dto)datos_gossip->tipo_request);
+
+			liberar_request(datos_gossip);
 
 			close(socket_seed);
 		}
@@ -134,15 +141,15 @@ void enviar_datos(int memoria2, t_list* memorias ){
 
 }
 
-void intercambiar_datos(Memoria memoria, int memoria2){
+void intercambiar_datos(tabla_gossip_dto tabla_ajena, int conexion){
 
+	enviar_datos(conexion, memoria->tabla_gossiping);
 
-	enviar_datos(memoria2, memoria->tabla_gossiping);
+	actualizar_tabla_gossip( tabla_ajena );
 
 }
 
 bool existis_en_tabla_gossip(struct MemoriasEstructura* memoria_nuevo){
-
 
 	bool _contiene_memoria(void* _seed){
 
@@ -154,5 +161,45 @@ bool existis_en_tabla_gossip(struct MemoriasEstructura* memoria_nuevo){
 	}
 
 	return list_any_satisfy(memoria->tabla_gossiping , _contiene_memoria);
+}
+
+////////////////////////////////////////////////////////////////////////
+
+Seed pasar_memoria_dto_a_seed(memoria_dto dato_dto){
+
+	Seed dato_seed = malloc(sizeof(Seed));
+
+	dato_seed->numero_memoria = dato_dto->numero_memoria;
+
+	dato_seed->puerto = dato_dto->puerto;
+
+	dato_seed->ip = malloc(dato_dto->ip->size);
+
+	memcpy(dato_seed->ip , dato_dto->ip->buffer , dato_dto->ip->size);
+
+
+	return dato_seed;
+}
+
+
+void actualizar_tabla_gossip(tabla_gossip_dto request_gossip){
+
+	void _agregar_si_no_esta(void* dato_memoriaEstructura){
+
+		memoria_dto dato_extraido = (memoria_dto) dato_memoriaEstructura;
+
+		if(existis_en_tabla_gossip(dato_extraido)){
+
+			Seed dato_a_agregar = pasar_memoria_dto_a_seed(dato_extraido);
+
+			list_add(memoria->tabla_gossiping, dato_a_agregar);
+
+		}
+
+
+	}
+
+	list_iterate(request_gossip->memorias , _agregar_si_no_esta);
+
 }
 

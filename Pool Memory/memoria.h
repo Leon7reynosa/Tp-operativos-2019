@@ -44,7 +44,7 @@ typedef struct MemoriaEstructura* Memoria;
 Memoria memoria;
 
 
-t_list* inicializar_paginsa(void);
+t_list* inicializar_paginas(void);
 void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato, t_list* tablas);
 t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar);
 

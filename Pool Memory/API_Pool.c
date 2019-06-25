@@ -11,6 +11,7 @@ void trabajar_request(request nueva_request , int conexion){
 
 	Dato dato_select;
 	t_dato* dato_a_enviar;
+	tabla_gossip_dto tabla_recibida;
 
 	switch(nueva_request->cod_op){
 
@@ -23,6 +24,8 @@ void trabajar_request(request nueva_request , int conexion){
 			enviar_dato(dato_a_enviar, conexion);
 
 			liberar_t_dato(dato_a_enviar);
+
+			liberar_dato(dato_select);
 
 			break;
 		case INSERT:
@@ -39,7 +42,7 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case GOSSIP:
 
-
+			intercambiar_datos( ((tabla_gossip_dto) nueva_request->tipo_request), conexion);
 
 			break;
 

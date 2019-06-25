@@ -55,7 +55,7 @@ void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato, t_li
 	memoria->tabla_segmentos   = inicializar_tabla_segmentos(tablas);
 	memoria->tamanio 		   = tamanio;
 	memoria->cant_max_datos    = tamanio / tamanio_dato;
-	memoria->paginas		   = inicializar_paginas(memoria);
+	memoria->paginas		   = inicializar_paginas();
 
 }
 
