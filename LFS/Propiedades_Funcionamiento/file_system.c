@@ -237,8 +237,8 @@ void cerrarMapDelBloque(int* fichero, char* map, struct stat *atributosBloque){
 }
 
 //usar con el ultimo bloque de la particion!
-void llenarBloque(char* dato, int indice, int particion, char* nombreTabla){
-
+void llenarBloque(char* dato, int indice){
+	ubicadorBloque auxiliar;
 	char** arrayValue = string_split(dato, ";");
 
 	if((strlen(*(arrayValue) + 2)) > tamanio_value_max){
@@ -251,18 +251,19 @@ void llenarBloque(char* dato, int indice, int particion, char* nombreTabla){
 		printf("\n busco otro bloque para: %s\n", dato);
 		int nuevoIndice = buscarPrimerIndiceVacio();
 		setEstado(nuevoIndice, OCUPADO);
-		llenarBloque(dato, nuevoIndice, particion, nombreTabla);
-		actualizarParticion(particion, nombreTabla, nuevoIndice);
+		llenarBloque(dato, nuevoIndice);
+		actualizarParticion(nuevoIndice);
 
 	}
 	else{
 		printf("\n dato a escribir : %s\n", dato);
-		crear_Binario_Bloque(indice, dato, nombreTabla, particion);
-		actualizarParticion(particion, nombreTabla, indice);
+		crear_Binario_Bloque(indice, dato);
+		actualizarParticion(indice);
 	}
 }
 
-void crear_Binario_Bloque(int indice, char* dato, char* nombreTabla, int particion){
+void crear_Binario_Bloque(int indice, char* dato){
+
 	int caracteresTotales = strlen(dato);
 	int recorridoDato = 0;
 	char* pathBloque =  obtenerPath_Bloque(indice);
@@ -285,13 +286,12 @@ void crear_Binario_Bloque(int indice, char* dato, char* nombreTabla, int partici
 			recorridoDato++;
 			indiceDatos++;
 		}
-			//ron\n
 		else{
 			printf("Entraste al else\n");
 			printf("DATO: %s\n", dato);
 			string_trim(&dato); //Remueve todos los caracter vacios de la izquierda
 			printf("\n parte del dato a escribir en otro bloque: %s\n", dato);
-			llenarBloque(dato, indice, particion, nombreTabla);
+			llenarBloque(dato, indice);
 			break;
 		}
 	}
@@ -356,7 +356,7 @@ void getAllEstados(){
 	int i;
 
 	printf("######Lector de estados del bitmap######\n");
-	for(i = 0; i < myStat.st_size * 8; i++){
+	for(i = 0; i < blocks; i++){
 		printf("Indice %i = %i\n", i, bitarray_test_bit(bitarray, i));
 	}
 
@@ -390,6 +390,26 @@ void setAllEstados(estado estado){
 	munmap(bitmap, myStat.st_size);
 	bitarray_destroy(bitarray);
 	close(fichero);
+}
+
+bool getEstado(int indice){
+	int fichero = open("Metadata/bitmap.bin", O_RDONLY, S_IRUSR);
+
+	struct stat myStat;
+	fstat(fichero, &myStat);
+
+	char* bitmap = mmap(NULL, myStat.st_size, PROT_READ, MAP_SHARED, fichero, 0);
+	t_bitarray* bitarray = bitarray_create_with_mode(bitmap, myStat.st_size, MSB_FIRST);
+
+	bool i = bitarray_test_bit(bitarray, indice);
+
+	munmap(bitmap, myStat.st_size);
+
+	bitarray_destroy(bitarray);
+
+	close(fichero);
+
+	return i;
 }
 
 
@@ -591,7 +611,6 @@ int crearTemporal(char* nombreTabla){
 
 	return archivo;
 
-
 }
 
 void realizarDump(){
@@ -611,13 +630,11 @@ void realizarDump(){
 
 		close(descriptor_temporal);
 
-		list_destroy_and_destroy_elements(dato_de_tabla, eliminar_dato_t);
+//		list_destroy_and_destroy_elements(dato_de_tabla, eliminar_dato_t);
 
 	}
 
 	dictionary_iterator(memtable, _crear_temporal);
-
-
 
 }
 
@@ -632,16 +649,16 @@ void llenarTemporal(int fd_tmp, t_list* dato_de_tabla){
 		fread(&(auxiliar.size), sizeof(int), 1, fd_tmp);
 		fread(auxiliar.bloques, sizeof(int), 1, fd_tmp);
 
-		while(*(auxiliar.bloques + recorredorBloques) >= 0 && *(auxiliar.bloques + recorredorBloques) < 5192){
+		while(*(auxiliar.bloques + recorredorBloques) >= 0 && *(auxiliar.bloques + recorredorBloques) < 5192 && getEstado(*(auxiliar.bloques + recorredorBloques)) == 1){
 			if(tamanioDelBloque(*(auxiliar.bloques + recorredorBloques)) == block_size){
 				continue;
 			}
 			else{
-				llenarBloque(string_dato, *(auxiliar.bloques + recorredorBloques)/*, particion, nombreTabla*/);
+				llenarBloque(string_dato, *(auxiliar.bloques + recorredorBloques));
 			}
 		}
 	}
-	list_iterate(dato_de_tabla, );
+//	list_iterate(dato_de_tabla, );
 
 
 }
@@ -672,12 +689,14 @@ int cantidadDeBloques(int particion, char* nombreTabla){
 
 }
 
-void actualizarParticion(int particion, char* nombreTabla, int indice){
-	char* path = obtenerPath_ParticionTabla(nombreTabla, particion);
+void actualizarParticion(int indice){
+	ubicadorBloque ubicador = ubicadorDelBloque(indice);
+	char* path = obtenerPath_ParticionTabla(ubicador.nombreTabla, ubicador.particion);
 	FILE* archivoParticion = fopen(path, "wb+"); //Abre el binario en lectura y escritura
 												//El contenido es borrado y luego nuevo contenido
 												//Es agregado :D
 	particionContenido auxiliar;
+	auxiliar.bloques = malloc(sizeof(int));
 	int status;
 	int i;
 
@@ -685,7 +704,7 @@ void actualizarParticion(int particion, char* nombreTabla, int indice){
 	fread(&auxiliar.bloques, sizeof(int), 1, archivoParticion);
 
 	int tamanioBloqueNuevo = tamanioDelBloque(indice);
-	int cantidadDeBloques = cantidadDeBloques(particion, nombreTabla);
+	int cantidadDeBloquesNumero = cantidadDeBloques(ubicador.particion, ubicador.nombreTabla);
 
 	while(*(auxiliar.bloques + i) != 0){
 		if(*(auxiliar.bloques + i) == indice){
@@ -696,7 +715,7 @@ void actualizarParticion(int particion, char* nombreTabla, int indice){
 		}
 	}
 
-	auxiliar.size = (cantidadDeBloques - 1) * block_size + tamanioBloqueNuevo;
+	auxiliar.size = (cantidadDeBloquesNumero - 1) * block_size + tamanioBloqueNuevo;
 	*(auxiliar.bloques + i) = indice;
 
 	fwrite(&auxiliar.size, sizeof(int), 1, archivoParticion);
@@ -705,8 +724,130 @@ void actualizarParticion(int particion, char* nombreTabla, int indice){
 	fclose(archivoParticion);
 }
 
+ubicadorBloque ubicadorDelBloque(int indice){
+	DIR* dir, * dir2;
+	struct dirent *ent, *ent2;
+	FILE* f;
+	particionContenido auxiliar;
+	ubicadorBloque ubicador;
+	auxiliar.bloques = malloc(sizeof(int));
+	char *pathParaParticion;
 
+	int ficheroMap;
+	ficheroMap = open("Metadata/bitmap.bin", O_RDONLY, S_IRUSR);
+	struct stat atributosMap;
+	fstat(ficheroMap, &atributosMap);
 
+	char* bitmap = mmap(NULL, atributosMap.st_size, PROT_READ, MAP_SHARED, ficheroMap, 0);
+	t_bitarray* bitarray = bitarray_create_with_mode(bitmap, atributosMap.st_size, MSB_FIRST);
 
+	int i = 0;
 
+	if((dir = opendir(obtenerPathDirectorio_Tablas())) != NULL){
+		while((ent = readdir(dir)) != NULL){
+
+			if(noEsUnaUbicacionProhibida(ent->d_name)){
+				pathParaParticion = string_new();
+
+				string_append(&pathParaParticion, obtenerPathDirectorio_Tablas());
+				string_append(&pathParaParticion, "/");
+				string_append(&pathParaParticion, ent->d_name);
+				dir2 = opendir(pathParaParticion);
+				while((ent2 = readdir(dir2)) != NULL){
+
+					if(noEsUnaUbicacionProhibida(ent2->d_name)){
+
+						pathParaParticion = string_new();
+
+						string_append(&pathParaParticion, obtenerPathDirectorio_Tablas());
+						string_append(&pathParaParticion, "/");
+						string_append(&pathParaParticion, ent->d_name);
+						string_append(&pathParaParticion, "/");
+						string_append(&pathParaParticion, ent2->d_name);
+
+						f = fopen(pathParaParticion, "rb");
+
+						fread(&auxiliar.size, sizeof(int), 1, f);
+						fread(auxiliar.bloques, sizeof(int), 1, f);
+
+						while(*(auxiliar.bloques + i) >= 0 && *(auxiliar.bloques + i) < blocks && bitarray_test_bit(bitarray, *(auxiliar.bloques + i)) == 1){
+							if(*(auxiliar.bloques + i) == indice){
+								ubicador.nombreTabla = ent->d_name;
+								ubicador.particion = obtenerNumeroParticion(ent2->d_name);
+
+								return ubicador;
+
+							}
+							i++;
+						}
+						i = 0;
+						fclose(f);
+					}
+				}
+				closedir(dir2);
+			}
+		}
+		closedir(dir);
+	}
+	else{
+		perror("");
+		exit(-1);
+	}
+}
+
+int obtenerNumeroParticion(char* path){
+	int numero;
+	char** aux;
+	char delimitador[2] = ".";
+
+	if(string_equals_ignore_case("bin", extensionDelArchivo(path))){
+		aux = string_split(path, delimitador);
+		numero = atoi(aux[0]);
+
+		return numero;
+	}
+	else{
+		return -1;
+	}
+
+}
+
+int obtenerNumeroTemporal(char* path){
+	int numero;
+	char** aux;
+	char delimitador[2] = ".";
+
+	if(string_equals_ignore_case("tmp", extensionDelArchivo(path))){
+		aux = string_split(path, delimitador);
+		numero = atoi(aux[0]);
+
+		return numero;
+	}
+	else{
+		return -1;
+	}
+}
+
+char* extensionDelArchivo(char* path){
+
+	char* delimitador = ".";
+	char** aux;
+	aux = string_split(path, delimitador);
+	return aux[1];
+}
+
+int noEsUnaUbicacionProhibida(char* path){
+	char *ubicacionesProhibidas[3];
+
+	ubicacionesProhibidas[0] = ".";
+	ubicacionesProhibidas[1] = "..";
+	ubicacionesProhibidas[2] = "Metadata.config";
+
+	if(strcmp(path, ubicacionesProhibidas[0]) && strcmp(path, ubicacionesProhibidas[1]) && strcmp(path, ubicacionesProhibidas[2])){
+		return EXIT_FAILURE;
+	}
+	else{
+		return EXIT_SUCCESS;
+	}
+}
 

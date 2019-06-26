@@ -44,4 +44,5 @@ void mostrar_metadata_de_tabla(char*);
 char* obtenerPathTabla(char* nombre_Tabla);
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion);
 char* obtenerPath_Bloque(int indice);
+char* obtenerPathDirectorio_Tablas(void);
 #endif /* METADATA_METADATA_H_ */

@@ -92,6 +92,49 @@ char* obtenerPathTabla(char* nombre_tabla){
 	return path;
 }
 
+char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
+	char* indicadorNombre = string_substring_from(nombreTabla, strlen(nombreTabla)-1);
+	char* pathBase = obtenerPathTabla(nombreTabla);
+	DIR* dir = opendir(pathBase);
+	int numeroParaTemporal = 0;
+	int auxiliar;
+
+	struct dirent *ent;
+
+	while((ent = readdir(dir)) != NULL){
+		if(noEsUnaUbicacionProhibida(ent->d_name)){
+			printf("%s\n", ent->d_name);
+			auxiliar = obtenerNumeroTemporal(ent->d_name);
+
+			if(auxiliar > numeroParaTemporal){
+				numeroParaTemporal = auxiliar;
+			}
+			if(auxiliar == 0 && auxiliar >= numeroParaTemporal){
+				numeroParaTemporal = 1;
+			}
+			if(auxiliar < 0){
+				continue;
+			}
+		}
+
+		printf("Numero Temporal = %i\n", numeroParaTemporal);
+	}
+
+	char* numeroDesignado = string_new();
+	numeroDesignado = string_itoa(numeroParaTemporal);
+
+	char* pathCompleto = string_new();
+	string_append(&pathCompleto, pathBase);
+	string_append(&pathCompleto, "/");
+	string_append(&pathCompleto, indicadorNombre);
+	string_append(&pathCompleto, numeroDesignado);
+	string_append(&pathCompleto, ".tmp");
+
+	printf("Path para guardar = %s\n", pathCompleto);
+
+	return pathCompleto;
+}
+
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 	char* path = obtenerPathTabla(nombre_tabla);
 
@@ -116,6 +159,17 @@ char* obtenerPath_Bloque(int indice){
 	return path;
 
 
+}
+
+char* obtenerPathDirectorio_Tablas(){
+	char* path = string_new();
+
+	char *prefijo = "Tablas";
+
+	string_append(&path, punto_montaje);
+	string_append(&path, prefijo);
+
+	return path;
 }
 
 void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion){
