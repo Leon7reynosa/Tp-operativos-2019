@@ -20,29 +20,19 @@ struct selectEstructura{
 
 select_t decodificar_select(int conexion){
 
-	printf("entre al decodificar_select\n ");
-
 	int bytes = 0;
 	u_int16_t* key = malloc(sizeof(u_int16_t));
 	int* size = malloc(sizeof(int));
 
-	printf("entre al decodificar_select\n ");
-
 	bytes = recv(conexion, key ,sizeof(u_int16_t), 0) ;
-
-	printf("bytes: %d\n", bytes);
 
 	if(bytes == -1){
 		perror("Fallo al recibir la key.");
 	}
 
-	printf("key : %d\n" , *key);
-
 	if(recv(conexion, size, sizeof(int), 0) == -1){
 		perror("Fallo al recibir el tamaño de la tabla.");
 	}
-
-	printf("size de tabla: %d\n" , *size);
 
 	char* tabla = malloc(*size);
 
@@ -50,9 +40,7 @@ select_t decodificar_select(int conexion){
 		perror("Fallo al recibir la tabla.");
 	}
 
-	printf("tabla: %s\n", tabla );
-
-	select_t dato = crear_dato_select(tabla, key);
+	select_t dato = crear_dato_select(tabla, *key);
 
 	free(key);
 	free(tabla);
