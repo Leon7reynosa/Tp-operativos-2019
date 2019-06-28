@@ -41,10 +41,3 @@ cod_consistencia identificar_consistencia(char* consistencia){
 
 }
 
-void* actualizar_tabla_gossiping(){
-	//aca deberiamos pedirle, la tabla del gossiping a la memoria principal.
-
-
-
-
-}

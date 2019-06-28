@@ -21,7 +21,7 @@ void actualizar_gossiping(){
 
 		memcpy(buffer , &gossip , sizeof(cod_operacion) );
 
-		memcpy((buffer +  sizeof(cod_operacion) , &cantidad_memorias , sizeof(int)));
+		memcpy((buffer +  sizeof(cod_operacion)) , &cantidad_memorias , sizeof(int));
 
 		send(conexion_memoria , buffer, sizeof(cod_operacion) , 0);
 

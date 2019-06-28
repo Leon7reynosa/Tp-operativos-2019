@@ -16,7 +16,8 @@ typedef enum{
 	INSERT,
 	CREATE,
 	GOSSIP,
-	ADD
+	ADD,
+	RUN
 }cod_operacion;
 
 typedef struct{

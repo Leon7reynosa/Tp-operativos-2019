@@ -26,7 +26,6 @@ int main (int argc , char* argv[]){
 	inicializar_semaforo_ready();
 
 	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
-	log_info(logger_kernel, "LOGGER CREADO CORRECTAMENTE.\n");
 
 	t_queue* colas_exec[grado_multiprocesamiento];
 
@@ -49,6 +48,8 @@ int main (int argc , char* argv[]){
 	pthread_join(hilo_planificador, NULL);
 
 	pthread_join(hilo_consola , NULL);
+
+
 
 
 	return 0;
