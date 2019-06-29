@@ -68,9 +68,15 @@ void realizarDump(void);
 int tamanioDisponibleDelBloque(int indice);
 void agregarBloqueAParticion(int particion, char* tabla);
 ubicadorBloque ubicadorDelBloque(int indice);
-void llenarTemporal(int fd_tmp, t_list* dato_de_tabla);
+void llenarTemporal(FILE* fd_tmp, t_list* dato_de_tabla);
 void actualizarParticion(int indice);
 int obtenerNumeroParticion(char* array);
 bool getEstado(int indice);
 char* extensionDelArchivo(char* path);
+int cantidadDeBloques(int particion, char* nombreTabla);
+void asignarBloqueAParticion(char* nombreTabla, int particion, int bloque);
+bool estaDentroDelRangoDeBloquesYEstaOcupado(int bloque);
+void leerBloque(int indice);
+int tamanioDelBloque(int indice);
+bool noEsUnaUbicacionProhibida(char* path);
 #endif /* FILE_SYSTEM_H_ */

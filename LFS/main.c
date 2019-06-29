@@ -5,18 +5,26 @@ int main(){
 //	creacion_bitmap();
 //	setAllEstados(LIBRE);
 
+	dato_t* dato1 = crearDato(111, 222, "ESPERT 2019");
 	dato_t* dato2 = crearDato(666, 777, "Modo Diable");
+	dato_t* dato3 = crearDato(123, 444, "Peron vive");
+
+	char* datoStringueado3 = datoEnFormatoBloque(dato3);
 	char* datoStringueado2 = datoEnFormatoBloque(dato2);
-/*
-	ubicadorBloque auxiliar;
+	char* datoStringueado1 = datoEnFormatoBloque(dato1);
 
-	auxiliar = ubicadorDelBloque(1);
-	printf("#######Datos obtenidos########\n");
-	printf("%s\n", auxiliar.nombreTabla);
-	printf("%i\n", auxiliar.particion);
-*/
-	char* pathNuevoParaTemporal = obtenerPathParaTemporalEnLaTabla("Tabla_A");
+//	crear_archivos_particiones("Tabla_A", 3);
 
+
+//	llenarBloque(datoStringueado1, 0);
+//	llenarBloque(datoStringueado2, 1);
+//	llenarBloque(datoStringueado3, 2);
+
+//	actualizarParticion(2);
+
+	leer_Particiones("Tabla_A");
+
+//	asignarBloqueAParticion("Tabla_A", 0, 90);
 
 }
 

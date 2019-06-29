@@ -45,4 +45,5 @@ char* obtenerPathTabla(char* nombre_Tabla);
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion);
 char* obtenerPath_Bloque(int indice);
 char* obtenerPathDirectorio_Tablas(void);
+char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla);
 #endif /* METADATA_METADATA_H_ */

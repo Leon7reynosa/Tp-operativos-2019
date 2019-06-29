@@ -103,22 +103,21 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 
 	while((ent = readdir(dir)) != NULL){
 		if(noEsUnaUbicacionProhibida(ent->d_name)){
-			printf("%s\n", ent->d_name);
 			auxiliar = obtenerNumeroTemporal(ent->d_name);
 
 			if(auxiliar > numeroParaTemporal){
 				numeroParaTemporal = auxiliar;
 			}
-			if(auxiliar == 0 && auxiliar >= numeroParaTemporal){
+			else if (auxiliar == numeroParaTemporal){
 				numeroParaTemporal = 1;
 			}
-			if(auxiliar < 0){
-				continue;
-			}
 		}
-
-		printf("Numero Temporal = %i\n", numeroParaTemporal);
 	}
+
+	if(numeroParaTemporal > 1){
+		numeroParaTemporal++;
+	}
+
 
 	char* numeroDesignado = string_new();
 	numeroDesignado = string_itoa(numeroParaTemporal);
@@ -130,7 +129,6 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	string_append(&pathCompleto, numeroDesignado);
 	string_append(&pathCompleto, ".tmp");
 
-	printf("Path para guardar = %s\n", pathCompleto);
 
 	return pathCompleto;
 }
