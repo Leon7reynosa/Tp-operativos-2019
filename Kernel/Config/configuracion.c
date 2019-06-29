@@ -16,7 +16,7 @@ void creacion_del_config(){
 	g_config = config_create("kernel.config");
 
 	config_set_value(g_config, "IP_MEMORIA", "127.0.0.1");
-	config_set_value(g_config, "PUERTO_MEMORIA", "4444");
+	config_set_value(g_config, "PUERTO_MEMORIA", "8000");
 	config_set_value(g_config, "QUANTUM", "4");
 	config_set_value(g_config, "GRADO_MULTIPROCESAMIENTO", "3");
 	config_set_value(g_config, "REFRESH_METADATA", "10000");

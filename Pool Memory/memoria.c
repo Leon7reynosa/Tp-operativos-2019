@@ -126,7 +126,6 @@ bool hay_pagina_libre(Pagina* pagina_solicitada){
 }
 
 void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
-	printf("\nVOY A GUARDAR EL DATO WACHIM\n\n");
 
 	int desplazamiento = 0;
 	int size_value = strlen(nuevo_dato->value);
@@ -143,8 +142,6 @@ void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
 
 	if(fragmentacion_interna){
 
-		printf("FRAGMENTACION DE %i deberia ser 25\n", fragmentacion_interna);
-
 		char nulo = '\0';
 
 		while(fragmentacion_interna > 0){
@@ -156,12 +153,7 @@ void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria){
 			fragmentacion_interna--;
 		}
 
-		printf("FRAGMENTACION DESPUES DE X: %i\n", fragmentacion_interna);
-
 	}
-
-	printf("DESPLAZAMIENTO DESPUES DE SACAR LA FRAGMENTACION_ %i y deberia ser %i\n", desplazamiento, tamanio_dato);
-
 
 }
 

@@ -109,10 +109,10 @@ void  mostrar_datos(Pagina pagina){
 	memcpy(nuevo_dato->value, (pagina->referencia_memoria) + sizeof(u_int16_t) + sizeof(time_t), tamanio_value);
 	memcpy(nuevo_dato->value + tamanio_value, &nulo, 1);
 
-	printf("Ahora voy a imprimir la pagina completa!\n");
+	printf("\n[DATOS] Ahora voy a imprimir la pagina completa!\n");
 	printf("timestamp: %d\n",nuevo_dato->timestamp);
 	printf("key: %d\n", nuevo_dato->key);
-	printf("value: %s\n", nuevo_dato->value);
+	printf("value: %s\n\n", nuevo_dato->value);
 
 	liberar_dato(nuevo_dato);
 }

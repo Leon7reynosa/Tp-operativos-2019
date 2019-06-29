@@ -13,6 +13,7 @@
 int ejecutar_request(char* request_lql){
 
 	int cod_request;
+	char* nombre_archivo;
 	char* nombre_tabla = string_new();
 
 	char* consistencia = string_new();
@@ -32,7 +33,7 @@ int ejecutar_request(char* request_lql){
 
 				log_info(logger_kernel, "---Se realizara el SELECT---\n");
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
-				//enviar_request(SELECT, select_enviar);
+				enviar_request(SELECT, select_enviar);
 				return 1;
 			}
 			break;
@@ -43,7 +44,7 @@ int ejecutar_request(char* request_lql){
 				log_info(logger_kernel, "---Se realizara el INSERT---\n");
 
 				insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
-				//enviar_request(INSERT, insert_enviar);
+				enviar_request(INSERT, insert_enviar);
 				return 1;
 			}
 			break;
@@ -68,6 +69,21 @@ int ejecutar_request(char* request_lql){
 			}
 			break;
 
+		case RUN:
+			nombre_archivo = obtener_parametros_run(request_lql);
+
+			if(nombre_archivo != NULL){
+
+				queue_push(cola_new , nombre_archivo);
+
+				log_info(logger_kernel, "EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.\n");
+
+				cola_new_to_ready();
+
+				return 1;
+			}
+
+			break;
 		default:
 			log_error( logger_kernel ,"-LA REQUEST NO ES VALIDA-\n");
 			return 0;
@@ -82,26 +98,37 @@ int ejecutar_request(char* request_lql){
 
 int identificar_request(char* request_lql){
 
-	string_to_upper(request_lql);
+	char* request_aux = malloc(strlen(request_lql) + 1);
+	cod_operacion operacion;
 
-	if(string_starts_with(request_lql , "SELECT")){
+	memcpy(request_aux, request_lql, strlen(request_lql) + 1);
 
-		return SELECT;
+	string_to_upper(request_aux);
 
-	}else if(string_starts_with(request_lql , "INSERT")){
+	if(string_starts_with(request_aux , "SELECT")){
 
-		return INSERT;
+		operacion =  SELECT;
 
-	}else if(string_starts_with(request_lql , "CREATE")){
+	}else if(string_starts_with(request_aux , "INSERT")){
 
-		return CREATE;
-	}else if(string_starts_with(request_lql , "ADD")){
+		operacion =  INSERT;
 
-		return ADD;
+	}else if(string_starts_with(request_aux , "CREATE")){
+
+		operacion =  CREATE;
+	}else if(string_starts_with(request_aux , "ADD")){
+
+		operacion =  ADD;
+	}else if(string_starts_with(request_aux , "RUN")){
+
+		operacion =  RUN;
 	}else{
+		free(request_aux);
 		return -1;
 	}
 
+	free(request_aux);
+	return operacion;
 }
 
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key){
@@ -110,7 +137,6 @@ int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t
 
 	if((sscanf(linea_request, "%s %s %d", funcion, nombre_tabla, key)) != 3){
 
-		//log
 		log_error(logger_kernel, "-LA REQUEST SELECT RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
 
@@ -139,10 +165,17 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 
 	string_append(value , auxiliar[1]);
 
-	if((sscanf(auxiliar[2] , " %d" , timestamp) != 1)){
+	if(auxiliar[2] == NULL){
+
+		timestamp = -1;
+
+		return 1;
+
+	}else if( (sscanf(auxiliar[2] , " %d" , timestamp)) != 1 ){
 
 		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
+
 	}
 
 
@@ -221,6 +254,21 @@ void obtener_parametros_drop(char* linea_request, char* nombre_tabla){
 	sscanf(linea_request, "%s %s", funcion, nombre_tabla);
 }
 
+
+char* obtener_parametros_run(char* linea_request){
+
+	char* funcion = string_new();
+
+	char* archivo = string_new();
+
+	sscanf(linea_request, "%s %s", funcion, archivo);
+
+	printf("El archivo se llama: %s\n", archivo);
+
+	free(funcion);
+
+	return archivo;
+}
 
 
 

@@ -46,6 +46,7 @@ int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* cri
 void obtener_parametros_describe_de_una_tabla(char* linea_request, char* nombre_tabla);
 void obtener_parametros_describe(char* linea_request);
 void obtener_parametros_drop(char* linea_request, char* nombre_tabla);
+char* obtener_parametros_run(char* linea_request);
 
 
 #endif /* API_KERNEL_H_ */

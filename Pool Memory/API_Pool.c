@@ -17,6 +17,8 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case SELECT:
 
+			printf("\n>>SE REALIZARA EL SELECT\n");
+
 			dato_select = request_select( (select_t) nueva_request->tipo_request);
 
 			dato_a_enviar = crear_t_dato(dato_select->key, dato_select->timestamp , dato_select->value);
@@ -29,6 +31,12 @@ void trabajar_request(request nueva_request , int conexion){
 
 			break;
 		case INSERT:
+
+			printf("\n>>SE REALIZARA EL INSERT");
+
+			request_insert((insert) nueva_request->tipo_request);
+
+			printf("se ingreso el insert piola \n");
 
 
 
@@ -61,8 +69,11 @@ Dato request_select(select_t dato){
 	Pagina pagina_encontrada;
 	Dato dato_encontrado;
 
-	if(existe_segmento(dato->tabla->buffer,&segmento_tabla)){
+	if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){
+		printf("Existe un segmento llamado: %s\n", (char*) dato->tabla->buffer);
+
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
+			printf("Existe pagina!\n");
 			mostrar_datos(pagina_encontrada);
 			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria);
 
@@ -106,20 +117,23 @@ void request_insert(insert dato){
 		printf("SEGMENTATION FAULT! Te pasaste en el tamaño del value \n");
 		return;
 	}
+	if(dato->timestamp < 0){
+		time_t timestamp = time(NULL);
 
-	time_t timestamp = time(NULL);
+		if(timestamp < 0){
+			//se pudre todo, el timestamp no esta disponible
+			exit(1);
+		}
 
-	if(timestamp < 0){
-		//se pudre todo, el timestamp no esta disponible
-		exit(1);
+		dato->timestamp = timestamp;
 	}
 	////// HAY QUE GUARDAR ESTO BIEN CON EL TIEMPO ACTUAL
 
-	dato_insert = crear_dato(dato->key, dato->value->buffer, timestamp );
+	dato_insert = crear_dato(dato->key, dato->value->buffer, dato->timestamp );
 
 	if(existe_segmento(dato->tabla->buffer ,&segmento_tabla)){
 		printf("Existe el segmento!\n");
-		if(existe_pagina(segmento_tabla, dato->value->buffer, &pagina_encontrada)){
+		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
 			printf("Existe la pagina!\n");
 			actualizar_pagina(pagina_encontrada, dato_insert);
@@ -130,7 +144,7 @@ void request_insert(insert dato){
 			pagina_encontrada = solicitar_pagina(); //SEGUIR Y VER
 			actualizar_pagina(pagina_encontrada, dato_insert);
 			agregar_pagina(segmento_tabla, pagina_encontrada);
-			printf("LA TABLA A AHORA TIENE %i SEGMENTOS\n", segmento_tabla->Tabla_paginas->elements_count);
+			printf("LA TABLA A AHORA TIENE %i PAGINAS\n", segmento_tabla->Tabla_paginas->elements_count);
 			mostrar_datos(pagina_encontrada);
 
 		}

@@ -141,14 +141,20 @@ void cola_new_to_ready(){
 
 		archivo = fopen(nuevo_lql->path_lql , "r");
 
-		nuevo_lql->cola_requests = parsear_LQL(archivo);
+		if(archivo != NULL){
 
-		queue_push(cola_ready,(void*) nuevo_lql);
+			nuevo_lql->cola_requests = parsear_LQL(archivo);
 
-		fclose(archivo);
+			queue_push(cola_ready,(void*) nuevo_lql);
 
-		sem_post(&semaforo_ready);
+			fclose(archivo);
 
+			sem_post(&semaforo_ready);
+		}else{
+
+			log_error(logger_kernel, "NO SE PUDO ABRIR EL ARCHIVO %s.\n" , nuevo_lql->path_lql);
+
+		}
 	}
 
 }
@@ -176,7 +182,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			if(!ejecutar_request(request )){
 
-				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST.\n");
+				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST %s.\n", request);
 
 				queue_push(cola_exit, siguiente_script);
 

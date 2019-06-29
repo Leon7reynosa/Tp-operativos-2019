@@ -21,8 +21,13 @@ request recibir_request(int conexion){
 			perror("Fallo al recibir el codigo de operacion.");
 		}
 
+	if(pene == 0){
+		printf("Se re desconecto el cliente pa!\n\n");
+		return crear_request(DESCONEXION, NULL);
+	}
+
 	printf("codigo_op : %d\n" , *cod_op);
-	printf("bytes: %d\n",pene);
+	//printf("bytes: %d\n",pene);
 
 	switch(*cod_op){
 
@@ -79,7 +84,7 @@ void* recibir_buffer(int* size, int conexion){
 	return buffer;
 
 }
-
+/*
 cod_op determinar_operacion(char* buffer){
 
 	int size = strlen(buffer);
@@ -141,7 +146,7 @@ void recibir_mensaje(int conexion){
 	free(buffer);
 
 }
-
+*/
 //////////////////////////////////////////////////////////////////////////////////////////
 
 t_dato* recibir_request_LFS(int conexion ){
