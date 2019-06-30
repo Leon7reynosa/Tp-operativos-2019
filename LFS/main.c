@@ -5,9 +5,9 @@ int main(){
 //	creacion_bitmap();
 //	setAllEstados(LIBRE);
 
-	dato_t* dato1 = crearDato(111, 222, "ESPERT 2019");
+	dato_t* dato1 = crearDato(11, 22, "ESPERT 2019");
 	dato_t* dato2 = crearDato(666, 777, "Modo Diable");
-	dato_t* dato3 = crearDato(123, 444, "Peron vive");
+	dato_t* dato3 = crearDato(1234, 4444, "Peron vive");
 
 	char* datoStringueado3 = datoEnFormatoBloque(dato3);
 	char* datoStringueado2 = datoEnFormatoBloque(dato2);
@@ -20,11 +20,20 @@ int main(){
 //	llenarBloque(datoStringueado2, 1);
 //	llenarBloque(datoStringueado3, 2);
 
+//	leerBloque(0);
+//	leerBloque(1);
+//	leerBloque(2);
+
 //	actualizarParticion(2);
 
 	leer_Particiones("Tabla_A");
+	int i = 0;
+	while(i < 3){
+		printf("Cantidad de bloques particion %i: %i\n", cantidadDeBLoques(i, "Tabla_A"));
+		i++;
+	}
 
-//	asignarBloqueAParticion("Tabla_A", 0, 90);
+	asignarBloqueAParticion("Tabla_A", 0, 90);
 
 }
 
