@@ -83,8 +83,6 @@ int main (void){
 					printf("\n//////////////////////////////////////////////////////// NUEVA REQUEST c: ////////////////////////////////////////////////\n");
 					request nueva_request = recibir_request(i);
 
-//TODO EN EL INSERT, CREO QUE A LA PAGINA HAY QUE AGREGARLE UN TIME_T USO, PARA EL ALGORITMO DE REEMPLAZO
-//TODO LA MEMORIA NO ESTARIA RECIBIENDO TIMESTAMP!
 //TODO Esta ranciada de la desconexion y los errores
 
 					if(nueva_request->cod_op == DESCONEXION){

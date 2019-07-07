@@ -78,6 +78,15 @@ t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar){ // tablas a i
 
 }
 
+void sacar_segmento(Segmento segmento){
+
+	int index = list_get_index(memoria->tabla_segmentos, segmento);
+
+	list_remove(memoria->tabla_segmentos, index);
+
+	liberar_segmento(segmento);
+
+}
 
 bool existe_segmento(char* nombre_tabla, Segmento* segmento_encontrado){
 
@@ -163,6 +172,8 @@ void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
 
 	pagina_encontrada->flag_modificado = 1;
 
+	actualizar_uso(pagina_encontrada);
+
 }
 
 
@@ -173,7 +184,7 @@ void realizar_journal(){
 
 
 
-Pagina realizar_algoritmo_reemplazo(){
+Pagina realizar_algoritmo_reemplazo(void){
 	printf("Busco la pagina menos usada!\n");
 	Pagina pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
@@ -217,10 +228,9 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	Dato dato_recibido;
 
-	enviar_request(SELECT, dato_select );
+	enviar_request(SELECT, dato_select ); // ya se libera la request aca
 
-	//dato_recibido = recibir_dato();
+	dato_recibido = recibir_dato_LFS(socket_lissandra);
 
 	return dato_recibido;
 }
-
