@@ -33,5 +33,6 @@ Pagina crear_pagina(void* posicion_memoria);
 void liberar_pagina(Pagina pagina_a_liberar);
 bool esta_libre(Pagina pagina);
 void mostrar_datos(Pagina pagina);
+void actualizar_uso(Pagina pagina);
 
 #endif /* PAGINA_H_ */

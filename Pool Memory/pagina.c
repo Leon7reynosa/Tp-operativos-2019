@@ -6,20 +6,11 @@
  */
 
 #include"pagina.h"
-/*
-struct PaginaEstructura{
 
-	Dato referencia_memoria;  //no libero esto, por que es memoria!
-	bool flag_modificado;
-	bool flag_en_uso;
-	time_t ultimo_uso;
-
-};
-*/
 void liberar_pagina(Pagina pagina_a_liberar){
 
 	pagina_a_liberar->flag_en_uso = 0;
-	pagina_a_liberar->flag_modificado = 1;
+	pagina_a_liberar->flag_modificado = 0;  //esto estaba en 1 y lo cambie a 0, deberia estar bien asi pero .-.
 
 }
 
@@ -34,7 +25,7 @@ Pagina crear_pagina(void* posicion_memoria){
 
 	pagina->flag_modificado = 0;
 
-	/* pagina->ultimo_uso = ?*/
+	pagina->ultimo_uso = 0;
 
 	return pagina;
 
@@ -45,6 +36,7 @@ bool esta_libre(Pagina pagina){
 	return !(pagina->flag_en_uso);
 }
 
+//TODO VER si es necesario hacer las paginas sin modificar adentro, o que directamente me pasen las paginas
 Pagina pagina_menos_usada(t_list* paginas){
 
 	Pagina pagina_encontrada;
@@ -115,4 +107,8 @@ void  mostrar_datos(Pagina pagina){
 	printf("value: %s\n\n", nuevo_dato->value);
 
 	liberar_dato(nuevo_dato);
+}
+
+void actualizar_uso(Pagina pagina){
+	pagina->ultimo_uso = time(NULL);
 }
