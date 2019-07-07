@@ -154,7 +154,7 @@ void recibir_mensaje(int conexion){
 */
 //////////////////////////////////////////////////////////////////////////////////////////
 
-t_dato* recibir_request_LFS(int conexion ){
+Dato recibir_dato_LFS(int conexion ){
 
 	t_dato* dato_recibido = malloc(sizeof(t_dato));
 
@@ -207,6 +207,10 @@ t_dato* recibir_request_LFS(int conexion ){
 	if(bytes == -1){
 			perror("NO RECIBIO EL TAMANIO DEL VALUE;");
 	}
+
+	Dato nuevo_dato = crear_dato(dato_recibido->key, (char *)dato_recibido->value->buffer, dato_recibido->timestamp);
+
+	liberar_t_dato(dato_recibido);
 
 	return dato_recibido ;
 

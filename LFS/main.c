@@ -5,45 +5,43 @@ int main(){
 //	creacion_bitmap();
 //	setAllEstados(LIBRE);
 
-	dato_t* dato1 = crearDato(11, 22, "ESPERT 2019");
-	dato_t* dato2 = crearDato(666, 777, "Modo Diable");
-	dato_t* dato3 = crearDato(1234, 4444, "Peron vive");
-	dato_t* dato4 = crearDato(999, 666, "El diablo es gay");
+	dato_t* dato1 = crearDato(11, 22, "ESPERT");
+	dato_t* dato2 = crearDato(666, 777, "Duko");
+	dato_t* dato3 = crearDato(12345, 44444, "Peronazo");
+	dato_t* dato4 = crearDato(999, 666, "Messi");
 
 	char* datoStringueado3 = datoEnFormatoBloque(dato3);
 	char* datoStringueado2 = datoEnFormatoBloque(dato2);
 	char* datoStringueado1 = datoEnFormatoBloque(dato1);
 	char* datoStringueado4 = datoEnFormatoBloque(dato4);
 
-//	crear_archivos_particiones("Tabla_A", 3);
 
+//	setEstado(0, OCUPADO);
+//	setEstado(1, OCUPADO);
 
-//	llenarBloque(datoStringueado1, 80);
-//	llenarBloque(datoStringueado2, 81);
-//	llenarBloque(datoStringueado3, 82);
+//	crear_archivos_particiones("Tabla_A", 2);
 
-//	leerBloque(0);
-//	leerBloque(1);
-//	leerBloque(10);
+//	getAllEstados();
 
-	asignarBloqueVacioAParticion("Tabla_A", 0, 80);
-	asignarBloqueVacioAParticion("Tabla_A", 1, 81);
-	asignarBloqueVacioAParticion("Tabla_A", 2, 82);
+//	llenarBloque(datoStringueado2, 0);
+//	llenarBloque(datoStringueado2, 0);
+//	llenarBloque(datoStringueado3, 0);
+//	llenarBloque(datoStringueado2, 1);
+	leer_Particiones("Tabla_A");
+
+//	asignarBloqueVacioAParticion("Tabla_A", 0, 2);
+//	llenarBloque(datoStringueado4, 10);
+
 
 //	int lol = cantidadDeBloques(0, "Tabla_A");
 //	printf("cantidad = %i\n", lol);
 
-//	ubicadorBloque lol = ubicadorDelBloque(11);
-//	printf("---- ESTAMOS EN CONSOLA ----\n");
-//	printf("%s\n", lol.nombreTabla);
-//	printf("%i\n", lol.particion);
-
-
-
-//	actualizarParticionConBloque(0);
-//	actualizarParticionConBloque(1);
-
-	leer_Particiones("Tabla_A");
+/*	ubicadorBloque lol = ubicadorDelBloque(1);
+	printf("---- ESTAMOS EN CONSOLA ----\n");
+	printf("%s\n", lol.nombreTabla);
+	printf("%i\n", lol.particion);
+*/
+//	leer_Particion("Tabla_A", 0);
 
 
 }
