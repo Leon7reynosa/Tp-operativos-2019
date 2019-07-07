@@ -48,6 +48,12 @@ void trabajar_request(request nueva_request , int conexion){
 
 			break;
 
+		case DESCRIBE:
+
+
+
+			break;
+
 		case GOSSIP:
 
 			intercambiar_datos( ((tabla_gossip_dto) nueva_request->tipo_request), conexion);

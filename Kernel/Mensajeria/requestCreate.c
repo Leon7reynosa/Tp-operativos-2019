@@ -103,7 +103,6 @@ create crear_dato_create(char* tabla, char* consistencia, int particiones, time_
 	dato->tabla->size = strlen(tabla) + 1;
 	dato->tabla->buffer = malloc(dato->tabla->size);
 	memcpy(dato->tabla->buffer, tabla, dato->tabla->size);
-	printf("holaa\n");
 
 	dato->consistencia = malloc(sizeof(t_stream));
 	dato->consistencia->buffer = malloc(dato->consistencia->size);

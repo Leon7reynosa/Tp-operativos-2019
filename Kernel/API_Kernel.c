@@ -17,7 +17,7 @@ int ejecutar_request(char* request_lql){
 	char* nombre_tabla = string_new();
 
 	char* consistencia = string_new();
-	int tiempo_compactacion, particiones, numero_memoria;
+	int tiempo_compactacion, particiones, numero_memoria, cantidad_parametros;
 
 	u_int16_t key;
 	char* value = string_new();
@@ -53,11 +53,25 @@ int ejecutar_request(char* request_lql){
 			if(obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion)){
 
 				log_info(logger_kernel , "---Se realizara el CREATE---\n");
-				obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion);
 				//enviar_request(CREATE, create_enviar);
 				return 1;
 			}
 			break;
+
+		case DESCRIBE:
+
+			//todo tenemos que hacer en mensajeria, el requestDescribe y hace su respectiva estructura describe_t
+
+			cantidad_parametros = obtener_parametros_describe(request_lql, nombre_tabla);
+
+			if(cantidad_parametros == 2){
+
+				log_info(logger_kernel, "---Se realizara el DESCRIBE para la tabla %s---\n" , nombre_tabla);
+
+				describe_t describe_enviar = crear_dato_describe(nombre_tabla);
+				enviar_request(DESCRIBE, describe_enviar);
+				return 1;
+			}
 
 		case ADD:
 			if(obtener_parametros_add(request_lql, &numero_memoria, consistencia)){
@@ -116,6 +130,9 @@ int identificar_request(char* request_lql){
 	}else if(string_starts_with(request_aux , "CREATE")){
 
 		operacion =  CREATE;
+	}else if(string_starts_with(request_aux , "DESCRIBE")){
+
+		operacion =  DESCRIBE;
 	}else if(string_starts_with(request_aux , "ADD")){
 
 		operacion =  ADD;
@@ -236,16 +253,19 @@ int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* cri
 
 }
 
-void obtener_parametros_describe_de_una_tabla(char* linea_request, char* nombre_tabla){
+int obtener_parametros_describe(char* linea_request, char* nombre_tabla){
 	char* funcion = string_new();
 
-	sscanf(linea_request, "%s %s", funcion, nombre_tabla);
-}
+	int cantidad = sscanf(linea_request, "%s %s", funcion, nombre_tabla);
 
-void obtener_parametros_describe(char* linea_request){
-	char* funcion = string_new();
+	if(cantidad == -1){
+		log_error( logger_kernel , "-LA REQUEST DESCRIBE RECIBIO PARAMETROS INCORRECTOS.-\n");
+		return 0;
+	}
 
-	sscanf(linea_request, "%s", funcion);
+	free(funcion);
+
+	return cantidad;
 }
 
 void obtener_parametros_drop(char* linea_request, char* nombre_tabla){

@@ -25,6 +25,7 @@
 #include"requestCreate.h"
 #include"requestInsert.h"
 #include"requestSelect.h"
+#include"requestDescribe.h"
 #include"Cliente/cliente.h"
 
 void enviar_request(cod_operacion cod_op, void* tipoRequest);

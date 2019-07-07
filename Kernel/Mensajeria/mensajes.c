@@ -33,6 +33,12 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 		bytes = ((create)(request->tipo_request))->bytes;
 		break;
 
+	case DESCRIBE:
+
+		buffer = serializar_describe(request);
+		bytes = ((describe_t)(request->tipo_request))->bytes;
+		break;
+
 	default:
 		//no deberia entrar aca
 		break;
@@ -59,6 +65,9 @@ void liberar_request(request dato){
 			break;
 		case CREATE:
 			liberar_dato_create(dato->tipo_request);
+			break;
+		case DESCRIBE:
+			liberar_dato_describe(dato->tipo_request);
 			break;
 		default:
 			printf("Algo fallo\n");

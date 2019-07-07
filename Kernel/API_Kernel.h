@@ -44,7 +44,7 @@ int obtener_parametros_add(char* linea_request, int* numero_memoria, char* consi
 int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value);
 int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* criterio, int* numero_particiones, int* tiempo_compactacion);
 void obtener_parametros_describe_de_una_tabla(char* linea_request, char* nombre_tabla);
-void obtener_parametros_describe(char* linea_request);
+int obtener_parametros_describe(char* linea_request, char* nombre_tabla);
 void obtener_parametros_drop(char* linea_request, char* nombre_tabla);
 char* obtener_parametros_run(char* linea_request);
 

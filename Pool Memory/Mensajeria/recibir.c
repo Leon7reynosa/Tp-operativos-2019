@@ -46,6 +46,11 @@ request recibir_request(int conexion){
 			tipo_request = decodificar_create(conexion);
 			break;
 
+		case DESCRIBE:
+
+			tipo_request = decodificar_describe(conexion);
+			break;
+
 		case GOSSIP:
 
 			tipo_request = decodificar_gossiping(conexion);

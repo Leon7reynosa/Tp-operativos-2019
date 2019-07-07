@@ -6,18 +6,6 @@
  */
 
 #include"requestInsert.h"
-/*
-struct insertEstructura{
-
-	int bytes;
-	t_stream* tabla;
-	u_int16_t key;
-	t_stream* value;
-	time_t timestamp;
-
-};
-*/
-
 
 insert decodificar_insert(int conexion){
 

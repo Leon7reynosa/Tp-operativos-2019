@@ -7,7 +7,19 @@
 
 #include "kernel.h"
 
+void pruebas(){
+
+	int conexion1 = conectar_servidor("127.0.0.1" , 8000 );
+
+	printf("%d\n" , conexion1);
+
+	int conexion2 = conectar_servidor("127.0.0.1" , 8000 );
+
+	printf("%d\n" , conexion2);
+}
+
 int main (int argc , char* argv[]){
+
 
 	/////////////////////////////////VARIABLES/////////////////////////////////
 
@@ -49,11 +61,14 @@ int main (int argc , char* argv[]){
 
 	pthread_join(hilo_consola , NULL);
 
-
-
-
 	return 0;
 }
+
+
+
+
+
+
 
 
 
