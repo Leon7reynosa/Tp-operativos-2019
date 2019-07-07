@@ -79,4 +79,6 @@ bool estaDentroDelRangoDeBloquesYEstaOcupado(int bloque);
 void leerBloque(int indice);
 int tamanioDelBloque(int indice);
 bool noEsUnaUbicacionProhibida(char* path);
+void leer_Particion(char* nombreTabla, int particion);
+void leer_Particiones(char* nombreTabla);
 #endif /* FILE_SYSTEM_H_ */
