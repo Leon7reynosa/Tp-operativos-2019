@@ -64,7 +64,7 @@ void recibir_actualizacion_gossiping(){
 			dato_memoria_ingresar = convertir_a_memoria_t(memoria_recv);
 
 			dato_memoria_ingresar->socket = conectar_servidor(dato_memoria_ingresar->ip,
-					dato_memoria_ingresar->puerto);
+					dato_memoria_ingresar->puerto); //esto capaz no va.
 
 			if(dato_memoria_ingresar->socket > 0){
 
@@ -107,6 +107,7 @@ memoria_t* convertir_a_memoria_t(struct MemoriasEstructura* dato_memoria){
 	dato_convertido->puerto = dato_memoria->puerto;
 	memcpy(dato_convertido->ip , dato_memoria->ip->buffer , dato_memoria->ip->size);
 
+	//aca faltaria conectar la memoria creo.
 
 	return dato_convertido;
 }

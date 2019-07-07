@@ -2009,3 +2009,21 @@
 [INFO] 18:43:26:614 kernel/(21430:21439): SELECT TABLA_A 40
 [INFO] 18:43:26:614 kernel/(21430:21439): ---Se realizara el SELECT---
 
+[INFO] 12:54:03:849 kernel/(4304:4313): INSERT TABLA_A 20 "PERON ES DE LINIERS" 77777
+[INFO] 12:54:03:856 kernel/(4304:4313): ---Se realizara el INSERT---
+
+[INFO] 12:54:03:857 kernel/(4304:4313): SELECT TABLA_A 20
+[INFO] 12:54:03:857 kernel/(4304:4313): ---Se realizara el SELECT---
+
+[INFO] 12:54:03:857 kernel/(4304:4313): INSERT TABLA_A 40 "HAKUNA MATAATA" 123456
+[INFO] 12:54:03:857 kernel/(4304:4313): ---Se realizara el INSERT---
+
+[INFO] 12:54:03:858 kernel/(4304:4313): SELECT TABLA_A 40
+[INFO] 12:54:03:858 kernel/(4304:4313): ---Se realizara el SELECT---
+
+[INFO] 12:54:17:546 kernel/(4304:4312): Select Tabla_A 4
+[INFO] 12:54:17:546 kernel/(4304:4312): ---Se realizara el SELECT---
+
+[INFO] 12:54:54:565 kernel/(4304:4311): selectr tabla 32
+[INFO] 12:54:54:565 kernel/(4304:4311): ---Se realizara el SELECT---
+

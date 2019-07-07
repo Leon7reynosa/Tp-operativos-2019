@@ -39,5 +39,7 @@ int conectar_servidor(char* ip, int puerto){
 	buffer[size] = '\0';
 	printf("%s",buffer);
 
+	free(buffer);
+
 	return socket_conexion;
 }
