@@ -67,83 +67,99 @@ void crear_archivos_particiones(char* nombre_tabla, int numero_particiones){
 
 
 
-
 	for (int i = 0; i < numero_particiones ; i++ ){
+
+		base.bloques = malloc(sizeof(int));
+
 		*(base.bloques) = buscarPrimerIndiceVacio();
+		setEstado(*(base.bloques), OCUPADO);
 		archivo = fopen(obtenerPath_ParticionTabla(nombre_tabla, i), "wb");
 		fwrite(&(base.size), sizeof(int), 1, archivo);
 		fwrite(base.bloques, sizeof(int), 1, archivo);
 		fclose(archivo);
-		setEstado(*(base.bloques), OCUPADO);
 
-		char* pathBloque = obtenerPath_Bloque(*(base.bloques));
-		int ficheroBloque = open(pathBloque, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
-		close(ficheroBloque);
+//		char* pathBloque = obtenerPath_Bloque(*(base.bloques));
+//		int ficheroBloque = open(pathBloque, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
+//		close(ficheroBloque);
 
+		free(base.bloques);
 	}
 
 }
 
 void asignarBloqueVacioAParticion(char* nombreTabla, int particion, int bloque){
 	char* path = obtenerPath_ParticionTabla(nombreTabla, particion);
-	FILE* archivo = fopen(path, "r");
 	particionContenido auxiliar;
+	auxiliar.bloques = malloc(sizeof(int) * blocks);
+
+	FILE* archivo = fopen(path, "r");
 
 	int cantidadBloquesLeidos;
-	int auxiliarContador = 0;
+	int auxiliarLimitador;
 
-	auxiliar.bloques = malloc(sizeof(int) * blocks);
-//	int cantidadDeBloquesNumero = cantidadDeBloques(particion, nombreTabla);
+
+	int limitadorDeBloques = cantidadDeBloques(particion, nombreTabla);
+	printf("cantidad de bloques = %i\n", limitadorDeBloques);
+	auxiliarLimitador = limitadorDeBloques;
 
 	int i = 0;
 	fread(&(auxiliar.size), sizeof(int), 1, archivo);
-	while(!feof(archivo)){
+	while(!feof(archivo) && limitadorDeBloques > 0){
 		fread(auxiliar.bloques + i, sizeof(int), 1, archivo);
-		auxiliarContador++;
+//		auxiliarContador++;
+		limitadorDeBloques--;
 		i++;
 	}
 
-	cantidadBloquesLeidos = auxiliarContador;
+	printf("termino el fread\n");
 
 	i = 0;
+	limitadorDeBloques = auxiliarLimitador;
 
-	while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i))){
+	while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i)) && limitadorDeBloques > 0){
 		if(*(auxiliar.bloques + i) == bloque){
 			printf("Ya esta ese bloque aca !\n");
 			return;
 		}
+			limitadorDeBloques--;
 			i++;
 	}
 
+	printf("termino el primer while\n");
 
 	*(auxiliar.bloques + i) = bloque;
 
-	printf("hola\n");
 
-	//todo el problema esta aca , hay que verlo.
+//	freopen(path, "w", archivo);
 
-	freopen(path, "w", archivo);
-
-
+	fclose(archivo);
+	archivo = fopen(path, "w");
 
 	i = 0;
-
 	setEstado(bloque, OCUPADO);
+	limitadorDeBloques = auxiliarLimitador + 1; //x el adicional
+
 
 	fwrite(&(auxiliar.size), sizeof(int), 1, archivo);
-	while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i) && cantidadBloquesLeidos > 0)){
+	while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i) && limitadorDeBloques > 0)){
 		fwrite(auxiliar.bloques + i, sizeof(int), 1, archivo);
-		cantidadBloquesLeidos--;
+		limitadorDeBloques--;
 		i++;
 	}
 
+	printf("termino el segundo while\n");
 
+	fclose(archivo);
+	free(auxiliar.bloques);
+
+	printf("chau\n");
 
 	char* pathBloque =  obtenerPath_Bloque(bloque);
+	printf("hola\n");
 	int ficheroBloque = open(pathBloque, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
-	free(auxiliar.bloques);
+	printf("hola\n");
 	close(ficheroBloque);
-	fclose(archivo);
+	printf("hola\n");
 
 
 }
@@ -156,7 +172,7 @@ void leer_Particiones(char* nombreTabla){
 	auxiliar.bloques = malloc(sizeof(int) * blocks);
 	char* mapBloque;
 	char* pathParaParticion;
-	int limitadorDelPuntero;
+	int limitadorDelBloque;
 ////////////////////////////////////////////////////////////////////////////////
 	int *fichero = malloc(sizeof(int));
 	struct stat *atributosBloque = malloc(sizeof(struct stat));
@@ -174,13 +190,13 @@ void leer_Particiones(char* nombreTabla){
 				string_append(&pathParaParticion, ent->d_name);
 				///////////////////////////////////////////////////////////////////////////////////////7
 				f = fopen(pathParaParticion, "r");
-				limitadorDelPuntero = cantidadDeBloques(obtenerNumeroParticion(ent->d_name), nombreTabla);
+
+				limitadorDelBloque = cantidadDeBloques(obtenerNumeroParticion(ent->d_name), nombreTabla);
 
 					fread(&(auxiliar.size), sizeof(int), 1, f);
-					while(!feof(f) && limitadorDelPuntero > 0){
+					while(!feof(f)){
 						fread(auxiliar.bloques + i, sizeof(int), 1, f);
 						i++;
-						limitadorDelPuntero--;
 					}
 				/////////////////////////////////////////////////////////////////////////////////////////
 					printf("Size = %i\n", auxiliar.size);
@@ -189,7 +205,7 @@ void leer_Particiones(char* nombreTabla){
 
 					i = 0;
 
-					while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i))){
+					while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i)) && limitadorDelBloque > 0){
 						printf("####Bloque %i#######\n", *(auxiliar.bloques + i));
 						mapBloque = obtenerMapDelBloque_ModoLectura(*(auxiliar.bloques + i), fichero, atributosBloque);
 						if(mapBloque == NULL){
@@ -203,6 +219,8 @@ void leer_Particiones(char* nombreTabla){
 							printf("\n");
 							cerrarMapDelBloque(fichero, mapBloque, atributosBloque);
 						}
+
+						limitadorDelBloque--;
 						j=0;
 						i++;
 					}
@@ -250,7 +268,6 @@ void leer_Particion(char* nombreTabla, int particion){
 					fread(&(auxiliar.size), sizeof(int), 1, f);
 					fread(auxiliar.bloques + i, sizeof(int), 1, f);
 					while(!feof(f) && limitadorDelPuntero > 0){
-						limitadorDelPuntero--;
 						i++;
 						fread(auxiliar.bloques + i, sizeof(int), 1, f);
 					}
@@ -260,7 +277,7 @@ void leer_Particion(char* nombreTabla, int particion){
 
 					i = 0;
 
-					while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i))){
+					while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i)) && limitadorDelPuntero > 0){
 						printf("####Bloque %i#######\n", *(auxiliar.bloques + i));
 						mapBloque = obtenerMapDelBloque_ModoLectura(*(auxiliar.bloques + i), fichero, atributosBloque);
 						if(mapBloque == NULL){
@@ -274,6 +291,7 @@ void leer_Particion(char* nombreTabla, int particion){
 							printf("\n");
 							cerrarMapDelBloque(fichero, mapBloque, atributosBloque);
 						}
+						limitadorDelPuntero--;
 						j=0;
 						i++;
 					}
@@ -385,11 +403,11 @@ void cerrarMapDelBloque(int* fichero, char* map, struct stat *atributosBloque){
 	close(*fichero);
 }
 
-//usar con el ultimo bloque de la particion!
+
 void llenarBloque(char* dato, int bloque){
-	ubicadorBloque auxiliar;
+//	ubicadorBloque auxiliar;
 //	auxiliar.nombreTabla = malloc(8);
-	auxiliar = ubicadorDelBloque(bloque);
+//	auxiliar = ubicadorDelBloque(bloque);
 	char** arrayValue = string_split(dato, ";");
 
 	if((strlen(*(arrayValue) + 2)) > tamanio_value_max){
@@ -397,31 +415,36 @@ void llenarBloque(char* dato, int bloque){
 		printf("Superas el tamanio maximo\n");
 		return;
 	}
-
+/*
 	if(estaLleno(bloque)){
-		printf("hola\n");
 		int nuevoBloque = buscarPrimerIndiceVacio();
-		printf("nuevO bloque: %d\n", nuevoBloque);
 		asignarBloqueVacioAParticion(auxiliar.nombreTabla, auxiliar.particion, nuevoBloque);
-		printf("hola\n");
-	//	setEstado(nuevoBloque, OCUPADO); ya lo setea dentro del asignarBloqueVacioAParticion
 		llenarBloque(dato, nuevoBloque);
 		actualizarParticionConBloque(nuevoBloque);
-
 	}
 	else{
 		crear_Binario_Bloque(bloque, dato);
 		actualizarParticionConBloque(bloque);
 	}
+*/
+	crear_Binario_Bloque(bloque, dato);
+//	actualizarParticionConBloque(bloque);
+
 }
 
 void crear_Binario_Bloque(int indice, char* dato){
 
+	char* pathBloque = obtenerPath_Bloque(indice);
+	int ficheroBloque = open(pathBloque, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
+//	close(ficheroBloque);
+
+	/////////////NUEVARDO/////////////////////
+	ubicadorBloque auxiliar;
+	auxiliar = ubicadorDelBloque(indice);
+	/////////////////////////////////////////
+
 	int caracteresTotales = strlen(dato);
 	int recorridoDato = 0;
-	char* pathBloque =  obtenerPath_Bloque(indice);
-
-	int ficheroBloque = open(pathBloque, O_RDWR, S_IRUSR | S_IWUSR);
 
 	int punteroBloque;
 	int indiceDatos = 0;
@@ -438,13 +461,20 @@ void crear_Binario_Bloque(int indice, char* dato){
 			indiceDatos++;
 		}
 		else{
+			close(ficheroBloque);
+//			actualizarParticionConBloque(indice);
 			string_trim_left(&dato);
-			llenarBloque(dato, indice);
-			break;
+			int nuevoIndice = buscarPrimerIndiceVacio();
+			printf("el nuevo indice es %i\n", nuevoIndice);
+			asignarBloqueVacioAParticion(auxiliar.nombreTabla, auxiliar.particion, nuevoIndice);
+			printf("hola, se asigno el bloque vacio\n");
+			llenarBloque(dato, nuevoIndice);
+			return;
 		}
 	}
 
 	close(ficheroBloque);
+	actualizarParticionConBloque(indice);
 }
 
 void mostrarDato(dato_t* dato){
@@ -840,6 +870,9 @@ int cantidadDeBloques(int particion, char* nombreTabla){
 
 	}
 
+	fclose(archivoParticion);
+
+
 	float contador;
 	int contadorFinal;
 	if(auxiliar.size == 0){
@@ -855,7 +888,7 @@ int cantidadDeBloques(int particion, char* nombreTabla){
 	}
 
 	free(auxiliar.bloques);
-	fclose(archivoParticion);
+
 //	return contador;
 	return contadorFinal;
 
@@ -868,10 +901,7 @@ void actualizarParticionConBloque(int indice){
 //	int cantidadBloquesTotal = cantidadDeBloques(ubicador.particion, ubicador.nombreTabla);
 
 	char* path = obtenerPath_ParticionTabla(ubicador.nombreTabla, ubicador.particion);
-
 	FILE* archivoParticion = fopen(path, "r");
-
-
 	particionContenido auxiliar;
 	auxiliar.bloques = malloc(sizeof(int) * blocks);
 
@@ -886,24 +916,7 @@ void actualizarParticionConBloque(int indice){
 	int tamanioBloqueNuevo = tamanioDelBloque(indice);
 	int cantidadDeBloquesNumero = cantidadDeBloques(ubicador.particion, ubicador.nombreTabla);
 
-/*	printf("tamanioBloqueNuevo: %i\n", tamanioBloqueNuevo);
-	printf("cantidadDeBloques: %i\n", cantidadDeBloquesNumero);
 
-
-	printf("#####DATOS ANTERIORES#####\n");
-	i = 0;
-	printf("Size = %i\n", auxiliar.size);
-	while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i))){
-		printf("bloque %i\n", *(auxiliar.bloques + i));
-		i++;
-	}
-
-
-
-	printf("/n################\n");
-	i = 0;
-
-*/
 	i = 0;
 	while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i))){
 		if(*(auxiliar.bloques + i) == indice){
@@ -918,17 +931,10 @@ void actualizarParticionConBloque(int indice){
 
 	*(auxiliar.bloques + i) = indice;
 
-/*
-	printf("#####DATOS NUEVOS#####\n");
-	printf("Size = %i\n", auxiliar.size);
-	i = 0;
+//	freopen(path, "w", archivoParticion);
+	fclose(archivoParticion);
+	archivoParticion = fopen(path, "w");
 
-	while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i))){
-		printf("bloque %i\n", *(auxiliar.bloques + i));
-		i++;
-	}
-*/
-	freopen(path, "w", archivoParticion);
 
 	fwrite(&auxiliar.size, sizeof(int), 1, archivoParticion);
 	i = 0;
@@ -963,6 +969,8 @@ ubicadorBloque ubicadorDelBloque(int indice){
 				string_append(&pathParaParticion, obtenerPathDirectorio_Tablas());
 				string_append(&pathParaParticion, "/");
 				string_append(&pathParaParticion, ent->d_name);
+
+
 				dir2 = opendir(pathParaParticion);
 				while((ent2 = readdir(dir2)) != NULL){
 
@@ -993,6 +1001,7 @@ ubicadorBloque ubicadorDelBloque(int indice){
 						}
 */
 						i = 0;
+
 						while(estaDentroDelRangoDeBloquesYEstaOcupado(*(auxiliar.bloques + i))){
 //							printf("%i\n", *(auxiliar.bloques + i));
 							if(*(auxiliar.bloques + i) == indice){
@@ -1018,6 +1027,7 @@ ubicadorBloque ubicadorDelBloque(int indice){
 		exit(-1);
 	}
 }
+
 
 int obtenerNumeroParticion(char* path){
 	int numero;
