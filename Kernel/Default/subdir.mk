@@ -9,6 +9,7 @@ C_SRCS += \
 ../consola.c \
 ../gossiping.c \
 ../kernel.c \
+../parser.c \
 ../planificador.c \
 ../request_memoria.c \
 ../semaforos.c 
@@ -19,6 +20,7 @@ OBJS += \
 ./consola.o \
 ./gossiping.o \
 ./kernel.o \
+./parser.o \
 ./planificador.o \
 ./request_memoria.o \
 ./semaforos.o 
@@ -29,6 +31,7 @@ C_DEPS += \
 ./consola.d \
 ./gossiping.d \
 ./kernel.d \
+./parser.d \
 ./planificador.d \
 ./request_memoria.d \
 ./semaforos.d 

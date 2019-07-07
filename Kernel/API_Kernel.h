@@ -12,10 +12,13 @@
 #include"Config/configuracion.h"
 #include"planificador.h"
 #include"semaforos.h"
+#include"parser.h"
 
 t_log* logger_kernel;
 
 t_queue* cola_new;
+
+
 
 
 typedef struct{
@@ -37,7 +40,7 @@ typedef struct{
 
 
 int ejecutar_request(char* request_lql);
-int identificar_request(char* request_lql);
+//int identificar_request(char* request_lql);
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key);
 int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp);
 int obtener_parametros_add(char* linea_request, int* numero_memoria, char* consistencia);

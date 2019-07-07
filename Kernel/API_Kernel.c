@@ -104,48 +104,12 @@ int ejecutar_request(char* request_lql){
 			break;
 	}
 
+
+	free(nombre_tabla);
+	free(consistencia);
+	free(value);
 	return 0;
 
-}
-
-
-
-int identificar_request(char* request_lql){
-
-	char* request_aux = malloc(strlen(request_lql) + 1);
-	cod_operacion operacion;
-
-	memcpy(request_aux, request_lql, strlen(request_lql) + 1);
-
-	string_to_upper(request_aux);
-
-	if(string_starts_with(request_aux , "SELECT")){
-
-		operacion =  SELECT;
-
-	}else if(string_starts_with(request_aux , "INSERT")){
-
-		operacion =  INSERT;
-
-	}else if(string_starts_with(request_aux , "CREATE")){
-
-		operacion =  CREATE;
-	}else if(string_starts_with(request_aux , "DESCRIBE")){
-
-		operacion =  DESCRIBE;
-	}else if(string_starts_with(request_aux , "ADD")){
-
-		operacion =  ADD;
-	}else if(string_starts_with(request_aux , "RUN")){
-
-		operacion =  RUN;
-	}else{
-		free(request_aux);
-		return -1;
-	}
-
-	free(request_aux);
-	return operacion;
 }
 
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key){
