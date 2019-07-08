@@ -8,7 +8,7 @@ int main(){
 	obtener_datos_config();
 	obtener_datos_metadata();
 
-//	set_all_estados(LIBRE);
+	//set_all_estados(LIBRE);
 
 	/////////////////////////////////////////////////////////////////////
 
@@ -18,7 +18,7 @@ int main(){
 
 void pruebas(){
 	//get_all_estados();
-//	crear_archivos_particiones("Tabla_A" , 4 );
+	//crear_archivos_particiones("Tabla_A" , 4 );
 
 	char* path_particion = obtenerPath_ParticionTabla("Tabla_A" , 0);
 	dato_t* dato_prueba = crear_dato(7 , "valor" , 123);
@@ -34,7 +34,9 @@ void pruebas(){
 	printf("\nUSO LA FUNCION MOSTRAR PARTICION\n");
 	mostrar_particion(particion);
 
-	//cargar_a_particion( path_particion, dato_prueba, 0 );
+	liberar_particion(particion);
+
+//	cargar_a_particion( path_particion, dato_prueba, 4 );
 
 
 

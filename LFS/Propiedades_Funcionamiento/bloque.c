@@ -255,6 +255,8 @@ void mostrar_bloque(int bloque){
 
 	struct stat* atributos_bloque = malloc(sizeof(struct stat));
 
+	fstat(fichero_bloque, atributos_bloque);
+
 	if(fichero_bloque < 0){
 
 		printf("No existe el bloque %i\n" , bloque);
@@ -266,6 +268,8 @@ void mostrar_bloque(int bloque){
 	int i = 0;
 
 	char* archivo = mmap(NULL, atributos_bloque->st_size, PROT_READ, MAP_SHARED, fichero_bloque, 0);
+
+	printf("Tamanio del bloque: %i\n", atributos_bloque->st_size);
 
 	if(archivo == MAP_FAILED){
 		if(atributos_bloque->st_size == 0){

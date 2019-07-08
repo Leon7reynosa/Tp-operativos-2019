@@ -12,6 +12,9 @@
 #include<stdlib.h>
 #include<commons/collections/list.h>
 #include"Mensajeria/mensajes.h"
+#include"fcntl.h"
+#include"stdbool.h"
+#include"configuracion.h"
 
 struct particionContenido{
 	int size;
@@ -26,5 +29,6 @@ Particion leer_particion(char* path_particion);
 void actualiar_particion(char* path_particion);
 void mostrar_particion(Particion particion);
 dato_t* buscar_dato_en_particion(char*	 path , int key);
+bool bloque_valido(int bloque);
 
 #endif /* PROPIEDADES_FUNCIONAMIENTO_PARTICION_CONTENIDO_H_ */

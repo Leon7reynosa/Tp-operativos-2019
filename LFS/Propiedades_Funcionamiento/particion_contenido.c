@@ -38,7 +38,7 @@ void liberar_particion(Particion particion){
 
 Particion leer_particion(char* path_particion){
 
-	printf("Voy a leer la particion\n");
+	printf("\nVoy a leer la particion\n");
 
 	Particion particion_contenido;
 	int size;
@@ -57,24 +57,30 @@ Particion leer_particion(char* path_particion){
 
 		fread(bloque, sizeof(int), 1, particion);
 
-		list_add(particion_contenido->bloques, bloque);
-
+		if(bloque_valido(*bloque)){
+			printf("Bloque valido!\n");
+			list_add(particion_contenido->bloques, bloque);
+		}
 	}
 
 	fclose(particion);
 
 	return particion_contenido;
+	printf("Finalizo lectura de particion\n\n\n");
+}
+
+bool bloque_valido(int bloque){
+
+	return (bloque < blocks) && (bloque >= 0);
 
 }
 
 void actualiar_particion(char* path_particion){
 
-	printf("path : %s\n" , path_particion);
 	Particion particion_lectura = leer_particion( path_particion );
 	int size_actualizado = 0;
-	printf("Leyo la particion\n");
 
-	mostrar_particion(particion_lectura);
+	//mostrar_particion(particion_lectura);
 
 	void _tamanio_por_bloque(void* bloque_lista){
 
