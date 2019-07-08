@@ -1,47 +1,41 @@
 #include"main.h"
 
 int main(){
-	crearYObtenerDatos();
-//	creacion_bitmap();
-//	setAllEstados(LIBRE);
 
-	dato_t* dato1 = crearDato(11, 22, "ESPERT");
-	dato_t* dato2 = crearDato(666, 777, "Duko");
-	dato_t* dato3 = crearDato(12345, 44444, "Peronazo");
-	dato_t* dato4 = crearDato(999, 666, "Messi");
+	////////////////////////////INICIALIZACIONES/////////////////////////
+	creacion_del_config_fileSystem();
 
-	char* datoStringueado3 = datoEnFormatoBloque(dato3);
-	char* datoStringueado2 = datoEnFormatoBloque(dato2);
-	char* datoStringueado1 = datoEnFormatoBloque(dato1);
-	char* datoStringueado4 = datoEnFormatoBloque(dato4);
+	obtener_datos_config();
+	obtener_datos_metadata();
 
+//	set_all_estados(LIBRE);
 
-//	setEstado(0, OCUPADO);
-//	setEstado(1, OCUPADO);
+	/////////////////////////////////////////////////////////////////////
 
-//	crear_archivos_particiones("Tabla_A", 2);
+	pruebas();
 
-//	getAllEstados();
+}
 
-//	llenarBloque(datoStringueado2, 0);
-//	llenarBloque(datoStringueado2, 0);
-//	llenarBloque(datoStringueado3, 0);
-//	llenarBloque(datoStringueado2, 1);
-	leer_Particiones("Tabla_A");
+void pruebas(){
+	//get_all_estados();
+//	crear_archivos_particiones("Tabla_A" , 4 );
 
-//	asignarBloqueVacioAParticion("Tabla_A", 0, 2);
-//	llenarBloque(datoStringueado4, 10);
+	char* path_particion = obtenerPath_ParticionTabla("Tabla_A" , 0);
+	dato_t* dato_prueba = crear_dato(7 , "valor" , 123);
 
+	Particion particion = leer_particion(path_particion);
 
-//	int lol = cantidadDeBloques(0, "Tabla_A");
-//	printf("cantidad = %i\n", lol);
+	printf("bytes = %i\n", particion->size);
 
-/*	ubicadorBloque lol = ubicadorDelBloque(1);
-	printf("---- ESTAMOS EN CONSOLA ----\n");
-	printf("%s\n", lol.nombreTabla);
-	printf("%i\n", lol.particion);
-*/
-//	leer_Particion("Tabla_A", 0);
+	int* bloque = (int *) list_get(particion->bloques, 0);
+
+	printf("bloque = %i\n", *bloque );
+
+	printf("\nUSO LA FUNCION MOSTRAR PARTICION\n");
+	mostrar_particion(particion);
+
+	//cargar_a_particion( path_particion, dato_prueba, 0 );
+
 
 
 }

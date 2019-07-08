@@ -10,7 +10,7 @@
 
 #include"comunity_func.h"
 #include"Lissandra.h"
-#include"file_system.h"
+#include"file_system_aux.h"
 #include"compactador.h"
 #include"metadata.h"
 

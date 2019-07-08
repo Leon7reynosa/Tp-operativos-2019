@@ -87,7 +87,6 @@ char* obtenerPathTabla(char* nombre_tabla){
 	string_append(&path, punto_montaje);
 	string_append(&path, prefijo);
 	string_append(&path, nombre_tabla);
-//	string_append(&path, "/");
 
 	return path;
 }
@@ -102,7 +101,7 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	struct dirent *ent;
 
 	while((ent = readdir(dir)) != NULL){
-		if(noEsUnaUbicacionProhibida(ent->d_name)){
+		if(no_es_ubicacion_prohibida(pathBase)){
 			auxiliar = obtenerNumeroTemporal(ent->d_name);
 
 			if(auxiliar > numeroParaTemporal){
