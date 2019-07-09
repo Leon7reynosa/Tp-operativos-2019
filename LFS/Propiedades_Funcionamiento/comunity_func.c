@@ -103,3 +103,18 @@ dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato){
 	}
 }
 
+
+void liberar_puntero_doble(char** puntero){
+
+	int i = 0;
+	while(*(puntero + i) != NULL){
+		i++;
+	}
+
+	for(; i > 0 ; i--){
+		free(*(puntero + i));
+	}
+	free(puntero);
+
+}
+

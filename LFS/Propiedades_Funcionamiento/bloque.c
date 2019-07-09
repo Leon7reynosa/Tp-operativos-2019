@@ -60,7 +60,21 @@ void mostrar_bloques(t_list* bloques){
 
 }
 
-void cargar_a_particion(char* path_particion, dato_t* dato_a_escribir, int bloque){
+int ultimo_bloque_particion(Particion particion){
+
+	int* bloque = list_get(particion->bloques, list_size(particion->bloques) - 1);
+
+	return *bloque;
+
+}
+
+void cargar_a_particion(char* path_particion, dato_t* dato_a_escribir){
+
+	Particion particion = leer_particion(path_particion);
+
+	int bloque = ultimo_bloque_particion(particion);
+
+	liberar_particion(particion);
 
 	char* dato_convertido = convertir_dato_en_string(dato_a_escribir);
 
@@ -243,6 +257,40 @@ char* convertir_dato_en_string( dato_t* dato ){
 	free(string_timestamp);
 
 	return string_dato;
+
+}
+
+Bloque crear_bloque(int numero, char* datos){
+
+	Bloque bloque = malloc(sizeof(struct bloque*));
+
+	bloque->numero = numero;
+
+	bloque->datos = list_create();
+
+	char** aux_datos = string_split(datos, "\n");
+
+	int i = 0;
+
+	while(*(aux_datos + i) != NULL){
+
+		list_add(bloque->datos, *(aux_datos + i));
+
+		i++;
+
+	}
+
+	free(aux_datos);
+
+	return bloque;
+
+}
+
+void liberar_bloque(Bloque bloque_a_liberar){
+
+	list_destroy_and_destroy_elements(bloque_a_liberar->datos, free);
+
+	free(bloque_a_liberar);
 
 }
 

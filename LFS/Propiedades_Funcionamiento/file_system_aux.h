@@ -20,8 +20,9 @@
 int existe_la_tabla(char* tabla);
 void crear_directorio(char* path);
 void crear_archivos_particiones(char* nombre_tabla, int numero_particiones);
+void crear_archivo_particion(char* path);
 void mostrar_tabla_y_particiones( char* nombre_tabla );
 bool no_es_ubicacion_prohibida(char* path);
 char* extension_del_archivo(char* path);
-
+void realizar_dump();
 #endif /* FILE_SYSTEM_AUX_H_ */

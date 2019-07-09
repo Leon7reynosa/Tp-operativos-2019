@@ -13,7 +13,7 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 	 dato_t* dato_memtable;
 
-	 char* path_tabla;
+	 char* path_particion_a_buscar;
 
 	 if(existe_la_tabla(nombre_tabla)){
 
@@ -21,15 +21,17 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 		 metadata_t metadata_tabla = obtener_metadata(nombre_tabla);
 		 int particion_objetivo = calcular_particion(metadata_tabla.particion , key);
-		 path_tabla = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
+		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
-		 dato_binarios = buscar_dato_en_particion(path_tabla, key);
+		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, key);
          dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, key);
 		 dato_t* dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_binarios);
 
 		 return  dato_mas_nuevo;
 
-	 }else{
+	 }
+
+	 else{
 		 printf("No existe la tabla en el File System\n");
 	 }
 
@@ -83,12 +85,16 @@ dato_t* request_select(char* nombre_tabla , int key){
 	 crear_metadata(nombre_tabla, criterio, numero_particiones, tiempo_compactacion); //MAL?
 
 	 crear_archivos_particiones(nombre_tabla, numero_particiones);
-	 //faltaria en esta parte, hacer bien los de los bloques.
-
  }
 
 
+void request_describe(){
 
+}
+
+void request_drop(){
+
+}
 
 
 

@@ -128,6 +128,8 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	string_append(&pathCompleto, numeroDesignado);
 	string_append(&pathCompleto, ".tmp");
 
+	free(indicadorNombre); // sacar ?
+	free(pathBase);			//sacar ?
 
 	return pathCompleto;
 }
@@ -135,9 +137,13 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 	char* path = obtenerPathTabla(nombre_tabla);
 
+	char* itooaxD =  string_itoa(particion);
+
 	string_append(&path, "/");
-	string_append(&path, string_itoa(particion));
+	string_append(&path, itooaxD);
 	string_append(&path, ".bin");
+
+	free(itooaxD);
 
 	return path;
 

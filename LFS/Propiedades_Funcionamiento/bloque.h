@@ -25,9 +25,16 @@ typedef enum{
 
 }estadoBloque;
 
+struct bloque{
+	int numero;
+	t_list* datos;
+};
+
+typedef struct bloque* Bloque;
+
 //void mostrar_bloque(char* path_bloque);
 void mostrar_bloques(t_list* bloques);
-void cargar_a_particion(char* path_particion, dato_t* dato_escribir, int bloque);
+void cargar_a_particion(char* path_particion, dato_t* dato_escribir);
 int tamanio_del_bloque( int bloque );
 char* llenar_bloque(int bloque , char* dato);
 void set_estado(int indiceBloque, estadoBloque estado);
