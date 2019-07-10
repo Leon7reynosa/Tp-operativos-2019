@@ -16,6 +16,7 @@
 #include"stdbool.h"
 #include"configuracion.h"
 #include"bloque.h"
+#include"metadata.h"
 
 struct particionContenido{
 	int size;

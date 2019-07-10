@@ -7,27 +7,34 @@
 
 #include"metadata.h"
 
-metadata_t obtener_metadata(char* nombre_tabla){
+metadata_t* obtener_metadata(char* nombre_tabla){
 
-	metadata_t obtener_metadata;
+	metadata_t* obtener_metadata = malloc(sizeof(metadata_t));
 	t_config* metadata_config;
 	char* path_metadata_tabla = obtener_path_metadata_de_tabla(nombre_tabla);
 	char* aux_consistencia;
 	metadata_config = config_create(path_metadata_tabla);
 
 	aux_consistencia = config_get_string_value(metadata_config,"CONSISTENCY");
-	obtener_metadata.particion= config_get_int_value(metadata_config, "PARTITIONS");
-	obtener_metadata.compactacion = config_get_int_value(metadata_config, "COMPACTION_TIME");
+	obtener_metadata->particion= config_get_int_value(metadata_config, "PARTITIONS");
+	obtener_metadata->compactacion = config_get_int_value(metadata_config, "COMPACTION_TIME");
+
 
 	if(strcmp(aux_consistencia,"SC") == 0){
-	obtener_metadata.consistencia = SC;
+	obtener_metadata->consistencia = SC;
 	}
 	if(strcmp(aux_consistencia,"SHC") == 0){
-	obtener_metadata.consistencia = SHC;
+	obtener_metadata->consistencia = SHC;
 	}
 	if(strcmp(aux_consistencia, "EC") == 0){
-	obtener_metadata.consistencia = EC;
+	obtener_metadata->consistencia = EC;
 	}
+
+	free(aux_consistencia);
+
+	free(path_metadata_tabla);
+
+	config_destroy(metadata_config);
 
 	return obtener_metadata;
 }
@@ -93,7 +100,7 @@ char* obtenerPathTabla(char* nombre_tabla){
 }
 
 char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
-	char* indicadorNombre = string_substring_from(nombreTabla, strlen(nombreTabla)-1);
+//	char* indicadorNombre = string_substring_from(nombreTabla, strlen(nombreTabla)-1);
 	char* pathBase = obtenerPathTabla(nombreTabla);
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
@@ -125,11 +132,54 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	char* pathCompleto = string_new();
 	string_append(&pathCompleto, pathBase);
 	string_append(&pathCompleto, "/");
-	string_append(&pathCompleto, indicadorNombre);
+//	string_append(&pathCompleto, indicadorNombre);
 	string_append(&pathCompleto, numeroDesignado);
 	string_append(&pathCompleto, ".tmp");
 
-	free(indicadorNombre); // sacar ?
+//	free(indicadorNombre); // sacar ?
+	free(pathBase);			//sacar ?
+
+	return pathCompleto;
+}
+
+char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
+//	char* indicadorNombre = string_substring_from(nombre_tabla, strlen(nombre_tabla)-1);
+	char* pathBase = obtenerPathTabla(nombre_tabla);
+	DIR* dir = opendir(pathBase);
+	int numeroParaTemporal = 0;
+	int auxiliar;
+
+	struct dirent *ent;
+
+	while((ent = readdir(dir)) != NULL){
+		if(no_es_ubicacion_prohibida(pathBase)){
+			auxiliar = obtenerNumeroTemporal(ent->d_name);
+
+			if(auxiliar > numeroParaTemporal){
+				numeroParaTemporal = auxiliar;
+			}
+			else if (auxiliar == numeroParaTemporal){
+				numeroParaTemporal = 1;
+			}
+		}
+	}
+
+	if(numeroParaTemporal > 1){
+		numeroParaTemporal++;
+	}
+
+
+	char* numeroDesignado = string_new();
+	numeroDesignado = string_itoa(numeroParaTemporal);
+
+	char* pathCompleto = string_new();
+	string_append(&pathCompleto, pathBase);
+	string_append(&pathCompleto, "/");
+//	string_append(&pathCompleto, indicadorNombre);
+	string_append(&pathCompleto, numeroDesignado);
+	string_append(&pathCompleto, ".tmpc");
+
+//	free(indicadorNombre); // sacar ?
 	free(pathBase);			//sacar ?
 
 	return pathCompleto;
@@ -138,13 +188,13 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 	char* path = obtenerPathTabla(nombre_tabla);
 
-	char* itooaxD =  string_itoa(particion);
+	char* itoa =  string_itoa(particion);
 
 	string_append(&path, "/");
-	string_append(&path, itooaxD);
+	string_append(&path, itoa);
 	string_append(&path, ".bin");
 
-	free(itooaxD);
+	free(itoa);
 
 	return path;
 
@@ -217,4 +267,79 @@ int obtener_puerto(){
 	return puerto;
 
 }
+
+int obtener_cantidad_de_archivos_tmpc(char* nombre_tabla){
+	DIR* dir;
+
+	struct dirent* ent;
+
+	int temporales_compactados = 0;
+
+	char* raiz_de_tabla = obtenerPathTabla(nombre_tabla);
+//	string_append(&raiz_de_tabla, "/");
+
+	if((dir = opendir(raiz_de_tabla)) != NULL){
+
+		while((ent = readdir(dir)) != NULL){
+
+			if(string_ends_with(ent->d_name, "tmpc")){
+
+				temporales_compactados++;
+
+			}
+		}
+
+	}
+
+	closedir(dir);
+
+	return temporales_compactados;
+}
+
+void transformar_tmp_a_tmpc(char* nombre_tabla){
+	DIR* dir;
+
+	struct dirent* ent;
+
+	char* raiz_de_tabla = obtenerPathTabla(nombre_tabla);
+
+	char** aux;
+
+	printf("VAMOS A ENTRAR A = %s\n", raiz_de_tabla);
+
+	if((dir = opendir(raiz_de_tabla)) != NULL){
+
+		while((ent = readdir(dir)) != NULL){
+
+			printf("ESTAMOS EN = %s\n", ent->d_name);
+
+			if(string_ends_with(ent->d_name, "tmp")){
+
+				char* viejo = string_new();
+				string_append(&viejo, raiz_de_tabla);
+				string_append(&viejo, "/");
+				string_append(&viejo, ent->d_name);
+
+				char* nuevo = string_new();
+				aux = string_split(ent->d_name, ".");
+
+				string_append(&nuevo, raiz_de_tabla);
+				string_append(&nuevo, "/");
+				string_append(&nuevo, aux[0]);
+				string_append(&nuevo, ".");
+				string_append(&nuevo, "tmpc");
+
+				printf("El viejo path es = %s\n", viejo);
+				printf("El nuevo path es = %s\n", nuevo);
+
+
+				rename(viejo, nuevo);
+			}
+		}
+	}
+
+	closedir(dir);
+}
+
+
 

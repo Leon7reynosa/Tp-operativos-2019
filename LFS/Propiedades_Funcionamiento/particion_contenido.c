@@ -297,7 +297,6 @@ bool es_dato_cortado(char* dato_a_analizar){
 
 }
 
-//ESTA HAY QUE HACERLA BIEN
 dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 //asumimos que hay una sola key en la particion
 
@@ -357,4 +356,141 @@ void aniadir_bloque(Particion particion, int bloque){
 
 	list_add(particion->bloques, bloque_aux);
 }
+
+
+t_list* obtener_datos_particiones(char* nombre_tabla){
+
+	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+
+	t_list* lista_datos_particion = list_create();
+
+	char* datos_totales = string_new();
+
+	for (int i = 0; i < metadata_tabla->particion ; i++){
+
+		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, i);
+
+		Particion particion_a_obtener = leer_particion(path_particion);
+
+		int i = 0;
+
+		int fd_bloque;
+
+		void _generar_lista_datos(void* dato_bloque){
+
+			int * bloque = (int* ) dato_bloque;
+
+			char* path_bloque = obtenerPath_Bloque(*bloque);
+
+			int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
+
+			struct stat* atributos = malloc(sizeof(struct stat));
+
+			fstat(fd_bloque, atributos);
+
+			char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0);
+
+			string_append(&datos_totales,datos);
+
+			munmap(fd_bloque, atributos->st_size);
+
+			close(fd_bloque);
+
+			free(path_bloque);
+
+			free(atributos);
+
+		}
+
+
+		list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
+
+	}
+
+	int j = 0;
+
+	char** cadena_datos = string_split(datos_totales , "\n");
+
+	while( cadena_datos[j] != NULL ){
+
+		list_add(lista_datos_particion , cadena_datos[j]);
+		j++;
+	}
+
+	liberar_puntero_doble(cadena_datos);
+
+	free(metadata_tabla);
+
+	return lista_datos_particion;
+}
+
+
+t_list* obtener_datos_temporales(char* nombre_tabla){
+
+	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+
+		t_list* lista_datos_particion = list_create();
+
+		char* datos_totales = string_new();
+
+		for (int i = 0; i < metadata_tabla->particion ; i++){
+
+			char* path_particion = obtenerPathParaTemporalMientrasCompacto(nombre_tabla, i);
+
+			Particion particion_a_obtener = leer_particion(path_particion);
+
+			int i = 0;
+
+			int fd_bloque;
+
+			void _generar_lista_datos(void* dato_bloque){
+
+				int * bloque = (int* ) dato_bloque;
+
+				char* path_bloque = obtenerPath_Bloque(*bloque);
+
+				int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
+
+				struct stat* atributos = malloc(sizeof(struct stat));
+
+				fstat(fd_bloque, atributos);
+
+				char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0);
+
+				string_append(&datos_totales,datos);
+
+				munmap(fd_bloque, atributos->st_size);
+
+				close(fd_bloque);
+
+				free(path_bloque);
+
+				free(atributos);
+
+			}
+
+
+			list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
+
+		}
+
+		int j = 0;
+
+		char** cadena_datos = string_split(datos_totales , "\n");
+
+		while( cadena_datos[j] != NULL ){
+
+			list_add(lista_datos_particion , cadena_datos[j]);
+			j++;
+		}
+
+		liberar_puntero_doble(cadena_datos);
+
+		free(metadata_tabla);
+
+		return lista_datos_particion;
+
+}
+
+
 

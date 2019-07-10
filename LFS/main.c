@@ -14,7 +14,11 @@ int main(){
 
 	/////////////////////////////////////////////////////////////////////
 
-	pruebas();
+//	pruebas();
+
+	int i = obtener_cantidad_de_archivos_tmpc("Tabla_C");
+	printf("CAntidad de tmpc = %i\n", i);
+//	transformar_tmp_a_tmpc("Tabla_C");
 
 }
 

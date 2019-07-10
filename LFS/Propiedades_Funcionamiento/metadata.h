@@ -37,7 +37,7 @@ typedef struct{
 
 
 void setear_metadata(void);
-metadata_t obtener_metadata(char*);
+metadata_t* obtener_metadata(char*);
 void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion);
 char* obtener_path_metadata_de_tabla(char* nombre_Tabla);
 void mostrar_metadata_de_tabla(char*);
@@ -46,4 +46,6 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion);
 char* obtenerPath_Bloque(int indice);
 char* obtenerPathDirectorio_Tablas(void);
 char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla);
+void transformar_tmp_a_tmpc(char* nombre_tabla);
+int obtener_cantidad_de_archivos_tmpc(char* nombre_tabla);
 #endif /* METADATA_METADATA_H_ */

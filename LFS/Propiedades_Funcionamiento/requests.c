@@ -19,8 +19,8 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 		 printf("Existe la tabla en el File System\n");
 
-		 metadata_t metadata_tabla = obtener_metadata(nombre_tabla);
-		 int particion_objetivo = calcular_particion(metadata_tabla.particion , key);
+		 metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+		 int particion_objetivo = calcular_particion(metadata_tabla->particion , key);
 		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
 		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, key);
@@ -42,7 +42,7 @@ dato_t* request_select(char* nombre_tabla , int key){
  void request_insert(char* nombre_tabla, int key, char* valor, time_t timestamp){
 	 //faltaria ver cuando no le pasamos el timestamp
 	 dato_t* dato_ingresar;
-	 metadata_t metadata_insert;
+	 metadata_t* metadata_insert;
 
 	 if(existe_la_tabla(nombre_tabla)){
 
