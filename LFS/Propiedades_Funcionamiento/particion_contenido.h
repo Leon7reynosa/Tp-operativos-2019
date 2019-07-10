@@ -15,6 +15,7 @@
 #include"fcntl.h"
 #include"stdbool.h"
 #include"configuracion.h"
+#include"bloque.h"
 
 struct particionContenido{
 	int size;
@@ -28,7 +29,10 @@ void liberar_particion(Particion particion);
 Particion leer_particion(char* path_particion);
 void actualiar_particion(char* path_particion);
 void mostrar_particion(Particion particion);
+bool es_dato_final(char* dato_a_analizar);
+bool es_dato_cortado(char* dato_a_analizar);
 dato_t* buscar_dato_en_particion(char*	 path , int key);
 bool bloque_valido(int bloque);
+void aniadir_bloque(Particion particion, int bloque);
 
 #endif /* PROPIEDADES_FUNCIONAMIENTO_PARTICION_CONTENIDO_H_ */

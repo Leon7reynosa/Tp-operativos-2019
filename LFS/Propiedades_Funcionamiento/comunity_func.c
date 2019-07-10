@@ -118,3 +118,18 @@ void liberar_puntero_doble(char** puntero){
 
 }
 
+dato_t* convertir_a_dato(char* dato_encontrado){
+
+	char** partes_dato = string_split(dato_encontrado, ";");
+
+	time_t dato_timestamp = atoi(partes_dato[0]);
+	u_int16_t dato_key = atoi( partes_dato[1] );
+
+	dato_t* dato_return = crear_dato(dato_key , partes_dato[2] ,  dato_timestamp);
+
+	liberar_puntero_doble(partes_dato);
+
+	return dato_return;
+
+}
+

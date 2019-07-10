@@ -10,7 +10,7 @@ int main(){
 
 	inicializar_memtable();
 
-//	set_all_estados(LIBRE);
+	//creacion_bitmap();
 
 	/////////////////////////////////////////////////////////////////////
 
@@ -23,14 +23,15 @@ void pruebas(){
 	//crear_archivos_particiones("Tabla_A" , 4 );
 
 	char* path_particion = obtenerPath_ParticionTabla("Tabla_A" , 0);
-	dato_t* dato_prueba = crear_dato( 7, "chino cochino" , 1998);
+	dato_t* dato_prueba = crear_dato( 10, "fede maincra" , 2001);
 
 
-	ingresar_a_memtable(dato_prueba, "Tabla_A");
+//	ingresar_a_memtable(dato_prueba, "Tabla_A");
 
-	realizar_dump();
+//	realizar_dump();
+
+
 /*
-
 	Particion particion = leer_particion(path_particion);
 
 	printf("bytes = %i\n", particion->size);
@@ -47,9 +48,23 @@ void pruebas(){
 
 	//cargar_a_particion(path_particion, dato_prueba);
 
+	//char* aux = buscar_dato_bloque(10, 0, 4);
+
+	//printf("Voy a buscar el dato: %s\n", aux);
+
+//	dato_t* dato_prueba_dos = buscar_dato_en_particion(path_particion , 10);
+
+//	printf("string: %s\n", dato_prueba_dos->value);
+
+//	dato_t* dato_prueba_tres = buscar_dato_en_particion(path_particion , 8 );
+
+//	printf("string: %s\n", dato_prueba_tres->value);
+
+	request_drop("Tabla_B");
 
 
 }
+
 
 void* conectar_memoria(){
 	int puerto = 4445;

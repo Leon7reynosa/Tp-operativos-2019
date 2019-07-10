@@ -35,6 +35,7 @@ metadata_t obtener_metadata(char* nombre_tabla){
 
 char* obtener_path_metadata_de_tabla(char* nombre_tabla){
 	char* path = obtenerPathTabla(nombre_tabla);
+	string_append(&path, "/");
 	string_append(&path, "Metadata.config");
 
 

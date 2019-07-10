@@ -88,12 +88,115 @@ dato_t* request_select(char* nombre_tabla , int key){
  }
 
 
-void request_describe(){
+void request_describe(char* nombre_tabla){
+
+	t_config* config_describe;
+
+	char* path_tabla_metadata = obtener_path_metadata_de_tabla(nombre_tabla);
+
+	printf("path de la metadata: %s\n" , path_tabla_metadata);
+
+	if(existe_la_tabla(nombre_tabla)){
+
+		int particiones;
+		char* consistencia;
+		int tiempo_compactacion;
+
+		config_describe = config_create(path_tabla_metadata);
+
+		particiones = config_get_int_value(config_describe , "PARTITIONS");
+		consistencia = config_get_string_value(config_describe , "CONSISTENCY");
+		tiempo_compactacion = config_get_int_value( config_describe , "COMPACTION_TIME");
+
+		printf("Particiones de %s : %d\n", nombre_tabla , particiones);
+		printf("Consistencia de %s : %s\n", nombre_tabla, consistencia);
+		printf("Tiempo de Compactacion de %s : %d\n", nombre_tabla, tiempo_compactacion );
+
+	 }else{
+
+		 printf("No existe la tabla\n");
+
+	 }
 
 }
 
-void request_drop(){
 
+void request_describe_global(){
+
+	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
+
+	DIR *dir1, *dir2;
+	struct dirent *tabla, *tabla_particular;
+
+	if((dir1 = opendir(path_directorio_tabla)) != NULL){
+		while((tabla = readdir(dir1)) != NULL){
+
+			if(!string_equals_ignore_case(tabla->d_name, ".") && !string_equals_ignore_case(tabla->d_name, "..")){
+
+				char* path_para_tabla_particular = string_new();
+
+				string_append(&path_para_tabla_particular, path_directorio_tabla);
+				string_append(&path_para_tabla_particular, "/");
+				string_append(&path_para_tabla_particular, tabla->d_name);
+
+				dir2 = opendir(path_para_tabla_particular);
+
+				while((tabla_particular = readdir(dir2)) != NULL){
+
+					if(string_equals_ignore_case(tabla_particular->d_name, "Metadata.config")){
+						request_describe(tabla->d_name);
+						break;
+					}
+
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+void request_drop(char* nombre_tabla){
+	DIR *dir1, *dir2;
+	struct dirent* tabla, *tabla_particular;
+	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
+
+
+	if((dir1 = opendir(path_directorio_tabla)) != NULL){
+		while((tabla = readdir(dir1))){
+			if(!string_equals_ignore_case(tabla->d_name, ".") && !string_equals_ignore_case(tabla->d_name, "..")){
+
+				if(string_equals_ignore_case(tabla->d_name, nombre_tabla)){
+					char* path_para_tabla_particular = string_new();
+
+					string_append(&path_para_tabla_particular, path_directorio_tabla);
+					string_append(&path_para_tabla_particular, "/");
+					string_append(&path_para_tabla_particular, tabla->d_name);
+
+					dir2 = opendir(path_para_tabla_particular);
+					while((tabla_particular = readdir(dir2)) != NULL){
+						if(!string_equals_ignore_case(tabla_particular->d_name, ".") && !string_equals_ignore_case(tabla_particular->d_name, "..")){
+
+							char* path_para_archivo = string_new();
+
+							string_append(&path_para_archivo, path_para_tabla_particular);
+							string_append(&path_para_archivo, "/");
+							string_append(&path_para_archivo, tabla_particular->d_name);
+
+							unlink(path_para_archivo);
+						}
+					}
+					closedir(dir2);
+					rmdir(path_para_tabla_particular);
+					break;
+				}
+
+			}
+		}
+	}
+	closedir(dir1);
 }
 
 

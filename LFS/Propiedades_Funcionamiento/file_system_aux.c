@@ -61,6 +61,8 @@ void crear_archivo_particion(char* path){
 
 	FILE* archivo = fopen(path, "wb");
 
+	printf("path %s\n" , path);
+
 	fwrite(&(base->size), sizeof(int), 1, archivo);
 
 	int* primer_bloque = list_get(base->bloques, 0);
