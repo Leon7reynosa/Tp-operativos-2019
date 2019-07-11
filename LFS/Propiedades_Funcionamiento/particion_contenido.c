@@ -47,17 +47,24 @@ Particion leer_particion(char* path_particion){
 
 	particion_contenido = crear_particion(size);
 
-	while(!feof(particion)){ //ASUMO QUE ESTO LO TIRA BIEN OK? si rompe posiblemente sea esto
+	int* bloque = malloc(sizeof(int));
 
-		int* bloque = malloc(sizeof(int));
+	fread(bloque, sizeof(int), 1, particion);
+
+	int i = 1;
+
+	while(!feof(particion)){ //ASUMO QUE ESTO LO TIRA BIEN OK? si rompe posiblemente sea esto
+		list_add(particion_contenido->bloques, bloque);
+
+		bloque = malloc(sizeof(int));
 
 		fread(bloque, sizeof(int), 1, particion);
 
-		if(bloque_valido(*bloque)){
 
-			list_add(particion_contenido->bloques, bloque);
-		}
+		i++;
 	}
+
+	free(bloque);
 
 	fclose(particion);
 
@@ -99,6 +106,9 @@ void mostrar_particion(Particion particion){
 
 	printf("Bytes = %i\n", particion->size);
 
+	printf("BLOQUES: %i\n", list_size(particion->bloques));
+	int* aux = list_get(particion->bloques, 1);
+
 	void _printear(void* _bloque){
 
 		int* bloque = (int *)_bloque;
@@ -113,7 +123,7 @@ void mostrar_particion(Particion particion){
 
 	list_iterate(particion->bloques, _printear);
 
-
+	printf("Termine de mostrar la particion\n");
 }
 
 int obtener_numero_particion(char* path){
@@ -362,14 +372,23 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
+	printf("NANI 1\n");
+
 	t_list* lista_datos_particion = list_create();
+
+	printf("NANI 2\n");
 
 	char* datos_totales = string_new();
 
+	printf("Cantidad de particiones: %i\n", metadata_tabla->particion);
 	for (int i = 0; i < metadata_tabla->particion ; i++){
 
+		printf("Obtengo el path de una particion\n");
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, i);
 
+		printf("Path = %s\n", path_particion);
+
+		printf("Leo su size y bloques\n");
 		Particion particion_a_obtener = leer_particion(path_particion);
 
 		int i = 0;
@@ -378,20 +397,26 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 		void _generar_lista_datos(void* dato_bloque){
 
+			printf("Agarro un bloque\n");
 			int * bloque = (int* ) dato_bloque;
-
+			printf("Obtengo el path de un bloque\n");
 			char* path_bloque = obtenerPath_Bloque(*bloque);
 
+			printf("Abro el bloque\n");
 			int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
 
+			printf("Leo los atributos del bloque\n");
 			struct stat* atributos = malloc(sizeof(struct stat));
 
 			fstat(fd_bloque, atributos);
 
+			printf("Lo mapeo a memoria\n");
 			char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0);
 
+			printf("Lo concateno en el char* \n");
 			string_append(&datos_totales,datos);
 
+			printf("Libero el map, los archivos, y los char* \n");
 			munmap(fd_bloque, atributos->st_size);
 
 			close(fd_bloque);
@@ -402,21 +427,24 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 		}
 
-
+		printf("Por cada bloque de la particion leida, agrego los datos a un char* \n");
 		list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
 
 	}
 
 	int j = 0;
 
+	printf("Separo todos los datos para poder meterlos en lista que voy a devolver\n");
 	char** cadena_datos = string_split(datos_totales , "\n");
 
+	printf("Meto los datos en la lista\n");
 	while( cadena_datos[j] != NULL ){
 
 		list_add(lista_datos_particion , cadena_datos[j]);
 		j++;
 	}
 
+	printf("Libero estructuras administrativas\n");
 	liberar_puntero_doble(cadena_datos);
 
 	free(metadata_tabla);

@@ -109,8 +109,10 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	struct dirent *ent;
 
 	while((ent = readdir(dir)) != NULL){
-		if(no_es_ubicacion_prohibida(pathBase)){
+		if(no_es_ubicacion_prohibida(ent->d_name)){
+
 			auxiliar = obtenerNumeroTemporal(ent->d_name);
+
 
 			if(auxiliar > numeroParaTemporal){
 				numeroParaTemporal = auxiliar;
@@ -137,7 +139,7 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	string_append(&pathCompleto, ".tmp");
 
 //	free(indicadorNombre); // sacar ?
-	free(pathBase);			//sacar ?
+//	free(pathBase);			//sacar ?
 
 	return pathCompleto;
 }
@@ -341,5 +343,71 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 	closedir(dir);
 }
 
+void liberar_bloques_particion(char* path_particion){
+
+	Particion particion = leer_particion(path_particion);
+
+	void _eliminar_bloque(void* _nro_bloque){
+
+		int* nro_bloque = (int *)_nro_bloque;
+
+		eliminar_bloque(*nro_bloque);
+
+
+	}
+
+
+	list_iterate(particion->bloques, _eliminar_bloque);
+
+	list_clean_and_destroy_elements(particion->bloques, free);
+
+
+	//de aca para abajo nose si esta bien, revisar
+
+	crear_archivo_particion(path_particion);
+
+	liberar_particion(particion);
+
+
+}
+
+void liberar_tmpc(char* nombre_tabla){
+	DIR* dir;
+	struct dirent* ent;
+
+	char* path_tabla = obtenerPathTabla(nombre_tabla);
+
+	if((dir = opendir(path_tabla)) != NULL){
+		while((ent = readdir(dir)) != NULL){
+			if(string_ends_with(ent->d_name, ".tmpc")){
+				char* aux = string_new();
+				string_append(&aux, path_tabla);
+				string_append(&aux, "/");
+				string_append(&aux, ent->d_name);
+
+				unlink(aux);
+				free(aux);
+			}
+
+		}
+
+	}
+
+	closedir(dir);
+	free(path_tabla);
+
+}
+
+void eliminar_bloque(int bloque){
+
+	char* path_bloque = obtenerPath_Bloque(bloque);
+
+	unlink(path_bloque);
+
+	set_estado(bloque, LIBRE);
+
+	free(path_bloque);
+
+}
 
 

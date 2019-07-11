@@ -14,59 +14,45 @@ int main(){
 
 	/////////////////////////////////////////////////////////////////////
 
-//	pruebas();
+	set_all_estados(LIBRE);
 
-	int i = obtener_cantidad_de_archivos_tmpc("Tabla_C");
-	printf("CAntidad de tmpc = %i\n", i);
-//	transformar_tmp_a_tmpc("Tabla_C");
+	crear_archivos_particiones("Tabla_A" , 2);
 
+
+	pruebas();
+
+//	Particion particion = leer_particion("/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/Tabla_A/0.bin");
+//
+//	mostrar_particion(particion);
 }
 
 void pruebas(){
-	//get_all_estados();
-	//crear_archivos_particiones("Tabla_A" , 4 );
 
+	prueba_dump();
+
+	compactar("Tabla_A");
+
+
+}
+
+void prueba_dump(){
 	char* path_particion = obtenerPath_ParticionTabla("Tabla_A" , 0);
-	dato_t* dato_prueba = crear_dato( 10, "fede maincra" , 2001);
 
+	dato_t* dato_prueba_uno = crear_dato( 10, "fede maincra" , 2001);
+	dato_t* dato_prueba_dos = crear_dato( 6, "lalo" , 200);
+	dato_t* dato_prueba_tres = crear_dato( 9, "chino LoL" , 1999);
+	dato_t* dato_prueba_cuatro = crear_dato( 7 , "leon rocket" , 1998 );
 
-//	ingresar_a_memtable(dato_prueba, "Tabla_A");
+	printf("Voy a ingresar los datos a la memtable\n");
+	ingresar_a_memtable(dato_prueba_uno, "Tabla_A");
+	ingresar_a_memtable(dato_prueba_dos, "Tabla_A");
+	ingresar_a_memtable(dato_prueba_tres, "Tabla_A");
+	ingresar_a_memtable(dato_prueba_cuatro, "Tabla_A");
 
-//	realizar_dump();
+	printf("\nVoy a realizar el dump\n");
+	realizar_dump();
 
-
-/*
-	Particion particion = leer_particion(path_particion);
-
-	printf("bytes = %i\n", particion->size);
-
-	int* bloque = (int *) list_get(particion->bloques, 0);
-
-	printf("bloque = %i\n", *bloque );
-
-	printf("\nUSO LA FUNCION MOSTRAR PARTICION\n");
-	mostrar_particion(particion);
-
-	liberar_particion(particion);
-*/
-
-	//cargar_a_particion(path_particion, dato_prueba);
-
-	//char* aux = buscar_dato_bloque(10, 0, 4);
-
-	//printf("Voy a buscar el dato: %s\n", aux);
-
-//	dato_t* dato_prueba_dos = buscar_dato_en_particion(path_particion , 10);
-
-//	printf("string: %s\n", dato_prueba_dos->value);
-
-//	dato_t* dato_prueba_tres = buscar_dato_en_particion(path_particion , 8 );
-
-//	printf("string: %s\n", dato_prueba_tres->value);
-
-	request_drop("Tabla_B");
-
-
+	printf("\nTermino el DUMP\n");
 }
 
 

@@ -17,6 +17,7 @@
 #include<commons/config.h>
 #include<commons/string.h>
 #include"configuracion.h"
+#include"bloque.h"
 #include<string.h>
 #include<sys/stat.h>
 

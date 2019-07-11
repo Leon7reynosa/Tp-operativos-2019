@@ -15,6 +15,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<<<<<<< HEAD
 				<configuration artifactName="${ProjName}" buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.base.1181353548" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.1181353548.1732503325" name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.366173896" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
@@ -39,6 +40,27 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1931295470" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1245125113" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.854879153" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+=======
+				<configuration buildProperties="" id="cdt.managedbuild.toolchain.gnu.base.1133275058" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.1133275058.1775983525" name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.146925425" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.target.gnu.platform.base.1063599863" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<builder id="cdt.managedbuild.target.gnu.builder.base.1714453913" managedBuildOn="false" name="Gnu Make Builder.Default" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.2031015490" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1815493528" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.2007966466" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.812119469" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1622644889" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.2074704386" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1736768669" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.2049630560" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.171097712" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+>>>>>>> branch 'hilos' of https://github.com/sisoputnfrba/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -54,9 +76,14 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<<<<<<< HEAD
 		<project id="LFS.null.558111596" name="LFS"/>
+=======
+		<project id="LFS.null.651572823" name="LFS"/>
+>>>>>>> branch 'hilos' of https://github.com/sisoputnfrba/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+<<<<<<< HEAD
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/LFS"/>
@@ -64,4 +91,7 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+=======
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+>>>>>>> branch 'hilos' of https://github.com/sisoputnfrba/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s
 </cproject>

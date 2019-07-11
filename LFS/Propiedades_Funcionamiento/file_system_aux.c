@@ -47,8 +47,6 @@ void crear_archivos_particiones(char* nombre_tabla, int numero_particiones){
 
 void crear_archivo_particion(char* path){
 
-	printf("Voy a crear la particion\n");
-
 	Particion base = crear_particion(0);
 
 	int indice_vacio = buscar_primer_indice_vacio();
@@ -61,13 +59,9 @@ void crear_archivo_particion(char* path){
 
 	FILE* archivo = fopen(path, "wb");
 
-	printf("path %s\n" , path);
-
 	fwrite(&(base->size), sizeof(int), 1, archivo);
 
 	int* primer_bloque = list_get(base->bloques, 0);
-
-	printf("bloques: %i\n", base->bloques->elements_count);
 
 	fwrite(primer_bloque, list_size(base->bloques) * sizeof(int), 1, archivo);
 
@@ -164,24 +158,29 @@ void mostrar_tabla_y_particiones( char* nombre_tabla ){
 void realizar_dump(){
 	t_list* dato_de_tabla;
 
-	printf("Voy a realizar el dump\n");
-
 	void _crear_temporal(char* nombre_tabla, void* elementoDeMemtable){
 
+		printf("\nEmpiezo a iterar la memtable\n");
 		dato_de_tabla = (t_list*) elementoDeMemtable;
+		printf("Tabla agarrada de la memtable: %s\n", nombre_tabla);
 
 		char* path_temporal = obtenerPathParaTemporalEnLaTabla(nombre_tabla);
 
+		printf("Path para temporal dentro de esa tabla: %s\n", path_temporal);
+
 		crear_archivo_particion(path_temporal);
+
+		printf("Se creo el temporal!\n");
 
 		void _cargar_a_temporal(void* _dato){
 
+			printf("-- %s\n\n", path_temporal);
 			dato_t* dato = (dato_t *)_dato;
-
 			cargar_a_particion(path_temporal, dato);
 
 		}
 
+		printf("Ahora voy a cargar el temporal en el path: \n");
 		list_iterate(dato_de_tabla, _cargar_a_temporal );
 
 		free(path_temporal);
@@ -191,6 +190,7 @@ void realizar_dump(){
 	dictionary_iterator(memtable, _crear_temporal);
 
 	vaciar_memtable();
+
 }
 
 void vaciar_memtable(){
@@ -215,7 +215,7 @@ bool no_es_ubicacion_prohibida(char* path){
 	ubicacionesProhibidas[1] = "..";
 	ubicacionesProhibidas[2] = "Metadata.config";
 
-	if(strcmp(path, ubicacionesProhibidas[0]) && strcmp(path, ubicacionesProhibidas[1]) && strcmp(path, ubicacionesProhibidas[2])){
+	if(!string_equals_ignore_case(path, ubicacionesProhibidas[0]) && !string_equals_ignore_case(path, ubicacionesProhibidas[1]) && !string_equals_ignore_case(path, ubicacionesProhibidas[2])){
 		return true;
 	}
 	else{
