@@ -11,7 +11,7 @@ void* compactar(char* nombre_tabla){
 
 	t_list* datos_tmpc;																				// (3) Lista con los datos de los .tmpc
 
-	t_list* datos_finales;																		// (4)  Lista con los datos de los .bin DESPUES de la particion
+	t_list* datos_finales = list_create();																		// (4)  Lista con los datos de los .bin DESPUES de la particion
 
 	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
@@ -69,9 +69,10 @@ void* compactar(char* nombre_tabla){
 
 	}
 
-
+	//time_t inicio_de_bloqueo = time(NULL);
 	list_iterate(datos_finales, _funcion_loca2);
-
+	//time_t fin_de_bloqueo = time(NULL)
+	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
 	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
 	list_destroy_and_destroy_elements(datos_tmpc, free);											//  (3) Libero los datos del .tmpc
