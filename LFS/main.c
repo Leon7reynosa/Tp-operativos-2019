@@ -30,7 +30,7 @@ void pruebas(){
 
 	prueba_dump();
 
-	compactar("Tabla_A");
+//	compactar("Tabla_A");
 
 
 }
