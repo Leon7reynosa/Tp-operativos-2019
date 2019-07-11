@@ -17,5 +17,6 @@
 
 void* conectar_memoria(void);
 void pruebas(void);
+void prueba_dump(void);
 
 #endif /* MAIN_H_ */

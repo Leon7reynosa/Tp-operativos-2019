@@ -3,9 +3,11 @@
 
 void* compactar(char* nombre_tabla){
 
+	printf("Empieza la compactacion\n");
 	//los comentarios entre parentesis son para ver donde se libera cada variable;
 
-	//renombrar .tmp's a .tmpc's
+	printf("1) Transformo los tmp en tmpc\n");
+	transformar_tmp_a_tmpc(nombre_tabla);
 
 	t_list* datos_particiones;                                                                    // (2) Lista con los datos de los .bin antes de la compactacion
 
@@ -13,10 +15,15 @@ void* compactar(char* nombre_tabla){
 
 	t_list* datos_finales = list_create();																		// (4)  Lista con los datos de los .bin DESPUES de la particion
 
-	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+//	printf("2) Obtengo la metadata\n");
+//	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
+//	printf("hola %i\n", metadata_tabla->particion);
+
+	printf("3) Obtengo los datos de las particiones\n");
 	datos_particiones = obtener_datos_particiones(nombre_tabla);
 
+	printf("4) Obtengo los datos de los tmpc\n");
 	datos_tmpc = obtener_datos_temporales(nombre_tabla);
 
 
@@ -34,11 +41,28 @@ void* compactar(char* nombre_tabla){
 
 	}
 
+	printf("5) Por cada dato de las particiones, comparo y obtengo los datos finales\n");
 	list_iterate(datos_particiones, _generar_lista_datos_finales);
 
 	//ACA EMPIEZA EL PROCESO DE SACAR Y PONER
 	//MUTEX?
 	//HAY QUE BLOQUEAR PARA QUE NADIE OPERE SOBRE ESTA TABLA! SI NO SE PUDRE TODOO
+
+	//LIBERO LAS PARTICIONES, DEBERIA QUEDARME NUEVOS .bin CON SIZE=0 y 1 BLOQUE
+
+	printf("6) LIBERO LAS PARTICIONES ");
+
+	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+
+	for(int i = 0; i < metadata_tabla->particion; i++){
+
+		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, i);
+
+		liberar_bloques_particion(path_particion);
+
+		free(path_particion);
+	}
+
 	void _funcion_loca2(void* _dato_final){
 
 		char* dato_final = (char *)_dato_final;
@@ -48,14 +72,6 @@ void* compactar(char* nombre_tabla){
 		int particion_perteneciente = calcular_particion(metadata_tabla->particion, key );
 
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, particion_perteneciente);  // (5)
-
-		//LIBERAR LA PARTICION
-		// IMPLICA: SET ESTADOS DE LOS BLOQUES EN LIBRE (BIT MAP)
-		//			(VER, OPCIONAL) LIBERAR LOS BLOQUES (OSEA LOS QUE TIENEN DATOS), PUEDE SER DE DOS FORMAS:
-		//                          A) BORRAMOS EL ARCHIVO SIN MAS, TOTAL cargar_a_particion LO CREA CUANDO BUSCA UN INDICE
-		//							B) A ES VERDADERO
-		//			SETEARLE UN NUEVO BLOQUE INICIAL, ASI cargar_a_particion NO ROMPE
-
 
 		dato_t* dato_a_cargar = convertir_a_dato(dato_final);                                     // (6)
 
@@ -69,11 +85,20 @@ void* compactar(char* nombre_tabla){
 
 	}
 
+	printf("7) Por cada dato final, lo agrego a su correspondiente particion\n");
 	//time_t inicio_de_bloqueo = time(NULL);
 	list_iterate(datos_finales, _funcion_loca2);
 	//time_t fin_de_bloqueo = time(NULL)
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
+	printf("8) Borro los tmpc y sus bloques\n");
+	liberar_tmpc(nombre_tabla);
+
+	//Por aca habria que liberar el "mutex"
+	//time_t fin_de_bloqueo = time(NULL)
+	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
+
+	printf("9) Libero las estructuras administrativas\n");
 	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
 	list_destroy_and_destroy_elements(datos_tmpc, free);											//  (3) Libero los datos del .tmpc
 
