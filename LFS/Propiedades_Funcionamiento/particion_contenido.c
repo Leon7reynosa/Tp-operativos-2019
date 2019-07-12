@@ -41,7 +41,15 @@ Particion leer_particion(char* path_particion){
 	Particion particion_contenido;
 	int size;
 
-	FILE* particion = fopen(path_particion, "r");
+
+	FILE* particion = fopen(path_particion, "rb");
+
+	if(!particion){
+		printf("RECURSAMOS!\n");
+		exit(1);
+	}
+
+	fseek(particion, 0, SEEK_SET);
 
 	fread(&size, sizeof(int), 1, particion);
 
@@ -51,17 +59,14 @@ Particion leer_particion(char* path_particion){
 
 	fread(bloque, sizeof(int), 1, particion);
 
-	int i = 1;
-
 	while(!feof(particion)){ //ASUMO QUE ESTO LO TIRA BIEN OK? si rompe posiblemente sea esto
+
 		list_add(particion_contenido->bloques, bloque);
 
 		bloque = malloc(sizeof(int));
 
 		fread(bloque, sizeof(int), 1, particion);
 
-
-		i++;
 	}
 
 	free(bloque);
@@ -413,8 +418,28 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 			printf("Lo mapeo a memoria\n");
 			char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0);
 
-			printf("Lo concateno en el char* \n");
-			string_append(&datos_totales,datos);
+			if(datos == MAP_FAILED){
+				if(atributos->st_size == 0){
+					printf("Bloque vacio c:\n");
+
+					close(fd_bloque);
+
+					free(path_bloque);
+
+					free(atributos);
+
+					return;
+
+				}else{
+					perror("Se fue todo al carajo, mmap");
+					exit(1);
+				}
+
+			}
+
+			printf("Lo concateno en el char*\n Esta mierda tiene: %s\n", datos);
+
+			string_append(&datos_totales, datos);
 
 			printf("Libero el map, los archivos, y los char* \n");
 			munmap(fd_bloque, atributos->st_size);
@@ -445,7 +470,7 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 	}
 
 	printf("Libero estructuras administrativas\n");
-	liberar_puntero_doble(cadena_datos);
+	//liberar_puntero_doble(cadena_datos);
 
 	free(metadata_tabla);
 
@@ -459,9 +484,12 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 		t_list* lista_datos_particion = list_create();
 
+		int cantidad_temporales = obtener_cantidad_de_archivos_tmpc(nombre_tabla);
+
 		char* datos_totales = string_new();
 
-		for (int i = 0; i < metadata_tabla->particion ; i++){
+
+		for (int i = 0; i < cantidad_temporales ; i++){
 
 			char* path_particion = obtenerPathParaTemporalMientrasCompacto(nombre_tabla, i);
 
@@ -484,6 +512,26 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 				fstat(fd_bloque, atributos);
 
 				char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0);
+
+				if(datos == MAP_FAILED){
+					if(atributos->st_size == 0){
+						printf("Bloque vacio c:\n");
+
+						close(fd_bloque);
+
+						free(path_bloque);
+						free(atributos);
+
+						free(metadata_tabla);
+
+						return;
+
+					}else{
+						perror("mmap");
+						exit(1);
+					}
+
+				}
 
 				string_append(&datos_totales,datos);
 
@@ -512,7 +560,7 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 			j++;
 		}
 
-		liberar_puntero_doble(cadena_datos);
+	//	liberar_puntero_doble(cadena_datos);
 
 		free(metadata_tabla);
 

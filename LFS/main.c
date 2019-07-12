@@ -14,40 +14,67 @@ int main(){
 
 	/////////////////////////////////////////////////////////////////////
 
-	set_all_estados(LIBRE);
-
-	crear_archivos_particiones("Tabla_A" , 2);
-
-
+//	set_all_estados(LIBRE);
+//
+//	crear_archivos_particiones("Tabla_A" , 2);
+//
+//
 	pruebas();
 
-//	Particion particion = leer_particion("/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/Tabla_A/0.bin");
-//
-//	mostrar_particion(particion);
+	//Particion particion = leer_particion("/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/Tabla_A/0.bin");
+
+	//mostrar_particion(particion);
+
+	return EXIT_SUCCESS;
 }
 
 void pruebas(){
 
-	prueba_dump();
+//	prueba_dump();
 
-//	compactar("Tabla_A");
+//	Particion temporal = leer_particion("/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/Tabla_A/0.tmp");
+//
+//	printf("TEMPORAL: \n");
+//	mostrar_particion(temporal);
 
+	compactar("Tabla_A");
+
+//	get_all_estados();
+
+//	for(int k = 0; k < 2; k++){
+//		printf("\nParticion %i: \n", k);
+//
+//		char* path = obtenerPath_ParticionTabla("Tabla_A", k);
+//
+//		Particion particion = leer_particion(path);
+//
+//		mostrar_particion(particion);
+//
+//		liberar_particion(particion);
+//
+//		free(path);
+//
+//	}
 
 }
 
 void prueba_dump(){
 	char* path_particion = obtenerPath_ParticionTabla("Tabla_A" , 0);
 
-	dato_t* dato_prueba_uno = crear_dato( 10, "fede maincra" , 2001);
-	dato_t* dato_prueba_dos = crear_dato( 6, "lalo" , 200);
-	dato_t* dato_prueba_tres = crear_dato( 9, "chino LoL" , 1999);
-	dato_t* dato_prueba_cuatro = crear_dato( 7 , "leon rocket" , 1998 );
+	dato_t* dato_prueba_uno = crear_dato( 15, "alan el desaparecido" , 8000); //si
+	dato_t* dato_prueba_dos = crear_dato( 6, "thais alta zorra" , 10600); //sii
+	dato_t* dato_prueba_tres = crear_dato( 9, "chino LoL" , 300); //no
+	dato_t* dato_prueba_cuatro = crear_dato( 7 , "leon vergadura" , 8000 ); //si
+	dato_t* dato_prueba_cinco = crear_dato( 10 , "fede el recursante" ,  10000 ); //SI
+	dato_t* dato_prueba_seis = crear_dato( 10 , "fede el maincra king" ,  2000 ); //NO
 
 	printf("Voy a ingresar los datos a la memtable\n");
 	ingresar_a_memtable(dato_prueba_uno, "Tabla_A");
 	ingresar_a_memtable(dato_prueba_dos, "Tabla_A");
 	ingresar_a_memtable(dato_prueba_tres, "Tabla_A");
 	ingresar_a_memtable(dato_prueba_cuatro, "Tabla_A");
+	ingresar_a_memtable(dato_prueba_cinco, "Tabla_A");
+	ingresar_a_memtable(dato_prueba_seis, "Tabla_A");
 
 	printf("\nVoy a realizar el dump\n");
 	realizar_dump();

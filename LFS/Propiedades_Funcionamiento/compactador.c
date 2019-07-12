@@ -9,40 +9,65 @@ void* compactar(char* nombre_tabla){
 	printf("1) Transformo los tmp en tmpc\n");
 	transformar_tmp_a_tmpc(nombre_tabla);
 
-	t_list* datos_particiones;                                                                    // (2) Lista con los datos de los .bin antes de la compactacion
+/*	t_list* datos_particiones;*/                                                             // (2) Lista con los datos de los .bin antes de la compactacion
 
 	t_list* datos_tmpc;																				// (3) Lista con los datos de los .tmpc
 
-	t_list* datos_finales = list_create();																		// (4)  Lista con los datos de los .bin DESPUES de la particion
+	t_list* datos_finales;																		// (4)  Lista con los datos de los .bin DESPUES de la particion
 
-//	printf("2) Obtengo la metadata\n");
-//	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+	printf("2) Obtengo la metadata\n");
+	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
-//	printf("hola %i\n", metadata_tabla->particion);
+	printf("hola %i\n", metadata_tabla->particion);
 
 	printf("3) Obtengo los datos de las particiones\n");
-	datos_particiones = obtener_datos_particiones(nombre_tabla);
+	datos_finales = obtener_datos_particiones(nombre_tabla);
 
 	printf("4) Obtengo los datos de los tmpc\n");
 	datos_tmpc = obtener_datos_temporales(nombre_tabla);
 
+	void _generar_lista_datos_finales(void* _dato_tmpc){
 
-	void _generar_lista_datos_finales(void* _dato_particion){
+		char* dato_tmpc = (char *)_dato_tmpc;
 
-		char* dato_particiones = (char *)_dato_particion;
+		printf("dato_tpmc = %s\n" , dato_tmpc);
 
-		t_list* dato_con_key_particular = filtrar_dato_por_key(dato_particiones, datos_tmpc);   // (1) Lista filtrada
+		//t_list* dato_con_key_particular = filtrar_dato_por_key(dato_particiones, datos_tmpc);   // (1) Lista filtrada
 
-		char* dato_timestamp_mayor = buscar_dato_actualizado(dato_particiones, dato_con_key_particular);
+		int index = buscar_index_misma_key( dato_tmpc, datos_finales  );
 
-		list_add(datos_finales, dato_timestamp_mayor);
+		printf("index: %d\n" , index);
 
-		list_destroy(dato_con_key_particular);                                                 // (1) Libero lista filtrada SIN liberar los elementos
+		if(index >= 0){
+
+			printf("hola estoy en index > 0 \n");
+
+			char* dato_timestamp_mayor = comparar_y_obtener_dato_actualizado( (char*) list_get(datos_finales, index) , dato_tmpc);
+
+			printf("timestamp actualizado: %s\n" , dato_timestamp_mayor);
+
+			list_replace_and_destroy_element(datos_finales , index  , dato_timestamp_mayor , free);
+
+			printf("dato en la lista es %s en el index %d\n" , ( (char*) list_get(datos_finales, index) ) , index );
+
+		}else{
+
+			printf("hola estoy en index < 0 \n");
+
+			char* aux_dato_tmpc = string_duplicate(dato_tmpc);
+
+			list_add(datos_finales , aux_dato_tmpc);
+
+		}
+                                              // (1) Libero lista filtrada SIN liberar los elementos
 
 	}
 
 	printf("5) Por cada dato de las particiones, comparo y obtengo los datos finales\n");
-	list_iterate(datos_particiones, _generar_lista_datos_finales);
+
+	printf("el dato esta bien : %s\n" ,   ( (char* ) list_get(datos_finales , 1)  ));
+
+	list_iterate(datos_tmpc, _generar_lista_datos_finales);
 
 	//ACA EMPIEZA EL PROCESO DE SACAR Y PONER
 	//MUTEX?
@@ -50,9 +75,7 @@ void* compactar(char* nombre_tabla){
 
 	//LIBERO LAS PARTICIONES, DEBERIA QUEDARME NUEVOS .bin CON SIZE=0 y 1 BLOQUE
 
-	printf("6) LIBERO LAS PARTICIONES ");
-
-	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+	printf("6) LIBERO LAS PARTICIONES\n ");
 
 	for(int i = 0; i < metadata_tabla->particion; i++){
 
@@ -67,15 +90,37 @@ void* compactar(char* nombre_tabla){
 
 		char* dato_final = (char *)_dato_final;
 
+		printf("Dato a cargar: %s\n", dato_final);
+
 		u_int16_t key = obtener_key_dato(dato_final);
+
+		printf("Key: %i\n", key);
 
 		int particion_perteneciente = calcular_particion(metadata_tabla->particion, key );
 
+		printf("Esa key va a la particion: %i\n", particion_perteneciente);
+
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, particion_perteneciente);  // (5)
+
+		printf("Y el path de la particion: %s\n", path_particion);
 
 		dato_t* dato_a_cargar = convertir_a_dato(dato_final);                                     // (6)
 
-		cargar_a_particion(path_particion, dato_a_cargar );
+		printf("El dato a cargar entonces seria: \n");
+
+		printf("Key: %i\n", dato_a_cargar->key);
+
+		printf("timestamp: %i\n", dato_a_cargar->timestamp);
+
+		printf("Value: %s\n", dato_a_cargar->value);
+
+		printf("Procedo a cargarlo a la particion ;)\n");
+
+		cargar_a_particion(path_particion, dato_a_cargar);
+
+		printf("Ya cargo en la particion el dato\n");
+
+		printf("Libero estructuras admin\n");
 
 		free(path_particion);                                                                    // (5)
 
@@ -85,7 +130,7 @@ void* compactar(char* nombre_tabla){
 
 	}
 
-	printf("7) Por cada dato final, lo agrego a su correspondiente particion\n");
+	printf("7) Por cada dato final (son %i datos), lo agrego a su correspondiente particion\n", list_size(datos_finales));
 	//time_t inicio_de_bloqueo = time(NULL);
 	list_iterate(datos_finales, _funcion_loca2);
 	//time_t fin_de_bloqueo = time(NULL)
@@ -99,9 +144,10 @@ void* compactar(char* nombre_tabla){
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
 	printf("9) Libero las estructuras administrativas\n");
-	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
+//	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
+	printf("10) Libero datos_tmpc\n");
 	list_destroy_and_destroy_elements(datos_tmpc, free);											//  (3) Libero los datos del .tmpc
-
+	printf("11) Libero datos_finales\n");
 	list_destroy_and_destroy_elements(datos_finales, free);										// (4) Libero los datos del .bin DESPUES de la compactacion
 
 	//TODO liberar_metadata(metadata_tabla); resuelto abajo por ahora, seguramente cambie la estructura metadata!
@@ -157,43 +203,51 @@ t_list* filtrar_dato_por_key(char* dato_particiones, t_list* datos_tmpc){
 
 }
 
-//OJO, pasarle en dato_tmpc datos con la misma key al dato_particiones
-char* buscar_dato_actualizado(char* dato_particion, t_list* dato_tmpc){
+//No pasarle null :)
+char* comparar_y_obtener_dato_actualizado(char* dato_a_ser_comparado, char* dato_a_analizar){
 
+	char* dato_actualizado = string_duplicate(dato_a_ser_comparado);
 
-	int index_lista = 0;
-	int length = string_length(dato_particion);
+	time_t timestamp_mayor = obtener_timestamp_dato(dato_a_ser_comparado);
 
-	char* dato_actualizado = malloc(length);
-	memcpy(dato_actualizado, dato_particion, length + 1);
+	time_t timestamp_menor= obtener_timestamp_dato(dato_a_analizar);
 
-	time_t timestamp_mayor = obtener_timestamp_dato(dato_actualizado);
+	if(timestamp_menor >= timestamp_mayor){
 
-	char* dato_a_analizar;
-	time_t timestamp_a_analizar;
+		free(dato_actualizado);
 
-	while(index_lista < list_size(dato_tmpc)){
-
-		dato_a_analizar = list_get(dato_tmpc, index_lista);
-
-		timestamp_a_analizar = obtener_timestamp_dato(dato_a_analizar);
-
-		if(timestamp_a_analizar >= timestamp_mayor){
-
-			free(dato_actualizado);
-
-			length = string_length(dato_a_analizar);
-
-			dato_actualizado = malloc(length);
-			memcpy(dato_actualizado, dato_a_analizar, length + 1);
-
-			timestamp_mayor = timestamp_a_analizar;
-
-		}
+		dato_actualizado = string_duplicate(dato_a_analizar);
+		timestamp_mayor = timestamp_menor;
 
 	}
 
 	return dato_actualizado;
 
+}
+
+
+int buscar_index_misma_key(char*  dato_tmpc, t_list*  datos_finales  ){
+
+	printf("hola entre al buscar_index_misma_key\n");
+
+	for( int i = 0 ; i < list_size(datos_finales) 	; i++){
+
+		printf("entre en la iteracion %d\n" , i);
+
+		printf("el key 1 es: %d\n", obtener_key_dato(dato_tmpc) );
+
+		printf("dato malo : %s\n" , (char*)list_get(datos_finales, i));
+
+		printf("el key 1 es: %d\n" , obtener_key_dato( (char*)list_get(datos_finales, i) ));
+
+		if( obtener_key_dato(dato_tmpc) == obtener_key_dato( (char*)list_get(datos_finales, i) ) ){
+
+			return i;
+
+		}
+
+	}
+
+	return -1;
 
 }

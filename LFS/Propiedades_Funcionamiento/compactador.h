@@ -24,6 +24,7 @@ t_list* filtrar_dato_por_key(char* dato_particiones, t_list* datos_tmpc);
 u_int16_t obtener_key_dato(char* dato);
 time_t obtener_timestamp_dato(char* dato);
 char* buscar_dato_actualizado(char* dato_particion, t_list* dato_tmpc);
+char* comparar_y_obtener_dato_actualizado(char* dato_a_ser_comparado, char* dato_a_analizar);
 
 
 #endif /* COMPACTADOR_H_ */

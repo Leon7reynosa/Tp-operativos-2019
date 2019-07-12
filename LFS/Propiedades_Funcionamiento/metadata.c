@@ -34,7 +34,7 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 
 	free(path_metadata_tabla);
 
-	config_destroy(metadata_config);
+	//config_destroy(metadata_config);
 
 	return obtener_metadata;
 }
@@ -351,6 +351,8 @@ void liberar_bloques_particion(char* path_particion){
 
 		int* nro_bloque = (int *)_nro_bloque;
 
+		printf("   Bloque: %i\n", *nro_bloque);
+
 		eliminar_bloque(*nro_bloque);
 
 
@@ -364,10 +366,14 @@ void liberar_bloques_particion(char* path_particion){
 
 	//de aca para abajo nose si esta bien, revisar
 
-	crear_archivo_particion(path_particion);
+
+	if(string_ends_with(path_particion , ".bin")){
+
+		crear_archivo_particion(path_particion);
+
+	}
 
 	liberar_particion(particion);
-
 
 }
 
@@ -385,6 +391,9 @@ void liberar_tmpc(char* nombre_tabla){
 				string_append(&aux, "/");
 				string_append(&aux, ent->d_name);
 
+				printf("\nLIBERO LOS BLOQUE: \n");
+				liberar_bloques_particion(aux);
+
 				unlink(aux);
 				free(aux);
 			}
@@ -401,6 +410,8 @@ void liberar_tmpc(char* nombre_tabla){
 void eliminar_bloque(int bloque){
 
 	char* path_bloque = obtenerPath_Bloque(bloque);
+
+	printf("path bloque: %s\n"  , path_bloque);
 
 	unlink(path_bloque);
 
