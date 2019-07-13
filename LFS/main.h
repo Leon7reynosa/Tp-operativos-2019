@@ -15,6 +15,8 @@
 #include "Propiedades_Funcionamiento/configuracion.h"
 #include"Propiedades_Funcionamiento/file_system_aux.h"
 
+#include<commons/config.h>
+
 void* conectar_memoria(void);
 void pruebas(void);
 void prueba_dump(void);
