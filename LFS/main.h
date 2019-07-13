@@ -14,6 +14,7 @@
 //#include"Propiedades_Funcionamiento/file_system.h"
 #include "Propiedades_Funcionamiento/configuracion.h"
 #include"Propiedades_Funcionamiento/file_system_aux.h"
+#include"Propiedades_Funcionamiento/consola.h"
 
 #include<commons/config.h>
 

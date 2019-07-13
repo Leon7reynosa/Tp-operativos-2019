@@ -15,6 +15,18 @@
 #include"Servidor/servidor.h"
 #include"configuracion.h"
 #include"Mensajeria/request.h"
+#include"Mensajeria/recibir.h"
+
+struct estructuraConexionMemoria{
+
+	pthread_t hilo_memoria;
+	int socket_memoria;
+
+};
+
+typedef struct estructuraConexionMemoria* Conexion_memoria;
+
+t_list* memorias_conectadas;  //va a tener una lista de Conexion_memoria
 
 void* conectar_varias_memorias(void);
 

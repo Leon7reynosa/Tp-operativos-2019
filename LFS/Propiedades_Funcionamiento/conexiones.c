@@ -80,6 +80,102 @@ void* conectar_varias_memorias(){
 	return NULL;
 }
 
+
+void inicializar_memorias_conectadas(){
+
+	memorias_conectadas = list_create();
+
+}
+
+void* administrar_conexiones_hilos(int* socket_servidor){
+
+	while(1){
+
+		int nueva_conexion = aceptar_conexion( *socket_servidor);
+
+		Conexion_memoria nueva_conexion_memoria = crear_conexion_memoria(  nueva_conexion );
+
+		list_add(memorias_conectadas , nueva_conexion_memoria);
+
+
+	}
+
+	return NULL;
+}
+
+
+Conexion_memoria crear_conexion_memoria( int conexion ){
+
+	Conexion_memoria memoria_nueva = malloc(sizeof(struct estructuraConexionMemoria));
+
+	memoria_nueva->socket_memoria = conexion;
+
+	pthread_create(&(memoria_nueva->hilo_memoria) , NULL , manejar_requests , memoria_nueva);
+
+	return memoria_nueva;
+}
+
+
+void* manejar_requests(Conexion_memoria memoria_conectada){
+
+	request request_recibida;
+
+	while(1){
+
+		request_recibida = recibir_request(memoria_conectada->socket_memoria);
+
+		if(request_recibida->cod_op == DESCONEXION){
+
+			desconectar_memoria(memoria_conectada);
+
+			liberar_request(request_recibida);
+
+			pthread_exit(NULL);
+
+		}else{
+
+			trabajar_request(request_recibida, memoria_conectada->socket_memoria); //nos faltaria esta funcion
+
+		}
+		//TODO OJO AL LIBERAR UNA DESCONEXION, NO PUEDO HACER FREE DE NULL!!!!!!
+		liberar_request(request_recibida);
+
+
+
+	}
+
+
+}
+
+void desconectar_memoria(Conexion_memoria memoria_a_desconectar){
+
+
+	bool _tenes_esta_conexion( void* elemento_memoria){
+
+		Conexion_memoria conexion_a_eliminar = (Conexion_memoria) elemento_memoria;
+
+		return conexion_a_eliminar->socket_memoria == memoria_a_desconectar->socket_memoria;
+
+	}
+
+
+	list_remove_and_destroy_by_condition(memorias_conectadas, _tenes_esta_conexion, destruir_conexion_memoria);
+
+
+}
+
+
+
+void destruir_conexion_memoria(Conexion_memoria memoria_a_destruir){
+
+	close(memoria_a_destruir->socket_memoria);
+
+	free(memoria_a_destruir);
+
+}
+
+
+
 /*
 void* conectar_varias_memorias_versionChinua(){
 	int cantidadDeMemorias;

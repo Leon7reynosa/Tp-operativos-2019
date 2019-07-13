@@ -7,7 +7,59 @@
 
 #include "requests.h"
 
-dato_t* request_select(char* nombre_tabla , int key){
+
+//capaz tiene que retoranr algo
+void trabajar_request(request request_a_operar , int conexion){
+
+	dato_t* dato_request;
+
+	switch( request_a_operar->cod_op ){
+
+		case SELECT:
+
+			printf(">>SE REALIZARA EL SELECT\n");
+
+			dato_request = request_select( (select_t) request_a_operar->tipo_request );
+
+			//falta hacer mas cosas aca, habria que reenviarlo al pool
+
+			break;
+
+		case INSERT:
+
+			request_insert((insert) request_a_operar->tipo_request );
+
+			//habra que devolver al pool que todo funciono bien
+
+			break;
+
+		case CREATE:
+
+			request_create( (create) request_a_operar->tipo_request);
+
+			//TODO habria que hacer que le diga al pool que esta todo ok.
+
+			break;
+
+		case DESCRIBE:
+
+			//same para los de antes
+
+			break;
+
+		default:
+
+			//no se aca lol
+
+			break;
+	}
+
+
+
+
+}
+
+dato_t* request_select(char* nombre_tabla , int key){ //hay que modificarla para que reciba un select_t
 
 	 dato_t* dato_binarios;
 
@@ -39,7 +91,7 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 
 
- void request_insert(char* nombre_tabla, int key, char* valor, time_t timestamp){
+ void request_insert(char* nombre_tabla, int key, char* valor, time_t timestamp){ //hay que modificar para que opere con insert
 	 //faltaria ver cuando no le pasamos el timestamp
 	 dato_t* dato_ingresar;
 	 metadata_t* metadata_insert;
@@ -65,6 +117,7 @@ dato_t* request_select(char* nombre_tabla , int key){
 
 
  void request_create(char* nombre_tabla, char* criterio, int numero_particiones, int tiempo_compactacion){
+//TODO hay que modificar para que trabaje con la estructura create
 
 	 string_to_upper(nombre_tabla);
 

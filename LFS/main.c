@@ -11,21 +11,31 @@ int main(){
 
 	inicializar_memtable();
 
-	//creacion_bitmap();
+	inicializar_memorias_conectadas();
 
-	/////////////////////////////////////////////////////////////////////
+//	creacion_bitmap();
 
 //	set_all_estados(LIBRE);
-//
-//	crear_archivos_particiones("Tabla_A" , 2);
-//
-//
-	pruebas();
 
-	//Particion particion = leer_particion("/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/Tabla_A/0.bin");
+	///////////////////////////CONEXIONES/////////////////////////////////
 
-	//mostrar_particion(particion);
+	int socket_servidor;
 
+	socket_servidor = iniciar_servidor(ip_lfs , puerto_lfs);
+
+	///////////////////////////////MAIN////////////////////////////////////
+
+	pthread_t administrador_hilos;
+	pthread_t hilo_consola;
+
+	pthread_create(hilo_consola, NULL , consola, NULL);
+	pthread_create(administrador_hilos , NULL , administrar_conexiones_hilos , &socket_servidor);
+
+
+
+
+	pthread_join(administrador_hilos , NULL);
+	pthread_join(hilo_consola , NULL);
 
 	return EXIT_SUCCESS;
 }

@@ -17,6 +17,8 @@ request recibir_request(int conexion){
 
 	if(pene == -1){
 			perror("Fallo al recibir el codigo de operacion.");
+			//aca deberiamos sacar a la memoria de la lista?
+			//aca deberiamos terminar el hilo?
 		}
 
 	printf("codigo_op : %d\n" , *cod_op);
