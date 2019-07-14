@@ -3,7 +3,7 @@
 
 void* compactar(char* nombre_tabla){
 
-	log_trace(logger_compactador, "INICIO DE LA -- COMPACTACION -- DE LA TABLA %s\n", nombre_tabla);	// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+	//log_trace(logger_compactador, "INICIO DE LA -- COMPACTACION -- DE LA TABLA %s\n", nombre_tabla);	// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	printf("Empieza la compactacion\n");
 	//los comentarios entre parentesis son para ver donde se libera cada variable;

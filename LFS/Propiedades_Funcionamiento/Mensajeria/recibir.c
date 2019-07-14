@@ -50,6 +50,14 @@ request recibir_request(int conexion){
 			tipo_request = decodificar_create(conexion);
 			break;
 
+		case DESCRIBE:
+
+			printf("REALIZAMOS UN DESCRIBE\n");
+
+			tipo_request = decodificar_describe(conexion);
+
+			break;
+
 		default:
 
 			printf(">>NO RECONOCI LA REQUEST :/ \n");

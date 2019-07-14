@@ -45,7 +45,9 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case DESCRIBE:
 
-			//same para los de antes
+			request_describe( (describe_t) request_a_operar->tipo_request );
+
+			printf("TERMINO EL DESCRIBE BRO\n");
 
 			break;
 
@@ -162,8 +164,23 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
  }
 
+void request_describe( describe_t request_describe ){
 
-void request_describe(char* nombre_tabla){
+
+	if( request_describe->global ){
+
+		request_describe_global();
+
+	}else{
+
+		request_describe_particular((char*) request_describe->tabla->buffer);
+
+	}
+
+}
+
+
+void request_describe_particular(char* nombre_tabla){
 
 	log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE -- para %s\n", nombre_tabla); // LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
