@@ -127,23 +127,28 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
  void request_create(create datos_create){
 //TODO hay que modificar para que trabaje con la estructura create
 
+
+
 	 char* nombre_tabla = (char *)datos_create->tabla->buffer;
 
 	 char* criterio = (char *)datos_create->consistencia->buffer;
+
+	 log_info(logger_lissandra, "### SOLICITUD DE -- CREATE -- para\n"
+	 			 "TABLA = %s\nNUMERO DE PARTICIONES = %i\nCRITERIO = %s\nTIEMPO_COMPACTACION = %i\n",
+	 			 nombre_tabla, datos_create->numero_particiones, criterio, datos_create->compactacion);		//LOGGER AGREGADO !!!!!!!!!!!!
 
 	 string_to_upper(nombre_tabla);
 
 	 if(existe_la_tabla(nombre_tabla)){
 
-		 printf("Ya existe la tabla \n");
-		 //guardar resultado en un archivo de log y retornar error de dicho resultado
-		 exit(1);
+		 log_error(logger_lissandra, "### YA EXISTE LA TABLA ###\n", nombre_tabla);  //LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		 return;
 
 	 }
 
 	 char* path_tabla = obtenerPathTabla(nombre_tabla);
 
-	 printf("path: %s\n" , path_tabla);
+//	 printf("path: %s\n" , path_tabla);
 
 	 crear_directorio(path_tabla);
 
@@ -151,12 +156,16 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
 	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
 
+	 log_info(logger_lissandra, "### CREATE REALIZADO CON EXITO ! ####\n");
+
 	 correr_compactacion(datos_create->compactacion, nombre_tabla);
 
  }
 
 
 void request_describe(char* nombre_tabla){
+
+	log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE -- para %s\n", nombre_tabla); // LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	t_config* config_describe;
 
@@ -176,13 +185,19 @@ void request_describe(char* nombre_tabla){
 		consistencia = config_get_string_value(config_describe , "CONSISTENCY");
 		tiempo_compactacion = config_get_int_value( config_describe , "COMPACTION_TIME");
 
+		log_info(logger_lissandra, "Particiones de %s = %d\n", nombre_tabla , particiones);
+		log_info(logger_lissandra, "Consistencia de %s : %s\n", nombre_tabla, consistencia);
+		log_info(logger_lissandra, "Tiempo de Compactacion de %s : %d\n", nombre_tabla, tiempo_compactacion);
+
 		printf("Particiones de %s : %d\n", nombre_tabla , particiones);
 		printf("Consistencia de %s : %s\n", nombre_tabla, consistencia);
 		printf("Tiempo de Compactacion de %s : %d\n", nombre_tabla, tiempo_compactacion );
 
+		log_info(logger_lissandra, "### DESCRIBE REALIZADO CON EXITO ! ###\n");				// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+
 	 }else{
 
-		 printf("No existe la tabla\n");
+		log_error(logger_lissandra, "### NO EXISTE LA TABLA PEDIDA ###\n");					// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	 }
 
@@ -190,6 +205,8 @@ void request_describe(char* nombre_tabla){
 
 
 void request_describe_global(){
+
+	log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE GLOBAL --\n");					// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
 
@@ -207,19 +224,25 @@ void request_describe_global(){
 				string_append(&path_para_tabla_particular, "/");
 				string_append(&path_para_tabla_particular, tabla->d_name);
 
-				dir2 = opendir(path_para_tabla_particular);
+				if((dir2 = opendir(path_para_tabla_particular)) != NULL){
 
-				while((tabla_particular = readdir(dir2)) != NULL){
+					while((tabla_particular = readdir(dir2)) != NULL){
 
-					if(string_equals_ignore_case(tabla_particular->d_name, "Metadata.config")){
-						request_describe(tabla->d_name);
-						break;
+						if(string_equals_ignore_case(tabla_particular->d_name, "Metadata.config")){
+
+							request_describe(tabla->d_name);
+
+							break;
+						}
 					}
-
 				}
 			}
 		}
 	}
+
+	closedir(dir1);
+
+	log_info(logger_lissandra, "### DESCRIBE GLOBAL REALIZADO CON EXITO ! ###\n");				// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 }
 
@@ -227,8 +250,13 @@ void request_describe_global(){
 
 
 void request_drop(char* nombre_tabla){
+
+	log_info(logger_lissandra, "### SOLICITUD DE -- DROP -- para %s\n", nombre_tabla);			// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+
 	DIR *dir1, *dir2;
+
 	struct dirent* tabla, *tabla_particular;
+
 	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
 
 	abortar_hilo_compactador(nombre_tabla);//ESTO NO SE SI VA ACA O MAS ABAJO
@@ -267,6 +295,8 @@ void request_drop(char* nombre_tabla){
 		}
 	}
 	closedir(dir1);
+
+	log_info(logger_lissandra, "### DROP REALIZADO CON EXITO ! ###\n");						// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 
 

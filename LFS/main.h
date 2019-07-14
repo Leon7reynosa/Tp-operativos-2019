@@ -20,6 +20,10 @@
 
 #include"Propiedades_Funcionamiento/conexiones.h"
 
+t_log* logger_lissandra;
+t_log* logger_lfs;
+t_log* logger_compactador;
+
 void* conectar_memoria(void);
 void pruebas(void);
 void prueba_dump(void);
