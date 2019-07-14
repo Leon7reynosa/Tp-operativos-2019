@@ -150,6 +150,9 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 	 crear_metadata(nombre_tabla, criterio , datos_create->numero_particiones, datos_create->compactacion); //MAL?
 
 	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
+
+	 correr_compactacion(datos_create->compactacion, nombre_tabla);
+
  }
 
 
@@ -227,6 +230,8 @@ void request_drop(char* nombre_tabla){
 	DIR *dir1, *dir2;
 	struct dirent* tabla, *tabla_particular;
 	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
+
+	abortar_hilo_compactador(nombre_tabla);//ESTO NO SE SI VA ACA O MAS ABAJO
 
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){

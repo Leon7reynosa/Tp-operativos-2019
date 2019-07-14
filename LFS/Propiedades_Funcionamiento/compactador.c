@@ -157,6 +157,65 @@ void* compactar(char* nombre_tabla){
 
 }
 
+/////////////////////////////////FUNCIONES COMPACTADOR HILO/////////////////////////////////////77
+
+
+thread_args* crear_argumentos_tabla( int tiempo_compactacion , char* nombre_tabla ){
+
+	thread_args* argumentos_hilo = malloc(sizeof(thread_args));
+
+	argumentos_hilo->tiempo_compactacion = tiempo_compactacion;
+
+	argumentos_hilo->nombre_tabla = malloc(strlen(nombre_tabla ) + 1);
+
+	memcpy(argumentos_hilo->nombre_tabla , nombre_tabla , (strlen(nombre_tabla) + 1));
+
+	return argumentos_hilo;
+}
+
+void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
+
+	thread_args* argumentos_hilos = crear_argumentos_tabla(tiempo_compactacion , nombre_tabla);
+
+	pthread_t hilo_tabla;
+
+	pthread_create(hilo_tabla , NULL , ciclo_compactacion , argumentos_hilos);
+
+	dictionary_put(diccionario_compactador , nombre_tabla , &hilo_tabla);
+
+
+}
+
+void* ciclo_compactacion(thread_args* argumentos){
+
+	while(1){
+
+		usleep(argumentos->tiempo_compactacion);
+
+		compactar(argumentos->nombre_tabla);
+
+	}
+
+	return NULL;
+}
+
+void abortar_hilo_compactador(char* nombre_tabla){
+
+	void _abortar_hilo(void* hilo){
+
+		pthread_t hilo_a_destruir = (pthread_t) hilo;
+
+		pthread_cancel(hilo_a_destruir);
+
+	}
+
+
+	dictionary_remove_and_destroy(diccionario_compactador, nombre_tabla, _abortar_hilo );
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////777
+
 u_int16_t obtener_key_dato(char* dato){
 
 	char** dato_separado = string_split(dato, ";");
