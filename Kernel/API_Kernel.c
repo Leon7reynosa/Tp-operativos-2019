@@ -23,6 +23,8 @@ int ejecutar_request(char* request_lql){
 	char* value = string_new();
 	time_t timestamp;
 
+	describe_t describe_enviar;
+
 	log_info(logger_kernel, request_lql);
 
 	cod_request = identificar_request(request_lql);
@@ -74,12 +76,28 @@ int ejecutar_request(char* request_lql){
 
 				log_info(logger_kernel, "---Se realizara el DESCRIBE para la tabla %s---\n" , nombre_tabla);
 
-				describe_t describe_enviar = crear_dato_describe(nombre_tabla);
+				describe_enviar = crear_dato_describe(nombre_tabla);
 				enviar_request(DESCRIBE, describe_enviar);
 
-				liberar_request(describe_enviar);
-				return 1;
+			}else if(cantidad_parametros == 1){
+
+				log_info(logger_kernel, "---SE REALIZARA UN DESCRIBE GLOBAL--");
+
+				describe_enviar = crear_dato_describe(NULL);
+				enviar_request(DESCRIBE, describe_enviar);
+
+
+			}else{
+				return 0;
 			}
+
+			t_list* lista_describe = recibir_describe(conexion_memoria);
+
+			mostrar_lista_describe(lista_describe);
+
+			//liberar_request(describe_enviar);
+
+			return 1;
 
 		case ADD:
 			if(obtener_parametros_add(request_lql, &numero_memoria, consistencia)){

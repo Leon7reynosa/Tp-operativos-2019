@@ -21,6 +21,15 @@ typedef enum{
 	DESCONEXION
 }cod_operacion;
 
+typedef enum{
+
+	E_CREATE = -3,
+	E_KEY,
+	E_TABLA,
+	SUCCESS
+
+}error_request;
+
 
 struct requestEstructura{
 

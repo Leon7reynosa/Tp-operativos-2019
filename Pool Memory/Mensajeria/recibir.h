@@ -41,5 +41,6 @@ t_dato* recibir_request_LFS(int conexion );
 void* recibir_buffer(int* size,int conexion);
 //cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);
+t_list* recibir_describe(void);
 
 #endif /* RECIBIR_H_ */

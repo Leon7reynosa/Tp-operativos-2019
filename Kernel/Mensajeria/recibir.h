@@ -22,6 +22,7 @@
 #include<netdb.h>
 #include<signal.h>
 #include<ctype.h>
+#include<commons/collections/list.h>
 
 typedef enum{
 	DESCONEXION,

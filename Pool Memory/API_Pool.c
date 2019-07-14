@@ -64,7 +64,11 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case DESCRIBE:
 
+			t_list* metadata_a_enviar = request_describe((describe_t) nueva_request->tipo_request);
 
+			enviar_metadata(metadata_a_enviar, conexion);
+
+			list_destroy_and_destroy_elements(metadata_a_enviar, liberar_metadata);
 
 			break;
 
@@ -134,7 +138,7 @@ Dato request_select(select_t dato){
 	}else{
 		printf("No existe el segmento, lo tenes que crear y pedirle el dato al LFS! \n");
 
-		agregar_segmento(dato->tabla->buffer, memoria->tabla_segmentos);
+		agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
 
 		if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){ //esto lo uso para encontrarlo nomas (el segmento) xd
 			printf("Ahora si existe el segmento\n");
@@ -144,7 +148,7 @@ Dato request_select(select_t dato){
 			exit(1);
 		}
 
-		Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
+		Dato dato_lfs = pedir_dato_al_LFS((char*)dato->tabla->buffer, dato->key);
 
 		//TODO mas de lo mismo que en el elseIf de arriba
 
@@ -185,7 +189,7 @@ void request_insert(insert dato){
 	Pagina pagina_encontrada;
 	Dato dato_insert;
 
-	if(string_length(dato->value->buffer) > tamanio_value){
+	if(string_length((char *)dato->value->buffer) > tamanio_value){
 		printf("SEGMENTATION FAULT! Te pasaste en el tamaño del value \n");
 		return;
 	}
@@ -200,9 +204,9 @@ void request_insert(insert dato){
 		dato->timestamp = timestamp;
 	}
 
-	dato_insert = crear_dato(dato->key, dato->value->buffer, dato->timestamp );
+	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
-	if(existe_segmento(dato->tabla->buffer ,&segmento_tabla)){
+	if(existe_segmento((char *)dato->tabla->buffer ,&segmento_tabla)){
 		printf("Existe el segmento!\n");
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
@@ -223,6 +227,23 @@ void request_insert(insert dato){
 
 	}else{
 		printf("No existe el segmento, deberia crearlo!\n");
+
+		agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
+
+		if(existe_segmento((char *)dato->tabla->buffer, &segmento_tabla)){ //esto lo uso para encontrarlo nomas (el segmento) xd
+			printf("Ahora si existe el segmento\n");
+
+		}else{
+			printf("Deberia existir el segmento, pero me dice que no. NANI?  \n");
+			exit(1);
+		}
+
+		pagina_encontrada = solicitar_pagina();
+		actualizar_pagina(pagina_encontrada, dato_insert);
+		agregar_pagina(segmento_tabla, pagina_encontrada);
+		printf("LA TABLA A AHORA TIENE %i PAGINAS\n", list_size(segmento_tabla->Tabla_paginas));
+		mostrar_datos(pagina_encontrada);
+
 	}
 
 	liberar_dato(dato_insert);
@@ -233,6 +254,28 @@ void request_create(create dato_create){
 
 	enviar_request(CREATE, dato_create);
 
-	//seguir!
+	error_request estado = recibir_estado_request();
+
+	if(estado == SUCCESS){
+		//log
+		agregar_segmento((char *)dato_create->tabla->buffer);
+
+	}else{
+		//log
+	}
+
+	//return estado;
+
+}
+
+t_list* request_describe(describe_t dato_describe){
+
+	enviar_request(DESCRIBE, dato_describe);
+
+	t_list* datos_describe;
+
+	datos_describe = recibir_describe(socket_lissandra);
+
+	return datos_describe;
 
 }

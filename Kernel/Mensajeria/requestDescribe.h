@@ -10,15 +10,27 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
 #include"request.h"
 
 struct describeEstructura{
 	int bytes;
+	bool global;
 	t_stream* tabla;
 };
 
 typedef struct describeEstructura* describe_t;
+
+struct metadataEstructura{
+
+	char* tabla;
+	char* consistencia;
+	int particiones;
+	int tiempo_compactacion;
+};
+
+typedef struct metadataEstructura*  Metadata;
 
 
 describe_t decodificar_describe(int conexion);

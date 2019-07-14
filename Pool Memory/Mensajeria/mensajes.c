@@ -35,10 +35,18 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 		bytes = ((create)(request->tipo_request))->bytes;
 		break;
 
+	case DESCRIBE:
+
+		buffer = serializar_describe(request);
+		bytes =  ((describe_t)(request->tipo_request))->bytes;
+
+		break;
+
 	default:
 		//no deberia entrar aca
 		break;
 	}
+	// ver este send, si manda todo o ke
 	send(socket_lissandra, buffer, bytes, 0);
 
 	free(buffer);
@@ -70,6 +78,37 @@ void enviar_dato(t_dato* dato, int conexion){
 	send(conexion, buffer, bytes, 0);
 
 	free(buffer);
+
+}
+
+void enviar_metadata(t_list* lista_metadata, int conexion){
+
+	int bytes;
+
+	int bytes_enviados = 0;
+	int bytes_restantes;
+	int enviados_aux;
+
+	void* buffer = serializar_metadata(lista_metadata &bytes);
+
+	bytes_restantes = bytes;
+
+	while(bytes_enviados < bytes){
+
+		enviados_aux = send(conexion, buffer, bytes_restantes, 0);
+
+		if(enviados_aux == -1){
+			perror("Send tiro -1");
+			//ver que hacer aca
+		}
+
+		bytes_enviados += enviados_aux;
+		bytes_restantes -= enviados_aux;
+
+	}
+
+	free(buffer);
+
 
 }
 

@@ -88,4 +88,77 @@ void recibir_mensaje(int conexion){
 }
 
 
+t_list* recibir_describe(int conexion){
+
+	int numero_tablas, error_recv;
+
+	int size;
+	char* tabla_recibida, consistencia_recibida;
+	int particiones_recibidas, compactacion_recibida;
+
+	error_recv = recv(conexion, &numero_tablas, sizeof(int), MSG_WAITALL);
+
+	t_list* datos_metadata = list_create();
+
+	if(error_recv == -1){
+		perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
+	}
+
+	for(int i = 0; i < numero_tablas; i++){
+
+		Metadata metadata_recibida;
+
+		error_recv = recv(conexion, &size, sizeof(int), MSG_WAITALL);
+
+		if(error_recv == -1){
+			perror("NO SE RECIBIO EL SIZE DE LA TABLA");
+		}
+
+		tabla_recibida = malloc(size);
+
+		error_recv = recv(conexion, tabla_recibida, sizeof(size), MSG_WAITALL);
+
+		if(error_recv == -1){
+			perror("NO SE RECIBIO LA TABLA");
+		}
+
+		error_recv = recv(conexion, &size, sizeof(int), MSG_WAITALL);
+
+		if(error_recv == -1){
+			perror("NO SE RECIBIO EL SIZE DE LA CONSISTENCIA");
+		}
+
+		consistencia_recibida = malloc(size);
+
+		error_recv = recv(conexion, consistencia_recibida, sizeof(size), MSG_WAITALL);
+
+		if(error_recv == -1){
+			perror("NO SE RECIBIO LA CONSISTENCIA");
+		}
+
+		error_recv = recv(conexion, &particiones_recibidas, sizeof(int), MSG_WAITALL);
+
+		if(error_recv == -1){
+			perror("NO SE RECIBIO EL NUMERO DE PARTICIONES");
+		}
+
+		error_recv = recv(conexion, &compactacion_recibida, sizeof(int), MSG_WAITALL);
+
+		if(error_recv == -1){
+			perror("NO SE RECIBIO EL TIEMPO DE COMPACTACION");
+		}
+
+		metadata_recibida = crear_metadata(tabla_recibida, consistencia_recibida, particiones_recibidas, compactacion_recibida);
+
+		list_add(datos_metadata, metadata_recibida);
+
+		free(tabla_recibida);
+		free(consistencia_recibida);
+
+	}
+
+	return datos_metadata;
+
+}
+
 
