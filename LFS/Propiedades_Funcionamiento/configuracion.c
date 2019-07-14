@@ -7,6 +7,19 @@
 
 #include "configuracion.h"
 
+void realizar_handshake(int conexion){
+
+	//por ahora solo manda tamanio_value
+	int bytes = sizeof(int);
+
+	void* buffer = malloc(bytes);
+
+	memcpy(buffer, &tamanio_value_max, sizeof(int));
+
+	send(conexion, buffer, bytes , 0 );
+
+	free(buffer);
+}
 
 void creacion_del_config_fileSystem(){
 

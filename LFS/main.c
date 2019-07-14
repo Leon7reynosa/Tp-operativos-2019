@@ -21,6 +21,8 @@ int main(){
 
 	int socket_servidor;
 
+	int error_pthread;
+
 	socket_servidor = iniciar_servidor(ip_lfs , puerto_lfs);
 
 	///////////////////////////////MAIN////////////////////////////////////
@@ -28,15 +30,29 @@ int main(){
 	pthread_t administrador_hilos;
 	pthread_t hilo_consola;
 
-	pthread_create(hilo_consola, NULL , consola, NULL);
-	pthread_create(administrador_hilos , NULL , administrar_conexiones_hilos , &socket_servidor);
+	printf("crear los hilos\n");
 
+	error_pthread = pthread_create(&hilo_consola, NULL , consola, NULL);
 
+	if(error_pthread != 0){
+		perror("pthread_create");
+		exit(1);
+	}
 
+	error_pthread = pthread_create(&administrador_hilos , NULL , administrar_conexiones_hilos , &socket_servidor);
 
-	pthread_join(administrador_hilos , NULL);
+	if(error_pthread != 0){
+		perror("pthread_create");
+		exit(1);
+	}
+
+	pthread_detach(administrador_hilos);
 	pthread_join(hilo_consola , NULL);
 
+	//mandaron exit por la consola
+	pthread_cancel(administrador_hilos);
+
+	printf("terminaron los hilos\n");
 	return EXIT_SUCCESS;
 }
 

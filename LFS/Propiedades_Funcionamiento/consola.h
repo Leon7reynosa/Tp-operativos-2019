@@ -15,7 +15,7 @@
 #include<readline/history.h>
 #include<commons/string.h>
 
-void* consola(void);
+void* consola(void* argumento);
 void menu(void);
 
 

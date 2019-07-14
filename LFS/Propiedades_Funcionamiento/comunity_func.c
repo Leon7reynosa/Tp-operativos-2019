@@ -8,64 +8,64 @@
 #include "comunity_func.h"
 
 
-void responder_request(request request, int conexion){
-
-	int bytes;
-	char* tabla;
-	dato_t* dato_respuesta ;
-	void* buffer;
-	char* valor;
-	char* consistencia;
-
-	switch(request->cod_op){
-
-		case SELECT:
-
-			tabla = (char*) ((select_t) request->tipo_request)->tabla->buffer;
-
-			dato_respuesta = request_select( tabla , ((select_t) request)->key  );
-
-			buffer = serializar_dato_t(dato_respuesta, &bytes);
-
-			send(conexion, buffer, bytes , 0 );
-
-			liberar_dato(dato_respuesta);
-
-			break;
-
-		case INSERT:
-
-			tabla = (char*) ((insert) request->tipo_request)->tabla->buffer;
-
-			valor = (char*) ((insert) request->tipo_request)->value->buffer;
-
-			request_insert( tabla, ((insert) request)->key , valor, ((insert) request)->timestamp );
-
-			//log de que se inserto todo en orden (tal vez adentro del insert)
-
-			break;
-
-		case CREATE:
-
-			tabla = (char*) ((create) request->tipo_request)->tabla->buffer;
-
-			consistencia =  (char*) ((create) request->tipo_request)->consistencia->buffer;
-
-			request_create(tabla, consistencia , ((create) request->tipo_request)->numero_particiones, ((create) request->tipo_request)->compactacion);
-
-			//log de que se creo todo en  orden. (tal vez va adentro del create)
-
-			break;
-
-		default:
-
-			//log de error
-
-			break;
-
-	}
-
-}
+//void responder_request(request request, int conexion){
+//
+//	int bytes;
+//	char* tabla;
+//	dato_t* dato_respuesta ;
+//	void* buffer;
+//	char* valor;
+//	char* consistencia;
+//
+//	switch(request->cod_op){
+//
+//		case SELECT:
+//
+//			tabla = (char*) ((select_t) request->tipo_request)->tabla->buffer;
+//
+//			dato_respuesta = request_select( tabla , ((select_t) request)->key  );
+//
+//			buffer = serializar_dato_t(dato_respuesta, &bytes);
+//
+//			send(conexion, buffer, bytes , 0 );
+//
+//			liberar_dato(dato_respuesta);
+//
+//			break;
+//
+//		case INSERT:
+//
+//			tabla = (char*) ((insert) request->tipo_request)->tabla->buffer;
+//
+//			valor = (char*) ((insert) request->tipo_request)->value->buffer;
+//
+//			request_insert( tabla, ((insert) request)->key , valor, ((insert) request)->timestamp );
+//
+//			//log de que se inserto todo en orden (tal vez adentro del insert)
+//
+//			break;
+//
+//		case CREATE:
+//
+//			tabla = (char*) ((create) request->tipo_request)->tabla->buffer;
+//
+//			consistencia =  (char*) ((create) request->tipo_request)->consistencia->buffer;
+//
+//			request_create(tabla, consistencia , ((create) request->tipo_request)->numero_particiones, ((create) request->tipo_request)->compactacion);
+//
+//			//log de que se creo todo en  orden. (tal vez va adentro del create)
+//
+//			break;
+//
+//		default:
+//
+//			//log de error
+//
+//			break;
+//
+//	}
+//
+//}
 
 int calcular_particion(int particion_metadata ,u_int16_t key){
 

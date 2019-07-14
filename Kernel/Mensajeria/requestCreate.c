@@ -105,8 +105,8 @@ create crear_dato_create(char* tabla, char* consistencia, int particiones, time_
 	memcpy(dato->tabla->buffer, tabla, dato->tabla->size);
 
 	dato->consistencia = malloc(sizeof(t_stream));
-	dato->consistencia->buffer = malloc(dato->consistencia->size);
 	dato->consistencia->size = strlen(consistencia) + 1;
+	dato->consistencia->buffer = malloc(dato->consistencia->size);
 	memcpy(dato->consistencia->buffer , consistencia, dato->consistencia->size);
 
 	dato->numero_particiones = particiones;
@@ -114,9 +114,6 @@ create crear_dato_create(char* tabla, char* consistencia, int particiones, time_
 
 	dato->bytes = sizeof(cod_operacion) + sizeof(dato->tabla->size) + dato->tabla->size + sizeof(dato->consistencia->size) + dato->consistencia->size
 				  + sizeof(dato->numero_particiones) + sizeof(dato->compactacion);
-
-	free(tabla);
-	free(consistencia);
 
 	return dato;
 

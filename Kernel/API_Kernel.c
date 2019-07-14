@@ -44,6 +44,7 @@ int ejecutar_request(char* request_lql){
 				log_info(logger_kernel, "---Se realizara el INSERT---\n");
 
 				insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
+
 				enviar_request(INSERT, insert_enviar);
 				return 1;
 			}
@@ -53,7 +54,12 @@ int ejecutar_request(char* request_lql){
 			if(obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion)){
 
 				log_info(logger_kernel , "---Se realizara el CREATE---\n");
-				//enviar_request(CREATE, create_enviar);
+				create create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, tiempo_compactacion);
+
+				printf("se creo el dato create, tabla: %s \n" , create_enviar->tabla->buffer);
+				enviar_request(CREATE, create_enviar);
+				printf("no pasaste el enviar bro\n");
+
 				return 1;
 			}
 			break;
@@ -70,6 +76,8 @@ int ejecutar_request(char* request_lql){
 
 				describe_t describe_enviar = crear_dato_describe(nombre_tabla);
 				enviar_request(DESCRIBE, describe_enviar);
+
+				liberar_request(describe_enviar);
 				return 1;
 			}
 

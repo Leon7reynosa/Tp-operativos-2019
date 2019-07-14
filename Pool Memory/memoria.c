@@ -230,7 +230,13 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	enviar_request(SELECT, dato_select ); // ya se libera la request aca
 
-	dato_recibido = recibir_dato_LFS(socket_lissandra);
+	printf("ESTOY ESPERANDO LA RESPUESTA\n");
+
+	t_dato* dato_crudo = recibir_dato_LFS(socket_lissandra);
+
+	dato_recibido = crear_dato(dato_crudo->key, (char *) dato_crudo->value->buffer, dato_crudo->timestamp);
+
+	liberar_t_dato(dato_crudo);
 
 	return dato_recibido;
 }

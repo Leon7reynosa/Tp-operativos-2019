@@ -44,9 +44,11 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 		break;
 	}
 
+
+	printf("llegue a enviar\n");
 	send(conexion_memoria, buffer, bytes, 0);
 
-	free(buffer);
+	//free(buffer);
 
 	liberar_request(request);
 

@@ -21,6 +21,10 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			dato_request = request_select( (select_t) request_a_operar->tipo_request );
 
+
+
+
+
 			//falta hacer mas cosas aca, habria que reenviarlo al pool
 
 			break;
@@ -28,8 +32,6 @@ void trabajar_request(request request_a_operar , int conexion){
 		case INSERT:
 
 			request_insert((insert) request_a_operar->tipo_request );
-
-			//habra que devolver al pool que todo funciono bien
 
 			break;
 
@@ -59,7 +61,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 }
 
-dato_t* request_select(char* nombre_tabla , int key){ //hay que modificarla para que reciba un select_t
+dato_t* request_select(select_t datos_select){ //hay que modificarla para que reciba un select_t
 
 	 dato_t* dato_binarios;
 
@@ -67,16 +69,20 @@ dato_t* request_select(char* nombre_tabla , int key){ //hay que modificarla para
 
 	 char* path_particion_a_buscar;
 
+	 char* nombre_tabla = (char *)datos_select->tabla->buffer;
+
 	 if(existe_la_tabla(nombre_tabla)){
 
 		 printf("Existe la tabla en el File System\n");
 
 		 metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
-		 int particion_objetivo = calcular_particion(metadata_tabla->particion , key);
+
+		 int particion_objetivo = calcular_particion(metadata_tabla->particion , datos_select->key);
+
 		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
-		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, key);
-         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, key);
+		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, datos_select->key);
+         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
 		 dato_t* dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_binarios);
 
 		 return  dato_mas_nuevo;
@@ -91,10 +97,12 @@ dato_t* request_select(char* nombre_tabla , int key){ //hay que modificarla para
 
 
 
- void request_insert(char* nombre_tabla, int key, char* valor, time_t timestamp){ //hay que modificar para que opere con insert
+ void request_insert(insert datos_insert){ //hay que modificar para que opere con insert
 	 //faltaria ver cuando no le pasamos el timestamp
 	 dato_t* dato_ingresar;
 	 metadata_t* metadata_insert;
+
+	 char* nombre_tabla = (char *) datos_insert->tabla->buffer;
 
 	 if(existe_la_tabla(nombre_tabla)){
 
@@ -102,7 +110,7 @@ dato_t* request_select(char* nombre_tabla , int key){ //hay que modificarla para
 
 		 metadata_insert = obtener_metadata(nombre_tabla);
 
-		 dato_ingresar = crear_dato(key, valor, timestamp);
+		 dato_ingresar = crear_dato(datos_insert->key, (char *)datos_insert->value, datos_insert->timestamp);
 
 		 ingresar_a_memtable(dato_ingresar, nombre_tabla);
 
@@ -116,8 +124,12 @@ dato_t* request_select(char* nombre_tabla , int key){ //hay que modificarla para
  }
 
 
- void request_create(char* nombre_tabla, char* criterio, int numero_particiones, int tiempo_compactacion){
+ void request_create(create datos_create){
 //TODO hay que modificar para que trabaje con la estructura create
+
+	 char* nombre_tabla = (char *)datos_create->tabla->buffer;
+
+	 char* criterio = (char *)datos_create->consistencia->buffer;
 
 	 string_to_upper(nombre_tabla);
 
@@ -135,9 +147,9 @@ dato_t* request_select(char* nombre_tabla , int key){ //hay que modificarla para
 
 	 crear_directorio(path_tabla);
 
-	 crear_metadata(nombre_tabla, criterio, numero_particiones, tiempo_compactacion); //MAL?
+	 crear_metadata(nombre_tabla, criterio , datos_create->numero_particiones, datos_create->compactacion); //MAL?
 
-	 crear_archivos_particiones(nombre_tabla, numero_particiones);
+	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
  }
 
 

@@ -43,8 +43,9 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 
 	free(buffer);
 
-	liberar_request(request);
+	//liberar_request(request); NO!
 
+	free(request);
 }
 
 

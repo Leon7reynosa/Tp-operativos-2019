@@ -39,7 +39,7 @@ typedef struct{
 
 void setear_metadata(void);
 metadata_t* obtener_metadata(char*);
-void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion);
+void crear_metadata(char* nombre_tabla, char* consistencia, int particion, time_t tiempo_Compactacion);
 char* obtener_path_metadata_de_tabla(char* nombre_Tabla);
 void mostrar_metadata_de_tabla(char*);
 char* obtenerPathTabla(char* nombre_Tabla);

@@ -13,13 +13,16 @@ request recibir_request(int conexion){
 	cod_operacion* cod_op = malloc(sizeof(cod_operacion));
 	void* tipo_request;
 	int pene = 0;
+
 	pene = recv(conexion, cod_op,sizeof(cod_operacion),MSG_WAITALL);
+
+	printf("Recibi una request papu!\n");
 
 	if(pene == -1){
 			perror("Fallo al recibir el codigo de operacion.");
 			//aca deberiamos sacar a la memoria de la lista?
 			//aca deberiamos terminar el hilo?
-		}
+	}
 
 	printf("codigo_op : %d\n" , *cod_op);
 	printf("pene: %d\n",pene);
@@ -28,25 +31,34 @@ request recibir_request(int conexion){
 
 		case SELECT:
 
+			printf(">>REALIZAMOS UN SELECT\n");
+
 			tipo_request = decodificar_select(conexion);
 			break;
 
 		case INSERT:
+
+			printf(">>REALIZAMOS UN INSERT\n");
 
 			tipo_request = decodificar_insert(conexion);
 			break;
 
 		case CREATE:
 
+			printf(">>REALIZAMOS UN CREATE\n");
+
 			tipo_request = decodificar_create(conexion);
 			break;
 
 		default:
 
+			printf(">>NO RECONOCI LA REQUEST :/ \n");
+
 			break;
 
 	}
 
+	printf("Creo la estructura request\n");
 	request request = crear_request(*cod_op, tipo_request);
 
 	return request;
@@ -56,7 +68,7 @@ request recibir_request(int conexion){
 
 ///////////////// FUNCIONES VIEJAS ///////////////////////////////7
 
-
+/*
 void* recibir_buffer(int* size, int conexion){
 
 	void* buffer;
@@ -175,6 +187,6 @@ void recibir_mensaje(int conexion){
 	free(buffer);
 
 }
-
+*/
 
 

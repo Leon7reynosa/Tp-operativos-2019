@@ -15,6 +15,7 @@
 #include<commons/config.h>
 #include<readline/readline.h>
 
+#include"Cliente/cliente.h"
 
 int puerto_escucha;
 char* ip_lfs;
@@ -28,10 +29,13 @@ time_t tiempo_journal;
 time_t tiempo_gossiping;
 int numero_memoria;
 
+int tamanio_value;
+int tamanio_dato;
+
 
 t_config* g_config;
 
-
+void realizar_handshake(void);
 void creacion_del_config(void);
 void obtener_datos_config(void);
 

@@ -18,6 +18,8 @@
 
 #include<commons/config.h>
 
+#include"Propiedades_Funcionamiento/conexiones.h"
+
 void* conectar_memoria(void);
 void pruebas(void);
 void prueba_dump(void);

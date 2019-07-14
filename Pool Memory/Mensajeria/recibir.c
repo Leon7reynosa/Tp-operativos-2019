@@ -43,6 +43,7 @@ request recibir_request(int conexion){
 
 		case CREATE:
 
+			printf("Decodifico el create\n");
 			tipo_request = decodificar_create(conexion);
 			break;
 
@@ -63,8 +64,10 @@ request recibir_request(int conexion){
 
 	}
 
+	printf("Creo la request\n");
 	request request = crear_request(*cod_op, tipo_request);
 
+	printf("Request creada\n");
 	return request;
 
 }
@@ -154,7 +157,8 @@ void recibir_mensaje(int conexion){
 */
 //////////////////////////////////////////////////////////////////////////////////////////
 
-Dato recibir_dato_LFS(int conexion ){
+
+t_dato* recibir_dato_LFS(int conexion){
 
 	t_dato* dato_recibido = malloc(sizeof(t_dato));
 
@@ -162,18 +166,12 @@ Dato recibir_dato_LFS(int conexion ){
 
 	int bytes = recv(conexion,&(dato_recibido->key),sizeof(int),MSG_WAITALL);
 
-	printf("RECIBI %d bytes \n",bytes);
-	printf("KEY %d\n",dato_recibido->key);
-
 	if(bytes == -1){
 		perror("NO RECIBIO LA KEY;");
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////
 	bytes = recv(conexion, &(dato_recibido->value->size),sizeof(int),MSG_WAITALL);
-
-	printf("RECIBI %d bytes \n",bytes);
-	printf("SIZE %d\n",dato_recibido->value->size);
 
 	if(bytes == -1){
 			perror("NO RECIBIO EL TAMANIO DEL VALUE;");
@@ -185,13 +183,9 @@ Dato recibir_dato_LFS(int conexion ){
 
 	bytes = recv(conexion, dato_recibido->value->buffer, dato_recibido->value->size,MSG_WAITALL);
 
-	printf("RECIBI %d bytes \n",bytes);
-
 	char* value;
 
 	value = dato_recibido->value->buffer;
-
-	printf("VALUE %s\n",value);
 
 	if(bytes == -1){
 			perror("NO RECIBIO EL VALUE;");
@@ -201,18 +195,11 @@ Dato recibir_dato_LFS(int conexion ){
 
 	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(int),MSG_WAITALL);
 
-	printf("RECIBI %d bytes \n",bytes);
-	printf("TIMESTAMP %d\n\n",dato_recibido->timestamp);
-
 	if(bytes == -1){
 			perror("NO RECIBIO EL TAMANIO DEL VALUE;");
 	}
 
-	Dato nuevo_dato = crear_dato(dato_recibido->key, (char *)dato_recibido->value->buffer, dato_recibido->timestamp);
-
-	liberar_t_dato(dato_recibido);
-
-	return dato_recibido ;
+	return dato_recibido;
 
 }
 

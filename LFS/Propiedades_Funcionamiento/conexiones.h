@@ -16,6 +16,10 @@
 #include"configuracion.h"
 #include"Mensajeria/request.h"
 #include"Mensajeria/recibir.h"
+#include"configuracion.h"
+
+#include"commons/collections/list.h"
+#include<pthread.h>
 
 struct estructuraConexionMemoria{
 
@@ -28,6 +32,10 @@ typedef struct estructuraConexionMemoria* Conexion_memoria;
 
 t_list* memorias_conectadas;  //va a tener una lista de Conexion_memoria
 
+void* administrar_conexiones_hilos(int* socket_servidor);
 void* conectar_varias_memorias(void);
+void destruir_conexion_memoria(Conexion_memoria memoria);
+void* manejar_requests(Conexion_memoria memoria);
+Conexion_memoria crear_conexion_memoria(int conexion);
 
 #endif /* CONEXIONES_H_ */

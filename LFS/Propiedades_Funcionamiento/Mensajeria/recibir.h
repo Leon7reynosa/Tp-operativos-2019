@@ -25,11 +25,12 @@
 
 #include "request.h"
 
+/*
 typedef enum{
 	DESCONEXION,
 	MENSAJE
 }cod_op;
-
+*/
 
 typedef struct{
 	int pedido;
@@ -41,8 +42,8 @@ typedef struct{
 
 void recibir_mensaje(int conexion);
 void* recibir_buffer(int* size,int conexion);
-cod_op determinar_operacion(char* buffer);
+//cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);
-operacion_select* recibir_solicitud(int conexion);
+//operacion_select* recibir_solicitud(int conexion);
 
 #endif /* RECIBIR_H_ */

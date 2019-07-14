@@ -44,4 +44,6 @@ void obtener_datos_metadata(void);
 void crearYObtenerDatos(void);
 void obtenerDatos(void);
 
+void realizar_handshake(int conexion);
+
 #endif /* CONFIGURACION_H_ */

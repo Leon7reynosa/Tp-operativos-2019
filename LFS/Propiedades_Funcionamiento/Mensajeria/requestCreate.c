@@ -28,15 +28,22 @@ create decodificar_create(int conexion){
 		perror("Fallo al recibir el tamaño de la tabla.\n");
 	}
 
+	printf("SIZE TABLA: %i\n", *size_tabla);
+
 	char* tabla = malloc(*size_tabla);
 
 	if(recv(conexion,tabla , *size_tabla,0) == -1){
 		perror("Fallo al recibir la tabla.\n");
 	}
 
+	printf("TABLA: %s\n", tabla);
+
 	if(recv(conexion, size_consistencia ,sizeof(int),0) == -1){
 		perror("Fallo al recibir el tamaño de la consistencia.\n");
 	}
+
+	printf("SIZE CONSISTENCIA: %i\n", *size_consistencia);
+
 
 	char* consistencia = malloc(*size_consistencia);
 
@@ -44,13 +51,19 @@ create decodificar_create(int conexion){
 		perror("Fallo al recibir la consistencia.\n");
 	}
 
+	printf("CONSISTENCIA: %s\n", consistencia);
+
 	if(recv(conexion,numero_particiones ,sizeof(int),0) == -1){
 		perror("Fallo al recibir los numeros de particiones.\n");
 	}
 
+	printf("NUMERO PARTICIONES: %i\n", *numero_particiones);
+
 	if(recv(conexion,compactacion ,sizeof(time_t),0) == -1){
 		perror("Fallo al recibir la compactación.\n");
 	}
+
+	printf("COMPACTACION: %i\n", *compactacion);
 
 	create dato = crear_dato_create(tabla, consistencia, *numero_particiones, *compactacion);
 
@@ -75,8 +88,8 @@ create crear_dato_create(char* tabla, char* consistencia, int particiones, time_
 	memcpy(dato->tabla->buffer, tabla, dato->tabla->size);
 
 	dato->consistencia = malloc(sizeof(t_stream));
-	dato->consistencia->buffer = malloc(dato->consistencia->size);
 	dato->consistencia->size = strlen(consistencia) + 1;
+	dato->consistencia->buffer = malloc(dato->consistencia->size);
 	memcpy(dato->consistencia->buffer , consistencia, dato->consistencia->size);
 
 	dato->numero_particiones = particiones;

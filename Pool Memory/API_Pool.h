@@ -19,7 +19,7 @@
 #include<sys/stat.h>
 #include<stdbool.h>
 
-#include"Config/configuracion.h"
+#include"Mensajeria/configuracion.h"
 #include"Mensajeria/recibir.h"
 #include"Mensajeria/mensajes.h"
 #include"Mensajeria/requestGossiping.h"

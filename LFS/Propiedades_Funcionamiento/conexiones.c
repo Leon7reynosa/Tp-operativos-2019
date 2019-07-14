@@ -98,6 +98,9 @@ void* administrar_conexiones_hilos(int* socket_servidor){
 		list_add(memorias_conectadas , nueva_conexion_memoria);
 
 
+		realizar_handshake(nueva_conexion_memoria->socket_memoria);
+
+
 	}
 
 	return NULL;
@@ -106,11 +109,19 @@ void* administrar_conexiones_hilos(int* socket_servidor){
 
 Conexion_memoria crear_conexion_memoria( int conexion ){
 
+	int error_pthread;
 	Conexion_memoria memoria_nueva = malloc(sizeof(struct estructuraConexionMemoria));
 
 	memoria_nueva->socket_memoria = conexion;
 
-	pthread_create(&(memoria_nueva->hilo_memoria) , NULL , manejar_requests , memoria_nueva);
+	error_pthread = pthread_create(&(memoria_nueva->hilo_memoria) , NULL , manejar_requests , memoria_nueva);
+
+	if(error_pthread != 0){
+		perror("pthread_create");
+		pthread_exit(NULL);
+	}
+
+	pthread_detach(memoria_nueva->hilo_memoria);
 
 	return memoria_nueva;
 }
@@ -122,6 +133,7 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 	while(1){
 
+		printf("Voy a manejar una request\n");
 		request_recibida = recibir_request(memoria_conectada->socket_memoria);
 
 		if(request_recibida->cod_op == DESCONEXION){
@@ -133,7 +145,7 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 			pthread_exit(NULL);
 
 		}else{
-
+			printf("Trabajo la request\n");
 			trabajar_request(request_recibida, memoria_conectada->socket_memoria); //nos faltaria esta funcion
 
 		}
@@ -144,7 +156,7 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 	}
 
-
+	return NULL;
 }
 
 void desconectar_memoria(Conexion_memoria memoria_a_desconectar){

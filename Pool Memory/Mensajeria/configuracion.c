@@ -7,6 +7,25 @@
 
 #include "configuracion.h"
 
+void realizar_handshake(void){
+
+	int bytes_recibidos;
+
+	socket_lissandra = conectar_servidor(ip_lfs, puerto_lfs);
+
+	if(socket_lissandra < 0){
+		printf("Error al conectar con LissandraFileSystem, intentarlo mas tarde.\n");
+		exit(1);
+	}
+
+	bytes_recibidos = recv(socket_lissandra, &tamanio_value, sizeof(int), 0);
+
+	if(bytes_recibidos < 0){
+		printf("No pude recibir el tamanio del value\n No se realizo correctamente el handshake\n");
+		exit(1);
+	}
+
+}
 
 void creacion_del_config(){
 
@@ -14,7 +33,7 @@ void creacion_del_config(){
 
 	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
 	config_set_value(g_config, "IP_LFS", "127.0.0.1");
-	config_set_value(g_config, "PUERTO_LFS", "4444");
+	config_set_value(g_config, "PUERTO_LFS", "4445");
 	config_set_value(g_config, "RETARDO_MEMORIA", "600");
 	config_set_value(g_config, "RETARDO_LFS", "600");
 	config_set_value(g_config, "TAMANIO_MEMORIA", "2048");

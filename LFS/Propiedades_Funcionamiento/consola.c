@@ -7,20 +7,22 @@
 
 #include"consola.h"
 
-void* consola(){
+void* consola(void* argumento){
 
-	char* leido = " ";
+	char* leido = string_new();
 
 	menu();
 
-	while(strcmp(leido, "exit") || string_is_empty(leido)){
+	while(!string_equals_ignore_case(leido, "exit")){
+		printf("Entre al while\n");
+		free(leido);
 
+		leido = readline("");
 
-		leido = readline(">>");
-
-		printf("solicitud : %S\n" , leido);
+		printf("solicitud : %s\n" , leido);
 	}
 
+	free(leido);
 
 	return NULL;
 }

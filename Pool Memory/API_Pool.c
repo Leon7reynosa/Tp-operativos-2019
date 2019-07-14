@@ -55,6 +55,9 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case CREATE:
 
+			request_create((create) nueva_request->tipo_request );
+
+			printf("SE REALIZO PIOLA EL CREATE\n");
 
 
 			break;
@@ -124,7 +127,7 @@ Dato request_select(select_t dato){
 			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
 																								  //lo mismo
 
-			mostrar_dato(pagina_encontrada);
+			//mostrar_dato(pagina_encontrada);
 
 		}
 
@@ -168,7 +171,7 @@ Dato request_select(select_t dato){
 
 		dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
 																							 //lo mismo
-		mostrar_dato(pagina_encontrada);
+		//mostrar_dato(pagina_encontrada);
 
 
 	}

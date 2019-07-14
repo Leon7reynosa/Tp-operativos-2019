@@ -49,12 +49,6 @@ void liberar_request(request request_a_liberar){
 
 			break;
 
-		case GOSSIP:
-
-			liberar_dato_gossiping(request_a_liberar->tipo_request);
-
-			break;
-
 		default:
 
 			break;

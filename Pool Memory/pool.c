@@ -9,10 +9,13 @@
 
 int main (void){
 
+	creacion_del_config();
+
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
 	obtener_datos_config();
-//TODO HANDSHAKE CON LISSANDRA
-	tamanio_value = 50;
+//TODO HANDSHAKE CON LISSANDRA (en archivo config por ahora)
+	realizar_handshake();
+
 	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
 
 	t_list* tablas = list_create();
@@ -83,6 +86,8 @@ int main (void){
 					printf("\n//////////////////////////////////////////////////////// NUEVA REQUEST c: ////////////////////////////////////////////////\n");
 					request nueva_request = recibir_request(i);
 
+					printf("codigo_ %d\n" , nueva_request->cod_op);
+
 //TODO Esta ranciada de la desconexion y los errores
 
 					if(nueva_request->cod_op == DESCONEXION){
@@ -93,7 +98,9 @@ int main (void){
 
 					}else{
 
+					//DOUBLE FREE CORRUPTION, OJO EN EL ENVIAR_REQUEST, ESTOY GENERANDO DENUEVO UNA REQUEST Y LA LIBERO AHI! ojo
 					trabajar_request(nueva_request, i);
+
 					}
 //TODO OJO AL LIBERAR UNA DESCONEXION, NO PUEDO HACER FREE DE NULL!!!!!!
 					liberar_request(nueva_request);

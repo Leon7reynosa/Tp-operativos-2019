@@ -228,18 +228,20 @@ char* obtenerPathDirectorio_Tablas(){
 	return path;
 }
 
-void crear_metadata(char* nombre_tabla, char* consistencia, int particion, int tiempo_Compactacion){
+void crear_metadata(char* nombre_tabla, char* consistencia, int particion, time_t tiempo_Compactacion){
+
 	t_config* metadata_config;
-	char* particionAux = string_new();
-	char* tiempo_compactacionAux = string_new();
+	char* particionAux;
+	char* tiempo_compactacionAux;
 	char* pathMetadata = obtener_path_metadata_de_tabla(nombre_tabla);
 
 	particionAux = string_itoa(particion);
 	tiempo_compactacionAux = string_itoa(tiempo_Compactacion);
 
+	FILE* archivo_metadata = fopen(pathMetadata, "wb+");
+	fclose(archivo_metadata);
 
 	metadata_config = config_create(pathMetadata);
-	config_save_in_file(metadata_config, pathMetadata);
 
 	config_set_value(metadata_config,"CONSISTENCY", consistencia);
 	config_set_value(metadata_config, "PARTITIONS", particionAux);
