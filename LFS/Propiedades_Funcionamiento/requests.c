@@ -12,6 +12,7 @@
 void trabajar_request(request request_a_operar , int conexion){
 
 	dato_t* dato_request;
+	t_list* metadata_describe;
 
 	switch( request_a_operar->cod_op ){
 
@@ -31,11 +32,15 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case INSERT:
 
+			printf("Se realizara Insert\n");
+
 			request_insert((insert) request_a_operar->tipo_request );
 
 			break;
 
 		case CREATE:
+
+			printf("Se realizara Create\n");
 
 			request_create( (create) request_a_operar->tipo_request);
 
@@ -45,8 +50,23 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case DESCRIBE:
 
+			printf("Se realizara Describe\n");
 
-			request_describe( (describe_t) request_a_operar->tipo_request );
+			metadata_describe = request_describe( (describe_t) request_a_operar->tipo_request );
+
+			printf("Obtuve la lista de metadatas\n");
+
+			if(metadata_describe != NULL){
+
+				printf("No es nula, entonces se la envio a la memoria\n");
+				enviar_metadata(metadata_describe, conexion);
+
+				printf("Se la envie correctamente\n");
+				list_destroy_and_destroy_elements(metadata_describe, liberar_metadata);
+
+			}else{
+				//NOSE!
+			}
 
 			printf("TERMINO EL DESCRIBE BRO\n");
 
@@ -165,65 +185,105 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
  }
 
-void request_describe(describe_t request){
+t_list* request_describe(describe_t request){
 
 	printf("Realizo la request\n");
 
+	t_list* metadatas;
+
 	if( request->global ){
 
-		request_describe_global();
+		printf("Realizo request_describe_global\n");
+		metadatas = request_describe_global();
 
 	}else{
 
-		request_describe_particular((char*) request->tabla->buffer);
+		printf("Realizo request_describe_particular\n");
+
+		Metadata metadata_obtenida = request_describe_particular((char*) request->tabla->buffer);
+
+		printf("Termine de hacer request_describe_particular\n");
+
+		printf("La estructura metadata (que obtuve al realizar el request_describe) tiene:\n");
+		printf("tabla: %s\n",(char *) metadata_obtenida->tabla->buffer);
+		printf("consistencia: %s\n", (char *)metadata_obtenida->consistencia->buffer);
+		printf("particiones: %i\n", metadata_obtenida->particiones);
+		printf("compactacion: %i\n",metadata_obtenida->tiempo_compactacion);
+
+		if(metadata_obtenida != NULL){
+
+			printf("Creo la lista de metadatas\n");
+			metadatas = list_create();
+
+			printf("Le añado metadata obtenida\n");
+			list_add(metadatas, metadata_obtenida);
+
+		}else{
+			metadatas = NULL;
+		}
 
 	}
+
+	return metadatas;
 
 }
 
 
-void request_describe_particular(char* nombre_tabla){
+Metadata request_describe_particular(char* nombre_tabla){
 
-	log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE -- para %s\n", nombre_tabla); // LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+	//log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE -- para %s\n", nombre_tabla); // LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	t_config* config_describe;
 
-	char* path_tabla_metadata = obtener_path_metadata_de_tabla(nombre_tabla);
-
-	printf("path de la metadata: %s\n" , path_tabla_metadata);
+	Metadata metadata_tabla;
 
 	if(existe_la_tabla(nombre_tabla)){
+		printf("Existe la tabla!\n");
+
+		printf("Obtengo el path metadata de la tabla: \n");
+		char* path_tabla_metadata = obtener_path_metadata_de_tabla(nombre_tabla);
+		printf("path de la metadata: %s\n" , path_tabla_metadata);
 
 		int particiones;
 		char* consistencia;
 		int tiempo_compactacion;
 
+		printf("Uso el config\n");
 		config_describe = config_create(path_tabla_metadata);
 
 		particiones = config_get_int_value(config_describe , "PARTITIONS");
 		consistencia = config_get_string_value(config_describe , "CONSISTENCY");
 		tiempo_compactacion = config_get_int_value( config_describe , "COMPACTION_TIME");
 
-		log_info(logger_lissandra, "Particiones de %s = %d\n", nombre_tabla , particiones);
-		log_info(logger_lissandra, "Consistencia de %s : %s\n", nombre_tabla, consistencia);
-		log_info(logger_lissandra, "Tiempo de Compactacion de %s : %d\n", nombre_tabla, tiempo_compactacion);
+		printf("Obtuvo los datos con el config: \n");
+		printf("particiones: %i\n", particiones);
+		printf("consistencia: %i\n", consistencia);
+		printf("tiempo_compactacion: %i\n", tiempo_compactacion);
+//		log_info(logger_lissandra, "Particiones de %s = %d\n", nombre_tabla , particiones);
+//		log_info(logger_lissandra, "Consistencia de %s : %s\n", nombre_tabla, consistencia);
+//		log_info(logger_lissandra, "Tiempo de Compactacion de %s : %d\n", nombre_tabla, tiempo_compactacion);
 
-		printf("Particiones de %s : %d\n", nombre_tabla , particiones);
-		printf("Consistencia de %s : %s\n", nombre_tabla, consistencia);
-		printf("Tiempo de Compactacion de %s : %d\n", nombre_tabla, tiempo_compactacion );
+		printf("Creo una estructura metadata para enviarle a la memoria\n");
+		metadata_tabla = crear_estructura_metadata(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
-		log_info(logger_lissandra, "### DESCRIBE REALIZADO CON EXITO ! ###\n");				// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+//		log_info(logger_lissandra, "### DESCRIBE REALIZADO CON EXITO ! ###\n");				// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+
+		printf("destruyo el config\n");
+		config_destroy(config_describe);
+
+		free(path_tabla_metadata);
 
 	 }else{
+		printf("no existe la tabla\n");
+//		log_error(logger_lissandra, "### NO EXISTE LA TABLA PEDIDA ###\n");					// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
-		log_error(logger_lissandra, "### NO EXISTE LA TABLA PEDIDA ###\n");					// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
-
+		metadata_tabla = NULL;
 	 }
 
+	return metadata_tabla;
 }
 
-
-void request_describe_global(){
+t_list* request_describe_global(void){
 
 	log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE GLOBAL --\n");					// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -232,7 +292,10 @@ void request_describe_global(){
 	DIR *dir1, *dir2;
 	struct dirent *tabla, *tabla_particular;
 
+	t_list* metadatas = list_create();
+
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
+
 		while((tabla = readdir(dir1)) != NULL){
 
 			if(!string_equals_ignore_case(tabla->d_name, ".") && !string_equals_ignore_case(tabla->d_name, "..")){
@@ -249,20 +312,40 @@ void request_describe_global(){
 
 						if(string_equals_ignore_case(tabla_particular->d_name, "Metadata.config")){
 
-							request_describe(tabla->d_name);
+							Metadata metadata_obtenida = request_describe(tabla->d_name);
+
+							list_add(metadatas , metadata_obtenida);
 
 							break;
 						}
+
 					}
+
+					closedir(dir2); //CHINO? esto nose si estara bien, pero abajo cerrar el dir1, supongo que el dir2 tambien
+
 				}
+
+				free(path_para_tabla_particular);
+
 			}
+
 		}
+
 	}
 
 	closedir(dir1);
+	free(path_directorio_tabla);
+
+	//no deberia pasar, pero q c yo
+	if(list_size(metadatas) <= 0){
+		list_destroy(metadatas);
+		metadatas = NULL;
+	}
 
 	log_info(logger_lissandra, "### DESCRIBE GLOBAL REALIZADO CON EXITO ! ###\n");				// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+	return metadatas;
 }
 
 

@@ -26,8 +26,8 @@ typedef struct describeEstructura* describe_t;
 
 struct metadataEstructura{
 
-	char* tabla;
-	char* consistencia;
+	t_stream* tabla;
+	t_stream* consistencia;
 	int particiones;
 	int tiempo_compactacion;
 };

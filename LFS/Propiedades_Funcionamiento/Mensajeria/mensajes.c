@@ -21,6 +21,39 @@ void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
 	return msg_Ser;
 }
 
+void enviar_metadata(t_list* metadatas, int conexion){
+
+	int bytes;
+	void* buffer;
+
+	int bytes_restantes, bytes_enviados = 0, enviados_aux;
+
+	printf("Serializo las metadatas\n");
+	buffer = serializar_metadata(metadatas, &bytes);
+
+	printf("Serialize las metadatas\n");
+
+	bytes_restantes = bytes;
+
+	printf("bytes a enviar = %i\n", bytes);
+
+	while(bytes_enviados < bytes){
+
+		printf("Envio las metadata serializada\n");
+		enviados_aux = send(conexion, buffer + bytes_enviados, bytes_restantes, 0);
+
+		if(enviados_aux == -1){
+			perror("Send tiro -1");
+			//ver que hacer aca
+		}
+
+		bytes_enviados += enviados_aux;
+		bytes_restantes -= enviados_aux;
+
+	}
+
+}
+
 void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes){
 
 	void* dato_serializado;

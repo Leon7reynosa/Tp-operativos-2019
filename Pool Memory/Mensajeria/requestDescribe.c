@@ -30,7 +30,7 @@ void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
 
 		size_tabla = string_length(metadata->tabla) + 1;
 
-		size_consistencia = string_length(metadata->tabla) + 1;
+		size_consistencia = string_length(metadata->consistencia) + 1;
 
 		bytes += sizeof(int) + size_tabla + sizeof(int) + size_consistencia + sizeof(int)*2 ;
 

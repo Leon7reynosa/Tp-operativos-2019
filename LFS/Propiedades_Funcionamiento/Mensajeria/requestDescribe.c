@@ -19,46 +19,56 @@ void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
 	//le mando la cantidad de tablas primero
 	cantidad_tablas = list_size(lista_metadata);
 
+	printf("Cantidad de tablas: %i\n", cantidad_tablas);
+
 	memcpy(buffer + desplazamiento, &cantidad_tablas, sizeof(int));
 	desplazamiento += sizeof(int);
 
 	bytes += sizeof(int);
 
+	printf("Bytes despues de copiar la cantidad de tablas = %i\n", bytes);
+
 	void _serializar_metadata(void* _metadata){
 
 		Metadata metadata = (Metadata)_metadata;
 
-		size_tabla = string_length(metadata->tabla) + 1;
 
-		size_consistencia = string_length(metadata->tabla) + 1;
+		bytes += sizeof(int) + metadata->tabla->size + sizeof(int) + metadata->consistencia->size + sizeof(int)*2 ;
+		printf("Los bytes ahora son: %i\n", bytes);
 
-		bytes += sizeof(int) + size_tabla + sizeof(int) + size_consistencia + sizeof(int)*2 ;
-
+		printf("Hago realloc del buffer\n");
 		buffer = realloc(buffer, bytes);
 
-		memcpy(buffer + desplazamiento, &size_tabla, sizeof(int));
+		printf("Hago los memcpy\n");
+		memcpy(buffer + desplazamiento, &(metadata->tabla->size), sizeof(int));
 		desplazamiento += sizeof(int);
 
-		memcpy(buffer + desplazamiento, metadata->tabla, size_tabla);
-		desplazamiento += size_tabla;
+		memcpy(buffer + desplazamiento, metadata->tabla->buffer, metadata->tabla->size);
+		desplazamiento += metadata->tabla->size;
 
-		memcpy(buffer + desplazamiento, &size_consistencia, sizeof(int)),
+		memcpy(buffer + desplazamiento, &(metadata->consistencia->size), sizeof(int)),
 		desplazamiento += sizeof(int);
 
-		memcpy(buffer + desplazamiento, metadata->consistencia, size_consistencia);
-		desplazamiento += size_consistencia;
+		memcpy(buffer + desplazamiento, metadata->consistencia->buffer, metadata->consistencia->size);
+		desplazamiento += metadata->consistencia->size;
 
 		memcpy(buffer + desplazamiento, &(metadata->particiones), sizeof(int));
 		desplazamiento += sizeof(int);
 
 		memcpy(buffer + desplazamiento, &(metadata->tiempo_compactacion), sizeof(int));
 		desplazamiento += sizeof(int);
+
+		printf("Termine los memcpy\n");
+		printf("Desplazamiento = %i y deberia ser = a los bytes = %i\n", desplazamiento, bytes);
 	}
 
+	printf("itero la lista de metadatas para meterlas en el buffer\n");
 	list_iterate(lista_metadata, _serializar_metadata);
 
+	printf("Termine de iterar\n");
 	*bytes_a_enviar = bytes;
 
+	printf("Bytes_a_enviar: %i\n", *bytes_a_enviar);
 	return buffer;
 }
 
@@ -66,18 +76,20 @@ Metadata crear_estructura_metadata(char* tabla, char* consistencia, int particio
 
 	Metadata dato_metadata = malloc(sizeof(struct metadataEstructura));
 
-	int size = string_length(tabla) + 1;
+	dato_metadata->tabla = malloc(sizeof(t_stream));
+	dato_metadata->tabla->size = string_length(tabla) + 1;
+	dato_metadata->tabla->buffer = malloc(dato_metadata->tabla->size);
+	memcpy(dato_metadata->tabla->buffer, tabla, dato_metadata->tabla->size);
 
-	dato_metadata->tabla = malloc(size);
-	memcpy(dato_metadata->tabla, tabla, size);
-
-	size = string_length(consistencia) + 1;
-
-	dato_metadata->consistencia = malloc(size);
-	memcpy(dato_metadata->consistencia, consistencia, size);
+	dato_metadata->consistencia = malloc(sizeof(t_stream));
+	dato_metadata->consistencia->size =  string_length(consistencia) + 1;
+	dato_metadata->consistencia->buffer = malloc(dato_metadata->consistencia->size);
+	memcpy(dato_metadata->consistencia->buffer, consistencia, dato_metadata->consistencia->size);
 
 	dato_metadata->particiones = particiones;
+	printf("10\n");
 	dato_metadata->tiempo_compactacion = compactacion;
+	printf("11\n");
 
 	return dato_metadata;
 
@@ -85,8 +97,10 @@ Metadata crear_estructura_metadata(char* tabla, char* consistencia, int particio
 
 void liberar_metadata(Metadata metadata_a_liberar){
 
+	free(metadata_a_liberar->tabla->buffer);
 	free(metadata_a_liberar->tabla);
 
+	free(metadata_a_liberar->consistencia->buffer);
 	free(metadata_a_liberar->consistencia);
 
 	free(metadata_a_liberar);

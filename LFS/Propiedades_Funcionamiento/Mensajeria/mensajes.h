@@ -25,8 +25,9 @@
 #include"requestInsert.h"
 #include"requestCreate.h"
 
-#define TAMANIO_MAX_VALUE 50
+#include<commons/collections/list.h>
 
+#define TAMANIO_MAX_VALUE 50
 
 typedef struct{
 
@@ -51,6 +52,8 @@ void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes);
 void mandar_mensaje(int conexion);
 void mandar_select(int conexion , dato_t* dato);
 void eliminar_tStream(t_stream* tStream);
+
+void enviar_metadata(t_list* metadatas, int conexion);
 
 
 #endif /* MENSAJES_H_ */
