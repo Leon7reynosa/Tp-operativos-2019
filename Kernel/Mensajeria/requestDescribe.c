@@ -7,7 +7,35 @@
 
 #include"requestDescribe.h"
 
+Metadata crear_metadata(char* tabla, char* consistencia, int particiones, int compactacion){
 
+	Metadata dato_metadata = malloc(sizeof(struct metadataEstructura));
+
+	int size = string_length(tabla) + 1;
+
+	dato_metadata->tabla = malloc(size);
+	memcpy(dato_metadata->tabla, tabla, size);
+
+	size = string_length(consistencia) + 1;
+
+	dato_metadata->consistencia = malloc(size);
+	memcpy(dato_metadata->consistencia, consistencia, size);
+
+	dato_metadata->particiones = particiones;
+	dato_metadata->tiempo_compactacion = compactacion;
+
+	return dato_metadata;
+
+}
+
+void liberar_metadata(Metadata metadata_a_liberar){
+
+	free(metadata_a_liberar->tabla);
+
+	free(metadata_a_liberar->consistencia);
+
+	free(metadata_a_liberar);
+}
 
 void* serializar_describe(request request_describe){
 
@@ -21,12 +49,16 @@ void* serializar_describe(request request_describe){
 	memcpy( buffer_serializado + desplazamiento , &(dato_describe->global) , sizeof(dato_describe->global) );
 	desplazamiento += sizeof(dato_describe->global);
 
-	memcpy(buffer_serializado + desplazamiento, &(dato_describe->tabla->size) , sizeof(dato_describe->tabla->size) );
-	desplazamiento += sizeof(dato_describe->tabla->size);
+	if(!dato_describe->global){
 
-	memcpy(buffer_serializado + desplazamiento, dato_describe->tabla->buffer, dato_describe->tabla->size);
-	desplazamiento += dato_describe->tabla->size;
+		printf("Size tabla: %i\n", dato_describe->tabla->size);
+		memcpy(buffer_serializado + desplazamiento, &(dato_describe->tabla->size) , sizeof(dato_describe->tabla->size) );
+		desplazamiento += sizeof(dato_describe->tabla->size);
 
+		memcpy(buffer_serializado + desplazamiento, dato_describe->tabla->buffer, dato_describe->tabla->size);
+		desplazamiento += dato_describe->tabla->size;
+
+	}
 	return buffer_serializado;
 }
 
@@ -34,20 +66,24 @@ void* serializar_describe(request request_describe){
 describe_t crear_dato_describe(char* nombre_tabla){
 	describe_t dato_describe = malloc(sizeof(struct describeEstructura));
 
+	printf("Creo el dato_descrit_t \n");
 	if(nombre_tabla != NULL){
 
 		dato_describe->global = false;
 
 		dato_describe->tabla = malloc(sizeof(t_stream));
 
-		dato_describe->tabla->size = sizeof(nombre_tabla) + 1;
+		dato_describe->tabla->size = string_length(nombre_tabla) + 1;
 
 		dato_describe->tabla->buffer = malloc(dato_describe->tabla->size);
 
 		memcpy(dato_describe->tabla->buffer , nombre_tabla , dato_describe->tabla->size);
 
-		dato_describe->bytes = sizeof(cod_operacion) + sizeof(dato_describe->tabla->size) + dato_describe->tabla->size;
+		printf("Tabla: %s\n",(char *) dato_describe->tabla->buffer);
 
+		dato_describe->bytes = sizeof(cod_operacion) + sizeof(bool) + sizeof(dato_describe->tabla->size) + dato_describe->tabla->size;
+
+		printf("Bytes: %i\n", dato_describe->bytes);
 
 	}
 	else{

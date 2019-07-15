@@ -12,6 +12,7 @@ void trabajar_request(request nueva_request , int conexion){
 	Dato dato_select;
 	t_dato* dato_a_enviar;
 	tabla_gossip_dto tabla_recibida;
+	t_list* metadata_a_enviar;
 
 	switch(nueva_request->cod_op){
 
@@ -64,8 +65,10 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case DESCRIBE:
 
-			t_list* metadata_a_enviar = request_describe((describe_t) nueva_request->tipo_request);
+			printf("Se realizar el describe\n");
+			metadata_a_enviar = request_describe((describe_t) nueva_request->tipo_request);
 
+			printf("Se envia la lista de metadata\n");
 			enviar_metadata(metadata_a_enviar, conexion);
 
 			list_destroy_and_destroy_elements(metadata_a_enviar, liberar_metadata);
@@ -254,26 +257,28 @@ void request_create(create dato_create){
 
 	enviar_request(CREATE, dato_create);
 
-	error_request estado = recibir_estado_request();
+//	error_request estado = recibir_estado_request();
 
-	if(estado == SUCCESS){
+/*	if(estado == SUCCESS){
 		//log
 		agregar_segmento((char *)dato_create->tabla->buffer);
 
 	}else{
 		//log
 	}
-
+*/
 	//return estado;
 
 }
 
 t_list* request_describe(describe_t dato_describe){
 
+	printf("Envio al LFS la request DESCRIBE\n");
 	enviar_request(DESCRIBE, dato_describe);
 
 	t_list* datos_describe;
 
+	printf("espero la respuesta del LFS\n");
 	datos_describe = recibir_describe(socket_lissandra);
 
 	return datos_describe;

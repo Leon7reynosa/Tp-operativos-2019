@@ -45,6 +45,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case DESCRIBE:
 
+
 			request_describe( (describe_t) request_a_operar->tipo_request );
 
 			printf("TERMINO EL DESCRIBE BRO\n");
@@ -164,16 +165,17 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
  }
 
-void request_describe( describe_t request_describe ){
+void request_describe(describe_t request){
 
+	printf("Realizo la request\n");
 
-	if( request_describe->global ){
+	if( request->global ){
 
 		request_describe_global();
 
 	}else{
 
-		request_describe_particular((char*) request_describe->tabla->buffer);
+		request_describe_particular((char*) request->tabla->buffer);
 
 	}
 

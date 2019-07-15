@@ -37,7 +37,9 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 
 	case DESCRIBE:
 
+		printf("Serializo buffer\n");
 		buffer = serializar_describe(request);
+		printf("Saco los bytes\n");
 		bytes =  ((describe_t)(request->tipo_request))->bytes;
 
 		break;
@@ -47,6 +49,7 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 		break;
 	}
 	// ver este send, si manda todo o ke
+	printf("mando la request\n");
 	send(socket_lissandra, buffer, bytes, 0);
 
 	free(buffer);
@@ -89,13 +92,17 @@ void enviar_metadata(t_list* lista_metadata, int conexion){
 	int bytes_restantes;
 	int enviados_aux;
 
-	void* buffer = serializar_metadata(lista_metadata &bytes);
+	printf("serializo las metadatas\n");
+	void* buffer = serializar_metadata(lista_metadata, &bytes);
+
+	printf("Bytes a enviar: %i\n", bytes);
 
 	bytes_restantes = bytes;
 
 	while(bytes_enviados < bytes){
 
-		enviados_aux = send(conexion, buffer, bytes_restantes, 0);
+		printf("Envio las metadata serializada\n");
+		enviados_aux = send(conexion, buffer + bytes_enviados, bytes_restantes, 0);
 
 		if(enviados_aux == -1){
 			perror("Send tiro -1");

@@ -214,12 +214,17 @@ t_list* recibir_describe(int conexion){
 
 	error_recv = recv(conexion, &numero_tablas, sizeof(int), MSG_WAITALL);
 
+	printf("LLEGO LA RESPUESTA\n");
+
+	printf("Cant tablas: %i\n", numero_tablas);
+
 	t_list* datos_metadata = list_create();
 
 	if(error_recv == -1){
 		perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
 	}
 
+	printf("Recibo el/los datos metadata\n");
 	for(int i = 0; i < numero_tablas; i++){
 
 		Metadata metadata_recibida;
@@ -230,6 +235,8 @@ t_list* recibir_describe(int conexion){
 			perror("NO SE RECIBIO EL SIZE DE LA TABLA");
 		}
 
+		printf("size tabla: %i\n", size);
+
 		tabla_recibida = malloc(size);
 
 		error_recv = recv(conexion, tabla_recibida, sizeof(size), MSG_WAITALL);
@@ -238,11 +245,15 @@ t_list* recibir_describe(int conexion){
 			perror("NO SE RECIBIO LA TABLA");
 		}
 
+		printf("tabla: %s\n", tabla_recibida);
+
 		error_recv = recv(conexion, &size, sizeof(int), MSG_WAITALL);
 
 		if(error_recv == -1){
 			perror("NO SE RECIBIO EL SIZE DE LA CONSISTENCIA");
 		}
+
+		printf("size consistencia: %i\n", size);
 
 		consistencia_recibida = malloc(size);
 
@@ -252,11 +263,15 @@ t_list* recibir_describe(int conexion){
 			perror("NO SE RECIBIO LA CONSISTENCIA");
 		}
 
+		printf("consistencia: %s\n", consistencia_recibida);
+
 		error_recv = recv(conexion, &particiones_recibidas, sizeof(int), MSG_WAITALL);
 
 		if(error_recv == -1){
 			perror("NO SE RECIBIO EL NUMERO DE PARTICIONES");
 		}
+
+		printf("particiones: %i\n", particiones_recibidas);
 
 		error_recv = recv(conexion, &compactacion_recibida, sizeof(int), MSG_WAITALL);
 
@@ -264,8 +279,12 @@ t_list* recibir_describe(int conexion){
 			perror("NO SE RECIBIO EL TIEMPO DE COMPACTACION");
 		}
 
+		printf("compactacion: %i\n", compactacion_recibida);
+
+		printf("Creo la estructura metadata con los datos anteriores\n");
 		metadata_recibida = crear_metadata(tabla_recibida, consistencia_recibida, particiones_recibidas, compactacion_recibida);
 
+		printf("Lo agrego a la lista\n");
 		list_add(datos_metadata, metadata_recibida);
 
 		free(tabla_recibida);

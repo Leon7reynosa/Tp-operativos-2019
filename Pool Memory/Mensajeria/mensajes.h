@@ -28,6 +28,7 @@
 #include"requestSelect.h"
 #include"Cliente/cliente.h"
 #include"t_dato.h"
+#include"commons/collections/list.h"
 
 
 void enviar_request(cod_operacion cod_op, void* tipoRequest);

@@ -77,7 +77,12 @@ int ejecutar_request(char* request_lql){
 				log_info(logger_kernel, "---Se realizara el DESCRIBE para la tabla %s---\n" , nombre_tabla);
 
 				describe_enviar = crear_dato_describe(nombre_tabla);
+
+				printf("tabla que enviamos %s\n" , (char*)describe_enviar->tabla->buffer);
+
 				enviar_request(DESCRIBE, describe_enviar);
+
+				printf("se envio bien el describe\n");
 
 			}else if(cantidad_parametros == 1){
 

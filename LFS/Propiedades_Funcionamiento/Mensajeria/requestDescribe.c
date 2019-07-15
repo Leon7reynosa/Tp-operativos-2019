@@ -108,23 +108,31 @@ describe_t decodificar_describe(int conexion){
 
 	if(global){
 
+		printf("Es global\n");
 		tabla = NULL;
 
 	}else{
+
+		printf("No es global\n");
 		error_recv = recv(conexion,size_tabla ,sizeof(int),0);
 
 		if(error_recv == -1){
 			perror("Fallo al recibir el tamaño de la tabla.\n");
 		}
 
+		printf("Size tabla: %i\n", *size_tabla);
+
 		tabla = malloc(*size_tabla);
 
-		if(recv(conexion,tabla , *size_tabla,0) == -1){
+		if(recv(conexion, tabla , *size_tabla,0) == -1){
 			perror("Fallo al recibir la tabla.\n");
 		}
+
+		printf("Tabla: %s\n", tabla);
 	}
 
 
+	printf("Creo el dato describe\n");
 	describe_t dato = crear_dato_describe(tabla);
 
 	free(size_tabla);
@@ -171,13 +179,13 @@ describe_t crear_dato_describe(char* nombre_tabla){
 
 		dato_describe->tabla = malloc(sizeof(t_stream));
 
-		dato_describe->tabla->size = sizeof(nombre_tabla) + 1;
+		dato_describe->tabla->size = string_length(nombre_tabla) + 1;
 
 		dato_describe->tabla->buffer = malloc(dato_describe->tabla->size);
 
 		memcpy(dato_describe->tabla->buffer , nombre_tabla , dato_describe->tabla->size);
 
-		dato_describe->bytes = sizeof(cod_operacion) + sizeof(dato_describe->tabla->size) + dato_describe->tabla->size;
+		dato_describe->bytes = sizeof(cod_operacion) + sizeof(bool) +sizeof(dato_describe->tabla->size) + dato_describe->tabla->size;
 
 
 	}

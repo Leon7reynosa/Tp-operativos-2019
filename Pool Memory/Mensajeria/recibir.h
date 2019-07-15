@@ -22,6 +22,9 @@
 #include<netdb.h>
 #include<signal.h>
 #include<ctype.h>
+#include"commons/collections/list.h"
+#include"requestDescribe.h"
+
 
 #include"request.h"
 #include"t_dato.h"
@@ -41,6 +44,6 @@ t_dato* recibir_request_LFS(int conexion );
 void* recibir_buffer(int* size,int conexion);
 //cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);
-t_list* recibir_describe(void);
+t_list* recibir_describe(int conexion);
 
 #endif /* RECIBIR_H_ */

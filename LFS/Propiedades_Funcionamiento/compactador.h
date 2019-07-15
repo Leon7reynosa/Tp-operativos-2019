@@ -18,7 +18,8 @@
 #include"Mensajeria/mensajes.h"
 #include"comunity_func.h"
 #include"metadata.h"
-#include"main.h"
+#include"loggers.h"
+
 
 typedef struct{
 

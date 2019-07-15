@@ -13,9 +13,9 @@ int main(){
 
 	inicializar_memorias_conectadas();
 
-	t_log* logger_lissandra = log_create(punto_montaje, "lissandra", 0, LOG_LEVEL_INFO);
-	t_log* logger_lfs = log_create(punto_montaje, "file system", 0, LOG_LEVEL_INFO);
-	t_log* logger_compactador = log_create(punto_montaje, "compactador", 0, LOG_LEVEL_INFO);
+	t_log* logger_lissandra = log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
+	t_log* logger_lfs = log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
+	t_log* logger_compactador = log_create("compactador.los", "compactador", 0, LOG_LEVEL_INFO);
 
 //	creacion_bitmap();
 

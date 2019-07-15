@@ -35,8 +35,11 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 
 	case DESCRIBE:
 
+		printf("Serializo el describe\n");
 		buffer = serializar_describe(request);
 		bytes = ((describe_t)(request->tipo_request))->bytes;
+
+		printf("Bytes: %i\n",bytes);
 		break;
 
 	default:

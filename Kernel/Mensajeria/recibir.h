@@ -23,6 +23,7 @@
 #include<signal.h>
 #include<ctype.h>
 #include<commons/collections/list.h>
+#include"requestDescribe.h"
 
 typedef enum{
 	DESCONEXION,
