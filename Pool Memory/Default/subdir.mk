@@ -4,13 +4,34 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../pool.c 
+../API_Pool.c \
+../conexiones.c \
+../dato.c \
+../gossiping.c \
+../memoria.c \
+../pagina.c \
+../pool.c \
+../segmento.c 
 
 OBJS += \
-./pool.o 
+./API_Pool.o \
+./conexiones.o \
+./dato.o \
+./gossiping.o \
+./memoria.o \
+./pagina.o \
+./pool.o \
+./segmento.o 
 
 C_DEPS += \
-./pool.d 
+./API_Pool.d \
+./conexiones.d \
+./dato.d \
+./gossiping.d \
+./memoria.d \
+./pagina.d \
+./pool.d \
+./segmento.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -4,13 +4,37 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../kernel.c 
+../API_Kernel.c \
+../consistencia.c \
+../consola.c \
+../gossiping.c \
+../kernel.c \
+../parser.c \
+../planificador.c \
+../request_memoria.c \
+../semaforos.c 
 
 OBJS += \
-./kernel.o 
+./API_Kernel.o \
+./consistencia.o \
+./consola.o \
+./gossiping.o \
+./kernel.o \
+./parser.o \
+./planificador.o \
+./request_memoria.o \
+./semaforos.o 
 
 C_DEPS += \
-./kernel.d 
+./API_Kernel.d \
+./consistencia.d \
+./consola.d \
+./gossiping.d \
+./kernel.d \
+./parser.d \
+./planificador.d \
+./request_memoria.d \
+./semaforos.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -10,14 +10,19 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+//#include<pthread.h>
 #include<commons/log.h>
 #include<commons/string.h>
-//#include<commons/config.h>
+#include<commons/config.h>
 #include<readline/readline.h>
 
-#include "Config/configuracion.h"
 #include"Servidor/servidor.h"
+#include"API_Pool.h"
+#include"Mensajeria/mensajes.h"
 
-void creacion_del_config(t_config* g_config);
+//void* conectar_kernel();
+//void* conectar_lissandra();
+
+void pruebas(void);
 
 #endif /* POOL_H_ */

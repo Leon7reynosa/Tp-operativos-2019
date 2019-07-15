@@ -18,8 +18,14 @@
 
 t_config* g_config;
 
+int grado_multiprocesamiento;
+char* ip_memoria;
+int puerto_memoria;
+int quantum;
+int tiempo_gossiping_kernel;
+
 
 void creacion_del_config(void);
-void obtener_puerto_ip(int* puerto, char** ip);
+void obtener_datos_config(void);
 
 #endif /* CONFIGURACION_H_ */
