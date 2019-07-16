@@ -28,25 +28,21 @@ void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
 
 		Metadata metadata = (Metadata)_metadata;
 
-		size_tabla = string_length(metadata->tabla) + 1;
-
-		size_consistencia = string_length(metadata->consistencia) + 1;
-
-		bytes += sizeof(int) + size_tabla + sizeof(int) + size_consistencia + sizeof(int)*2 ;
+		bytes += sizeof(int) + metadata->tabla->size + sizeof(int) + metadata->consistencia->size + sizeof(int)*2 ;
 
 		buffer = realloc(buffer, bytes);
 
-		memcpy(buffer + desplazamiento, &size_tabla, sizeof(int));
+		memcpy(buffer + desplazamiento, &(metadata->tabla->size), sizeof(int));
 		desplazamiento += sizeof(int);
 
-		memcpy(buffer + desplazamiento, metadata->tabla, size_tabla);
-		desplazamiento += size_tabla;
+		memcpy(buffer + desplazamiento, metadata->tabla->buffer, metadata->tabla->size);
+		desplazamiento += metadata->tabla->size;
 
-		memcpy(buffer + desplazamiento, &size_consistencia, sizeof(int)),
+		memcpy(buffer + desplazamiento, &(metadata->consistencia->size), sizeof(int));
 		desplazamiento += sizeof(int);
 
-		memcpy(buffer + desplazamiento, metadata->consistencia, size_consistencia);
-		desplazamiento += size_consistencia;
+		memcpy(buffer + desplazamiento, metadata->consistencia->buffer, metadata->consistencia->size);
+		desplazamiento += metadata->consistencia->size;
 
 		memcpy(buffer + desplazamiento, &(metadata->particiones), sizeof(int));
 		desplazamiento += sizeof(int);
@@ -66,15 +62,15 @@ Metadata crear_metadata(char* tabla, char* consistencia, int particiones, int co
 
 	Metadata dato_metadata = malloc(sizeof(struct metadataEstructura));
 
-	int size = string_length(tabla) + 1;
+	dato_metadata->tabla = malloc(sizeof(t_stream));
+	dato_metadata->tabla->size = string_length(tabla) + 1;
+	dato_metadata->tabla->buffer = malloc(dato_metadata->tabla->size);
+	memcpy(dato_metadata->tabla->buffer, tabla, dato_metadata->tabla->size);
 
-	dato_metadata->tabla = malloc(size);
-	memcpy(dato_metadata->tabla, tabla, size);
-
-	size = string_length(consistencia) + 1;
-
-	dato_metadata->consistencia = malloc(size);
-	memcpy(dato_metadata->consistencia, consistencia, size);
+	dato_metadata->consistencia = malloc(sizeof(t_stream));
+	dato_metadata->consistencia->size = string_length(consistencia) + 1;
+	dato_metadata->consistencia->buffer = malloc(dato_metadata->consistencia->size);
+	memcpy(dato_metadata->consistencia->buffer, consistencia, dato_metadata->consistencia->size);
 
 	dato_metadata->particiones = particiones;
 	dato_metadata->tiempo_compactacion = compactacion;
@@ -85,8 +81,10 @@ Metadata crear_metadata(char* tabla, char* consistencia, int particiones, int co
 
 void liberar_metadata(Metadata metadata_a_liberar){
 
+	free(metadata_a_liberar->tabla->buffer);
 	free(metadata_a_liberar->tabla);
 
+	free(metadata_a_liberar->consistencia->buffer);
 	free(metadata_a_liberar->consistencia);
 
 	free(metadata_a_liberar);

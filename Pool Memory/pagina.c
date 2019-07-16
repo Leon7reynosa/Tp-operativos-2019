@@ -42,9 +42,9 @@ Pagina pagina_menos_usada(t_list* paginas){
 	Pagina pagina_encontrada;
 	time_t ts_menor;
 	t_list* paginas_no_modificadas = paginas_sin_modificar(paginas);
-	printf("PAGINAS SIN MODIFICAR: %i\n", paginas_no_modificadas->elements_count);
+	printf("PAGINAS SIN MODIFICAR: %i\n", list_size(paginas));
 
-	if(paginas_no_modificadas->elements_count == 0){
+	if(list_size(paginas) == 0){
 
 		pagina_encontrada = NULL;
 

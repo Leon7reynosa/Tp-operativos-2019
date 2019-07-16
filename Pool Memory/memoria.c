@@ -170,8 +170,6 @@ void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
 
 	guardar_dato_en_memoria(dato_insert, pagina_encontrada->referencia_memoria);
 
-	pagina_encontrada->flag_modificado = 1;
-
 	actualizar_uso(pagina_encontrada);
 
 }

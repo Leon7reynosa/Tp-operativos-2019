@@ -215,12 +215,14 @@ void request_insert(insert dato){
 
 			printf("Existe la pagina!\n");
 			actualizar_pagina(pagina_encontrada, dato_insert);
+			pagina_encontrada->flag_modificado = 1;                      //ver si se puede mover esto
 			mostrar_datos(pagina_encontrada);
 
 		}else{
 			printf("No existe la pagina!\n");
 			pagina_encontrada = solicitar_pagina();
 			actualizar_pagina(pagina_encontrada, dato_insert);
+			pagina_encontrada->flag_modificado = 1;						//ver si se puede mover esto
 			agregar_pagina(segmento_tabla, pagina_encontrada);
 			printf("LA TABLA A AHORA TIENE %i PAGINAS\n", segmento_tabla->Tabla_paginas->elements_count);
 			mostrar_datos(pagina_encontrada);
@@ -243,6 +245,7 @@ void request_insert(insert dato){
 
 		pagina_encontrada = solicitar_pagina();
 		actualizar_pagina(pagina_encontrada, dato_insert);
+		pagina_encontrada->flag_modificado = 1;	                          //ver esto si se puede mover
 		agregar_pagina(segmento_tabla, pagina_encontrada);
 		printf("LA TABLA A AHORA TIENE %i PAGINAS\n", list_size(segmento_tabla->Tabla_paginas));
 		mostrar_datos(pagina_encontrada);
