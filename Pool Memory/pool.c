@@ -18,10 +18,9 @@ int main (void){
 
 	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
 
-	t_list* tablas = list_create();
-	list_add(tablas, "TABLA_A");
+	inicializar_memoria(tamanio, tamanio_value, tamanio_dato); //TODO ARREGLAR ESTA FUNCION UN POCO
 
-	inicializar_memoria(tamanio, tamanio_value, tamanio_dato, tablas); //TODO ARREGLAR ESTA FUNCION UN POCO
+	inicializar_hilos();
 
 	//////////////////////////////////////////MAIN///////////////////////////////////////
 

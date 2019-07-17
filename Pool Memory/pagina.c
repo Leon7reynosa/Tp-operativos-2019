@@ -12,6 +12,8 @@ void liberar_pagina(Pagina pagina_a_liberar){
 	pagina_a_liberar->flag_en_uso = 0;
 	pagina_a_liberar->flag_modificado = 0;  //esto estaba en 1 y lo cambie a 0, deberia estar bien asi pero .-.
 
+
+	//agregar (opcional) que toda la referencia a memoria de la pagina tenga /0 y no otra basura
 }
 
 
@@ -74,18 +76,27 @@ Pagina pagina_menos_usada(t_list* paginas){
 
 }
 
+bool sin_modificar(Pagina pagina){
+
+		return !pagina_modificada(pagina);
+
+}
+
+bool pagina_modificada(Pagina pagina){
+
+	return pagina->flag_modificado;
+}
+
+t_list* paginas_modificadas(t_list* paginas){
+
+	return list_filter(paginas, pagina_modificada);
+
+}
+
+
 t_list* paginas_sin_modificar(t_list* paginas){
 
-
-	bool _sin_modificar(void* _pagina){
-
-		Pagina pagina = (Pagina)_pagina;
-
-		return pagina->flag_modificado < 1;
-
-	}
-
-	return list_filter(paginas, _sin_modificar);
+	return list_filter(paginas, sin_modificar);
 
 }
 

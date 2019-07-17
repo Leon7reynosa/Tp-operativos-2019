@@ -7,7 +7,16 @@
 
 #include"gossiping.h"
 
-void* gossiping(){
+void* auto_gossip(void* argumentos){
+
+	while(1){
+		usleep(tiempo_gossiping * 1000);
+		gossiping();
+	}
+	return NULL;
+}
+
+void gossiping(){
 
 	int cantidad_seeds = list_size(memoria->seed);
 	int i ;
@@ -40,8 +49,6 @@ void* gossiping(){
 
 	}
 
-
-	return NULL;
 }
 
 void* serializar_gossiping(struct DatoTablaGossiping* dato){

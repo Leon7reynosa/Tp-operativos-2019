@@ -17,6 +17,39 @@ struct MemoriaEstructura{
 
 };
 */
+void inicializar_hilos(void){
+
+	int err;
+	//Atributos
+	pthread_attr_t attr;
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+
+	pthread_mutex_init(&mutex_journal, NULL);
+	pthread_mutex_init(&mutex_gossip, NULL);
+
+	err = pthread_create(&journal_thread, attr, auto_journal, NULL );
+
+	if(err){
+
+		perror("pthread_create journal");
+		exit(1);
+
+	}
+
+	err = pthread_create(&gossip_thread, attr, auto_gossip, NULL);
+
+	if(err){
+
+		perror("pthread_create gossip");
+		exit(1);
+
+	}
+
+	pthread_attr_destroy(&attr);
+
+}
+
 t_list* inicializar_paginas(){
 
 	int contador = memoria->cant_max_datos;
@@ -47,15 +80,46 @@ t_list* inicializar_paginas(){
 
 }
 
-void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato, t_list* tablas){
+void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato){
 
 	memoria = malloc(sizeof(struct MemoriaEstructura));
 	memoria->memoria_contigua  = malloc(tamanio);
 
-	memoria->tabla_segmentos   = inicializar_tabla_segmentos(tablas);
+	memoria->tabla_segmentos   = list_create();
 	memoria->tamanio 		   = tamanio;
 	memoria->cant_max_datos    = tamanio / tamanio_dato;
 	memoria->paginas		   = inicializar_paginas();
+
+	memoria->seed = list_create();
+	inicializar_seeds();
+
+}
+
+void inicializar_seeds(void){
+
+	int cantidad_ips = list_size(ip_seeds);
+	int cantidad_puertos = list_size(puerto_seeds);
+
+	if(cantidad_ips != cantidad_puertos){
+		printf("No hay la misma cantidad de ips_seeds que de puertos_seeds");
+		exit(1);
+	}
+
+	char* ip;
+	int* puerto;
+
+	Seed nueva_seed;
+
+	for(int i = 0; i < cantidad_ips; i++){
+
+		ip = list_get(ip_seeds, i);
+		puerto = list_get(puerto_seeds, i);
+
+		nueva_seed = crear_seed(0, ip, puerto);
+
+		list_add(memoria->seed, nueva_seed);
+
+	}
 
 }
 
@@ -75,6 +139,30 @@ t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar){ // tablas a i
 	list_iterate(tablas_a_inicializar, _meter_segmento);
 
 	return tabla_segmentos;
+
+}
+
+Seed crear_seed(int numero , char* ip, int puerto){
+
+	Seed nueva_seed = malloc(sizeof(struct seedEstructura));
+
+	nueva_seed->numero_memoria = numero;
+	nueva_seed->puerto = puerto;
+
+	nueva_seed->ip = malloc(string_length(ip) + 1);
+	memcpy(nueva_seed->ip, ip, string_length(ip) + 1);
+
+	return nueva_seed;
+}
+
+void liberar_seed(Seed seed_a_liberar){
+	free(seed_a_liberar->ip);
+	free(seed_a_liberar);
+}
+
+void eliminar_segmentos(void){
+
+	list_clean_and_destroy_elements(memoria->tabla_segmentos, liberar_segmento);
 
 }
 
@@ -174,10 +262,64 @@ void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
 
 }
 
+void* auto_journal(void* argumento){
 
-void realizar_journal(){
-	printf("journal realizado xD mentira crack, no lo hiciste todavia, te tiro un exit de ondis ;) \n");
-	exit(1);
+	while(1){
+		usleep(tiempo_journal * 1000);
+		realizar_journal();
+	}
+
+	return NULL;
+}
+
+void realizar_journal(void){
+
+	//aca voy a tener todos los inserts a mandar
+	t_list* inserts = list_create();
+
+
+	void _crear_inserts(void* _segmento){
+
+		Segmento segmento = (Segmento)_segmento;
+
+		//saco las paginas modificadas de un segmento
+		t_list* _paginas_modificadas = paginas_modificadas(segmento->Tabla_paginas);
+
+		void _agregar_a_inserts(void* _pagina){
+
+			Pagina pagina = (Pagina)_pagina;
+
+			Dato dato_a_enviar = decodificar_dato_de_memoria(pagina->referencia_memoria);
+
+			insert nuevo_insert = crear_dato_insert(segmento->nombre_tabla, dato_a_enviar->key, dato_a_enviar->value, dato_a_enviar->timestamp);
+
+			request nueva_request = crear_request(INSERT, nuevo_insert);
+
+			liberar_dato(dato_a_enviar);
+
+			list_add(inserts, nueva_request);
+
+		}
+
+		//itero las paginas modificadas de ese segmento, creando una request por cada una de ellas
+		list_iterate(_paginas_modificadas, _agregar_a_inserts);
+
+		//destruyo la estructura t_list* de las paginas_modificadas
+		list_destroy(_paginas_modificadas);
+
+	}
+
+	//itero todos los segmentos
+	list_iterate(memoria->tabla_segmentos, _crear_inserts);
+
+
+	list_iterate(inserts, enviar_request);
+
+	eliminar_segmentos();
+
+	list_destroy_and_destroy_elements(inserts, liberar_request);
+
+
 }
 
 

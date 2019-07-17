@@ -20,8 +20,8 @@
 int puerto_escucha;
 char* ip_lfs;
 int puerto_lfs;
-//char** seeds;
-//int* puertos;
+t_list* ip_seeds;
+t_list* puerto_seeds;
 time_t retardo_memoria;
 time_t retardo_lfs;
 int tamanio;

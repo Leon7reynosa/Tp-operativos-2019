@@ -41,4 +41,7 @@ struct requestEstructura{
 //struct requestEstructura;
 typedef struct requestEstructura* request;
 
+request crear_request(cod_operacion cod_op, void* tipo_request);
+void liberar_request(request request_a_liberar);
+
 #endif /* MENSAJERIA_REQUEST_H_ */

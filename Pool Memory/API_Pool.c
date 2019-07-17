@@ -50,8 +50,6 @@ void trabajar_request(request nueva_request , int conexion){
 
 			printf("se ingreso el insert piola \n");
 
-
-
 			break;
 
 		case CREATE:

@@ -8,12 +8,10 @@
 #include"mensajes.h"
 
 //tipoRequest es una estructura del tipo "request" osea, puede ser selectEstructura, etc, entonces mi idea es depende de lo que llegue, castear a esa estructura
-void enviar_request(cod_operacion cod_op, void* tipoRequest){
+void enviar_request(request request){
 
 	void* buffer;
 	int bytes = 0;
-	request request = crear_request(cod_op, tipoRequest);
-
 
 	switch(request->cod_op){
 
@@ -54,9 +52,6 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 
 	free(buffer);
 
-	//liberar_request(request); NO!
-
-	free(request);
 }
 
 

@@ -35,4 +35,8 @@ bool esta_libre(Pagina pagina);
 void mostrar_datos(Pagina pagina);
 void actualizar_uso(Pagina pagina);
 
+bool sin_modificar(Pagina pagina);
+bool pagina_modificada(Pagina pagina);
+t_list* paginas_modificadas(t_list* paginas);
+
 #endif /* PAGINA_H_ */

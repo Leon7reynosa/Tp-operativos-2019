@@ -16,6 +16,8 @@ struct SegmentoEstructura{
 };
 */
 
+
+
 Segmento crear_segmento(char* nombre_tabla){
 
 	struct SegmentoEstructura* segmento = malloc(sizeof(struct SegmentoEstructura));
