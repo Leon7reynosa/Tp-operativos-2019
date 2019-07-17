@@ -76,10 +76,7 @@ int main (void){
 
 				}else if(i == 0){
 //TODO parsear linea por requests!
-					char* buffer = malloc(128);
-					fgets(buffer, 128, stdin);
-					printf("Lei de consola: %s\n", buffer);
-					free(buffer);
+					leer_consola();
 
 				}else{
 					printf("\n//////////////////////////////////////////////////////// NUEVA REQUEST c: ////////////////////////////////////////////////\n");
@@ -97,9 +94,10 @@ int main (void){
 
 					}else{
 
+					pthread_mutex_lock(&mutex_journal);
 					//DOUBLE FREE CORRUPTION, OJO EN EL ENVIAR_REQUEST, ESTOY GENERANDO DENUEVO UNA REQUEST Y LA LIBERO AHI! ojo
 					trabajar_request(nueva_request, i);
-
+					pthread_mutex_unlock(&mutex_journal);
 					}
 //TODO OJO AL LIBERAR UNA DESCONEXION, NO PUEDO HACER FREE DE NULL!!!!!!
 					liberar_request(nueva_request);
@@ -119,6 +117,180 @@ int main (void){
 
 
 	return EXIT_SUCCESS;
+}
+
+void inicializar_hilos(void){
+
+	int err;
+	//Atributos
+	pthread_attr_t attr;
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+
+	pthread_mutex_init(&mutex_journal, NULL);
+	pthread_mutex_init(&mutex_gossip, NULL);
+
+	err = pthread_create(&journal_thread, &attr, auto_journal, NULL );
+
+	if(err){
+
+		perror("pthread_create journal");
+		exit(1);
+
+	}
+
+	err = pthread_create(&gossip_thread, &attr, auto_gossip, NULL);
+
+	if(err){
+
+		perror("pthread_create gossip");
+		exit(1);
+
+	}
+
+	pthread_attr_destroy(&attr);
+
+}
+
+bool leer_consola(void){
+
+	int tamanio_buffer = 256;
+
+	char* buffer = malloc(tamanio_buffer + 1);
+
+	fgets(buffer, tamanio_buffer, stdin);
+
+	*(buffer + tamanio_buffer) = '\0';
+
+	if(string_length(buffer) + 1 >= tamanio_buffer){
+		printf("Pusiste 200 millones de caracteres en la consola\n");
+	}
+
+	buffer = realloc(buffer, string_length(buffer) + 1);
+
+	char** tokens = string_split(buffer, " ");
+
+	free(buffer);
+
+	string_to_upper(tokens[0]);
+
+	if(string_equals_ignore_case(tokens[0], "SELECT")){
+
+		parsear_request(SELECT, tokens);
+
+	}
+	else if(string_equals_ignore_case(tokens[0], "INSERT")){
+
+		parsear_request(INSERT, tokens);
+
+	}
+	else if(string_equals_ignore_case(tokens[0], "CREATE")){
+
+		parsear_request(CREATE, tokens);
+
+	}
+	else if(string_equals_ignore_case(tokens[0], "DESCRIBE")){
+
+		parsear_request(DESCRIBE, tokens);
+
+	}
+	else if(string_equals_ignore_case(tokens[0], "DROP")){
+
+		//parsear_request(DROP, tokens);
+
+	}
+	else if(string_equals_ignore_case(tokens[0], "JOURNAL")){
+
+		//parsear_request(JOURNAL, tokens);
+
+	}
+	else if(string_equals_ignore_case(tokens[0], "EXIT")){
+
+		liberar_puntero_doble(tokens);
+
+		return true;
+
+	}else{
+		printf("No es valido lo ingresado\n");
+	}
+
+	liberar_puntero_doble(tokens);
+
+
+	return false;
+}
+
+void parsear_request(cod_operacion operacion, char** tokens){
+
+	int cantidad_argumentos = obtener_cantidad_argumentos(tokens);
+
+	char* tabla;
+	u_int16_t key;
+	time_t timestamp;
+
+	select_t dato_select;
+	Dato dato;
+
+	insert dato_insert;
+
+
+	switch(operacion){
+
+		case SELECT:
+
+			if(cantidad_argumentos == 2){
+
+				tabla = tokens[1];
+				key = atoi(tokens[2]);       //VER ESTO
+
+				dato_select = crear_dato_select(tabla, key);
+
+				dato = request_select(dato_select);
+
+				liberar_dato(dato);
+
+			}else{
+
+				printf("Cantidad de argumentos invalido\n");
+
+			}
+
+			break;
+
+		default:
+			break;
+
+
+	}
+
+
+}
+
+void liberar_puntero_doble(char** puntero_doble){
+
+	int i = 0;
+	while(*(puntero_doble + i) != NULL){
+
+		free(*(puntero_doble + i));
+		i++;
+
+	}
+
+	free(puntero_doble);
+
+}
+
+int obtener_cantidad_argumentos(char** tokens){
+
+	int i = 1;
+	int cantidad = 0;
+
+	while(*(tokens + i) != NULL){
+		cantidad++;
+		i++;
+	}
+
+	return cantidad;
 }
 
 //void pruebas(void){

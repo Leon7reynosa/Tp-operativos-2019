@@ -11,7 +11,8 @@ void* auto_gossip(void* argumentos){
 
 	while(1){
 		usleep(tiempo_gossiping * 1000);
-		gossiping();
+		//gossiping();
+		printf("Gossiping :P\n");
 	}
 	return NULL;
 }

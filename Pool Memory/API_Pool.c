@@ -122,7 +122,7 @@ Dato request_select(select_t dato){
 			else{
 				lo de abajo!
 			*/
-			pagina_encontrada = solicitar_pagina();
+			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
 			agregar_pagina(segmento_tabla, pagina_encontrada);
 			actualizar_pagina(pagina_encontrada, dato_lfs);
@@ -139,15 +139,7 @@ Dato request_select(select_t dato){
 	}else{
 		printf("No existe el segmento, lo tenes que crear y pedirle el dato al LFS! \n");
 
-		agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
-
-		if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){ //esto lo uso para encontrarlo nomas (el segmento) xd
-			printf("Ahora si existe el segmento\n");
-
-		}else{
-			printf("Deberia existir el segmento, pero me dice que no. NANI?  \n");
-			exit(1);
-		}
+		segmento_tabla = agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
 
 		Dato dato_lfs = pedir_dato_al_LFS((char*)dato->tabla->buffer, dato->key);
 
@@ -167,7 +159,7 @@ Dato request_select(select_t dato){
 			lo de abajo!
         */
 
-		pagina_encontrada = solicitar_pagina();
+		pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
 		agregar_pagina(segmento_tabla, pagina_encontrada);
 		actualizar_pagina(pagina_encontrada, dato_lfs);
@@ -212,17 +204,26 @@ void request_insert(insert dato){
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
 			printf("Existe la pagina!\n");
+
 			actualizar_pagina(pagina_encontrada, dato_insert);
+
 			pagina_encontrada->flag_modificado = 1;                      //ver si se puede mover esto
+
 			mostrar_datos(pagina_encontrada);
 
 		}else{
 			printf("No existe la pagina!\n");
-			pagina_encontrada = solicitar_pagina();
+
+			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
+
 			actualizar_pagina(pagina_encontrada, dato_insert);
+
 			pagina_encontrada->flag_modificado = 1;						//ver si se puede mover esto
+
 			agregar_pagina(segmento_tabla, pagina_encontrada);
+
 			printf("LA TABLA A AHORA TIENE %i PAGINAS\n", segmento_tabla->Tabla_paginas->elements_count);
+
 			mostrar_datos(pagina_encontrada);
 
 		}
@@ -241,11 +242,16 @@ void request_insert(insert dato){
 			exit(1);
 		}
 
-		pagina_encontrada = solicitar_pagina();
+		pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
+
 		actualizar_pagina(pagina_encontrada, dato_insert);
-		pagina_encontrada->flag_modificado = 1;	                          //ver esto si se puede mover
+
+		pagina_encontrada->flag_modificado = 1;	  //ver esto si se puede mover
+
 		agregar_pagina(segmento_tabla, pagina_encontrada);
+
 		printf("LA TABLA A AHORA TIENE %i PAGINAS\n", list_size(segmento_tabla->Tabla_paginas));
+
 		mostrar_datos(pagina_encontrada);
 
 	}
@@ -256,7 +262,11 @@ void request_insert(insert dato){
 
 void request_create(create dato_create){
 
-	enviar_request(CREATE, dato_create);
+	request nuevo_create = crear_request(CREATE, dato_create);
+
+	enviar_request(nuevo_create);
+
+	liberar_request(nuevo_create);
 
 //	error_request estado = recibir_estado_request();
 
@@ -275,9 +285,14 @@ void request_create(create dato_create){
 t_list* request_describe(describe_t dato_describe){
 
 	printf("Envio al LFS la request DESCRIBE\n");
-	enviar_request(DESCRIBE, dato_describe);
+
+	request nuevo_describe = crear_request(DESCRIBE, dato_describe);
+
+	enviar_request(nuevo_describe);
 
 	t_list* datos_describe;
+
+	liberar_request(nuevo_describe);
 
 	printf("espero la respuesta del LFS\n");
 	datos_describe = recibir_describe(socket_lissandra);

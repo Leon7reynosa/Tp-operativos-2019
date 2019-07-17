@@ -17,6 +17,8 @@
 
 #include"Mensajeria/requestSelect.h"
 #include"Mensajeria/mensajes.h"
+#include"Mensajeria/configuracion.h"
+
 
 struct seedEstructura{
 	int numero_memoria;
@@ -50,7 +52,6 @@ pthread_mutex_t mutex_journal;
 pthread_t gossip_thread;
 pthread_mutex_t mutex_gossip; //ver si es necesario
 
-void inicializar_hilos(void);
 t_list* inicializar_paginas(void);
 void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato);
 void inicializar_seeds(void);
@@ -66,7 +67,7 @@ void guardar_dato_en_memoria(Dato nuevo_dato, void* posicion_memoria);
 void* auto_journal(void* argumento);
 void realizar_journal(void);
 Pagina realizar_algoritmo_reemplazo(void);
-Pagina solicitar_pagina(void);
+Pagina solicitar_pagina(char* nombre_tabla, Segmento* segmento);
 Dato pedir_dato_al_LFS(char* tabla, int key);
 void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert);
 

@@ -30,4 +30,6 @@ bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encont
 void sacar_pagina_segmento(Segmento segmento, Pagina pagina);
 void agregar_pagina(Segmento segmento, Pagina pagina);
 
+Segmento agregar_segmento(char* tabla, t_list* segmentos);
+
 #endif /* SEGMENTO_H_ */

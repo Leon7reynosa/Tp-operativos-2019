@@ -15,14 +15,17 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<readline/readline.h>
+#include<pthread.h>
 
 #include"Servidor/servidor.h"
 #include"API_Pool.h"
 #include"Mensajeria/mensajes.h"
+#include"gossiping.h"
 
 //void* conectar_kernel();
 //void* conectar_lissandra();
 
 void pruebas(void);
+void inicializar_hilos(void);
 
 #endif /* POOL_H_ */

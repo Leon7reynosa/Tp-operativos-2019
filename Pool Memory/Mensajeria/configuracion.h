@@ -14,6 +14,7 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<readline/readline.h>
+#include<commons/collections/list.h>
 
 #include"Cliente/cliente.h"
 

@@ -12,10 +12,12 @@
 #include"Mensajeria/mensajes.h"
 #include"Mensajeria/requestGossiping.h"
 #include"memoria.h"
+#include"Mensajeria/configuracion.h"
 
 #include<commons/collections/list.h>
 
-void* gossiping(void);
+void* auto_gossip(void* argumentos);
+void gossiping(void);
 void* serializar_gossiping(struct DatoTablaGossiping* dato);
 void liberar_dato_memoria(struct MemoriasEstructura* memoria);
 void liberar_dato_gossiping(struct DatoTablaGossiping* dato);

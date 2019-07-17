@@ -17,38 +17,6 @@ struct MemoriaEstructura{
 
 };
 */
-void inicializar_hilos(void){
-
-	int err;
-	//Atributos
-	pthread_attr_t attr;
-	pthread_attr_init(&attr);
-	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-
-	pthread_mutex_init(&mutex_journal, NULL);
-	pthread_mutex_init(&mutex_gossip, NULL);
-
-	err = pthread_create(&journal_thread, attr, auto_journal, NULL );
-
-	if(err){
-
-		perror("pthread_create journal");
-		exit(1);
-
-	}
-
-	err = pthread_create(&gossip_thread, attr, auto_gossip, NULL);
-
-	if(err){
-
-		perror("pthread_create gossip");
-		exit(1);
-
-	}
-
-	pthread_attr_destroy(&attr);
-
-}
 
 t_list* inicializar_paginas(){
 
@@ -115,7 +83,7 @@ void inicializar_seeds(void){
 		ip = list_get(ip_seeds, i);
 		puerto = list_get(puerto_seeds, i);
 
-		nueva_seed = crear_seed(0, ip, puerto);
+		nueva_seed = crear_seed(0, ip, *((int *)puerto));
 
 		list_add(memoria->seed, nueva_seed);
 
@@ -266,7 +234,11 @@ void* auto_journal(void* argumento){
 
 	while(1){
 		usleep(tiempo_journal * 1000);
+
+		pthread_mutex_lock(&mutex_journal);
 		realizar_journal();
+		pthread_mutex_unlock(&mutex_journal);
+
 	}
 
 	return NULL;
@@ -330,22 +302,21 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 	if(pagina_reemplazada == NULL){
 		printf("Estan todas las paginas modificadas T.T, Realizar JOURNAL\n");
-		realizar_journal();
-		printf("Despues de realizar journal me fijo la menos usada!\n");
-		pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
+	}else{
+
+		Segmento segmento_modificado;
+
+		segmento_modificado = encontrar_segmento_con_pagina(pagina_reemplazada);
+
+		sacar_pagina_segmento(segmento_modificado, pagina_reemplazada);
 	}
-
-	Segmento segmento_modificado;
-
-	segmento_modificado = encontrar_segmento_con_pagina(pagina_reemplazada);
-
-	sacar_pagina_segmento(segmento_modificado, pagina_reemplazada);
 
 	return pagina_reemplazada;
 }
 
-Pagina solicitar_pagina(void){
+//en caso de realizar journal, vuelve a crear el segmento que le pases
+Pagina solicitar_pagina(char* nombre_tabla, Segmento* segmento){
 
 	Pagina pagina_solicitada;
 
@@ -355,6 +326,13 @@ Pagina solicitar_pagina(void){
 	}else{
 		printf("Estan todas en uso!Realizo algoritmo de reemplazo!\n");
 		pagina_solicitada = realizar_algoritmo_reemplazo();
+
+		if(pagina_solicitada == NULL){
+			//significa que esta full la memoria
+			realizar_journal();
+			*segmento = agregar_segmento(nombre_tabla, memoria->tabla_segmentos);
+			pagina_solicitada = solicitar_pagina(nombre_tabla, segmento);
+		}
 
 	}
 
@@ -368,7 +346,11 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	Dato dato_recibido;
 
-	enviar_request(SELECT, dato_select ); // ya se libera la request aca
+	request nuevo_select = crear_request(SELECT, dato_select);
+
+	enviar_request(nuevo_select); // ya se libera la request aca
+
+	liberar_request(nuevo_select);
 
 	printf("ESTOY ESPERANDO LA RESPUESTA\n");
 

@@ -100,11 +100,13 @@ void sacar_pagina_segmento(Segmento segmento, Pagina pagina){
 
 }
 
-void agregar_segmento(char* tabla, t_list* tabla_segmentos){
+Segmento agregar_segmento(char* tabla, t_list* tabla_segmentos){
 
 	Segmento nuevo_segmento = crear_segmento(tabla);
 
 	list_add(tabla_segmentos, nuevo_segmento);
+
+	return nuevo_segmento;
 
 }
 
