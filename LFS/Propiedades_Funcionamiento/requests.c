@@ -32,10 +32,12 @@ void trabajar_request(request request_a_operar , int conexion){
 			}else{
 
 				printf("Se encontro la key: %i\n", dato_request->key);
-				printf("El value: %i\n", dato_request->value);
+				printf("El value: %s\n", dato_request->value);
 				printf("El timestamp: %i\n", dato_request->timestamp);
 
 			}
+
+			mandar_select(conexion, dato_request);
 
 			printf("///////////////////////////TERMINO EL SELECT//////////////////////////////////////");
 			//falta hacer mas cosas aca, habria que reenviarlo al pool

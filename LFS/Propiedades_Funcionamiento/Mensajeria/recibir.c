@@ -14,6 +14,8 @@ request recibir_request(int conexion){
 	void* tipo_request;
 	int pene = 0;
 
+	request request;
+
 	pene = recv(conexion, cod_op,sizeof(cod_operacion),MSG_WAITALL);
 
 	printf("Recibi una request papu!\n");
@@ -22,6 +24,11 @@ request recibir_request(int conexion){
 			perror("Fallo al recibir el codigo de operacion.");
 			//aca deberiamos sacar a la memoria de la lista?
 			//aca deberiamos terminar el hilo?
+	}
+	if(pene == 0){
+
+		request = crear_request(DESCONEXION, NULL);
+		return request;
 	}
 
 	printf("codigo_op : %d\n" , *cod_op);
@@ -67,7 +74,7 @@ request recibir_request(int conexion){
 	}
 
 	printf("Creo la estructura request\n");
-	request request = crear_request(*cod_op, tipo_request);
+	request = crear_request(*cod_op, tipo_request);
 
 	return request;
 

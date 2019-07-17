@@ -26,6 +26,7 @@
 #include"requestCreate.h"
 
 #include<commons/collections/list.h>
+#include<commons/string.h>
 
 #define TAMANIO_MAX_VALUE 50
 

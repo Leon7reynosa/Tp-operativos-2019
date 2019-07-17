@@ -35,7 +35,7 @@ void trabajar_request(request nueva_request , int conexion){
 			*/
 			dato_a_enviar = crear_t_dato(dato_select->key, dato_select->timestamp , dato_select->value);
 
-			enviar_dato(dato_a_enviar, conexion);
+			//enviar_dato(dato_a_enviar, conexion);
 
 			liberar_t_dato(dato_a_enviar);
 
@@ -132,7 +132,7 @@ Dato request_select(select_t dato){
 			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
 																								  //lo mismo
 
-			//mostrar_dato(pagina_encontrada);
+			mostrar_datos(pagina_encontrada);
 
 		}
 
@@ -168,7 +168,7 @@ Dato request_select(select_t dato){
 
 		dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
 																							 //lo mismo
-		//mostrar_dato(pagina_encontrada);
+		mostrar_datos(pagina_encontrada);
 
 
 	}

@@ -36,6 +36,7 @@ int ejecutar_request(char* request_lql){
 				log_info(logger_kernel, "---Se realizara el SELECT---\n");
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
 				enviar_request(SELECT, select_enviar);
+
 				return 1;
 			}
 			break;

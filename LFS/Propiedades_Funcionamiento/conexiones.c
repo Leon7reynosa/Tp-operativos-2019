@@ -114,14 +114,29 @@ Conexion_memoria crear_conexion_memoria( int conexion ){
 
 	memoria_nueva->socket_memoria = conexion;
 
-	error_pthread = pthread_create(&(memoria_nueva->hilo_memoria) , NULL , manejar_requests , memoria_nueva);
+	pthread_attr_t attr;
+
+	error_pthread = pthread_attr_init(&attr);
+
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);       //NO me fijo el error, ya fue
 
 	if(error_pthread != 0){
-		perror("pthread_create");
+		perror("pthread_attr_init");
+		close(memoria_nueva->socket_memoria);
+		free(memoria_nueva);
 		pthread_exit(NULL);
 	}
 
-	pthread_detach(memoria_nueva->hilo_memoria);
+	error_pthread = pthread_create(&(memoria_nueva->hilo_memoria) , &attr , manejar_requests , memoria_nueva);
+
+	if(error_pthread != 0){
+		perror("pthread_create");
+		close(memoria_nueva->socket_memoria);
+		free(memoria_nueva);
+		pthread_exit(NULL);
+	}
+
+	pthread_attr_destroy(&attr);
 
 	return memoria_nueva;
 }

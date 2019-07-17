@@ -49,6 +49,12 @@ void liberar_request(request request_a_liberar){
 
 			break;
 
+		case DESCONEXION:
+
+//			free(request_a_liberar);          ya esta mas abajo!
+
+			break;
+
 		default:
 
 			break;

@@ -57,24 +57,28 @@ void enviar_metadata(t_list* metadatas, int conexion){
 void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes){
 
 	void* dato_serializado;
-	int size_value = strlen(dato_a_serializar->value) + 1;
+
+	int size_value = string_length(dato_a_serializar->value) + 1;
 	*bytes = sizeof(u_int16_t) + sizeof(time_t) + sizeof(int) + size_value;
+
+	printf("BYTES A ENVIAR: %i\n", *bytes);
 
 	dato_serializado = malloc(*bytes);
 
 	int desplazamiento = 0;
 
-	memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->key), sizeof(u_int16_t));
-	desplazamiento += sizeof(u_int16_t);
-
 	memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->timestamp), sizeof(time_t));
 	desplazamiento += sizeof(time_t);
+
+
+	memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->key), sizeof(u_int16_t));
+	desplazamiento += sizeof(u_int16_t);
 
 	memcpy(dato_serializado + desplazamiento, &(size_value), sizeof(int));
 	desplazamiento += sizeof(int);
 
 	memcpy(dato_serializado + desplazamiento, dato_a_serializar->value, size_value);
-	desplazamiento += sizeof(int);
+	desplazamiento += size_value;
 
 	return dato_serializado;
 
