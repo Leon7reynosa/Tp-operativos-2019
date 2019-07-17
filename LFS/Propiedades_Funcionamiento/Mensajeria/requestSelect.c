@@ -51,7 +51,7 @@ select_t decodificar_select(int conexion){
 
 	printf("tabla: %s\n", tabla );
 
-	select_t dato = crear_dato_select(tabla, key);
+	select_t dato = crear_dato_select(tabla, *key);
 
 	free(key);
 	free(tabla);
@@ -98,7 +98,8 @@ select_t crear_dato_select(char* tabla, u_int16_t key){
 	dato->key = key;
 	dato->tabla = malloc(sizeof(t_stream));
 	dato->tabla->size = strlen(tabla) + 1;
-	dato->tabla->buffer = tabla;
+	dato->tabla->buffer = malloc(dato->tabla->size);
+	memcpy(dato->tabla->buffer, tabla, dato->tabla->size );
 
 	dato->bytes = sizeof(cod_operacion) + sizeof(dato->tabla->size) + dato->tabla->size + sizeof(dato->key);
 

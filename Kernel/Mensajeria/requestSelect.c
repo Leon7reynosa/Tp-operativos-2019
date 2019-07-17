@@ -94,6 +94,7 @@ select_t crear_dato_select(char* tabla, u_int16_t key){
 
 	struct selectEstructura* dato = malloc(sizeof(struct selectEstructura));
 
+	string_to_upper(tabla);
 
 	dato->key = key;
 	dato->tabla = malloc(sizeof(t_stream));

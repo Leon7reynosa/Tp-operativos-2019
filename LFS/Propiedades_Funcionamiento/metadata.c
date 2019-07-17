@@ -11,7 +11,9 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 
 	metadata_t* obtener_metadata = malloc(sizeof(metadata_t));
 	t_config* metadata_config;
+	printf("PATH?\n");
 	char* path_metadata_tabla = obtener_path_metadata_de_tabla(nombre_tabla);
+	printf("%s\n", path_metadata_tabla);
 	char* aux_consistencia;
 	metadata_config = config_create(path_metadata_tabla);
 
@@ -19,22 +21,21 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 	obtener_metadata->particion= config_get_int_value(metadata_config, "PARTITIONS");
 	obtener_metadata->compactacion = config_get_int_value(metadata_config, "COMPACTION_TIME");
 
-
-	if(strcmp(aux_consistencia,"SC") == 0){
-	obtener_metadata->consistencia = SC;
+	printf("IFS?\n");
+	if(string_equals_ignore_case(aux_consistencia, "SC")){
+		obtener_metadata->consistencia = SC;
 	}
-	if(strcmp(aux_consistencia,"SHC") == 0){
-	obtener_metadata->consistencia = SHC;
+	if(string_equals_ignore_case(aux_consistencia, "SHC")){
+		obtener_metadata->consistencia = SHC;
 	}
-	if(strcmp(aux_consistencia, "EC") == 0){
-	obtener_metadata->consistencia = EC;
+	if(string_equals_ignore_case(aux_consistencia, "EC")){
+		obtener_metadata->consistencia = EC;
 	}
-
-	free(aux_consistencia);
 
 	free(path_metadata_tabla);
 
-	//config_destroy(metadata_config);
+	printf("Config? \n");
+	config_destroy(metadata_config);
 
 	return obtener_metadata;
 }

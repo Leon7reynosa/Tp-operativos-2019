@@ -234,11 +234,11 @@ void* auto_journal(void* argumento){
 
 	while(1){
 		usleep(tiempo_journal * 1000);
-
+		printf("Se inicia el journal\n");
 		pthread_mutex_lock(&mutex_journal);
 		realizar_journal();
 		pthread_mutex_unlock(&mutex_journal);
-
+		printf("Finalizo el journal\n");
 	}
 
 	return NULL;

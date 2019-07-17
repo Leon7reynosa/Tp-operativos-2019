@@ -20,9 +20,12 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			printf(">>SE REALIZARA EL SELECT\n");
 
+			printf("CON LOS SIGUIENTES DATOS:\n");
+			printf("KEY: %i\n", ((select_t)request_a_operar->tipo_request)->key);
+			printf("TABLA: %s\n",	(char *) ((select_t)request_a_operar->tipo_request)->tabla->buffer);
 			dato_request = request_select( (select_t) request_a_operar->tipo_request );
 
-			if(dato_request != NULL){
+			if(dato_request == NULL){
 
 				printf("No se encontro la key solicitada!\n");
 
@@ -34,7 +37,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			}
 
-
+			printf("///////////////////////////TERMINO EL SELECT//////////////////////////////////////");
 			//falta hacer mas cosas aca, habria que reenviarlo al pool
 
 			break;
@@ -105,35 +108,61 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
 	 char* nombre_tabla = (char *)datos_select->tabla->buffer;
 
-	 dato_t* dato_mas_nuevo;
+	 dato_t* dato_mas_nuevo = NULL;
 
 	 if(existe_la_tabla(nombre_tabla)){
 
 		 printf("Existe la tabla en el File System\n");
 
+		 printf("TABLA: %s\n", nombre_tabla);
 		 metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+
+		 printf("Muestro algo de la metadata: %i\n", metadata_tabla->particion);
 
 		 int particion_objetivo = calcular_particion(metadata_tabla->particion , datos_select->key);
 
+		 printf("Calculo la particion en la que se encuentra el dato: %i\n", particion_objetivo);
+
 		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
+		 printf("El path para esa particion: %s\n", path_particion_a_buscar);
+
+		 printf("Busco el dato en el binario\n");
 		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, datos_select->key);
+		 printf("Termine de buscar en los binarios de la particion\n");
 
+		 printf("Los busco en los temporales\n");
 		 dato_temporales = buscar_dato_en_temporales(nombre_tabla, datos_select->key);
+		 printf("Termine de buscar en los temporales\n");
 
+		 printf("Busco en la memtable\n");
          dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
+         printf("Termine de buscar en la memtable\n");
 
+         printf("Busco el dato que tiene el timestamp mas grande\n");
 		 dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
 
 		 dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
 
-		 liberar_dato(dato_aux);
-		 liberar_dato(dato_binarios);
-		 liberar_dato(dato_temporales);
-		 liberar_dato(dato_memtable);
+		 printf("Termine de buscar el que tiene el mas grande\n");
 
-		 liberar_metadata(metadata_tabla);
+		 if(dato_aux != NULL){
+			 liberar_dato(dato_aux);
+		 }
+		 if(dato_binarios != NULL){
+			 liberar_dato(dato_binarios);
+		 }
+		 if(dato_temporales != NULL){
+			 liberar_dato(dato_temporales);
+		 }
+		 if(dato_memtable != NULL){
+			 liberar_dato(dato_memtable);
+		 }
+
+		 free(metadata_tabla);
 		 free(path_particion_a_buscar);
+
+		 printf("Libere todo lo administrativo\n");
 
 	 }
 

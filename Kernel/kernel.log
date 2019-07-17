@@ -2329,3 +2329,69 @@
 [INFO] 16:22:54:794 kernel/(9211:9220): CREATE Tabla_A SC 2 60000
 [INFO] 16:22:54:812 kernel/(9211:9220): ---Se realizara el CREATE---
 
+[INFO] 16:44:57:812 kernel/(11971:11980): SELECT Tabla_A 6
+[INFO] 16:44:57:821 kernel/(11971:11980): ---Se realizara el SELECT---
+
+[INFO] 16:45:59:126 kernel/(11971:11979): SELECT Tabla_A 6
+[INFO] 16:45:59:126 kernel/(11971:11979): ---Se realizara el SELECT---
+
+[INFO] 16:54:00:839 kernel/(12197:12206): SELECT Tabla_A 6
+[INFO] 16:54:00:839 kernel/(12197:12206): ---Se realizara el SELECT---
+
+[INFO] 16:54:15:901 kernel/(12197:12205): SELECT Tabla_A 6
+[INFO] 16:54:15:901 kernel/(12197:12205): ---Se realizara el SELECT---
+
+[INFO] 16:55:11:664 kernel/(12197:12204): SELECT Tabla_A 6
+[INFO] 16:55:11:664 kernel/(12197:12204): ---Se realizara el SELECT---
+
+[INFO] 17:33:46:312 kernel/(13325:13334): SELECT Tabla_A 6
+[INFO] 17:33:46:321 kernel/(13325:13334): ---Se realizara el SELECT---
+
+[INFO] 17:39:39:101 kernel/(13527:13535): SELECT Tabla_A 6
+[INFO] 17:39:39:110 kernel/(13527:13535): ---Se realizara el SELECT---
+
+[INFO] 17:43:11:589 kernel/(13655:13664): SELECT Tabla_A 6
+[INFO] 17:43:11:597 kernel/(13655:13664): ---Se realizara el SELECT---
+
+[INFO] 17:45:28:653 kernel/(13791:13800): SELECT Tabla_A 6
+[INFO] 17:45:28:662 kernel/(13791:13800): ---Se realizara el SELECT---
+
+[INFO] 17:48:13:24 kernel/(13934:13943): SELECT Tabla_A 6
+[INFO] 17:48:14:32 kernel/(13934:13943): ---Se realizara el SELECT---
+
+[INFO] 17:53:43:390 kernel/(14145:14154): SELECT Tabla_A 6
+[INFO] 17:53:43:399 kernel/(14145:14154): ---Se realizara el SELECT---
+
+[INFO] 17:57:10:605 kernel/(14244:14254): SELECT Tabla_A 6
+[INFO] 17:57:10:614 kernel/(14244:14254): ---Se realizara el SELECT---
+
+[INFO] 18:03:47:202 kernel/(14439:14448): SELECT Tabla_A 6
+[INFO] 18:03:47:228 kernel/(14439:14448): ---Se realizara el SELECT---
+
+[INFO] 18:05:14:578 kernel/(14539:14549): SELECT Tabla_A 6
+[INFO] 18:05:14:587 kernel/(14539:14549): ---Se realizara el SELECT---
+
+[INFO] 18:08:34:225 kernel/(14728:14738): SELECT Tabla_A 6
+[INFO] 18:08:34:234 kernel/(14728:14738): ---Se realizara el SELECT---
+
+[INFO] 18:11:58:273 kernel/(14864:14874): SELECT Tabla_A 6
+[INFO] 18:11:58:282 kernel/(14864:14874): ---Se realizara el SELECT---
+
+[INFO] 18:27:57:892 kernel/(15238:15248): SELECT Tabla_A 6
+[INFO] 18:27:57:909 kernel/(15238:15248): ---Se realizara el SELECT---
+
+[INFO] 18:31:58:142 kernel/(15364:15373): SELECT Tabla_A 6
+[INFO] 18:31:58:151 kernel/(15364:15373): ---Se realizara el SELECT---
+
+[INFO] 18:36:26:405 kernel/(15544:15553): SELECT Tabla_A 6
+[INFO] 18:36:26:423 kernel/(15544:15553): ---Se realizara el SELECT---
+
+[INFO] 18:39:26:629 kernel/(15665:15674): SELECT Tabla_A 6
+[INFO] 18:39:26:638 kernel/(15665:15674): ---Se realizara el SELECT---
+
+[INFO] 18:43:24:69 kernel/(15801:15810): SELECT Tabla_A 6
+[INFO] 18:43:24:95 kernel/(15801:15810): ---Se realizara el SELECT---
+
+[INFO] 18:44:21:640 kernel/(15864:15873): SELECT Tabla_A 6
+[INFO] 18:44:21:649 kernel/(15864:15873): ---Se realizara el SELECT---
+
