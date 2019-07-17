@@ -17,6 +17,7 @@
 #include"configuracion.h"
 #include"bloque.h"
 #include"metadata.h"
+#include"comunity_func.h"
 
 struct particionContenido{
 	int size;
@@ -33,6 +34,7 @@ void mostrar_particion(Particion particion);
 bool es_dato_final(char* dato_a_analizar);
 bool es_dato_cortado(char* dato_a_analizar);
 dato_t* buscar_dato_en_particion(char*	 path , int key);
+dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key);
 bool bloque_valido(int bloque);
 void aniadir_bloque(Particion particion, int bloque);
 

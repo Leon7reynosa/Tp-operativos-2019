@@ -266,7 +266,7 @@ void request_create(create dato_create){
 
 	enviar_request(nuevo_create);
 
-	liberar_request(nuevo_create);
+	free(nuevo_create);
 
 //	error_request estado = recibir_estado_request();
 

@@ -28,4 +28,9 @@
 void pruebas(void);
 void inicializar_hilos(void);
 
+
+bool leer_consola(void);
+void parsear_request(cod_operacion operacion, char** tokens);
+int obtener_cantidad_argumentos(char** tokens);
+
 #endif /* POOL_H_ */

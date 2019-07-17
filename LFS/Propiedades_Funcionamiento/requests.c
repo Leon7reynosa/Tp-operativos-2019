@@ -22,8 +22,17 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			dato_request = request_select( (select_t) request_a_operar->tipo_request );
 
+			if(dato_request != NULL){
 
+				printf("No se encontro la key solicitada!\n");
 
+			}else{
+
+				printf("Se encontro la key: %i\n", dato_request->key);
+				printf("El value: %i\n", dato_request->value);
+				printf("El timestamp: %i\n", dato_request->timestamp);
+
+			}
 
 
 			//falta hacer mas cosas aca, habria que reenviarlo al pool
@@ -89,12 +98,14 @@ void trabajar_request(request request_a_operar , int conexion){
 dato_t* request_select(select_t datos_select){ //hay que modificarla para que reciba un select_t
 
 	 dato_t* dato_binarios;
-
+	 dato_t* dato_temporales;
 	 dato_t* dato_memtable;
 
 	 char* path_particion_a_buscar;
 
 	 char* nombre_tabla = (char *)datos_select->tabla->buffer;
+
+	 dato_t* dato_mas_nuevo;
 
 	 if(existe_la_tabla(nombre_tabla)){
 
@@ -107,16 +118,30 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
 		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, datos_select->key);
-         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
-		 dato_t* dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_binarios);
 
-		 return  dato_mas_nuevo;
+		 dato_temporales = buscar_dato_en_temporales(nombre_tabla, datos_select->key);
+
+         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
+
+		 dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
+
+		 dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
+
+		 liberar_dato(dato_aux);
+		 liberar_dato(dato_binarios);
+		 liberar_dato(dato_temporales);
+		 liberar_dato(dato_memtable);
+
+		 liberar_metadata(metadata_tabla);
+		 free(path_particion_a_buscar);
 
 	 }
 
 	 else{
 		 printf("No existe la tabla en el File System\n");
 	 }
+
+	 return  dato_mas_nuevo;
 
  }
 

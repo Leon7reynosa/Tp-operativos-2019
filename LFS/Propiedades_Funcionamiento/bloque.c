@@ -7,6 +7,36 @@
 
 #include"bloque.h"
 
+Bloque leer_bloque(int indice_bloque){
+
+	char* path_bloque = obtenerPath_Bloque(indice_bloque); //lion
+
+	printf("path: %s\n" , path_bloque);
+
+	//ABRO EL BLOQUE
+	int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
+
+	struct stat* atributos = malloc(sizeof(struct stat));
+
+	fstat(fd_bloque, atributos);
+
+	char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0); //lion
+
+	printf("datos map : %s\n" , datos);
+
+	Bloque bloque= crear_bloque(indice_bloque, datos);
+
+	munmap(fd_bloque, atributos->st_size);
+
+	free(atributos);
+	free(path_bloque);
+
+	close(fd_bloque);
+
+	return bloque;
+
+}
+
 /*
 void mostrar_bloque(char* path_bloque){
 

@@ -39,6 +39,7 @@ t_list *obtener_tabla(char *nombre_tabla) {
 
 
 dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key) {
+
     t_list *tabla_a_filtrar = obtener_tabla(nombre_tabla);
 
     if (tabla_a_filtrar == NULL) {

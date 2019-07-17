@@ -163,23 +163,70 @@ bool analizar_dato(u_int16_t key, char* dato){
 
 }
 
+dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
+
+	char* path_tabla = obtenerPathTabla(nombre_tabla);
+
+	DIR* directorio_tabla = opendir(path_tabla);
+	struct dirent* entrada_directorio;
+
+	t_list* lista_de_datos = list_create();
+
+	dato_t* dato_mayor;
+
+	if(directorio_tabla != NULL){
+
+		while((entrada_directorio = readdir(directorio_tabla)) !=NULL){
+
+			if(string_ends_with(entrada_directorio->d_name, ".tmp")){
+
+				char* path_temporal = obtenerPathTabla(nombre_tabla);
+
+				string_append(&path_temporal, entrada_directorio->d_name);
+				string_append(&path_temporal, "/");
+
+				dato_t* dato_encontrado = buscar_dato_en_particion(path_temporal, key);
+
+				list_add(lista_de_datos, dato_encontrado);
+
+				free(path_temporal);
+
+
+			}
+
+		}
+
+
+	}
+
+	void _timestamp_menor(void* _dato){
+
+		dato_t* dato_a_analizar = (dato_t *)_dato;
+
+		dato_t* dato_aux = dato_mayor;
+
+		dato_mayor = timestamp_mas_grande(dato_aux, dato_a_analizar);
+
+		liberar_dato(dato_aux);
+
+	}
+
+	list_iterate(lista_de_datos, _timestamp_menor);
+
+	closedir(directorio_tabla);
+	free(path_tabla);
+
+	list_destroy_and_destroy_elements(lista_de_datos, liberar_dato);
+
+	return dato_mayor;
+
+}
+
 
 //bloque_siguiente, si no hay siguiente, tiene que ser menor que 0 ( < 0)
 char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque_siguiente){
 
-	char* path_bloque = obtenerPath_Bloque(bloque_a_analizar);
-
-	int fd_bloque_anal = open(path_bloque, O_RDONLY , S_IRUSR);
-
-	struct stat* atributos = malloc(sizeof(struct stat));
-
-	fstat(fd_bloque_anal, atributos);
-
-	char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque_anal, 0);
-
-	Bloque bloque = crear_bloque(bloque_a_analizar, datos);
-
-	munmap(datos, atributos->st_size);
+	Bloque bloque = leer_bloque(bloque_a_analizar);
 
 	int index_dato = 0;
 
@@ -201,61 +248,45 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 		}else{
 
 				//TODO SI ES EL ULTIMO DATO, PRIMERO ME FIJO SI EL SIGUIENTE ES VALIDO
-				if(indice_bloque_siguiente >= 0){
-					//SI ES VALIDO, OSEA ME PASARON UN BLOQUE SIGUIENTE
+			if(indice_bloque_siguiente >= 0){
 
-					path_bloque = obtenerPath_Bloque(indice_bloque_siguiente); //lion
+				//SI ES VALIDO, OSEA ME PASARON UN BLOQUE SIGUIENTE
 
-					printf("path: %s\n" , path_bloque);
+				Bloque bloque_siguiente = leer_bloque(indice_bloque_siguiente);
 
-					//ABRO EL BLOQUE SIGUIENTE
-					int fd_bloque_siguiente = open(path_bloque, O_RDONLY , S_IRUSR);
+				if(es_dato_cortado((char *) list_get(bloque_siguiente->datos, 0)) || es_dato_cortado(dato_a_analizar)){
 
-					fstat(fd_bloque_siguiente, atributos);
+					//OBTENGO EL PRIMER DATO DEL BLOQUE SIGUIENTE (QUE SERIA EL CORTADO)
+					dato_cortado = string_duplicate((char *) list_get(bloque_siguiente->datos, 0));
 
+					char* dato_cortado_aux = string_new();
 
-					datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque_siguiente, 0); //lion
+					string_append(&dato_cortado_aux, dato_a_analizar);
+					string_append(&dato_cortado_aux, dato_cortado);
 
-					printf("datos map : %s\n" , datos);
+					printf("dato cortado : %s\n" , dato_cortado);
 
-					Bloque bloque_siguiente = crear_bloque(indice_bloque_siguiente, datos);
+					liberar_bloque(bloque_siguiente);
 
+					bool nani = analizar_dato(key, dato_cortado_aux);
 
-					munmap(fd_bloque_siguiente, atributos->st_size);
+					free(dato_cortado_aux);
 
-					if(es_dato_cortado((char *) list_get(bloque_siguiente->datos, 0)) || es_dato_cortado((char * ) list_get(bloque->datos, bloque->datos->elements_count - 1))){
-
-						//OBTENGO EL PRIMER DATO DEL BLOQUE SIGUIENTE (QUE SERIA EL CORTADO)
-						dato_cortado = string_duplicate((char *) list_get(bloque_siguiente->datos, 0));
-
-						char* dato_cortado_aux = string_new();
-
-						string_append(&dato_cortado_aux, dato_a_analizar);
-						string_append(&dato_cortado_aux, dato_cortado);
-
-						printf("dato cortado : %s\n" , dato_cortado);
-
-						liberar_bloque(bloque_siguiente);
-
-						bool nani = analizar_dato(key, dato_cortado_aux);
-
-						free(dato_cortado_aux);
-
-						return nani;  //lo que pasa aca es que retornamos un bool true o false, y no retornamos el bloque_cor
-					}
-
-					close(fd_bloque_siguiente);
-
-				}else{
-
-					return false;
-
-					}
-
+					return nani;  //lo que pasa aca es que retornamos un bool true o false, y no retornamos el bloque_cor
 				}
 
-				index_dato++;
+				liberar_bloque(bloque_siguiente);
+
+			}else{
+
+				return false;
+
 			}
+
+		}
+
+		index_dato++;
+	}
 
 
 
@@ -281,10 +312,6 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 
 	printf("LLEGUE HASTA ACA!\n");
 	//free(dato_cortado);
-
-	free(atributos);
-
-	close(fd_bloque_anal);
 
 	liberar_bloque(bloque);
 
@@ -316,23 +343,20 @@ dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 //asumimos que hay una sola key en la particion
 
 	Particion particion = leer_particion(path_particion_a_buscar);
-
 	int index_bloque;
 
 	dato_t* dato_encontrado = NULL;
-
 	char* dato;
 
 	int* bloque;
-
 	int *bloque_siguiente;
 
+	//por cada bloque de la particion
 	for( index_bloque = 0 ; index_bloque < list_size(particion->bloques) ; index_bloque++){
 
 		bloque = list_get(particion->bloques, index_bloque);
 
-		char* dato_encontrado;
-
+		//si el bloque tiene un bloque siguiente
 		if( index_bloque < (list_size(particion->bloques) -1 )){
 
 			int *bloque_siguiente = list_get( particion->bloques , index_bloque + 1 ) ;
@@ -341,24 +365,34 @@ dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 
 			printf("dato: %s\n" , dato);
 
+		//si no tiene un bloque siguiente
 		}else{
 
 			dato = buscar_dato_bloque(key , *bloque  , -1);
 		}
 
+		//si se encontro el dato!
 		if(dato != NULL){
 
-
 			dato_encontrado = convertir_a_dato(dato);
+			free(dato);
 			printf("entre aca\n");
 
-			return dato_encontrado;
+			break;
 
 		}
 
+
 	}
 
-	printf("No se pudo encontrar el dato\n");
+	if(dato_encontrado == NULL){
+
+		//logear que no lo encontre ! no existe
+
+	}
+
+	liberar_particion(particion);
+
 	return dato_encontrado;
 }
 

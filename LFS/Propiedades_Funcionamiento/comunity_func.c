@@ -95,12 +95,35 @@ void liberar_dato(dato_t* dato_remove){
 dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato){
 	//solo el primer dato puede ser null
 
-	if(primer_dato == NULL || segundo_dato->timestamp > primer_dato->timestamp){
+	dato_t* dato_mas_reciente = NULL;
 
-		return segundo_dato;
-	}else {
-		return primer_dato;
+	if(primer_dato != NULL){
+
+		if(segundo_dato != NULL){
+
+			if(primer_dato->timestamp >= segundo_dato->timestamp){
+
+				dato_mas_reciente = crear_dato(primer_dato->key, primer_dato->value, primer_dato->timestamp);
+
+			}else{
+
+				dato_mas_reciente = crear_dato(segundo_dato->key, segundo_dato->value, segundo_dato->timestamp);
+
+			}
+
+		}else{
+
+			dato_mas_reciente = crear_dato(primer_dato->key, primer_dato->value, primer_dato->timestamp);
+
+		}
+
+	}else if(segundo_dato != NULL){
+
+		dato_mas_reciente = crear_dato(segundo_dato->key, segundo_dato->value, segundo_dato->timestamp);
+
 	}
+
+	return dato_mas_reciente;
 }
 
 
