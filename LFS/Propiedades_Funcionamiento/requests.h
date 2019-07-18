@@ -13,7 +13,12 @@
 #include"file_system_aux.h"
 #include"compactador.h"
 #include"metadata.h"
+
+#include"Mensajeria/requestSelect.h"
+#include"Mensajeria/requestInsert.h"
+#include"Mensajeria/requestCreate.h"
 #include"Mensajeria/requestDescribe.h"
+#include"Mensajeria/requestDrop.h"
 
 dato_t* request_select(select_t dato_select);
 void request_insert(insert dato_insert);

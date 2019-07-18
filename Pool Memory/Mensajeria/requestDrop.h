@@ -23,7 +23,6 @@ struct dropEstructura{
 
 typedef struct dropEstructura* Drop;
 
-
 Drop crear_drop(char* tabla);
 void* serializar_drop(request drop);
 Drop decodificar_drop(int conexion);

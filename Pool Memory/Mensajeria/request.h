@@ -17,6 +17,8 @@ typedef enum{
 	INSERT,
 	CREATE,
 	DESCRIBE,
+	DROP,
+	JOURNAL,
 	GOSSIP,
 	DESCONEXION
 }cod_operacion;

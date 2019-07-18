@@ -23,7 +23,13 @@
 #include<signal.h>
 #include<ctype.h>
 #include"commons/collections/list.h"
+
+#include"requestSelect.h"
+#include"requestInsert.h"
+#include"requestCreate.h"
 #include"requestDescribe.h"
+#include"requestDrop.h"
+#include"requestGossiping.h"
 
 
 #include"request.h"
@@ -35,8 +41,6 @@ typedef enum{
 	MENSAJE
 }cod_op;
 */
-
-int cant_tablas; //inicialmente me los pasa el fileSystem
 
 request recibir_request(int conexion);
 void recibir_mensaje(int conexion);

@@ -52,6 +52,16 @@ request recibir_request(int conexion){
 			tipo_request = decodificar_describe(conexion);
 			break;
 
+		case DROP:
+
+			tipo_request = decodificar_drop(conexion);
+
+			break;
+
+		case JOURNAL:
+
+			break;
+
 		case GOSSIP:
 
 			tipo_request = decodificar_gossiping(conexion);

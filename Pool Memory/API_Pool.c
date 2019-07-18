@@ -73,6 +73,12 @@ void trabajar_request(request nueva_request , int conexion){
 
 			break;
 
+		case DROP:
+
+			request_drop((Drop)nueva_request->tipo_request);
+
+			break;
+
 		case GOSSIP:
 
 			intercambiar_datos( ((tabla_gossip_dto) nueva_request->tipo_request), conexion);
@@ -299,4 +305,17 @@ t_list* request_describe(describe_t dato_describe){
 
 	return datos_describe;
 
+}
+
+int request_drop(Drop datos_drop){
+
+	request request_drop = crear_request(DROP, datos_drop);
+
+	enviar_request(request_drop);
+
+	free(request_drop);
+
+	//recibir la poronga de SUCCESS o NOSUCCESS
+
+	return 0;
 }

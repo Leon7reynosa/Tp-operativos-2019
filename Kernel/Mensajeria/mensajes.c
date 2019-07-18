@@ -42,11 +42,18 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 		printf("Bytes: %i\n",bytes);
 		break;
 
+	case DROP:
+
+		printf("Serializo el drop\ņ");
+		buffer = serializar_drop(request);
+		bytes = ((Drop)(request->tipo_request))->bytes;
+
+		break;
+
 	default:
 		//no deberia entrar aca
 		break;
 	}
-
 
 	printf("llegue a enviar\n");
 	int error_send = send(conexion_memoria, buffer, bytes, 0);

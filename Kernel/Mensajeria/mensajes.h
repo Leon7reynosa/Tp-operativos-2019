@@ -26,10 +26,10 @@
 #include"requestInsert.h"
 #include"requestSelect.h"
 #include"requestDescribe.h"
+#include"requestDrop.h"
 #include"Cliente/cliente.h"
 
 void enviar_request(cod_operacion cod_op, void* tipoRequest);
 void liberar_request(request dato);
-
 
 #endif /* MENSAJES_H_ */

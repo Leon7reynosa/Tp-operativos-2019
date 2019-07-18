@@ -27,12 +27,16 @@ int main (int argc , char* argv[]){
 
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
+
+	printf("paso 1\n");
 	creacion_del_config();
 	obtener_datos_config();
 
 	conexion_memoria = conectar_servidor(ip_memoria, puerto_memoria);
 
 	inicializar_semaforo_ready();
+
+	printf("paso 1\n");
 
 	//tabla_gossiping = list_create(); // despues poner en una funcion inicializar gossiping y probar el ADD
 
@@ -42,13 +46,15 @@ int main (int argc , char* argv[]){
 
 	t_queue* colas_exec[grado_multiprocesamiento];
 
+	printf("paso 3\n");
+
 	inicializar_cola_exec(colas_exec , grado_multiprocesamiento);
 	inicializar_cola_new(argc, argv);
 	inicializar_cola_ready();
 	inicializar_cola_exit();
 
 	/////////////////////////////MAIN//////////////////////////////
-
+	printf("paso 4\n");
 
 	cola_new_to_ready();
 

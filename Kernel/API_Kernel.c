@@ -31,7 +31,8 @@ int ejecutar_request(char* request_lql){
 
 	switch(cod_request){
 		case SELECT:
-			if(obtener_parametros_select(request_lql, nombre_tabla, &key)){
+
+			if(obtener_parametros_select(request_lql, nombre_tabla, &key) == 3){
 
 				log_info(logger_kernel, "---Se realizara el SELECT---\n");
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
@@ -140,6 +141,35 @@ int ejecutar_request(char* request_lql){
 			}
 
 			break;
+
+		case DROP:
+
+			printf("entre al drop\n");
+
+			if(obtener_parametros_drop(request_lql , nombre_tabla)){
+				printf("entre al if, nombre : %s\n" , nombre_tabla);
+
+				Drop drop_enviar = crear_drop(nombre_tabla);
+
+				printf("ya lo cree bro\n");
+
+				enviar_request(DROP, drop_enviar );
+
+				printf("ya lo envie bro\n");
+
+				return 1;
+			}
+
+			break;
+
+		case JOURNAL:
+
+			request_journal();
+
+			return 1;
+
+			break;
+
 		default:
 			log_error( logger_kernel ,"-LA REQUEST NO ES VALIDA-\n");
 			return 0;
@@ -154,11 +184,77 @@ int ejecutar_request(char* request_lql){
 
 }
 
+
+void request_journal(){
+
+	t_list* lista_memorias_a_enviar = lista_memorias_de_consistencias();
+
+	memoria_t* memoria_a_enviar;
+
+	void _enviar_journal(void* memoria){
+
+		memoria_a_enviar = (memoria_t* ) memoria;
+
+		enviar_request(JOURNAL, NULL /*, memoria->socket*/ ); //esto deberiamos agregar cuando modifiquemos
+
+	}
+
+	list_iterate(lista_memorias_a_enviar, _enviar_journal);
+
+	list_destroy(lista_memorias_a_enviar);
+
+}
+
+t_list* lista_memorias_de_consistencia(){
+
+	t_list* lista_de_memorias = list_create();
+
+	if(Strong_C != NULL){
+
+		list_add(lista_de_memorias, Strong_C);
+
+	}
+
+	void _agregar_si_cumple(void* _memoria){
+
+		memoria_t* memoria = (memoria_t *)_memoria;
+
+		bool _esta_agregado(void* _memoria_2){
+
+				memoria_t* memoria_2 = (memoria_t *)_memoria_2 ;
+
+				return memoria == memoria_2;
+
+		}
+
+		if(list_any_satisfy(lista_de_memorias, _esta_agregado)){
+			//no lo agrego
+
+		}else{
+
+			list_add(lista_de_memorias, memoria);
+
+		}
+
+	}
+
+	list_iterate(Strong_Hash_C, _agregar_si_cumple);
+
+	list_iterate(Eventual_C, _agregar_si_cumple);
+
+	return lista_de_memorias;
+
+}
+
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key){
 
 	char* funcion = string_new();
 
-	if((sscanf(linea_request, "%s %s %d", funcion, nombre_tabla, key)) != 3){
+	int cantidad_parametros;
+
+	cantidad_parametros = sscanf(linea_request, "%s %s %d", funcion, nombre_tabla, key);
+
+	if( cantidad_parametros != 3){
 
 		log_error(logger_kernel, "-LA REQUEST SELECT RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
@@ -168,7 +264,8 @@ int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t
 	string_to_upper(nombre_tabla);
 
 	free(funcion);
-	return 1;
+
+	return cantidad_parametros;
 }
 
 int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp){
@@ -286,12 +383,18 @@ int obtener_parametros_describe(char* linea_request, char* nombre_tabla){
 	return cantidad;
 }
 
-void obtener_parametros_drop(char* linea_request, char* nombre_tabla){
+int obtener_parametros_drop(char* linea_request, char* nombre_tabla){
 	char* funcion = string_new();
 
-	sscanf(linea_request, "%s %s", funcion, nombre_tabla);
+	int cantidad_parametros;
+
+	cantidad_parametros = sscanf(linea_request, "%s %s", funcion, nombre_tabla);
 
 	string_to_upper(nombre_tabla);
+
+
+	return cantidad_parametros;
+
 }
 
 

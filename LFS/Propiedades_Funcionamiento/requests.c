@@ -92,8 +92,9 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case DROP:
 
-			request_drop((Drop)request_a_operar->tipo_request);
-
+			printf("Se realizara el DROP\n");
+			request_drop((Drop)(request_a_operar->tipo_request));
+			printf("Se termino el drop\n");
 			break;
 
 		default:
@@ -469,7 +470,7 @@ void request_drop(Drop request_drop){
 								liberar_particion(particion);
 								eliminar_particion(path_para_archivo);
 								printf("Estados despues de eliminar el archivo:\n");
-								get_all_estados();
+								//get_all_estados();
 							}
 
 							unlink(path_para_archivo);
@@ -490,7 +491,7 @@ void request_drop(Drop request_drop){
 
 	free(path_directorio_tabla);
 
-	log_info(logger_lissandra, "### DROP REALIZADO CON EXITO ! ###\n");						// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+//	log_info(logger_lissandra, "### DROP REALIZADO CON EXITO ! ###\n");						// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 
 

@@ -13,6 +13,8 @@ request_parser parser_list[] = {
 		{"INSERT" , INSERT},
 		{"CREATE" , CREATE},
 		{"DESCRIBE", DESCRIBE},
+		{"DROP" , DROP},
+		{"JOURNAL" , JOURNAL},
 		{"GOSSIP" , GOSSIP},
 		{"ADD" , ADD},
 		{"RUN" , RUN}
@@ -38,11 +40,9 @@ cod_operacion identificar_request ( char* request_lql){
 
 cod_operacion encontrar_codigo_request(char* request){
 
-	int tamanio_lista_parser =  sizeof(parser_list)/sizeof(request_parser);
+	int tamanio_lista_parser =  sizeof(parser_list)/sizeof(request_parser);  //pasarlo a global despues
 
 	for(int i = 0; i < tamanio_lista_parser ; i++){
-
-		printf("%d\n" , i);
 
 		if(string_equals_ignore_case(request, parser_list[i].request)){
 

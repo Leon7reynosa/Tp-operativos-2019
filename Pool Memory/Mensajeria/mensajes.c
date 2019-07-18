@@ -42,6 +42,13 @@ void enviar_request(request request){
 
 		break;
 
+	case DROP:
+
+		buffer = serializar_drop(request);
+		bytes = ((Drop)(request->tipo_request))->bytes;
+
+		break;
+
 	default:
 		//no deberia entrar aca
 		break;

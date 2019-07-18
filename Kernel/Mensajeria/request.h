@@ -16,6 +16,8 @@ typedef enum{
 	INSERT,
 	CREATE,
 	DESCRIBE,
+	DROP,
+	JOURNAL,
 	GOSSIP,
 	ADD,
 	RUN

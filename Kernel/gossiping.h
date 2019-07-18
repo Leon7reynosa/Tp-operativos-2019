@@ -8,10 +8,15 @@
 #ifndef GOSSIPING_H_
 #define GOSSIPING_H_
 
+#include<stdio.h>
+#include<stdlib.h>
+
 #include<commons/collections/list.h>
 #include"Config/configuracion.h"
 #include"Mensajeria/request.h"
 #include"Mensajeria/Cliente/cliente.h"
+
+
 
 #include"API_Kernel.h"
 

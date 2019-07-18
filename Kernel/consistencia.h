@@ -8,6 +8,9 @@
 #ifndef CONSISTENCIA_H_
 #define CONSISTENCIA_H_
 
+#include<stdio.h>
+#include<stdlib.h>
+
 #include<commons/collections/list.h>
 #include"gossiping.h"
 
@@ -23,9 +26,12 @@ typedef struct{
 
 }metadata_t;
 
+
+
 t_dictionary* registro_tabla; //va a tener char* nombre_tabla y los elementos van a ser metadata_t
 
 //van a ser listas de distintas memorias, es decir, sus sockets
+
 memoria_t* Strong_C;
 t_list* Eventual_C;
 t_list* Strong_Hash_C;
