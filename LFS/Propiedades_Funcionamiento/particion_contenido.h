@@ -26,6 +26,7 @@ struct particionContenido{
 
 typedef struct particionContenido* Particion;
 
+void eliminar_particion(char* path_particion);
 Particion crear_particion(int size);
 void liberar_particion(Particion particion);
 Particion leer_particion(char* path_particion);

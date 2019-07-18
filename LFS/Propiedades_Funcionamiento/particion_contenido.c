@@ -8,6 +8,27 @@
 
 #include"particion_contenido.h"
 
+void eliminar_particion(char* path_particion){
+
+	Particion particion = leer_particion(path_particion);
+
+	void _eliminar_bloque(void* _nro_bloque){
+
+		int* nro_bloque = (int *)_nro_bloque;
+
+		printf("   Bloque: %i\n", *nro_bloque);
+
+		eliminar_bloque(*nro_bloque);
+
+
+	}
+
+	list_iterate(particion->bloques, _eliminar_bloque);
+
+	liberar_particion(particion);
+
+}
+
 Particion crear_particion(int size){
 
 	Particion nueva_particion = malloc(sizeof(struct particionContenido));

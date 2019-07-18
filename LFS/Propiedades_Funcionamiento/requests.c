@@ -432,11 +432,12 @@ void request_drop(Drop request_drop){
 
 	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
 
-	abortar_hilo_compactador(nombre_tabla);//ESTO NO SE SI VA ACA O MAS ABAJO
+//	abortar_hilo_compactador(nombre_tabla);//ESTO NO SE SI VA ACA O MAS ABAJO
 
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
 		while((tabla = readdir(dir1))){
+
 			if(!string_equals_ignore_case(tabla->d_name, ".") && !string_equals_ignore_case(tabla->d_name, "..")){
 
 				if(string_equals_ignore_case(tabla->d_name, nombre_tabla)){
@@ -448,6 +449,7 @@ void request_drop(Drop request_drop){
 
 					dir2 = opendir(path_para_tabla_particular);
 					while((tabla_particular = readdir(dir2)) != NULL){
+
 						if(!string_equals_ignore_case(tabla_particular->d_name, ".") && !string_equals_ignore_case(tabla_particular->d_name, "..")){
 
 							char* path_para_archivo = string_new();
@@ -456,18 +458,37 @@ void request_drop(Drop request_drop){
 							string_append(&path_para_archivo, "/");
 							string_append(&path_para_archivo, tabla_particular->d_name);
 
+							if(string_ends_with(tabla_particular->d_name, ".bin") || string_ends_with(tabla_particular->d_name, ".tmp") ||
+							   string_ends_with(tabla_particular->d_name, ".tmpc"))
+							{
+								Particion particion = leer_particion(path_para_archivo);
+								printf("Se va a eliminar el siguiente archivo: \n");
+								printf("%s\n", path_para_archivo);
+								mostrar_particion(particion);
+								printf("\n\n");
+								liberar_particion(particion);
+								eliminar_particion(path_para_archivo);
+								printf("Estados despues de eliminar el archivo:\n");
+								get_all_estados();
+							}
+
 							unlink(path_para_archivo);
+							free(path_para_archivo);
 						}
 					}
 					closedir(dir2);
 					rmdir(path_para_tabla_particular);
+					free(path_para_tabla_particular);
 					break;
 				}
 
 			}
 		}
 	}
+
 	closedir(dir1);
+
+	free(path_directorio_tabla);
 
 	log_info(logger_lissandra, "### DROP REALIZADO CON EXITO ! ###\n");						// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 }

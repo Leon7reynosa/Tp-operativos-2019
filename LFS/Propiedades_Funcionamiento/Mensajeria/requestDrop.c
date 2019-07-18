@@ -7,7 +7,30 @@
 
 #include"requestDrop.h"
 
+Drop decodificar_drop(int conexion){
 
+	t_stream* tabla = malloc(sizeof(t_stream));
+	int bytes_recv;
+
+	bytes_recv = recv(conexion, &(tabla->size), sizeof(int), 0);
+
+	if(bytes_recv <= 0){
+		perror("Fallo el recibir el size de tabla");
+	}
+
+	bytes_recv = recv(conexion, tabla->buffer, tabla->size, 0);
+
+	if(bytes_recv <= 0){
+		perror("Fallo el recibir la tabla");
+	}
+
+	Drop nuevo_drop = crear_drop((char *)tabla->buffer);
+
+	free(tabla->buffer);
+	free(tabla);
+
+	return nuevo_drop;
+}
 
 void* serializar_drop(request drop){
 
