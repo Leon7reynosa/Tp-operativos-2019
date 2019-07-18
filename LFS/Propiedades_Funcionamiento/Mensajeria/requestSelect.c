@@ -51,6 +51,8 @@ select_t decodificar_select(int conexion){
 
 	printf("tabla: %s\n", tabla );
 
+	string_to_upper(tabla);
+
 	select_t dato = crear_dato_select(tabla, *key);
 
 	free(key);

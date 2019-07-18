@@ -163,6 +163,8 @@ int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t
 
 	}
 
+	string_to_upper(nombre_tabla);
+
 	free(funcion);
 	return 1;
 }
@@ -172,17 +174,20 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 	char** auxiliar;
 	char* funcion = string_new();
 
-	char* comillas = malloc(2);
-	*(comillas) = '"';
+	char* comillas = "\"";
 
 	auxiliar = string_n_split(linea_request, 3, comillas  );
 
+	printf("primer valor : %s\n", auxiliar[0]);
+	printf("segundo valor : %s\n", auxiliar[1]);
 
 	if(sscanf(auxiliar[0] , "%s %s %i" , funcion, nombre_tabla, key) != 3){
 
-		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
+		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE NOMBRE Y KEY.-\n");
 		return 0;
 	}
+
+
 
 	string_append(value , auxiliar[1]);
 
@@ -194,14 +199,15 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 
 	}else if( (sscanf(auxiliar[2] , " %d" , timestamp)) != 1 ){
 
-		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
+		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE TIMESTAMP.-\n");
 		return 0;
 
 	}
 
+	string_to_upper(nombre_tabla);
 
 	free(auxiliar);
-	free(comillas);
+	//free(comillas);
 	free(funcion);
 	return 1;
 
@@ -238,6 +244,8 @@ int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_ta
 
 	}
 
+	string_to_upper(nombre_tabla);
+
 	free(funcion);
 	return 1;
 }
@@ -251,6 +259,8 @@ int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* cri
 		log_error( logger_kernel , "-LA REQUEST CREATE RECIBIO PARAMETROS INCORRECTOS.-\n");
 		return 0;
 	}
+
+	string_to_upper(nombre_tabla);
 
 	free(funcion);
 	return 1;
@@ -267,6 +277,8 @@ int obtener_parametros_describe(char* linea_request, char* nombre_tabla){
 		return 0;
 	}
 
+	string_to_upper(nombre_tabla);
+
 	free(funcion);
 
 	return cantidad;
@@ -276,6 +288,8 @@ void obtener_parametros_drop(char* linea_request, char* nombre_tabla){
 	char* funcion = string_new();
 
 	sscanf(linea_request, "%s %s", funcion, nombre_tabla);
+
+	string_to_upper(nombre_tabla);
 }
 
 

@@ -40,6 +40,8 @@ select_t decodificar_select(int conexion){
 		perror("Fallo al recibir la tabla.");
 	}
 
+	string_to_upper(tabla);
+
 	select_t dato = crear_dato_select(tabla, *key);
 
 	free(key);

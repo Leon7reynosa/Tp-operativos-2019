@@ -64,6 +64,8 @@ create decodificar_create(int conexion){
 
 	printf("COMPACTACION: %i\n", *compactacion);
 
+	string_to_upper(tabla);
+
 	create dato = crear_dato_create(tabla, consistencia, *numero_particiones, *compactacion);
 
 	free(tabla);

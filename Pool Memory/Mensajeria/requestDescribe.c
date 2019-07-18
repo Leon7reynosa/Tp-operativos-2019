@@ -132,6 +132,8 @@ describe_t decodificar_describe(int conexion){
 
 		printf("Tabla recibida: %s\n", tabla);
 
+		string_to_upper(tabla);
+
 	}
 
 	printf("Creo el dato describe\n");

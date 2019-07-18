@@ -54,6 +54,8 @@ insert decodificar_insert(int conexion){
 		perror("Fallo al recibir el timestamp.\n");
 	}
 
+	string_to_upper(tabla);
+
 	insert dato = crear_dato_insert(tabla, *key, value, *timestamp);
 
 	free(tabla);

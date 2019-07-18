@@ -15,9 +15,7 @@ void* consola(){
 
 	while(strcmp(leido, "exit") || string_is_empty(leido)){
 
-
 		leido = readline(">>");
-
 
 		t_scripts* nuevo_script = malloc(sizeof(t_scripts));
 

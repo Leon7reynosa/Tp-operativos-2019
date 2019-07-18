@@ -2410,3 +2410,73 @@
 [INFO] 20:24:12:283 kernel/(18392:18400): SELECT Tabla_A 6
 [INFO] 20:24:12:283 kernel/(18392:18400): ---Se realizara el SELECT---
 
+[INFO] 10:27:32:259 kernel/(4901:4911): INSERT Tabla_A 5 "Hola" 600
+[INFO] 10:27:32:266 kernel/(4901:4911): ---Se realizara el INSERT---
+
+[INFO] 10:27:50:995 kernel/(4901:4910): SELECT Tabla_A 5
+[INFO] 10:27:50:995 kernel/(4901:4910): ---Se realizara el SELECT---
+
+[INFO] 10:28:13:737 kernel/(4901:4909): SELECT Tabla_A 5
+[INFO] 10:28:13:738 kernel/(4901:4909): ---Se realizara el SELECT---
+
+[INFO] 10:41:01:512 kernel/(5429:5438): INSERT TABLA_A 5 "HOLA LEON" 600
+[INFO] 10:41:01:517 kernel/(5429:5438): ---Se realizara el INSERT---
+
+[INFO] 10:41:58:977 kernel/(5429:5437): SELECT TABLA_A 5
+[INFO] 10:41:58:977 kernel/(5429:5437): ---Se realizara el SELECT---
+
+[INFO] 10:50:44:558 kernel/(5700:5709): INSERT TABLA_A 5 "HOLA LEON" 600
+[INFO] 10:50:44:565 kernel/(5700:5709): ---Se realizara el INSERT---
+
+[INFO] 10:53:28:219 kernel/(5833:5842): INSERT TABLA_A 5 "HOLA CHINESE" 600
+[INFO] 10:53:28:224 kernel/(5833:5842): ---Se realizara el INSERT---
+
+[INFO] 10:54:22:98 kernel/(5833:5840): SELECT TABLA_A 5
+[INFO] 10:54:22:98 kernel/(5833:5840): ---Se realizara el SELECT---
+
+[INFO] 10:57:44:653 kernel/(5957:5967): INSERT Tabla_A 5 "Maria" 600
+[INFO] 10:57:44:658 kernel/(5957:5967): ---Se realizara el INSERT---
+
+[INFO] 10:59:46:136 kernel/(5957:5966): SELECT Tabla_A 5
+[INFO] 10:59:46:136 kernel/(5957:5966): ---Se realizara el SELECT---
+
+[INFO] 11:00:53:149 kernel/(5957:5965): INSERT Tabla_A 6 "Reemplaze a thais" 11000
+[ERROR] 11:00:53:149 kernel/(5957:5965): -LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-
+
+[ERROR] 11:00:53:149 kernel/(5957:5965): FALLO AL EJECUTAR LA REQUEST INSERT Tabla_A 6 "Reemplaze a thais" 11000.
+
+[INFO] 11:06:57:142 kernel/(6232:6241): INSERT Tabla_A 6 "Reemplazo a thais" 11000
+[INFO] 11:06:57:147 kernel/(6232:6241): ---Se realizara el INSERT---
+
+[INFO] 11:07:26:572 kernel/(6232:6240): INSERT Tabla_A 4 "Chinese" 600
+[INFO] 11:07:26:572 kernel/(6232:6240): ---Se realizara el INSERT---
+
+[INFO] 11:08:05:85 kernel/(6232:6239): INSERT Tabla_A 8 "Boca la concha tu madre" 10000
+[ERROR] 11:08:05:85 kernel/(6232:6239): -LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE NOMBRE Y KEY.-
+
+[ERROR] 11:08:05:85 kernel/(6232:6239): FALLO AL EJECUTAR LA REQUEST INSERT Tabla_A 8 "Boca la concha tu madre" 10000.
+
+[INFO] 11:09:03:623 kernel/(6232:6241): SELECT Tabla_A 6
+[INFO] 11:09:03:624 kernel/(6232:6241): ---Se realizara el SELECT---
+
+[INFO] 11:11:53:554 kernel/(6339:6348): INSERT Tabla_A 6 "Reemplazo a thais" 11000
+[INFO] 11:11:53:559 kernel/(6339:6348): ---Se realizara el INSERT---
+
+[INFO] 11:12:18:322 kernel/(6339:6347): INSERT Tabla_A 15 "Soy la key 15 :P" 1000
+[ERROR] 11:12:18:323 kernel/(6339:6347): -LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE NOMBRE Y KEY.-
+
+[ERROR] 11:12:18:323 kernel/(6339:6347): FALLO AL EJECUTAR LA REQUEST INSERT Tabla_A 15 "Soy la key 15 :P" 1000.
+
+[INFO] 11:14:30:326 kernel/(6430:6441): INSERT Tabla_A 6 "Reemplazo a thais" 11000
+[INFO] 11:15:38:814 kernel/(6532:6542): INSERT Tabla_A 6 "reemplazo a thais" 11000
+[INFO] 11:15:38:821 kernel/(6532:6542): ---Se realizara el INSERT---
+
+[INFO] 11:16:28:875 kernel/(6532:6543): INSERT Tabla_A 15 "Hola soy un value re largo wachem" 1000
+[INFO] 11:16:28:875 kernel/(6532:6543): ---Se realizara el INSERT---
+
+[INFO] 11:17:22:366 kernel/(6532:6541): INSERT Tabla_A 15 "No soy seg fault ;)" 1000
+[INFO] 11:17:22:366 kernel/(6532:6541): ---Se realizara el INSERT---
+
+[INFO] 11:17:45:880 kernel/(6532:6542): INSERT Tabla_A 10 "Boca la concha tu mare" 1200
+[INFO] 11:17:45:880 kernel/(6532:6542): ---Se realizara el INSERT---
+

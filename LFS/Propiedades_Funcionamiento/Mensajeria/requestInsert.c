@@ -30,19 +30,27 @@ insert decodificar_insert(int conexion){
 		perror("Fallo al recibir el tamaño de la tabla.\n");
 	}
 
+	printf("SIZE TABLA: %i\n", *size_tabla);
+
 	char* tabla = malloc(*size_tabla);
 
 	if(recv(conexion, tabla, *size_tabla,0) == -1){
 		perror("Fallo al recibir la tabla.\n");
 	}
 
+	printf("tabla: %s\n", tabla);
+
 	if(recv(conexion,key,sizeof(u_int16_t),0) == -1){
 		perror("Fallo al recibir la key.\n");
 	}
 
+	printf("key: %i\n", *key);
+
 	if(recv(conexion,size_value,sizeof(int),0) == -1){
 		perror("Fallo al recibir el tamaño del value.\n");
 	}
+
+	printf("Size value: %i\n", *size_value);
 
 	char* value = malloc(*size_value);
 
@@ -50,9 +58,15 @@ insert decodificar_insert(int conexion){
 		perror("Fallo al recibir el value.\n");
 	}
 
+	printf("value: %s\n", value);
+
 	if(recv(conexion,timestamp ,sizeof(time_t),0) == -1){
 		perror("Fallo al recibir el timestamp.\n");
 	}
+
+	printf("timestamp: %i\n", *timestamp);
+
+	string_to_upper(tabla);
 
 	insert dato = crear_dato_insert(tabla, *key, value, *timestamp);
 

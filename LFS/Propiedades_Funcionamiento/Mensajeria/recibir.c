@@ -48,6 +48,7 @@ request recibir_request(int conexion){
 			printf(">>REALIZAMOS UN INSERT\n");
 
 			tipo_request = decodificar_insert(conexion);
+
 			break;
 
 		case CREATE:
@@ -62,6 +63,14 @@ request recibir_request(int conexion){
 			printf("REALIZAMOS UN DESCRIBE\n");
 
 			tipo_request = decodificar_describe(conexion);
+
+			break;
+
+		case DROP:
+
+			printf("REALIZAMOS UN DROP\n");
+
+			tipo_request = decodificar_drop(conexion);
 
 			break;
 

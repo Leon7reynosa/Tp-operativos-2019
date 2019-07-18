@@ -50,6 +50,8 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			request_insert((insert) request_a_operar->tipo_request );
 
+			printf("///////////////////Termino el insert//////////////////\n");
+
 			break;
 
 		case CREATE:
@@ -85,6 +87,12 @@ void trabajar_request(request request_a_operar , int conexion){
 			}
 
 			printf("TERMINO EL DESCRIBE BRO\n");
+
+			break;
+
+		case DROP:
+
+			request_drop((Drop)request_a_operar->tipo_request);
 
 			break;
 
@@ -191,7 +199,9 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
 		 metadata_insert = obtener_metadata(nombre_tabla);
 
-		 dato_ingresar = crear_dato(datos_insert->key, (char *)datos_insert->value, datos_insert->timestamp);
+		 printf("Voy a ingresar el siguiente value: %s\n",(char *)datos_insert->value->buffer );
+
+		 dato_ingresar = crear_dato(datos_insert->key, (char *)datos_insert->value->buffer, datos_insert->timestamp);
 
 		 ingresar_a_memtable(dato_ingresar, nombre_tabla);
 
@@ -410,9 +420,11 @@ t_list* request_describe_global(void){
 
 
 
-void request_drop(char* nombre_tabla){
+void request_drop(Drop request_drop){
 
-	log_info(logger_lissandra, "### SOLICITUD DE -- DROP -- para %s\n", nombre_tabla);			// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+	char* nombre_tabla = (char *)request_drop->tabla->buffer;
+
+//	log_info(logger_lissandra, "### SOLICITUD DE -- DROP -- para %s\n", nombre_tabla);			// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	DIR *dir1, *dir2;
 
