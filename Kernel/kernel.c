@@ -28,13 +28,15 @@ int main (int argc , char* argv[]){
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
 	creacion_del_config();
-	printf("holas\n");
 	obtener_datos_config();
-	printf("%s\n" , ip_memoria);
 
 	conexion_memoria = conectar_servidor(ip_memoria, puerto_memoria);
 
 	inicializar_semaforo_ready();
+
+	//tabla_gossiping = list_create(); // despues poner en una funcion inicializar gossiping y probar el ADD
+
+	inicializar_consistencias();
 
 	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
 

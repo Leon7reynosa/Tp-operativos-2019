@@ -2480,3 +2480,17 @@
 [INFO] 11:17:45:880 kernel/(6532:6542): INSERT Tabla_A 10 "Boca la concha tu mare" 1200
 [INFO] 11:17:45:880 kernel/(6532:6542): ---Se realizara el INSERT---
 
+[INFO] 12:24:12:87 kernel/(6498:6507): INSERT Tabla_A 6 "leonidas" 34344
+[INFO] 12:24:12:87 kernel/(6498:6507): ---Se realizara el INSERT---
+
+[INFO] 13:01:30:114 kernel/(7262:7271): ADD MEMORY 1 TO SC
+[INFO] 13:01:30:114 kernel/(7262:7271): ---Se realizara la request ADD---
+
+[INFO] 13:04:26:687 kernel/(7354:7361): ADD MEMORY TO SC
+[ERROR] 13:04:26:688 kernel/(7354:7361): -LA REQUEST ADD RECIBIO PARAMETROS INCORRECTOS.-
+
+[ERROR] 13:04:26:688 kernel/(7354:7361): FALLO AL EJECUTAR LA REQUEST ADD MEMORY TO SC.
+
+[INFO] 13:04:35:399 kernel/(7354:7363): ADD MEMORY 1 TO SC
+[INFO] 13:04:35:399 kernel/(7354:7363): ---Se realizara la request ADD---
+

@@ -114,13 +114,15 @@ int ejecutar_request(char* request_lql){
 			return 1;
 
 		case ADD:
+
 			if(obtener_parametros_add(request_lql, &numero_memoria, consistencia)){
 
 				log_info(logger_kernel, "---Se realizara la request ADD---\n");
-				//request_add(numero_memoria, consistencia);
+				request_add(numero_memoria, consistencia);
 				log_info(logger_kernel , "SE AGREGO LA MEMORIA CORRECTAMENTE\n");
 				return 1;
 			}
+
 			break;
 
 		case RUN:
