@@ -149,7 +149,7 @@ memoria_t* seleccionar_memoria_consistencia(request request_a_enviar){
 }
 
 
-guardar_tabla_consistencia(char* tabla, metadata_t* metadata_tabla){
+void guardar_tabla_consistencia(char* tabla, metadata_t* metadata_tabla){
 
 	dictionary_put(registro_tabla , tabla, metadata_tabla);
 

@@ -85,7 +85,7 @@ int main (void){
 					printf("\n//////////////////////////////////////////////////////// NUEVA REQUEST c: ////////////////////////////////////////////////\n");
 					request nueva_request = recibir_request(i);
 
-					printf("codigo_ %d\n" , nueva_request->cod_op);
+					printf("codigo_ lol %d\n" , nueva_request->cod_op);
 
 //TODO Esta ranciada de la desconexion y los errores
 
@@ -97,10 +97,11 @@ int main (void){
 
 					}else{
 
-					pthread_mutex_lock(&mutex_journal);
+						printf("no da\n");
+
 					//DOUBLE FREE CORRUPTION, OJO EN EL ENVIAR_REQUEST, ESTOY GENERANDO DENUEVO UNA REQUEST Y LA LIBERO AHI! ojo
-					trabajar_request(nueva_request, i);
-					pthread_mutex_unlock(&mutex_journal);
+						trabajar_request(nueva_request, i);
+
 					}
 //TODO OJO AL LIBERAR UNA DESCONEXION, NO PUEDO HACER FREE DE NULL!!!!!!
 					liberar_request(nueva_request);

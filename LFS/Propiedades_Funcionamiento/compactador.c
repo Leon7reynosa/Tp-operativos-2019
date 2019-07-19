@@ -227,11 +227,11 @@ void abortar_hilo_compactador(char* nombre_tabla){
 
 		thread_args* argumentos = (thread_args *) thread_arg;
 
-		pthread_mutex_lock(argumentos->mutex_tabla);
+//		pthread_mutex_lock(&(argumentos->mutex_tabla));
 		pthread_cancel(argumentos->hilo_compactacion);
-		pthread_mutex_unlock(argumentos->mutex_tabla);
+//		pthread_mutex_unlock(argumentos->mutex_tabla);
 
-		pthread_mutex_destroy(argumentos->mutex_tabla);
+//		pthread_mutex_destroy(&(argumentos->mutex_tabla));
 		free(argumentos->nombre_tabla);
 		free(argumentos);
 

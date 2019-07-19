@@ -9,6 +9,8 @@
 
 void trabajar_request(request nueva_request , int conexion){
 
+	printf("entre a trabajar al request\n");
+
 	Dato dato_select;
 	t_dato* dato_a_enviar;
 	tabla_gossip_dto tabla_recibida;
@@ -21,7 +23,6 @@ void trabajar_request(request nueva_request , int conexion){
 			printf("\n>>SE REALIZARA EL SELECT\n");
 
 			dato_select = request_select( (select_t) nueva_request->tipo_request);
-
 			/*if(dato_select == NULL){
 
 				bueno, basicamente pueden pasar dos cosas: no existe la key, o en el peor de los casos no existe la tabla.
@@ -81,7 +82,14 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case GOSSIP:
 
+			printf("Se realizara La request Gossip\n");
+
+			pthread_mutex_lock(&mutex_gossip);
+
+			printf("Empiezo\n");
 			intercambiar_datos( ((tabla_gossip_dto) nueva_request->tipo_request), conexion);
+
+			pthread_mutex_unlock(&mutex_gossip);
 
 			break;
 
@@ -100,6 +108,7 @@ Dato request_select(select_t dato){
 	Pagina pagina_encontrada;
 	Dato dato_encontrado;
 
+	pthread_mutex_lock(&mutex_journal);
 	if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){
 		printf("Existe un segmento llamado: %s\n", (char*) dato->tabla->buffer);
 
@@ -178,6 +187,7 @@ Dato request_select(select_t dato){
 
 
 	}
+	pthread_mutex_unlock(&mutex_journal);
 
 	return dato_encontrado;
 }
@@ -205,6 +215,7 @@ void request_insert(insert dato){
 
 	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
+	pthread_mutex_lock(&mutex_journal);
 	if(existe_segmento((char *)dato->tabla->buffer ,&segmento_tabla)){
 		printf("Existe el segmento!\n");
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
@@ -261,6 +272,7 @@ void request_insert(insert dato){
 		mostrar_datos(pagina_encontrada);
 
 	}
+	pthread_mutex_unlock(&mutex_journal);
 
 	liberar_dato(dato_insert);
 }
@@ -270,9 +282,13 @@ void request_create(create dato_create){
 
 	request nuevo_create = crear_request(CREATE, dato_create);
 
-	enviar_request(nuevo_create);
+	enviar_request(nuevo_create, socket_lissandra);
 
 	free(nuevo_create);
+
+	pthread_mutex_lock(&mutex_journal);
+	agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
+	pthread_mutex_unlock(&mutex_journal);
 
 //	error_request estado = recibir_estado_request();
 
@@ -294,7 +310,7 @@ t_list* request_describe(describe_t dato_describe){
 
 	request nuevo_describe = crear_request(DESCRIBE, dato_describe);
 
-	enviar_request(nuevo_describe);
+	enviar_request(nuevo_describe, socket_lissandra);
 
 	t_list* datos_describe;
 
@@ -311,10 +327,21 @@ int request_drop(Drop datos_drop){
 
 	request request_drop = crear_request(DROP, datos_drop);
 
-	enviar_request(request_drop);
+	enviar_request(request_drop, socket_lissandra);
 
 	free(request_drop);
 
+	Segmento segmento_drop;
+
+	pthread_mutex_lock(&mutex_journal);
+
+	if(existe_segmento( (char *) datos_drop->tabla->buffer ,  &segmento_drop )){
+
+		sacar_segmento(segmento_drop);
+
+	}
+
+	pthread_mutex_unlock(&mutex_journal);
 	//recibir la poronga de SUCCESS o NOSUCCESS
 
 	return 0;

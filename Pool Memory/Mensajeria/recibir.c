@@ -311,3 +311,64 @@ t_list* recibir_describe(int conexion){
 
 }
 
+tabla_gossip_dto recibir_datos_gossip(socket_seed){
+
+	int cantidad_memorias;
+	int bytes_recv;
+
+
+	tabla_gossip_dto dato_recibido;
+
+	bytes_recv = recv(socket_seed, &cantidad_memorias, sizeof(int), 0);
+
+	if(bytes_recv <= 0){
+		perror("Recibir cantidad de memorias");
+	}
+
+	dato_recibido = crear_dto_gossip(cantidad_memorias);
+
+	for(int i = 0; i < cantidad_memorias; i++){
+
+		int nro;
+		int size_ip;
+		char* ip;
+		int puerto;
+
+		bytes_recv = recv(socket_seed, &nro, sizeof(int), 0);
+
+		if(bytes_recv <= 0){
+			perror("Recibir numero de memorias");
+		}
+
+		bytes_recv = recv(socket_seed, &size_ip, sizeof(int), 0);
+
+		if(bytes_recv <= 0){
+			perror("Recibir numero de memorias");
+		}
+
+		ip = malloc(size_ip);
+
+		bytes_recv = recv(socket_seed, ip, size_ip, 0);
+
+		if(bytes_recv <= 0){
+			perror("Recibir IP");
+		}
+
+		bytes_recv = recv(socket_seed, &puerto, sizeof(int), 0);
+
+		if(bytes_recv <= 0){
+			perror("Recibir puerto");
+		}
+
+
+		memoria_dto memoria_ = crear_memoria_dto(nro, ip, puerto);
+
+		agregar_memoria_gossip_dto(dato_recibido, memoria_);
+
+	}
+
+
+	return dato_recibido;
+
+}
+

@@ -97,7 +97,6 @@ void* administrar_conexiones_hilos(int* socket_servidor){
 
 		list_add(memorias_conectadas , nueva_conexion_memoria);
 
-
 		realizar_handshake(nueva_conexion_memoria->socket_memoria);
 
 

@@ -8,6 +8,26 @@
 
 #include"requestGossiping.h"
 
+void* serializar_request_gossiping(request request){
+
+	tabla_gossip_dto tabla = (tabla_gossip_dto)(request->tipo_request);
+
+	void* buffer_datos;
+	void* buffer  = malloc(sizeof(cod_operacion) + tabla->bytes);
+	cod_operacion op = GOSSIP;
+
+	buffer_datos = serializar_gossiping(tabla);
+
+
+
+	memcpy(buffer, &op, sizeof(cod_operacion));
+	memcpy(buffer + sizeof(cod_operacion), buffer_datos, tabla->bytes);
+
+	free(buffer_datos);
+
+	return buffer;
+}
+
 memoria_dto crear_memoria_dto(int numero, char* ip, int puerto){
 
 	memoria_dto memory = malloc(sizeof(memoria_dto));
@@ -72,12 +92,17 @@ tabla_gossip_dto decodificar_gossiping(conexion){
 	char* ip;
 	int puerto;
 
+	printf("voy a esperar\n");
 
 	error_recv = recv(conexion, &cant_memorias, sizeof(int), 0);
+
+	printf("termine de esperara\n");
 
 	if(error_recv <= 0 ){
 		//error
 	}
+
+	printf("Cantidad de memorias recibidas: %i\n", cant_memorias);
 
 	tabla_gossip_dto tabla_gossip = crear_dto_gossip(cant_memorias);
 	memoria_dto memory_dto;

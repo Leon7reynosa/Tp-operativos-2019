@@ -11,8 +11,11 @@ void* auto_gossip(void* argumentos){
 
 	while(1){
 		usleep(tiempo_gossiping * 1000);
-		//gossiping();
-		printf("Gossiping :P\n");
+		printf("Auto Gossiping :P\n");
+		pthread_mutex_lock(&mutex_gossip);
+		gossiping();
+		pthread_mutex_unlock(&mutex_gossip);
+		printf("Termino el auto gossiping\n");
 	}
 	return NULL;
 }
@@ -34,9 +37,15 @@ void gossiping(){
 
 		if(socket_seed >= 0){
 
-			enviar_datos(socket_seed , memoria->tabla_gossiping);
+			tabla_gossip_dto dato_gossip = generar_datos_gossip(memoria->tabla_gossiping);
 
-			datos_gossip = recibir_request(socket_seed);
+			request nueva_request = crear_request(GOSSIP, dato_gossip);
+
+			enviar_request(nueva_request, socket_seed);
+
+			liberar_request(nueva_request);
+
+			datos_gossip = recibir_datos_gossip(socket_seed);
 
 			actualizar_tabla_gossip((tabla_gossip_dto)datos_gossip->tipo_request);
 
@@ -45,6 +54,7 @@ void gossiping(){
 			close(socket_seed);
 		}
 		else{
+			printf("la memoria seed no esta conectada\n");
 			//nada, proba otro dia crack! (LOGGEAR que la memoria seed no esta conectada)
 		}
 
@@ -101,27 +111,43 @@ void liberar_dato_gossiping(struct DatoTablaGossiping* dato){
 
 }
 
-
-
-void enviar_datos(int memoria2, t_list* memorias ){
+tabla_gossip_dto generar_datos_gossip(t_list* memorias){
 
 	tabla_gossip_dto dato_a_enviar = crear_dto_gossip(list_size(memorias));
 
-	int bytes_enviados = 0;
-	int bytes_restantes;
-	int enviados_aux;
+	printf("Voy a enviar %i memorias\n", dato_a_enviar->cant_memorias);
 
 	void _agregar_dato(void* _memoria){
 
 		Seed memoria_aux = (Seed) _memoria;
 
+		printf("Agrego la memoria: \n");
+		printf("nro: %i\n", memoria_aux->numero_memoria);
+		printf("puerto: %i\n", memoria_aux->puerto);
+		printf("tabla_gossip_dto ip: %s\n", memoria_aux->ip);
+
 		memoria_dto memoria_a_enviar = crear_memoria_dto(memoria_aux->numero_memoria, memoria_aux->ip, memoria_aux->puerto);
+
+		printf("Cree el memoria_dto\n");
 
 		agregar_memoria_gossip_dto(dato_a_enviar, memoria_a_enviar);
 
 	}
 
 	list_iterate(memorias, _agregar_dato);
+
+	return dato_a_enviar;
+
+}
+
+
+void enviar_datos(int memoria2, t_list* memorias ){
+
+	tabla_gossip_dto dato_a_enviar = generar_datos_gossip(memorias);
+
+	int bytes_enviados = 0;
+	int bytes_restantes = dato_a_enviar->bytes;
+	int enviados_aux;
 
 	void* buffer;
 
@@ -130,7 +156,7 @@ void enviar_datos(int memoria2, t_list* memorias ){
 	while(bytes_enviados < dato_a_enviar->bytes){
 
 		printf("Envio las memorias\n");
-		enviados_aux = send(memoria2, buffer, dato_a_enviar->bytes, 0);
+		enviados_aux = send(memoria2, buffer + bytes_enviados, bytes_restantes, 0);
 
 		if(enviados_aux == -1){
 			perror("Send tiro -1");

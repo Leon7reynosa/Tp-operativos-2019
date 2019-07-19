@@ -65,6 +65,7 @@ int main(){
 		exit(1);
 	}
 
+
 	pthread_detach(administrador_hilos);
 	pthread_join(hilo_consola , NULL);
 

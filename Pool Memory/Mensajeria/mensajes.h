@@ -27,12 +27,13 @@
 #include"requestCreate.h"
 #include"requestInsert.h"
 #include"requestSelect.h"
+#include"requestGossiping.h"
 #include"Cliente/cliente.h"
 #include"t_dato.h"
 #include"commons/collections/list.h"
 
 
-void enviar_request(request request);
+void enviar_request(request request, int conexion);
 void liberar_request(request dato);
 void mandar_mensaje(int conexion);
 void enviar_dato(t_dato* dato, int conexion);

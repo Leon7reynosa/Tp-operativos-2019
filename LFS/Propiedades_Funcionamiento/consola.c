@@ -9,11 +9,13 @@
 
 void* consola(void* argumento){
 
-	char* leido;
+	char* leido = string_new();
 
 	cod_operacion codigo;
 
 	menu();
+
+	printf("holas\n");
 
 	while(!string_equals_ignore_case(leido, "exit")){
 		printf("Entre al while\n");
@@ -25,7 +27,7 @@ void* consola(void* argumento){
 
 		codigo = identificar_request(leido);
 
-		ejecutar_request(codigo);
+		ejecutar_request(codigo, leido);
 
 	}
 
@@ -137,7 +139,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 				return false;
 			}
 
-			mostrar_lista_describe(lista_describe); // falta esta funcion?
+			//mostrar_lista_describe(lista_describe); // falta esta funcion?
 
 			list_destroy_and_destroy_elements(lista_describe, liberar_metadata); //falta el liberar metadata?
 
@@ -160,6 +162,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		default:
 
+			//log
 			printf("no reconoci la request\n");
 
 	}
@@ -283,6 +286,20 @@ int obtener_parametros_describe(char* linea_request, char* nombre_tabla){
 	free(funcion);
 
 	return cantidad;
+}
+
+int obtener_parametros_drop(char* linea_request, char* nombre_tabla){
+	char* funcion = string_new();
+
+	int cantidad_parametros;
+
+	cantidad_parametros = sscanf(linea_request, "%s %s", funcion, nombre_tabla);
+
+	string_to_upper(nombre_tabla);
+
+
+	return cantidad_parametros;
+
 }
 
 void menu(){

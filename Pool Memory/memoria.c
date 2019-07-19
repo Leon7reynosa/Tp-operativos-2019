@@ -57,6 +57,8 @@ void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato){
 	memoria->tamanio 		   = tamanio;
 	memoria->cant_max_datos    = tamanio / tamanio_dato;
 	memoria->paginas		   = inicializar_paginas();
+	printf("numero de memoria es: &d\n" , numero_memoria);
+	memoria->numero_memoria = numero_memoria;
 
 	memoria->seed = list_create();
 	inicializar_seeds();
@@ -99,6 +101,7 @@ void inicializar_seeds(void){
 		list_add(memoria->seed, nueva_seed);
 
 	}
+
 
 }
 
@@ -359,7 +362,7 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	request nuevo_select = crear_request(SELECT, dato_select);
 
-	enviar_request(nuevo_select); // ya se libera la request aca
+	enviar_request(nuevo_select, socket_lissandra); // ya se libera la request aca
 
 	liberar_request(nuevo_select);
 

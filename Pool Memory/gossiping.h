@@ -26,4 +26,7 @@ void intercambiar_datos(tabla_gossip_dto tabla_ajena, int conexion);
 Seed pasar_memoria_dto_a_seed(memoria_dto dato_dto);
 void actualizar_tabla_gossip(tabla_gossip_dto request_gossip);
 
+tabla_gossip_dto generar_datos_gossip(t_list* memorias);
+void* serializar_request_gossiping(request);
+
 #endif /* GOSSIPING_H_ */

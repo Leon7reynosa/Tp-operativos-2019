@@ -22,17 +22,32 @@ int main (int argc , char* argv[]){
 
 	/////////////////////////////////VARIABLES/////////////////////////////////
 
+	pthread_t hilo_gossiping;
 	pthread_t hilo_consola;
 	pthread_t hilo_planificador;
 
+	memoria_t* memoria_principal;
+
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
+	inicializar_tabla_gossiping();
 
-	printf("paso 1\n");
+	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
+
 	creacion_del_config();
 	obtener_datos_config();
 
-	conexion_memoria = conectar_servidor(ip_memoria, puerto_memoria);
+	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  1); //si pasa pasa, modioficarlo en el config
+
+	printf("llegueeep\n");
+
+	ingresar_a_tabla_gossiping(memoria_principal);
+
+	printf("llegueeep\n");
+
+	conexion_memoria = memoria_principal->socket;
+
+	printf("llegueeep\n");
 
 	inicializar_semaforo_ready();
 
@@ -42,7 +57,7 @@ int main (int argc , char* argv[]){
 
 	inicializar_consistencias();
 
-	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
+
 
 	t_queue* colas_exec[grado_multiprocesamiento];
 
@@ -54,6 +69,11 @@ int main (int argc , char* argv[]){
 	inicializar_cola_exit();
 
 	/////////////////////////////MAIN//////////////////////////////
+
+	pthread_create( &hilo_gossiping , NULL , realizar_gossiping, NULL );
+
+	pthread_detach(&hilo_gossiping);
+
 	printf("paso 4\n");
 
 	cola_new_to_ready();
@@ -63,7 +83,6 @@ int main (int argc , char* argv[]){
 	pthread_create(&hilo_planificador, NULL, planificador, colas_exec);
 
 	pthread_create(&hilo_consola , NULL, consola, NULL);
-
 
 
 	pthread_join(hilo_planificador, NULL);
