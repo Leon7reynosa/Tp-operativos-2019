@@ -20,9 +20,12 @@
 #include"metadata.h"
 #include"loggers.h"
 
+#include"pthread.h"
 
 typedef struct{
 
+	pthread_t hilo_compactacion;
+	pthread_mutex_t mutex_tabla;
 	int tiempo_compactacion;
 	char* nombre_tabla;
 

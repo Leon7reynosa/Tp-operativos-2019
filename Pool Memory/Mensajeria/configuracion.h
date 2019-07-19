@@ -15,9 +15,11 @@
 #include<commons/config.h>
 #include<readline/readline.h>
 #include<commons/collections/list.h>
+#include<unistd.h>
 
 #include"Cliente/cliente.h"
 
+char* ip_escucha;
 int puerto_escucha;
 char* ip_lfs;
 int puerto_lfs;

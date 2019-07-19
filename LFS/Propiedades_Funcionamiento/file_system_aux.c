@@ -17,6 +17,8 @@ int existe_la_tabla(char* tabla){
  	}
 
  	closedir(dir);
+ 	free(path_tabla);
+
  	return 0;
 
 }

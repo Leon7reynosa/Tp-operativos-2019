@@ -32,7 +32,7 @@ t_dictionary* registro_tabla; //va a tener char* nombre_tabla y los elementos va
 
 //van a ser listas de distintas memorias, es decir, sus sockets
 
-memoria_t* Strong_C;
+
 t_list* Eventual_C;
 t_list* Strong_Hash_C;
 

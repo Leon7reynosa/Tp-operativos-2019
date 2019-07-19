@@ -1,12 +1,14 @@
 
 #include"compactador.h"
 
-void* compactar(char* nombre_tabla){
+void* compactar(thread_args* argumentos){
 
 	//log_trace(logger_compactador, "INICIO DE LA -- COMPACTACION -- DE LA TABLA %s\n", nombre_tabla);	// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	printf("Empieza la compactacion\n");
 	//los comentarios entre parentesis son para ver donde se libera cada variable;
+
+	char* nombre_tabla = argumentos->nombre_tabla;
 
 	printf("1) Transformo los tmp en tmpc\n");
 	transformar_tmp_a_tmpc(nombre_tabla);
@@ -79,6 +81,8 @@ void* compactar(char* nombre_tabla){
 
 	printf("6) LIBERO LAS PARTICIONES\n ");
 
+	pthread_mutex_lock(&(argumentos->mutex_tabla));
+
 	for(int i = 0; i < metadata_tabla->particion; i++){
 
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, i);
@@ -140,7 +144,7 @@ void* compactar(char* nombre_tabla){
 
 	printf("8) Borro los tmpc y sus bloques\n");
 	liberar_tmpc(nombre_tabla);
-
+	pthread_mutex_unlock(&(argumentos->mutex_tabla));
 	//Por aca habria que liberar el "mutex"
 	//time_t fin_de_bloqueo = time(NULL)
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
@@ -181,19 +185,23 @@ void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
 
 	thread_args* argumentos_hilos = crear_argumentos_tabla(tiempo_compactacion , nombre_tabla);
 
-	pthread_t hilo_tabla;
+	pthread_attr_t attr;
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
 	printf("Creo el hilo\n");
 
-	error_pthr = pthread_create(&hilo_tabla , NULL , ciclo_compactacion , argumentos_hilos);
+	error_pthr = pthread_create(&(argumentos_hilos->hilo_compactacion) , &attr , ciclo_compactacion , argumentos_hilos);
 
 	if(error_pthr != 0){
 		perror("pthread create");
 	}
 
+	pthread_attr_destroy(&attr);
+
 	printf("Hilo creado\n");
 
-	dictionary_put(diccionario_compactador , nombre_tabla , &hilo_tabla); //OJO QUE SI SE ABORTA EL HILO, PIERDO LOS ARGUMENTOS_HILOS, ABRIA QUE METERLOS ACA TAMB
+	dictionary_put(diccionario_compactador , nombre_tabla , argumentos_hilos); //OJO QUE SI SE ABORTA EL HILO, PIERDO LOS ARGUMENTOS_HILOS, ABRIA QUE METERLOS ACA TAMB
 
 	printf("Lo meti al diccionario\n");
 
@@ -214,11 +222,17 @@ void* ciclo_compactacion(thread_args* argumentos){
 
 void abortar_hilo_compactador(char* nombre_tabla){
 
-	void _abortar_hilo(void* hilo){
+	void _abortar_hilo(void* thread_arg){
 
-		pthread_t hilo_a_destruir = (pthread_t) hilo;
+		thread_args* argumentos = (thread_args *) thread_arg;
 
-		pthread_cancel(hilo_a_destruir);
+		pthread_mutex_lock(argumentos->mutex_tabla);
+		pthread_cancel(argumentos->hilo_compactacion);
+		pthread_mutex_unlock(argumentos->mutex_tabla);
+
+		pthread_mutex_destroy(argumentos->mutex_tabla);
+		free(argumentos->nombre_tabla);
+		free(argumentos);
 
 	}
 

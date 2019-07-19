@@ -44,6 +44,8 @@ typedef struct{
 
 
 int ejecutar_request(char* request_lql);
+void request_journal(void);
+t_list* lista_memorias_de_consistencia(void);
 //int identificar_request(char* request_lql);
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key);
 int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp);

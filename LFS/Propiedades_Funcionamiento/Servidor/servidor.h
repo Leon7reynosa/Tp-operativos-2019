@@ -21,8 +21,14 @@
 #include<netdb.h>
 #include<signal.h>
 
+#include <sys/types.h>
+#include <ifaddrs.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
 
 int iniciar_servidor(char* ip, int puerto);
+char* obtener_ip_address(void);
 int aceptar_conexion(int);
 
 #endif /* CLIENTE_SERVIDOR_H_ */

@@ -53,6 +53,44 @@ int iniciar_servidor(char* ip,int puerto){
 
 }
 
+char* obtener_ip_address(){
+
+	 struct ifaddrs * ifAddrStruct=NULL;
+	    struct ifaddrs * ifa=NULL;
+	    void * tmpAddrPtr=NULL;
+
+	    char* ip_encontrada = malloc(31);
+
+	    getifaddrs(&ifAddrStruct);
+
+	    for (ifa = ifAddrStruct; ifa != NULL; ifa = ifa->ifa_next) {
+	        if (!ifa->ifa_addr) {
+	            continue;
+	        }
+	        if (ifa->ifa_addr->sa_family == AF_INET) { // check it is IP4
+	            // is a valid IP4 Address
+
+	            tmpAddrPtr=&((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
+	            char addressBuffer[INET_ADDRSTRLEN];
+	            inet_ntop(AF_INET, tmpAddrPtr, addressBuffer, INET_ADDRSTRLEN);
+
+	            if( addressBuffer[0] == '1' && addressBuffer[1] == '9' ){ // habria que ver esto
+
+	           	   memcpy(ip_encontrada, addressBuffer , strlen(addressBuffer ) + 1);
+
+	           	   if (ifAddrStruct!=NULL) freeifaddrs(ifAddrStruct);
+	           	   return ip_encontrada;
+
+	           	}
+
+	        }
+	    }
+
+	    if (ifAddrStruct!=NULL) freeifaddrs(ifAddrStruct);
+	    return ip_encontrada;
+
+}
+
 int aceptar_conexion(int socket_listener){
 
 	struct sockaddr_in cliente;

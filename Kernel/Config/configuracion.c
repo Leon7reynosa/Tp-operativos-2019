@@ -15,7 +15,7 @@ void creacion_del_config(){
 
 	g_config = config_create("kernel.config");
 
-	config_set_value(g_config, "IP_MEMORIA", "127.0.0.1");
+	config_set_value(g_config, "IP_MEMORIA", "192.168.1.49");
 	config_set_value(g_config, "PUERTO_MEMORIA", "8000");
 	config_set_value(g_config, "QUANTUM", "4");
 	config_set_value(g_config, "GRADO_MULTIPROCESAMIENTO", "3");
@@ -41,7 +41,7 @@ void obtener_datos_config(){
 
 	string_append(&ip_memoria, ip_auxiliar);
 
-	free(ip_auxiliar);
+//	free(ip_auxiliar);
 
 	config_destroy(g_config);
 

@@ -20,14 +20,17 @@ int iniciar_servidor(char* ip,int puerto){
 	//defino un puerto cualquiera y lo paso a su representacion binaria
 	server_addr.sin_port = htons(puerto);
 	//le asigno la direccion del pc que estoy usando
+	//server_addr.sin_addr.s_addr = INADDR_ANY;
 	inet_aton(ip,&(server_addr.sin_addr.s_addr));
 	//seteo el resto de la estructura en 0
+
 	memset(&(server_addr.sin_zero),'\0',8);
 	//creo el socket servidor para escuchar
 	if((socket_servidor = socket(AF_INET,SOCK_STREAM,0)) == -1){
 		perror("Error al crear el socket");
 		exit(1);
 	}
+
 	//digo que voy a reutilizar la direccion despues
 	if(setsockopt(socket_servidor,SOL_SOCKET,SO_REUSEADDR,&yes,sizeof(yes)) == -1){
 		perror("Error en setsockopt");
@@ -48,9 +51,51 @@ int iniciar_servidor(char* ip,int puerto){
 
 	printf("El servidor esta escuchando...\n");
 
+
 	return socket_servidor;
 
 }
+
+
+char* obtener_ip_local(){
+
+	 struct ifaddrs * ifAddrStruct=NULL;
+	    struct ifaddrs * ifa=NULL;
+	    void * tmpAddrPtr=NULL;
+
+	    char* ip_encontrada = malloc(31);
+
+	    getifaddrs(&ifAddrStruct);
+
+	    for (ifa = ifAddrStruct; ifa != NULL; ifa = ifa->ifa_next) {
+	        if (!ifa->ifa_addr) {
+	            continue;
+	        }
+	        if (ifa->ifa_addr->sa_family == AF_INET) { // check it is IP4
+	            // is a valid IP4 Address
+
+	            tmpAddrPtr=&((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
+	            char addressBuffer[INET_ADDRSTRLEN];
+	            inet_ntop(AF_INET, tmpAddrPtr, addressBuffer, INET_ADDRSTRLEN);
+
+	            if( addressBuffer[0] == '1' && addressBuffer[1] == '9' ){ // habria que ver esto
+
+	           	   memcpy(ip_encontrada, addressBuffer , strlen(addressBuffer ) + 1);
+
+	           	   if (ifAddrStruct!=NULL) freeifaddrs(ifAddrStruct);
+	           	   return ip_encontrada;
+
+	           	}
+
+	        }
+	    }
+
+	    if (ifAddrStruct!=NULL) freeifaddrs(ifAddrStruct);
+	    return ip_encontrada;
+
+}
+
+
 
 int aceptar_conexion(int socket_listener){
 
@@ -72,6 +117,8 @@ int aceptar_conexion(int socket_listener){
 		perror("No le notifique que se conecto");
 		exit(1);
 	}
+
+	//free(direccion);
 
 	return socket_conexion;
 }

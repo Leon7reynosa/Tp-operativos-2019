@@ -62,7 +62,7 @@ void* serializar_gossiping(struct DatoTablaGossiping* dato){
 
 	void _serializar_memoria(void* _memoria){
 
-		struct MemoriasEstructura* memoria_aux = (struct MemoriasEstructura *)_memoria;
+		memoria_dto memoria_aux = (memoria_dto)_memoria;
 
 		memcpy(buffer_serializado + desplazamiento, &(memoria_aux->numero_memoria) , sizeof(int));
 		desplazamiento += sizeof(int);
@@ -105,44 +105,42 @@ void liberar_dato_gossiping(struct DatoTablaGossiping* dato){
 
 void enviar_datos(int memoria2, t_list* memorias ){
 
-	struct DatoTablaGossiping* dato_a_enviar = malloc(sizeof(struct DatoTablaGossiping));
-	dato_a_enviar->memorias = list_create();
+	tabla_gossip_dto dato_a_enviar = crear_dto_gossip(list_size(memorias));
 
-	dato_a_enviar->cant_memorias = list_size(memorias);
-
-	dato_a_enviar->bytes = sizeof(int);
+	int bytes_enviados = 0;
+	int bytes_restantes;
+	int enviados_aux;
 
 	void _agregar_dato(void* _memoria){
 
 		Seed memoria_aux = (Seed) _memoria;
 
-		struct MemoriasEstructura* memoria = malloc(sizeof(struct MemoriasEstructura));
-		memoria->numero_memoria = memoria_aux->numero_memoria;
-		dato_a_enviar->bytes += sizeof(int);
+		memoria_dto memoria_a_enviar = crear_memoria_dto(memoria_aux->numero_memoria, memoria_aux->ip, memoria_aux->puerto);
 
-		memoria->ip = malloc(sizeof(t_stream));
-		memoria->ip->size = strlen(memoria_aux->ip) + 1;
-		dato_a_enviar->bytes += sizeof(int);
-
-		memoria->ip->buffer = malloc(memoria->ip->size);
-		memcpy(memoria->ip->buffer, memoria_aux->ip, memoria->ip->size);
-		dato_a_enviar->bytes += memoria->ip->size;
-
-		memoria->puerto = memoria_aux->puerto;
-		dato_a_enviar->bytes += sizeof(int);
-
-		list_add(dato_a_enviar->memorias, memoria);
+		agregar_memoria_gossip_dto(dato_a_enviar, memoria_a_enviar);
 
 	}
 
 	list_iterate(memorias, _agregar_dato);
 
-	//Los bytes deberian quedar como: cant_memorias(int) + (n_memoria(int) + tamanio_ip(int) + elIP(tamanio_ip) + puerto(int)) * cant_memorias
 	void* buffer;
 
 	buffer = serializar_gossiping(dato_a_enviar);
 
-	send(memoria2, buffer, dato_a_enviar->bytes, 0);
+	while(bytes_enviados < dato_a_enviar->bytes){
+
+		printf("Envio las memorias\n");
+		enviados_aux = send(memoria2, buffer, dato_a_enviar->bytes, 0);
+
+		if(enviados_aux == -1){
+			perror("Send tiro -1");
+				//ver que hacer aca
+		}
+
+		bytes_enviados += enviados_aux;
+		bytes_restantes -= enviados_aux;
+
+	}
 
 	liberar_dato_gossiping(dato_a_enviar);
 	free(buffer);

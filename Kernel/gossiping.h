@@ -40,6 +40,8 @@ typedef struct{
 t_list* tabla_gossiping;
 
 
+memoria_t* Strong_C;
+
 void actualizar_gossiping(void);
 void recibir_actualizacion_gossiping(void);
 void ingresar_a_tabla_gossiping(memoria_t* dato_memoria_ingresar);

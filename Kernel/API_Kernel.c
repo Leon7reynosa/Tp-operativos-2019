@@ -187,7 +187,7 @@ int ejecutar_request(char* request_lql){
 
 void request_journal(){
 
-	t_list* lista_memorias_a_enviar = lista_memorias_de_consistencias();
+	t_list* lista_memorias_a_enviar = lista_memorias_de_consistencia();
 
 	memoria_t* memoria_a_enviar;
 

@@ -58,6 +58,8 @@ int main (int argc , char* argv[]){
 
 	cola_new_to_ready();
 
+	printf("pasaste bro\n");
+
 	pthread_create(&hilo_planificador, NULL, planificador, colas_exec);
 
 	pthread_create(&hilo_consola , NULL, consola, NULL);

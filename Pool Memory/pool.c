@@ -12,7 +12,10 @@ int main (void){
 	creacion_del_config();
 
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
+	ip_escucha = obtener_ip_local();
+
 	obtener_datos_config();
+
 //TODO HANDSHAKE CON LISSANDRA (en archivo config por ahora)
 	realizar_handshake();
 
@@ -35,7 +38,7 @@ int main (void){
 	FD_ZERO(&master);
 	FD_ZERO(&read_fds);
 
-	if(( listener = iniciar_servidor("127.0.0.1" , puerto_escucha) ) == -1){
+	if(( listener = iniciar_servidor(ip_escucha, puerto_escucha) ) == -1){
 
 		perror("socket");
 		exit(-1);

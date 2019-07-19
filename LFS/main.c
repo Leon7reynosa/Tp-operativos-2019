@@ -3,6 +3,10 @@
 
 int main(){
 
+	///////////////////////////VARIABLES////////////// ////////////
+
+	char* ip_escucha;
+
 	////////////////////////////INICIALIZACIONES////////////////////////
 
 	creacion_del_config_fileSystem();
@@ -15,6 +19,10 @@ int main(){
 	inicializar_memorias_conectadas();
 
 	diccionario_compactador = dictionary_create();
+
+	ip_escucha = obtener_ip_address();
+
+	printf("ip escucha: %s\n" , ip_escucha) ;
 
 	t_log* logger_lissandra = log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
 	t_log* logger_lfs = log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
@@ -30,7 +38,9 @@ int main(){
 
 	int error_pthread;
 
-	socket_servidor = iniciar_servidor(ip_lfs , puerto_lfs);
+	socket_servidor = iniciar_servidor(ip_escucha , puerto_lfs);
+
+	free(ip_escucha);
 
 	///////////////////////////////MAIN////////////////////////////////////
 

@@ -251,6 +251,10 @@ void crear_metadata(char* nombre_tabla, char* consistencia, int particion, time_
 	config_save(metadata_config);
 	config_destroy(metadata_config);
 
+	free(pathMetadata);
+	free(particionAux);
+	free(tiempo_compactacionAux);
+
 }
 
 char* obtener_ip(){

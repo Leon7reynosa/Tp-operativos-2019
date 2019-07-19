@@ -38,7 +38,7 @@ void creacion_del_config(){
 	g_config = config_create("pool.config");
 
 	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
-	config_set_value(g_config, "IP_LFS", "127.0.0.1");
+	config_set_value(g_config, "IP_LFS", "192.168.1.49");
 	config_set_value(g_config, "PUERTO_LFS", "4445");
 
 	config_set_value(g_config, "IP_SEEDS", array_ips);

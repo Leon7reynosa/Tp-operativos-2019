@@ -61,6 +61,17 @@ void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato){
 	memoria->seed = list_create();
 	inicializar_seeds();
 
+	memoria->tabla_gossiping = list_create();
+	inicializar_tabla_gossip();
+
+}
+
+void inicializar_tabla_gossip(void){
+
+	Seed this_memoria = crear_seed(memoria->numero_memoria, ip_escucha, puerto_escucha);
+
+	list_add(memoria->tabla_gossiping, this_memoria);
+
 }
 
 void inicializar_seeds(void){

@@ -220,9 +220,9 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 //TODO hay que modificar para que trabaje con la estructura create
 
 
-
+	 printf("Entro a la request create!\n");
 	 char* nombre_tabla = (char *)datos_create->tabla->buffer;
-
+	 printf("Nombre tabla: %s\n", nombre_tabla);
 	 char* criterio = (char *)datos_create->consistencia->buffer;
 
 //	 //log_info(logger_lissandra, "### SOLICITUD DE -- CREATE -- para\n"
@@ -237,14 +237,19 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
 	 }
 
+	 printf("No existe esa tabla!n");
+
 	 char* path_tabla = obtenerPathTabla(nombre_tabla);
 
+	 printf("obtuve su path: %s\n", path_tabla);
 //	 printf("path: %s\n" , path_tabla);
-
+	 printf("creo el directorio\n");
 	 crear_directorio(path_tabla);
 
+	 printf("creo la metadata\n");
 	 crear_metadata(nombre_tabla, criterio , datos_create->numero_particiones, datos_create->compactacion); //MAL?
 
+	 printf("creo los archivos particiones\n");
 	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
 
 	 //log_info(logger_lissandra, "### CREATE REALIZADO CON EXITO ! ####\n");
@@ -252,6 +257,9 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 	 printf("Creo un hilo de compactacion\n");
 	 correr_compactacion(datos_create->compactacion, nombre_tabla);
 	 printf("Hilo de compactacion creado\n");
+
+	 free(path_tabla);
+
  }
 
 t_list* request_describe(describe_t request){

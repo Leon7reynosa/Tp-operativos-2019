@@ -31,10 +31,15 @@ t_queue* parsear_LQL(FILE* archivo_lql){
 
 	char caracter;
 	char* caracter_temp;
+	printf("parser bien\n");
 
 	caracter = fgetc(archivo_lql);
 
+	printf("hola: %c\n" , caracter);
+
 	char* linea_leida = string_new();
+
+	printf("parser bien\n");
 
 	while(caracter != EOF){
 
@@ -56,8 +61,11 @@ t_queue* parsear_LQL(FILE* archivo_lql){
 		}
 
 	}
+	printf("parser bien\n");
 
 	queue_push(cola_requests, linea_leida );
+
+	printf("parser bien\n");
 
 	return cola_requests;
 
@@ -131,25 +139,40 @@ void cola_new_to_ready(){
 
 	FILE* archivo;
 
+	printf("la puta madre\n");
+
 	int tamanio_cola_new = queue_size(cola_new);
 
 	for(int i = 0 ; i < tamanio_cola_new ; i++){
+
+		printf("la puta madre\n");
 
 		t_scripts* nuevo_lql = malloc(sizeof(t_scripts));
 
 		nuevo_lql->path_lql = (char*) queue_pop(cola_new);
 
+		//nuevo_lql->path_lql = "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/lql.txt";
+
+		printf("la puta madre: %s\n" , nuevo_lql->path_lql);
+
 		archivo = fopen(nuevo_lql->path_lql , "r");
 
 		if(archivo != NULL){
 
+			printf("la puta madre\n");
+
 			nuevo_lql->cola_requests = parsear_LQL(archivo);
+
+			printf("pase aca\n");
 
 			queue_push(cola_ready,(void*) nuevo_lql);
 
 			fclose(archivo);
 
+			printf("la puta madre\n");
+
 			sem_post(&semaforo_ready);
+
 		}else{
 
 			log_error(logger_kernel, "NO SE PUDO ABRIR EL ARCHIVO %s.\n" , nuevo_lql->path_lql);
@@ -165,6 +188,8 @@ void cola_new_to_ready(){
 void ejecutar_cola_exec(t_queue* cola_exec){
 
 	while(1){
+
+		printf("estoy en la cola de exec\n");
 
 		sem_wait(&semaforo_ready);
 
@@ -204,7 +229,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			queue_push(cola_exit, siguiente_script);
 
-			menu();
+			//menu();
 
 		}else{
 

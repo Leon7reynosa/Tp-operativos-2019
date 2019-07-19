@@ -30,7 +30,7 @@ void creacion_del_config_fileSystem(){
 
 	config_set_value(g_config, "IP", "127.0.0.1");
 	config_set_value(g_config, "PUERTO", "4445");
-	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
+	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
 	config_set_value(g_config, "RETARDO", "500");
 	config_set_value(g_config, "TAMANIO_VALUE", "20");
 	config_set_value(g_config, "TIEMPO_DUMP", "5000");
