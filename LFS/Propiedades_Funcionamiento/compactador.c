@@ -10,6 +10,7 @@ void* compactar(thread_args* argumentos){
 
 	char* nombre_tabla = argumentos->nombre_tabla;
 
+
 	printf("1) Transformo los tmp en tmpc\n");
 	transformar_tmp_a_tmpc(nombre_tabla);
 

@@ -470,6 +470,9 @@ void request_drop(Drop request_drop){
 							if(string_ends_with(tabla_particular->d_name, ".bin") || string_ends_with(tabla_particular->d_name, ".tmp") ||
 							   string_ends_with(tabla_particular->d_name, ".tmpc"))
 							{
+								thread_args* atributos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+
+								pthread_mutex_lock(atributos_tabla->mutex_tabla);
 								Particion particion = leer_particion(path_para_archivo);
 								printf("Se va a eliminar el siguiente archivo: \n");
 								printf("%s\n", path_para_archivo);
@@ -477,6 +480,9 @@ void request_drop(Drop request_drop){
 								printf("\n\n");
 								liberar_particion(particion);
 								eliminar_particion(path_para_archivo);
+								pthread_mutex_unlock(atributos_tabla->mutex_tabla);
+
+								abortar_hilo_compactador(nombre_tabla);
 								printf("Estados despues de eliminar el archivo:\n");
 								//get_all_estados();
 							}
@@ -504,6 +510,20 @@ void request_drop(Drop request_drop){
 
 
 
+wait(mutex_lectores);
+if(lectores == 0){
+	wait(mutex_compactador);
+}
+lectores++;
+signal(mutex_lectores);
 
+.
+.
+.
 
-
+wait(mutex_lectores);
+lectores--;
+if(lectores == 0){
+	signal(mutex_compactador);
+}
+signal(mutex_lectores);
