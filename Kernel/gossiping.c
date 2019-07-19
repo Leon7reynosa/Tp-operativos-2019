@@ -13,7 +13,9 @@ void* realizar_gossiping(){
 
 	while(1){
 
-		usleep(tiempo_gossiping_kernel * 100); //despues hay que ponerle 1000
+		usleep(tiempo_gossiping_kernel * 1000); //despues hay que ponerle 1000
+
+		printf("\n/////////////////////////////INICIANDO EL GOSSIPING///////////////////////////////////////\n");
 
 		printf("Voy a realizar el gossiping :D\n");
 
@@ -44,7 +46,7 @@ void* realizar_gossiping(){
 			printf("No hay memorias conectadas\n");
 		}
 
-		printf("Se realizo el gossiping\n");
+		printf("\n//////////////////////////////////////FIN GOSSIP//////////////////////////////////////////////////////////\n");
 	}
 }
 
@@ -113,13 +115,9 @@ bool actualizar_gossiping(int conexion){
 	cod_operacion gossip= GOSSIP;
 	int cantidad_memorias = 0;
 
-	printf("entre al actualizar gossipings\n");
-
 	buffer = malloc(sizeof(cod_operacion) + sizeof(int));
 
 	memcpy(buffer , &gossip , sizeof(cod_operacion) );
-
-	printf("entre al actualizar gossipings\n");
 
 	memcpy((buffer +  sizeof(cod_operacion)) , &cantidad_memorias , sizeof(int));
 
@@ -128,8 +126,6 @@ bool actualizar_gossiping(int conexion){
 		return false;
 
 	}
-
-	printf("entre al actualizar gossipings\n");
 
 	free(buffer);
 
@@ -149,7 +145,11 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 	memoria_t* dato_memoria_ingresar;
 
-	for(int i = 0 ; i < cantidad_memorias ; i++){
+	printf("cantidad de memorias : %d\n"  , *cantidad_memorias);
+
+	for(int i = 0 ; i < *cantidad_memorias ; i++){
+
+		printf("entro al for bro\n");
 
 		struct MemoriasEstructura* memoria_recv = malloc(sizeof(struct MemoriasEstructura));
 
@@ -165,7 +165,7 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 		recv(conexion, &(memoria_recv->puerto) , sizeof(int) , 0 );
 
-		printf("Me llego la memoria: \n");
+		printf("\nMe llego la memoria: \n\n");
 
 		printf("NUMERO: %i\n", memoria_recv->numero_memoria);
 		printf("SIZE IP: %i\n", memoria_recv->ip->size);
@@ -174,12 +174,18 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 		if(!existe_en_tabla_gossiping(memoria_recv)){
 
+			printf("La memoria no existe en tablaa gossiping\n");
+
 			dato_memoria_ingresar = convertir_a_memoria_t(memoria_recv);
+
+			printf("lo convertimos a memoria_t\n");
 
 //			dato_memoria_ingresar->socket = conectar_servidor(dato_memoria_ingresar->ip,
 //											dato_memoria_ingresar->puerto); //esto capaz no va.
 
 			if(dato_memoria_ingresar->socket > 0){
+
+				printf("entre al if\n");
 
 				ingresar_a_tabla_gossiping(dato_memoria_ingresar);
 
@@ -187,6 +193,8 @@ bool recibir_actualizacion_gossiping(int conexion){
 						dato_memoria_ingresar->numero_memoria);
 
 			}else{
+
+				printf("entre al else\n");
 
 				log_error(logger_kernel, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.\n",
 						dato_memoria_ingresar->numero_memoria);
@@ -197,7 +205,11 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 		}
 
+		printf("ya revise si esta en tabla gossiping\n");
+
 		liberar_dato_memoria(memoria_recv);
+
+		printf("libero\n");
 	}
 
 	free(cantidad_memorias);
@@ -278,14 +290,17 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 
 memoria_t* convertir_a_memoria_t(struct MemoriasEstructura* dato_memoria){
 
+	printf("llegue a convertir memoria t\n");
+
 	memoria_t* dato_convertido = malloc(sizeof(memoria_t));
+
 	dato_convertido->ip = malloc(dato_memoria->ip->size);
 
 	dato_convertido->numero_memoria = dato_memoria->numero_memoria;
 	dato_convertido->puerto = dato_memoria->puerto;
 	memcpy(dato_convertido->ip , dato_memoria->ip->buffer , dato_memoria->ip->size);
 
-	dato_convertido->socket = conectar_servidor(dato_memoria->ip, dato_memoria->puerto); //esto capaz no va.
+	dato_convertido->socket = conectar_servidor(dato_convertido->ip, dato_convertido->puerto); //esto capaz no va.
 
 	return dato_convertido;
 }
@@ -302,6 +317,8 @@ bool existe_en_tabla_gossiping(struct MemoriasEstructura* dato_memoria){
 	}
 
 	return list_any_satisfy(tabla_gossiping, _estas_en_la_tabla);
+
+	printf("pase el any satysfy\n");
 
 }
 

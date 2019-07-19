@@ -30,7 +30,7 @@ void creacion_del_config_fileSystem(){
 
 	config_set_value(g_config, "IP", "127.0.0.1");
 	config_set_value(g_config, "PUERTO", "4445");
-	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
+	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
 	config_set_value(g_config, "RETARDO", "500");
 	config_set_value(g_config, "TAMANIO_VALUE", "20");
 	config_set_value(g_config, "TIEMPO_DUMP", "5000");
@@ -67,39 +67,47 @@ void creacion_bitmap(){
 	int trunqueador;
 
 
-	archivo_bitmap = open(path, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	if(!existe_el_bitmap()){
+		archivo_bitmap = open(path, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 
-	if(archivo_bitmap == -1){
-		perror("Archivo_Bitmap");
+		if(archivo_bitmap == -1){
+			perror("Archivo_Bitmap");
+		}
+
+
+		trunqueador = ftruncate(archivo_bitmap, blocks/8);
+
+		if(trunqueador != 0){
+			perror("ftruncate");
+		}
+
+		struct stat atributosBitmap;
+
+		if(fstat(archivo_bitmap, &atributosBitmap) == -1){
+			perror("No se pudo obtener los atributos del archivo \n");
+		}
+		printf("Tamanio del archivo: %i\n", atributosBitmap.st_size);
+
+		bitmap = mmap(NULL, atributosBitmap.st_size, PROT_WRITE | PROT_READ, MAP_SHARED, archivo_bitmap, 0);
+
+		t_bitarray* bitarray = bitarray_create_with_mode(bitmap, atributosBitmap.st_size, MSB_FIRST);
+
+		for(int i = 0; i < atributosBitmap.st_size*8; i++){
+			bitarray_clean_bit(bitarray, i);
+		}
+
+		msync(bitmap, atributosBitmap.st_size, MS_SYNC);
+
+		munmap(bitmap, atributosBitmap.st_size);
+		bitarray_destroy(bitarray);
+		close(archivo_bitmap);
+
 	}
 
-
-	trunqueador = ftruncate(archivo_bitmap, blocks/8);
-
-	if(trunqueador != 0){
-		perror("ftruncate");
+	else{
+		return;
 	}
 
-	struct stat atributosBitmap;
-
-	if(fstat(archivo_bitmap, &atributosBitmap) == -1){
-		perror("No se pudo obtener los atributos del archivo \n");
-	}
-	printf("Tamanio del archivo: %i\n", atributosBitmap.st_size);
-
-	bitmap = mmap(NULL, atributosBitmap.st_size, PROT_WRITE | PROT_READ, MAP_SHARED, archivo_bitmap, 0);
-
-	t_bitarray* bitarray = bitarray_create_with_mode(bitmap, atributosBitmap.st_size, MSB_FIRST);
-
-	for(int i = 0; i < atributosBitmap.st_size*8; i++){
-		bitarray_clean_bit(bitarray, i);
-	}
-
-	msync(bitmap, atributosBitmap.st_size, MS_SYNC);
-
-	munmap(bitmap, atributosBitmap.st_size);
-	bitarray_destroy(bitarray);
-	close(archivo_bitmap);
 
 
 }
@@ -168,6 +176,27 @@ void crearYObtenerDatos(){
 void obtenerDatos(){
 	obtener_datos_config();
 	obtener_datos_metadata();
+}
+
+bool existe_el_bitmap(){
+
+	char* path_al_bitmap = string_new();
+
+	string_append(&path_al_bitmap, punto_montaje);
+	string_append(&path_al_bitmap, "Metadata/bitmap.bin");
+
+	FILE* file;
+	if((file = fopen(path_al_bitmap, "r")) == NULL){
+		printf("NO EXISTE BRU\n");
+		free(path_al_bitmap);
+		return false;
+	}
+	else{
+		printf("EXISTE BRU\n");
+		free(path_al_bitmap);
+		return true;
+	}
+
 }
 
 

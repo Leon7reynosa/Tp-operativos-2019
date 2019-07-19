@@ -43,6 +43,7 @@ void obtener_datos_config(void);
 void obtener_datos_metadata(void);
 void crearYObtenerDatos(void);
 void obtenerDatos(void);
+bool existe_el_bitmap();
 
 void realizar_handshake(int conexion);
 

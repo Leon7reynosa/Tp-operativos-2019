@@ -27,7 +27,7 @@ void gossiping(){
 
 	int socket_seed;
 	Seed seed_aux;
-	request datos_gossip;
+	tabla_gossip_dto datos_gossip;
 
 	for(i = 0 ; i < cantidad_seeds ; i++){
 
@@ -47,11 +47,15 @@ void gossiping(){
 
 			datos_gossip = recibir_datos_gossip(socket_seed);
 
-			actualizar_tabla_gossip((tabla_gossip_dto)datos_gossip->tipo_request);
+			printf("Actualizo la tabla_gossip\n");
+			actualizar_tabla_gossip(datos_gossip);
+			printf("Termine de actualizar\n");
 
-			liberar_request(datos_gossip);
+			liberar_dato_gossiping(datos_gossip);
 
+			printf("Termine de liberar el dato gossip\n");
 			close(socket_seed);
+			printf("Cerre la conexion con la seed\n");
 		}
 		else{
 			printf("la memoria seed no esta conectada\n");
@@ -216,13 +220,22 @@ Seed pasar_memoria_dto_a_seed(memoria_dto dato_dto){
 
 void actualizar_tabla_gossip(tabla_gossip_dto request_gossip){
 
+	printf("//////////////////////////////////////ACTUALIZAR TABLA_GOSSIP////////////////////////////////////////\n");
+
 	void _agregar_si_no_esta(void* dato_memoriaEstructura){
 
 		memoria_dto dato_extraido = (memoria_dto) dato_memoriaEstructura;
 
-		if(existis_en_tabla_gossip(dato_extraido)){
+		printf("Memoria a actualizar: %i\n", dato_extraido->numero_memoria);
+		printf("IP: %s\n",(char *) (dato_extraido->ip->buffer));
+		printf("PUERTO: %i\n", dato_extraido->puerto);
 
+		if(!existis_en_tabla_gossip(dato_extraido)){
+
+			printf("No existis en la tabla_gossip\n");
 			Seed dato_a_agregar = pasar_memoria_dto_a_seed(dato_extraido);
+
+			printf("Agrego la seed a la tabla\n");
 
 			list_add(memoria->tabla_gossiping, dato_a_agregar);
 
@@ -233,5 +246,7 @@ void actualizar_tabla_gossip(tabla_gossip_dto request_gossip){
 
 	list_iterate(request_gossip->memorias , _agregar_si_no_esta);
 
+
+	printf("//////////////////////////////////////TERMINO LA ACTUALIZACION/////////////////////////////////////////////\n");
 }
 

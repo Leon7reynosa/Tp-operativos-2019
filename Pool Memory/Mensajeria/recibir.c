@@ -325,6 +325,8 @@ tabla_gossip_dto recibir_datos_gossip(socket_seed){
 		perror("Recibir cantidad de memorias");
 	}
 
+	printf("Recibi cantidad de memorias : %i\n", cantidad_memorias);
+
 	dato_recibido = crear_dto_gossip(cantidad_memorias);
 
 	for(int i = 0; i < cantidad_memorias; i++){
@@ -340,11 +342,15 @@ tabla_gossip_dto recibir_datos_gossip(socket_seed){
 			perror("Recibir numero de memorias");
 		}
 
+		printf("Nro memoria: %i\n", nro);
+
 		bytes_recv = recv(socket_seed, &size_ip, sizeof(int), 0);
 
 		if(bytes_recv <= 0){
 			perror("Recibir numero de memorias");
 		}
+
+		printf("Size ip: %i\n", size_ip);
 
 		ip = malloc(size_ip);
 
@@ -354,12 +360,15 @@ tabla_gossip_dto recibir_datos_gossip(socket_seed){
 			perror("Recibir IP");
 		}
 
+		printf("IP: %s\n", ip);
+
 		bytes_recv = recv(socket_seed, &puerto, sizeof(int), 0);
 
 		if(bytes_recv <= 0){
 			perror("Recibir puerto");
 		}
 
+		printf("Puerto: %i\n", puerto);
 
 		memoria_dto memoria_ = crear_memoria_dto(nro, ip, puerto);
 
@@ -367,6 +376,7 @@ tabla_gossip_dto recibir_datos_gossip(socket_seed){
 
 	}
 
+	printf("Termine de recibir\n");
 
 	return dato_recibido;
 
