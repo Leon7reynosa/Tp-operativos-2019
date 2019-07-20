@@ -6,6 +6,7 @@
 C_SRCS += \
 ../API_Pool.c \
 ../conexiones.c \
+../consola.c \
 ../dato.c \
 ../gossiping.c \
 ../memoria.c \
@@ -16,6 +17,7 @@ C_SRCS += \
 OBJS += \
 ./API_Pool.o \
 ./conexiones.o \
+./consola.o \
 ./dato.o \
 ./gossiping.o \
 ./memoria.o \
@@ -26,6 +28,7 @@ OBJS += \
 C_DEPS += \
 ./API_Pool.d \
 ./conexiones.d \
+./consola.d \
 ./dato.d \
 ./gossiping.d \
 ./memoria.d \

@@ -9,6 +9,9 @@
 
 void* auto_gossip(void* argumentos){
 
+	pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
+
 	while(1){
 		usleep(tiempo_gossiping * 1000);
 		printf("Auto Gossiping :P\n");

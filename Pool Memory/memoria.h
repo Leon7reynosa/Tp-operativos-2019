@@ -56,6 +56,7 @@ t_list* inicializar_paginas(void);
 void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato);
 void inicializar_seeds(void);
 t_list* inicializar_tabla_segmentos(t_list* tablas_a_inicializar);
+void liberar_memoria(void);
 
 Seed crear_seed(int numero , char* ip, int puerto);
 void liberar_seed(Seed seed_a_liberar);

@@ -27,6 +27,7 @@ struct PaginaEstructura{
 //struct PaginaEstructura;
 typedef struct PaginaEstructura* Pagina;
 
+void eliminar_pagina(Pagina pagina_a_eliminar);
 Pagina pagina_menos_usada(t_list* paginas);
 t_list* paginas_sin_modificar(t_list* paginas);
 Pagina crear_pagina(void* posicion_memoria);

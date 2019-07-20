@@ -13,7 +13,8 @@ request recibir_request(int conexion){
 	//ACA EN VEZ DE QUE SEA CON MEMORIA_DTO NO SERIA MEJOR USAR SEEDS?
 
 	cod_operacion* cod_op = malloc(sizeof(cod_operacion));
-	void* tipo_request;
+	void* tipo_request = NULL;
+
 	int pene = 0;
 	pene = recv(conexion, cod_op,sizeof(cod_operacion),MSG_WAITALL);
 
@@ -22,11 +23,9 @@ request recibir_request(int conexion){
 		}
 
 	if(pene == 0){
-		printf("Se re desconecto el cliente pa!\n\n");
 		return crear_request(DESCONEXION, NULL);
 	}
 
-	printf("codigo_op : %d\n" , *cod_op);
 	//printf("bytes: %d\n",pene);
 
 	switch(*cod_op){
@@ -43,7 +42,6 @@ request recibir_request(int conexion){
 
 		case CREATE:
 
-			printf("Decodifico el create\n");
 			tipo_request = decodificar_create(conexion);
 			break;
 
@@ -74,11 +72,9 @@ request recibir_request(int conexion){
 
 	}
 
-	printf("Creo la request\n");
 	request request = crear_request(*cod_op, tipo_request);
 
 	free(cod_op);
-	printf("Request creada\n");
 	return request;
 
 }

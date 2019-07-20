@@ -6,17 +6,22 @@
  */
 
 #include"memoria.h"
-/*
-struct MemoriaEstructura{
-	void* memoria_contigua;
-	t_list* paginas;
-	t_list* tabla_segmentos;
-	int tamanio;
-	int cant_max_datos;
-	Memoria seed;
 
-};
-*/
+void liberar_memoria(void){
+
+	eliminar_segmentos();
+	list_destroy(memoria->tabla_segmentos);
+
+
+	list_destroy_and_destroy_elements(memoria->seed, liberar_seed);
+	list_destroy_and_destroy_elements(memoria->tabla_gossiping, liberar_seed);
+
+	list_destroy_and_destroy_elements(memoria->paginas, eliminar_pagina);
+
+	free(memoria->memoria_contigua);
+
+	free(memoria);
+}
 
 t_list* inicializar_paginas(){
 
@@ -246,6 +251,9 @@ void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
 
 void* auto_journal(void* argumento){
 
+	pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
+
 	while(1){
 		usleep(tiempo_journal * 1000);
 		printf("Se inicia el journal\n");
@@ -299,7 +307,16 @@ void realizar_journal(void){
 	list_iterate(memoria->tabla_segmentos, _crear_inserts);
 
 
-	list_iterate(inserts, enviar_request);
+	void _enviar_request(void* _request){
+
+		request request_a_enviar = (request)_request;
+
+		enviar_request(request_a_enviar, socket_lissandra);
+
+	}
+
+
+	list_iterate(inserts, _enviar_request);
 
 	eliminar_segmentos();
 
