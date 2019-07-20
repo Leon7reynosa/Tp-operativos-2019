@@ -36,7 +36,7 @@ void trabajar_request(request nueva_request , int conexion){
 			*/
 			dato_a_enviar = crear_t_dato(dato_select->key, dato_select->timestamp , dato_select->value);
 
-			//enviar_dato(dato_a_enviar, conexion);
+			enviar_dato(dato_a_enviar, conexion);
 
 			liberar_t_dato(dato_a_enviar);
 

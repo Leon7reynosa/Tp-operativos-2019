@@ -196,6 +196,7 @@ void realizar_dump(){
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
 		//SEMAFORO TABLA ESPECIFICA
+		printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE LA TABLA ESPECIFICA\n");
 		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
 
 		crear_archivo_particion(path_temporal);
@@ -211,24 +212,29 @@ void realizar_dump(){
 
 		//DESBLOQUEO LA TABLA ESPECIFICA
 		pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
+		printf("[DUMP] LIBERO EL SEMAFORO DE TABLA ESPECIFICA\n");
 
 		free(path_temporal);
 
 	}
 
+	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE MEMTABLE\n");
 	//SEMAFORO MEMTABLE
 	pthread_rwlock_wrlock(&(lock_memtable));
 	//SEMAFORO DICCIONARIO COMPACTACION
+	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DEL DICCIONARIO COMPACTADOR\n");
 	pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
 	dictionary_iterator(memtable, _crear_temporal);
 
+	printf("[DUMP] LIBERO EL SEMAFORO DE DICCIONARIOA\n");
 	pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 
 	vaciar_memtable();
 
 	//LIBERO SEMAFORO MEMTABLE
+	printf("[DUMP] LIBERO EL SEMAFORO DE MEMTABLEA\n");
 	pthread_rwlock_unlock(&(lock_memtable));
 
 }

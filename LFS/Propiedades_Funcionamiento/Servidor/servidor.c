@@ -20,7 +20,7 @@ int iniciar_servidor(char* ip,int puerto){
 	//defino un puerto cualquiera y lo paso a su representacion binaria
 	server_addr.sin_port = htons(puerto);
 	//le asigno la direccion del pc que estoy usando
-
+	inet_aton(ip, &(server_addr.sin_addr.s_addr));
 	//seteo el resto de la estructura en 0
 	memset(&(server_addr.sin_zero),'\0',8);
 

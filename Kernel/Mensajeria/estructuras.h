@@ -21,5 +21,13 @@ typedef struct{
 
 }memoria_t;
 
+typedef struct{
+
+	int size;
+	void* buffer;
+
+}t_stream;
+
+
 
 #endif /* ESTRUCTURAS_H_ */

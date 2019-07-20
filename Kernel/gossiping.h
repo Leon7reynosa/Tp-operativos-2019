@@ -17,7 +17,7 @@
 #include"Mensajeria/request.h"
 #include"Mensajeria/Cliente/cliente.h"
 #include"consistencia.h"
-#include"estructuras.h"
+#include"Mensajeria/estructuras.h"
 
 
 

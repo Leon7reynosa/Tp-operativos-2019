@@ -212,15 +212,5 @@ void inicializar_compactador(){
 	pthread_rwlock_init(&(lock_diccionario_compactacion), NULL);
 }
 
-void inicializar_conexiones(){
-
-	char* ip_escucha;
-
-	ip_escucha = optener_ip_address();
-	int socket_servidor;
-	socket_servidor = iniciar_servidor(ip_escucha, puerto_lfs);
-
-	free(ip_escucha);
-}
 
 

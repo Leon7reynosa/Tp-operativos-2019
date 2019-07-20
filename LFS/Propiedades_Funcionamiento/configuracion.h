@@ -21,6 +21,7 @@
 #include<fcntl.h>
 #include<unistd.h>
 #include"loggers.h"
+#include"compactador.h"
 
 
 t_config* g_config;

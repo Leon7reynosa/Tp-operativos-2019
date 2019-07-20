@@ -35,7 +35,13 @@ int main(){
 
 	creacion_bitmap();
 
-	inicializar_conexiones();
+	char* ip_escucha;
+
+	ip_escucha = obtener_ip_address();
+	int socket_servidor;
+	socket_servidor = iniciar_servidor(ip_escucha, puerto_lfs);
+
+	free(ip_escucha);
 
 	///////////////////////////////MAIN////////////////////////////////////
 

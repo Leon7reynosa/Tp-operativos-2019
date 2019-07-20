@@ -17,6 +17,7 @@
 #include"Propiedades_Funcionamiento/consola.h"
 
 #include<commons/config.h>
+#include"Propiedades_Funcionamiento/Servidor/servidor.h"
 #include"Propiedades_Funcionamiento/loggers.h"
 #include"Propiedades_Funcionamiento/conexiones.h"
 /*

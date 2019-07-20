@@ -10,6 +10,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include"estructuras.h"
 
 typedef enum{
 	SELECT,
@@ -22,14 +23,6 @@ typedef enum{
 	ADD,
 	RUN
 }cod_operacion;
-
-typedef struct{
-
-	int size;
-	void* buffer;
-
-}t_stream;
-
 
 struct requestEstructura{
 

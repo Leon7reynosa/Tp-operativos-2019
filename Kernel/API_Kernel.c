@@ -60,6 +60,8 @@ int ejecutar_request(char* request_lql){
 
 				if( enviar_request(SELECT, select_enviar, memoria_utilizada->socket) == false ) {
 
+					printf("fallo en enviar\n");
+
 					log_error(logger_kernel, ">>FALLO ENVIAR EL SELECT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
@@ -68,11 +70,19 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+				printf("pase el enviar\n");
+
 				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada->socket);
+
+				printf("recibi el dato\n");
 
 				mostrar_t_dato(dato_recibido);
 
+				printf("mostree el dato\n");
+
 				liberar_t_dato(dato_recibido);
+
+				printf("libere el dato\n");
 
 				return 1;
 			}

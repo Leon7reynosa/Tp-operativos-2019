@@ -93,18 +93,19 @@ void enviar_dato(t_dato* dato, int conexion){
 
 	int desplazamiento = 0;
 	int bytes = sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
+
 	void* buffer = malloc(bytes);
 
-	memcpy(buffer, &(dato->timestamp) , sizeof(dato->timestamp));
+	memcpy(buffer + desplazamiento, &(dato->timestamp) , sizeof(dato->timestamp));
 	desplazamiento += sizeof(dato->timestamp);
 
-	memcpy(buffer, &(dato->key) , sizeof(dato->key));
+	memcpy(buffer + desplazamiento, &(dato->key) , sizeof(dato->key));
 	desplazamiento += sizeof(dato->key);
 
-	memcpy(buffer, &(dato->value->size) , sizeof(dato->value->size));
+	memcpy(buffer + desplazamiento, &(dato->value->size) , sizeof(dato->value->size));
 	desplazamiento += sizeof(dato->value->size);
 
-	memcpy(buffer, dato->value->buffer , dato->value->size);
+	memcpy(buffer + desplazamiento, dato->value->buffer , dato->value->size);
 	desplazamiento += dato->value->size;
 
 	send(conexion, buffer, bytes, 0);

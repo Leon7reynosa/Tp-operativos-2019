@@ -138,9 +138,13 @@ t_list* recibir_describe(int conexion){
 
 t_dato* recibir_dato_memoria(int conexion){
 
+	printf("entre al recibir dato memoria\n");
+
 	t_dato* dato_recibido = malloc(sizeof(t_dato));
 
 	dato_recibido->value = malloc(sizeof(t_stream));
+
+	printf("voy a recibir\n");
 
 	int bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
 

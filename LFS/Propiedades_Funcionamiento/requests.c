@@ -17,6 +17,8 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case SELECT:
 
+			printf(">>>REQUEST SELECT<<< \n");
+
 			log_trace(logger_request, "Request de SELECT recibida por el socket %i !\n", conexion);
 
 
@@ -42,6 +44,8 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case INSERT:
 
+			printf(">>>REQUEST INSERT<<< \n");
+
 			log_trace(logger_request, "Request de INSERT recibida por el socket %i !\n", conexion);
 
 			request_insert((insert) request_a_operar->tipo_request );
@@ -51,6 +55,8 @@ void trabajar_request(request request_a_operar , int conexion){
 			break;
 
 		case CREATE:
+
+			printf(">>>REQUEST CREATE<<< \n");
 
 			log_trace(logger_request, "Request de CREATE recibida por el socket %i !\n", conexion);
 
@@ -62,6 +68,8 @@ void trabajar_request(request request_a_operar , int conexion){
 			break;
 
 		case DESCRIBE:
+
+			printf(">>>REQUEST DESCRIBE<<< \n");
 
 			log_trace(logger_request, "Request de DESCRIBE recibida por el socket %i !\n", conexion);
 
@@ -82,6 +90,8 @@ void trabajar_request(request request_a_operar , int conexion){
 			break;
 
 		case DROP:
+
+			printf(">>>REQUEST DROP<<< \n");
 
 			log_trace(logger_request, "Request de DROP recibida por el socket %i !\n", conexion);
 

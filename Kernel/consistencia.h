@@ -13,7 +13,7 @@
 #include"gossiping.h"
 #include<commons/collections/list.h>
 #include"Mensajeria/requestDescribe.h"
-#include"estructuras.h"
+#include"Mensajeria/estructuras.h"
 
 typedef enum{
 	SC,

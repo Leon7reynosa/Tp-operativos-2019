@@ -13,17 +13,17 @@
 #include<string.h>
 #include"request.h"
 
+//typedef struct{
+//
+//	int size;
+//	void* buffer;
+//
+//}t_stream;
+
+
 typedef struct{
 
-	int size;
-	void* buffer;
-
-}t_stream;
-
-
-typedef struct{
-
-	int key;
+	u_int16_t key;
 	t_stream* value;
 	time_t timestamp;
 

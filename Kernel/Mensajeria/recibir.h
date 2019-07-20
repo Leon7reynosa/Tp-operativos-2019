@@ -24,6 +24,8 @@
 #include<ctype.h>
 #include<commons/collections/list.h>
 #include"requestDescribe.h"
+#include"t_dato.h"
+#include"request.h"
 
 void recibir_mensaje(int conexion);
 void* recibir_buffer(int* size,int conexion);

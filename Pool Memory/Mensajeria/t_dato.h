@@ -23,7 +23,7 @@ typedef struct{
 
 typedef struct{
 
-	int key;
+	u_int16_t key;
 	t_stream* value;
 	time_t timestamp;
 

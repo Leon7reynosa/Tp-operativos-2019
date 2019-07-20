@@ -17,6 +17,7 @@
 #include"consistencia.h"
 
 #include"Mensajeria/requestDescribe.h"
+#include"Mensajeria/t_dato.h"
 
 t_log* logger_kernel;
 
