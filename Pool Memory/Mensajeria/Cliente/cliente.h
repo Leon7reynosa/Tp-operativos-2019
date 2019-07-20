@@ -22,15 +22,9 @@
 #include<netdb.h>
 #include<readline/readline.h>
 #include<readline/history.h>
+#include<stdbool.h>
 
 int socket_lissandra;
-int socket_kernel;
-
-struct dato_handshake{
-
-	int tamanio_value;
-
-};
 
 int conectar_servidor(char* ip, int puerto);
 

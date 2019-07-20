@@ -21,6 +21,8 @@ int main (void){
 
 	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
 
+	desconexion_pool = false;
+
 	inicializar_memoria(tamanio, tamanio_value, tamanio_dato); //TODO ARREGLAR ESTA FUNCION UN POCO
 
 	inicializar_hilos();
@@ -43,6 +45,8 @@ int main (void){
 		perror("socket");
 		exit(-1);
 	}
+
+	free(ip_escucha);
 
 	FD_SET(0, &master);
 	FD_SET(listener, &master);
@@ -79,13 +83,11 @@ int main (void){
 
 				}else if(i == 0){
 //TODO parsear linea por requests!
-					leer_consola();
+					desconexion_pool = leer_consola();
 
 				}else{
 					printf("\n//////////////////////////////////////////////////////// NUEVA REQUEST c: ////////////////////////////////////////////////\n");
 					request nueva_request = recibir_request(i);
-
-					printf("codigo_ lol %d\n" , nueva_request->cod_op);
 
 //TODO Esta ranciada de la desconexion y los errores
 
@@ -99,11 +101,10 @@ int main (void){
 
 						printf("no da\n");
 
-					//DOUBLE FREE CORRUPTION, OJO EN EL ENVIAR_REQUEST, ESTOY GENERANDO DENUEVO UNA REQUEST Y LA LIBERO AHI! ojo
 						trabajar_request(nueva_request, i);
 
 					}
-//TODO OJO AL LIBERAR UNA DESCONEXION, NO PUEDO HACER FREE DE NULL!!!!!!
+
 					liberar_request(nueva_request);
 					printf("\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n");
 				}
@@ -111,16 +112,59 @@ int main (void){
 
 			}
 
+		}
 
-
+		if(desconexion_pool){
+			break;
 		}
 
 	}
+
+	//CIERRO TODOS LOS CLIENTES
+	for(i = 1; i <= fd_max; i++){
+
+
+		if(FD_ISSET(i, &master)){
+
+			FD_CLR(i, &master);
+			close(i);
+
+		}
+
+
+	}
+
+
+	close(socket_lissandra);
+
+	abortar_hilos();
+
+	liberar_memoria();
+
+	list_destroy_and_destroy_elements(ip_seeds, free);
+	list_destroy_and_destroy_elements(puerto_seeds, free);
+
+	free(ip_lfs);
 
 	printf("Termino el programa memoria\n");
 
 
 	return EXIT_SUCCESS;
+}
+
+void abortar_hilos(void){
+
+	pthread_mutex_lock(&mutex_journal);
+	pthread_cancel(journal_thread);
+	pthread_mutex_unlock(&mutex_journal);
+
+	pthread_mutex_lock(&mutex_gossip);
+	pthread_cancel(gossip_thread);
+	pthread_mutex_lock(&mutex_gossip);
+
+	pthread_mutex_destroy(&mutex_journal);
+	pthread_mutex_destroy(&mutex_gossip);
+
 }
 
 void inicializar_hilos(void){
@@ -154,147 +198,6 @@ void inicializar_hilos(void){
 
 	pthread_attr_destroy(&attr);
 
-}
-
-bool leer_consola(void){
-
-	int tamanio_buffer = 256;
-
-	char* buffer = malloc(tamanio_buffer + 1);
-
-	fgets(buffer, tamanio_buffer, stdin);
-
-	*(buffer + tamanio_buffer) = '\0';
-
-	if(string_length(buffer) + 1 >= tamanio_buffer){
-		printf("Pusiste 200 millones de caracteres en la consola\n");
-	}
-
-	buffer = realloc(buffer, string_length(buffer) + 1);
-
-	char** tokens = string_split(buffer, " ");
-
-	free(buffer);
-
-	string_to_upper(tokens[0]);
-
-	if(string_equals_ignore_case(tokens[0], "SELECT")){
-
-		parsear_request(SELECT, tokens);
-
-	}
-	else if(string_equals_ignore_case(tokens[0], "INSERT")){
-
-		parsear_request(INSERT, tokens);
-
-	}
-	else if(string_equals_ignore_case(tokens[0], "CREATE")){
-
-		parsear_request(CREATE, tokens);
-
-	}
-	else if(string_equals_ignore_case(tokens[0], "DESCRIBE")){
-
-		parsear_request(DESCRIBE, tokens);
-
-	}
-	else if(string_equals_ignore_case(tokens[0], "DROP")){
-
-		//parsear_request(DROP, tokens);
-
-	}
-	else if(string_equals_ignore_case(tokens[0], "JOURNAL")){
-
-		//parsear_request(JOURNAL, tokens);
-
-	}
-	else if(string_equals_ignore_case(tokens[0], "EXIT")){
-
-		liberar_puntero_doble(tokens);
-
-		return true;
-
-	}else{
-		printf("No es valido lo ingresado\n");
-	}
-
-	liberar_puntero_doble(tokens);
-
-
-	return false;
-}
-
-void parsear_request(cod_operacion operacion, char** tokens){
-
-	int cantidad_argumentos = obtener_cantidad_argumentos(tokens);
-
-	char* tabla;
-	u_int16_t key;
-	time_t timestamp;
-
-	select_t dato_select;
-	Dato dato;
-
-	insert dato_insert;
-
-
-	switch(operacion){
-
-		case SELECT:
-
-			if(cantidad_argumentos == 2){
-
-				tabla = tokens[1];
-				key = atoi(tokens[2]);       //VER ESTO
-
-				dato_select = crear_dato_select(tabla, key);
-
-				dato = request_select(dato_select);
-
-				liberar_dato(dato);
-
-			}else{
-
-				printf("Cantidad de argumentos invalido\n");
-
-			}
-
-			break;
-
-		default:
-			break;
-
-
-	}
-
-
-}
-
-void liberar_puntero_doble(char** puntero_doble){
-
-	int i = 0;
-	while(*(puntero_doble + i) != NULL){
-
-		free(*(puntero_doble + i));
-		i++;
-
-	}
-
-	free(puntero_doble);
-
-}
-
-int obtener_cantidad_argumentos(char** tokens){
-
-	int i = 1;
-	int cantidad = 0;
-
-	while(*(tokens + i) != NULL){
-		cantidad++;
-		i++;
-	}
-
-	return cantidad;
 }
 
 //void pruebas(void){

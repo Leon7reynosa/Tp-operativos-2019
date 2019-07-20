@@ -7,6 +7,12 @@
 
 #include"pagina.h"
 
+void eliminar_pagina(Pagina pagina_a_eliminar){
+
+	free(pagina_a_eliminar);
+
+}
+
 void liberar_pagina(Pagina pagina_a_liberar){
 
 	pagina_a_liberar->flag_en_uso = 0;
