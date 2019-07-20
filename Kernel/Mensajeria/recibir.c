@@ -136,4 +136,53 @@ t_list* recibir_describe(int conexion){
 
 }
 
+t_dato* recibir_dato_memoria(int conexion){
+
+	t_dato* dato_recibido = malloc(sizeof(t_dato));
+
+	dato_recibido->value = malloc(sizeof(t_stream));
+
+	int bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
+
+	if(bytes == -1){
+		perror("NO RECIBIO EL TIMESTAMP;");
+	}
+
+	printf("Timestamp: %i\n", dato_recibido->timestamp);
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	bytes = recv(conexion,&(dato_recibido->key),sizeof(u_int16_t), 0);
+
+	if(bytes == -1){
+			perror("NO RECIBIO LA KEY;");
+	}
+
+	printf("Key: %i\n", dato_recibido->key);
+
+	///////////////////////////////////////////////////////////////////////////////////
+	bytes = recv(conexion, &(dato_recibido->value->size),sizeof(int), 0);
+
+	if(bytes == -1){
+		perror("NO RECIBIO EL TAMANIO DEL VALUE;");
+	}
+
+	printf("Size: %i\n", dato_recibido->value->size);
+
+	//////////////////////////////////////////////////////////////////////////////
+
+	dato_recibido->value->buffer = malloc(dato_recibido->value->size);
+
+	bytes = recv(conexion, dato_recibido->value->buffer, dato_recibido->value->size, 0);
+
+	if(bytes == -1){
+		perror("NO RECIBIO EL VALUE;");
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////
+
+	return dato_recibido;
+
+}
+
 

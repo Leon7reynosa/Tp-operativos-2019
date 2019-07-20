@@ -247,7 +247,7 @@ dato_t* request_select(select_t datos_select){
 
 	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
 
-	 correr_compactacion(datos_create->compactacion, nombre_tabla);
+//	 correr_compactacion(datos_create->compactacion, nombre_tabla);
 
 	 //YA BLOQUEADO EN crear_directorio
 	 thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);

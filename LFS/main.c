@@ -48,6 +48,8 @@ int main(){
 
 	int error_pthread;
 
+	printf("IP: %s\n", ip_escucha);
+
 	socket_servidor = iniciar_servidor(ip_escucha , puerto_lfs);
 
 	free(ip_escucha);

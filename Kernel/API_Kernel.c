@@ -68,6 +68,12 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada->socket);
+
+				mostrar_t_dato(dato_recibido);
+
+				liberar_t_dato(dato_recibido);
+
 				return 1;
 			}
 			break;
@@ -255,6 +261,13 @@ int ejecutar_request(char* request_lql){
 				printf("ya lo cree bro\n");
 
 				memoria_utilizada = seleccionar_memoria_consistencia(DROP , drop_enviar);
+
+				if(memoria_utilizada == NULL){
+
+					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
+					return 0;
+
+				}
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 

@@ -104,3 +104,57 @@
 
 [TRACE] 14:20:57:345 requests/(11234:11253): Request de CREATE terminada por el socket 9 !
 
+[TRACE] 14:39:51:254 requests/(11816:11844): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 14:39:51:255 requests/(11816:11844): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 14:43:27:131 requests/(12112:12133): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 14:43:27:137 requests/(12112:12133): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 14:43:41:704 requests/(12112:12133): Request de DROP recibida por el socket 9 !
+
+[TRACE] 14:43:41:705 requests/(12112:12133): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 14:44:22:229 requests/(12112:12133): Request de DROP recibida por el socket 9 !
+
+[TRACE] 14:44:22:230 requests/(12112:12133): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 14:45:19:91 requests/(12112:12133): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 14:45:19:92 requests/(12112:12133): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 14:45:36:980 requests/(12112:12133): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 14:56:05:497 requests/(12521:12542): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 14:56:05:498 requests/(12521:12542): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 14:57:01:118 requests/(12521:12542): Request de DROP recibida por el socket 9 !
+
+[TRACE] 14:57:01:119 requests/(12521:12542): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 14:57:28:275 requests/(12521:12542): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 14:57:28:276 requests/(12521:12542): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 14:58:31:154 requests/(12521:12542): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 14:58:31:155 requests/(12521:12542): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 14:58:52:405 requests/(12521:12542): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 14:58:52:405 requests/(12521:12542): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 14:59:01:148 requests/(12521:12542): Request de DROP recibida por el socket 9 !
+
+[TRACE] 14:59:01:149 requests/(12521:12542): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 14:59:09:469 requests/(12521:12542): Request de DROP recibida por el socket 9 !
+
+[TRACE] 14:59:09:469 requests/(12521:12542): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 14:59:58:338 requests/(12521:12542): Request de SELECT recibida por el socket 9 !
+
+[TRACE] 14:59:58:339 requests/(12521:12542): Request de SELECT terminada por el socket 9 !
+
