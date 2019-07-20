@@ -17,11 +17,9 @@ void* realizar_gossiping(){
 
 		printf("\n/////////////////////////////INICIANDO EL GOSSIPING///////////////////////////////////////\n");
 
-		printf("Voy a realizar el gossiping :D\n");
-
 		int conexion = tomar_socket_memoria_aleatorio(tabla_gossiping);
 
-		printf("el socket es: %d\n" , conexion);
+		printf(">>El socket utilizado es: %d<<\n" , conexion);
 
 		bool terminaste = actualizar_gossiping(conexion);
 
@@ -40,10 +38,9 @@ void* realizar_gossiping(){
 			terminaste = actualizar_gossiping(conexion);
 		}
 
-		printf("no entre al while\n");
 
 		if(conexion < 0 ){
-			printf("No hay memorias conectadas\n");
+			printf(">>No hay memorias conectadas<<\n");
 		}
 
 		printf("\n//////////////////////////////////////FIN GOSSIP//////////////////////////////////////////////////////////\n");
@@ -149,8 +146,6 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 	for(int i = 0 ; i < *cantidad_memorias ; i++){
 
-		printf("entro al for bro\n");
-
 		struct MemoriasEstructura* memoria_recv = malloc(sizeof(struct MemoriasEstructura));
 
 		memoria_recv->ip = malloc(sizeof(t_stream));
@@ -174,18 +169,15 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 		if(!existe_en_tabla_gossiping(memoria_recv)){
 
-			printf("La memoria no existe en tablaa gossiping\n");
+			printf(">>La memoria no existe en tablaa gossiping<<\n");
 
 			dato_memoria_ingresar = convertir_a_memoria_t(memoria_recv);
-
-			printf("lo convertimos a memoria_t\n");
 
 //			dato_memoria_ingresar->socket = conectar_servidor(dato_memoria_ingresar->ip,
 //											dato_memoria_ingresar->puerto); //esto capaz no va.
 
 			if(dato_memoria_ingresar->socket > 0){
 
-				printf("entre al if\n");
 
 				ingresar_a_tabla_gossiping(dato_memoria_ingresar);
 
@@ -193,8 +185,6 @@ bool recibir_actualizacion_gossiping(int conexion){
 						dato_memoria_ingresar->numero_memoria);
 
 			}else{
-
-				printf("entre al else\n");
 
 				log_error(logger_kernel, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.\n",
 						dato_memoria_ingresar->numero_memoria);
@@ -205,11 +195,7 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 		}
 
-		printf("ya revise si esta en tabla gossiping\n");
-
 		liberar_dato_memoria(memoria_recv);
-
-		printf("libero\n");
 	}
 
 	free(cantidad_memorias);

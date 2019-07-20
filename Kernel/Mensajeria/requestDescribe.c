@@ -125,3 +125,6 @@ void mostrar_lista_describe(t_list* lista_describe){
 	list_iterate(lista_describe, _mostrar_metadata);
 
 }
+
+
+

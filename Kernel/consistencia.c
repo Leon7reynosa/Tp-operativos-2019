@@ -8,6 +8,12 @@
 #include "consistencia.h"
 
 
+void inicializar_registro_tabla(){
+
+	registro_tabla = dictionary_create();
+
+}
+
 void inicializar_consistencias(){
 
 	Strong_C = malloc(sizeof(memoria_t));
@@ -47,22 +53,33 @@ void agregar_a_consistencia(cod_consistencia codigo, memoria_t* memoria_a_guarda
 
 cod_consistencia identificar_consistencia(char* consistencia){
 
+	printf("entre aca gg\n");
+
 	string_to_upper(consistencia);
 
 	if(strcmp(consistencia, "SC") == 0){
+
+		printf(">>La consistencia es Strong Consistency\n");
+
 		return SC;
 	}else if(strcmp(consistencia, "EC") == 0){
+
+		printf(">>La consistencia es Eventual Consistency\n");
+
 		return EC;
-	}else if(strcmp(consistencia, "HSC") == 0){
+	}else if(strcmp(consistencia, "SHC") == 0){
+
+		printf(">>La consitencia es Strong hash consistency\n");
+
 		return SHC;
 	}else{
-		printf("fallaste bro\n");
+		printf(">>No es una consistencia permitida<<\n");
 		return -1;
 	}
 
 }
 
-cod_consistencia identificar_consitencia_para_tabla(int cod_request, void* tipo_request){
+cod_consistencia identificar_consitencia_para_request(int cod_request, void* tipo_request){
 
 	char* tabla;
 
@@ -82,7 +99,10 @@ cod_consistencia identificar_consitencia_para_tabla(int cod_request, void* tipo_
 
 		case CREATE:
 
-			tabla = (char*)((create) tipo_request)->tabla->buffer;
+			tabla = (char*)((create) tipo_request)->consistencia->buffer; //en este caso usamos la consistencia
+
+			return identificar_consistencia(tabla);
+
 			break;
 
 		case DESCRIBE:
@@ -90,20 +110,109 @@ cod_consistencia identificar_consitencia_para_tabla(int cod_request, void* tipo_
 			tabla = (char*) ((describe_t) tipo_request)->tabla->buffer;
 			break;
 
+		case DROP:
+
+			tabla = (char*) ((Drop) tipo_request)->tabla->buffer;
+			break;
+
 		default:
 			printf("CODIGO DE REQUEST INCORRECTO\n");
 			break;
 	}
 
-	codigo_consistencia = ((metadata_t*) dictionary_get( registro_tabla ,tabla))->codigo_consistencia;
+	printf("tabla: %s\n" , tabla);
+
+	if(!dictionary_has_key(registro_tabla, tabla)){
+
+		printf("No existe la tabla en el registro de tablas\n"); //log
+
+		return -1;
+
+	}
+
+	printf("pase el if lol\n");
+
+	codigo_consistencia =    identificar_consistencia(  (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
+
+	printf("holas\n");
+
+	printf("CODIGO DE CONSISTENCIA: %d\n" , codigo_consistencia);
 
 	return codigo_consistencia;
 }
 
 
-memoria_t* seleccionar_memoria_consistencia(request request_a_enviar){
+memoria_t* tomar_memoria_al_azar(){
 
-	cod_consistencia codigo_consistencia = identificar_consitencia_para_tabla(request_a_enviar->cod_op, request_a_enviar->tipo_request);
+	t_list* lista_de_consistencias = lista_memorias_de_consistencia();
+
+	int numero_random_consistencia = rand() % list_size(lista_de_consistencias); // para determinar de cual de los tres codigos de operacion usamos para agarrar la memoria ( SC, EC, SHC)
+
+	return (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
+
+}
+
+t_list* lista_memorias_de_consistencia(){
+
+	t_list* lista_de_memorias = list_create();
+
+	if(Strong_C != NULL){
+
+		list_add(lista_de_memorias, Strong_C);
+
+	}
+
+	void _agregar_si_cumple(void* _memoria){
+
+		memoria_t* memoria = (memoria_t *)_memoria;
+
+		bool _esta_agregado(void* _memoria_2){
+
+				memoria_t* memoria_2 = (memoria_t *)_memoria_2 ;
+
+				return memoria == memoria_2;
+
+		}
+
+		if(list_any_satisfy(lista_de_memorias, _esta_agregado)){
+			//no lo agrego
+
+		}else{
+
+			list_add(lista_de_memorias, memoria);
+
+		}
+
+	}
+
+	list_iterate(Strong_Hash_C, _agregar_si_cumple);
+
+	list_iterate(Eventual_C, _agregar_si_cumple);
+
+	return lista_de_memorias;
+
+}
+
+memoria_t* memoria_al_azar_consistencia(t_list* lista_consistencia){
+
+	int index_random = rand() % list_size(lista_consistencia);
+
+	return (memoria_t*) list_get(lista_consistencia, index_random);
+
+
+}
+
+//TOMA UNA MEMORIA SEGUN LA REQUEST QUE LE PASES
+memoria_t* seleccionar_memoria_consistencia(cod_operacion cod_op , void* tipo_request){
+
+	cod_consistencia codigo_consistencia = identificar_consitencia_para_request(cod_op, tipo_request);
+
+	return tomar_memoria_segun_codigo_consistencia(codigo_consistencia);
+
+}
+
+memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consistencia){
+
 	int index_memoria;
 	int numero_random;
 
@@ -116,19 +225,25 @@ memoria_t* seleccionar_memoria_consistencia(request request_a_enviar){
 
 		case SHC:
 
-			index_memoria = obtener_index_memoria(request_a_enviar);
+//			index_memoria = obtener_index_memoria(request_a_enviar);
+//
+//			if(index_memoria >= 0 ){
+//
+//				return list_get(Strong_Hash_C, index_memoria);
+//
+//			}else{
+//
+//				numero_random = rand() % list_size(Strong_Hash_C); //aca no deberia
+//
+//				return list_get(Strong_Hash_C, numero_random);
+//
+//			}
 
-			if(index_memoria >= 0 ){
+			//Aca deberiamos ver la funcion hashs, por ahora devuelvo la primera de las memorias
 
-				return list_get(Strong_Hash_C, index_memoria);
+			return list_get(Strong_Hash_C , 0);
 
-			}else{
 
-				numero_random = rand() % list_size(Strong_Hash_C);
-
-				return list_get(Strong_Hash_C, numero_random);
-
-			}
 			break;
 
 		case EC:
@@ -149,6 +264,16 @@ memoria_t* seleccionar_memoria_consistencia(request request_a_enviar){
 }
 
 
+void mostrar_memoria_utilizada(memoria_t* memoria_utilizada){
+
+	printf("\n>>La memoria utilizada sera: \n");
+	printf("Numero Memoria: %d\n" , memoria_utilizada->numero_memoria);
+	printf("Socket: %d\n", memoria_utilizada->socket);
+	printf("Ip: %s\n" , memoria_utilizada->ip);
+	printf("Puerto: %d\n\n" , memoria_utilizada->puerto);
+
+}
+
 void guardar_tabla_consistencia(char* tabla, metadata_t* metadata_tabla){
 
 	dictionary_put(registro_tabla , tabla, metadata_tabla);
@@ -161,6 +286,35 @@ int obtener_index_memoria(int key){
 	int cantidad_de_memorias = list_size(tabla_gossiping);
 
 	return key%cantidad_de_memorias;
+}
+
+
+void actualizar_metadata(t_list* datos_describe){
+
+
+	void _actualizar_en_tabla_metadata(void* dato_describe){
+
+		Metadata dato_metadata = (Metadata) dato_describe;
+
+		//agregar semaforo de escritura
+
+		if(dictionary_has_key(registro_tabla, dato_metadata->tabla)){
+
+			dictionary_remove_and_destroy(registro_tabla , dato_metadata->tabla , liberar_metadata);
+
+		}
+
+
+		dictionary_put(registro_tabla, dato_metadata->tabla, dato_metadata);
+
+		//agregar semaforo de escritura
+
+	}
+
+	list_iterate(datos_describe, _actualizar_en_tabla_metadata);
+
+
+
 }
 
 

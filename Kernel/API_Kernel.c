@@ -19,6 +19,8 @@ int ejecutar_request(char* request_lql){
 	char* consistencia = string_new();
 	int tiempo_compactacion, particiones, numero_memoria, cantidad_parametros;
 
+	memoria_t* memoria_utilizada;
+
 	u_int16_t key;
 	char* value = string_new();
 	time_t timestamp;
@@ -35,7 +37,27 @@ int ejecutar_request(char* request_lql){
 			if(obtener_parametros_select(request_lql, nombre_tabla, &key) == 3){
 
 				log_info(logger_kernel, "---Se realizara el SELECT---\n");
+
+				printf("pase bro\n");
+
+
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
+
+				printf("pase bro\n");
+
+				memoria_utilizada = seleccionar_memoria_consistencia(SELECT, select_enviar);
+
+				printf("pase bro\n");
+
+				if(memoria_utilizada == NULL){
+
+					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
+					return 0;
+
+				}
+
+				mostrar_memoria_utilizada(memoria_utilizada);
+
 				enviar_request(SELECT, select_enviar);
 
 				return 1;
@@ -49,6 +71,16 @@ int ejecutar_request(char* request_lql){
 
 				insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
 
+				memoria_utilizada = seleccionar_memoria_consistencia(INSERT, insert_enviar);
+
+				if(memoria_utilizada == NULL){
+
+					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
+					return 0;
+				}
+
+				mostrar_memoria_utilizada(memoria_utilizada);
+
 				enviar_request(INSERT, insert_enviar);
 				return 1;
 			}
@@ -59,6 +91,16 @@ int ejecutar_request(char* request_lql){
 
 				log_info(logger_kernel , "---Se realizara el CREATE---\n");
 				create create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, tiempo_compactacion);
+
+				memoria_utilizada = seleccionar_memoria_consistencia(CREATE, create_enviar);
+
+				if(memoria_utilizada == NULL){
+
+					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
+					return 0;
+				}
+
+				mostrar_memoria_utilizada(memoria_utilizada);
 
 				printf("se creo el dato create, tabla: %s \n" , create_enviar->tabla->buffer);
 				enviar_request(CREATE, create_enviar);
@@ -82,6 +124,16 @@ int ejecutar_request(char* request_lql){
 
 				printf("tabla que enviamos %s\n" , (char*)describe_enviar->tabla->buffer);
 
+				memoria_utilizada = seleccionar_memoria_consistencia(DESCRIBE, describe_enviar);
+
+				if(memoria_utilizada == NULL){
+
+					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
+					return 0;
+				}
+
+				mostrar_memoria_utilizada(memoria_utilizada);
+
 				enviar_request(DESCRIBE, describe_enviar);
 
 				printf("se envio bien el describe\n");
@@ -91,6 +143,11 @@ int ejecutar_request(char* request_lql){
 				log_info(logger_kernel, "---SE REALIZARA UN DESCRIBE GLOBAL--");
 
 				describe_enviar = crear_dato_describe(NULL);
+
+				memoria_utilizada = tomar_memoria_al_azar();
+
+				mostrar_memoria_utilizada(memoria_utilizada);
+
 				enviar_request(DESCRIBE, describe_enviar);
 
 
@@ -98,17 +155,18 @@ int ejecutar_request(char* request_lql){
 				return 0;
 			}
 
-			printf("Voy a esperar la respuesta de la memoria\n");
 
 			t_list* lista_describe = recibir_describe(conexion_memoria);
 
-			printf("Meti todas las metadatas en una lista\n");
 
-			printf("Muestro la lista\n");
 			mostrar_lista_describe(lista_describe);
-			printf("Termine de mostrar\n");
 
-			printf("Elimino la lista de metadatas\n");
+			printf("voy a actualizar la metadata\n");
+
+			actualizar_metadata(lista_describe);
+
+			printf("ya actualice la metadata\n");
+
 			list_destroy_and_destroy_elements(lista_describe, liberar_metadata);
 
 			printf("Termino el describe!\n");
@@ -116,7 +174,7 @@ int ejecutar_request(char* request_lql){
 
 		case ADD:
 
-			if(obtener_parametros_add(request_lql, &numero_memoria, consistencia)){
+			if(  obtener_parametros_add(request_lql, &numero_memoria, consistencia) &&  (identificar_consistencia(consistencia) >= 0 ) ){
 
 				log_info(logger_kernel, "---Se realizara la request ADD---\n");
 				request_add(numero_memoria, consistencia);
@@ -127,6 +185,7 @@ int ejecutar_request(char* request_lql){
 			break;
 
 		case RUN:
+
 			nombre_archivo = obtener_parametros_run(request_lql);
 
 			if(nombre_archivo != NULL){
@@ -152,6 +211,10 @@ int ejecutar_request(char* request_lql){
 				Drop drop_enviar = crear_drop(nombre_tabla);
 
 				printf("ya lo cree bro\n");
+
+				memoria_utilizada = tomar_memoria_al_azar();
+
+				mostrar_memoria_utilizada(memoria_utilizada);
 
 				enviar_request(DROP, drop_enviar );
 
@@ -205,46 +268,7 @@ void request_journal(){
 
 }
 
-t_list* lista_memorias_de_consistencia(){
 
-	t_list* lista_de_memorias = list_create();
-
-	if(Strong_C != NULL){
-
-		list_add(lista_de_memorias, Strong_C);
-
-	}
-
-	void _agregar_si_cumple(void* _memoria){
-
-		memoria_t* memoria = (memoria_t *)_memoria;
-
-		bool _esta_agregado(void* _memoria_2){
-
-				memoria_t* memoria_2 = (memoria_t *)_memoria_2 ;
-
-				return memoria == memoria_2;
-
-		}
-
-		if(list_any_satisfy(lista_de_memorias, _esta_agregado)){
-			//no lo agrego
-
-		}else{
-
-			list_add(lista_de_memorias, memoria);
-
-		}
-
-	}
-
-	list_iterate(Strong_Hash_C, _agregar_si_cumple);
-
-	list_iterate(Eventual_C, _agregar_si_cumple);
-
-	return lista_de_memorias;
-
-}
 
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key){
 

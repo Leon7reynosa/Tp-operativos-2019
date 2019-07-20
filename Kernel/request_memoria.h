@@ -12,6 +12,7 @@
 #include"kernel.h"
 #include"Mensajeria/Cliente/cliente.h"
 #include<commons/collections/list.h>
+#include"consistencia.h"
 
 
 void request_add(int numero_memoria, char* consistencia);

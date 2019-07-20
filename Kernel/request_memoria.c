@@ -33,16 +33,16 @@ void request_add(int numero_memoria, char* consistencia){
 
 		case SC:
 
-			agregar_a_consistencia(Strong_C , memoria_agregar);
+			agregar_a_consistencia(SC , memoria_agregar);
 			break;
 
 		case EC:
 
-			agregar_a_consistencia(Eventual_C , memoria_agregar);
+			agregar_a_consistencia(EC , memoria_agregar);
 			break;
 
 		case SHC:
-			agregar_a_consistencia(Strong_Hash_C , memoria_agregar);
+			agregar_a_consistencia(SHC , memoria_agregar);
 			break;
 
 		default:

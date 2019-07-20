@@ -32,6 +32,8 @@ int main (int argc , char* argv[]){
 
 	inicializar_tabla_gossiping();
 
+	inicializar_registro_tabla();
+
 	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
 
 	creacion_del_config();
@@ -39,19 +41,11 @@ int main (int argc , char* argv[]){
 
 	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  1); //si pasa pasa, modioficarlo en el config
 
-	printf("llegueeep\n");
-
 	ingresar_a_tabla_gossiping(memoria_principal);
-
-	printf("llegueeep\n");
 
 	conexion_memoria = memoria_principal->socket;
 
-	printf("llegueeep\n");
-
 	inicializar_semaforo_ready();
-
-	printf("paso 1\n");
 
 	//tabla_gossiping = list_create(); // despues poner en una funcion inicializar gossiping y probar el ADD
 
@@ -60,8 +54,6 @@ int main (int argc , char* argv[]){
 
 
 	t_queue* colas_exec[grado_multiprocesamiento];
-
-	printf("paso 3\n");
 
 	inicializar_cola_exec(colas_exec , grado_multiprocesamiento);
 	inicializar_cola_new(argc, argv);
@@ -74,11 +66,7 @@ int main (int argc , char* argv[]){
 
 	pthread_detach(&hilo_gossiping);
 
-	printf("paso 4\n");
-
 	cola_new_to_ready();
-
-	printf("pasaste bro\n");
 
 	pthread_create(&hilo_planificador, NULL, planificador, colas_exec);
 

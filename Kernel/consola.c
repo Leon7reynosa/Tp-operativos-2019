@@ -38,12 +38,12 @@ void* consola(){
 
 void menu(){
 
-	printf("\n################################################################################\n");
+	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CONSOLA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 	printf("\n1. SELECT [NOMBRE TABLA] [KEY]\n");
-	printf("2. INSERT [NOMBRE TABLA] [KEY] [VALUE] [TIMESTAMP]\n");
+	printf("2. INSERT [NOMBRE TABLA] [KEY] \"[VALUE]\" [TIMESTAMP]\n");
 	printf("3. CREATE [NOMBRE TABLA] [CONSISTENCIA] [NUMERO PARTICIONES] [TIEMPO COMPACTACION]\n");
 	printf("4. ADD MEMORY [NUMERO MEMORIA] TO [CRITERIO]\n");
-	printf("5. RUN [ARCHIVO LQL]\n");
+	printf("5. RUN [ARCHIVO LQL]\n\n");
 	printf("Escriba una request: ");
 	printf("\n");
 }

@@ -17,10 +17,13 @@
 #include"Mensajeria/request.h"
 #include"Mensajeria/Cliente/cliente.h"
 #include"consistencia.h"
+#include"estructuras.h"
 
 
 
 #include"API_Kernel.h"
+
+
 
 struct MemoriasEstructura{
 	int numero_memoria;
@@ -30,14 +33,6 @@ struct MemoriasEstructura{
 };
  //PARA LA TABLA_GOSSIPING
 
-typedef struct{
-
-	int numero_memoria;
-	char* ip;
-	int puerto;
-	int socket;
-
-}memoria_t;
 
 t_list* tabla_gossiping;
 
