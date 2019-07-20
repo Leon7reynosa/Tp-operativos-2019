@@ -8,7 +8,6 @@
 #include "requests.h"
 
 
-//capaz tiene que retoranr algo
 void trabajar_request(request request_a_operar , int conexion){
 
 	dato_t* dato_request;
@@ -18,11 +17,13 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case SELECT:
 
-			printf(">>SE REALIZARA EL SELECT\n");
+			log_trace(logger_request, "Request de SELECT recibida por el socket %i !\n", conexion);
 
 			printf("CON LOS SIGUIENTES DATOS:\n");
 			printf("KEY: %i\n", ((select_t)request_a_operar->tipo_request)->key);
 			printf("TABLA: %s\n",	(char *) ((select_t)request_a_operar->tipo_request)->tabla->buffer);
+
+
 			dato_request = request_select( (select_t) request_a_operar->tipo_request );
 
 			if(dato_request == NULL){
@@ -39,67 +40,59 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			mandar_select(conexion, dato_request);
 
-			printf("///////////////////////////TERMINO EL SELECT//////////////////////////////////////");
-			//falta hacer mas cosas aca, habria que reenviarlo al pool
+			log_trace(logger_request, "Request de SELECT terminada por el socket %i !\n", conexion);
 
 			break;
 
 		case INSERT:
 
-			printf("Se realizara Insert\n");
+			log_trace(logger_request, "Request de INSERT recibida por el socket %i !\n", conexion);
 
 			request_insert((insert) request_a_operar->tipo_request );
 
-			printf("///////////////////Termino el insert//////////////////\n");
+			log_trace(logger_request, "Request de INSERT terminada por el socket %i !\n", conexion);
 
 			break;
 
 		case CREATE:
 
-			printf("Se realizara Create\n");
+			log_trace(logger_request, "Request de CREATE recibida por el socket %i !\n", conexion);
 
 			request_create( (create) request_a_operar->tipo_request);
 
-			printf("Termine de realizar el Create\n");
+			log_trace(logger_request, "Request de CREATE terminada por el socket %i !\n", conexion);
 
-			//TODO habria que hacer que le diga al pool que esta todo ok.
 
 			break;
 
 		case DESCRIBE:
 
-			printf("Se realizara Describe\n");
+			log_trace(logger_request, "Request de DESCRIBE recibida por el socket %i !\n", conexion);
 
 			metadata_describe = request_describe( (describe_t) request_a_operar->tipo_request );
 
-			printf("Obtuve la lista de metadatas\n");
-
 			if(metadata_describe != NULL){
 
-				printf("No es nula, entonces se la envio a la memoria\n");
 				enviar_metadata(metadata_describe, conexion);
 
-				printf("Se la envie correctamente\n");
 				list_destroy_and_destroy_elements(metadata_describe, liberar_metadata);
 
 			}else{
 				//NOSE!
 			}
 
-			printf("TERMINO EL DESCRIBE BRO\n");
+			log_trace(logger_request, "Request de DESCRIBE terminada por el socket %i !\n", conexion);
 
 			break;
 
 		case DROP:
 
-			printf("Se realizara el DROP\n");
+			log_trace(logger_request, "Request de DROP recibida por el socket %i !\n", conexion);
 			request_drop((Drop)(request_a_operar->tipo_request));
-			printf("Se termino el drop\n");
+			log_trace(logger_request, "Request de DROP solicitada por el socket %i !\n", conexion);
 			break;
 
 		default:
-
-			//no se aca lol
 
 			break;
 	}
@@ -109,7 +102,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 }
 
-dato_t* request_select(select_t datos_select){ //hay que modificarla para que reciba un select_t
+dato_t* request_select(select_t datos_select){
 
 	 dato_t* dato_binarios;
 	 dato_t* dato_temporales;
@@ -121,41 +114,34 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 
 	 dato_t* dato_mas_nuevo = NULL;
 
+	 log_info(logger_lfs, "Solicitud de request -- SELECT -- \n");
+
+	 // SEMAFORO DE ESTRUCTURA TABLAS
+	 pthread_rwlock_rdlock(&(lock_diccionario_compactacion)); 		            // turbios
+	 thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+
+	 //SEMAFORO DE TABLA ESPECIFICA
+	 pthread_rwlock_rdlock(&(argumentos_tabla->lock_tabla)); 	 	 	 	   //  turbios
+
 	 if(existe_la_tabla(nombre_tabla)){
 
-		 printf("Existe la tabla en el File System\n");
-
-		 printf("TABLA: %s\n", nombre_tabla);
 		 metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
-
-		 printf("Muestro algo de la metadata: %i\n", metadata_tabla->particion);
 
 		 int particion_objetivo = calcular_particion(metadata_tabla->particion , datos_select->key);
 
-		 printf("Calculo la particion en la que se encuentra el dato: %i\n", particion_objetivo);
-
 		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
-		 printf("El path para esa particion: %s\n", path_particion_a_buscar);
-
-		 printf("Busco el dato en el binario\n");
 		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, datos_select->key);
-		 printf("Termine de buscar en los binarios de la particion\n");
 
-		 printf("Los busco en los temporales\n");
 		 dato_temporales = buscar_dato_en_temporales(nombre_tabla, datos_select->key);
-		 printf("Termine de buscar en los temporales\n");
 
-		 printf("Busco en la memtable\n");
+		 //ACA HAY UN SEMAFORO DE MEMTABLE
          dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
-         printf("Termine de buscar en la memtable\n");
+         /////////////////////////////////
 
-         printf("Busco el dato que tiene el timestamp mas grande\n");
 		 dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
 
 		 dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
-
-		 printf("Termine de buscar el que tiene el mas grande\n");
 
 		 if(dato_aux != NULL){
 			 liberar_dato(dato_aux);
@@ -173,127 +159,142 @@ dato_t* request_select(select_t datos_select){ //hay que modificarla para que re
 		 free(metadata_tabla);
 		 free(path_particion_a_buscar);
 
-		 printf("Libere todo lo administrativo\n");
-
 	 }
 
 	 else{
-		 printf("No existe la tabla en el File System\n");
+		 //log ?
 	 }
 
+
+	 pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
+	 ////////////////////////////////////////////////////////
+	 pthread_rwlock_unlock(&(lock_diccionario_compactacion));
+	 ///////////////////////////////////////////////////////////////////////////////
+
+	 log_info(logger_lfs, "Request -- SELECT -- realizada !!!\n");
 	 return  dato_mas_nuevo;
 
  }
 
 
 
- void request_insert(insert datos_insert){ //hay que modificar para que opere con insert
-	 //faltaria ver cuando no le pasamos el timestamp
+ void request_insert(insert datos_insert){
+
 	 dato_t* dato_ingresar;
 	 metadata_t* metadata_insert;
 
 	 char* nombre_tabla = (char *) datos_insert->tabla->buffer;
 
-	 if(existe_la_tabla(nombre_tabla)){
+	 log_info(logger_lfs, "Inicio de request -- INSERT -- \n");
 
-		 printf("Existe la tabla en el File System\n");
+	 //SEMAFORO DE DICCIONARIO COMPACTACION
+	 pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
+	 thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+
+	 //SEMAFORO DE TABLA EN ESPECIFICO
+	 pthread_rwlock_rdlock(&(argumentos_tabla->lock_tabla));
+
+	 if(existe_la_tabla(nombre_tabla)){
 
 		 metadata_insert = obtener_metadata(nombre_tabla);
 
-		 printf("Voy a ingresar el siguiente value: %s\n",(char *)datos_insert->value->buffer );
-
 		 dato_ingresar = crear_dato(datos_insert->key, (char *)datos_insert->value->buffer, datos_insert->timestamp);
 
+		 //ACA HAY UN SEMAFORO DE MEMTABLE
 		 ingresar_a_memtable(dato_ingresar, nombre_tabla);
-
-	 }else{
-
-		 printf("Fallo el insert. \n");
-		 //aca deberiamos hacer un log de que fallo.
+		 ///////////////////////////////////////////////////////////////////////
 
 	 }
+
+	 else{
+
+//		 log_error(logger_lfs, "Fallo el -- INSERT -- \n");
+
+	 }
+
+	 pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
+
+	 pthread_rwlock_unlock(&(lock_diccionario_compactacion));
+
+	 log_info(logger_lfs, "Request -- INSERT -- realizada !!!\n");
 
  }
 
 
  void request_create(create datos_create){
-//TODO hay que modificar para que trabaje con la estructura create
 
+	 log_info(logger_lfs, "Inicio de request -- INSERT -- \n");
 
-	 printf("Entro a la request create!\n");
 	 char* nombre_tabla = (char *)datos_create->tabla->buffer;
-	 printf("Nombre tabla: %s\n", nombre_tabla);
+
 	 char* criterio = (char *)datos_create->consistencia->buffer;
 
-//	 //log_info(logger_lissandra, "### SOLICITUD DE -- CREATE -- para\n"
-//	 			 "TABLA = %s\nNUMERO DE PARTICIONES = %i\nCRITERIO = %s\nTIEMPO_COMPACTACION = %i\n",
-//	 			 nombre_tabla, datos_create->numero_particiones, criterio, datos_create->compactacion);		//LOGGER AGREGADO !!!!!!!!!!!!
 
 	 string_to_upper(nombre_tabla);
 
 	 if(existe_la_tabla(nombre_tabla)){
-		// log_error(logger_lissandra, "### YA EXISTE LA TABLA ###\n", nombre_tabla);  //LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		 //log ?
 		 return;
 
 	 }
 
-	 printf("No existe esa tabla!n");
-
 	 char* path_tabla = obtenerPathTabla(nombre_tabla);
 
-	 printf("obtuve su path: %s\n", path_tabla);
-//	 printf("path: %s\n" , path_tabla);
-	 printf("creo el directorio\n");
+	 //ESTA FUNCION TE BLOQUEA EN ESCRITURA EL DICCIONARIO Y LA TABLA ESPECIFICA
+	 correr_compactacion(datos_create->compactacion, nombre_tabla);
+
 	 crear_directorio(path_tabla);
 
-	 printf("creo la metadata\n");
 	 crear_metadata(nombre_tabla, criterio , datos_create->numero_particiones, datos_create->compactacion); //MAL?
 
-	 printf("creo los archivos particiones\n");
 	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
 
-	 //log_info(logger_lissandra, "### CREATE REALIZADO CON EXITO ! ####\n");
-
-	 printf("Creo un hilo de compactacion\n");
 	 correr_compactacion(datos_create->compactacion, nombre_tabla);
-	 printf("Hilo de compactacion creado\n");
+
+	 //YA BLOQUEADO EN crear_directorio
+	 thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+
+	 //DESBLOQUEO LO DE CREAR_DIRECTORIO
+	 pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
+	 pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 	 free(path_tabla);
+
+	 log_info(logger_lfs, "Request -- INSERT -- realizada !!!\n");
 
  }
 
 t_list* request_describe(describe_t request){
 
-	printf("Realizo la request\n");
-
 	t_list* metadatas;
 
 	if( request->global ){
-
-		printf("Realizo request_describe_global\n");
+		//TIENE SEMAFOROS ADENTROO!
 		metadatas = request_describe_global();
-		printf("Termine de realizar_describe_global\n");
 
-	}else{
+	}
 
-		printf("Realizo request_describe_particular\n");
+	else{
+
+		// SEMAFOROOS
+		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
+
+		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, (char *) request->tabla->buffer);
+
+		pthread_rwlock_rdlock(&(argumento_tabla->lock_tabla));
+
 
 		Metadata metadata_obtenida = request_describe_particular((char*) request->tabla->buffer);
 
-		printf("Termine de hacer request_describe_particular\n");
-
-		printf("La estructura metadata (que obtuve al realizar el request_describe) tiene:\n");
-		printf("tabla: %s\n",(char *) metadata_obtenida->tabla->buffer);
-		printf("consistencia: %s\n", (char *)metadata_obtenida->consistencia->buffer);
-		printf("particiones: %i\n", metadata_obtenida->particiones);
-		printf("compactacion: %i\n",metadata_obtenida->tiempo_compactacion);
+		///////////////////////////////////////////////////////////
+		pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
+		//////////////////////////////////////////////////////////////
+		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 		if(metadata_obtenida != NULL){
 
-			printf("Creo la lista de metadatas\n");
 			metadatas = list_create();
 
-			printf("Le añado metadata obtenida\n");
 			list_add(metadatas, metadata_obtenida);
 
 		}else{
@@ -309,61 +310,47 @@ t_list* request_describe(describe_t request){
 
 Metadata request_describe_particular(char* nombre_tabla){
 
-	//log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE -- para %s\n", nombre_tabla); // LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
-
 	t_config* config_describe;
 
 	Metadata metadata_tabla;
 
-	if(existe_la_tabla(nombre_tabla)){
-		printf("Existe la tabla!\n");
+	log_info(logger_lfs, "Inicio de request -- DESCRIBE PARTICULAR --\n");
 
-		printf("Obtengo el path metadata de la tabla: \n");
+	if(existe_la_tabla(nombre_tabla)){
+
 		char* path_tabla_metadata = obtener_path_metadata_de_tabla(nombre_tabla);
-		printf("path de la metadata: %s\n" , path_tabla_metadata);
 
 		int particiones;
 		char* consistencia;
 		int tiempo_compactacion;
 
-		printf("Uso el config\n");
 		config_describe = config_create(path_tabla_metadata);
 
 		particiones = config_get_int_value(config_describe , "PARTITIONS");
 		consistencia = config_get_string_value(config_describe , "CONSISTENCY");
 		tiempo_compactacion = config_get_int_value( config_describe , "COMPACTION_TIME");
 
-		printf("Obtuvo los datos con el config: \n");
-		printf("particiones: %i\n", particiones);
-		printf("consistencia: %s\n", consistencia);
-		printf("tiempo_compactacion: %i\n", tiempo_compactacion);
-//		log_info(logger_lissandra, "Particiones de %s = %d\n", nombre_tabla , particiones);
-//		log_info(logger_lissandra, "Consistencia de %s : %s\n", nombre_tabla, consistencia);
-//		log_info(logger_lissandra, "Tiempo de Compactacion de %s : %d\n", nombre_tabla, tiempo_compactacion);
-
-		printf("Creo una estructura metadata para enviarle a la memoria\n");
 		metadata_tabla = crear_estructura_metadata(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
-//		log_info(logger_lissandra, "### DESCRIBE REALIZADO CON EXITO ! ###\n");				// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
-
-		printf("destruyo el config\n");
 		config_destroy(config_describe);
 
 		free(path_tabla_metadata);
 
-	 }else{
-		printf("no existe la tabla\n");
-//		log_error(logger_lissandra, "### NO EXISTE LA TABLA PEDIDA ###\n");					// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+	 }
+
+	else{
 
 		metadata_tabla = NULL;
 	 }
+
+	log_info(logger_lfs, "Request -- DESCRIBE -- realizada !!!\n");
 
 	return metadata_tabla;
 }
 
 t_list* request_describe_global(void){
 
-//	log_info(logger_lissandra, "### SOLICITUD DE -- DESCRIBE GLOBAL --\n");					// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+	log_info(logger_lfs, "Inicio de request -- DESCRIBE GLOBAL --\n");
 
 	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
 
@@ -374,9 +361,15 @@ t_list* request_describe_global(void){
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
 
+		pthread_rwlock_rdlock(&(diccionario_compactador));
+
 		while((tabla = readdir(dir1)) != NULL){
 
 			if(!string_equals_ignore_case(tabla->d_name, ".") && !string_equals_ignore_case(tabla->d_name, "..")){
+
+				thread_args* argumento_tabla = dictionary_get(diccionario_compactador, tabla->d_name);
+
+				pthread_rwlock_rdlock(&(argumento_tabla->lock_tabla));
 
 				char* path_para_tabla_particular = string_new();
 
@@ -399,15 +392,19 @@ t_list* request_describe_global(void){
 
 					}
 
-					closedir(dir2); //CHINO? esto nose si estara bien, pero abajo cerrar el dir1, supongo que el dir2 tambien
+					closedir(dir2);
 
 				}
+
+				pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
 
 				free(path_para_tabla_particular);
 
 			}
 
 		}
+
+		pthread_rwlock_unlock(&(diccionario_compactador));
 
 	}
 
@@ -420,10 +417,10 @@ t_list* request_describe_global(void){
 		metadatas = NULL;
 	}
 
-//	log_info(logger_lissandra, "### DESCRIBE GLOBAL REALIZADO CON EXITO ! ###\n");				// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
-
+	log_info(logger_lfs, "Request -- DESCRIBE GLOBAL -- realizada\n");
 
 	return metadatas;
+
 }
 
 
@@ -431,9 +428,9 @@ t_list* request_describe_global(void){
 
 void request_drop(Drop request_drop){
 
-	char* nombre_tabla = (char *)request_drop->tabla->buffer;
+	log_info(logger_lfs, "Inicio de request -- DROP --\n");
 
-//	log_info(logger_lissandra, "### SOLICITUD DE -- DROP -- para %s\n", nombre_tabla);			// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+	char* nombre_tabla = (char *)request_drop->tabla->buffer;
 
 	DIR *dir1, *dir2;
 
@@ -443,11 +440,18 @@ void request_drop(Drop request_drop){
 
 //	abortar_hilo_compactador(nombre_tabla);//ESTO NO SE SI VA ACA O MAS ABAJO
 
-
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
+
+		//SEMAFOROS!!!!!!!!!!!!!!!!!
+		pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
+		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
+
 		while((tabla = readdir(dir1))){
 
+
 			if(!string_equals_ignore_case(tabla->d_name, ".") && !string_equals_ignore_case(tabla->d_name, "..")){
+
 
 				if(string_equals_ignore_case(tabla->d_name, nombre_tabla)){
 					char* path_para_tabla_particular = string_new();
@@ -472,7 +476,6 @@ void request_drop(Drop request_drop){
 							{
 								thread_args* atributos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
-								//pthread_mutex_lock(atributos_tabla->mutex_tabla);
 								Particion particion = leer_particion(path_para_archivo);
 								printf("Se va a eliminar el siguiente archivo: \n");
 								printf("%s\n", path_para_archivo);
@@ -480,10 +483,7 @@ void request_drop(Drop request_drop){
 								printf("\n\n");
 								liberar_particion(particion);
 								eliminar_particion(path_para_archivo);
-								//pthread_mutex_unlock(atributos_tabla->mutex_tabla);
 
-								abortar_hilo_compactador(nombre_tabla);
-								printf("Estados despues de eliminar el archivo:\n");
 								//get_all_estados();
 							}
 
@@ -499,31 +499,20 @@ void request_drop(Drop request_drop){
 
 			}
 		}
+
+		//TIENE ELIMINACION DEL SEMAFORO ADENTRO
+		abortar_hilo_compactador(nombre_tabla);
+
+		//LIBERO EL SEMAFORO!
+		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
+
+
+
 	}
 
 	closedir(dir1);
 
 	free(path_directorio_tabla);
 
-//	log_info(logger_lissandra, "### DROP REALIZADO CON EXITO ! ###\n");						// LOGGER AGREGADO !!!!!!!!!!!!!!!!!!!!!!!!!!
+	log_info(logger_lfs, "Request -- DROP-- realizada\n");
 }
-
-
-
-//wait(mutex_lectores);
-//if(lectores == 0){
-//	wait(mutex_compactador);
-//}
-//lectores++;
-//signal(mutex_lectores);
-//
-//.
-//.
-//.
-//
-//wait(mutex_lectores);
-//lectores--;
-//if(lectores == 0){
-//	signal(mutex_compactador);
-//}
-//signal(mutex_lectores);

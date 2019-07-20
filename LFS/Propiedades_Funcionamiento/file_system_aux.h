@@ -25,4 +25,5 @@ void mostrar_tabla_y_particiones( char* nombre_tabla );
 bool no_es_ubicacion_prohibida(char* path);
 char* extension_del_archivo(char* path);
 void realizar_dump();
+void* ciclo_dump(void* argumentos);
 #endif /* FILE_SYSTEM_AUX_H_ */

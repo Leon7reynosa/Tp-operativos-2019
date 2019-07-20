@@ -99,7 +99,6 @@ void* administrar_conexiones_hilos(int* socket_servidor){
 
 		realizar_handshake(nueva_conexion_memoria->socket_memoria);
 
-
 	}
 
 	return NULL;
@@ -147,7 +146,8 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 	while(1){
 
-		printf("Voy a manejar una request\n");
+		usleep(retardo * 1000);
+
 		request_recibida = recibir_request(memoria_conectada->socket_memoria);
 
 		if(request_recibida->cod_op == DESCONEXION){
@@ -159,15 +159,12 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 			pthread_exit(NULL);
 
 		}else{
-			printf("Trabajo la request\n");
+
 			trabajar_request(request_recibida, memoria_conectada->socket_memoria); //nos faltaria esta funcion
-			printf("Termine de trabajar la request\n");
+
 		}
 
-		printf("Libero la request\n");
 		liberar_request(request_recibida);
-		printf("Request liberada\n");
-
 
 	}
 

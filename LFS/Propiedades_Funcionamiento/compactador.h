@@ -25,13 +25,14 @@
 typedef struct{
 
 	pthread_t hilo_compactacion;
-	pthread_mutex_t mutex_tabla;
+	pthread_rwlock_t lock_tabla;
 	int tiempo_compactacion;
 	char* nombre_tabla;
 
 }thread_args;
 
 t_dictionary* diccionario_compactador;
+pthread_rwlock_t lock_diccionario_compactacion;
 
 void* compactar(thread_args* argumentos);
 t_list* filtrar_dato_por_key(char* dato_particiones, t_list* datos_tmpc);

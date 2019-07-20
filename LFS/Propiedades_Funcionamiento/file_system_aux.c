@@ -157,6 +157,34 @@ void mostrar_tabla_y_particiones( char* nombre_tabla ){
 
 }
 
+void inicializar_dump(void){
+
+	pthread_attr_t attr;
+
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+
+	pthread_create(&hilo_dump, &attr, ciclo_dump, NULL);
+
+	pthread_attr_destroy(&attr);
+
+}
+
+void* ciclo_dump(void* argumentos){
+
+
+	while(1){
+
+
+		usleep(tiempo_dump * 1000);
+		log_info(logger_lissandra, "INICIO DEL DUMP");
+		realizar_dump();
+		log_info(logger_lissandra, "TERMINO EL DUMP\n");
+
+	}
+
+}
+
 void realizar_dump(){
 	t_list* dato_de_tabla;
 
@@ -169,6 +197,11 @@ void realizar_dump(){
 		char* path_temporal = obtenerPathParaTemporalEnLaTabla(nombre_tabla);
 
 		printf("Path para temporal dentro de esa tabla: %s\n", path_temporal);
+
+		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+
+		//SEMAFORO TABLA ESPECIFICA
+		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
 
 		crear_archivo_particion(path_temporal);
 
@@ -185,13 +218,29 @@ void realizar_dump(){
 		printf("Ahora voy a cargar el temporal en el path: \n");
 		list_iterate(dato_de_tabla, _cargar_a_temporal );
 
+		//DESBLOQUEO LA TABLA ESPECIFICA
+		pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
+
 		free(path_temporal);
 
 	}
 
+	//SEMAFORO MEMTABLE
+	pthread_rwlock_wrlock(&(lock_memtable));
+	//SEMAFORO DICCIONARIO COMPACTACION
+	pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
+
 	dictionary_iterator(memtable, _crear_temporal);
 
+	//aaaaaaaaaaaaaaaaaaaaaaaa x si llegara a pasar algo en medio de la iteracion, osea, no se, ponele que alguien quiere insertar algo y podría hacerlo en el medio de
+	//alguna iteraacion,ESO
+	pthread_rwlock_unlock(&(lock_diccionario_compactacion));
+
+
 	vaciar_memtable();
+
+	//LIBERO SEMAFORO MEMTABLE
+	pthread_rwlock_unlock(&(lock_memtable));
 
 }
 

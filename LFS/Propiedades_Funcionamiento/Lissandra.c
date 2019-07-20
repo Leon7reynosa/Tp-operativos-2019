@@ -8,12 +8,15 @@
 
 void inicializar_memtable() {
     memtable = dictionary_create();
+    pthread_rwlock_init(&(lock_memtable), NULL);
 }
 
 //tenemos que hacer que la memtable siempre este inicializada.
 void ingresar_a_memtable(dato_t *dato_a_ingresar, char *nombre_tabla) {
 
     t_list *lista_tabla;
+
+    pthread_rwlock_wrlock(&(lock_memtable));
 
     if (!dictionary_has_key(memtable, nombre_tabla)) {
 
@@ -27,6 +30,10 @@ void ingresar_a_memtable(dato_t *dato_a_ingresar, char *nombre_tabla) {
     list_add(lista_tabla, dato_a_ingresar);
 
     }
+
+    pthread_rwlock_unlock(&(lock_memtable));
+    log_info(logger_lissandra, "Ingresamos un dato a la tabla %s\n", nombre_tabla);
+
 }
 
 
@@ -40,7 +47,10 @@ t_list *obtener_tabla(char *nombre_tabla) {
 
 dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key) {
 
+	pthread_rwlock_rdlock(&(lock_memtable));
     t_list *tabla_a_filtrar = obtener_tabla(nombre_tabla);
+    t_list *tabla_ordenada;
+    dato_t* dato_mayor;
 
     if (tabla_a_filtrar == NULL) {
         return NULL;
@@ -52,7 +62,11 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
         return dato_analizar->key == key;
     }
 
+
+
     tabla_a_filtrar = list_filter(tabla_a_filtrar, condicion);
+    pthread_rwlock_unlock(&(lock_memtable));
+
 
     bool comparador(void *dato1, void *dato2) {
         dato_t *dato1_analizar = (dato_t *) dato1;
@@ -61,9 +75,15 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
         return dato1_analizar->timestamp > dato2_analizar->timestamp;
     }
 
-    tabla_a_filtrar = list_sorted(tabla_a_filtrar, comparador);
+    tabla_ordenada = list_sorted(tabla_a_filtrar, comparador);
 
-    return (dato_t *)list_get(tabla_a_filtrar, 0);
+    list_destroy(tabla_a_filtrar);
+
+    dato_mayor = (dato_t *)list_get(tabla_ordenada, 0);
+
+    list_destroy(tabla_ordenada);
+
+    return dato_mayor;
 }
 
 

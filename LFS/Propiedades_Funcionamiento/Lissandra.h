@@ -25,8 +25,13 @@
 
 #include"comunity_func.h"
 
-t_dictionary* memtable;
+pthread_t hilo_dump;
 
+
+t_dictionary* memtable;
+pthread_rwlock_t lock_memtable;
+
+void inicializar_dump(void);
 void inicializar_memtable(void);
 void ingresar_a_memtable(dato_t* dato_a_ingresar, char* nombre_tabla);
 t_list* obtener_tabla(char* nombre_tabla);

@@ -19,14 +19,19 @@ int main(){
 	inicializar_memorias_conectadas();
 
 	diccionario_compactador = dictionary_create();
+	pthread_rwlock_init(&lock_diccionario_compactacion, NULL);
+
+	inicializar_compactadores();
+
+	inicializar_dump();
 
 	ip_escucha = obtener_ip_address();
 
-	printf("ip escucha: %s\n" , ip_escucha) ;
+	printf("ip escucha: %s\n" , ip_escucha);
 
-	t_log* logger_lissandra = log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
-	t_log* logger_lfs = log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
-	t_log* logger_compactador = log_create("compactador.los", "compactador", 0, LOG_LEVEL_INFO);
+	logger_lissandra = log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
+	logger_lfs = log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
+	logger_compactador = log_create("compactador.log", "compactador", 0, LOG_LEVEL_TRACE);
 
 	creacion_bitmap();
 
@@ -37,6 +42,8 @@ int main(){
 	int socket_servidor;
 
 	int error_pthread;
+
+	printf("Inicio el servidor?\n");
 
 	socket_servidor = iniciar_servidor(ip_escucha , puerto_lfs);
 
