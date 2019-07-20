@@ -7,7 +7,7 @@
 
 #include"mensajes.h"
 
-void enviar_request(cod_operacion cod_op, void* tipoRequest){
+bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memoria){
 
 	void* buffer;
 	int bytes = 0;
@@ -56,10 +56,12 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 	}
 
 	printf("llegue a enviar\n");
-	int error_send = send(conexion_memoria, buffer, bytes, 0);
+	int error_send = send(conexion_memoria , buffer, bytes, 0);
 
 	if(error_send < 0){
 		perror("FALLO EL SEND");
+
+		return false;
 	}
 	printf("Se envio!\n");
 	//free(buffer);
@@ -67,7 +69,7 @@ void enviar_request(cod_operacion cod_op, void* tipoRequest){
 	printf("Libero la request_aux\n");
 	liberar_request(request);
 
-	printf("Se libero la request_aux\n");
+	return true;
 }
 
 

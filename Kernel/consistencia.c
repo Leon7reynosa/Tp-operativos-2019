@@ -16,7 +16,7 @@ void inicializar_registro_tabla(){
 
 void inicializar_consistencias(){
 
-	Strong_C = malloc(sizeof(memoria_t));
+	Strong_C = NULL;
 
 	Eventual_C= list_create();
 
@@ -101,6 +101,8 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 			tabla = (char*)((create) tipo_request)->consistencia->buffer; //en este caso usamos la consistencia
 
+			printf("la consistencia es esta: %s\n" , tabla);
+
 			return identificar_consistencia(tabla);
 
 			break;
@@ -146,9 +148,13 @@ memoria_t* tomar_memoria_al_azar(){
 
 	t_list* lista_de_consistencias = lista_memorias_de_consistencia();
 
+	printf("tamaño de lista: %d\n" , list_size(lista_de_consistencias));
+
 	int numero_random_consistencia = rand() % list_size(lista_de_consistencias); // para determinar de cual de los tres codigos de operacion usamos para agarrar la memoria ( SC, EC, SHC)
 
 	return (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
+
+	//aca creo que falta liberar
 
 }
 
@@ -156,11 +162,17 @@ t_list* lista_memorias_de_consistencia(){
 
 	t_list* lista_de_memorias = list_create();
 
+	printf("entre a la lista de memorias de consistencia\n");
+
 	if(Strong_C != NULL){
+
+		printf("no entro aca\n");
 
 		list_add(lista_de_memorias, Strong_C);
 
 	}
+
+	printf("hago el iterate\n");
 
 	void _agregar_si_cumple(void* _memoria){
 
@@ -169,6 +181,8 @@ t_list* lista_memorias_de_consistencia(){
 		bool _esta_agregado(void* _memoria_2){
 
 				memoria_t* memoria_2 = (memoria_t *)_memoria_2 ;
+
+				printf("hice uno\n");
 
 				return memoria == memoria_2;
 
@@ -179,6 +193,8 @@ t_list* lista_memorias_de_consistencia(){
 
 		}else{
 
+			printf("aca entro una sola vez\n");
+
 			list_add(lista_de_memorias, memoria);
 
 		}
@@ -186,8 +202,11 @@ t_list* lista_memorias_de_consistencia(){
 	}
 
 	list_iterate(Strong_Hash_C, _agregar_si_cumple);
+	printf("pase el iterate\n");
 
 	list_iterate(Eventual_C, _agregar_si_cumple);
+
+	printf("pase el segundo iterate\n");
 
 	return lista_de_memorias;
 
@@ -207,6 +226,10 @@ memoria_t* seleccionar_memoria_consistencia(cod_operacion cod_op , void* tipo_re
 
 	cod_consistencia codigo_consistencia = identificar_consitencia_para_request(cod_op, tipo_request);
 
+	printf("llegue hasta este paso\n");
+
+	printf("codigo_consistencia: %d\n" , codigo_consistencia);
+
 	return tomar_memoria_segun_codigo_consistencia(codigo_consistencia);
 
 }
@@ -215,6 +238,10 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 	int index_memoria;
 	int numero_random;
+
+	printf("estoy aca\n");
+
+	printf("codigo: %d\n" , codigo_consistencia);
 
 	switch(codigo_consistencia){
 
@@ -241,12 +268,25 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 			//Aca deberiamos ver la funcion hashs, por ahora devuelvo la primera de las memorias
 
+			if(list_is_empty(Strong_Hash_C)){
+
+				return NULL;
+			}
+
 			return list_get(Strong_Hash_C , 0);
 
 
 			break;
 
 		case EC:
+
+			printf("llegue aqui\n");
+
+			if(list_is_empty(Eventual_C)){
+
+				return NULL;
+
+			}
 
 			numero_random = rand() % list_size(Eventual_C);
 
@@ -260,6 +300,10 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 			break;
 
 	}
+
+	printf("termine :/\n");
+
+	return NULL;
 
 }
 

@@ -51,14 +51,22 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
-					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
+					log_error( logger_kernel , "NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
 					return 0;
 
 				}
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
-				enviar_request(SELECT, select_enviar);
+				if( enviar_request(SELECT, select_enviar, memoria_utilizada->socket) == false ) {
+
+					log_error(logger_kernel, ">>FALLO ENVIAR EL SELECT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+
+					remover_memoria_de_consistencia(memoria_utilizada);
+
+					return 0;
+
+				}
 
 				return 1;
 			}
@@ -81,7 +89,17 @@ int ejecutar_request(char* request_lql){
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
-				enviar_request(INSERT, insert_enviar);
+				if ( enviar_request(INSERT, insert_enviar, memoria_utilizada->socket) == false ){
+
+					log_error(logger_kernel, ">>FALLO ENVIAR EL INSERT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+
+					remover_memoria_de_consistencia(memoria_utilizada);
+
+					return 0;
+
+				}
+
+
 				return 1;
 			}
 			break;
@@ -102,9 +120,15 @@ int ejecutar_request(char* request_lql){
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
-				printf("se creo el dato create, tabla: %s \n" , create_enviar->tabla->buffer);
-				enviar_request(CREATE, create_enviar);
-				printf("no pasaste el enviar bro\n");
+				if ( enviar_request(CREATE, create_enviar, memoria_utilizada->socket) == false ){
+
+					log_error(logger_kernel, ">>FALLO ENVIAR EL CREATE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+
+					remover_memoria_de_consistencia(memoria_utilizada);
+
+					return 0;
+
+				}
 
 				return 1;
 			}
@@ -134,7 +158,15 @@ int ejecutar_request(char* request_lql){
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
-				enviar_request(DESCRIBE, describe_enviar);
+				if ( enviar_request(DESCRIBE, describe_enviar , memoria_utilizada->socket) == false ){
+
+					log_error(logger_kernel, ">>FALLO ENVIAR EL DESCRIBE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+
+					remover_memoria_de_consistencia(memoria_utilizada);
+
+					return 0;
+
+				}
 
 				printf("se envio bien el describe\n");
 
@@ -148,7 +180,17 @@ int ejecutar_request(char* request_lql){
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
-				enviar_request(DESCRIBE, describe_enviar);
+				if ( enviar_request(DESCRIBE, describe_enviar , memoria_utilizada->socket) == false ){
+
+					log_error(logger_kernel, ">>FALLO ENVIAR EL DESCRIBE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+
+					remover_memoria_de_consistencia(memoria_utilizada);
+
+					return 0;
+
+				}
+
+				printf("Se envio el describe global correctamente\n");
 
 
 			}else{
@@ -216,7 +258,15 @@ int ejecutar_request(char* request_lql){
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
-				enviar_request(DROP, drop_enviar );
+				if ( enviar_request(DROP, drop_enviar , memoria_utilizada->socket ) == false ){
+
+					log_error(logger_kernel, ">>FALLO ENVIAR EL DROP, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+
+					remover_memoria_de_consistencia(memoria_utilizada);
+
+					return 0;
+
+				}
 
 				printf("ya lo envie bro\n");
 
@@ -258,7 +308,14 @@ void request_journal(){
 
 		memoria_a_enviar = (memoria_t* ) memoria;
 
-		enviar_request(JOURNAL, NULL /*, memoria->socket*/ ); //esto deberiamos agregar cuando modifiquemos
+		if ( enviar_request(JOURNAL, NULL , memoria_a_enviar->socket ) == false ){
+
+			log_error(logger_kernel, ">>FALLO ENVIAR EL DROP, ELIMINAMOS LA MEMORIA %d \n" , memoria_a_enviar->numero_memoria);
+
+			remover_memoria_de_consistencia(memoria_a_enviar);
+
+		}
+
 
 	}
 
