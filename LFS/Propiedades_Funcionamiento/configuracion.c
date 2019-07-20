@@ -207,5 +207,20 @@ void inicializar_loggers(){
 	logger_request = 		log_create("requests.log", "requests", 0, LOG_LEVEL_TRACE );
 }
 
+void inicializar_compactador(){
+	diccionario_compactador = dictionary_create();
+	pthread_rwlock_init(&(lock_diccionario_compactacion), NULL);
+}
+
+void inicializar_conexiones(){
+
+	char* ip_escucha;
+
+	ip_escucha = optener_ip_address();
+	int socket_servidor;
+	socket_servidor = iniciar_servidor(ip_escucha, puerto_lfs);
+
+	free(ip_escucha);
+}
 
 

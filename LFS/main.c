@@ -3,10 +3,6 @@
 
 int main(){
 
-	///////////////////////////VARIABLES////////////// ////////////
-
-	char* ip_escucha;
-
 	////////////////////////////INICIALIZACIONES////////////////////////
 
 	creacion_del_config_fileSystem();
@@ -20,8 +16,7 @@ int main(){
 
 	inicializar_memorias_conectadas(); //Inicializa una lista de memorias
 
-	diccionario_compactador = dictionary_create();
-	pthread_rwlock_init(&(lock_diccionario_compactacion), NULL);
+	inicializar_compactador();
 
 	/*
 	 * Abre la carpeta TABLAS, y por cada tabla que haya, corre la  compactacion
@@ -38,26 +33,15 @@ int main(){
 	 */
 	inicializar_dump();
 
-	ip_escucha = obtener_ip_address();
-
 	creacion_bitmap();
 
-	///////////////////////////CONEXIONES/////////////////////////////////
-
-	int socket_servidor;
-
-	int error_pthread;
-
-	printf("IP: %s\n", ip_escucha);
-
-	socket_servidor = iniciar_servidor(ip_escucha , puerto_lfs);
-
-	free(ip_escucha);
+	inicializar_conexiones();
 
 	///////////////////////////////MAIN////////////////////////////////////
 
 	pthread_t administrador_hilos;
 	pthread_t hilo_consola;
+	int error_pthread;
 
 	error_pthread = pthread_create(&hilo_consola, NULL , consola, NULL);
 
