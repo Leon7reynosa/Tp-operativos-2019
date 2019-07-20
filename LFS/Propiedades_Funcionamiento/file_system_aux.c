@@ -178,7 +178,7 @@ void* ciclo_dump(void* argumentos){
 		usleep(tiempo_dump * 1000);
 		log_info(logger_lissandra, "INICIO DEL DUMP");
 		realizar_dump();
-		log_info(logger_lissandra, "TERMINO EL DUMP\n");
+		log_info(logger_lissandra, "TERMINO EL DUMP");
 
 	}
 

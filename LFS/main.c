@@ -14,6 +14,8 @@ int main(){
 	obtener_datos_config();
 	obtener_datos_metadata();
 
+	inicializar_loggers();
+
 	inicializar_memtable(); //Inicializa la memtable como diccionario junto con su lock rw
 
 	inicializar_memorias_conectadas(); //Inicializa una lista de memorias

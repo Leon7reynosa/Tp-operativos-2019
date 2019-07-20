@@ -46,8 +46,6 @@ int main (void){
 		exit(-1);
 	}
 
-	free(ip_escucha);
-
 	FD_SET(0, &master);
 	FD_SET(listener, &master);
 	fd_max = listener;

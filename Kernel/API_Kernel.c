@@ -254,7 +254,7 @@ int ejecutar_request(char* request_lql){
 
 				printf("ya lo cree bro\n");
 
-				memoria_utilizada = tomar_memoria_al_azar();
+				memoria_utilizada = seleccionar_memoria_consistencia(DROP , drop_enviar);
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
@@ -264,13 +264,13 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
-					liberar_drop(drop_enviar);
+					//liberar_drop(drop_enviar);
 
 					return 0;
 
 				}
 
-				liberar_drop(drop_enviar);
+				//liberar_drop(drop_enviar);
 
 				printf("ya lo envie bro\n");
 

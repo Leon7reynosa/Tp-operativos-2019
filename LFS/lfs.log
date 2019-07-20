@@ -136,3 +136,21 @@
 
 [INFO] 02:23:27:791 file system/(5418:5462): Request -- DROP-- realizada
 
+[INFO] 14:15:52:971 file system/(10537:10574): Inicio de request -- INSERT -- 
+
+[INFO] 14:15:52:977 file system/(10537:10574): Request -- INSERT -- realizada !!!
+
+[INFO] 14:16:13:349 file system/(10537:10574): Inicio de request -- DROP --
+
+[INFO] 14:17:36:892 file system/(10866:10891): Inicio de request -- DROP --
+
+[INFO] 14:17:36:896 file system/(10866:10891): Request -- DROP-- realizada
+
+[INFO] 14:17:46:602 file system/(10866:10891): Inicio de request -- DROP --
+
+[INFO] 14:17:46:603 file system/(10866:10891): Request -- DROP-- realizada
+
+[INFO] 14:20:57:344 file system/(11234:11253): Inicio de request -- INSERT -- 
+
+[INFO] 14:20:57:345 file system/(11234:11253): Request -- INSERT -- realizada !!!
+
