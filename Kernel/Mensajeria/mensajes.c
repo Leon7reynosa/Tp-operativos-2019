@@ -89,6 +89,10 @@ void liberar_request(request dato){
 		case DESCRIBE:
 			liberar_dato_describe(dato->tipo_request);
 			break;
+		case DROP:
+
+			liberar_drop(dato->tipo_request);
+			break;
 		default:
 			printf("Algo fallo\n");
 			break;

@@ -29,14 +29,14 @@ void realizar_handshake(void){
 
 void creacion_del_config(){
 
-	char* array_ips = "[192.168.0.31,192.168.0.31]";
+	char* array_ips = "[192.168.0.48,192.168.0.48]";
 
-	char* array_puertos = "[8003,8004]";
+	char* array_puertos = "[8001,8002]";
 
 	g_config = config_create("pool.config");
 
-	config_set_value(g_config, "PUERTO_ESCUCHA", "8001");
-	config_set_value(g_config, "IP_LFS", "192.168.0.31");
+	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
+	config_set_value(g_config, "IP_LFS", "192.168.0.48");
 	config_set_value(g_config, "PUERTO_LFS", "4445");
 
 	config_set_value(g_config, "IP_SEEDS", array_ips);
@@ -47,7 +47,7 @@ void creacion_del_config(){
 	config_set_value(g_config, "TAMANIO_MEMORIA", "2048");
 	config_set_value(g_config, "TIEMPO_JOURNAL","60000");
 	config_set_value(g_config, "TIEMPO_GOSSIPING", "30000");
-	config_set_value(g_config, "NUMERO_MEMORIA", "2");
+	config_set_value(g_config, "NUMERO_MEMORIA", "1");
 
 	config_save(g_config);
 	config_destroy(g_config);

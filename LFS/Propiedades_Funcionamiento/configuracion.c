@@ -33,7 +33,7 @@ void creacion_del_config_fileSystem(){
 	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
 	config_set_value(g_config, "RETARDO", "500");
 	config_set_value(g_config, "TAMANIO_VALUE", "20");
-	config_set_value(g_config, "TIEMPO_DUMP", "5000");
+	config_set_value(g_config, "TIEMPO_DUMP", "50000");
 
 
 	config_save(g_config);
@@ -86,7 +86,6 @@ void creacion_bitmap(){
 		if(fstat(archivo_bitmap, &atributosBitmap) == -1){
 			perror("No se pudo obtener los atributos del archivo \n");
 		}
-		printf("Tamanio del archivo: %i\n", atributosBitmap.st_size);
 
 		bitmap = mmap(NULL, atributosBitmap.st_size, PROT_WRITE | PROT_READ, MAP_SHARED, archivo_bitmap, 0);
 

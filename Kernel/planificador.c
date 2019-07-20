@@ -183,6 +183,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			char* request = (char*)queue_pop(cola_exec);
 
+			usleep(tiempo_ejecucion);
+
 			if(!ejecutar_request(request )){
 
 				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST %s.\n", request);

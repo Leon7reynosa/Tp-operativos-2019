@@ -25,14 +25,8 @@
 #include<commons/collections/list.h>
 #include"requestDescribe.h"
 
-typedef enum{
-	DESCONEXION,
-	MENSAJE
-}cod_op;
-
 void recibir_mensaje(int conexion);
 void* recibir_buffer(int* size,int conexion);
-cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);
 
 #endif /* RECIBIR_H_ */

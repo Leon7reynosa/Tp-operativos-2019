@@ -15,15 +15,11 @@ void* consola(void* argumento){
 
 	menu();
 
-	printf("holas\n");
-
 	while(!string_equals_ignore_case(leido, "exit")){
-		printf("Entre al while\n");
+
 		free(leido);
 
 		leido = readline("");
-
-		printf("solicitud : %s\n" , leido);
 
 		codigo = identificar_request(leido);
 
@@ -38,6 +34,8 @@ void* consola(void* argumento){
 
 
 bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
+
+	printf("\n//////////////////////////////////////REQUEST NUEVA DE CONSOLA////////////////////////////////////\n");
 
 	request nueva_request;
 	bool fin_funcion = false;
@@ -61,6 +59,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 		case SELECT:
 
+			printf(">>SELECT<<\n");
+
 			if(obtener_parametros_select(linea_request, nombre_tabla, &key) == 3){
 
 				select_t dato_select = crear_dato_select(nombre_tabla, key);
@@ -78,6 +78,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 			break;
 		case INSERT:
+
+			printf(">>INSERT<<\n");
 
 			if( obtener_parametros_insert(linea_request, nombre_tabla, &key , value, &timestamp) ){
 
@@ -100,6 +102,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case CREATE:
 
+			printf(">>CREATE<<");
+
 			if(obtener_parametros_create(linea_request, nombre_tabla, consistencia, &particiones, &compactacion)){
 
 				create dato_create = crear_dato_create(nombre_tabla, consistencia, particiones, compactacion);
@@ -113,6 +117,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 			break;
 		case DESCRIBE:
+
+			printf(">>DESCRIBE<<");
 
 			cantidad_parametros = obtener_parametros_describe(linea_request, nombre_tabla);
 
@@ -146,14 +152,14 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case DROP:
 
+			printf(">>DROP<<\n");
+
 			if(obtener_parametros_drop(linea_request , nombre_tabla)){
 				printf("entre al if, nombre : %s\n" , nombre_tabla);
 
 				Drop drop_dato = crear_drop(nombre_tabla);
 
 				request_drop(drop_dato);
-
-				printf("ya lo cree bro\n");
 
 				return true;
 			}
@@ -202,9 +208,6 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 	char* comillas = "\"";
 
 	auxiliar = string_n_split(linea_request, 3, comillas  );
-
-	printf("primer valor : %s\n", auxiliar[0]);
-	printf("segundo valor : %s\n", auxiliar[1]);
 
 	if(sscanf(auxiliar[0] , "%s %s %i" , funcion, nombre_tabla, key) != 3){
 

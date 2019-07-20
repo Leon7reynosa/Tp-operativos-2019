@@ -198,7 +198,7 @@ int ejecutar_request(char* request_lql){
 			}
 
 
-			t_list* lista_describe = recibir_describe(conexion_memoria);
+			t_list* lista_describe = recibir_describe(memoria_utilizada->socket);
 
 
 			mostrar_lista_describe(lista_describe);
@@ -209,7 +209,7 @@ int ejecutar_request(char* request_lql){
 
 			printf("ya actualice la metadata\n");
 
-			list_destroy_and_destroy_elements(lista_describe, liberar_metadata);
+			list_destroy(lista_describe);
 
 			printf("Termino el describe!\n");
 			return 1;
@@ -264,9 +264,13 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					liberar_drop(drop_enviar);
+
 					return 0;
 
 				}
+
+				liberar_drop(drop_enviar);
 
 				printf("ya lo envie bro\n");
 

@@ -19,10 +19,6 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			log_trace(logger_request, "Request de SELECT recibida por el socket %i !\n", conexion);
 
-			printf("CON LOS SIGUIENTES DATOS:\n");
-			printf("KEY: %i\n", ((select_t)request_a_operar->tipo_request)->key);
-			printf("TABLA: %s\n",	(char *) ((select_t)request_a_operar->tipo_request)->tabla->buffer);
-
 
 			dato_request = request_select( (select_t) request_a_operar->tipo_request );
 
@@ -88,7 +84,9 @@ void trabajar_request(request request_a_operar , int conexion){
 		case DROP:
 
 			log_trace(logger_request, "Request de DROP recibida por el socket %i !\n", conexion);
+
 			request_drop((Drop)(request_a_operar->tipo_request));
+
 			log_trace(logger_request, "Request de DROP solicitada por el socket %i !\n", conexion);
 			break;
 
@@ -361,7 +359,7 @@ t_list* request_describe_global(void){
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
 
-		pthread_rwlock_rdlock(&(diccionario_compactador));
+		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
 		while((tabla = readdir(dir1)) != NULL){
 
@@ -404,7 +402,7 @@ t_list* request_describe_global(void){
 
 		}
 
-		pthread_rwlock_unlock(&(diccionario_compactador));
+		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 	}
 
@@ -430,7 +428,7 @@ void request_drop(Drop request_drop){
 
 	log_info(logger_lfs, "Inicio de request -- DROP --\n");
 
-	char* nombre_tabla = (char *)request_drop->tabla->buffer;
+	char* nombre_tabla = (char *)(request_drop->tabla->buffer);
 
 	DIR *dir1, *dir2;
 
@@ -438,14 +436,17 @@ void request_drop(Drop request_drop){
 
 	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
 
-//	abortar_hilo_compactador(nombre_tabla);//ESTO NO SE SI VA ACA O MAS ABAJO
+	//IF EXISTE_TABLA!
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
 
+		printf("VOY A AGARRAR LOS SEMAFOROS DEL DICCIONARIO Y TABLA\n");
 		//SEMAFOROS!!!!!!!!!!!!!!!!!
 		pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
+
+		printf("AGARRE TODOS\n");
 
 		while((tabla = readdir(dir1))){
 
@@ -461,6 +462,9 @@ void request_drop(Drop request_drop){
 					string_append(&path_para_tabla_particular, tabla->d_name);
 
 					dir2 = opendir(path_para_tabla_particular);
+
+
+
 					while((tabla_particular = readdir(dir2)) != NULL){
 
 						if(!string_equals_ignore_case(tabla_particular->d_name, ".") && !string_equals_ignore_case(tabla_particular->d_name, "..")){
@@ -474,7 +478,6 @@ void request_drop(Drop request_drop){
 							if(string_ends_with(tabla_particular->d_name, ".bin") || string_ends_with(tabla_particular->d_name, ".tmp") ||
 							   string_ends_with(tabla_particular->d_name, ".tmpc"))
 							{
-								thread_args* atributos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
 								Particion particion = leer_particion(path_para_archivo);
 								printf("Se va a eliminar el siguiente archivo: \n");

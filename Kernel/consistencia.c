@@ -122,7 +122,7 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 			break;
 	}
 
-	printf("tabla: %s\n" , tabla);
+	printf("TABLOIDE: %s\n" , tabla);
 
 	if(!dictionary_has_key(registro_tabla, tabla)){
 
@@ -134,9 +134,11 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 	printf("pase el if lol\n");
 
+	printf("consistencia de la tabla : %s\n"  , (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
+
 	codigo_consistencia =    identificar_consistencia(  (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
 
-	printf("holas\n");
+	printf("PASE SEEE\n");
 
 	printf("CODIGO DE CONSISTENCIA: %d\n" , codigo_consistencia);
 

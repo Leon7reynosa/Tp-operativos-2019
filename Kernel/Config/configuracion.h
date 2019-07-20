@@ -23,6 +23,7 @@ char* ip_memoria;
 int puerto_memoria;
 int quantum;
 int tiempo_gossiping_kernel;
+int tiempo_ejecucion;
 
 
 void creacion_del_config(void);

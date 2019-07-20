@@ -12,6 +12,7 @@
 t_log* logger_lissandra;
 t_log* logger_lfs;
 t_log* logger_compactador;
+t_log* logger_request;
 
 
 #endif /* PROPIEDADES_FUNCIONAMIENTO_LOGGERS_H_ */

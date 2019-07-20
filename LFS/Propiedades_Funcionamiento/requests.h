@@ -14,6 +14,7 @@
 #include"compactador.h"
 #include"metadata.h"
 
+#include"Mensajeria/request.h"
 #include"Mensajeria/requestSelect.h"
 #include"Mensajeria/requestInsert.h"
 #include"Mensajeria/requestCreate.h"

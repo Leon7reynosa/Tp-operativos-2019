@@ -14,7 +14,7 @@ void* compactar(thread_args* argumentos){
 
 	transformar_tmp_a_tmpc(nombre_tabla);
 
-	pthread_rwlock_wrlock(&(argumentos->lock_tabla));
+	pthread_rwlock_unlock(&(argumentos->lock_tabla));
 
 /*	t_list* datos_particiones;*/                                                             // (2) Lista con los datos de los .bin antes de la compactacion
 
@@ -146,7 +146,7 @@ void inicializar_compactadores(void){
 
 			if(!string_equals_ignore_case(ent->d_name, ".") && !string_equals_ignore_case(ent->d_name, "..")){
 
-				printf("Cree un hilo de compactacion para la tabla: %s\n", ent->d_name);
+				//printf("Cree un hilo de compactacion para la tabla: %s\n", ent->d_name);
 				metadata = obtener_metadata(ent->d_name);
 
 				correr_compactacion(metadata->compactacion, ent->d_name);
@@ -211,6 +211,9 @@ void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
 }
 
 void* ciclo_compactacion(thread_args* argumentos){
+
+	pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
 
 	while(1){
 

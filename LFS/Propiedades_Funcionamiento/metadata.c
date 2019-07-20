@@ -11,9 +11,9 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 
 	metadata_t* obtener_metadata = malloc(sizeof(metadata_t));
 	t_config* metadata_config;
-	printf("PATH?\n");
+
 	char* path_metadata_tabla = obtener_path_metadata_de_tabla(nombre_tabla);
-	printf("%s\n", path_metadata_tabla);
+
 	char* aux_consistencia;
 	metadata_config = config_create(path_metadata_tabla);
 
@@ -21,7 +21,7 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 	obtener_metadata->particion= config_get_int_value(metadata_config, "PARTITIONS");
 	obtener_metadata->compactacion = config_get_int_value(metadata_config, "COMPACTION_TIME");
 
-	printf("IFS?\n");
+
 	if(string_equals_ignore_case(aux_consistencia, "SC")){
 		obtener_metadata->consistencia = SC;
 	}
@@ -34,7 +34,6 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 
 	free(path_metadata_tabla);
 
-	printf("Config? \n");
 	config_destroy(metadata_config);
 
 	return obtener_metadata;
@@ -60,11 +59,6 @@ void mostrar_metadata_de_tabla(char* nombre_Tabla){
 	compactacion = config_get_int_value(configMetadata, "COMPACTION_TIME");
 	consistencia = config_get_string_value(configMetadata, "CONSISTENCY");
 
-
-	printf("CONSISTENCY = %s\n", consistencia);
-	printf("PARTITIONS = %i\n", particiones);
-	printf("COMPACTION_TIME = %i\n", compactacion);
-
 	config_destroy(configMetadata);
 	free(pathMetadata);
 
@@ -83,7 +77,6 @@ void setear_metadata(){
 	config_save(metadata_config);
 	config_destroy(metadata_config);
 
-	printf("se configuro el metadata lol\n");
 
 }
 
@@ -314,13 +307,9 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 
 	char** aux;
 
-	printf("VAMOS A ENTRAR A = %s\n", raiz_de_tabla);
-
 	if((dir = opendir(raiz_de_tabla)) != NULL){
 
 		while((ent = readdir(dir)) != NULL){
-
-			printf("ESTAMOS EN = %s\n", ent->d_name);
 
 			if(string_ends_with(ent->d_name, "tmp")){
 
@@ -338,9 +327,6 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 				string_append(&nuevo, ".");
 				string_append(&nuevo, "tmpc");
 
-				printf("El viejo path es = %s\n", viejo);
-				printf("El nuevo path es = %s\n", nuevo);
-
 
 				rename(viejo, nuevo);
 			}
@@ -357,8 +343,6 @@ void liberar_bloques_particion(char* path_particion){
 	void _eliminar_bloque(void* _nro_bloque){
 
 		int* nro_bloque = (int *)_nro_bloque;
-
-		printf("   Bloque: %i\n", *nro_bloque);
 
 		eliminar_bloque(*nro_bloque);
 
@@ -398,7 +382,6 @@ void liberar_tmpc(char* nombre_tabla){
 				string_append(&aux, "/");
 				string_append(&aux, ent->d_name);
 
-				printf("\nLIBERO LOS BLOQUE: \n");
 				liberar_bloques_particion(aux);
 
 				unlink(aux);
@@ -417,8 +400,6 @@ void liberar_tmpc(char* nombre_tabla){
 void eliminar_bloque(int bloque){
 
 	char* path_bloque = obtenerPath_Bloque(bloque);
-
-	printf("path bloque: %s\n"  , path_bloque);
 
 	unlink(path_bloque);
 

@@ -27,11 +27,10 @@ int main(){
 
 	ip_escucha = obtener_ip_address();
 
-	printf("ip escucha: %s\n" , ip_escucha);
-
 	logger_lissandra = log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
 	logger_lfs = log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
 	logger_compactador = log_create("compactador.log", "compactador", 0, LOG_LEVEL_TRACE);
+	logger_request = log_create("requests.log", "requests", 0, LOG_LEVEL_TRACE );
 
 	creacion_bitmap();
 
@@ -43,8 +42,6 @@ int main(){
 
 	int error_pthread;
 
-	printf("Inicio el servidor?\n");
-
 	socket_servidor = iniciar_servidor(ip_escucha , puerto_lfs);
 
 	free(ip_escucha);
@@ -55,8 +52,6 @@ int main(){
 
 	pthread_t administrador_hilos;
 	pthread_t hilo_consola;
-
-	printf("crear los hilos\n");
 
 	error_pthread = pthread_create(&hilo_consola, NULL , consola, NULL);
 

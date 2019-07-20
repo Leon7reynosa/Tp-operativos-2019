@@ -142,6 +142,7 @@ Conexion_memoria crear_conexion_memoria( int conexion ){
 
 void* manejar_requests(Conexion_memoria memoria_conectada){
 
+
 	request request_recibida;
 
 	while(1){
@@ -149,6 +150,8 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 		usleep(retardo * 1000);
 
 		request_recibida = recibir_request(memoria_conectada->socket_memoria);
+
+		printf("\n//////////////////////////////////////NUEVA REQUEST////////////////////////////\n");
 
 		if(request_recibida->cod_op == DESCONEXION){
 
@@ -165,6 +168,8 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 		}
 
 		liberar_request(request_recibida);
+
+		printf("\n/////////////////////////////////////FIN REQUEST//////////////////////////////////\n");
 
 	}
 
@@ -197,47 +202,3 @@ void destruir_conexion_memoria(Conexion_memoria memoria_a_destruir){
 	free(memoria_a_destruir);
 
 }
-
-
-
-/*
-void* conectar_varias_memorias_versionChinua(){
-	int cantidadDeMemorias;
-
-	fd_set descriptoresLectura;
-	int socketServidor;
-	int socketMemoria[cantidadDeMemorias];
-
-	FD_ZERO(&descriptoresLectura);
-	FD_SET(socketServidor, &descriptoresLectura);
-
-	for(int i = 0; i < cantidadDeMemorias; i++){
-		FD_SET(socketMemoria[i], &descriptoresLectura);
-	}
-
-	//verificar socketServidor para ver si hay un nuevo cliente y todos los socketMemoria[]
-	//para ver si nos han enviado algo o cerrado el socket
-
-	select (cantidadDeMemorias + 1, &descriptoresLectura, NULL, NULL, NULL);
-
-	//TRATEMIENTO DE CONEXIONES DE MEMORIAS
-	for(int j = 0; j < cantidadDeMemorias; j++){
-		if(FD_ISSET(socketMemoria[j], &descriptoresLectura)){
-			if((Lee_Socket(socketMemoria[j], (char*)&buffer, sizeof(int)) > 0)){
-				//tratamiento del request que va a recibir
-				//Lee Socket es lo mismo que la funcion read()
-			}
-			else{
-				//ERROR
-			}
-		}
-	}
-
-	if(FD_ISSET(socketServidor, &descriptoresLectura)){
-		//CREO QUE SERVIRIA PARA EL ADD DE MEMORIAS
-	}
-
-
-
-}
-*/

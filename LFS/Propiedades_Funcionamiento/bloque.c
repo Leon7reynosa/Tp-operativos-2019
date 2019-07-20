@@ -101,14 +101,10 @@ int ultimo_bloque_particion(Particion particion){
 void cargar_a_particion(char* path_particion, dato_t* dato_a_escribir){
 
 	Particion particion = leer_particion(path_particion);
-	printf("Antes de cargar, el temporal esta asi:\n");
-	mostrar_particion(particion);
 
 	int bloque = ultimo_bloque_particion(particion);
 
 	liberar_particion(particion);
-
-	printf("Cargo en el bloque: %i\n", bloque);
 
 	char* dato_convertido = convertir_dato_en_string(dato_a_escribir);
 
@@ -117,14 +113,9 @@ void cargar_a_particion(char* path_particion, dato_t* dato_a_escribir){
 
 	while( !string_is_empty(dato_convertido) ){
 
-		printf("dato que no esta vacio: %s\n" , dato_convertido);
-
 		int nuevo_bloque = buscar_primer_indice_vacio();
 
-		printf("primer_indice_vacio: %d\n" , nuevo_bloque);
-
 		if(nuevo_bloque == -1){
-			printf("No hay mas bloques vacios!\n");
 			exit(1); // VER ESTO
 		}
 
