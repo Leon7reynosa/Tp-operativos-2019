@@ -11,7 +11,7 @@ Bloque leer_bloque(int indice_bloque){
 
 	char* path_bloque = obtenerPath_Bloque(indice_bloque); //lion
 
-	printf("path: %s\n" , path_bloque);
+//	printf("path: %s\n" , path_bloque);
 
 	//ABRO EL BLOQUE
 	int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
@@ -22,7 +22,7 @@ Bloque leer_bloque(int indice_bloque){
 
 	char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0); //lion
 
-	printf("datos map : %s\n" , datos);
+//	printf("datos map : %s\n" , datos);
 
 	Bloque bloque= crear_bloque(indice_bloque, datos);
 
@@ -360,7 +360,7 @@ void mostrar_bloque(int bloque){
 
 	char** datos = string_split(archivo, "\n");
 
-	printf("Llegue hasta aca\n");
+//	printf("Llegue hasta aca\n");
 
 	while(*(datos + i) != NULL){
 
@@ -414,21 +414,4 @@ void get_all_estados(){
 	close(fichero);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -186,16 +186,25 @@ bool existe_el_bitmap(){
 
 	FILE* file;
 	if((file = fopen(path_al_bitmap, "r")) == NULL){
-		printf("NO EXISTE BRU\n");
+
 		free(path_al_bitmap);
+
 		return false;
 	}
 	else{
-		printf("EXISTE BRU\n");
+
 		free(path_al_bitmap);
+
 		return true;
 	}
 
+}
+
+void inicializar_loggers(){
+	logger_lissandra = 		log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
+	logger_lfs = 			log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
+	logger_compactador = 	log_create("compactador.log", "compactador", 0, LOG_LEVEL_TRACE);
+	logger_request = 		log_create("requests.log", "requests", 0, LOG_LEVEL_TRACE );
 }
 
 

@@ -20,6 +20,7 @@
 #include<sys/types.h>
 #include<fcntl.h>
 #include<unistd.h>
+#include"loggers.h"
 
 
 t_config* g_config;
@@ -43,7 +44,8 @@ void obtener_datos_config(void);
 void obtener_datos_metadata(void);
 void crearYObtenerDatos(void);
 void obtenerDatos(void);
-bool existe_el_bitmap();
+bool existe_el_bitmap(void);
+void inicializar_loggers(void);
 
 void realizar_handshake(int conexion);
 

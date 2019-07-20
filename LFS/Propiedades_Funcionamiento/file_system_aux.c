@@ -189,13 +189,9 @@ void realizar_dump(){
 
 	void _crear_temporal(char* nombre_tabla, void* elementoDeMemtable){
 
-		printf("\nEmpiezo a iterar la memtable\n");
 		dato_de_tabla = (t_list*) elementoDeMemtable;
-		printf("Tabla agarrada de la memtable: %s\n", nombre_tabla);
 
 		char* path_temporal = obtenerPathParaTemporalEnLaTabla(nombre_tabla);
-
-		printf("Path para temporal dentro de esa tabla: %s\n", path_temporal);
 
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
@@ -204,17 +200,13 @@ void realizar_dump(){
 
 		crear_archivo_particion(path_temporal);
 
-		printf("Se creo el temporal!\n");
-
 		void _cargar_a_temporal(void* _dato){
 
-			printf("-- %s\n\n", path_temporal);
 			dato_t* dato = (dato_t *)_dato;
 			cargar_a_particion(path_temporal, dato);
 
 		}
 
-		printf("Ahora voy a cargar el temporal en el path: \n");
 		list_iterate(dato_de_tabla, _cargar_a_temporal );
 
 		//DESBLOQUEO LA TABLA ESPECIFICA
@@ -231,8 +223,6 @@ void realizar_dump(){
 
 	dictionary_iterator(memtable, _crear_temporal);
 
-	//aaaaaaaaaaaaaaaaaaaaaaaa x si llegara a pasar algo en medio de la iteracion, osea, no se, ponele que alguien quiere insertar algo y podría hacerlo en el medio de
-	//alguna iteraacion,ESO
 	pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 

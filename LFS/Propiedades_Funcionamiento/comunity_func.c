@@ -99,36 +99,36 @@ dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato){
 
 	if(primer_dato != NULL){
 
-		printf("El primer dato no es null\n");
+//		printf("El primer dato no es null\n");
 
 		if(segundo_dato != NULL){
 
-			printf("El segundo dato no es null\n");
+//			printf("El segundo dato no es null\n");
 
 			if(primer_dato->timestamp >= segundo_dato->timestamp){
-				printf("El primer dato es mas grande\n");
+//				printf("El primer dato es mas grande\n");
 				dato_mas_reciente = crear_dato(primer_dato->key, primer_dato->value, primer_dato->timestamp);
 
 			}else{
-				printf("El segundo es mas grande\n");
+//				printf("El segundo es mas grande\n");
 				dato_mas_reciente = crear_dato(segundo_dato->key, segundo_dato->value, segundo_dato->timestamp);
 
 			}
 
 		}else{
-			printf("El segundo dato es null\n");
+//			printf("El segundo dato es null\n");
 			dato_mas_reciente = crear_dato(primer_dato->key, primer_dato->value, primer_dato->timestamp);
 
 		}
 
 	}else if(segundo_dato != NULL){
 
-		printf("El segundo no es null\n");
-		printf("KEY: %i\n", segundo_dato->key);
-		printf("TIME: %i\n", segundo_dato->timestamp);
-		printf("VALUE: %s\n", segundo_dato->value);
+//		printf("El segundo no es null\n");
+//		printf("KEY: %i\n", segundo_dato->key);
+//		printf("TIME: %i\n", segundo_dato->timestamp);
+//		printf("VALUE: %s\n", segundo_dato->value);
 		dato_mas_reciente = crear_dato(segundo_dato->key, segundo_dato->value, segundo_dato->timestamp);
-		printf("Queda el segundo\n");
+//		printf("Queda el segundo\n");
 	}
 
 	return dato_mas_reciente;

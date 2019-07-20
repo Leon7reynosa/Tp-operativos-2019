@@ -14,27 +14,31 @@ int main(){
 	obtener_datos_config();
 	obtener_datos_metadata();
 
-	inicializar_memtable();
+	inicializar_memtable(); //Inicializa la memtable como diccionario junto con su lock rw
 
-	inicializar_memorias_conectadas();
+	inicializar_memorias_conectadas(); //Inicializa una lista de memorias
 
 	diccionario_compactador = dictionary_create();
-	pthread_rwlock_init(&lock_diccionario_compactacion, NULL);
+	pthread_rwlock_init(&(lock_diccionario_compactacion), NULL);
 
+	/*
+	 * Abre la carpeta TABLAS, y por cada tabla que haya, corre la  compactacion
+	 * y agrega dicha tabla como thread_args* al diccionario compactador
+	 *
+	 * Sirve para cuando se desconecta y se vuelva a levantar, para chequear
+	 * las tablas anteriores que existían
+	 */
 	inicializar_compactadores();
 
+	/*
+	 * Crea un hilo para el dump y lo inicializa
+	 * Ejecuta el "Ciclo Dump"
+	 */
 	inicializar_dump();
 
 	ip_escucha = obtener_ip_address();
 
-	logger_lissandra = log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
-	logger_lfs = log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
-	logger_compactador = log_create("compactador.log", "compactador", 0, LOG_LEVEL_TRACE);
-	logger_request = log_create("requests.log", "requests", 0, LOG_LEVEL_TRACE );
-
 	creacion_bitmap();
-
-//	set_all_estados(LIBRE);
 
 	///////////////////////////CONEXIONES/////////////////////////////////
 
@@ -48,22 +52,24 @@ int main(){
 
 	///////////////////////////////MAIN////////////////////////////////////
 
-//	pruebas();
-
 	pthread_t administrador_hilos;
 	pthread_t hilo_consola;
 
 	error_pthread = pthread_create(&hilo_consola, NULL , consola, NULL);
 
 	if(error_pthread != 0){
-		perror("pthread_create");
+		perror("pthread_create del hilo consola");
 		exit(1);
 	}
 
+	/*
+	 * Creamos un hilo por cada conexion que recibamos de las memorias,
+	 * la agrega a la lista de memorias conectadas y realizamos el handshake
+	 */
 	error_pthread = pthread_create(&administrador_hilos , NULL , administrar_conexiones_hilos , &socket_servidor);
 
 	if(error_pthread != 0){
-		perror("pthread_create");
+		perror("pthread_create del administrador de hilos");
 		exit(1);
 	}
 
