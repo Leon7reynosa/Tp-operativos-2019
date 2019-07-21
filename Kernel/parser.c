@@ -28,8 +28,6 @@ cod_operacion identificar_request ( char* request_lql){
 
 	request_split = string_split(request_lql , " ");
 
-	printf("%s\n" , request_split[0]);
-
 	codigo_return  = encontrar_codigo_request(request_split[0]);
 
 	free(request_split);

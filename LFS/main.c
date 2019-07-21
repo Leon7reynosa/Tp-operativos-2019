@@ -5,6 +5,7 @@ int main(){
 
 	////////////////////////////INICIALIZACIONES////////////////////////
 
+
 	creacion_del_config_fileSystem();
 
 	obtener_datos_config();

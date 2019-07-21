@@ -25,6 +25,9 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 		buffer= serializar_insert(request);
 		bytes = ((insert)(request->tipo_request))->bytes;
+
+		printf("timestamp que vamos a enviar: %d\n" , ((insert)(request->tipo_request))->timestamp);
+
 		break;
 
 	case CREATE:
@@ -35,16 +38,13 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 	case DESCRIBE:
 
-		printf("Serializo el describe\n");
 		buffer = serializar_describe(request);
 		bytes = ((describe_t)(request->tipo_request))->bytes;
 
-		printf("Bytes: %i\n",bytes);
 		break;
 
 	case DROP:
 
-		printf("Serializo el drop\ņ");
 		buffer = serializar_drop(request);
 		bytes = ((Drop)(request->tipo_request))->bytes;
 
@@ -55,7 +55,6 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 		break;
 	}
 
-	printf("llegue a enviar\n");
 	int error_send = send(conexion_memoria , buffer, bytes, 0);
 
 	if(error_send < 0){
@@ -63,10 +62,9 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 		return false;
 	}
-	printf("Se envio!\n");
+
 	//free(buffer);
 
-	printf("Libero la request_aux\n");
 	liberar_request(request);
 
 	return true;

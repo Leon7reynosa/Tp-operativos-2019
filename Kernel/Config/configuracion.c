@@ -15,10 +15,10 @@ void creacion_del_config(){
 
 	g_config = config_create("kernel.config");
 
-	config_set_value(g_config, "IP_MEMORIA", "192.168.1.47");
+	config_set_value(g_config, "IP_MEMORIA", "192.168.1.40");
 	config_set_value(g_config, "PUERTO_MEMORIA", "8000");
 	config_set_value(g_config, "QUANTUM", "4");
-	config_set_value(g_config, "GRADO_MULTIPROCESAMIENTO", "3");
+	config_set_value(g_config, "GRADO_MULTIPROCESAMIENTO", "1");
 	config_set_value(g_config, "REFRESH_METADATA", "10000");
 	config_set_value(g_config, "RETARDO_CICLO_EJECUCION", "5000");
 	config_set_value(g_config, "TIEMPO_GOSSIPING_KERNEL", "60000");

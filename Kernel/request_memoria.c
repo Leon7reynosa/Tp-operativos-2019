@@ -8,16 +8,10 @@
 
 void request_add(int numero_memoria, char* consistencia){
 
-	printf("consistencia de la request: %s\n" , consistencia);
-
 	cod_consistencia codigo = identificar_consistencia(consistencia);
-
-	printf("el codigo es: %d\n" , codigo);
 
 
 	memoria_t* memoria_agregar = obtener_memoria_de_lista(numero_memoria);
-
-	printf("bueno hasat aca llegamos\n");
 
 	if(	memoria_agregar == NULL	){
 
@@ -26,8 +20,6 @@ void request_add(int numero_memoria, char* consistencia){
 		exit(1);
 
 	}
-
-	printf("casi llego al swithc :D");
 
 	switch(codigo){
 
@@ -53,7 +45,7 @@ void request_add(int numero_memoria, char* consistencia){
 
 	}
 
-	printf("SE INGRESO CORRECTAMENTE LA MEMORIA\n");
+	printf("\nSE INGRESO CORRECTAMENTE LA MEMORIA\n");
 
 }
 

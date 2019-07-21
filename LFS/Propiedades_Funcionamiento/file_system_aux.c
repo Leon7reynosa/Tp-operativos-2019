@@ -191,13 +191,14 @@ void realizar_dump(){
 
 		dato_de_tabla = (t_list*) elementoDeMemtable;
 
-		char* path_temporal = obtenerPathParaTemporalEnLaTabla(nombre_tabla);
-
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
 		//SEMAFORO TABLA ESPECIFICA
 		printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE LA TABLA ESPECIFICA\n");
+
 		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
+
+		char* path_temporal = obtenerPathParaTemporalEnLaTabla(nombre_tabla);
 
 		crear_archivo_particion(path_temporal);
 
@@ -241,8 +242,7 @@ void realizar_dump(){
 
 void vaciar_memtable(){
 
-
-	void _remover_listas(char* nombre_tabla , void* elemento_memtable){
+	void _remover_listas(void* elemento_memtable){
 
 		t_list* lista_de_tabla = (t_list* ) elemento_memtable;
 
@@ -250,7 +250,7 @@ void vaciar_memtable(){
 
 	}
 
-	dictionary_iterator(memtable,  _remover_listas);
+	dictionary_clean_and_destroy_elements(memtable,  _remover_listas);
 }
 
 bool no_es_ubicacion_prohibida(char* path){

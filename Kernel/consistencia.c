@@ -53,27 +53,25 @@ void agregar_a_consistencia(cod_consistencia codigo, memoria_t* memoria_a_guarda
 
 cod_consistencia identificar_consistencia(char* consistencia){
 
-	printf("entre aca gg\n");
-
 	string_to_upper(consistencia);
 
 	if(strcmp(consistencia, "SC") == 0){
 
-		printf(">>La consistencia es Strong Consistency\n");
+		printf("\n>>La consistencia es Strong Consistency\n");
 
 		return SC;
 	}else if(strcmp(consistencia, "EC") == 0){
 
-		printf(">>La consistencia es Eventual Consistency\n");
+		printf("\n>>La consistencia es Eventual Consistency\n");
 
 		return EC;
 	}else if(strcmp(consistencia, "SHC") == 0){
 
-		printf(">>La consitencia es Strong hash consistency\n");
+		printf("\n>>La consitencia es Strong hash consistency\n");
 
 		return SHC;
 	}else{
-		printf(">>No es una consistencia permitida<<\n");
+		printf("\n>>No es una consistencia permitida<<\n");
 		return -1;
 	}
 
@@ -122,8 +120,6 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 			break;
 	}
 
-	printf("TABLOIDE: %s\n" , tabla);
-
 	if(!dictionary_has_key(registro_tabla, tabla)){
 
 		printf("No existe la tabla en el registro de tablas\n"); //log
@@ -132,15 +128,9 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 	}
 
-	printf("pase el if lol\n");
-
 	printf("consistencia de la tabla : %s\n"  , (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
 
 	codigo_consistencia =    identificar_consistencia(  (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
-
-	printf("PASE SEEE\n");
-
-	printf("CODIGO DE CONSISTENCIA: %d\n" , codigo_consistencia);
 
 	return codigo_consistencia;
 }
@@ -149,8 +139,6 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 memoria_t* tomar_memoria_al_azar(){
 
 	t_list* lista_de_consistencias = lista_memorias_de_consistencia();
-
-	printf("tamaño de lista: %d\n" , list_size(lista_de_consistencias));
 
 	int numero_random_consistencia = rand() % list_size(lista_de_consistencias); // para determinar de cual de los tres codigos de operacion usamos para agarrar la memoria ( SC, EC, SHC)
 
@@ -164,8 +152,6 @@ t_list* lista_memorias_de_consistencia(){
 
 	t_list* lista_de_memorias = list_create();
 
-	printf("entre a la lista de memorias de consistencia\n");
-
 	if(Strong_C != NULL){
 
 		printf("no entro aca\n");
@@ -174,8 +160,6 @@ t_list* lista_memorias_de_consistencia(){
 
 	}
 
-	printf("hago el iterate\n");
-
 	void _agregar_si_cumple(void* _memoria){
 
 		memoria_t* memoria = (memoria_t *)_memoria;
@@ -183,8 +167,6 @@ t_list* lista_memorias_de_consistencia(){
 		bool _esta_agregado(void* _memoria_2){
 
 				memoria_t* memoria_2 = (memoria_t *)_memoria_2 ;
-
-				printf("hice uno\n");
 
 				return memoria == memoria_2;
 
@@ -195,8 +177,6 @@ t_list* lista_memorias_de_consistencia(){
 
 		}else{
 
-			printf("aca entro una sola vez\n");
-
 			list_add(lista_de_memorias, memoria);
 
 		}
@@ -204,11 +184,8 @@ t_list* lista_memorias_de_consistencia(){
 	}
 
 	list_iterate(Strong_Hash_C, _agregar_si_cumple);
-	printf("pase el iterate\n");
 
 	list_iterate(Eventual_C, _agregar_si_cumple);
-
-	printf("pase el segundo iterate\n");
 
 	return lista_de_memorias;
 
@@ -227,10 +204,6 @@ memoria_t* memoria_al_azar_consistencia(t_list* lista_consistencia){
 memoria_t* seleccionar_memoria_consistencia(cod_operacion cod_op , void* tipo_request){
 
 	cod_consistencia codigo_consistencia = identificar_consitencia_para_request(cod_op, tipo_request);
-
-	printf("llegue hasta este paso\n");
-
-	printf("codigo_consistencia: %d\n" , codigo_consistencia);
 
 	return tomar_memoria_segun_codigo_consistencia(codigo_consistencia);
 

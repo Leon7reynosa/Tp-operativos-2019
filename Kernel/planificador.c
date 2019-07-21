@@ -205,7 +205,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		if(queue_is_empty(cola_exec)){
 
-			printf(">>Ya se completo las request<<\n");
+			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 			queue_push(cola_exit, siguiente_script);
 
@@ -213,7 +213,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}else{
 
-			printf(">>Termino el Quantum<<\n");
+			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 			queue_push(cola_ready, siguiente_script);
 

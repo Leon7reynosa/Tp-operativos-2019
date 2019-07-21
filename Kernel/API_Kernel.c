@@ -12,6 +12,8 @@
 //no es el mismo que enviar_request
 int ejecutar_request(char* request_lql){
 
+	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+
 	int cod_request;
 	char* nombre_archivo;
 	char* nombre_tabla = string_new();
@@ -38,16 +40,9 @@ int ejecutar_request(char* request_lql){
 
 				log_info(logger_kernel, "---Se realizara el SELECT---\n");
 
-				printf("pase bro\n");
-
-
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
 
-				printf("pase bro\n");
-
 				memoria_utilizada = seleccionar_memoria_consistencia(SELECT, select_enviar);
-
-				printf("pase bro\n");
 
 				if(memoria_utilizada == NULL){
 
@@ -60,8 +55,6 @@ int ejecutar_request(char* request_lql){
 
 				if( enviar_request(SELECT, select_enviar, memoria_utilizada->socket) == false ) {
 
-					printf("fallo en enviar\n");
-
 					log_error(logger_kernel, ">>FALLO ENVIAR EL SELECT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
@@ -70,19 +63,11 @@ int ejecutar_request(char* request_lql){
 
 				}
 
-				printf("pase el enviar\n");
-
 				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada->socket);
-
-				printf("recibi el dato\n");
 
 				mostrar_t_dato(dato_recibido);
 
-				printf("mostree el dato\n");
-
 				liberar_t_dato(dato_recibido);
-
-				printf("libere el dato\n");
 
 				return 1;
 			}
@@ -162,8 +147,6 @@ int ejecutar_request(char* request_lql){
 
 				describe_enviar = crear_dato_describe(nombre_tabla);
 
-				printf("tabla que enviamos %s\n" , (char*)describe_enviar->tabla->buffer);
-
 				memoria_utilizada = seleccionar_memoria_consistencia(DESCRIBE, describe_enviar);
 
 				if(memoria_utilizada == NULL){
@@ -177,14 +160,13 @@ int ejecutar_request(char* request_lql){
 				if ( enviar_request(DESCRIBE, describe_enviar , memoria_utilizada->socket) == false ){
 
 					log_error(logger_kernel, ">>FALLO ENVIAR EL DESCRIBE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
-
+					printf("consistencia de la request: %s\n" , consistencia);
 					remover_memoria_de_consistencia(memoria_utilizada);
 
 					return 0;
 
 				}
 
-				printf("se envio bien el describe\n");
 
 			}else if(cantidad_parametros == 1){
 
@@ -206,8 +188,6 @@ int ejecutar_request(char* request_lql){
 
 				}
 
-				printf("Se envio el describe global correctamente\n");
-
 
 			}else{
 				return 0;
@@ -219,22 +199,17 @@ int ejecutar_request(char* request_lql){
 
 			mostrar_lista_describe(lista_describe);
 
-			printf("voy a actualizar la metadata\n");
-
 			actualizar_metadata(lista_describe);
-
-			printf("ya actualice la metadata\n");
 
 			list_destroy(lista_describe);
 
-			printf("Termino el describe!\n");
 			return 1;
 
 		case ADD:
 
 			if(  obtener_parametros_add(request_lql, &numero_memoria, consistencia) &&  (identificar_consistencia(consistencia) >= 0 ) ){
 
-				log_info(logger_kernel, "---Se realizara la request ADD---\n");
+				log_info(logger_kernel, "\n---Se realizara la request ADD---\n");
 				request_add(numero_memoria, consistencia);
 				log_info(logger_kernel , "SE AGREGO LA MEMORIA CORRECTAMENTE\n");
 				return 1;
@@ -244,7 +219,10 @@ int ejecutar_request(char* request_lql){
 
 		case RUN:
 
+
 			nombre_archivo = obtener_parametros_run(request_lql);
+
+			log_info("--Se realizara el RUN del archivo %s--\n" , nombre_archivo);
 
 			if(nombre_archivo != NULL){
 
@@ -261,10 +239,9 @@ int ejecutar_request(char* request_lql){
 
 		case DROP:
 
-			printf("entre al drop\n");
-
 			if(obtener_parametros_drop(request_lql , nombre_tabla)){
-				printf("entre al if, nombre : %s\n" , nombre_tabla);
+
+				log_info(logger_kernel, "\n--Se realizara la request DROP de la tabla %s---\n" , nombre_tabla);
 
 				Drop drop_enviar = crear_drop(nombre_tabla);
 
@@ -295,7 +272,7 @@ int ejecutar_request(char* request_lql){
 
 				//liberar_drop(drop_enviar);
 
-				printf("ya lo envie bro\n");
+				printf("Tabla %s removida\n" , nombre_tabla);
 
 				return 1;
 			}
@@ -320,12 +297,18 @@ int ejecutar_request(char* request_lql){
 	free(nombre_tabla);
 	free(consistencia);
 	free(value);
+
+	printf("\n>>>>>>>>>>>>>>>>>>>>>>>><FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+
 	return 0;
 
 }
 
 
 void request_journal(){
+
+	log_info(logger_kernel, "\n---Se realizara la request JOURNAL---\n");
+
 
 	t_list* lista_memorias_a_enviar = lista_memorias_de_consistencia();
 
@@ -513,8 +496,6 @@ char* obtener_parametros_run(char* linea_request){
 	char* archivo = string_new();
 
 	sscanf(linea_request, "%s %s", funcion, archivo);
-
-	printf("El archivo se llama: %s\n", archivo);
 
 	free(funcion);
 

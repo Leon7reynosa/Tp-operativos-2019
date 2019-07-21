@@ -40,7 +40,7 @@ void liberar_metadata(Metadata metadata_a_liberar){
 void* serializar_describe(request request_describe){
 
 	describe_t dato_describe = (describe_t) (request_describe->tipo_request);
-	printf("Bytes buffer %i\n", dato_describe->bytes);
+
 	void* buffer_serializado = malloc(dato_describe->bytes);
 	int desplazamiento = 0;
 
@@ -52,7 +52,6 @@ void* serializar_describe(request request_describe){
 
 	if(!dato_describe->global){
 
-		printf("Size tabla: %i\n", dato_describe->tabla->size);
 		memcpy(buffer_serializado + desplazamiento, &(dato_describe->tabla->size) , sizeof(dato_describe->tabla->size) );
 		desplazamiento += sizeof(dato_describe->tabla->size);
 
@@ -67,7 +66,6 @@ void* serializar_describe(request request_describe){
 describe_t crear_dato_describe(char* nombre_tabla){
 	describe_t dato_describe = malloc(sizeof(struct describeEstructura));
 
-	printf("Creo el dato_descrit_t \n");
 	if(nombre_tabla != NULL){
 
 		dato_describe->global = false;
@@ -80,11 +78,7 @@ describe_t crear_dato_describe(char* nombre_tabla){
 
 		memcpy(dato_describe->tabla->buffer , nombre_tabla , dato_describe->tabla->size);
 
-		printf("Tabla: %s\n",(char *) dato_describe->tabla->buffer);
-
 		dato_describe->bytes = sizeof(cod_operacion) + sizeof(bool) + sizeof(dato_describe->tabla->size) + dato_describe->tabla->size;
-
-		printf("Bytes: %i\n", dato_describe->bytes);
 
 	}
 	else{
@@ -123,6 +117,8 @@ void mostrar_lista_describe(t_list* lista_describe){
 	}
 
 	list_iterate(lista_describe, _mostrar_metadata);
+
+	printf("\n");
 
 }
 
