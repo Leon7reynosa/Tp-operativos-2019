@@ -148,3 +148,95 @@
 
 [TRACE] 20:00:35:7 requests/(7138:7159): Request de DROP solicitada por el socket 9 !
 
+[TRACE] 20:07:52:94 requests/(7481:7524): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 20:07:52:96 requests/(7481:7524): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 20:07:52:600 requests/(7481:7524): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:07:52:604 requests/(7481:7524): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:08:24:816 requests/(7481:7524): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:08:24:816 requests/(7481:7524): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:08:25:317 requests/(7481:7524): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:08:25:317 requests/(7481:7524): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:12:42:203 requests/(7481:7524): Request de DROP recibida por el socket 9 !
+
+[TRACE] 20:12:42:205 requests/(7481:7524): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 20:13:44:657 requests/(7660:7680): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 20:13:44:658 requests/(7660:7680): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 20:13:45:158 requests/(7660:7680): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:13:45:159 requests/(7660:7680): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:14:12:404 requests/(7660:7680): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:14:12:404 requests/(7660:7680): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:14:12:905 requests/(7660:7680): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:14:12:905 requests/(7660:7680): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:14:39:972 requests/(7660:7680): Request de DROP recibida por el socket 9 !
+
+[TRACE] 20:14:39:973 requests/(7660:7680): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 20:16:56:589 requests/(7768:7787): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 20:16:56:589 requests/(7768:7787): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 20:16:57:92 requests/(7768:7787): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:16:57:93 requests/(7768:7787): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:17:34:571 requests/(7768:7787): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:17:34:571 requests/(7768:7787): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:17:35:72 requests/(7768:7787): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:17:35:72 requests/(7768:7787): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:19:26:510 requests/(7768:7787): Request de DROP recibida por el socket 9 !
+
+[TRACE] 20:19:26:513 requests/(7768:7787): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 20:23:23:998 requests/(7928:7948): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 20:23:23:999 requests/(7928:7948): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 20:23:24:500 requests/(7928:7948): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:23:24:500 requests/(7928:7948): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:23:27:272 requests/(7928:7948): Request de DROP recibida por el socket 9 !
+
+[TRACE] 20:23:27:273 requests/(7928:7948): Request de DROP solicitada por el socket 9 !
+
+[TRACE] 20:25:09:902 requests/(7928:7948): Request de CREATE recibida por el socket 9 !
+
+[TRACE] 20:25:09:902 requests/(7928:7948): Request de CREATE terminada por el socket 9 !
+
+[TRACE] 20:25:10:403 requests/(7928:7948): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:25:10:404 requests/(7928:7948): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:25:57:999 requests/(7928:7948): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:25:57:0 requests/(7928:7948): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:25:58:504 requests/(7928:7948): Request de INSERT recibida por el socket 9 !
+
+[TRACE] 20:25:58:505 requests/(7928:7948): Request de INSERT terminada por el socket 9 !
+
+[TRACE] 20:26:07:620 requests/(7928:7948): Request de DROP recibida por el socket 9 !
+
+[TRACE] 20:26:07:621 requests/(7928:7948): Request de DROP solicitada por el socket 9 !
+

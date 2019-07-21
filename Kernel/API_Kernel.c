@@ -381,9 +381,13 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 
 	string_append(value , auxiliar[1]);
 
+	printf("timestamp: %s\n", auxiliar[2]);
+
 	if(auxiliar[2] == NULL){
 
-		timestamp = -1;
+		printf("si es null papa\n");
+
+		*timestamp = -1;
 
 		return 1;
 

@@ -191,6 +191,10 @@ void realizar_dump(){
 
 		dato_de_tabla = (t_list*) elementoDeMemtable;
 
+		if(!existe_la_tabla(nombre_tabla)){
+			return;
+		}
+
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
 		//SEMAFORO TABLA ESPECIFICA

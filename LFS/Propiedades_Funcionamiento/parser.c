@@ -13,7 +13,8 @@ request_parser parser_list[] = {
 		{"INSERT" , INSERT},
 		{"CREATE" , CREATE},
 		{"DESCRIBE", DESCRIBE},
-		{"DROP" , DROP}
+		{"DROP" , DROP},
+		{"EXIT" , EXIT}
 };
 
 cod_operacion identificar_request ( char* request_lql){

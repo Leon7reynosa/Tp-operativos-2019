@@ -215,6 +215,8 @@ void request_insert(insert dato){
 
 	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
+	printf("TIMESTAMP A GUARDAR: %i\n",dato_insert->timestamp);
+
 	pthread_mutex_lock(&mutex_journal);
 	if(existe_segmento((char *)dato->tabla->buffer ,&segmento_tabla)){
 		printf("Existe el segmento!\n");

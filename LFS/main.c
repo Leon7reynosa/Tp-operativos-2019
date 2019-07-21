@@ -73,7 +73,12 @@ int main(){
 	pthread_join(hilo_consola , NULL);
 
 	//mandaron exit por la consola
+
+
 	pthread_cancel(administrador_hilos);
+
+
+	//LIBERAR TODO
 
 	printf("terminaron los hilos\n");
 	return EXIT_SUCCESS;

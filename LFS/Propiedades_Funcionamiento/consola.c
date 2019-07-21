@@ -166,6 +166,11 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 
 			break;
+
+
+		case EXIT:
+
+
 		default:
 
 			//log

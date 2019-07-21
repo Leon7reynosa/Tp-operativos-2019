@@ -256,3 +256,135 @@
 
 [INFO] 20:00:35:7 file system/(7138:7159): Request -- DROP-- realizada
 
+[INFO] 20:07:52:95 file system/(7481:7524): Inicio de request -- INSERT -- 
+
+[INFO] 20:07:52:96 file system/(7481:7524): Request -- INSERT -- realizada !!!
+
+[INFO] 20:07:52:601 file system/(7481:7524): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:07:52:601 file system/(7481:7524): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:07:52:601 file system/(7481:7524): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:07:52:602 file system/(7481:7524): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:07:52:602 file system/(7481:7524): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:07:52:602 file system/(7481:7524): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:08:24:816 file system/(7481:7524): Inicio de request -- INSERT -- 
+
+[INFO] 20:08:24:816 file system/(7481:7524): Request -- INSERT -- realizada !!!
+
+[INFO] 20:08:25:317 file system/(7481:7524): Inicio de request -- INSERT -- 
+
+[INFO] 20:08:25:317 file system/(7481:7524): Request -- INSERT -- realizada !!!
+
+[INFO] 20:12:42:203 file system/(7481:7524): Inicio de request -- DROP --
+
+[INFO] 20:12:42:205 file system/(7481:7524): Request -- DROP-- realizada
+
+[INFO] 20:13:44:657 file system/(7660:7680): Inicio de request -- INSERT -- 
+
+[INFO] 20:13:44:658 file system/(7660:7680): Request -- INSERT -- realizada !!!
+
+[INFO] 20:13:45:158 file system/(7660:7680): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:13:45:158 file system/(7660:7680): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:13:45:158 file system/(7660:7680): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:13:45:158 file system/(7660:7680): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:13:45:158 file system/(7660:7680): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:13:45:159 file system/(7660:7680): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:14:12:404 file system/(7660:7680): Inicio de request -- INSERT -- 
+
+[INFO] 20:14:12:404 file system/(7660:7680): Request -- INSERT -- realizada !!!
+
+[INFO] 20:14:12:905 file system/(7660:7680): Inicio de request -- INSERT -- 
+
+[INFO] 20:14:12:905 file system/(7660:7680): Request -- INSERT -- realizada !!!
+
+[INFO] 20:14:39:972 file system/(7660:7680): Inicio de request -- DROP --
+
+[INFO] 20:14:39:973 file system/(7660:7680): Request -- DROP-- realizada
+
+[INFO] 20:16:56:589 file system/(7768:7787): Inicio de request -- INSERT -- 
+
+[INFO] 20:16:56:589 file system/(7768:7787): Request -- INSERT -- realizada !!!
+
+[INFO] 20:16:57:92 file system/(7768:7787): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:16:57:92 file system/(7768:7787): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:16:57:92 file system/(7768:7787): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:16:57:92 file system/(7768:7787): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:16:57:92 file system/(7768:7787): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:16:57:92 file system/(7768:7787): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:17:34:571 file system/(7768:7787): Inicio de request -- INSERT -- 
+
+[INFO] 20:17:34:571 file system/(7768:7787): Request -- INSERT -- realizada !!!
+
+[INFO] 20:17:35:72 file system/(7768:7787): Inicio de request -- INSERT -- 
+
+[INFO] 20:17:35:72 file system/(7768:7787): Request -- INSERT -- realizada !!!
+
+[INFO] 20:19:26:510 file system/(7768:7787): Inicio de request -- DROP --
+
+[INFO] 20:19:26:513 file system/(7768:7787): Request -- DROP-- realizada
+
+[INFO] 20:23:23:998 file system/(7928:7948): Inicio de request -- INSERT -- 
+
+[INFO] 20:23:23:999 file system/(7928:7948): Request -- INSERT -- realizada !!!
+
+[INFO] 20:23:24:500 file system/(7928:7948): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:23:24:500 file system/(7928:7948): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:23:24:500 file system/(7928:7948): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:23:24:500 file system/(7928:7948): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:23:24:500 file system/(7928:7948): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:23:24:500 file system/(7928:7948): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:23:27:272 file system/(7928:7948): Inicio de request -- DROP --
+
+[INFO] 20:23:27:273 file system/(7928:7948): Request -- DROP-- realizada
+
+[INFO] 20:25:09:902 file system/(7928:7948): Inicio de request -- INSERT -- 
+
+[INFO] 20:25:09:902 file system/(7928:7948): Request -- INSERT -- realizada !!!
+
+[INFO] 20:25:10:403 file system/(7928:7948): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:25:10:403 file system/(7928:7948): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:25:10:403 file system/(7928:7948): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:25:10:403 file system/(7928:7948): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:25:10:403 file system/(7928:7948): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:25:10:403 file system/(7928:7948): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:25:57:0 file system/(7928:7948): Inicio de request -- INSERT -- 
+
+[INFO] 20:25:57:0 file system/(7928:7948): Request -- INSERT -- realizada !!!
+
+[INFO] 20:25:58:504 file system/(7928:7948): Inicio de request -- INSERT -- 
+
+[INFO] 20:25:58:505 file system/(7928:7948): Request -- INSERT -- realizada !!!
+
+[INFO] 20:26:07:620 file system/(7928:7948): Inicio de request -- DROP --
+
+[INFO] 20:26:07:621 file system/(7928:7948): Request -- DROP-- realizada
+

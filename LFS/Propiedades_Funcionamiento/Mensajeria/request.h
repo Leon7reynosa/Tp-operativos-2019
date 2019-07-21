@@ -17,7 +17,8 @@ typedef enum{
 	CREATE,
 	DESCRIBE,
 	DROP,
-	DESCONEXION
+	DESCONEXION,
+	EXIT
 }cod_operacion;
 
 typedef struct{

@@ -344,3 +344,221 @@
 [INFO] 20:00:35:5 kernel/(7167:7175): 
 --Se realizara la request DROP de la tabla COLORS---
 
+[INFO] 20:07:31:649 kernel/(7556:7556): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:07:37:408 kernel/(7556:7564): add memory 1 to sc
+[INFO] 20:07:37:409 kernel/(7556:7564): 
+---Se realizara la request ADD---
+
+[INFO] 20:07:37:409 kernel/(7556:7564): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:07:52:87 kernel/(7556:7564): run lql.txt
+[INFO] 20:07:52:87 kernel/(7556:7564): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:07:52:93 kernel/(7556:7564): CREATE COLORS SC 4 60000
+[INFO] 20:07:52:93 kernel/(7556:7564): ---Se realizara el CREATE---
+
+[INFO] 20:07:52:99 kernel/(7556:7564): DESCRIBE
+[INFO] 20:07:52:99 kernel/(7556:7564): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 20:07:52:615 kernel/(7556:7564): INSERT COLORS 1 "Blue"
+[INFO] 20:07:52:616 kernel/(7556:7564): ---Se realizara el INSERT---
+
+[INFO] 20:07:52:621 kernel/(7556:7564): SELECT COLORS 1
+[INFO] 20:07:52:621 kernel/(7556:7564): ---Se realizara el SELECT---
+
+[INFO] 20:07:52:627 kernel/(7556:7564): INSERT COLORS 2 "Red"
+[INFO] 20:07:52:627 kernel/(7556:7564): ---Se realizara el INSERT---
+
+[INFO] 20:07:52:633 kernel/(7556:7564): SELECT COLORS 2
+[INFO] 20:07:52:633 kernel/(7556:7564): ---Se realizara el SELECT---
+
+[INFO] 20:07:52:669 kernel/(7556:7564): SELECT COLORS 2
+[INFO] 20:07:52:669 kernel/(7556:7564): ---Se realizara el SELECT---
+
+[INFO] 20:07:52:675 kernel/(7556:7564): SELECT COLORS 1
+[INFO] 20:07:52:675 kernel/(7556:7564): ---Se realizara el SELECT---
+
+[INFO] 20:07:52:684 kernel/(7556:7564): INSERT COLORS 1 "Black"
+[INFO] 20:07:52:684 kernel/(7556:7564): ---Se realizara el INSERT---
+
+[INFO] 20:07:52:690 kernel/(7556:7564): SELECT COLORS 1
+[INFO] 20:07:52:690 kernel/(7556:7564): ---Se realizara el SELECT---
+
+[INFO] 20:12:42:202 kernel/(7556:7564): DROP COLORS
+[INFO] 20:12:42:203 kernel/(7556:7564): 
+--Se realizara la request DROP de la tabla COLORS---
+
+[INFO] 20:13:18:500 kernel/(7705:7705): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:13:25:313 kernel/(7705:7713): add memory 1 to sc
+[INFO] 20:13:25:313 kernel/(7705:7713): 
+---Se realizara la request ADD---
+
+[INFO] 20:13:25:314 kernel/(7705:7713): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:13:44:647 kernel/(7705:7713): run lql.txt
+[INFO] 20:13:44:647 kernel/(7705:7713): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:13:44:656 kernel/(7705:7713): CREATE COLORS SC 4 60000
+[INFO] 20:13:44:656 kernel/(7705:7713): ---Se realizara el CREATE---
+
+[INFO] 20:13:44:662 kernel/(7705:7713): DESCRIBE
+[INFO] 20:13:44:662 kernel/(7705:7713): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 20:13:45:167 kernel/(7705:7713): INSERT COLORS 1 "Blue"
+[INFO] 20:13:45:167 kernel/(7705:7713): ---Se realizara el INSERT---
+
+[INFO] 20:13:45:173 kernel/(7705:7713): SELECT COLORS 1
+[INFO] 20:13:45:173 kernel/(7705:7713): ---Se realizara el SELECT---
+
+[INFO] 20:13:45:180 kernel/(7705:7713): INSERT COLORS 2 "Red"
+[INFO] 20:13:45:180 kernel/(7705:7713): ---Se realizara el INSERT---
+
+[INFO] 20:13:45:186 kernel/(7705:7713): SELECT COLORS 2
+[INFO] 20:13:45:186 kernel/(7705:7713): ---Se realizara el SELECT---
+
+[INFO] 20:13:45:226 kernel/(7705:7713): SELECT COLORS 2
+[INFO] 20:13:45:226 kernel/(7705:7713): ---Se realizara el SELECT---
+
+[INFO] 20:13:45:233 kernel/(7705:7713): SELECT COLORS 1
+[INFO] 20:13:45:234 kernel/(7705:7713): ---Se realizara el SELECT---
+
+[INFO] 20:13:45:239 kernel/(7705:7713): INSERT COLORS 1 "Black"
+[INFO] 20:13:45:240 kernel/(7705:7713): ---Se realizara el INSERT---
+
+[INFO] 20:13:45:248 kernel/(7705:7713): SELECT COLORS 1
+[INFO] 20:13:45:248 kernel/(7705:7713): ---Se realizara el SELECT---
+
+[INFO] 20:14:39:971 kernel/(7705:7713): DROP COLORS
+[INFO] 20:14:39:971 kernel/(7705:7713): 
+--Se realizara la request DROP de la tabla COLORS---
+
+[INFO] 20:16:41:395 kernel/(7814:7814): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:16:49:573 kernel/(7814:7822): add memory 1 to sc
+[INFO] 20:16:49:573 kernel/(7814:7822): 
+---Se realizara la request ADD---
+
+[INFO] 20:16:49:576 kernel/(7814:7822): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:16:56:581 kernel/(7814:7822): RUN lql.txt
+[INFO] 20:16:56:581 kernel/(7814:7822): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:16:56:588 kernel/(7814:7822): CREATE COLORS SC 4 60000
+[INFO] 20:16:56:588 kernel/(7814:7822): ---Se realizara el CREATE---
+
+[INFO] 20:16:56:593 kernel/(7814:7822): DESCRIBE
+[INFO] 20:16:56:593 kernel/(7814:7822): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 20:16:57:99 kernel/(7814:7822): INSERT COLORS 1 "Blue"
+[INFO] 20:16:57:99 kernel/(7814:7822): ---Se realizara el INSERT---
+
+[INFO] 20:16:57:104 kernel/(7814:7822): SELECT COLORS 1
+[INFO] 20:16:57:104 kernel/(7814:7822): ---Se realizara el SELECT---
+
+[INFO] 20:16:57:111 kernel/(7814:7822): INSERT COLORS 2 "Red"
+[INFO] 20:16:57:111 kernel/(7814:7822): ---Se realizara el INSERT---
+
+[INFO] 20:16:57:117 kernel/(7814:7822): SELECT COLORS 2
+[INFO] 20:16:57:117 kernel/(7814:7822): ---Se realizara el SELECT---
+
+[INFO] 20:16:57:157 kernel/(7814:7822): SELECT COLORS 2
+[INFO] 20:16:57:157 kernel/(7814:7822): ---Se realizara el SELECT---
+
+[INFO] 20:16:57:164 kernel/(7814:7822): SELECT COLORS 1
+[INFO] 20:16:57:164 kernel/(7814:7822): ---Se realizara el SELECT---
+
+[INFO] 20:16:57:170 kernel/(7814:7822): INSERT COLORS 1 "Black"
+[INFO] 20:16:57:170 kernel/(7814:7822): ---Se realizara el INSERT---
+
+[INFO] 20:16:57:176 kernel/(7814:7822): SELECT COLORS 1
+[INFO] 20:16:57:176 kernel/(7814:7822): ---Se realizara el SELECT---
+
+[INFO] 20:19:26:509 kernel/(7814:7822): drop COLORS
+[INFO] 20:19:26:509 kernel/(7814:7822): 
+--Se realizara la request DROP de la tabla COLORS---
+
+[INFO] 20:23:03:50 kernel/(7958:7958): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:23:16:528 kernel/(7958:7966): add memory 1 to sc
+[INFO] 20:23:16:528 kernel/(7958:7966): 
+---Se realizara la request ADD---
+
+[INFO] 20:23:16:529 kernel/(7958:7966): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:23:23:991 kernel/(7958:7966): RUN lql.txt
+[INFO] 20:23:23:991 kernel/(7958:7966): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:23:23:997 kernel/(7958:7966): CREATE COLORS SC 4 60000
+[INFO] 20:23:23:997 kernel/(7958:7966): ---Se realizara el CREATE---
+
+[INFO] 20:23:23:3 kernel/(7958:7966): DESCRIBE
+[INFO] 20:23:23:3 kernel/(7958:7966): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 20:23:24:506 kernel/(7958:7966): INSERT COLORS 1 "Blue"
+[INFO] 20:23:24:507 kernel/(7958:7966): ---Se realizara el INSERT---
+
+[INFO] 20:23:24:512 kernel/(7958:7966): SELECT COLORS 1
+[INFO] 20:23:24:513 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:23:24:519 kernel/(7958:7966): INSERT COLORS 2 "Red"
+[INFO] 20:23:24:519 kernel/(7958:7966): ---Se realizara el INSERT---
+
+[INFO] 20:23:24:525 kernel/(7958:7966): SELECT COLORS 2
+[INFO] 20:23:24:525 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:23:24:563 kernel/(7958:7966): SELECT COLORS 2
+[INFO] 20:23:24:563 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:23:24:569 kernel/(7958:7966): SELECT COLORS 1
+[INFO] 20:23:24:569 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:23:24:576 kernel/(7958:7966): INSERT COLORS 1 "Black"
+[INFO] 20:23:24:576 kernel/(7958:7966): ---Se realizara el INSERT---
+
+[INFO] 20:23:24:582 kernel/(7958:7966): SELECT COLORS 1
+[INFO] 20:23:24:582 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:23:27:271 kernel/(7958:7966): DROP COLORS
+[INFO] 20:23:27:272 kernel/(7958:7966): 
+--Se realizara la request DROP de la tabla COLORS---
+
+[INFO] 20:25:09:895 kernel/(7958:7966): RUN lql.txt
+[INFO] 20:25:09:895 kernel/(7958:7966): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:25:09:901 kernel/(7958:7966): CREATE COLORS SC 4 60000
+[INFO] 20:25:09:901 kernel/(7958:7966): ---Se realizara el CREATE---
+
+[INFO] 20:25:09:912 kernel/(7958:7966): DESCRIBE
+[INFO] 20:25:09:912 kernel/(7958:7966): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 20:25:10:409 kernel/(7958:7966): INSERT COLORS 1 "Blue"
+[INFO] 20:25:10:409 kernel/(7958:7966): ---Se realizara el INSERT---
+
+[INFO] 20:25:10:416 kernel/(7958:7966): SELECT COLORS 1
+[INFO] 20:25:10:416 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:25:10:421 kernel/(7958:7966): INSERT COLORS 2 "Red"
+[INFO] 20:25:10:422 kernel/(7958:7966): ---Se realizara el INSERT---
+
+[INFO] 20:25:10:427 kernel/(7958:7966): SELECT COLORS 2
+[INFO] 20:25:10:427 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:25:10:466 kernel/(7958:7966): SELECT COLORS 2
+[INFO] 20:25:10:466 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:25:10:476 kernel/(7958:7966): SELECT COLORS 1
+[INFO] 20:25:10:476 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:25:10:483 kernel/(7958:7966): INSERT COLORS 1 "Black"
+[INFO] 20:25:10:483 kernel/(7958:7966): ---Se realizara el INSERT---
+
+[INFO] 20:25:10:496 kernel/(7958:7966): SELECT COLORS 1
+[INFO] 20:25:10:496 kernel/(7958:7966): ---Se realizara el SELECT---
+
+[INFO] 20:26:02:716 kernel/(7958:7966): drop 
+[INFO] 20:26:02:716 kernel/(7958:7966): 
+--Se realizara la request DROP de la tabla ---
+
+[ERROR] 20:26:02:717 kernel/(7958:7966): FALLO AL EJECUTAR LA REQUEST drop .
+
+[INFO] 20:26:07:619 kernel/(7958:7966): drop colors
+[INFO] 20:26:07:619 kernel/(7958:7966): 
+--Se realizara la request DROP de la tabla COLORS---
+
