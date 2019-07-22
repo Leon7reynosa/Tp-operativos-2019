@@ -25,6 +25,7 @@ int main (int argc , char* argv[]){
 	pthread_t hilo_gossiping;
 	pthread_t hilo_consola;
 	pthread_t hilo_planificador;
+	pthread_t hilo_refresh_metadata;
 
 	memoria_t* memoria_principal;
 
@@ -47,8 +48,6 @@ int main (int argc , char* argv[]){
 
 	inicializar_semaforo_ready();
 
-	//tabla_gossiping = list_create(); // despues poner en una funcion inicializar gossiping y probar el ADD
-
 	inicializar_consistencias();
 
 
@@ -66,12 +65,17 @@ int main (int argc , char* argv[]){
 
 	pthread_detach(&hilo_gossiping);
 
+	pthread_create(&hilo_refresh_metadata , NULL , refrescar_metadata , NULL);
+
 	cola_new_to_ready();
 
 	pthread_create(&hilo_planificador, NULL, planificador, colas_exec);
 
 	pthread_create(&hilo_consola , NULL, consola, NULL);
 
+
+
+	pthread_join(hilo_refresh_metadata, NULL);
 
 	pthread_join(hilo_planificador, NULL);
 

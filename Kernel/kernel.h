@@ -20,6 +20,7 @@
 #include"Mensajeria/mensajes.h"
 #include"consola.h"
 #include"gossiping.h"
+#include"metadata.h"
 
 
 

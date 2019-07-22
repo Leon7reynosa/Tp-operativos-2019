@@ -183,7 +183,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			char* request = (char*)queue_pop(cola_exec);
 
-			usleep(tiempo_ejecucion);
+
 
 			if(!ejecutar_request(request )){
 
@@ -194,6 +194,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 				break;
 
 			}
+
+
 
 				 //hay que inicializar las conexiones
 				 //deberia ahora recibir la operacion
@@ -221,6 +223,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}
 
+		printf("tiempo de ejecucion: %d\n " , tiempo_ejecucion);
+
+		usleep(tiempo_ejecucion*1000);
 
 	}
 

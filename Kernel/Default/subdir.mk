@@ -9,6 +9,7 @@ C_SRCS += \
 ../consola.c \
 ../gossiping.c \
 ../kernel.c \
+../metadata.c \
 ../parser.c \
 ../planificador.c \
 ../request_memoria.c \
@@ -20,6 +21,7 @@ OBJS += \
 ./consola.o \
 ./gossiping.o \
 ./kernel.o \
+./metadata.o \
 ./parser.o \
 ./planificador.o \
 ./request_memoria.o \
@@ -31,6 +33,7 @@ C_DEPS += \
 ./consola.d \
 ./gossiping.d \
 ./kernel.d \
+./metadata.d \
 ./parser.d \
 ./planificador.d \
 ./request_memoria.d \
