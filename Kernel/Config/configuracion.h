@@ -18,10 +18,11 @@
 
 t_config* g_config;
 
-int grado_multiprocesamiento;
 char* ip_memoria;
 int puerto_memoria;
 int quantum;
+int grado_multiprocesamiento;
+int tiempo_refresh_metadata;
 int tiempo_gossiping_kernel;
 int tiempo_ejecucion;
 

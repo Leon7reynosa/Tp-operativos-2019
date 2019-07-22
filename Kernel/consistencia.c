@@ -140,6 +140,14 @@ memoria_t* tomar_memoria_al_azar(){
 
 	t_list* lista_de_consistencias = lista_memorias_de_consistencia();
 
+	if(list_is_empty(lista_de_consistencias)){
+
+		printf("TODAVIA NO HAY MEMORIAS EN LAS CONSISENCIAS\n");
+
+		return NULL;
+
+	}
+
 	int numero_random_consistencia = rand() % list_size(lista_de_consistencias); // para determinar de cual de los tres codigos de operacion usamos para agarrar la memoria ( SC, EC, SHC)
 
 	return (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
@@ -153,8 +161,6 @@ t_list* lista_memorias_de_consistencia(){
 	t_list* lista_de_memorias = list_create();
 
 	if(Strong_C != NULL){
-
-		printf("no entro aca\n");
 
 		list_add(lista_de_memorias, Strong_C);
 
@@ -311,18 +317,13 @@ int obtener_index_memoria(int key){
 void actualizar_metadata(t_list* datos_describe){
 
 
+	dictionary_clean_and_destroy_elements(registro_tabla, liberar_metadata);
+
 	void _actualizar_en_tabla_metadata(void* dato_describe){
 
 		Metadata dato_metadata = (Metadata) dato_describe;
 
 		//agregar semaforo de escritura
-
-		if(dictionary_has_key(registro_tabla, dato_metadata->tabla)){
-
-			dictionary_remove_and_destroy(registro_tabla , dato_metadata->tabla , liberar_metadata);
-
-		}
-
 
 		dictionary_put(registro_tabla, dato_metadata->tabla, dato_metadata);
 
