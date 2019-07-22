@@ -27,16 +27,16 @@ void trabajar_request(request request_a_operar , int conexion){
 			if(dato_request == NULL){
 
 				printf("No se encontro la key solicitada!\n");
+				mandar_select(conexion, dato_request, ERROR);
 
 			}else{
 
 				printf("Se encontro la key: %i\n", dato_request->key);
 				printf("El value: %s\n", dato_request->value);
 				printf("El timestamp: %i\n", dato_request->timestamp);
+				mandar_select(conexion, dato_request, SUCCESS);
 
 			}
-
-			mandar_select(conexion, dato_request);
 
 			log_trace(logger_request, "Request de SELECT terminada por el socket %i !\n", conexion);
 
@@ -170,7 +170,8 @@ dato_t* request_select(select_t datos_select){
 	 }
 
 	 else{
-		 //log ?
+		 log_info(logger_request, "NO SE ENCUENTRA LA TABLA");
+
 	 }
 
 

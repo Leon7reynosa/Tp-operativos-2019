@@ -1,0 +1,47 @@
+[INFO] 15:36:18:8 Pool Memory/(6315:6315): Se establecion conexion con el File System.
+>> Tamanio value = 20
+
+[INFO] 15:36:18:9 Pool Memory/(6315:6315): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
+
+[INFO] 15:36:48:9 Pool Memory/(6315:6322): Inicia el Auto-Gossiping
+[INFO] 15:36:48:9 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8001
+[INFO] 15:36:48:9 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8002
+[INFO] 15:36:48:9 Pool Memory/(6315:6322): Termina el Auto-Gossiping
+[INFO] 15:36:56:271 Pool Memory/(6315:6315): Acepte una nueva conexion
+
+[INFO] 15:37:09:524 Pool Memory/(6315:6315): Acepte una nueva conexion
+
+[INFO] 15:37:18:10 Pool Memory/(6315:6322): Inicia el Auto-Gossiping
+[INFO] 15:37:18:10 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8001
+[INFO] 15:37:18:10 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8002
+[INFO] 15:37:18:10 Pool Memory/(6315:6322): Termina el Auto-Gossiping
+[INFO] 15:37:18:12 Pool Memory/(6315:6321): Inicia el Auto-Journal
+[INFO] 15:37:18:12 Pool Memory/(6315:6321): Termina el Auto-Journal
+[INFO] 15:37:22:954 Pool Memory/(6315:6315): Se recibio una nueva request.
+[INFO] 15:37:22:954 Pool Memory/(6315:6315): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:37:48:11 Pool Memory/(6315:6322): Inicia el Auto-Gossiping
+[INFO] 15:37:48:11 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8001
+[INFO] 15:37:48:11 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8002
+[INFO] 15:37:48:11 Pool Memory/(6315:6322): Termina el Auto-Gossiping
+[INFO] 15:37:48:412 Pool Memory/(6315:6315): Se recibio una nueva request.
+[INFO] 15:37:48:412 Pool Memory/(6315:6315): Se realizara un DESCRIBE DE TABLA: %s
+[INFO] 15:37:56:285 Pool Memory/(6315:6315): Se recibio una nueva request.
+[INFO] 15:37:56:285 Pool Memory/(6315:6315): Se realizar intercambio de tablas de gossiping
+[INFO] 15:38:18:11 Pool Memory/(6315:6322): Inicia el Auto-Gossiping
+[INFO] 15:38:18:11 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8001
+[INFO] 15:38:18:11 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8002
+[INFO] 15:38:18:11 Pool Memory/(6315:6322): Termina el Auto-Gossiping
+[INFO] 15:38:18:16 Pool Memory/(6315:6321): Inicia el Auto-Journal
+[INFO] 15:38:18:16 Pool Memory/(6315:6321): Termina el Auto-Journal
+[INFO] 15:38:29:281 Pool Memory/(6315:6315): Se recibio una nueva request.
+[INFO] 15:38:29:281 Pool Memory/(6315:6315): Se realizara un SELECT
+[INFO] 15:38:29:281 Pool Memory/(6315:6315): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 15:38:29:283 Pool Memory/(6315:6315): Se solicita una nueva pagina
+[INFO] 15:38:29:283 Pool Memory/(6315:6315): Hay una pagina libre para asignar
+[INFO] 15:38:48:12 Pool Memory/(6315:6322): Inicia el Auto-Gossiping
+[INFO] 15:38:48:12 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8001
+[INFO] 15:38:48:12 Pool Memory/(6315:6322): No se pudo conectar con 192.168.0.75:8002
+[INFO] 15:38:48:12 Pool Memory/(6315:6322): Termina el Auto-Gossiping
+[INFO] 15:38:50:455 Pool Memory/(6315:6315): Se desconecto un cliente.
+[INFO] 15:38:50:456 Pool Memory/(6315:6315): Se desconecto un cliente.

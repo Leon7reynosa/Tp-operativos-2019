@@ -19,24 +19,23 @@ void trabajar_request(request nueva_request , int conexion){
 		case SELECT:
 
 			dato_select = request_select( (select_t) nueva_request->tipo_request);
-			/*if(dato_select == NULL){
 
-				bueno, basicamente pueden pasar dos cosas: no existe la key, o en el peor de los casos no existe la tabla.
-				podemos simplemente ignorar cual sea el error, y simplemente mandarle un -1 al kernel y decirle que no se pudo realizar y hubo un fallo
-				o
-				podemos mandar diferentes numeros, uno por cada error. Entonces el kernel va a ser capaz de loggear cual fue realmente el problema
-				//TODO VER LO DE ARRIBA
+			if(dato_select == NULL){
+
+				enviar_dato(NULL, conexion, ERROR);
 
 			}
-			 else{ LO DE ABAJO!}
-			*/
-			dato_a_enviar = crear_t_dato(dato_select->key, dato_select->timestamp , dato_select->value);
+			 else{
 
-			enviar_dato(dato_a_enviar, conexion);
+				dato_a_enviar = crear_t_dato(dato_select->key, dato_select->timestamp , dato_select->value);
 
-			liberar_t_dato(dato_a_enviar);
+				enviar_dato(dato_a_enviar, conexion, SUCCESS);
 
-			liberar_dato(dato_select);
+				liberar_t_dato(dato_a_enviar);
+
+				liberar_dato(dato_select);
+
+			}
 
 			break;
 		case INSERT:
@@ -118,27 +117,26 @@ Dato request_select(select_t dato){
 
 			Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
 
-			//TODO hay que manejar errores al pedir al LFS, entonces si me llega un dato bien, hago lo de abajo, sino tengo que contemplar otra cosa
-			//por ejemplo, podria hacer que pedir_dato me devuelva NULL, y adentro contemplar que el LFS me mande un -2 si no existe la KEY
-			/*if(dato_lfs == NULL){
+			if(dato_lfs == NULL){
+
+				log_info(logger, "No existe la key en el LFS");
 				dato_encontrado = NULL;
-				//que el trabajar request se encargue de devolver algo al kernel si el dato es null
+
 			}
 			else{
 				log_info(logger, "Key encontrada en el File System");
-				lo de abajo!
-			*/
-			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
-			agregar_pagina(segmento_tabla, pagina_encontrada);
-			actualizar_pagina(pagina_encontrada, dato_lfs);
+				pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
-			liberar_dato(dato_lfs);
+				agregar_pagina(segmento_tabla, pagina_encontrada);
+				actualizar_pagina(pagina_encontrada, dato_lfs);
 
-			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
-																								  //lo mismo
+				liberar_dato(dato_lfs);
 
-			mostrar_datos(pagina_encontrada);
+				dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre																							  //lo mismo
+
+				mostrar_datos(pagina_encontrada);
+			}
 
 		}
 
@@ -151,31 +149,24 @@ Dato request_select(select_t dato){
 
 		//TODO mas de lo mismo que en el elseIf de arriba
 
-		/*if(dato_lfs == NULL){
+		if(dato_lfs == NULL){
 
-			dato_encontrado == NULL;
-
-			PERO ACA SE AGREGA ALGO, TENGO QUE SABER SI LA TABLA EXISTE, si el file system me dice que no existe, deberia eliminarla, por que la cree
-			sin que nadie me diga que existe
-
-			sacar_segmento(segmento_encontrado);
-
+			log_info(logger, "No existe la key en el LFS");
+			dato_encontrado = NULL;
 
 		}else{
-			lo de abajo!
-        */
 
-		pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
+			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
-		agregar_pagina(segmento_tabla, pagina_encontrada);
-		actualizar_pagina(pagina_encontrada, dato_lfs);
+			agregar_pagina(segmento_tabla, pagina_encontrada);
+			actualizar_pagina(pagina_encontrada, dato_lfs);
 
-		liberar_dato(dato_lfs);
+			liberar_dato(dato_lfs);
 
-		dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
+			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
 																							 //lo mismo
-		mostrar_datos(pagina_encontrada);
-
+			mostrar_datos(pagina_encontrada);
+		}
 
 	}
 	pthread_mutex_unlock(&mutex_journal);
@@ -192,7 +183,7 @@ void request_insert(insert dato){
 	Dato dato_insert;
 
 	if(string_length((char *)dato->value->buffer) > tamanio_value){
-		log_error(logger, "Segmentation Fault! Value demasiado grande");
+		log_info(logger, "Segmentation Fault! Value demasiado grande");
 		return;
 	}
 	if(dato->timestamp < 0){

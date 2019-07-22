@@ -59,7 +59,7 @@ void gossiping(){
 
 		}
 		else{
-			log_warning(logger, "No se pudo conectar con %s:%i", seed_aux->ip, seed_aux->puerto);
+			log_info(logger, "No se pudo conectar con %s:%i", seed_aux->ip, seed_aux->puerto);
 			//nada, proba otro dia crack! (LOGGEAR que la memoria seed no esta conectada)
 		}
 

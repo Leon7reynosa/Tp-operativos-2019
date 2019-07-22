@@ -388,3 +388,27 @@
 
 [INFO] 20:26:07:621 file system/(7928:7948): Request -- DROP-- realizada
 
+[INFO] 15:30:34:128 file system/(5844:5880): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 15:30:34:128 file system/(5844:5880): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 15:30:34:128 file system/(5844:5880): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 15:30:34:128 file system/(5844:5880): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 15:37:22:955 file system/(6214:6320): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 15:37:22:955 file system/(6214:6320): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 15:37:22:955 file system/(6214:6320): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 15:37:22:955 file system/(6214:6320): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 15:37:48:414 file system/(6214:6320): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 15:37:48:414 file system/(6214:6320): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 15:38:29:282 file system/(6214:6320): Solicitud de request -- SELECT -- 
+
+[INFO] 15:38:29:283 file system/(6214:6320): Request -- SELECT -- realizada !!!
+

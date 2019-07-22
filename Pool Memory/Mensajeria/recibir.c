@@ -171,10 +171,26 @@ t_dato* recibir_dato_LFS(int conexion){
 
 	dato_recibido->value = malloc(sizeof(t_stream));
 
-	int bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
+	estado_select estado;
+
+	int bytes = recv(conexion, &(estado), sizeof(estado_select), 0);
+
+	if(estado == ERROR){
+
+		free(dato_recibido->value);
+		free(dato_recibido);
+
+		return NULL;
+	}
 
 	if(bytes == -1){
-		perror("NO RECIBIO EL TIMESTAMP;");
+		perror("NO RECIBIO EL ESTADO");
+	}
+
+	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
+
+	if(bytes == -1){
+		perror("NO RECIBIO EL TIMESTAMP");
 	}
 
 	printf("Timestamp: %i\n", dato_recibido->timestamp);

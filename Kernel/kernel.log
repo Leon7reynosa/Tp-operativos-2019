@@ -562,3 +562,29 @@
 [INFO] 20:26:07:619 kernel/(7958:7966): 
 --Se realizara la request DROP de la tabla COLORS---
 
+[INFO] 15:30:17:185 kernel/(5932:5932): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:30:28:102 kernel/(5932:5941): add memory 1 to sc
+[INFO] 15:30:28:102 kernel/(5932:5941): 
+---Se realizara la request ADD---
+
+[INFO] 15:30:28:102 kernel/(5932:5941): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:30:34:110 kernel/(5932:5941): describe
+[INFO] 15:30:34:110 kernel/(5932:5941): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 15:36:56:278 kernel/(6342:6342): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:37:09:523 kernel/(6342:6351): add memory 1 to sc
+[INFO] 15:37:09:524 kernel/(6342:6351): 
+---Se realizara la request ADD---
+
+[INFO] 15:37:09:524 kernel/(6342:6351): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:37:22:953 kernel/(6342:6351): describe
+[INFO] 15:37:22:954 kernel/(6342:6351): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 15:37:48:411 kernel/(6342:6351): describe Tabla_A
+[INFO] 15:37:48:411 kernel/(6342:6351): ---Se realizara el DESCRIBE para la tabla TABLA_A---
+
+[INFO] 15:38:29:281 kernel/(6342:6351): select tabla_a 7
+[INFO] 15:38:29:281 kernel/(6342:6351): ---Se realizara el SELECT---
+

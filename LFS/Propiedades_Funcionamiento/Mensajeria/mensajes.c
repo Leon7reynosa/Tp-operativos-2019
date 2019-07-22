@@ -54,48 +54,57 @@ void enviar_metadata(t_list* metadatas, int conexion){
 
 }
 
-void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes){
+void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes, estado_select estado){
 
 	void* dato_serializado;
-
-	int size_value = string_length(dato_a_serializar->value) + 1;
-	*bytes = sizeof(u_int16_t) + sizeof(time_t) + sizeof(int) + size_value;
-
-	printf("BYTES A ENVIAR: %i\n", *bytes);
-
-	dato_serializado = malloc(*bytes);
-
 	int desplazamiento = 0;
 
-	memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->timestamp), sizeof(time_t));
-	desplazamiento += sizeof(time_t);
+	if(estado == ERROR){
+
+		*bytes = sizeof(estado_select);
+
+		dato_serializado = malloc(*bytes);
+
+		memcpy(dato_serializado + desplazamiento, &(estado), sizeof(estado_select));
+		desplazamiento += sizeof(estado_select);
+
+	}
+	else{
+		int size_value = string_length(dato_a_serializar->value) + 1;
+		*bytes = sizeof(estado_select) + sizeof(u_int16_t) + sizeof(time_t) + sizeof(int) + size_value;
+
+		printf("BYTES A ENVIAR: %i\n", *bytes);
+
+		dato_serializado = malloc(*bytes);
+
+		memcpy(dato_serializado + desplazamiento, &(estado), sizeof(estado_select));
+		desplazamiento += sizeof(estado_select);
+
+		memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->timestamp), sizeof(time_t));
+		desplazamiento += sizeof(time_t);
 
 
-	memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->key), sizeof(u_int16_t));
-	desplazamiento += sizeof(u_int16_t);
+		memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->key), sizeof(u_int16_t));
+		desplazamiento += sizeof(u_int16_t);
 
-	memcpy(dato_serializado + desplazamiento, &(size_value), sizeof(int));
-	desplazamiento += sizeof(int);
+		memcpy(dato_serializado + desplazamiento, &(size_value), sizeof(int));
+		desplazamiento += sizeof(int);
 
-	memcpy(dato_serializado + desplazamiento, dato_a_serializar->value, size_value);
-	desplazamiento += size_value;
-
+		memcpy(dato_serializado + desplazamiento, dato_a_serializar->value, size_value);
+		desplazamiento += size_value;
+	}
 	return dato_serializado;
 
 }
 
-void mandar_select(int conexion , dato_t* dato){
+void mandar_select(int conexion , dato_t* dato, estado_select estado){
 
 	int bytes;
 	void* buffer;
 
-	buffer = serializar_dato_t(dato, &bytes);
-
-	printf("SE SERIALIZO TODO PIOLA WACHIM\n");
+	buffer = serializar_dato_t(dato, &bytes, estado);
 
 	send(conexion, buffer, bytes, 0);
-
-	printf("SE MANDO TODO PIOLA WACHIM\n");
 
 	free(buffer);
 

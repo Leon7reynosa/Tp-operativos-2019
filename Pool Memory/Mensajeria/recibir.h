@@ -44,7 +44,7 @@ typedef enum{
 
 request recibir_request(int conexion);
 void recibir_mensaje(int conexion);
-t_dato* recibir_request_LFS(int conexion );
+t_dato* recibir_dato_LFS(int conexion );
 void* recibir_buffer(int* size,int conexion);
 //cod_op determinar_operacion(char* buffer);
 void desconectar_cliente(int conexion);

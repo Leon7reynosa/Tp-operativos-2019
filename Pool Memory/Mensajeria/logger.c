@@ -9,7 +9,7 @@
 
 void inicializar_logger(void){
 
-	logger = log_create("Pool_Memory.log", "Pool Memory", 0 ,LOG_LEVEL_ERROR);
+	logger = log_create("Pool_Memory.log", "Pool Memory", 0 ,LOG_LEVEL_INFO);
 
 
 }

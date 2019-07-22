@@ -93,24 +93,39 @@ void enviar_request(request request, int conexion){
 }
 
 
-void enviar_dato(t_dato* dato, int conexion){
+void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 
 	int desplazamiento = 0;
-	int bytes = sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
+	void* buffer;
+	int bytes;
 
-	void* buffer = malloc(bytes);
+	if(estado == SUCCESS){
 
-	memcpy(buffer + desplazamiento, &(dato->timestamp) , sizeof(dato->timestamp));
-	desplazamiento += sizeof(dato->timestamp);
+		bytes = sizeof(estado_select) + sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
 
-	memcpy(buffer + desplazamiento, &(dato->key) , sizeof(dato->key));
-	desplazamiento += sizeof(dato->key);
+		buffer = malloc(bytes);
 
-	memcpy(buffer + desplazamiento, &(dato->value->size) , sizeof(dato->value->size));
-	desplazamiento += sizeof(dato->value->size);
+		memcpy(buffer + desplazamiento, &(dato->timestamp) , sizeof(dato->timestamp));
+		desplazamiento += sizeof(dato->timestamp);
 
-	memcpy(buffer + desplazamiento, dato->value->buffer , dato->value->size);
-	desplazamiento += dato->value->size;
+		memcpy(buffer + desplazamiento, &(dato->key) , sizeof(dato->key));
+		desplazamiento += sizeof(dato->key);
+
+		memcpy(buffer + desplazamiento, &(dato->value->size) , sizeof(dato->value->size));
+		desplazamiento += sizeof(dato->value->size);
+
+		memcpy(buffer + desplazamiento, dato->value->buffer , dato->value->size);
+		desplazamiento += dato->value->size;
+	}
+	else{
+
+		bytes = sizeof(estado_select);
+		buffer = malloc(bytes);
+
+		memcpy(buffer + desplazamiento, &estado, sizeof(estado_select));
+		desplazamiento += sizeof(estado_select);
+
+	}
 
 	send(conexion, buffer, bytes, 0);
 

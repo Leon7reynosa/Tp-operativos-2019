@@ -337,7 +337,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 	if(pagina_reemplazada == NULL){
 
-		log_warning(logger, "La memoria esta FULL");
+		log_info(logger, "La memoria esta FULL");
 
 	}else{
 
@@ -402,9 +402,15 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	t_dato* dato_crudo = recibir_dato_LFS(socket_lissandra);
 
-	dato_recibido = crear_dato(dato_crudo->key, (char *) dato_crudo->value->buffer, dato_crudo->timestamp);
+	if(dato_crudo == NULL){
 
-	liberar_t_dato(dato_crudo);
+		return NULL;
 
+	}else{
+
+		dato_recibido = crear_dato(dato_crudo->key, (char *) dato_crudo->value->buffer, dato_crudo->timestamp);
+
+		liberar_t_dato(dato_crudo);
+	}
 	return dato_recibido;
 }

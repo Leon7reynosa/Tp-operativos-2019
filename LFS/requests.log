@@ -240,3 +240,19 @@
 
 [TRACE] 20:26:07:621 requests/(7928:7948): Request de DROP solicitada por el socket 9 !
 
+[TRACE] 15:30:34:128 requests/(5844:5880): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 15:30:34:130 requests/(5844:5880): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 15:37:22:955 requests/(6214:6320): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 15:37:22:955 requests/(6214:6320): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 15:37:48:414 requests/(6214:6320): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 15:37:48:414 requests/(6214:6320): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 15:38:29:282 requests/(6214:6320): Request de SELECT recibida por el socket 9 !
+
+[TRACE] 15:38:29:283 requests/(6214:6320): Request de SELECT terminada por el socket 9 !
+

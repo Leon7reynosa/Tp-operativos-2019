@@ -31,14 +31,14 @@ void realizar_handshake(void){
 
 void creacion_del_config(){
 
-	char* array_ips = "[192.168.1.40,192.168.1.40]";
+	char* array_ips = "[192.168.0.75,192.168.0.75]";
 
 	char* array_puertos = "[8001,8002]";
 
 	g_config = config_create("pool.config");
 
 	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
-	config_set_value(g_config, "IP_LFS", "192.168.1.40");
+	config_set_value(g_config, "IP_LFS", "192.168.0.75");
 	config_set_value(g_config, "PUERTO_LFS", "4445");
 
 	config_set_value(g_config, "IP_SEEDS", array_ips);

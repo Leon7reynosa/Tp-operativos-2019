@@ -38,7 +38,7 @@
 void enviar_request(request request, int conexion);
 void liberar_request(request dato);
 void mandar_mensaje(int conexion);
-void enviar_dato(t_dato* dato, int conexion);
+void enviar_dato(t_dato* dato, int conexion, estado_select estado);
 
 
 #endif /* MENSAJES_H_ */
