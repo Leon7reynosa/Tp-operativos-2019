@@ -25,6 +25,8 @@ void realizar_handshake(void){
 		exit(1);
 	}
 
+	log_info(logger, "Se establecion conexion con el File System.\n>> Tamanio value = %i\n", tamanio_value);
+
 }
 
 void creacion_del_config(){

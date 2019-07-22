@@ -14,11 +14,11 @@ void* auto_gossip(void* argumentos){
 
 	while(1){
 		usleep(tiempo_gossiping * 1000);
-		printf("Auto Gossiping :P\n");
 		pthread_mutex_lock(&mutex_gossip);
+		log_info(logger, "Inicia el Auto-Gossiping");
 		gossiping();
 		pthread_mutex_unlock(&mutex_gossip);
-		printf("Termino el auto gossiping\n");
+		log_info(logger, "Termina el Auto-Gossiping");
 	}
 	return NULL;
 }
@@ -50,18 +50,16 @@ void gossiping(){
 
 			datos_gossip = recibir_datos_gossip(socket_seed);
 
-			printf("Actualizo la tabla_gossip\n");
+			log_info(logger, "Actualizacion de tabla gossip");
 			actualizar_tabla_gossip(datos_gossip);
-			printf("Termine de actualizar\n");
 
 			liberar_dato_gossiping(datos_gossip);
 
-			printf("Termine de liberar el dato gossip\n");
 			close(socket_seed);
-			printf("Cerre la conexion con la seed\n");
+
 		}
 		else{
-			printf("la memoria seed no esta conectada\n");
+			log_warning(logger, "No se pudo conectar con %s:%i", seed_aux->ip, seed_aux->puerto);
 			//nada, proba otro dia crack! (LOGGEAR que la memoria seed no esta conectada)
 		}
 
@@ -223,8 +221,6 @@ Seed pasar_memoria_dto_a_seed(memoria_dto dato_dto){
 
 void actualizar_tabla_gossip(tabla_gossip_dto request_gossip){
 
-	printf("//////////////////////////////////////ACTUALIZAR TABLA_GOSSIP////////////////////////////////////////\n");
-
 	void _agregar_si_no_esta(void* dato_memoriaEstructura){
 
 		memoria_dto dato_extraido = (memoria_dto) dato_memoriaEstructura;
@@ -235,10 +231,8 @@ void actualizar_tabla_gossip(tabla_gossip_dto request_gossip){
 
 		if(!existis_en_tabla_gossip(dato_extraido)){
 
-			printf("No existis en la tabla_gossip\n");
+			printf("No existe en la tabla_gossip\n");
 			Seed dato_a_agregar = pasar_memoria_dto_a_seed(dato_extraido);
-
-			printf("Agrego la seed a la tabla\n");
 
 			list_add(memoria->tabla_gossiping, dato_a_agregar);
 

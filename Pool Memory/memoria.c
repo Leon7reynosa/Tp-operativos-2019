@@ -61,8 +61,8 @@ void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato){
 	memoria->tabla_segmentos   = list_create();
 	memoria->tamanio 		   = tamanio;
 	memoria->cant_max_datos    = tamanio / tamanio_dato;
+
 	memoria->paginas		   = inicializar_paginas();
-	printf("numero de memoria es: &d\n" , numero_memoria);
 	memoria->numero_memoria = numero_memoria;
 
 	memoria->seed = list_create();
@@ -70,6 +70,8 @@ void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato){
 
 	memoria->tabla_gossiping = list_create();
 	inicializar_tabla_gossip();
+
+	log_info(logger, "Se inicializo correctamente la memoria.\n>> Tamanio de la memoria = %i -> Cantidad maxima de datos: %i \n", tamanio, memoria->cant_max_datos);
 
 }
 
@@ -256,11 +258,11 @@ void* auto_journal(void* argumento){
 
 	while(1){
 		usleep(tiempo_journal * 1000);
-		printf("Se inicia el journal\n");
 		pthread_mutex_lock(&mutex_journal);
+		log_info(logger, "Inicia el Auto-Journal");
 		realizar_journal();
+		log_info(logger, "Termina el Auto-Journal");
 		pthread_mutex_unlock(&mutex_journal);
-		printf("Finalizo el journal\n");
 	}
 
 	return NULL;
@@ -328,11 +330,14 @@ void realizar_journal(void){
 
 
 Pagina realizar_algoritmo_reemplazo(void){
-	printf("Busco la pagina menos usada!\n");
+
+	log_info(logger, "Empieza el algoritmo de reemplazo");
+
 	Pagina pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
 	if(pagina_reemplazada == NULL){
-		printf("Estan todas las paginas modificadas T.T, Realizar JOURNAL\n");
+
+		log_warning(logger, "La memoria esta FULL");
 
 	}else{
 
@@ -341,6 +346,12 @@ Pagina realizar_algoritmo_reemplazo(void){
 		segmento_modificado = encontrar_segmento_con_pagina(pagina_reemplazada);
 
 		sacar_pagina_segmento(segmento_modificado, pagina_reemplazada);
+
+		Dato dato_para_logg = decodificar_dato_de_memoria(pagina_reemplazada->referencia_memoria);
+
+		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
+
+		liberar_dato(dato_para_logg);
 	}
 
 	return pagina_reemplazada;
@@ -349,17 +360,21 @@ Pagina realizar_algoritmo_reemplazo(void){
 //en caso de realizar journal, vuelve a crear el segmento que le pases
 Pagina solicitar_pagina(char* nombre_tabla, Segmento* segmento){
 
+	log_info(logger, "Se solicita una nueva pagina");
+
 	Pagina pagina_solicitada;
 
 	if(hay_pagina_libre(&pagina_solicitada)){
-		printf("Hay una pagina libre, guardo el dato en la referencia que tiene!\n");
+		log_info(logger, "Hay una pagina libre para asignar");
 
 	}else{
-		printf("Estan todas en uso!Realizo algoritmo de reemplazo!\n");
+		log_info(logger, "Estan todas las paginas ocupadas");
 		pagina_solicitada = realizar_algoritmo_reemplazo();
 
 		if(pagina_solicitada == NULL){
-			//significa que esta full la memoria
+
+			log_info(logger, "Realizo Journal para tener espacio disponible");
+
 			realizar_journal();
 			*segmento = agregar_segmento(nombre_tabla, memoria->tabla_segmentos);
 			pagina_solicitada = solicitar_pagina(nombre_tabla, segmento);

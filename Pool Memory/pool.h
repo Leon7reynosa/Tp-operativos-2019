@@ -17,6 +17,8 @@
 #include<readline/readline.h>
 #include<pthread.h>
 
+#include"Mensajeria/logger.h"
+
 #include"Servidor/servidor.h"
 #include"API_Pool.h"
 #include"Mensajeria/mensajes.h"
