@@ -7,19 +7,27 @@
 
 #include "pool.h"
 
-int main (void){
+int main (int argc , char* argv[]){
 
 	creacion_del_config();
 
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
 	ip_escucha = obtener_ip_local();
 
+	printf("Prueba 1\n");
+
 	obtener_datos_config();
+
+	printf("Prueba 2\n");
 
 	inicializar_logger();
 
+	printf("Prueba 3\n");
+
 //TODO HANDSHAKE CON LISSANDRA (en archivo config por ahora)
 	realizar_handshake();
+
+	printf("Prueba 3\n");
 
 	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
 
@@ -27,7 +35,11 @@ int main (void){
 
 	inicializar_memoria(tamanio, tamanio_value, tamanio_dato); //TODO ARREGLAR ESTA FUNCION UN POCO
 
+	printf("Prueba 4\n");
+
 	inicializar_hilos();
+
+	printf("Prueba 5\n");
 
 	//////////////////////////////////////////MAIN///////////////////////////////////////
 

@@ -7,6 +7,15 @@
 
 #include "configuracion.h"
 
+char* obtener_path_config(void){
+
+	char* path_config = string_new();
+
+	string_append(&path_config, "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/pool.config");
+
+	return path_config;
+}
+
 void realizar_handshake(void){
 
 	int bytes_recibidos;
@@ -31,14 +40,16 @@ void realizar_handshake(void){
 
 void creacion_del_config(){
 
-	char* array_ips = "[192.168.0.75,192.168.0.75]";
+	char* array_ips = "[192.168.0.86,192.168.0.86]";
 
 	char* array_puertos = "[8001,8002]";
 
-	g_config = config_create("pool.config");
+	char* path_config = obtener_path_config();
+
+	g_config = config_create(path_config);
 
 	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
-	config_set_value(g_config, "IP_LFS", "192.168.0.75");
+	config_set_value(g_config, "IP_LFS", "192.168.0.86");
 	config_set_value(g_config, "PUERTO_LFS", "4445");
 
 	config_set_value(g_config, "IP_SEEDS", array_ips);
@@ -60,7 +71,9 @@ void obtener_datos_config(){
 
 	char* ip_aux;
 
-	g_config = config_create("pool.config");
+	char* path_config = obtener_path_config();
+
+	g_config = config_create(path_config);
 
 	puerto_escucha   = config_get_int_value(g_config, "PUERTO_ESCUCHA");
 	ip_aux		     = config_get_string_value(g_config, "IP_LFS");

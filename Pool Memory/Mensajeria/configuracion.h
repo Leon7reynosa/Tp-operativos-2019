@@ -41,6 +41,8 @@ int tamanio_dato;
 
 t_config* g_config;
 
+
+char* obtener_path_config(void);
 void realizar_handshake(void);
 void creacion_del_config(void);
 void obtener_datos_config(void);

@@ -7,9 +7,20 @@
 
 #include"logger.h"
 
+char* obtener_path_log(void){
+
+	char* path_log = string_new();
+
+	string_append(&path_log, "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/Pool_Memory.log");
+
+	return path_log;
+}
+
 void inicializar_logger(void){
 
-	logger = log_create("Pool_Memory.log", "Pool Memory", 0 ,LOG_LEVEL_INFO);
+	char* path_log = obtener_path_log();
+
+	logger = log_create(path_log , "Pool Memory", 0 ,LOG_LEVEL_INFO);
 
 
 }

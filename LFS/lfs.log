@@ -412,3 +412,95 @@
 
 [INFO] 15:38:29:283 file system/(6214:6320): Request -- SELECT -- realizada !!!
 
+[INFO] 19:54:13:26 file system/(24340:24361): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 19:54:13:26 file system/(24340:24361): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 19:54:13:26 file system/(24340:24361): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 19:54:13:26 file system/(24340:24361): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 19:54:16:337 file system/(24340:24361): Solicitud de request -- SELECT -- 
+
+[INFO] 19:54:16:337 file system/(24340:24361): Request -- SELECT -- realizada !!!
+
+[INFO] 19:54:23:28 file system/(24340:24361): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 19:54:23:28 file system/(24340:24361): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 19:54:23:28 file system/(24340:24361): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 19:54:23:28 file system/(24340:24361): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 19:54:36:967 file system/(24340:24361): Solicitud de request -- SELECT -- 
+
+[INFO] 19:54:36:967 file system/(24340:24361): Request -- SELECT -- realizada !!!
+
+[INFO] 20:01:45:52 file system/(25155:25200): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:01:45:52 file system/(25155:25200): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:01:45:52 file system/(25155:25200): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:01:45:52 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:01:47:855 file system/(25155:25200): Solicitud de request -- SELECT -- 
+
+[INFO] 20:01:47:855 file system/(25155:25200): Request -- SELECT -- realizada !!!
+
+[INFO] 20:01:55:56 file system/(25155:25200): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:01:55:56 file system/(25155:25200): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:01:55:57 file system/(25155:25200): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:01:55:57 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:01:57:753 file system/(25155:25200): Solicitud de request -- SELECT -- 
+
+[INFO] 20:01:57:753 file system/(25155:25200): Request -- SELECT -- realizada !!!
+
+[INFO] 20:02:04:290 file system/(25155:25200): Solicitud de request -- SELECT -- 
+
+[INFO] 20:02:04:290 file system/(25155:25200): Request -- SELECT -- realizada !!!
+
+[INFO] 20:02:05:59 file system/(25155:25200): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:02:05:59 file system/(25155:25200): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:02:05:59 file system/(25155:25200): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:02:05:59 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:02:15:62 file system/(25155:25200): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:02:15:62 file system/(25155:25200): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:02:15:62 file system/(25155:25200): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:02:15:62 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:02:25:65 file system/(25155:25200): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:02:25:65 file system/(25155:25200): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:02:25:65 file system/(25155:25200): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:02:25:65 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:02:35:68 file system/(25155:25200): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:02:35:68 file system/(25155:25200): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:02:35:68 file system/(25155:25200): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:02:35:68 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 20:02:45:71 file system/(25155:25200): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 20:02:45:71 file system/(25155:25200): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 20:02:45:71 file system/(25155:25200): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 20:02:45:71 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
+

@@ -346,7 +346,6 @@ void liberar_bloques_particion(char* path_particion){
 
 		eliminar_bloque(*nro_bloque);
 
-
 	}
 
 
@@ -359,11 +358,12 @@ void liberar_bloques_particion(char* path_particion){
 
 
 	if(string_ends_with(path_particion , ".bin")){
-
+		printf("Creo la particion otra vez\n");
 		crear_archivo_particion(path_particion);
 
 	}
 
+	printf("Libero estructura particion\n");
 	liberar_particion(particion);
 
 }
@@ -401,12 +401,24 @@ void eliminar_bloque(int bloque){
 
 	char* path_bloque = obtenerPath_Bloque(bloque);
 
+	printf("Elimino el bloque %s\n", path_bloque);
+
 	unlink(path_bloque);
 
 	set_estado(bloque, LIBRE);
 
 	free(path_bloque);
 
+	printf("TERMINE DE ELIMINAR");
+}
+
+char* obtener_path_bitmap(){
+	char* path = string_new();
+
+	string_append(&path, punto_montaje);
+	string_append(&path, "Metadata/bitmap.bin");
+
+	return path;
 }
 
 

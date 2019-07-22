@@ -183,12 +183,13 @@ void set_all_estados( estadoBloque estado){
 
 }
 
-
 void set_estado(int indiceBloque, estadoBloque estado){
+
+	char* path_bitmap = obtener_path_bitmap();
 
 	struct stat* myStat = malloc(sizeof(struct stat));
 
-	int fichero = open("Metadata/bitmap.bin", O_RDWR, S_IRUSR | S_IWUSR);
+	int fichero = open(path_bitmap, O_RDWR, S_IRUSR | S_IWUSR);
 
 	fstat(fichero, myStat);
 
@@ -212,6 +213,7 @@ void set_estado(int indiceBloque, estadoBloque estado){
 	bitarray_destroy(bitarray);
 
 	free(myStat);
+	free(path_bitmap);
 
 	close(fichero);
 
@@ -220,7 +222,9 @@ void set_estado(int indiceBloque, estadoBloque estado){
 
 bool get_estado(int indice){
 
-	int fichero = open("Metadata/bitmap.bin", O_RDONLY, S_IRUSR);
+	char* path_bitmap = obtener_path_bitmap();
+
+	int fichero = open(path_bitmap, O_RDONLY, S_IRUSR);
 
 	struct stat myStat;
 	fstat(fichero, &myStat);
@@ -235,6 +239,7 @@ bool get_estado(int indice){
 	bitarray_destroy(bitarray);
 
 	close(fichero);
+	free(path_bitmap);
 
 	return i;
 

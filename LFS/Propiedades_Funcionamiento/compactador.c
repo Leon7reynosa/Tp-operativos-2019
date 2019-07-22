@@ -83,6 +83,8 @@ void* compactar(thread_args* argumentos){
 
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, i);
 
+		printf("PATH PARTICION: %s\n", path_particion);
+
 		liberar_bloques_particion(path_particion);
 
 		free(path_particion);

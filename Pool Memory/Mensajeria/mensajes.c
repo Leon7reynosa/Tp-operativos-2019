@@ -105,6 +105,9 @@ void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 
 		buffer = malloc(bytes);
 
+		memcpy(buffer + desplazamiento, &estado, sizeof(estado_select));
+		desplazamiento += sizeof(estado_select);
+
 		memcpy(buffer + desplazamiento, &(dato->timestamp) , sizeof(dato->timestamp));
 		desplazamiento += sizeof(dato->timestamp);
 

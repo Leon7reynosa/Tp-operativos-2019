@@ -122,11 +122,26 @@ void obtener_puerto_ip(int* puerto,char** ip){
 
 }
 
+char* obtener_path_metadata_bin(){
+
+	char* path = string_new();
+
+	string_append(&path, punto_montaje);
+	string_append(&path, "Metadata/Metadata.bin");
+
+	return path;
+
+}
+
 void obtener_datos_metadata(){
-	g_config = config_create("Metadata/Metadata.bin");
+
+	char* path_metadata = obtener_path_metadata_bin();
+
+	g_config = config_create(path_metadata);
+
 	//BLOCK SIZE, BLOCKS, MAGIC
 
-	char * magic_aux;
+	char * magic_aux ;
 
 	block_size   = config_get_int_value(g_config, "BLOCK_SIZE");
 	magic_aux    = config_get_string_value(g_config, "MAGIC_NUMBER");

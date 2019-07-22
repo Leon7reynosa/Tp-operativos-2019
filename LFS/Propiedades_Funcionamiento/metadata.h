@@ -49,4 +49,5 @@ char* obtenerPathDirectorio_Tablas(void);
 char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla);
 void transformar_tmp_a_tmpc(char* nombre_tabla);
 int obtener_cantidad_de_archivos_tmpc(char* nombre_tabla);
+char* obtener_path_bitmap();
 #endif /* METADATA_METADATA_H_ */

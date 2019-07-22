@@ -81,7 +81,7 @@ int main (int argc , char* argv[]){
 
 	pthread_join(hilo_consola , NULL);
 
-	return 0;
+	return EXIT_SUCCESS;
 }
 
 

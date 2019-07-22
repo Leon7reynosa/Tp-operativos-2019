@@ -256,3 +256,59 @@
 
 [TRACE] 15:38:29:283 requests/(6214:6320): Request de SELECT terminada por el socket 9 !
 
+[TRACE] 19:54:13:26 requests/(24340:24361): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 19:54:13:26 requests/(24340:24361): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 19:54:16:337 requests/(24340:24361): Request de SELECT recibida por el socket 9 !
+
+[TRACE] 19:54:16:337 requests/(24340:24361): Request de SELECT terminada por el socket 9 !
+
+[TRACE] 19:54:23:28 requests/(24340:24361): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 19:54:23:29 requests/(24340:24361): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 19:54:36:967 requests/(24340:24361): Request de SELECT recibida por el socket 9 !
+
+[TRACE] 19:54:36:967 requests/(24340:24361): Request de SELECT terminada por el socket 9 !
+
+[TRACE] 20:01:45:52 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:01:45:52 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:01:47:855 requests/(25155:25200): Request de SELECT recibida por el socket 9 !
+
+[TRACE] 20:01:47:855 requests/(25155:25200): Request de SELECT terminada por el socket 9 !
+
+[TRACE] 20:01:55:56 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:01:55:57 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:01:57:753 requests/(25155:25200): Request de SELECT recibida por el socket 9 !
+
+[TRACE] 20:01:57:753 requests/(25155:25200): Request de SELECT terminada por el socket 9 !
+
+[TRACE] 20:02:04:290 requests/(25155:25200): Request de SELECT recibida por el socket 9 !
+
+[TRACE] 20:02:04:290 requests/(25155:25200): Request de SELECT terminada por el socket 9 !
+
+[TRACE] 20:02:05:59 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:02:05:59 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:02:15:62 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:02:15:62 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:02:25:65 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:02:25:65 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:02:35:68 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:02:35:68 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+
+[TRACE] 20:02:45:71 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+
+[TRACE] 20:02:45:72 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+

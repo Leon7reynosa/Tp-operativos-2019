@@ -59,7 +59,7 @@ typedef struct{
 void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
 void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes, estado_select estado);
 void mandar_mensaje(int conexion);
-void mandar_select(int conexion , dato_t* dato);
+void mandar_select(int conexion , dato_t* dato, estado_select estado);
 void eliminar_tStream(t_stream* tStream);
 
 void enviar_metadata(t_list* metadatas, int conexion);

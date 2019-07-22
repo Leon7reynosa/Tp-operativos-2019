@@ -56,6 +56,8 @@ void liberar_particion(Particion particion){
 
 Particion leer_particion(char* path_particion){
 
+	printf("LEO PARTICION\n");
+
 	Particion particion_contenido;
 	int size;
 
@@ -90,6 +92,8 @@ Particion leer_particion(char* path_particion){
 	free(bloque);
 
 	fclose(particion);
+
+	printf("TERMINE DE LEER PARTICION\n");
 
 	return particion_contenido;
 

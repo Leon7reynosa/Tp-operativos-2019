@@ -13,12 +13,12 @@
 #include<string.h>
 #include"request.h"
 
-//typedef struct{
-//
-//	int size;
-//	void* buffer;
-//
-//}t_stream;
+typedef enum{
+
+	SUCCESS = 1,
+	ERROR = 2
+
+}estado_select;
 
 
 typedef struct{

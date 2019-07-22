@@ -16,7 +16,7 @@
 
 t_log* logger;
 
-
+char* obtener_path_log(void);
 void inicializar_logger(void);
 void liberar_logger(void);
 

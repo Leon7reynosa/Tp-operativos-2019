@@ -1,37 +1,52 @@
 #include"main.h"
 #include"inotify_prueba.h"
 
-int main(){
+int main(int argc , char* argv[]){
+
+	printf("HOLA BEBE\n");
 
 	////////////////////////////INICIALIZACIONES////////////////////////
+
 
 
 	creacion_del_config_fileSystem();
 
 	obtener_datos_config();
+
+	printf("PASE -1\n");
 	obtener_datos_metadata();
+
+	printf("PASE 0 \n");
 
 	inicializar_loggers();
 
+	printf("PASE 1\n");
+
 	inicializar_memtable(); //Inicializa la memtable como diccionario junto con su lock rw
+
+	printf("PASE 2\n");
 
 	inicializar_memorias_conectadas(); //Inicializa una lista de memorias
 
+	printf("PASE 3\n");
+
 	inicializar_compactador();
 
-	/*
-	 * Abre la carpeta TABLAS, y por cada tabla que haya, corre la  compactacion
+	printf("PASE 4\n");
+
+
+	 /* Abre la carpeta TABLAS, y por cada tabla que haya, corre la  compactacion
 	 * y agrega dicha tabla como thread_args* al diccionario compactador
 	 *
 	 * Sirve para cuando se desconecta y se vuelva a levantar, para chequear
-	 * las tablas anteriores que existían
-	 */
+	 * las tablas anteriores que existían*/
+
 	inicializar_compactadores();
 
-	/*
-	 * Crea un hilo para el dump y lo inicializa
-	 * Ejecuta el "Ciclo Dump"
-	 */
+
+	 /* Crea un hilo para el dump y lo inicializa
+	 * Ejecuta el "Ciclo Dump"*/
+
 	inicializar_dump();
 
 	creacion_bitmap();
@@ -57,10 +72,10 @@ int main(){
 		exit(1);
 	}
 
-	/*
-	 * Creamos un hilo por cada conexion que recibamos de las memorias,
-	 * la agrega a la lista de memorias conectadas y realizamos el handshake
-	 */
+
+	 /* Creamos un hilo por cada conexion que recibamos de las memorias,
+	 * la agrega a la lista de memorias conectadas y realizamos el handshake*/
+
 	error_pthread = pthread_create(&administrador_hilos , NULL , administrar_conexiones_hilos , &socket_servidor);
 
 	if(error_pthread != 0){
@@ -81,7 +96,15 @@ int main(){
 	//LIBERAR TODO
 
 	printf("terminaron los hilos\n");
+
+
+
+
+	printf("Termine bien\n");
+
 	return EXIT_SUCCESS;
+
+
 }
 
 void main_inotify(){
@@ -125,6 +148,8 @@ void main_inotify(){
 
 	pthread_join(inotify_config, NULL);
 	printf("Termino todo bien\n");
+
+
 }
 
 void pruebas(){
