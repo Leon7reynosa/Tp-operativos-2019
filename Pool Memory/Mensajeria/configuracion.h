@@ -17,7 +17,10 @@
 #include<commons/collections/list.h>
 #include<unistd.h>
 
+#include<commons/log.h>
+
 #include"Cliente/cliente.h"
+#include"logger.h"
 
 char* ip_escucha;
 int puerto_escucha;

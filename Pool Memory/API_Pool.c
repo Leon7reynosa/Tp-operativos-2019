@@ -9,8 +9,6 @@
 
 void trabajar_request(request nueva_request , int conexion){
 
-	printf("entre a trabajar al request\n");
-
 	Dato dato_select;
 	t_dato* dato_a_enviar;
 	tabla_gossip_dto tabla_recibida;
@@ -19,8 +17,6 @@ void trabajar_request(request nueva_request , int conexion){
 	switch(nueva_request->cod_op){
 
 		case SELECT:
-
-			printf("\n>>SE REALIZARA EL SELECT\n");
 
 			dato_select = request_select( (select_t) nueva_request->tipo_request);
 			/*if(dato_select == NULL){
@@ -45,11 +41,8 @@ void trabajar_request(request nueva_request , int conexion){
 			break;
 		case INSERT:
 
-			printf("\n>>SE REALIZARA EL INSERT");
-
 			request_insert((insert) nueva_request->tipo_request);
 
-			printf("se ingreso el insert piola \n");
 
 			break;
 
@@ -57,17 +50,13 @@ void trabajar_request(request nueva_request , int conexion){
 
 			request_create((create) nueva_request->tipo_request );
 
-			printf("SE REALIZO PIOLA EL CREATE\n");
-
 
 			break;
 
 		case DESCRIBE:
 
-			printf("Se realizar el describe\n");
 			metadata_a_enviar = request_describe((describe_t) nueva_request->tipo_request);
 
-			printf("Se envia la lista de metadata\n");
 			enviar_metadata(metadata_a_enviar, conexion);
 
 			list_destroy_and_destroy_elements(metadata_a_enviar, liberar_metadata);
@@ -82,11 +71,9 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case GOSSIP:
 
-			printf("Se realizara La request Gossip\n");
-
 			pthread_mutex_lock(&mutex_gossip);
 
-			printf("Empiezo\n");
+			log_info(logger, "Se realizar intercambio de tablas de gossiping");
 			intercambiar_datos( ((tabla_gossip_dto) nueva_request->tipo_request), conexion);
 
 			pthread_mutex_unlock(&mutex_gossip);
@@ -104,17 +91,20 @@ void trabajar_request(request nueva_request , int conexion){
 
 Dato request_select(select_t dato){
 
+	log_info(logger, "Se realizara un SELECT");
+
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
 	Dato dato_encontrado;
 
 	pthread_mutex_lock(&mutex_journal);
 	if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){
-		printf("Existe un segmento llamado: %s\n", (char*) dato->tabla->buffer);
+
+		log_info(logger, "Existe un segmento para %s", (char*) dato->tabla->buffer);
 
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
-			printf("Existe pagina!\n");
+			log_info(logger, "Existe una pagina con la key: %i", dato->key);
 
 			mostrar_datos(pagina_encontrada);
 
@@ -124,7 +114,7 @@ Dato request_select(select_t dato){
 
 		}else{
 
-			printf("Le pido las cosas al LFS \n");
+			log_info(logger, "No existe una pagina con la key %i, la busco en el File System", dato->key);
 
 			Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
 
@@ -135,6 +125,7 @@ Dato request_select(select_t dato){
 				//que el trabajar request se encargue de devolver algo al kernel si el dato es null
 			}
 			else{
+				log_info(logger, "Key encontrada en el File System");
 				lo de abajo!
 			*/
 			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
@@ -152,7 +143,7 @@ Dato request_select(select_t dato){
 		}
 
 	}else{
-		printf("No existe el segmento, lo tenes que crear y pedirle el dato al LFS! \n");
+		log_info(logger, "No existe el segmento. Se crea el segmento y se pide el dato al File System.");
 
 		segmento_tabla = agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
 
@@ -194,12 +185,14 @@ Dato request_select(select_t dato){
 
 void request_insert(insert dato){
 
+	log_info(logger, "Se realizara un INSERT");
+
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
 	Dato dato_insert;
 
 	if(string_length((char *)dato->value->buffer) > tamanio_value){
-		printf("SEGMENTATION FAULT! Te pasaste en el tamaño del value \n");
+		log_error(logger, "Segmentation Fault! Value demasiado grande");
 		return;
 	}
 	if(dato->timestamp < 0){
@@ -215,14 +208,14 @@ void request_insert(insert dato){
 
 	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
-	printf("TIMESTAMP A GUARDAR: %i\n",dato_insert->timestamp);
-
 	pthread_mutex_lock(&mutex_journal);
 	if(existe_segmento((char *)dato->tabla->buffer ,&segmento_tabla)){
-		printf("Existe el segmento!\n");
+
+		log_info(logger, "Existe un segmento para %s", (char*) dato->tabla->buffer);
+
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
-			printf("Existe la pagina!\n");
+			log_info(logger, "Existe una pagina con la key: %i. La actualizo.", dato->key);
 
 			actualizar_pagina(pagina_encontrada, dato_insert);
 
@@ -231,7 +224,8 @@ void request_insert(insert dato){
 			mostrar_datos(pagina_encontrada);
 
 		}else{
-			printf("No existe la pagina!\n");
+
+			log_info(logger, "Existe una pagina con la key: %i", dato->key);
 
 			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
@@ -241,20 +235,19 @@ void request_insert(insert dato){
 
 			agregar_pagina(segmento_tabla, pagina_encontrada);
 
-			printf("LA TABLA A AHORA TIENE %i PAGINAS\n", segmento_tabla->Tabla_paginas->elements_count);
-
 			mostrar_datos(pagina_encontrada);
 
 		}
 
 
 	}else{
-		printf("No existe el segmento, deberia crearlo!\n");
+
+		log_info(logger, "No existe el segmento. Se crea el segmento.");
 
 		agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
 
 		if(existe_segmento((char *)dato->tabla->buffer, &segmento_tabla)){ //esto lo uso para encontrarlo nomas (el segmento) xd
-			printf("Ahora si existe el segmento\n");
+//			printf("Ahora si existe el segmento\n");
 
 		}else{
 			printf("Deberia existir el segmento, pero me dice que no. NANI?  \n");
@@ -269,8 +262,6 @@ void request_insert(insert dato){
 
 		agregar_pagina(segmento_tabla, pagina_encontrada);
 
-		printf("LA TABLA A AHORA TIENE %i PAGINAS\n", list_size(segmento_tabla->Tabla_paginas));
-
 		mostrar_datos(pagina_encontrada);
 
 	}
@@ -282,14 +273,28 @@ void request_insert(insert dato){
 
 void request_create(create dato_create){
 
+	log_info(logger, "Se realizara un CREATE");
+
 	request nuevo_create = crear_request(CREATE, dato_create);
 
 	enviar_request(nuevo_create, socket_lissandra);
 
 	free(nuevo_create);
 
+	Segmento segmento_aux;
+
 	pthread_mutex_lock(&mutex_journal);
-	agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
+	if(!existe_segmento((char *)dato_create->tabla->buffer, segmento_aux)){
+
+		log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
+
+		agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
+
+	}else{
+
+		log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
+
+	}
 	pthread_mutex_unlock(&mutex_journal);
 
 //	error_request estado = recibir_estado_request();
@@ -308,7 +313,7 @@ void request_create(create dato_create){
 
 t_list* request_describe(describe_t dato_describe){
 
-	printf("Envio al LFS la request DESCRIBE\n");
+	log_info(logger, "Se realizara un DESCRIBE %s", dato_describe->global ? "GLOBAL" : "DE TABLA: %s", dato_describe->global ? "" : (char *)dato_describe->tabla->buffer );
 
 	request nuevo_describe = crear_request(DESCRIBE, dato_describe);
 
@@ -318,7 +323,6 @@ t_list* request_describe(describe_t dato_describe){
 
 	liberar_request(nuevo_describe);
 
-	printf("espero la respuesta del LFS\n");
 	datos_describe = recibir_describe(socket_lissandra);
 
 	return datos_describe;
@@ -326,6 +330,8 @@ t_list* request_describe(describe_t dato_describe){
 }
 
 int request_drop(Drop datos_drop){
+
+	log_info("Se realizara un DROP de tabla: %s", (char *) datos_drop->tabla->buffer);
 
 	request request_drop = crear_request(DROP, datos_drop);
 
@@ -339,8 +345,11 @@ int request_drop(Drop datos_drop){
 
 	if(existe_segmento( (char *) datos_drop->tabla->buffer ,  &segmento_drop )){
 
+		log_info("Existe el segmento asociado a %s. Se elimina el segmento.",(char *) datos_drop->tabla->buffer );
 		sacar_segmento(segmento_drop);
 
+	}else{
+		log_info("No existe el segmento asociado a %s",(char *) datos_drop->tabla->buffer );
 	}
 
 	pthread_mutex_unlock(&mutex_journal);

@@ -16,6 +16,8 @@ int main (void){
 
 	obtener_datos_config();
 
+	inicializar_logger();
+
 //TODO HANDSHAKE CON LISSANDRA (en archivo config por ahora)
 	realizar_handshake();
 
@@ -70,6 +72,8 @@ int main (void){
 
 					}else{
 
+						log_info(logger, "Acepte una nueva conexion\n");
+
 						FD_SET(new_fd, &master);
 
 						if(new_fd > fd_max){
@@ -84,7 +88,7 @@ int main (void){
 					desconexion_pool = leer_consola();
 
 				}else{
-					printf("\n//////////////////////////////////////////////////////// NUEVA REQUEST c: ////////////////////////////////////////////////\n");
+
 					request nueva_request = recibir_request(i);
 
 //TODO Esta ranciada de la desconexion y los errores
@@ -93,13 +97,14 @@ int main (void){
 
 						FD_CLR(i, &master);
 						close(i);
-						printf("Desconecte todo re piola amigo, no la agites mas!\n");
+						log_info(logger, "Se desconecto un cliente.");
 
 					}else{
 
-						printf("no da\n");
+						log_info(logger, "Se recibio una nueva request.");
 
 						trabajar_request(nueva_request, i);
+
 
 					}
 

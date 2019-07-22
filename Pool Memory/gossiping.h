@@ -16,6 +16,9 @@
 
 #include<commons/collections/list.h>
 
+#include<commons/log.h>
+#include"Mensajeria/logger.h"
+
 void* auto_gossip(void* argumentos);
 void gossiping(void);
 void* serializar_gossiping(struct DatoTablaGossiping* dato);

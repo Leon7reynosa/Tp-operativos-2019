@@ -28,7 +28,8 @@ int conectar_servidor(char* ip, int puerto){
 	error_conexion = connect(socket_conexion,(struct sockaddr*)&their_addr,size_addr);
 
 	if(error_conexion == -1){
-		perror("Fallo al conectar con el Servidor");
+//		perror("Fallo al conectar con el Servidor");
+
 		return error_conexion;
 	}
 

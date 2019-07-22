@@ -19,6 +19,8 @@
 #include"Mensajeria/mensajes.h"
 #include"Mensajeria/configuracion.h"
 
+#include<commons/log.h>
+#include"Mensajeria/logger.h"
 
 struct seedEstructura{
 	int numero_memoria;

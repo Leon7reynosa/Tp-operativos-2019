@@ -67,6 +67,10 @@ void enviar_request(request request, int conexion){
 	int bytes_restantes = bytes;
 	int enviados_aux;
 
+	if(conexion == socket_lissandra){
+		usleep(retardo_lfs);
+	}
+
 	while(bytes_enviados < bytes){
 
 		printf("Soy un printf\n");

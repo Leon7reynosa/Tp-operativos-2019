@@ -111,7 +111,7 @@ int aceptar_conexion(int socket_listener){
 	char* direccion = inet_ntoa((struct in_addr)cliente.sin_addr);
 	int puerto = ntohs(cliente.sin_port);
 
-	printf("[Servidor] Se conecto el cliente: n°%d -> %s:%d\n",socket_conexion,direccion,puerto);
+//	printf("[Servidor] Se conecto el cliente: n°%d -> %s:%d\n",socket_conexion,direccion,puerto);
 
 	if(send(socket_conexion,"[Servidor] Te Conectaste!\n",26,0) == -1){
 		perror("No le notifique que se conecto");

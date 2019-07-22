@@ -22,6 +22,8 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
+#include"configuracion.h"
+
 #include"requestDrop.h"
 #include"requestDescribe.h"
 #include"requestCreate.h"
