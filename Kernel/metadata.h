@@ -14,6 +14,7 @@
 #include"Mensajeria/request.h"
 #include"Mensajeria/requestDescribe.h"
 #include"Config/configuracion.h"
+#include<pthread.h>
 
 void* refrescar_metadata(void);
 

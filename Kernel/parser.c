@@ -17,7 +17,8 @@ request_parser parser_list[] = {
 		{"JOURNAL" , JOURNAL},
 		{"GOSSIP" , GOSSIP},
 		{"ADD" , ADD},
-		{"RUN" , RUN}
+		{"RUN" , RUN},
+		{"EXIT" , EXIT}
 };
 
 cod_operacion identificar_request ( char* request_lql){
@@ -30,7 +31,7 @@ cod_operacion identificar_request ( char* request_lql){
 
 	codigo_return  = encontrar_codigo_request(request_split[0]);
 
-	free(request_split);
+	liberar_puntero_doble(request_split);
 
 	return codigo_return;
 
@@ -50,5 +51,19 @@ cod_operacion encontrar_codigo_request(char* request){
 	}
 
 	return -1;
+
+}
+
+void liberar_puntero_doble(char** puntero_doble){
+
+	int i = 0;
+	while(*(puntero_doble + i) != NULL){
+
+		free(*(puntero_doble + i));
+		i++;
+
+	}
+
+	free(puntero_doble);
 
 }

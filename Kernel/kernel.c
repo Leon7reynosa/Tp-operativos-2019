@@ -22,10 +22,7 @@ int main (int argc , char* argv[]){
 
 	/////////////////////////////////VARIABLES/////////////////////////////////
 
-	pthread_t hilo_gossiping;
-	pthread_t hilo_consola;
-	pthread_t hilo_planificador;
-	pthread_t hilo_refresh_metadata;
+
 
 	memoria_t* memoria_principal;
 
@@ -67,24 +64,31 @@ int main (int argc , char* argv[]){
 
 	pthread_create(&hilo_refresh_metadata , NULL , refrescar_metadata , NULL);
 
+	pthread_detach(&hilo_refresh_metadata);
+
 	cola_new_to_ready();
 
 	pthread_create(&hilo_planificador, NULL, planificador, colas_exec);
+
+	pthread_detach(&hilo_planificador);
 
 	pthread_create(&hilo_consola , NULL, consola, NULL);
 
 
 
-	pthread_join(hilo_refresh_metadata, NULL);
-
-	pthread_join(hilo_planificador, NULL);
 
 	pthread_join(hilo_consola , NULL);
 
+	cancelar_hilos_execute();
+
+	pthread_cancel(hilo_gossiping);
+
+	pthread_cancel(hilo_refresh_metadata);
+
+	pthread_cancel(hilo_planificador);
+
 	return EXIT_SUCCESS;
 }
-
-
 
 
 

@@ -23,6 +23,7 @@ typedef struct{
 
 }t_scripts;
 
+t_list* lista_hilos_exec;
 
 
 t_queue* cola_new;
@@ -30,6 +31,7 @@ t_queue* cola_ready;
 t_queue* cola_exit; //en la cola de exit se almacenararn los t_scripts
 
 void* planificador(t_queue* cola_exec[]);
+void cancelar_hilos_execute(void);
 t_queue* parsear_LQL(FILE* archivo_lql);
 void inicializar_cola_exec(t_queue* colas[] , int grado_multiprocesamiento);
 void inicializar_cola_new(int argc , char* argv[]);

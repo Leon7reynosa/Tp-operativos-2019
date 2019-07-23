@@ -11,17 +11,36 @@
 
 void* planificador(t_queue* cola_exec[]){
 
-	pthread_t* hilos_exec[grado_multiprocesamiento];
+	lista_hilos_exec = list_create();
 
 	for(int i = 0 ; i < grado_multiprocesamiento ; i ++ ){
 
-		pthread_create(&hilos_exec[i] , NULL, ejecutar_cola_exec , cola_exec[i]);
+		pthread_t hilo_exec;
+
+		pthread_create(&hilo_exec , NULL, ejecutar_cola_exec , cola_exec[i]);
+
+		list_add(lista_hilos_exec, hilo_exec);
 
 	}
 
 	return NULL;
 
 }
+
+///////////////////////////////////////////////////////////////////////
+
+void cancelar_hilos_execute(){
+
+	for(int i = 0; i < grado_multiprocesamiento ; i++){
+
+		pthread_t hilo_exec = (pthread_t) list_get(lista_hilos_exec , i);
+
+		pthread_cancel(hilo_exec);
+
+	}
+
+}
+
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -169,7 +188,11 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 	while(1){
 
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+
 		sem_wait(&semaforo_ready);
+
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
 		t_scripts* siguiente_script = (t_scripts*)queue_pop(cola_ready);
 

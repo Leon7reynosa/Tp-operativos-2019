@@ -13,7 +13,11 @@ void* realizar_gossiping(){
 
 	while(1){
 
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+
 		usleep(tiempo_gossiping_kernel * 1000); //despues hay que ponerle 1000
+
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
 		printf("\n/////////////////////////////INICIANDO EL GOSSIPING///////////////////////////////////////\n");
 

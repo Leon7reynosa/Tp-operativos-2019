@@ -16,9 +16,13 @@ void* refrescar_metadata(){
 
 	while(1){
 
-		dato_describe = crear_dato_describe(NULL);
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 
 		usleep(tiempo_refresh_metadata * 1000);
+
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
+
+		dato_describe = crear_dato_describe(NULL);
 
 		printf("\n////////////////////////////ACTUALIZACION METADATA/////////////////////////////\n");
 

@@ -18,6 +18,7 @@
 #include"Mensajeria/Cliente/cliente.h"
 #include"consistencia.h"
 #include"Mensajeria/estructuras.h"
+#include<pthread.h>
 
 
 

@@ -15,7 +15,15 @@ void* consola(){
 
 	while(strcmp(leido, "exit") || string_is_empty(leido)){
 
+		free(leido);
+
 		leido = readline(">>");
+
+		if ( string_equals_ignore_case(leido, "EXIT") ){
+
+			continue;
+
+		}
 
 		t_scripts* nuevo_script = malloc(sizeof(t_scripts));
 
@@ -31,6 +39,7 @@ void* consola(){
 
 	}
 
+	free(leido);
 
 	return NULL;
 }
@@ -47,4 +56,6 @@ void menu(){
 	printf("Escriba una request: ");
 	printf("\n");
 }
+
+
 

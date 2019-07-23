@@ -138,6 +138,8 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 memoria_t* tomar_memoria_al_azar(){
 
+	memoria_t* memoria_a_retornar;
+
 	t_list* lista_de_consistencias = lista_memorias_de_consistencia();
 
 	if(list_is_empty(lista_de_consistencias)){
@@ -150,9 +152,11 @@ memoria_t* tomar_memoria_al_azar(){
 
 	int numero_random_consistencia = rand() % list_size(lista_de_consistencias); // para determinar de cual de los tres codigos de operacion usamos para agarrar la memoria ( SC, EC, SHC)
 
-	return (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
+	memoria_a_retornar = (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
 
-	//aca creo que falta liberar
+	list_destroy(memoria_a_retornar);
+
+	return memoria_a_retornar;
 
 }
 
@@ -334,6 +338,20 @@ void actualizar_metadata(t_list* datos_describe){
 	list_iterate(datos_describe, _actualizar_en_tabla_metadata);
 
 
+
+}
+
+
+void agregar_metadata_a_registro_tabla(Metadata metadata_guardar){
+
+	if(dictionary_has_key(registro_tabla, metadata_guardar->tabla)){
+
+		dictionary_remove_and_destroy(registro_tabla, metadata_guardar->tabla , liberar_metadata);
+
+	}
+
+
+	dictionary_put(registro_tabla , metadata_guardar->tabla , metadata_guardar);
 
 }
 

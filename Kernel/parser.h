@@ -25,6 +25,7 @@ typedef struct {
 
 cod_operacion identificar_request ( char* request_lql);
 cod_operacion encontrar_codigo_request(char* request);
+void liberar_puntero_doble(char** puntero_doble);
 
 
 #endif /* PARSER_H_ */

@@ -22,6 +22,10 @@
 #include"gossiping.h"
 #include"metadata.h"
 
+pthread_t hilo_gossiping;
+pthread_t hilo_consola;
+pthread_t hilo_planificador;
+pthread_t hilo_refresh_metadata;
 
 
 

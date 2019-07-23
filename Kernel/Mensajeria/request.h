@@ -21,7 +21,8 @@ typedef enum{
 	JOURNAL,
 	GOSSIP,
 	ADD,
-	RUN
+	RUN,
+	EXIT
 }cod_operacion;
 
 struct requestEstructura{

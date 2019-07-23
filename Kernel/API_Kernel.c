@@ -139,6 +139,12 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+				Metadata metadata_agregar =  crear_metadata(nombre_tabla, consistencia, particiones, tiempo_compactacion);
+
+				agregar_metadata_a_registro_tabla(metadata_agregar);
+
+
+
 				return 1;
 			}
 			break;
