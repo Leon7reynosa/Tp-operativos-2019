@@ -10,13 +10,15 @@
 
 request recibir_request(int conexion){
 
-	cod_operacion* cod_op = malloc(sizeof(cod_operacion));
+	cod_operacion cod_op;
 	void* tipo_request;
 	int pene = 0;
 
 	request request;
 
-	pene = recv(conexion, cod_op,sizeof(cod_operacion),MSG_WAITALL);
+	pene = recv(conexion, &cod_op,sizeof(cod_operacion),MSG_WAITALL);
+
+	pthread_setcancelstate(PTHREAD_CANCEL_DISABLE,NULL);
 
 	if(pene == -1){
 			perror("Fallo al recibir el codigo de operacion.");
@@ -24,14 +26,13 @@ request recibir_request(int conexion){
 			//aca deberiamos terminar el hilo?
 	}
 	if(pene == 0){
-
 		request = crear_request(DESCONEXION, NULL);
 		return request;
 	}
 
-	printf("codigo_op : %d\n" , *cod_op);
+	printf("codigo_op : %d\n" , cod_op);
 
-	switch(*cod_op){
+	switch(cod_op){
 
 		case SELECT:
 
@@ -79,7 +80,7 @@ request recibir_request(int conexion){
 
 	}
 
-	request = crear_request(*cod_op, tipo_request);
+	request = crear_request(cod_op, tipo_request);
 
 	return request;
 

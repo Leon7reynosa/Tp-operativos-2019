@@ -170,21 +170,34 @@ void inicializar_dump(void){
 
 }
 
+void liberar_dump(void){
+
+	pthread_cancel(hilo_dump);
+
+}
+
 void* ciclo_dump(void* argumentos){
+
+	pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
 
 	while(1){
 
 		usleep(tiempo_dump * 1000);
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
+
 		log_info(logger_lissandra, "INICIO DEL DUMP");
 		realizar_dump();
 		log_info(logger_lissandra, "TERMINO EL DUMP");
+
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 
 	}
 
 }
 
-void realizar_dump(){
+void realizar_dump(void){
 	t_list* dato_de_tabla;
 
 	void _crear_temporal(char* nombre_tabla, void* elementoDeMemtable){

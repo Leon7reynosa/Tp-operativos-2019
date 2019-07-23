@@ -27,7 +27,7 @@ cod_operacion identificar_request ( char* request_lql){
 
 	codigo_return  = encontrar_codigo_request(request_split[0]);
 
-	free(request_split);
+	liberar_puntero_doble(request_split);
 
 	return codigo_return;
 

@@ -34,7 +34,7 @@
 <flag id="CFLAGS" value="CFLAGS|CXXFLAGS">
 <flagvalue id="cflags-debug" value="false"/>
 <flagvalue id="cflags-gprof" value="false"/>
-<flagvalue id="cflags-gcov" value="false"/>
+<flagvalue id="cflags-gcov" value="true"/>
 </flag>
 <option id="user" value=""/>
 <option id="autogen" value="autogen.sh"/>

@@ -30,7 +30,8 @@ pthread_t hilo_dump;
 
 t_dictionary* memtable;
 pthread_rwlock_t lock_memtable;
-
+void eliminar_dato_t(dato_t* dato);
+void liberar_memtable(void);
 void inicializar_dump(void);
 void inicializar_memtable(void);
 void ingresar_a_memtable(dato_t* dato_a_ingresar, char* nombre_tabla);

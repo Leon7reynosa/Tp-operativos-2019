@@ -6,6 +6,12 @@
  */
 #include "Lissandra.h"
 
+void liberar_memtable(void){
+
+	dictionary_destroy_and_destroy_elements(memtable, eliminar_dato_t);
+
+}
+
 void inicializar_memtable() {
     memtable = dictionary_create();
     pthread_rwlock_init(&(lock_memtable), NULL);
@@ -93,7 +99,6 @@ void eliminar_dato_t(dato_t* dato ){
 	free(dato);
 
 }
-
 
 
 

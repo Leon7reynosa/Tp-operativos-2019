@@ -8,6 +8,12 @@
 
 #include"conexiones.h"
 
+void liberar_conexiones(void){
+
+	list_destroy_and_destroy_elements(memorias_conectadas, destruir_conexion_memoria);
+
+}
+
 void* conectar_varias_memorias(){
 
 	//Creo que si usamos hilos tendriamos mucho overhead, debido a los context switchs
@@ -89,15 +95,21 @@ void inicializar_memorias_conectadas(){
 
 void* administrar_conexiones_hilos(int* socket_servidor){
 
+	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
+
 	while(1){
 
 		int nueva_conexion = aceptar_conexion( *socket_servidor);
+
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
 		Conexion_memoria nueva_conexion_memoria = crear_conexion_memoria(  nueva_conexion );
 
 		list_add(memorias_conectadas , nueva_conexion_memoria);
 
 		realizar_handshake(nueva_conexion_memoria->socket_memoria);
+
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 
 	}
 
@@ -142,6 +154,7 @@ Conexion_memoria crear_conexion_memoria( int conexion ){
 
 void* manejar_requests(Conexion_memoria memoria_conectada){
 
+	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
 	request request_recibida;
 
@@ -155,11 +168,9 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 		if(request_recibida->cod_op == DESCONEXION){
 
-			desconectar_memoria(memoria_conectada);
-
 			liberar_request(request_recibida);
 
-			pthread_exit(NULL);
+			desconectar_memoria(memoria_conectada);
 
 		}else{
 
@@ -170,6 +181,8 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 		liberar_request(request_recibida);
 
 		printf("\n/////////////////////////////////////FIN REQUEST//////////////////////////////////\n");
+
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE,NULL);
 
 	}
 
@@ -196,6 +209,8 @@ void desconectar_memoria(Conexion_memoria memoria_a_desconectar){
 
 
 void destruir_conexion_memoria(Conexion_memoria memoria_a_destruir){
+
+	pthread_cancel(memoria_a_destruir->hilo_memoria);
 
 	close(memoria_a_destruir->socket_memoria);
 

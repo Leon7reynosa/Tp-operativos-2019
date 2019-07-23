@@ -94,7 +94,6 @@ char* obtenerPathTabla(char* nombre_tabla){
 }
 
 char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
-//	char* indicadorNombre = string_substring_from(nombreTabla, strlen(nombreTabla)-1);
 	char* pathBase = obtenerPathTabla(nombreTabla);
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
@@ -128,18 +127,15 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	char* pathCompleto = string_new();
 	string_append(&pathCompleto, pathBase);
 	string_append(&pathCompleto, "/");
-//	string_append(&pathCompleto, indicadorNombre);
 	string_append(&pathCompleto, numeroDesignado);
 	string_append(&pathCompleto, ".tmp");
 
-//	free(indicadorNombre); // sacar ?
-//	free(pathBase);			//sacar ?
+	free(pathBase);
 
 	return pathCompleto;
 }
 
 char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
-//	char* indicadorNombre = string_substring_from(nombre_tabla, strlen(nombre_tabla)-1);
 	char* pathBase = obtenerPathTabla(nombre_tabla);
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
@@ -171,12 +167,10 @@ char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
 	char* pathCompleto = string_new();
 	string_append(&pathCompleto, pathBase);
 	string_append(&pathCompleto, "/");
-//	string_append(&pathCompleto, indicadorNombre);
 	string_append(&pathCompleto, numeroDesignado);
 	string_append(&pathCompleto, ".tmpc");
 
-//	free(indicadorNombre); // sacar ?
-	free(pathBase);			//sacar ?
+	free(pathBase);
 
 	return pathCompleto;
 }
@@ -217,7 +211,7 @@ char* obtenerPathDirectorio_Tablas(){
 	char *prefijo = "Tablas";
 
 	string_append(&path, punto_montaje);
-	string_append(&path, prefijo);
+	string_append(&path, prefijo);  //Hay que liberarlo bien la funcion request_drop
 
 	return path;
 }

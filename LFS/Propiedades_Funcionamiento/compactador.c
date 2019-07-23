@@ -179,7 +179,7 @@ void inicializar_compactadores(void){
 	}
 
 	closedir(dir);
-
+	free(path_raiz);
 
 
 }
@@ -230,20 +230,44 @@ void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
 void* ciclo_compactacion(thread_args* argumentos){
 
 	pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
-	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
+
+	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
 	while(1){
 
 		usleep(argumentos->tiempo_compactacion);
+
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
 		compactar(argumentos);
 
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
+
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 	}
 
 	return NULL;
+}
+
+void liberar_compactadores(void){
+
+	void _abortar_hilo_compactacioo(void* thread_arg){
+
+		thread_args* argumentos = (thread_args *) thread_arg;
+
+		pthread_cancel(argumentos->hilo_compactacion);
+
+		pthread_rwlock_destroy(&(argumentos->lock_tabla));
+
+		free(argumentos->nombre_tabla);
+		free(argumentos);
+
+	}
+
+	dictionary_destroy_and_destroy_elements(diccionario_compactador, _abortar_hilo_compactacioo);
+
 }
 
 //ESTA FUNCION ASUME QUE YA TOMASTE SEMAFORO DE LA TABLA, LA COMPACTACION DEBERIA ESTAR ESPERANDO ESE SEMAFORO

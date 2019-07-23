@@ -126,8 +126,13 @@ char* obtener_path_metadata_bin(){
 
 	char* path = string_new();
 
+	char* path_meta = malloc(strlen("Metadata/Metadata.bin") + 1);
+	memcpy(path_meta, "Metadata/Metadata.bin", strlen("Metadata/Metadata.bin") + 1);
+
 	string_append(&path, punto_montaje);
-	string_append(&path, "Metadata/Metadata.bin");
+	string_append(&path, path_meta);
+
+	free(path_meta);
 
 	return path;
 
@@ -138,6 +143,8 @@ void obtener_datos_metadata(){
 	char* path_metadata = obtener_path_metadata_bin();
 
 	g_config = config_create(path_metadata);
+
+	free(path_metadata); //agregadp para el memleak del obtener path metadata bin -> Anda bien !
 
 	//BLOCK SIZE, BLOCKS, MAGIC
 
@@ -174,8 +181,6 @@ void obtener_datos_config(){
 	memcpy(ip_lfs, ip_lfs_aux, strlen(ip_lfs_aux) +1 );
 	//memcpy(punto_montaje , punto_montaje_aux, strlen(punto_montaje_aux) +1 );
 
-
-
 	config_destroy(g_config);
 }
 
@@ -208,6 +213,7 @@ bool existe_el_bitmap(){
 	}
 	else{
 
+		fclose(file);
 		free(path_al_bitmap);
 
 		return true;
@@ -222,9 +228,22 @@ void inicializar_loggers(){
 	logger_request = 		log_create("requests.log", "requests", 0, LOG_LEVEL_TRACE );
 }
 
+void destruir_loggers(){
+	log_destroy(logger_lissandra);
+	log_destroy(logger_lfs);
+	log_destroy(logger_compactador);
+	log_destroy(logger_request);
+}
+
 void inicializar_compactador(){
 	diccionario_compactador = dictionary_create();
 	pthread_rwlock_init(&(lock_diccionario_compactacion), NULL);
+}
+
+void liberar_globales(void){
+	free(magic_number);
+	free(punto_montaje);
+	free(ip_lfs);
 }
 
 

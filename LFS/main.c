@@ -85,6 +85,9 @@ int main(int argc , char* argv[]){
 
 
 	pthread_detach(administrador_hilos);
+
+
+
 	pthread_join(hilo_consola , NULL);
 
 	//mandaron exit por la consola
@@ -92,13 +95,20 @@ int main(int argc , char* argv[]){
 
 	pthread_cancel(administrador_hilos);
 
+	liberar_conexiones();
 
-	//LIBERAR TODO
+	liberar_dump();
+
+	liberar_memtable();
+
+	liberar_compactadores();
+
+	destruir_loggers();
+
+	liberar_globales();
+
 
 	printf("terminaron los hilos\n");
-
-
-
 
 	printf("Termine bien\n");
 
@@ -226,4 +236,12 @@ void* conectar_memoria(){
 	return NULL;
 }
 
+
+void liberar_variables_globales(){
+
+	free(ip_lfs);
+	free(punto_montaje);
+	free(magic_number);
+
+}
 

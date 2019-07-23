@@ -9,25 +9,29 @@
 
 void* consola(void* argumento){
 
-	char* leido = string_new();
+	char* leido;
 
 	cod_operacion codigo;
 
 	menu();
 
+	leido = readline(">> ");
+
 	while(!string_equals_ignore_case(leido, "exit")){
-
-		free(leido);
-
-		leido = readline("");
 
 		codigo = identificar_request(leido);
 
 		ejecutar_request(codigo, leido);
 
+		free(leido);
+
+		leido = readline(">> ");
+
 	}
 
 	free(leido);
+
+	pthread_exit(NULL);
 
 	return NULL;
 }

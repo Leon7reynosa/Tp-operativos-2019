@@ -35,6 +35,8 @@ char* punto_montaje;
 int retardo;
 char* ip_lfs;
 
+
+
 int tamanioDeValue;
 
 void creacion_bitmap(void);
@@ -47,8 +49,11 @@ void crearYObtenerDatos(void);
 void obtenerDatos(void);
 bool existe_el_bitmap(void);
 void inicializar_loggers(void);
+void destruir_loggers(void);
 void inicializar_compactador(void);
 void inicializar_conexiones(void);
+void liberar_globales(void);
 void realizar_handshake(int conexion);
+
 
 #endif /* CONFIGURACION_H_ */

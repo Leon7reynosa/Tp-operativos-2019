@@ -32,6 +32,7 @@ typedef struct estructuraConexionMemoria* Conexion_memoria;
 
 t_list* memorias_conectadas;  //va a tener una lista de Conexion_memoria
 
+void liberar_conexiones(void);
 void* administrar_conexiones_hilos(int* socket_servidor);
 void* conectar_varias_memorias(void);
 void destruir_conexion_memoria(Conexion_memoria memoria);

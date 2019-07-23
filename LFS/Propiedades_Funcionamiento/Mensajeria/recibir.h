@@ -23,6 +23,8 @@
 #include<signal.h>
 #include<ctype.h>
 
+#include<pthread.h>
+
 #include "request.h"
 
 /*

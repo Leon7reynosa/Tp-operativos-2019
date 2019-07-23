@@ -16,7 +16,7 @@
 #include"bloque.h"
 #include"particion_contenido.h"
 
-
+void liberar_dump(void);
 int existe_la_tabla(char* tabla);
 void crear_directorio(char* path);
 void crear_archivos_particiones(char* nombre_tabla, int numero_particiones);
