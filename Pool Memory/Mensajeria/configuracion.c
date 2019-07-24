@@ -40,7 +40,7 @@ void realizar_handshake(void){
 
 void creacion_del_config(){
 
-	char* array_ips = "[192.168.0.86,192.168.0.86]";
+	char* array_ips = "[192.168.1.40,192.168.1.40]";
 
 	char* array_puertos = "[8001,8002]";
 
@@ -49,7 +49,7 @@ void creacion_del_config(){
 	g_config = config_create(path_config);
 
 	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
-	config_set_value(g_config, "IP_LFS", "192.168.0.86");
+	config_set_value(g_config, "IP_LFS", "192.168.1.40");
 	config_set_value(g_config, "PUERTO_LFS", "4445");
 
 	config_set_value(g_config, "IP_SEEDS", array_ips);

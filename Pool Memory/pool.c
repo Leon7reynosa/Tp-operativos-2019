@@ -14,20 +14,12 @@ int main (int argc , char* argv[]){
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
 	ip_escucha = obtener_ip_local();
 
-	printf("Prueba 1\n");
-
 	obtener_datos_config();
-
-	printf("Prueba 2\n");
 
 	inicializar_logger();
 
-	printf("Prueba 3\n");
-
 //TODO HANDSHAKE CON LISSANDRA (en archivo config por ahora)
 	realizar_handshake();
-
-	printf("Prueba 3\n");
 
 	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
 
@@ -35,11 +27,7 @@ int main (int argc , char* argv[]){
 
 	inicializar_memoria(tamanio, tamanio_value, tamanio_dato); //TODO ARREGLAR ESTA FUNCION UN POCO
 
-	printf("Prueba 4\n");
-
 	inicializar_hilos();
-
-	printf("Prueba 5\n");
 
 	//////////////////////////////////////////MAIN///////////////////////////////////////
 
@@ -67,6 +55,8 @@ int main (int argc , char* argv[]){
 	for ( ; ; ){
 
 		read_fds = master;
+
+		printf("SELECT ESCUCHANDO\n");
 
 		if(select(fd_max +1 , &read_fds, NULL, NULL, NULL) == -1){
 			perror("select.");
@@ -109,21 +99,26 @@ int main (int argc , char* argv[]){
 
 						FD_CLR(i, &master);
 						close(i);
-						log_info(logger, "Se desconecto un cliente.");
+						log_info(logger, "Se desconecto un cliente.\n");
 
 					}else{
 
 						log_info(logger, "Se recibio una nueva request.");
 
+						printf("\n>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+
 						trabajar_request(nueva_request, i);
+
+						printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>FIN REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 
 					}
 
 					liberar_request(nueva_request);
-					printf("\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n");
-				}
+					log_info(logger, "Se termino de trabajar la request.\n");
 
+
+				}
 
 			}
 
@@ -134,6 +129,8 @@ int main (int argc , char* argv[]){
 		}
 
 	}
+
+	printf("SE CIERRA LA MEMORIA\n");
 
 	//CIERRO TODOS LOS CLIENTES
 	for(i = 1; i <= fd_max; i++){
@@ -169,13 +166,13 @@ int main (int argc , char* argv[]){
 
 void abortar_hilos(void){
 
-	pthread_mutex_lock(&mutex_journal);
+//	pthread_mutex_lock(&mutex_journal);
 	pthread_cancel(journal_thread);
-	pthread_mutex_unlock(&mutex_journal);
+//	pthread_mutex_unlock(&mutex_journal);
 
-	pthread_mutex_lock(&mutex_gossip);
+//	pthread_mutex_lock(&mutex_gossip);
 	pthread_cancel(gossip_thread);
-	pthread_mutex_lock(&mutex_gossip);
+//	pthread_mutex_lock(&mutex_gossip);
 
 	pthread_mutex_destroy(&mutex_journal);
 	pthread_mutex_destroy(&mutex_gossip);
@@ -214,32 +211,3 @@ void inicializar_hilos(void){
 	pthread_attr_destroy(&attr);
 
 }
-
-//void pruebas(void){
-//
-//	tamanio_value = 49;
-//	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
-//
-//	printf("TAMANIO DEL VALUE: %i\n", tamanio_value);
-//	printf("TAMANIO DEL DATO %i\n", tamanio_dato);
-//
-//	char* tabla_a = "Tabla_A";
-//
-//	obtener_datos_config();
-//
-//	t_list* lista_tablas = list_create();
-//	list_add(lista_tablas, (void*)tabla_a);
-//
-//	inicializar_memoria(tamanio, tamanio_value, tamanio_dato, lista_tablas);
-//
-//	int i;
-//	printf("Cantidad de paginas: %i\n", memoria->paginas->elements_count);
-//
-//	for( i = 0; i < 35; i++){
-//			printf("/////////////////// INSERT n°%i /////////////////////\n", i + 1);
-//			request_insert("Tabla_A", i + 1, "Hola, soy alguna prueba.");
-//	}
-//
-//
-//	printf("Pruebas finalizadas con exito!\n");
-//}

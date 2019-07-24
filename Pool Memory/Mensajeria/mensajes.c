@@ -35,9 +35,7 @@ void enviar_request(request request, int conexion){
 
 	case DESCRIBE:
 
-		printf("Serializo buffer\n");
 		buffer = serializar_describe(request);
-		printf("Saco los bytes\n");
 		bytes =  ((describe_t)(request->tipo_request))->bytes;
 
 		break;
@@ -61,7 +59,6 @@ void enviar_request(request request, int conexion){
 		break;
 	}
 	// ver este send, si manda todo o ke
-	printf("mando la request\n");
 
 	int bytes_enviados = 0;
 	int bytes_restantes = bytes;

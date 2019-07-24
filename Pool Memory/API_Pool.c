@@ -18,6 +18,10 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case SELECT:
 
+			usleep(retardo_memoria * 1000);
+
+			printf(" --SELECT--\n");
+
 			dato_select = request_select( (select_t) nueva_request->tipo_request);
 
 			if(dato_select == NULL){
@@ -40,12 +44,18 @@ void trabajar_request(request nueva_request , int conexion){
 			break;
 		case INSERT:
 
+			usleep(retardo_memoria * 1000);
+
+			printf(" --INSERT--\n");
+
 			request_insert((insert) nueva_request->tipo_request);
 
 
 			break;
 
 		case CREATE:
+
+			printf(" --CREATE--\n");
 
 			request_create((create) nueva_request->tipo_request );
 
@@ -54,21 +64,29 @@ void trabajar_request(request nueva_request , int conexion){
 
 		case DESCRIBE:
 
+			printf(" --DESCRIBE--\n");
+
 			metadata_a_enviar = request_describe((describe_t) nueva_request->tipo_request);
 
 			enviar_metadata(metadata_a_enviar, conexion);
 
 			list_destroy_and_destroy_elements(metadata_a_enviar, liberar_metadata);
 
+			printf("LIBERE LA METADATA!\n");
+
 			break;
 
 		case DROP:
+
+			printf(" --DROP--\n");
 
 			request_drop((Drop)nueva_request->tipo_request);
 
 			break;
 
 		case GOSSIP:
+
+			printf(" --GOSSIP--\n");
 
 			pthread_mutex_lock(&mutex_gossip);
 
@@ -312,7 +330,11 @@ t_list* request_describe(describe_t dato_describe){
 
 	t_list* datos_describe;
 
+	printf("Libero la request describe\n");
+
 	liberar_request(nuevo_describe);
+
+	printf("ESPERO LA RESPUESTA DEL DESCRIBE!\n");
 
 	datos_describe = recibir_describe(socket_lissandra);
 

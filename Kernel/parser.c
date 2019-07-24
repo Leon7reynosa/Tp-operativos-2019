@@ -29,9 +29,15 @@ cod_operacion identificar_request ( char* request_lql){
 
 	request_split = string_split(request_lql , " ");
 
+	printf("ENCONTRAR CODIGO\n");
+
 	codigo_return  = encontrar_codigo_request(request_split[0]);
 
+	printf("Liberar puntero doble\n");
+
 	liberar_puntero_doble(request_split);
+
+	printf("LIBERE!\n");
 
 	return codigo_return;
 

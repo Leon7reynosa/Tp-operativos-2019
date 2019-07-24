@@ -9,21 +9,13 @@
 
 void* consola(){
 
-	char* leido = " ";
+	char* leido;
 
 	menu();
 
-	while(strcmp(leido, "exit") || string_is_empty(leido)){
+	leido = readline(">>");
 
-		free(leido);
-
-		leido = readline(">>");
-
-		if ( string_equals_ignore_case(leido, "EXIT") ){
-
-			continue;
-
-		}
+	while( !string_equals_ignore_case(leido, "EXIT") ){
 
 		t_scripts* nuevo_script = malloc(sizeof(t_scripts));
 
@@ -36,6 +28,8 @@ void* consola(){
 		queue_push(cola_ready , (void*) nuevo_script);
 
 		sem_post(&semaforo_ready);
+
+		leido = readline(">>");
 
 	}
 

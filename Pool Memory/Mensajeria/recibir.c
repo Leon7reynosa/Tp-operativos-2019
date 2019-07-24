@@ -239,7 +239,7 @@ t_list* recibir_describe(int conexion){
 	char* consistencia_recibida;
 	int particiones_recibidas, compactacion_recibida;
 
-	error_recv = recv(conexion, &numero_tablas, sizeof(int), MSG_WAITALL);
+	error_recv = recv(conexion, &numero_tablas, sizeof(int), 0);
 
 	printf("LLEGO LA RESPUESTA\n");
 

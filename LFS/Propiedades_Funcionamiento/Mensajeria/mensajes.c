@@ -26,7 +26,9 @@ void enviar_metadata(t_list* metadatas, int conexion){
 	int bytes;
 	void* buffer;
 
-	int bytes_restantes, bytes_enviados = 0, enviados_aux;
+	int bytes_restantes;
+	int bytes_enviados = 0;
+	int enviados_aux;
 
 	printf("Serializo las metadatas\n");
 	buffer = serializar_metadata(metadatas, &bytes);

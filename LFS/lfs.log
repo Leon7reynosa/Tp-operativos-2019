@@ -512,4 +512,87 @@
 
 [INFO] 20:02:55:75 file system/(25155:25200): Request -- DESCRIBE GLOBAL -- realizada
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          [INFO] 22:40:57:183 file system/(6877:6896): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 22:40:57:200 file system/(6877:6896): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 22:40:57:200 file system/(6877:6896): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 22:40:57:200 file system/(6877:6896): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 22:41:07:202 file system/(6877:6896): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 22:41:07:202 file system/(6877:6896): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 22:41:07:203 file system/(6877:6896): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 22:41:07:203 file system/(6877:6896): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 22:41:17:204 file system/(6877:6896): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 22:41:17:204 file system/(6877:6896): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 22:41:17:204 file system/(6877:6896): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 22:41:17:204 file system/(6877:6896): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 22:41:27:207 file system/(6877:6896): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 22:41:27:207 file system/(6877:6896): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 22:41:27:207 file system/(6877:6896): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 22:41:27:207 file system/(6877:6896): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 22:41:27:950 file system/(6877:6896): Inicio de request -- INSERT -- 
+
+[INFO] 22:41:27:951 file system/(6877:6896): Request -- INSERT -- realizada !!!
+
+[INFO] 22:55:49:163 file system/(7176:7262): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 22:55:49:163 file system/(7176:7262): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 22:55:49:163 file system/(7176:7262): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 22:55:49:163 file system/(7176:7262): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 22:55:49:163 file system/(7176:7262): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 22:55:49:163 file system/(7176:7262): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 23:16:43:413 file system/(8032:8040): Inicio de request -- DROP --
+
+[INFO] 23:16:43:415 file system/(8032:8040): Request -- DROP-- realizada
+
+[INFO] 23:26:36:579 file system/(8244:8252): Inicio de request -- DROP --
+
+[INFO] 23:26:36:586 file system/(8244:8252): Request -- DROP-- realizada
+
+[INFO] 23:27:51:317 file system/(8289:8307): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 23:27:51:317 file system/(8289:8307): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 23:34:33:340 file system/(8428:8465): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 23:34:33:340 file system/(8428:8465): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 23:39:46:844 file system/(8699:8735): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 23:39:46:844 file system/(8699:8735): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 23:42:57:909 file system/(8814:8835): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 23:42:57:909 file system/(8814:8835): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 23:49:08:511 file system/(8988:9006): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 23:49:08:511 file system/(8988:9006): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 23:59:37:504 file system/(9170:9224): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 23:59:37:504 file system/(9170:9224): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 00:03:35:765 file system/(9340:9360): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 00:03:35:765 file system/(9340:9360): Request -- DESCRIBE GLOBAL -- realizada
+

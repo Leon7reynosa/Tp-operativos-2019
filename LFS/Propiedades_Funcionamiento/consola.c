@@ -17,9 +17,15 @@ void* consola(void* argumento){
 
 	leido = readline(">> ");
 
+	printf("leido : %s\n" , leido);
+
 	while(!string_equals_ignore_case(leido, "exit")){
 
+		printf("chau\n”");
+
 		codigo = identificar_request(leido);
+
+		printf("codigo = %d\n"  , codigo);
 
 		ejecutar_request(codigo, leido);
 
@@ -48,12 +54,12 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 	void* tipo_request;
 
-	char*nombre_tabla;
-	char* value;
+	char*nombre_tabla = string_new() ;
+	char* value = string_new();
 	u_int16_t key;
 	time_t timestamp;
 
-	char* consistencia;
+	char* consistencia = string_new();
 	int particiones;
 	int compactacion;
 
@@ -159,7 +165,6 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			printf(">>DROP<<\n");
 
 			if(obtener_parametros_drop(linea_request , nombre_tabla)){
-				printf("entre al if, nombre : %s\n" , nombre_tabla);
 
 				Drop drop_dato = crear_drop(nombre_tabla);
 
@@ -181,6 +186,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			printf("no reconoci la request\n");
 
 	}
+
+	printf("\n////////////////////////////FIN REQUEST CONSOLA////////////////////////\n\n");
 
 	return fin_funcion;
 
@@ -301,6 +308,7 @@ int obtener_parametros_describe(char* linea_request, char* nombre_tabla){
 }
 
 int obtener_parametros_drop(char* linea_request, char* nombre_tabla){
+
 	char* funcion = string_new();
 
 	int cantidad_parametros;
@@ -308,7 +316,6 @@ int obtener_parametros_drop(char* linea_request, char* nombre_tabla){
 	cantidad_parametros = sscanf(linea_request, "%s %s", funcion, nombre_tabla);
 
 	string_to_upper(nombre_tabla);
-
 
 	return cantidad_parametros;
 

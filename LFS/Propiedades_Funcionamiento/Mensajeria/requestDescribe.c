@@ -17,6 +17,7 @@ void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
 	void* buffer = malloc(sizeof(int)); //inicialmente con la cantidad de tablas;
 
 	//le mando la cantidad de tablas primero
+
 	cantidad_tablas = list_size(lista_metadata);
 
 	printf("Cantidad de tablas: %i\n", cantidad_tablas);

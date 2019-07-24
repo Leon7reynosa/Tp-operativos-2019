@@ -41,6 +41,9 @@ void agregar_a_consistencia(cod_consistencia codigo, memoria_t* memoria_a_guarda
 		case SHC:
 
 			list_add(Strong_Hash_C, memoria_a_guardar);
+
+			request_journal();
+
 			break;
 
 		default:
@@ -154,7 +157,7 @@ memoria_t* tomar_memoria_al_azar(){
 
 	memoria_a_retornar = (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
 
-	list_destroy(memoria_a_retornar);
+	list_destroy(lista_de_consistencias);
 
 	return memoria_a_retornar;
 
@@ -215,11 +218,51 @@ memoria_t* seleccionar_memoria_consistencia(cod_operacion cod_op , void* tipo_re
 
 	cod_consistencia codigo_consistencia = identificar_consitencia_para_request(cod_op, tipo_request);
 
-	return tomar_memoria_segun_codigo_consistencia(codigo_consistencia);
+	u_int16_t key_utilizada = determinar_key(cod_op , tipo_request);
+
+	return tomar_memoria_segun_codigo_consistencia(codigo_consistencia, key_utilizada);
 
 }
 
-memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consistencia){
+
+u_int16_t determinar_key(cod_operacion cod_op , void* tipo_request){
+
+
+	insert request_insert;
+	select_t request_select;
+
+	switch(cod_op){
+
+		case INSERT:
+
+			request_insert = (insert) tipo_request;
+
+			return request_insert->key;
+
+		case SELECT:
+
+			request_select = (select_t) tipo_request;
+
+			return request_select->key;
+
+		default:
+
+			if(list_is_empty(Strong_Hash_C)){
+
+				return -1;
+
+			}
+
+			return rand() & list_size(Strong_Hash_C);
+
+
+	}
+
+
+}
+
+
+memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consistencia , u_int16_t key){
 
 	int index_memoria;
 	int numero_random;
@@ -237,35 +280,26 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 		case SHC:
 
-//			index_memoria = obtener_index_memoria(request_a_enviar);
-//
-//			if(index_memoria >= 0 ){
-//
-//				return list_get(Strong_Hash_C, index_memoria);
-//
-//			}else{
-//
-//				numero_random = rand() % list_size(Strong_Hash_C); //aca no deberia
-//
-//				return list_get(Strong_Hash_C, numero_random);
-//
-//			}
-
-			//Aca deberiamos ver la funcion hashs, por ahora devuelvo la primera de las memorias
-
 			if(list_is_empty(Strong_Hash_C)){
 
 				return NULL;
 			}
+			if( key < 0 ){
 
-			return list_get(Strong_Hash_C , 0);
+				index_memoria = rand() % list_size(Strong_Hash_C);
+
+			}else{
+
+				index_memoria = funcion_hash(key);
+
+			}
+
+			return list_get(Strong_Hash_C , index);
 
 
 			break;
 
 		case EC:
-
-			printf("llegue aqui\n");
 
 			if(list_is_empty(Eventual_C)){
 
@@ -289,6 +323,15 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 	printf("termine :/\n");
 
 	return NULL;
+
+}
+
+
+int funcion_hash(u_int16_t key) {
+
+
+	return key % list_size(Strong_Hash_C);
+
 
 }
 

@@ -27,9 +27,6 @@ t_list* inicializar_paginas(){
 
 	int contador = memoria->cant_max_datos;
 
-	printf("CANT MAX DE DATOS: %i\n", contador);
-
-	printf("tamanio_dato = %i\n", tamanio_dato);
 
 	t_list* paginas = list_create();
 
@@ -46,8 +43,6 @@ t_list* inicializar_paginas(){
 		contador--;
 
 	}
-
-	printf("DESPLAZAMIENTO: %i\n", desplazamiento);
 
 	return paginas;
 
@@ -254,15 +249,25 @@ void actualizar_pagina(Pagina pagina_encontrada, Dato dato_insert){
 void* auto_journal(void* argumento){
 
 	pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
-	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
+	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
 	while(1){
 		usleep(tiempo_journal * 1000);
+
+		printf("\n///////////////////////// Auto-Journal/////////////////////////////\n\n");
+
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
+
 		pthread_mutex_lock(&mutex_journal);
 		log_info(logger, "Inicia el Auto-Journal");
 		realizar_journal();
-		log_info(logger, "Termina el Auto-Journal");
+		log_info(logger, "Termina el Auto-Journal\n");
 		pthread_mutex_unlock(&mutex_journal);
+
+		printf("\n////////////////////////FIN Auto-Journal///////////////////////////\n\n");
+
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+
 	}
 
 	return NULL;

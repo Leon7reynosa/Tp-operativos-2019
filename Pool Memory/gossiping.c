@@ -10,15 +10,25 @@
 void* auto_gossip(void* argumentos){
 
 	pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
-	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
+	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
 	while(1){
+
 		usleep(tiempo_gossiping * 1000);
+
+		printf("\n//////////////////////Auto-Gossip///////////////////////////\n\n");
+
+		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
+
 		pthread_mutex_lock(&mutex_gossip);
 		log_info(logger, "Inicia el Auto-Gossiping");
 		gossiping();
 		pthread_mutex_unlock(&mutex_gossip);
-		log_info(logger, "Termina el Auto-Gossiping");
+		log_info(logger, "Termina el Auto-Gossiping\n");
+
+		printf("\n//////////////////FIN Auto-Gossip//////////////////////////\n\n");
+
+		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 	}
 	return NULL;
 }

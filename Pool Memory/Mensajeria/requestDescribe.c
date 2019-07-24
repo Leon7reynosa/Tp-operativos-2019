@@ -206,7 +206,7 @@ describe_t crear_dato_describe(char* nombre_tabla){
 
 void liberar_dato_describe(describe_t dato){
 
-	if(dato->tabla != NULL){
+	if(!(dato->global)){
 		free(dato->tabla->buffer);
 		free(dato->tabla);
 	}

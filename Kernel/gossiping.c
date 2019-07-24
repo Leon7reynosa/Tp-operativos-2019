@@ -53,9 +53,17 @@ void* realizar_gossiping(){
 
 void remover_memoria_de_consistencia(memoria_t* memoria){
 
+	memoria_t* memoria_devuelta_shc;
+
 	remover_conexion(memoria->socket, Eventual_C);
 
-	remover_conexion(memoria->socket, Strong_Hash_C);
+	memoria_devuelta_shc = remover_conexion(memoria->socket, Strong_Hash_C);
+
+	if(memoria_devuelta_shc != NULL){
+
+		request_journal();
+
+	}
 
 	if(memoria == Strong_C){
 
@@ -67,7 +75,6 @@ void remover_memoria_de_consistencia(memoria_t* memoria){
 
 
 memoria_t* remover_conexion( int conexion , t_list* lista_a_remover ){
-
 
 	bool _tenes_esta_conexion(void* _dato_memoria){
 

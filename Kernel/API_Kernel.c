@@ -21,6 +21,8 @@ int ejecutar_request(char* request_lql){
 	char* consistencia = string_new();
 	int tiempo_compactacion, particiones, numero_memoria, cantidad_parametros;
 
+	printf("hola\n");
+
 	memoria_t* memoria_utilizada;
 
 	u_int16_t key;
@@ -29,9 +31,15 @@ int ejecutar_request(char* request_lql){
 
 	describe_t describe_enviar;
 
+	printf("chau\n");
+
 	log_info(logger_kernel, request_lql);
 
+	printf("es el log\n");
+
 	cod_request = identificar_request(request_lql);
+
+	printf("llegue bro\n");
 
 	switch(cod_request){
 		case SELECT:
@@ -161,7 +169,7 @@ int ejecutar_request(char* request_lql){
 
 				describe_enviar = crear_dato_describe(nombre_tabla);
 
-				memoria_utilizada = seleccionar_memoria_consistencia(DESCRIBE, describe_enviar);
+				memoria_utilizada = tomar_memoria_al_azar();
 
 				if(memoria_utilizada == NULL){
 
@@ -220,6 +228,8 @@ int ejecutar_request(char* request_lql){
 			return 1;
 
 		case ADD:
+
+			printf("llegue hasta aca\n");
 
 			if(  obtener_parametros_add(request_lql, &numero_memoria, consistencia) &&  (identificar_consistencia(consistencia) >= 0 ) ){
 

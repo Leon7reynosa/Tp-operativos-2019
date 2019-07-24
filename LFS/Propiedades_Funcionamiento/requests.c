@@ -82,7 +82,11 @@ void trabajar_request(request request_a_operar , int conexion){
 				list_destroy_and_destroy_elements(metadata_describe, liberar_metadata);
 
 			}else{
-				//NOSE!
+
+				metadata_describe = list_create();
+
+				enviar_metadata(metadata_describe, conexion);
+
 			}
 
 			log_trace(logger_request, "Request de DESCRIBE terminada por el socket %i !\n", conexion);

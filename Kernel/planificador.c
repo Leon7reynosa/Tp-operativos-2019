@@ -212,9 +212,13 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST %s.\n", request);
 
+				printf("NO SE SEGUIRA EJECUTANDO EL SCRIPT\n");
+
 				queue_push(cola_exit, siguiente_script);
 
-				break;
+				queue_clean(cola_exec);  //agrego esto no se si esta bien
+
+				continue;
 
 			}
 

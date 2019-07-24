@@ -54,6 +54,18 @@ void liberar_request(request request_a_liberar){
 
 			break;
 
+		case DESCRIBE:
+
+			liberar_dato_describe(request_a_liberar->tipo_request);
+
+			break;
+
+		case DROP:
+
+			liberar_drop(request_a_liberar->tipo_request);
+
+			break;
+
 		default:
 
 			break;
