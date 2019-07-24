@@ -164,15 +164,19 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 		request_recibida = recibir_request(memoria_conectada->socket_memoria);
 
-		printf("\n//////////////////////////////////////NUEVA REQUEST////////////////////////////\n");
-
 		if(request_recibida->cod_op == DESCONEXION){
 
+			printf("VOY A DESCONECTAR AL CLIENTE!\n");
+
 			liberar_request(request_recibida);
+
+			pthread_setcancelstate(PTHREAD_CANCEL_ENABLE,NULL);
 
 			desconectar_memoria(memoria_conectada);
 
 		}else{
+
+			printf("\n//////////////////////////////////////NUEVA REQUEST////////////////////////////\n");
 
 			trabajar_request(request_recibida, memoria_conectada->socket_memoria); //nos faltaria esta funcion
 

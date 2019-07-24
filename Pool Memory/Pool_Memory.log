@@ -1931,3 +1931,30 @@
 
 [INFO] 13:42:48:444 Pool Memory/(8736:8736): Se termino de trabajar la request.
 
+[INFO] 14:28:44:654 Pool Memory/(9605:9605): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 14:28:44:655 Pool Memory/(9605:9605): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 14:29:22:97 Pool Memory/(9645:9645): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 14:29:22:98 Pool Memory/(9645:9645): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 14:36:35:241 Pool Memory/(9899:9899): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 14:36:35:241 Pool Memory/(9899:9899): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 14:36:45:245 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:36:55:245 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:37:05:246 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:37:15:247 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:37:25:247 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:37:35:248 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:37:45:250 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:37:55:250 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
+[INFO] 14:38:05:251 Pool Memory/(9899:9906): No se pudo conectar con 192.168.1.41:8001
