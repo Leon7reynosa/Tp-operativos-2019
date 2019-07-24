@@ -74,7 +74,7 @@ int main (int argc , char* argv[]){
 
 					}else{
 
-						log_info(logger, "Acepte una nueva conexion\n");
+						//log_info(logger, "Acepte una nueva conexion\n");
 
 						FD_SET(new_fd, &master);
 
@@ -94,6 +94,8 @@ int main (int argc , char* argv[]){
 					request nueva_request = recibir_request(i);
 
 //TODO Esta ranciada de la desconexion y los errores
+
+					printf("codigo op : %d\n" , nueva_request->cod_op);
 
 					if(nueva_request->cod_op == DESCONEXION){
 

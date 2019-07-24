@@ -121,7 +121,7 @@ Dato request_select(select_t dato){
 
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
-			log_info(logger, "Existe una pagina con la key: %i", dato->key);
+//			log_info(logger, "Existe una pagina con la key: %i", dato->key);
 
 			mostrar_datos(pagina_encontrada);
 
@@ -131,7 +131,7 @@ Dato request_select(select_t dato){
 
 		}else{
 
-			log_info(logger, "No existe una pagina con la key %i, la busco en el File System", dato->key);
+//			log_info(logger, "No existe una pagina con la key %i, la busco en el File System", dato->key);
 
 			Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
 
@@ -251,7 +251,7 @@ void request_insert(insert dato){
 
 	}else{
 
-		log_info(logger, "No existe el segmento. Se crea el segmento.");
+//		log_info(logger, "No existe el segmento. Se crea el segmento.");
 
 		agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
 
@@ -282,7 +282,7 @@ void request_insert(insert dato){
 
 void request_create(create dato_create){
 
-	log_info(logger, "Se realizara un CREATE");
+//	log_info(logger, "Se realizara un CREATE");
 
 	request nuevo_create = crear_request(CREATE, dato_create);
 
@@ -295,13 +295,13 @@ void request_create(create dato_create){
 	pthread_mutex_lock(&mutex_journal);
 	if(!existe_segmento((char *)dato_create->tabla->buffer, segmento_aux)){
 
-		log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
+//		log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
 
 		agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
 
 	}else{
 
-		log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
+//		log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
 
 	}
 	pthread_mutex_unlock(&mutex_journal);
@@ -332,7 +332,7 @@ t_list* request_describe(describe_t dato_describe){
 
 	printf("Libero la request describe\n");
 
-	liberar_request(nuevo_describe);
+	free(nuevo_describe);
 
 	printf("ESPERO LA RESPUESTA DEL DESCRIBE!\n");
 
@@ -344,7 +344,7 @@ t_list* request_describe(describe_t dato_describe){
 
 int request_drop(Drop datos_drop){
 
-	log_info("Se realizara un DROP de tabla: %s", (char *) datos_drop->tabla->buffer);
+//	log_info(logger, "Se realizara un DROP de tabla: %s", (char *) datos_drop->tabla->buffer);
 
 	request request_drop = crear_request(DROP, datos_drop);
 
@@ -358,11 +358,11 @@ int request_drop(Drop datos_drop){
 
 	if(existe_segmento( (char *) datos_drop->tabla->buffer ,  &segmento_drop )){
 
-		log_info("Existe el segmento asociado a %s. Se elimina el segmento.",(char *) datos_drop->tabla->buffer );
+//		log_info(logger, "Existe el segmento asociado a %s. Se elimina el segmento.",(char *) datos_drop->tabla->buffer );
 		sacar_segmento(segmento_drop);
 
 	}else{
-		log_info("No existe el segmento asociado a %s",(char *) datos_drop->tabla->buffer );
+//		log_info(logger, "No existe el segmento asociado a %s",(char *) datos_drop->tabla->buffer );
 	}
 
 	pthread_mutex_unlock(&mutex_journal);

@@ -139,11 +139,13 @@ describe_t decodificar_describe(int conexion){
 	printf("Creo el dato describe\n");
 	describe_t dato = crear_dato_describe(tabla);
 
-	free(size_tabla);
+	printf("Dato creado!\n");
 
 	if(!global){
 		free(tabla);
 	}
+
+	printf("Retorno el dato\n");
 
 	return dato;
 }

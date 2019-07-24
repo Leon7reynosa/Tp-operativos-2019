@@ -16,6 +16,10 @@
 
 t_log* logger;
 
+t_log* logger_gossip;
+
+t_log* logger_journal;
+
 char* obtener_path_log(void);
 void inicializar_logger(void);
 void liberar_logger(void);

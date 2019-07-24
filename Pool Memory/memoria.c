@@ -259,9 +259,13 @@ void* auto_journal(void* argumento){
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
 		pthread_mutex_lock(&mutex_journal);
-		log_info(logger, "Inicia el Auto-Journal");
+
+		//log_info(logger_journal, "Inicia el Auto-Journal");
+
 		realizar_journal();
-		log_info(logger, "Termina el Auto-Journal\n");
+
+//		log_info(logger_journal, "Termina el Auto-Journal\n");
+
 		pthread_mutex_unlock(&mutex_journal);
 
 		printf("\n////////////////////////FIN Auto-Journal///////////////////////////\n\n");
@@ -336,13 +340,13 @@ void realizar_journal(void){
 
 Pagina realizar_algoritmo_reemplazo(void){
 
-	log_info(logger, "Empieza el algoritmo de reemplazo");
+//	log_info(logger, "Empieza el algoritmo de reemplazo");
 
 	Pagina pagina_reemplazada = pagina_menos_usada(memoria->paginas);
 
 	if(pagina_reemplazada == NULL){
 
-		log_info(logger, "La memoria esta FULL");
+//		log_info(logger, "La memoria esta FULL");
 
 	}else{
 
@@ -354,7 +358,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 		Dato dato_para_logg = decodificar_dato_de_memoria(pagina_reemplazada->referencia_memoria);
 
-		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
+//		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
 
 		liberar_dato(dato_para_logg);
 	}

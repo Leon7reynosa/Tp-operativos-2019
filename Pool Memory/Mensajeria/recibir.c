@@ -72,9 +72,16 @@ request recibir_request(int conexion){
 
 	}
 
+
+	printf("hola\n");
+
 	request request = crear_request(*cod_op, tipo_request);
 
+	printf("chau\n");
+
 	free(cod_op);
+
+	printf("buen dia\n");
 	return request;
 
 }

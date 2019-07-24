@@ -64,4 +64,5 @@
 			<resource resourceType="PROJECT" workspacePath="/LFS"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

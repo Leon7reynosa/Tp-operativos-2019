@@ -1,17 +1,69 @@
-[INFO] 00:07:11:974 Pool Memory/(9428:9428): Se establecion conexion con el File System.
+[INFO] 01:42:22:866 Pool Memory/(15367:15367): Se establecion conexion con el File System.
 >> Tamanio value = 20
 
-[INFO] 00:07:11:974 Pool Memory/(9428:9428): Se inicializo correctamente la memoria.
+[INFO] 01:42:22:867 Pool Memory/(15367:15367): Se inicializo correctamente la memoria.
 >> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
 
-[INFO] 00:07:31:346 Pool Memory/(9464:9464): Se establecion conexion con el File System.
+[INFO] 01:42:52:672 Pool Memory/(15367:15367): Acepte una nueva conexion
+
+[INFO] 01:42:52:868 Pool Memory/(15367:15374): No se pudo conectar con 192.168.1.41:8001
+[INFO] 01:42:52:868 Pool Memory/(15367:15374): No se pudo conectar con 192.168.1.41:8002
+[INFO] 01:42:59:989 Pool Memory/(15367:15367): Acepte una nueva conexion
+
+[INFO] 01:43:02:680 Pool Memory/(15367:15367): Se recibio una nueva request.
+[INFO] 01:43:02:680 Pool Memory/(15367:15367): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:43:02:682 Pool Memory/(15367:15367): Se termino de trabajar la request.
+
+[INFO] 01:45:41:497 Pool Memory/(15451:15451): Se establecion conexion con el File System.
 >> Tamanio value = 20
 
-[INFO] 00:07:31:347 Pool Memory/(9464:9464): Se inicializo correctamente la memoria.
+[INFO] 01:45:44:583 Pool Memory/(15451:15451): Se inicializo correctamente la memoria.
 >> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
 
-[INFO] 00:07:41:978 Pool Memory/(9428:9435): Inicia el Auto-Gossiping
-[INFO] 00:07:41:979 Pool Memory/(9428:9435): No se pudo conectar con 192.168.1.40:8001
-[INFO] 00:07:41:979 Pool Memory/(9428:9435): No se pudo conectar con 192.168.1.40:8002
-[INFO] 00:07:41:979 Pool Memory/(9428:9435): Termina el Auto-Gossiping
+[INFO] 01:55:22:918 Pool Memory/(15867:15867): Se establecion conexion con el File System.
+>> Tamanio value = 20
+
+[INFO] 01:55:22:919 Pool Memory/(15867:15867): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
+
+[INFO] 01:55:52:921 Pool Memory/(15867:15874): No se pudo conectar con 192.168.1.41:8001
+[INFO] 01:55:52:921 Pool Memory/(15867:15874): No se pudo conectar con 192.168.1.41:8002
+[INFO] 01:57:54:702 Pool Memory/(15968:15968): Se establecion conexion con el File System.
+>> Tamanio value = 20
+
+[INFO] 01:57:54:702 Pool Memory/(15968:15968): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
+
+[INFO] 01:58:24:709 Pool Memory/(15968:15979): No se pudo conectar con 192.168.1.41:8001
+[INFO] 01:58:24:709 Pool Memory/(15968:15979): No se pudo conectar con 192.168.1.41:8002
+[INFO] 01:58:54:709 Pool Memory/(15968:15979): No se pudo conectar con 192.168.1.41:8001
+[INFO] 01:58:54:709 Pool Memory/(15968:15979): No se pudo conectar con 192.168.1.41:8002
+[INFO] 01:59:00:434 Pool Memory/(15968:15968): Se realizar intercambio de tablas de gossiping
+[INFO] 01:59:16:499 Pool Memory/(16079:16079): Se establecion conexion con el File System.
+>> Tamanio value = 20
+
+[INFO] 01:59:16:499 Pool Memory/(16079:16079): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
+
+[INFO] 01:59:29:949 Pool Memory/(16079:16079): Se recibio una nueva request.
+[INFO] 01:59:29:949 Pool Memory/(16079:16079): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:59:29:951 Pool Memory/(16079:16079): Se termino de trabajar la request.
+
+[INFO] 01:59:39:952 Pool Memory/(16079:16079): Se recibio una nueva request.
+[INFO] 01:59:39:952 Pool Memory/(16079:16079): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:59:39:953 Pool Memory/(16079:16079): Se termino de trabajar la request.
+
+[INFO] 01:59:46:503 Pool Memory/(16079:16087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 01:59:46:503 Pool Memory/(16079:16087): No se pudo conectar con 192.168.1.41:8002
+[INFO] 01:59:49:953 Pool Memory/(16079:16079): Se recibio una nueva request.
+[INFO] 01:59:49:953 Pool Memory/(16079:16079): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:59:49:954 Pool Memory/(16079:16079): Se termino de trabajar la request.
+
+[INFO] 01:59:59:955 Pool Memory/(16079:16079): Se recibio una nueva request.
+[INFO] 01:59:59:955 Pool Memory/(16079:16079): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:59:59:956 Pool Memory/(16079:16079): Se termino de trabajar la request.
+
+[INFO] 02:00:09:957 Pool Memory/(16079:16079): Se recibio una nueva request.
+[INFO] 02:00:09:957 Pool Memory/(16079:16079): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:00:09:958 Pool Memory/(16079:16079): Se termino de trabajar la request.
 

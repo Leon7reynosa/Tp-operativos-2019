@@ -21,10 +21,10 @@ void* auto_gossip(void* argumentos){
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
 		pthread_mutex_lock(&mutex_gossip);
-		log_info(logger, "Inicia el Auto-Gossiping");
+//		log_info(logger_gossip, "Inicia el Auto-Gossiping");
 		gossiping();
 		pthread_mutex_unlock(&mutex_gossip);
-		log_info(logger, "Termina el Auto-Gossiping\n");
+//		log_info(logger_gossip, "Termina el Auto-Gossiping\n");
 
 		printf("\n//////////////////FIN Auto-Gossip//////////////////////////\n\n");
 
@@ -60,7 +60,7 @@ void gossiping(){
 
 			datos_gossip = recibir_datos_gossip(socket_seed);
 
-			log_info(logger, "Actualizacion de tabla gossip");
+//			log_info(logger, "Actualizacion de tabla gossip");
 			actualizar_tabla_gossip(datos_gossip);
 
 			liberar_dato_gossiping(datos_gossip);
