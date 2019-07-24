@@ -27,6 +27,8 @@ typedef struct{
 
 }metadata_t;
 
+int memoria_siguiente;
+
 
 
 t_dictionary* registro_tabla; //va a tener char* nombre_tabla y los elementos van a ser metadata_t

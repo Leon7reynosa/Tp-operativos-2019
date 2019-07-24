@@ -77,7 +77,7 @@ int ejecutar_request(char* request_lql){
 
 					printf("NO SE PUDO REALIZAR EL SELECT\n");
 
-					return 0;
+					return 1;
 
 				}
 
@@ -246,13 +246,14 @@ int ejecutar_request(char* request_lql){
 
 			nombre_archivo = obtener_parametros_run(request_lql);
 
-			log_info("--Se realizara el RUN del archivo %s--\n" , nombre_archivo);
+			//log_info(logger_kernel , "--Se realizara el RUN del archivo %s--\n" , nombre_archivo);
 
 			if(nombre_archivo != NULL){
 
 				queue_push(cola_new , nombre_archivo);
 
-				log_info(logger_kernel, "EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.\n");
+				//log_info(logger_kernel, "EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.\n");
+
 
 				cola_new_to_ready();
 
@@ -269,7 +270,6 @@ int ejecutar_request(char* request_lql){
 
 				Drop drop_enviar = crear_drop(nombre_tabla);
 
-				printf("ya lo cree bro\n");
 
 				memoria_utilizada = seleccionar_memoria_consistencia(DROP , drop_enviar);
 
@@ -521,11 +521,15 @@ char* obtener_parametros_run(char* linea_request){
 
 	char* funcion = string_new();
 
-	char* archivo = string_new();
+	char* archivo = malloc( strlen(linea_request) - 3 );
 
 	sscanf(linea_request, "%s %s", funcion, archivo);
 
-	free(funcion);
+	//free(funcion);
+
+	printf("archivo: %s\n" , archivo);
+
+//	char* archivo_devuelto = string_duplicate(archivo);
 
 	return archivo;
 }

@@ -29,11 +29,11 @@ void creacion_del_config_fileSystem(){
 	g_config = config_create("fileSystem.config");
 
 	config_set_value(g_config, "IP", "127.0.0.1");
-	config_set_value(g_config, "PUERTO", "4445");
+	config_set_value(g_config, "PUERTO", "5003");
 	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
-	config_set_value(g_config, "RETARDO", "500");
-	config_set_value(g_config, "TAMANIO_VALUE", "20");
-	config_set_value(g_config, "TIEMPO_DUMP", "50000");
+	config_set_value(g_config, "RETARDO", "0");
+	config_set_value(g_config, "TAMANIO_VALUE", "60");
+	config_set_value(g_config, "TIEMPO_DUMP", "20000");
 
 
 	config_save(g_config);

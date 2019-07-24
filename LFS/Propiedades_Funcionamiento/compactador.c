@@ -241,7 +241,11 @@ void* ciclo_compactacion(thread_args* argumentos){
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
+		printf("\n/////////////////////////////// INICIO COMPACTACION ///////////////////////////////\n");
+
 		compactar(argumentos);
+
+		printf("\n///////////////////////////////// FIN COMPACTACION ////////////////////////////////\n");
 
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 

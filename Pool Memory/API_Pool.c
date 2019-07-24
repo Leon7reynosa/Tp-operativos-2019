@@ -288,12 +288,18 @@ void request_create(create dato_create){
 
 	enviar_request(nuevo_create, socket_lissandra);
 
+	printf("si pase\n");
+
 	free(nuevo_create);
+
+	printf("buenardas\n");
 
 	Segmento segmento_aux;
 
+	printf("jajaaja\n");
+
 	pthread_mutex_lock(&mutex_journal);
-	if(!existe_segmento((char *)dato_create->tabla->buffer, segmento_aux)){
+	if(!existe_segmento((char *)dato_create->tabla->buffer, &segmento_aux)){
 
 //		log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
 

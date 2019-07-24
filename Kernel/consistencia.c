@@ -307,9 +307,19 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 			}
 
-			numero_random = rand() % list_size(Eventual_C);
 
-			return list_get(Eventual_C, numero_random);
+
+			if ( memoria_siguiente >= list_size(Eventual_C) ){
+
+				memoria_siguiente = 0;
+
+			}else{
+
+				memoria_siguiente++;
+
+			}
+
+			return list_get(Eventual_C, memoria_siguiente);
 
 			break;
 

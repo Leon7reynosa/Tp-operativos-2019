@@ -67,3 +67,1867 @@
 [INFO] 02:00:09:957 Pool Memory/(16079:16079): Se realizara un DESCRIBE GLOBAL
 [INFO] 02:00:09:958 Pool Memory/(16079:16079): Se termino de trabajar la request.
 
+[INFO] 11:50:35:557 Pool Memory/(4387:4387): Se establecion conexion con el File System.
+>> Tamanio value = 20
+
+[INFO] 11:50:35:563 Pool Memory/(4387:4387): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
+
+[INFO] 11:50:47:662 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:50:47:662 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:50:47:704 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:50:57:705 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:50:57:706 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:50:57:708 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:51:05:586 Pool Memory/(4387:4398): No se pudo conectar con 192.168.1.41:8001
+[INFO] 11:51:05:586 Pool Memory/(4387:4398): No se pudo conectar con 192.168.1.41:8002
+[INFO] 11:51:07:708 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:51:07:708 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:51:07:709 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:51:17:714 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:51:17:714 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:51:17:715 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:51:27:717 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:51:27:717 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:51:27:718 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:51:35:586 Pool Memory/(4387:4398): No se pudo conectar con 192.168.1.41:8001
+[INFO] 11:51:35:586 Pool Memory/(4387:4398): No se pudo conectar con 192.168.1.41:8002
+[INFO] 11:51:37:661 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:51:37:661 Pool Memory/(4387:4387): Se realizar intercambio de tablas de gossiping
+[INFO] 11:51:37:661 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:51:37:719 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:51:37:719 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:51:37:720 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:51:47:722 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:51:47:722 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:51:47:723 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:51:57:724 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:51:57:724 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:51:57:727 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:52:05:587 Pool Memory/(4387:4398): No se pudo conectar con 192.168.1.41:8001
+[INFO] 11:52:05:587 Pool Memory/(4387:4398): No se pudo conectar con 192.168.1.41:8002
+[INFO] 11:52:07:728 Pool Memory/(4387:4387): Se recibio una nueva request.
+[INFO] 11:52:07:728 Pool Memory/(4387:4387): Se realizara un DESCRIBE GLOBAL
+[INFO] 11:52:07:730 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:52:09:894 Pool Memory/(4387:4387): Se desconecto un cliente.
+
+[INFO] 11:52:09:894 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 11:52:09:895 Pool Memory/(4387:4387): Se desconecto un cliente.
+
+[INFO] 11:52:09:895 Pool Memory/(4387:4387): Se termino de trabajar la request.
+
+[INFO] 12:08:33:831 Pool Memory/(4876:4876): Se establecion conexion con el File System.
+>> Tamanio value = 20
+
+[INFO] 12:08:33:831 Pool Memory/(4876:4876): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
+
+[INFO] 12:08:49:70 Pool Memory/(4876:4876): Se recibio una nueva request.
+[INFO] 12:08:49:70 Pool Memory/(4876:4876): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:08:49:71 Pool Memory/(4876:4876): Se termino de trabajar la request.
+
+[INFO] 12:08:58:437 Pool Memory/(4876:4876): Se recibio una nueva request.
+[INFO] 12:13:46:23 Pool Memory/(5026:5026): Se establecion conexion con el File System.
+>> Tamanio value = 20
+
+[INFO] 12:13:46:24 Pool Memory/(5026:5026): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 2048 -> Cantidad maxima de datos: 78 
+
+[INFO] 12:14:01:395 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:01:395 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:14:01:397 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:03:586 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:03:589 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:03:625 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:03:625 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:14:04:94 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:04:94 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:04:695 Pool Memory/(5026:5026): Se realizara un INSERT
+[INFO] 12:14:04:695 Pool Memory/(5026:5026): Existe un segmento para COLORS
+[INFO] 12:14:04:695 Pool Memory/(5026:5026): Existe una pagina con la key: 1
+[INFO] 12:14:04:695 Pool Memory/(5026:5026): Se solicita una nueva pagina
+[INFO] 12:14:04:695 Pool Memory/(5026:5026): Hay una pagina libre para asignar
+[INFO] 12:14:04:696 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:04:696 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:05:296 Pool Memory/(5026:5026): Se realizara un SELECT
+[INFO] 12:14:05:296 Pool Memory/(5026:5026): Existe un segmento para COLORS
+[INFO] 12:14:05:296 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:06:297 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:06:898 Pool Memory/(5026:5026): Se realizara un INSERT
+[INFO] 12:14:06:898 Pool Memory/(5026:5026): Existe un segmento para COLORS
+[INFO] 12:14:06:898 Pool Memory/(5026:5026): Existe una pagina con la key: 2
+[INFO] 12:14:06:898 Pool Memory/(5026:5026): Se solicita una nueva pagina
+[INFO] 12:14:06:898 Pool Memory/(5026:5026): Hay una pagina libre para asignar
+[INFO] 12:14:06:898 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:06:899 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:07:500 Pool Memory/(5026:5026): Se realizara un SELECT
+[INFO] 12:14:07:500 Pool Memory/(5026:5026): Existe un segmento para COLORS
+[INFO] 12:14:07:501 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:11:398 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:11:398 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:14:11:400 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:16:25 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:14:16:25 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:14:21:402 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:21:403 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:14:21:405 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:31:405 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:31:405 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:14:31:407 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:41:408 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:41:408 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:14:41:410 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:46:25 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:14:46:25 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:14:51:398 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:51:398 Pool Memory/(5026:5026): Se realizar intercambio de tablas de gossiping
+[INFO] 12:14:51:398 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:14:51:411 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:14:51:411 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:14:51:413 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:15:01:413 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:15:01:414 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:15:01:415 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:15:11:416 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:15:11:416 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:15:11:418 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:15:16:25 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:15:16:25 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:15:21:418 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:15:21:418 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:15:21:419 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:15:31:421 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:15:31:421 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:15:31:422 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:15:41:423 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:15:41:423 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:15:41:425 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:15:46:26 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:15:46:26 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:15:51:399 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:15:51:399 Pool Memory/(5026:5026): Se realizar intercambio de tablas de gossiping
+[INFO] 12:15:51:399 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:15:51:425 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:15:51:425 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:15:51:427 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:16:01:428 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:16:01:428 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:16:01:430 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:16:11:431 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:16:11:431 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:16:11:433 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:16:16:27 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:16:16:27 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:16:21:433 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:16:21:434 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:16:21:435 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:16:31:436 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:16:31:436 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:16:31:437 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:16:41:438 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:16:41:438 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:16:41:439 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:16:46:27 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:16:46:27 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:16:51:399 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:16:51:400 Pool Memory/(5026:5026): Se realizar intercambio de tablas de gossiping
+[INFO] 12:16:51:400 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:16:51:440 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:16:51:440 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:16:51:442 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:17:01:444 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:17:01:444 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:17:01:446 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:17:11:447 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:17:11:447 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:17:11:449 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:17:16:28 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:17:16:28 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:17:21:450 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:17:21:450 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:17:21:452 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:17:31:453 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:17:31:453 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:17:31:455 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:17:41:455 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:17:41:455 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:17:41:457 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:17:46:28 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:17:46:28 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:17:51:401 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:17:51:402 Pool Memory/(5026:5026): Se realizar intercambio de tablas de gossiping
+[INFO] 12:17:51:402 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:17:51:458 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:17:51:458 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:17:51:460 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:18:01:460 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:18:01:460 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:18:01:462 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:18:11:465 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:18:11:465 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:18:11:475 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:18:16:29 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:18:16:29 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:18:21:476 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:18:21:476 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:18:21:477 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:18:31:478 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:18:31:478 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:18:31:479 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:18:41:480 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:18:41:480 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:18:41:481 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:18:46:30 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:18:46:30 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:18:51:403 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:18:51:403 Pool Memory/(5026:5026): Se realizar intercambio de tablas de gossiping
+[INFO] 12:18:51:403 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:18:51:482 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:18:51:482 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:18:51:484 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:19:01:485 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:19:01:485 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:19:01:487 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:19:11:488 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:19:11:488 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:19:11:490 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:19:16:30 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:19:16:30 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:19:21:491 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:19:21:491 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:19:21:492 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:19:31:492 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:19:31:492 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:19:31:494 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:19:41:495 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:19:41:495 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:19:41:496 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:19:46:31 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:19:46:31 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:19:51:406 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:19:51:406 Pool Memory/(5026:5026): Se realizar intercambio de tablas de gossiping
+[INFO] 12:19:51:406 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:19:51:497 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:19:51:497 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:19:51:500 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:20:01:501 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:20:01:501 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:20:01:503 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:20:11:505 Pool Memory/(5026:5026): Se recibio una nueva request.
+[INFO] 12:20:11:505 Pool Memory/(5026:5026): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:20:11:507 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:20:16:31 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:20:16:31 Pool Memory/(5026:5034): No se pudo conectar con 192.168.1.41:8002
+[INFO] 12:20:21:178 Pool Memory/(5026:5026): Se desconecto un cliente.
+
+[INFO] 12:20:21:179 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:20:21:179 Pool Memory/(5026:5026): Se desconecto un cliente.
+
+[INFO] 12:20:21:179 Pool Memory/(5026:5026): Se termino de trabajar la request.
+
+[INFO] 12:39:19:85 Pool Memory/(6533:6533): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:39:19:86 Pool Memory/(6533:6533): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:39:29:87 Pool Memory/(6533:6541): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:39:39:87 Pool Memory/(6533:6541): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:39:49:88 Pool Memory/(6533:6541): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:39:59:88 Pool Memory/(6533:6541): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:40:00:17 Pool Memory/(6569:6569): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:40:00:17 Pool Memory/(6569:6569): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:40:09:90 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:40:09:90 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:40:09:90 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:09:90 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:40:09:90 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:19:92 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:40:19:92 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:40:19:93 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:19:93 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:40:19:94 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:29:94 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:40:29:94 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:40:29:94 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:29:94 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:40:29:94 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:39:95 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:40:39:95 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:40:39:96 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:39:96 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:40:39:96 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:49:96 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:40:49:96 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:40:49:96 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:49:96 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:40:49:96 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:59:97 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:40:59:97 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:40:59:98 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:40:59:98 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:40:59:98 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:07:105 Pool Memory/(6533:6533): Se recibio una nueva request.
+[INFO] 12:41:07:105 Pool Memory/(6533:6533): Se realizar intercambio de tablas de gossiping
+[INFO] 12:41:07:106 Pool Memory/(6533:6533): Se termino de trabajar la request.
+
+[INFO] 12:41:09:98 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:41:09:98 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:41:09:99 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:09:99 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:41:09:99 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:19:100 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:41:19:100 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:41:19:100 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:19:101 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:41:19:101 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:22:105 Pool Memory/(6533:6533): Se recibio una nueva request.
+[INFO] 12:41:22:105 Pool Memory/(6533:6533): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:41:22:107 Pool Memory/(6533:6533): Se termino de trabajar la request.
+
+[INFO] 12:41:29:102 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:41:29:102 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:41:29:102 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:29:102 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:41:29:102 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:31:298 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:41:31:298 Pool Memory/(6533:6533): Se desconecto un cliente.
+
+[INFO] 12:41:31:298 Pool Memory/(6533:6533): Se termino de trabajar la request.
+
+[INFO] 12:41:31:298 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:31:298 Pool Memory/(6533:6533): Se desconecto un cliente.
+
+[INFO] 12:41:31:299 Pool Memory/(6533:6533): Se termino de trabajar la request.
+
+[INFO] 12:41:39:103 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:41:39:104 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:41:39:104 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:39:104 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:41:39:104 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:49:106 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:41:49:106 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:41:49:106 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:49:106 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:41:49:106 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:59:107 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:41:59:107 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:41:59:107 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:41:59:108 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:41:59:108 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:42:09:109 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:42:09:109 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:42:09:109 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:42:09:109 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:42:09:109 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:42:19:110 Pool Memory/(6569:6569): Se recibio una nueva request.
+[INFO] 12:42:19:110 Pool Memory/(6569:6569): Se realizar intercambio de tablas de gossiping
+[INFO] 12:42:19:110 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:42:19:111 Pool Memory/(6569:6569): Se desconecto un cliente.
+
+[INFO] 12:42:19:111 Pool Memory/(6569:6569): Se termino de trabajar la request.
+
+[INFO] 12:43:36:371 Pool Memory/(6717:6717): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:43:36:371 Pool Memory/(6717:6717): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:43:46:372 Pool Memory/(6717:6724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:43:56:373 Pool Memory/(6717:6724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:44:06:373 Pool Memory/(6717:6724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:44:09:692 Pool Memory/(6749:6749): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:44:09:692 Pool Memory/(6749:6749): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:44:16:380 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:44:16:380 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:44:16:380 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:16:380 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:44:16:380 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:26:383 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:44:26:383 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:44:26:383 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:26:383 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:44:26:384 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:36:384 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:44:36:385 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:44:36:385 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:36:385 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:44:36:385 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:46:386 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:44:46:386 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:44:46:386 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:46:387 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:44:46:387 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:56:388 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:44:56:388 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:44:56:388 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:44:56:389 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:44:56:389 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:06:389 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:45:06:389 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:45:06:390 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:06:390 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:45:06:390 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:14:683 Pool Memory/(6717:6717): Se recibio una nueva request.
+[INFO] 12:45:14:683 Pool Memory/(6717:6717): Se realizar intercambio de tablas de gossiping
+[INFO] 12:45:14:683 Pool Memory/(6717:6717): Se termino de trabajar la request.
+
+[INFO] 12:45:16:394 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:45:16:394 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:45:16:394 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:16:394 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:45:16:394 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:26:395 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:45:26:395 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:45:26:395 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:26:396 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:45:26:396 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:29:684 Pool Memory/(6717:6717): Se recibio una nueva request.
+[INFO] 12:45:29:684 Pool Memory/(6717:6717): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:45:29:685 Pool Memory/(6717:6717): Se termino de trabajar la request.
+
+[INFO] 12:45:33:625 Pool Memory/(6717:6717): Se desconecto un cliente.
+
+[INFO] 12:45:33:625 Pool Memory/(6717:6717): Se termino de trabajar la request.
+
+[INFO] 12:45:33:626 Pool Memory/(6717:6717): Se desconecto un cliente.
+
+[INFO] 12:45:33:626 Pool Memory/(6717:6717): Se termino de trabajar la request.
+
+[INFO] 12:45:33:626 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:45:33:626 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:36:397 Pool Memory/(6749:6749): Se recibio una nueva request.
+[INFO] 12:45:36:397 Pool Memory/(6749:6749): Se realizar intercambio de tablas de gossiping
+[INFO] 12:45:36:398 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:45:36:398 Pool Memory/(6749:6749): Se desconecto un cliente.
+
+[INFO] 12:45:36:398 Pool Memory/(6749:6749): Se termino de trabajar la request.
+
+[INFO] 12:47:18:586 Pool Memory/(6870:6870): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:47:18:587 Pool Memory/(6870:6870): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:47:28:590 Pool Memory/(6870:6877): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:47:36:907 Pool Memory/(6899:6899): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:47:36:907 Pool Memory/(6899:6899): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:47:38:591 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:47:38:591 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:47:38:591 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:47:38:591 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:47:38:591 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:47:48:593 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:47:48:593 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:47:48:593 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:47:48:593 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:47:48:593 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:47:58:594 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:47:58:594 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:47:58:594 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:47:58:594 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:47:58:594 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:08:595 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:48:08:595 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:48:08:595 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:08:595 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:48:08:595 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:16:670 Pool Memory/(6870:6870): Se recibio una nueva request.
+[INFO] 12:48:16:671 Pool Memory/(6870:6870): Se realizar intercambio de tablas de gossiping
+[INFO] 12:48:16:671 Pool Memory/(6870:6870): Se termino de trabajar la request.
+
+[INFO] 12:48:18:597 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:48:18:597 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:48:18:598 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:18:598 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:48:18:598 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:28:599 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:48:28:599 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:48:28:599 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:28:599 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:48:28:600 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:31:671 Pool Memory/(6870:6870): Se recibio una nueva request.
+[INFO] 12:48:31:671 Pool Memory/(6870:6870): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:48:31:673 Pool Memory/(6870:6870): Se termino de trabajar la request.
+
+[INFO] 12:48:38:601 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:48:38:601 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:48:38:601 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:38:601 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:48:38:601 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:42:791 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:48:42:791 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:42:791 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:48:42:791 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:42:791 Pool Memory/(6870:6870): Se desconecto un cliente.
+
+[INFO] 12:48:42:791 Pool Memory/(6870:6870): Se termino de trabajar la request.
+
+[INFO] 12:48:42:791 Pool Memory/(6870:6870): Se desconecto un cliente.
+
+[INFO] 12:48:42:791 Pool Memory/(6870:6870): Se termino de trabajar la request.
+
+[INFO] 12:48:48:602 Pool Memory/(6899:6899): Se recibio una nueva request.
+[INFO] 12:48:48:602 Pool Memory/(6899:6899): Se realizar intercambio de tablas de gossiping
+[INFO] 12:48:48:602 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:48:48:602 Pool Memory/(6899:6899): Se desconecto un cliente.
+
+[INFO] 12:48:48:602 Pool Memory/(6899:6899): Se termino de trabajar la request.
+
+[INFO] 12:56:04:553 Pool Memory/(7080:7080): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:56:04:553 Pool Memory/(7080:7080): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:56:14:555 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:56:24:555 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:56:28:583 Pool Memory/(7080:7080): Se recibio una nueva request.
+[INFO] 12:56:28:583 Pool Memory/(7080:7080): Se realizara un DESCRIBE GLOBAL
+[INFO] 12:56:28:584 Pool Memory/(7080:7080): Se termino de trabajar la request.
+
+[INFO] 12:56:30:244 Pool Memory/(7080:7080): Se desconecto un cliente.
+
+[INFO] 12:56:30:244 Pool Memory/(7080:7080): Se termino de trabajar la request.
+
+[INFO] 12:56:30:244 Pool Memory/(7080:7080): Se desconecto un cliente.
+
+[INFO] 12:56:30:245 Pool Memory/(7080:7080): Se termino de trabajar la request.
+
+[INFO] 12:56:34:556 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:56:44:556 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:56:54:557 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:57:04:558 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:57:14:559 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:57:24:561 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:57:34:562 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:57:44:562 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:57:54:570 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:58:04:570 Pool Memory/(7080:7087): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:58:25:524 Pool Memory/(7175:7175): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:58:25:524 Pool Memory/(7175:7175): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:58:35:526 Pool Memory/(7175:7182): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:58:44:948 Pool Memory/(7175:7175): Se desconecto un cliente.
+
+[INFO] 12:58:44:948 Pool Memory/(7175:7175): Se termino de trabajar la request.
+
+[INFO] 12:58:44:948 Pool Memory/(7175:7175): Se desconecto un cliente.
+
+[INFO] 12:58:44:948 Pool Memory/(7175:7175): Se termino de trabajar la request.
+
+[INFO] 12:58:45:527 Pool Memory/(7175:7182): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:58:55:528 Pool Memory/(7175:7182): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:59:05:528 Pool Memory/(7175:7182): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:59:15:529 Pool Memory/(7175:7182): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:59:29:911 Pool Memory/(7257:7257): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 12:59:29:911 Pool Memory/(7257:7257): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 12:59:39:918 Pool Memory/(7257:7265): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:59:49:919 Pool Memory/(7257:7265): No se pudo conectar con 192.168.1.41:8001
+[INFO] 12:59:50:380 Pool Memory/(7257:7257): Se desconecto un cliente.
+
+[INFO] 12:59:50:380 Pool Memory/(7257:7257): Se termino de trabajar la request.
+
+[INFO] 12:59:50:381 Pool Memory/(7257:7257): Se desconecto un cliente.
+
+[INFO] 12:59:50:381 Pool Memory/(7257:7257): Se termino de trabajar la request.
+
+[INFO] 12:59:59:919 Pool Memory/(7257:7265): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:01:06:517 Pool Memory/(7347:7347): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:01:06:518 Pool Memory/(7347:7347): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:01:16:525 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:01:26:526 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:01:28:14 Pool Memory/(7347:7347): Se recibio una nueva request.
+[INFO] 13:01:28:14 Pool Memory/(7347:7347): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:01:28:14 Pool Memory/(7347:7347): Se termino de trabajar la request.
+
+[INFO] 13:01:31:994 Pool Memory/(7347:7347): Se desconecto un cliente.
+
+[INFO] 13:01:31:994 Pool Memory/(7347:7347): Se termino de trabajar la request.
+
+[INFO] 13:01:31:994 Pool Memory/(7347:7347): Se desconecto un cliente.
+
+[INFO] 13:01:31:994 Pool Memory/(7347:7347): Se termino de trabajar la request.
+
+[INFO] 13:01:36:527 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:01:46:527 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:01:56:528 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:02:06:529 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:02:16:529 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:02:26:530 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:02:36:530 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:02:46:531 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:02:56:532 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:03:06:533 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:03:16:533 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:03:26:534 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:03:36:537 Pool Memory/(7347:7354): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:04:00:318 Pool Memory/(7444:7444): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:04:00:318 Pool Memory/(7444:7444): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:04:10:322 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:04:20:323 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:04:21:939 Pool Memory/(7444:7444): Se desconecto un cliente.
+
+[INFO] 13:04:21:940 Pool Memory/(7444:7444): Se termino de trabajar la request.
+
+[INFO] 13:04:21:940 Pool Memory/(7444:7444): Se desconecto un cliente.
+
+[INFO] 13:04:21:940 Pool Memory/(7444:7444): Se termino de trabajar la request.
+
+[INFO] 13:04:30:324 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:04:40:324 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:04:50:325 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:05:00:325 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:05:10:326 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:05:20:327 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:05:30:327 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:05:40:328 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:05:50:329 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:06:00:329 Pool Memory/(7444:7451): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:06:16:275 Pool Memory/(7541:7541): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:06:16:275 Pool Memory/(7541:7541): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:06:26:276 Pool Memory/(7541:7548): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:06:36:277 Pool Memory/(7541:7548): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:06:36:539 Pool Memory/(7541:7541): Se recibio una nueva request.
+[INFO] 13:06:36:539 Pool Memory/(7541:7541): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:06:36:540 Pool Memory/(7541:7541): Se termino de trabajar la request.
+
+[INFO] 13:06:37:955 Pool Memory/(7541:7541): Se desconecto un cliente.
+
+[INFO] 13:06:37:955 Pool Memory/(7541:7541): Se termino de trabajar la request.
+
+[INFO] 13:06:37:955 Pool Memory/(7541:7541): Se desconecto un cliente.
+
+[INFO] 13:06:37:955 Pool Memory/(7541:7541): Se termino de trabajar la request.
+
+[INFO] 13:06:46:278 Pool Memory/(7541:7548): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:06:56:278 Pool Memory/(7541:7548): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:07:06:279 Pool Memory/(7541:7548): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:07:16:279 Pool Memory/(7541:7548): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:07:30:130 Pool Memory/(7631:7631): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:07:30:130 Pool Memory/(7631:7631): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:07:40:132 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:07:50:132 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:07:51:815 Pool Memory/(7631:7631): Se recibio una nueva request.
+[INFO] 13:07:51:815 Pool Memory/(7631:7631): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:07:51:816 Pool Memory/(7631:7631): Se termino de trabajar la request.
+
+[INFO] 13:07:53:130 Pool Memory/(7631:7631): Se desconecto un cliente.
+
+[INFO] 13:07:53:130 Pool Memory/(7631:7631): Se termino de trabajar la request.
+
+[INFO] 13:07:53:130 Pool Memory/(7631:7631): Se desconecto un cliente.
+
+[INFO] 13:07:53:130 Pool Memory/(7631:7631): Se termino de trabajar la request.
+
+[INFO] 13:08:00:133 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:08:10:133 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:08:20:135 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:08:30:135 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:08:40:136 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:08:50:138 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:09:00:138 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:09:10:139 Pool Memory/(7631:7638): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:09:24:957 Pool Memory/(7717:7717): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:09:24:957 Pool Memory/(7717:7717): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:09:34:966 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:09:44:967 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:09:47:254 Pool Memory/(7717:7717): Se desconecto un cliente.
+
+[INFO] 13:09:47:254 Pool Memory/(7717:7717): Se termino de trabajar la request.
+
+[INFO] 13:09:47:254 Pool Memory/(7717:7717): Se desconecto un cliente.
+
+[INFO] 13:09:47:254 Pool Memory/(7717:7717): Se termino de trabajar la request.
+
+[INFO] 13:09:54:968 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:10:04:968 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:10:14:969 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:10:24:970 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:10:34:971 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:10:44:971 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:10:54:971 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:11:04:974 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:11:14:977 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:11:24:979 Pool Memory/(7717:7724): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:11:41:935 Pool Memory/(7823:7823): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:11:41:935 Pool Memory/(7823:7823): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:11:51:937 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:12:01:938 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:12:02:94 Pool Memory/(7823:7823): Se recibio una nueva request.
+[INFO] 13:12:02:94 Pool Memory/(7823:7823): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:12:02:95 Pool Memory/(7823:7823): Se termino de trabajar la request.
+
+[INFO] 13:12:04:467 Pool Memory/(7823:7823): Se desconecto un cliente.
+
+[INFO] 13:12:04:467 Pool Memory/(7823:7823): Se termino de trabajar la request.
+
+[INFO] 13:12:04:467 Pool Memory/(7823:7823): Se desconecto un cliente.
+
+[INFO] 13:12:04:467 Pool Memory/(7823:7823): Se termino de trabajar la request.
+
+[INFO] 13:12:11:938 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:12:21:939 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:12:31:940 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:12:41:940 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:12:51:941 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:13:01:941 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:13:11:942 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:13:21:943 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:13:31:944 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:13:41:944 Pool Memory/(7823:7830): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:13:54:392 Pool Memory/(7926:7926): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:13:54:392 Pool Memory/(7926:7926): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:14:04:394 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:14:11:308 Pool Memory/(7926:7926): Se desconecto un cliente.
+
+[INFO] 13:14:11:308 Pool Memory/(7926:7926): Se termino de trabajar la request.
+
+[INFO] 13:14:11:308 Pool Memory/(7926:7926): Se desconecto un cliente.
+
+[INFO] 13:14:11:309 Pool Memory/(7926:7926): Se termino de trabajar la request.
+
+[INFO] 13:14:14:394 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:14:24:395 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:14:34:396 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:14:44:397 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:14:54:398 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:15:04:399 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:15:14:400 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:15:24:405 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:15:34:406 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:15:44:406 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:15:54:406 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:16:04:407 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:16:14:408 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:16:24:408 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:16:34:409 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:16:44:409 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:16:54:410 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:17:04:411 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:17:14:412 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:17:24:413 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:17:34:415 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:17:44:416 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:17:54:416 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:18:04:417 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:18:14:417 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:18:24:417 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:18:34:418 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:18:44:418 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:18:54:419 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:19:04:420 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:19:14:420 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:19:24:421 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:19:34:422 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:19:44:422 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:19:54:423 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:20:04:423 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:20:14:424 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:20:24:425 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:20:34:426 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:20:44:426 Pool Memory/(7926:7933): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:21:12:137 Pool Memory/(8087:8087): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:21:12:138 Pool Memory/(8087:8087): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:21:22:142 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:21:31:55 Pool Memory/(8087:8087): Se desconecto un cliente.
+
+[INFO] 13:21:31:56 Pool Memory/(8087:8087): Se termino de trabajar la request.
+
+[INFO] 13:21:31:56 Pool Memory/(8087:8087): Se desconecto un cliente.
+
+[INFO] 13:21:31:56 Pool Memory/(8087:8087): Se termino de trabajar la request.
+
+[INFO] 13:21:32:142 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:21:42:144 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:21:52:147 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:22:02:150 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:22:12:150 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:22:22:151 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:22:32:151 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:22:42:152 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:22:52:152 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:23:02:153 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:23:12:154 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:23:22:154 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:23:32:155 Pool Memory/(8087:8099): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:23:42:975 Pool Memory/(8185:8185): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:23:42:975 Pool Memory/(8185:8185): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:23:52:976 Pool Memory/(8185:8192): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:24:02:909 Pool Memory/(8185:8185): Se desconecto un cliente.
+
+[INFO] 13:24:02:909 Pool Memory/(8185:8185): Se termino de trabajar la request.
+
+[INFO] 13:24:02:909 Pool Memory/(8185:8185): Se desconecto un cliente.
+
+[INFO] 13:24:02:909 Pool Memory/(8185:8185): Se termino de trabajar la request.
+
+[INFO] 13:24:02:977 Pool Memory/(8185:8192): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:24:12:977 Pool Memory/(8185:8192): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:24:22:978 Pool Memory/(8185:8192): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:24:32:983 Pool Memory/(8185:8192): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:24:42:983 Pool Memory/(8185:8192): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:25:14:855 Pool Memory/(8263:8263): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:25:14:856 Pool Memory/(8263:8263): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:25:24:859 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:25:29:987 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:29:988 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:29:988 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:29:989 Pool Memory/(8263:8263): Se realizara un DESCRIBE DE TABLA: %s
+[INFO] 13:25:29:991 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:29:992 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:29:992 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:29:992 Pool Memory/(8263:8263): Existe un segmento para MARINOS
+[INFO] 13:25:29:992 Pool Memory/(8263:8263): Existe una pagina con la key: 983
+[INFO] 13:25:29:992 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:29:992 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:29:993 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:30:992 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:30:994 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:30:994 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:30:995 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:30:995 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:30:995 Pool Memory/(8263:8263): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:25:31:38 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:32:41 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:32:42 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:32:42 Pool Memory/(8263:8263): Existe un segmento para MARINOS
+[INFO] 13:25:32:42 Pool Memory/(8263:8263): Existe una pagina con la key: 33
+[INFO] 13:25:32:42 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:32:42 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:32:42 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:32:42 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:32:43 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:32:43 Pool Memory/(8263:8263): Existe un segmento para AVES
+[INFO] 13:25:32:43 Pool Memory/(8263:8263): Existe una pagina con la key: 11
+[INFO] 13:25:32:43 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:32:43 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:32:43 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:32:44 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:32:44 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:32:44 Pool Memory/(8263:8263): Existe un segmento para MAMIFEROS
+[INFO] 13:25:32:44 Pool Memory/(8263:8263): Existe una pagina con la key: 2222
+[INFO] 13:25:32:44 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:32:45 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:32:45 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:33:45 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:33:46 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:33:46 Pool Memory/(8263:8263): Existe un segmento para MAMIFEROS
+[INFO] 13:25:33:46 Pool Memory/(8263:8263): Existe una pagina con la key: 239
+[INFO] 13:25:33:46 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:33:46 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:33:46 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:33:46 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:33:47 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:33:47 Pool Memory/(8263:8263): Existe un segmento para MARINOS
+[INFO] 13:25:33:47 Pool Memory/(8263:8263): Existe una pagina con la key: 22
+[INFO] 13:25:33:47 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:33:47 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:33:47 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:33:48 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:33:48 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:33:48 Pool Memory/(8263:8263): Existe un segmento para AVES
+[INFO] 13:25:33:49 Pool Memory/(8263:8263): Existe una pagina con la key: 11. La actualizo.
+[INFO] 13:25:33:49 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:34:49 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:34:49 Pool Memory/(8263:8263): Se realizara un SELECT
+[INFO] 13:25:34:49 Pool Memory/(8263:8263): Existe un segmento para AVES
+[INFO] 13:25:34:49 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:34:50 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:34:53 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:34:53 Pool Memory/(8263:8263): Existe un segmento para MARINOS
+[INFO] 13:25:34:53 Pool Memory/(8263:8263): Existe una pagina con la key: 983. La actualizo.
+[INFO] 13:25:34:54 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:34:89 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:34:89 Pool Memory/(8263:8263): Se realizara un DESCRIBE DE TABLA: %s
+[INFO] 13:25:34:90 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:34:860 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:25:35:78 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:35:79 Pool Memory/(8263:8263): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:25:35:82 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:35:92 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:35:93 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:35:93 Pool Memory/(8263:8263): Existe un segmento para MARINOS
+[INFO] 13:25:35:93 Pool Memory/(8263:8263): Existe una pagina con la key: 310
+[INFO] 13:25:35:93 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:35:93 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:35:93 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:35:129 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:35:129 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:35:129 Pool Memory/(8263:8263): Existe un segmento para AVES
+[INFO] 13:25:35:129 Pool Memory/(8263:8263): Existe una pagina con la key: 1102
+[INFO] 13:25:35:129 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:35:130 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:35:130 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:35:130 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:35:134 Pool Memory/(8263:8263): Se realizara un SELECT
+[INFO] 13:25:35:134 Pool Memory/(8263:8263): Existe un segmento para MARINOS
+[INFO] 13:25:35:134 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:36:135 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:36:136 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:36:136 Pool Memory/(8263:8263): Existe un segmento para AVES
+[INFO] 13:25:36:136 Pool Memory/(8263:8263): Existe una pagina con la key: 333
+[INFO] 13:25:36:136 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:36:136 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:36:136 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:36:173 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:36:173 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:36:173 Pool Memory/(8263:8263): Existe un segmento para MAMIFEROS
+[INFO] 13:25:36:174 Pool Memory/(8263:8263): Existe una pagina con la key: 2222. La actualizo.
+[INFO] 13:25:36:174 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:36:174 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:36:174 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:36:174 Pool Memory/(8263:8263): Existe un segmento para MAMIFEROS
+[INFO] 13:25:36:174 Pool Memory/(8263:8263): Existe una pagina con la key: 349
+[INFO] 13:25:36:174 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:36:175 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:36:175 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:37:142 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:37:142 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:37:142 Pool Memory/(8263:8263): Existe un segmento para MARINOS
+[INFO] 13:25:37:142 Pool Memory/(8263:8263): Existe una pagina con la key: 983. La actualizo.
+[INFO] 13:25:37:142 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:37:143 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:37:144 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:37:144 Pool Memory/(8263:8263): Existe un segmento para AVES
+[INFO] 13:25:37:144 Pool Memory/(8263:8263): Existe una pagina con la key: 6262
+[INFO] 13:25:37:144 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:37:144 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:37:145 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:37:145 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:37:147 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:37:147 Pool Memory/(8263:8263): Existe un segmento para AVES
+[INFO] 13:25:37:147 Pool Memory/(8263:8263): Existe una pagina con la key: 888
+[INFO] 13:25:37:147 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:37:148 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:37:148 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:38:143 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:38:143 Pool Memory/(8263:8263): Se realizara un DESCRIBE DE TABLA: %s
+[INFO] 13:25:38:145 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:38:152 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:38:153 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:38:153 Pool Memory/(8263:8263): Existe un segmento para MAMIFEROS
+[INFO] 13:25:38:153 Pool Memory/(8263:8263): Existe una pagina con la key: 349. La actualizo.
+[INFO] 13:25:38:153 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:38:190 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:38:191 Pool Memory/(8263:8263): Se realizara un INSERT
+[INFO] 13:25:38:191 Pool Memory/(8263:8263): Existe un segmento para MAMIFEROS
+[INFO] 13:25:38:191 Pool Memory/(8263:8263): Existe una pagina con la key: 721
+[INFO] 13:25:38:191 Pool Memory/(8263:8263): Se solicita una nueva pagina
+[INFO] 13:25:38:191 Pool Memory/(8263:8263): Hay una pagina libre para asignar
+[INFO] 13:25:38:192 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:44:861 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:25:50:78 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:50:79 Pool Memory/(8263:8263): Se realizar intercambio de tablas de gossiping
+[INFO] 13:25:50:79 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:50:83 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:25:50:83 Pool Memory/(8263:8263): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:25:50:86 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:25:54:861 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:26:04:862 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:26:05:87 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:26:05:87 Pool Memory/(8263:8263): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:26:05:90 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:12:440 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:26:12:441 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:14:862 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:26:16:73 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:26:16:74 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:19:277 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:26:19:280 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:20:79 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:26:20:79 Pool Memory/(8263:8263): Se realizar intercambio de tablas de gossiping
+[INFO] 13:26:20:79 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:20:90 Pool Memory/(8263:8263): Se recibio una nueva request.
+[INFO] 13:26:20:90 Pool Memory/(8263:8263): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:26:20:93 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:24:863 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:26:30:384 Pool Memory/(8263:8263): Se desconecto un cliente.
+
+[INFO] 13:26:30:385 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:30:385 Pool Memory/(8263:8263): Se desconecto un cliente.
+
+[INFO] 13:26:30:385 Pool Memory/(8263:8263): Se termino de trabajar la request.
+
+[INFO] 13:26:34:864 Pool Memory/(8263:8270): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:27:39:169 Pool Memory/(8348:8348): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:27:39:169 Pool Memory/(8348:8348): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:27:49:170 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:27:55:841 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:55:842 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:55:842 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:55:843 Pool Memory/(8348:8348): Se realizara un INSERT
+[INFO] 13:27:55:843 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:55:843 Pool Memory/(8348:8348): Existe una pagina con la key: 1
+[INFO] 13:27:55:843 Pool Memory/(8348:8348): Se solicita una nueva pagina
+[INFO] 13:27:55:843 Pool Memory/(8348:8348): Hay una pagina libre para asignar
+[INFO] 13:27:55:843 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:55:843 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:55:844 Pool Memory/(8348:8348): Se realizara un SELECT
+[INFO] 13:27:55:844 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:55:844 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:56:846 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:56:847 Pool Memory/(8348:8348): Se realizara un INSERT
+[INFO] 13:27:56:847 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:56:847 Pool Memory/(8348:8348): Existe una pagina con la key: 2
+[INFO] 13:27:56:847 Pool Memory/(8348:8348): Se solicita una nueva pagina
+[INFO] 13:27:56:847 Pool Memory/(8348:8348): Hay una pagina libre para asignar
+[INFO] 13:27:56:848 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:56:885 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:56:885 Pool Memory/(8348:8348): Se realizara un SELECT
+[INFO] 13:27:56:885 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:56:886 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:56:886 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:56:886 Pool Memory/(8348:8348): Se realizara un SELECT
+[INFO] 13:27:56:887 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:56:887 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:57:888 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:57:888 Pool Memory/(8348:8348): Se realizara un SELECT
+[INFO] 13:27:57:888 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:57:888 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:57:888 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:57:889 Pool Memory/(8348:8348): Se realizara un INSERT
+[INFO] 13:27:57:889 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:57:889 Pool Memory/(8348:8348): Existe una pagina con la key: 1. La actualizo.
+[INFO] 13:27:57:889 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:57:925 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:57:925 Pool Memory/(8348:8348): Se realizara un SELECT
+[INFO] 13:27:57:925 Pool Memory/(8348:8348): Existe un segmento para COLORS
+[INFO] 13:27:57:926 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:27:59:170 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:27:59:285 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:27:59:285 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:27:59:287 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:28:09:170 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:28:14:285 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:28:14:285 Pool Memory/(8348:8348): Se realizar intercambio de tablas de gossiping
+[INFO] 13:28:14:286 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:28:14:287 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:28:14:287 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:28:14:290 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:28:19:171 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:28:26:510 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:28:26:511 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:28:29:171 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:28:29:291 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:28:29:292 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:28:29:293 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:28:39:172 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:28:44:289 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:28:44:289 Pool Memory/(8348:8348): Se realizar intercambio de tablas de gossiping
+[INFO] 13:28:44:289 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:28:44:294 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:28:44:294 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:28:44:295 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:28:49:172 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:28:59:173 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:28:59:295 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:28:59:296 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:28:59:297 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:29:09:174 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:29:14:289 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:29:14:289 Pool Memory/(8348:8348): Se realizar intercambio de tablas de gossiping
+[INFO] 13:29:14:290 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:29:14:297 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:29:14:297 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:29:14:298 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:29:19:178 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:29:29:178 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:29:29:299 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:29:29:299 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:29:29:300 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:29:39:181 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:29:44:290 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:29:44:290 Pool Memory/(8348:8348): Se realizar intercambio de tablas de gossiping
+[INFO] 13:29:44:290 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:29:44:300 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:29:44:300 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:29:44:301 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:29:49:182 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:29:59:182 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:29:59:302 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:29:59:302 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:29:59:303 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:30:09:185 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:30:14:291 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:30:14:291 Pool Memory/(8348:8348): Se realizar intercambio de tablas de gossiping
+[INFO] 13:30:14:292 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:30:14:304 Pool Memory/(8348:8348): Se recibio una nueva request.
+[INFO] 13:30:14:304 Pool Memory/(8348:8348): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:30:14:304 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:30:19:187 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:30:19:530 Pool Memory/(8348:8348): Se desconecto un cliente.
+
+[INFO] 13:30:19:530 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:30:19:530 Pool Memory/(8348:8348): Se desconecto un cliente.
+
+[INFO] 13:30:19:530 Pool Memory/(8348:8348): Se termino de trabajar la request.
+
+[INFO] 13:30:29:188 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:30:39:193 Pool Memory/(8348:8355): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:30:57:537 Pool Memory/(8429:8429): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:30:57:537 Pool Memory/(8429:8429): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:31:07:542 Pool Memory/(8429:8436): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:31:16:140 Pool Memory/(8429:8429): Se recibio una nueva request.
+[INFO] 13:31:16:140 Pool Memory/(8429:8429): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:31:16:141 Pool Memory/(8429:8429): Se termino de trabajar la request.
+
+[INFO] 13:31:17:543 Pool Memory/(8429:8436): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:31:20:97 Pool Memory/(8429:8429): Se desconecto un cliente.
+
+[INFO] 13:31:20:97 Pool Memory/(8429:8429): Se termino de trabajar la request.
+
+[INFO] 13:31:20:97 Pool Memory/(8429:8429): Se desconecto un cliente.
+
+[INFO] 13:31:20:97 Pool Memory/(8429:8429): Se termino de trabajar la request.
+
+[INFO] 13:31:27:543 Pool Memory/(8429:8436): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:31:37:544 Pool Memory/(8429:8436): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:32:06:459 Pool Memory/(8488:8488): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:32:06:459 Pool Memory/(8488:8488): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:32:16:460 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:32:26:460 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:32:27:128 Pool Memory/(8488:8488): Se desconecto un cliente.
+
+[INFO] 13:32:27:128 Pool Memory/(8488:8488): Se termino de trabajar la request.
+
+[INFO] 13:32:27:129 Pool Memory/(8488:8488): Se desconecto un cliente.
+
+[INFO] 13:32:27:129 Pool Memory/(8488:8488): Se termino de trabajar la request.
+
+[INFO] 13:32:36:461 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:32:46:462 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:32:56:462 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:33:06:462 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:33:16:463 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:33:26:464 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:33:36:464 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:33:46:465 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:33:56:466 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:34:06:467 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:34:16:467 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:34:26:468 Pool Memory/(8488:8495): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:34:52:241 Pool Memory/(8571:8571): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:34:52:241 Pool Memory/(8571:8571): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:35:02:244 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:35:12:245 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:35:12:985 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:12:987 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:12:987 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:12:988 Pool Memory/(8571:8571): Se realizara un INSERT
+[INFO] 13:35:12:988 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:12:989 Pool Memory/(8571:8571): Existe una pagina con la key: 1
+[INFO] 13:35:12:989 Pool Memory/(8571:8571): Se solicita una nueva pagina
+[INFO] 13:35:12:989 Pool Memory/(8571:8571): Hay una pagina libre para asignar
+[INFO] 13:35:12:989 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:12:989 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:12:989 Pool Memory/(8571:8571): Se realizara un SELECT
+[INFO] 13:35:12:989 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:12:990 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:13:991 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:13:991 Pool Memory/(8571:8571): Se realizara un INSERT
+[INFO] 13:35:13:991 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:13:991 Pool Memory/(8571:8571): Existe una pagina con la key: 2
+[INFO] 13:35:13:991 Pool Memory/(8571:8571): Se solicita una nueva pagina
+[INFO] 13:35:13:991 Pool Memory/(8571:8571): Hay una pagina libre para asignar
+[INFO] 13:35:13:991 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:14:29 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:14:30 Pool Memory/(8571:8571): Se realizara un SELECT
+[INFO] 13:35:14:30 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:14:31 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:14:31 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:14:31 Pool Memory/(8571:8571): Se realizara un SELECT
+[INFO] 13:35:14:31 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:14:32 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:15:33 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:15:33 Pool Memory/(8571:8571): Se realizara un SELECT
+[INFO] 13:35:15:34 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:15:34 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:15:35 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:15:35 Pool Memory/(8571:8571): Se realizara un INSERT
+[INFO] 13:35:15:35 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:15:36 Pool Memory/(8571:8571): Existe una pagina con la key: 1. La actualizo.
+[INFO] 13:35:15:36 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:15:73 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:15:73 Pool Memory/(8571:8571): Se realizara un SELECT
+[INFO] 13:35:15:73 Pool Memory/(8571:8571): Existe un segmento para COLORS
+[INFO] 13:35:15:74 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:17:484 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:17:484 Pool Memory/(8571:8571): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:35:17:485 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:22:245 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:35:32:246 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:35:32:485 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:32:486 Pool Memory/(8571:8571): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:35:32:487 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:32:487 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:32:487 Pool Memory/(8571:8571): Se realizar intercambio de tablas de gossiping
+[INFO] 13:35:32:488 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:42:248 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:35:47:490 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:35:47:491 Pool Memory/(8571:8571): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:35:47:492 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:35:52:249 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:36:02:249 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:36:02:488 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:36:02:488 Pool Memory/(8571:8571): Se realizar intercambio de tablas de gossiping
+[INFO] 13:36:02:488 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:36:02:492 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:36:02:492 Pool Memory/(8571:8571): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:36:02:495 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:36:12:250 Pool Memory/(8571:8578): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:36:17:496 Pool Memory/(8571:8571): Se recibio una nueva request.
+[INFO] 13:36:17:496 Pool Memory/(8571:8571): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:36:17:497 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:36:19:856 Pool Memory/(8571:8571): Se desconecto un cliente.
+
+[INFO] 13:36:19:856 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:36:19:857 Pool Memory/(8571:8571): Se desconecto un cliente.
+
+[INFO] 13:36:19:857 Pool Memory/(8571:8571): Se termino de trabajar la request.
+
+[INFO] 13:38:48:436 Pool Memory/(8704:8704): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:38:48:436 Pool Memory/(8704:8704): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:38:58:445 Pool Memory/(8704:8712): No se pudo conectar con 192.168.1.41:8001
+[INFO] 13:39:02:953 Pool Memory/(8736:8736): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 13:39:02:954 Pool Memory/(8736:8736): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 13:39:08:448 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:39:08:449 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:39:08:450 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:08:450 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:39:08:450 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:18:450 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:39:18:450 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:39:18:451 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:18:451 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:39:18:451 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:28:451 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:39:28:451 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:39:28:452 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:28:452 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:39:28:452 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:38:452 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:39:38:453 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:39:38:453 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:38:453 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:39:38:453 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:42:131 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:39:42:131 Pool Memory/(8704:8704): Se realizar intercambio de tablas de gossiping
+[INFO] 13:39:42:131 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:39:48:454 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:39:48:454 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:39:48:455 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:48:455 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:39:48:455 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:57:132 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:39:57:132 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:39:57:133 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:39:58:456 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:39:58:456 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:39:58:456 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:39:58:456 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:39:58:456 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:01:357 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:01:359 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:01:394 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:01:394 Pool Memory/(8704:8704): Se realizara un INSERT
+[INFO] 13:40:01:394 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:01:394 Pool Memory/(8704:8704): Existe una pagina con la key: 1
+[INFO] 13:40:01:394 Pool Memory/(8704:8704): Se solicita una nueva pagina
+[INFO] 13:40:01:394 Pool Memory/(8704:8704): Hay una pagina libre para asignar
+[INFO] 13:40:01:395 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:01:395 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:01:396 Pool Memory/(8704:8704): Se realizara un SELECT
+[INFO] 13:40:01:396 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:01:397 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:02:397 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:02:399 Pool Memory/(8704:8704): Se realizara un INSERT
+[INFO] 13:40:02:399 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:02:399 Pool Memory/(8704:8704): Existe una pagina con la key: 2
+[INFO] 13:40:02:400 Pool Memory/(8704:8704): Se solicita una nueva pagina
+[INFO] 13:40:02:400 Pool Memory/(8704:8704): Hay una pagina libre para asignar
+[INFO] 13:40:02:400 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:02:437 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:02:438 Pool Memory/(8704:8704): Se realizara un SELECT
+[INFO] 13:40:02:438 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:02:439 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:02:439 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:02:440 Pool Memory/(8704:8704): Se realizara un SELECT
+[INFO] 13:40:02:440 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:02:441 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:03:441 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:03:442 Pool Memory/(8704:8704): Se realizara un SELECT
+[INFO] 13:40:03:442 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:03:442 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:03:443 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:03:443 Pool Memory/(8704:8704): Se realizara un INSERT
+[INFO] 13:40:03:443 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:03:443 Pool Memory/(8704:8704): Existe una pagina con la key: 1. La actualizo.
+[INFO] 13:40:03:444 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:03:481 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:03:481 Pool Memory/(8704:8704): Se realizara un SELECT
+[INFO] 13:40:03:481 Pool Memory/(8704:8704): Existe un segmento para COLORS
+[INFO] 13:40:03:481 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:08:457 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:40:08:458 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:08:458 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:08:458 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:40:08:458 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:12:132 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:12:132 Pool Memory/(8704:8704): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:12:132 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:12:133 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:12:133 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:40:12:135 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:18:459 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:40:18:459 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:18:459 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:18:459 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:40:18:459 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:27:141 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:27:141 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:40:27:143 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:28:460 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:40:28:460 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:28:460 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:28:461 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:40:28:461 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:38:462 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:40:38:462 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:38:462 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:38:462 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:40:38:462 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:42:133 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:42:133 Pool Memory/(8704:8704): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:42:133 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:42:143 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:42:143 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:40:42:145 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:48:463 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:40:48:463 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:48:463 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:48:464 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:40:48:464 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:52:145 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:40:52:147 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:57:146 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:40:57:146 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:40:57:147 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:40:58:464 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:40:58:464 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:40:58:464 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:40:58:464 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:40:58:464 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:08:465 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:08:465 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:08:465 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:08:465 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:41:08:465 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:12:135 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:41:12:135 Pool Memory/(8704:8704): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:12:136 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:41:12:152 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:41:12:153 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:41:12:156 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:41:18:466 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:18:466 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:18:466 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:18:467 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:41:18:467 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:27:157 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:27:157 Pool Memory/(8736:8736): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:41:27:158 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:28:468 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:28:468 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:28:468 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:28:468 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:41:28:468 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:38:469 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:38:469 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:38:469 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:38:470 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:41:38:470 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:42:136 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:41:42:137 Pool Memory/(8704:8704): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:42:137 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:41:42:159 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:42:159 Pool Memory/(8736:8736): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:41:42:160 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:48:471 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:48:471 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:48:471 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:48:471 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:41:48:472 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:57:161 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:41:57:161 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:41:57:162 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:41:58:474 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:41:58:475 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:41:58:477 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:41:58:477 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:41:58:478 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:08:478 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:42:08:479 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:42:08:479 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:08:479 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:42:08:480 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:12:138 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:42:12:138 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:42:12:138 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:12:163 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:42:12:163 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:42:12:164 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:42:18:486 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:42:18:486 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:42:18:486 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:18:487 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:42:18:487 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:24:909 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:42:24:909 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:42:24:909 Pool Memory/(8704:8704): Se realizara un INSERT
+[INFO] 13:42:24:909 Pool Memory/(8704:8704): Se solicita una nueva pagina
+[INFO] 13:42:24:909 Pool Memory/(8704:8704): Hay una pagina libre para asignar
+[INFO] 13:42:24:909 Pool Memory/(8704:8704): Se termino de trabajar la request.
+
+[INFO] 13:42:24:909 Pool Memory/(8736:8736): Se realizara un SELECT
+[INFO] 13:42:24:909 Pool Memory/(8736:8736): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 13:42:25:210 Pool Memory/(8736:8736): Se solicita una nueva pagina
+[INFO] 13:42:25:210 Pool Memory/(8736:8736): Hay una pagina libre para asignar
+[INFO] 13:42:25:210 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:27:165 Pool Memory/(8704:8704): Se recibio una nueva request.
+[INFO] 13:42:27:165 Pool Memory/(8704:8704): Se realizara un DESCRIBE GLOBAL
+[INFO] 13:42:28:490 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:42:28:490 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:42:28:491 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:28:491 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:42:28:491 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:38:491 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:42:38:491 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:42:38:492 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:38:492 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:42:38:492 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:48:441 Pool Memory/(8736:8736): Se recibio una nueva request.
+[INFO] 13:42:48:441 Pool Memory/(8736:8736): Se realizar intercambio de tablas de gossiping
+[INFO] 13:42:48:443 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:48:443 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:42:48:444 Pool Memory/(8736:8736): Se termino de trabajar la request.
+
+[INFO] 13:42:48:444 Pool Memory/(8736:8736): Se desconecto un cliente.
+
+[INFO] 13:42:48:444 Pool Memory/(8736:8736): Se termino de trabajar la request.
+

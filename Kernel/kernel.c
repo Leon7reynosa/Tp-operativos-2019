@@ -22,7 +22,7 @@ int main (int argc , char* argv[]){
 
 	/////////////////////////////////VARIABLES/////////////////////////////////
 
-
+	memoria_siguiente = 0;
 
 	memoria_t* memoria_principal;
 
