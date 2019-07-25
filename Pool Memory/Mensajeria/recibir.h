@@ -31,7 +31,7 @@
 #include"requestDrop.h"
 #include"requestGossiping.h"
 
-
+#include"configuracion.h"
 #include"request.h"
 #include"t_dato.h"
 

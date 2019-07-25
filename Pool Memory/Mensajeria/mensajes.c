@@ -8,9 +8,10 @@
 #include"mensajes.h"
 
 //tipoRequest es una estructura del tipo "request" osea, puede ser selectEstructura, etc, entonces mi idea es depende de lo que llegue, castear a esa estructura
-void enviar_request(request request, int conexion){
+bool enviar_request(request request, int conexion){
 
 	void* buffer;
+	bool exito;
 	int bytes = 0;
 
 	switch(request->cod_op){
@@ -74,7 +75,9 @@ void enviar_request(request request, int conexion){
 
 		if(enviados_aux == -1){
 			desconexion_pool = true;
-			bytes_enviados = bytes;       // PARA QUE SALGA DEL WHILE
+			bytes_enviados = bytes;  // PARA QUE SALGA DEL WHILE
+			exito = false;
+
 
 		}else{
 			bytes_enviados += enviados_aux;
@@ -82,7 +85,13 @@ void enviar_request(request request, int conexion){
 		}
 	}
 
+	if(bytes_enviados == bytes){
+		exito = true;
+	}
+
 	free(buffer);
+
+	return exito;
 
 }
 

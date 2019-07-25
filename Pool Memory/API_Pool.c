@@ -286,43 +286,27 @@ void request_create(create dato_create){
 
 	request nuevo_create = crear_request(CREATE, dato_create);
 
-	enviar_request(nuevo_create, socket_lissandra);
+	if(enviar_request(nuevo_create, socket_lissandra)){
 
-	printf("si pase\n");
+			free(nuevo_create);
 
-	free(nuevo_create);
+			Segmento segmento_aux;
 
-	printf("buenardas\n");
+			pthread_mutex_lock(&mutex_journal);
+			if(!existe_segmento((char *)dato_create->tabla->buffer, &segmento_aux)){
 
-	Segmento segmento_aux;
+				log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
 
-	printf("jajaaja\n");
+				agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
 
-	pthread_mutex_lock(&mutex_journal);
-	if(!existe_segmento((char *)dato_create->tabla->buffer, &segmento_aux)){
+			}else{
 
-//		log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
+				log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
 
-		agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
-
-	}else{
-
-//		log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
+			}
+			pthread_mutex_unlock(&mutex_journal);
 
 	}
-	pthread_mutex_unlock(&mutex_journal);
-
-//	error_request estado = recibir_estado_request();
-
-/*	if(estado == SUCCESS){
-		//log
-		agregar_segmento((char *)dato_create->tabla->buffer);
-
-	}else{
-		//log
-	}
-*/
-	//return estado;
 
 }
 

@@ -2733,3 +2733,182 @@
 [INFO] 14:51:00:40 Pool Memory/(4971:4971): Se inicializo correctamente la memoria.
 >> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
 
+[INFO] 15:04:14:403 Pool Memory/(5575:5575): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 15:04:14:404 Pool Memory/(5575:5575): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 15:08:24:88 Pool Memory/(5957:5957): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 15:08:24:89 Pool Memory/(5957:5957): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 15:09:31:115 Pool Memory/(5957:5957): Se recibio una nueva request.
+[INFO] 15:09:31:115 Pool Memory/(5957:5957): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:09:31:117 Pool Memory/(5957:5957): Se termino de trabajar la request.
+
+[INFO] 15:09:46:115 Pool Memory/(5957:5957): Se recibio una nueva request.
+[INFO] 15:09:46:115 Pool Memory/(5957:5957): Se realizar intercambio de tablas de gossiping
+[INFO] 15:09:46:115 Pool Memory/(5957:5957): Se termino de trabajar la request.
+
+[INFO] 15:09:46:117 Pool Memory/(5957:5957): Se recibio una nueva request.
+[INFO] 15:09:46:117 Pool Memory/(5957:5957): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:09:46:118 Pool Memory/(5957:5957): Se termino de trabajar la request.
+
+[INFO] 15:10:01:119 Pool Memory/(5957:5957): Se recibio una nueva request.
+[INFO] 15:10:01:119 Pool Memory/(5957:5957): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:25:19:292 Pool Memory/(6737:6737): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 15:25:19:292 Pool Memory/(6737:6737): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 15:26:04:224 Pool Memory/(6737:6737): Se recibio una nueva request.
+[INFO] 15:26:04:224 Pool Memory/(6737:6737): Se realizar intercambio de tablas de gossiping
+[INFO] 15:26:04:224 Pool Memory/(6737:6737): Se termino de trabajar la request.
+
+[INFO] 15:26:19:226 Pool Memory/(6737:6737): Se recibio una nueva request.
+[INFO] 15:26:19:226 Pool Memory/(6737:6737): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:26:19:230 Pool Memory/(6737:6737): Se termino de trabajar la request.
+
+[INFO] 15:26:34:225 Pool Memory/(6737:6737): Se recibio una nueva request.
+[INFO] 15:26:34:225 Pool Memory/(6737:6737): Se realizar intercambio de tablas de gossiping
+[INFO] 15:26:34:225 Pool Memory/(6737:6737): Se termino de trabajar la request.
+
+[INFO] 15:26:34:232 Pool Memory/(6737:6737): Se recibio una nueva request.
+[INFO] 15:26:34:233 Pool Memory/(6737:6737): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:26:34:236 Pool Memory/(6737:6737): Se termino de trabajar la request.
+
+[INFO] 15:26:49:128 Pool Memory/(6737:6737): Se recibio una nueva request.
+[INFO] 15:26:49:129 Pool Memory/(6737:6737): Se realizara un SELECT
+[INFO] 15:26:49:129 Pool Memory/(6737:6737): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 15:26:49:135 Pool Memory/(6737:6737): Se solicita una nueva pagina
+[INFO] 15:26:49:135 Pool Memory/(6737:6737): Hay una pagina libre para asignar
+[INFO] 15:26:49:135 Pool Memory/(6737:6737): Se termino de trabajar la request.
+
+[INFO] 15:26:49:237 Pool Memory/(6737:6737): Se recibio una nueva request.
+[INFO] 15:26:49:237 Pool Memory/(6737:6737): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:29:13:921 Pool Memory/(6988:6988): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 15:29:13:922 Pool Memory/(6988:6988): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 15:29:34:205 Pool Memory/(6988:6988): Se recibio una nueva request.
+[INFO] 15:29:34:206 Pool Memory/(6988:6988): Se realizara un DESCRIBE GLOBAL
+[INFO] 15:29:34:212 Pool Memory/(6988:6988): Se termino de trabajar la request.
+
+[INFO] 15:29:44:216 Pool Memory/(6988:6988): Se recibio una nueva request.
+[INFO] 15:29:44:217 Pool Memory/(6988:6988): Se realizara un SELECT
+[INFO] 15:29:44:217 Pool Memory/(6988:6988): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 15:29:44:218 Pool Memory/(6988:6988): No existe la key en el LFS
+[INFO] 15:29:44:219 Pool Memory/(6988:6988): Se termino de trabajar la request.
+
+[INFO] 16:01:51:193 Pool Memory/(8099:8099): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 16:01:51:193 Pool Memory/(8099:8099): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 16:02:14:391 Pool Memory/(8099:8099): Se recibio una nueva request.
+[INFO] 16:02:14:391 Pool Memory/(8099:8099): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:02:14:392 Pool Memory/(8099:8099): Se termino de trabajar la request.
+
+[INFO] 16:02:27:337 Pool Memory/(8099:8099): Se recibio una nueva request.
+[INFO] 16:02:27:337 Pool Memory/(8099:8099): Se realizara un SELECT
+[INFO] 16:02:27:337 Pool Memory/(8099:8099): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 16:02:27:338 Pool Memory/(8099:8099): No existe la key en el LFS
+[INFO] 16:02:27:338 Pool Memory/(8099:8099): Se termino de trabajar la request.
+
+[INFO] 16:13:38:916 Pool Memory/(8838:8838): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 16:13:38:916 Pool Memory/(8838:8838): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 16:14:18:201 Pool Memory/(8838:8838): Se recibio una nueva request.
+[INFO] 16:14:18:201 Pool Memory/(8838:8838): Se realizar intercambio de tablas de gossiping
+[INFO] 16:14:18:202 Pool Memory/(8838:8838): Se termino de trabajar la request.
+
+[INFO] 16:14:18:202 Pool Memory/(8838:8838): Se recibio una nueva request.
+[INFO] 16:14:18:202 Pool Memory/(8838:8838): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:14:18:203 Pool Memory/(8838:8838): Se termino de trabajar la request.
+
+[INFO] 16:14:33:203 Pool Memory/(8838:8838): Se recibio una nueva request.
+[INFO] 16:14:33:203 Pool Memory/(8838:8838): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:15:26:452 Pool Memory/(8943:8943): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 16:15:26:452 Pool Memory/(8943:8943): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 16:15:44:750 Pool Memory/(8943:8943): Se recibio una nueva request.
+[INFO] 16:15:44:750 Pool Memory/(8943:8943): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:15:44:751 Pool Memory/(8943:8943): Se termino de trabajar la request.
+
+[INFO] 16:15:53:378 Pool Memory/(8943:8943): Se recibio una nueva request.
+[INFO] 16:15:53:378 Pool Memory/(8943:8943): Se realizara un SELECT
+[INFO] 16:15:53:378 Pool Memory/(8943:8943): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 16:15:53:380 Pool Memory/(8943:8943): No existe la key en el LFS
+[INFO] 16:15:53:380 Pool Memory/(8943:8943): Se termino de trabajar la request.
+
+[INFO] 16:23:57:395 Pool Memory/(9269:9269): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 16:23:57:395 Pool Memory/(9269:9269): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 16:24:17:235 Pool Memory/(9269:9269): Se recibio una nueva request.
+[INFO] 16:24:17:235 Pool Memory/(9269:9269): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:27:21:318 Pool Memory/(9427:9427): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 16:27:21:318 Pool Memory/(9427:9427): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 16:29:08:35 Pool Memory/(9736:9736): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 16:29:08:35 Pool Memory/(9736:9736): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 16:29:31:544 Pool Memory/(9736:9736): Se recibio una nueva request.
+[INFO] 16:29:31:544 Pool Memory/(9736:9736): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:29:31:545 Pool Memory/(9736:9736): Se termino de trabajar la request.
+
+[INFO] 16:29:46:544 Pool Memory/(9736:9736): Se recibio una nueva request.
+[INFO] 16:29:46:544 Pool Memory/(9736:9736): Se realizar intercambio de tablas de gossiping
+[INFO] 16:29:46:544 Pool Memory/(9736:9736): Se termino de trabajar la request.
+
+[INFO] 16:29:46:546 Pool Memory/(9736:9736): Se recibio una nueva request.
+[INFO] 16:29:46:546 Pool Memory/(9736:9736): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:29:46:547 Pool Memory/(9736:9736): Se termino de trabajar la request.
+
+[INFO] 16:30:01:547 Pool Memory/(9736:9736): Se recibio una nueva request.
+[INFO] 16:30:01:547 Pool Memory/(9736:9736): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:30:01:550 Pool Memory/(9736:9736): Se termino de trabajar la request.
+
+[INFO] 16:30:16:545 Pool Memory/(9736:9736): Se recibio una nueva request.
+[INFO] 16:30:16:545 Pool Memory/(9736:9736): Se realizar intercambio de tablas de gossiping
+[INFO] 16:30:16:545 Pool Memory/(9736:9736): Se termino de trabajar la request.
+
+[INFO] 16:30:16:550 Pool Memory/(9736:9736): Se recibio una nueva request.
+[INFO] 16:30:16:550 Pool Memory/(9736:9736): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:31:13:176 Pool Memory/(9882:9882): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 16:31:13:177 Pool Memory/(9882:9882): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 16:31:32:624 Pool Memory/(9882:9882): Se recibio una nueva request.
+[INFO] 16:31:32:624 Pool Memory/(9882:9882): Se realizara un DESCRIBE GLOBAL
+[INFO] 16:31:32:625 Pool Memory/(9882:9882): Se termino de trabajar la request.
+
+[INFO] 16:31:43:612 Pool Memory/(9882:9882): Se recibio una nueva request.
+[INFO] 16:31:43:613 Pool Memory/(9882:9882): Se realizara un SELECT
+[INFO] 16:31:43:613 Pool Memory/(9882:9882): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 16:31:43:613 Pool Memory/(9882:9882): No existe la key en el LFS
+[INFO] 16:31:43:613 Pool Memory/(9882:9882): Se termino de trabajar la request.
+

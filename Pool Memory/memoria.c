@@ -318,13 +318,17 @@ void realizar_journal(void){
 	//itero todos los segmentos
 	list_iterate(memoria->tabla_segmentos, _crear_inserts);
 
+	bool sin_conexion = false;
 
 	void _enviar_request(void* _request){
 
 		request request_a_enviar = (request)_request;
 
-		enviar_request(request_a_enviar, socket_lissandra);
-
+		if(sin_conexion){
+			//Ya intentamos antes y estaba desconectado!
+		}else{
+			sin_conexion = enviar_request(request_a_enviar, socket_lissandra);
+		}
 	}
 
 
@@ -404,7 +408,11 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	request nuevo_select = crear_request(SELECT, dato_select);
 
-	enviar_request(nuevo_select, socket_lissandra); // ya se libera la request aca
+	if(! enviar_request(nuevo_select, socket_lissandra)){
+
+		return NULL;
+
+	}
 
 	liberar_request(nuevo_select);
 

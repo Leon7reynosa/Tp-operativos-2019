@@ -29,7 +29,7 @@ void* realizar_gossiping(){
 
 		while((conexion > 0) && !terminaste){
 
-			printf("Fallo el gossiping, lo intento denuevo");
+			printf("Fallo el gossiping, lo intento denuevo\n");
 
 			close(conexion);
 
@@ -141,7 +141,7 @@ bool actualizar_gossiping(int conexion){
 
 	memcpy((buffer +  sizeof(cod_operacion)) , &cantidad_memorias , sizeof(int));
 
-	if(  (send(conexion , buffer, sizeof(cod_operacion) + sizeof(int) , 0) ) < 0 ){
+	if(  (send(conexion , buffer, sizeof(cod_operacion) + sizeof(int) , 0) ) <= 0 ){
 
 		return false;
 
@@ -157,7 +157,7 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 	int *cantidad_memorias = malloc(sizeof(int));
 
-	if((recv(conexion ,cantidad_memorias,sizeof(int),0)) < 0 ){
+	if((recv(conexion ,cantidad_memorias,sizeof(int),0)) <= 0 ){
 
 		return false;
 

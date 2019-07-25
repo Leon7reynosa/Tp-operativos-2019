@@ -2185,3 +2185,129 @@
 [INFO] 01:58:55:75 kernel/(19389:19398): 
 ---Se realizara la request JOURNAL---
 
+[INFO] 15:09:16:112 kernel/(6021:6021): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:09:29:402 kernel/(6021:6031): add memory 1 to sc
+[INFO] 15:09:29:402 kernel/(6021:6031): 
+---Se realizara la request ADD---
+
+[INFO] 15:09:29:403 kernel/(6021:6031): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:25:34:217 kernel/(6833:6833): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:25:52:975 kernel/(6833:6842): add memory t1 to sc
+[ERROR] 15:25:52:975 kernel/(6833:6842): -LA REQUEST ADD RECIBIO PARAMETROS INCORRECTOS.-
+
+[ERROR] 15:25:52:975 kernel/(6833:6842): FALLO AL EJECUTAR LA REQUEST add memory t1 to sc.
+
+[INFO] 15:25:59:989 kernel/(6833:6842): s add memory 1 to sc
+[ERROR] 15:25:59:989 kernel/(6833:6842): -LA REQUEST NO ES VALIDA-
+
+[ERROR] 15:25:59:989 kernel/(6833:6842): FALLO AL EJECUTAR LA REQUEST s add memory 1 to sc.
+
+[INFO] 15:26:09:961 kernel/(6833:6842): add memory 1 to sc
+[INFO] 15:26:09:962 kernel/(6833:6842): 
+---Se realizara la request ADD---
+
+[INFO] 15:26:09:963 kernel/(6833:6842): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:26:26:908 kernel/(6833:6842): add memory 1 to ec
+[INFO] 15:26:26:908 kernel/(6833:6842): 
+---Se realizara la request ADD---
+
+[INFO] 15:26:26:908 kernel/(6833:6842): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:26:49:128 kernel/(6833:6842): select marcas 1
+[INFO] 15:26:49:128 kernel/(6833:6842): ---Se realizara el SELECT---
+
+[INFO] 15:29:19:200 kernel/(7001:7001): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:29:27:415 kernel/(7001:7010): add memory 1 to ec
+[INFO] 15:29:27:415 kernel/(7001:7010): 
+---Se realizara la request ADD---
+
+[INFO] 15:29:27:417 kernel/(7001:7010): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:29:44:215 kernel/(7001:7010): select MARCAS 1
+[INFO] 15:29:44:216 kernel/(7001:7010): ---Se realizara el SELECT---
+
+[INFO] 16:01:59:390 kernel/(8151:8151): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:02:10:371 kernel/(8151:8160): add memory 1 to ec
+[INFO] 16:02:10:371 kernel/(8151:8160): 
+---Se realizara la request ADD---
+
+[INFO] 16:02:10:371 kernel/(8151:8160): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:02:27:337 kernel/(8151:8160): select MARCAS 1
+[INFO] 16:02:27:337 kernel/(8151:8160): ---Se realizara el SELECT---
+
+[INFO] 16:13:48:186 kernel/(8873:8873): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:14:06:302 kernel/(8873:8882): add memory 1 to ec
+[INFO] 16:14:06:302 kernel/(8873:8882): 
+---Se realizara la request ADD---
+
+[INFO] 16:14:06:302 kernel/(8873:8882): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:14:44:411 kernel/(8873:8882): select marcas 1
+[INFO] 16:14:44:411 kernel/(8873:8882): ---Se realizara el SELECT---
+
+[INFO] 16:15:29:749 kernel/(8956:8956): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:15:40:777 kernel/(8956:8966): add memory 1 to ec
+[INFO] 16:15:40:777 kernel/(8956:8966): 
+---Se realizara la request ADD---
+
+[INFO] 16:15:40:777 kernel/(8956:8966): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:15:53:377 kernel/(8956:8966): select marcas 1
+[INFO] 16:15:53:378 kernel/(8956:8966): ---Se realizara el SELECT---
+
+[INFO] 16:24:02:234 kernel/(9308:9308): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:24:09:53 kernel/(9308:9318): add memory 1 to ec
+[INFO] 16:24:09:53 kernel/(9308:9318): 
+---Se realizara la request ADD---
+
+[INFO] 16:24:09:53 kernel/(9308:9318): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:24:21:403 kernel/(9308:9318): select marcas 1
+[INFO] 16:24:21:403 kernel/(9308:9318): ---Se realizara el SELECT---
+
+[ERROR] 16:24:21:403 kernel/(9308:9318): NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA
+
+[ERROR] 16:24:21:403 kernel/(9308:9318): FALLO AL EJECUTAR LA REQUEST select marcas 1.
+
+[INFO] 16:27:29:350 kernel/(9448:9448): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:27:40:273 kernel/(9448:9457): add memory 1 to ec
+[INFO] 16:27:40:273 kernel/(9448:9457): 
+---Se realizara la request ADD---
+
+[INFO] 16:29:16:531 kernel/(9781:9781): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:29:31:437 kernel/(9781:9791): add memory 1 to ec
+[INFO] 16:29:31:437 kernel/(9781:9791): 
+---Se realizara la request ADD---
+
+[INFO] 16:29:31:439 kernel/(9781:9791): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:30:15:362 kernel/(9781:9791): select MARACAS 1
+[INFO] 16:30:15:362 kernel/(9781:9791): ---Se realizara el SELECT---
+
+[ERROR] 16:30:15:362 kernel/(9781:9791): NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA
+
+[ERROR] 16:30:15:362 kernel/(9781:9791): FALLO AL EJECUTAR LA REQUEST select MARACAS 1.
+
+[INFO] 16:31:17:619 kernel/(9895:9895): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:31:24:824 kernel/(9895:9904): add memory 1 to ec
+[INFO] 16:31:24:824 kernel/(9895:9904): 
+---Se realizara la request ADD---
+
+[INFO] 16:31:24:825 kernel/(9895:9904): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:31:43:612 kernel/(9895:9904): select MARCAS 1
+[INFO] 16:31:43:612 kernel/(9895:9904): ---Se realizara el SELECT---
+

@@ -53,8 +53,11 @@ t_list* recibir_describe(int conexion){
 
 	t_list* datos_metadata = list_create();
 
-	if(error_recv == -1){
+	if(error_recv <= 0){
 		perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
+
+		return datos_metadata;
+
 	}
 
 	for(int i = 0; i < numero_tablas; i++){

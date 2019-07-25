@@ -117,16 +117,22 @@ t_dato* recibir_dato_LFS(int conexion){
 
 	int bytes = recv(conexion, &(estado), sizeof(estado_select), 0);
 
+	if(bytes <= 0){
+		printf("Fallo recibir del fileSystem\n");
+		free(dato_recibido->value);
+		free(dato_recibido);
+
+		desconexion_pool = true;
+
+		return NULL;
+	}
+
 	if(estado == ERROR){
 
 		free(dato_recibido->value);
 		free(dato_recibido);
 
 		return NULL;
-	}
-
-	if(bytes == -1){
-		perror("NO RECIBIO EL ESTADO");
 	}
 
 	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
