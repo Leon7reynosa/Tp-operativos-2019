@@ -252,6 +252,7 @@ void* auto_journal(void* argumento){
 	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
 	while(1){
+
 		usleep(tiempo_journal * 1000);
 
 		printf("\n///////////////////////// Auto-Journal/////////////////////////////\n\n");

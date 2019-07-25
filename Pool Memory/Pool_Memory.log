@@ -2727,3 +2727,9 @@
 [INFO] 01:54:38:964 Pool Memory/(19374:19374): Se recibio una nueva request.
 [INFO] 01:54:38:964 Pool Memory/(19374:19374): Se realizara un DESCRIBE GLOBAL
 [INFO] 01:55:08:964 Pool Memory/(19344:19344): Se recibio una nueva request.
+[INFO] 14:51:00:40 Pool Memory/(4971:4971): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 14:51:00:40 Pool Memory/(4971:4971): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+

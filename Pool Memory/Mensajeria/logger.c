@@ -11,7 +11,7 @@ char* obtener_path_log(void){
 
 	char* path_log = string_new();
 
-	string_append(&path_log, "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/Pool_Memory.log");
+	string_append(&path_log, "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/Pool_Memory.log");
 
 	return path_log;
 }
@@ -20,7 +20,7 @@ char* obtener_path_log_gossip(void){
 
 	char* path_log = string_new();
 
-	string_append(&path_log, "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/Gossiplog");
+	string_append(&path_log, "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/Gossiplog");
 
 	return path_log;
 }
@@ -29,7 +29,7 @@ char* obtener_path_log_journal(void){
 
 	char* path_log = string_new();
 
-	string_append(&path_log, "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/Journal.log");
+	string_append(&path_log, "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/Journal.log");
 
 	return path_log;
 }

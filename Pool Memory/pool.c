@@ -41,8 +41,6 @@ int main (int argc , char* argv[]){
 
 	//CADA CUANTO TIEMPO, el select va a estar esperando que pase algo (cada 60 segundos)
 	struct timeval espera;
-	espera.tv_sec = 60;
-	espera.tv_usec = 0;
 
 	FD_ZERO(&master);
 	FD_ZERO(&read_fds);
@@ -62,6 +60,9 @@ int main (int argc , char* argv[]){
 		read_fds = master;
 
 		printf("SELECT ESCUCHANDO\n");
+
+		espera.tv_sec = 30;
+		espera.tv_usec = 0;
 
 		if(select(fd_max +1 , &read_fds, NULL, NULL, &espera) == -1){
 			perror("select.");
