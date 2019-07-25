@@ -26,9 +26,7 @@ void* refrescar_metadata(){
 
 		printf("\n////////////////////////////ACTUALIZACION METADATA/////////////////////////////\n");
 
-		memoria_utilizada = tomar_memoria_al_azar();
-
-		printf("pase memoria al azar\n");
+		memoria_utilizada = tomar_memoria_al_azar();;
 
 		if(memoria_utilizada == NULL){
 

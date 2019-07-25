@@ -44,12 +44,8 @@ t_list* recibir_describe(int conexion){
 	char* consistencia_recibida;
 	int particiones_recibidas, compactacion_recibida;
 
-	printf("estoy esperando respuesta\n");
-
 
 	error_recv = recv(conexion, &numero_tablas, sizeof(int), MSG_WAITALL);
-
-	printf("ya recibi respuesta\n");
 
 	t_list* datos_metadata = list_create();
 
@@ -110,23 +106,26 @@ t_list* recibir_describe(int conexion){
 
 	}
 
+	if( numero_tablas == 0 ){
+
+		printf("\n--No Hay Tablas--\n");
+
+	}
+
 	return datos_metadata;
 
 }
 
 t_dato* recibir_dato_memoria(int conexion){
 
-	printf("entre al recibir dato memoria\n");
 
 	estado_select estado;
 
 	recv(conexion, &estado , sizeof(estado_select) , 0);
 
-	printf("estado recibido: %d\n" , estado);
 
 	if(estado == SUCCESS){
 
-		printf("entre al iff\n");
 
 		t_dato* dato_recibido = malloc(sizeof(t_dato));
 

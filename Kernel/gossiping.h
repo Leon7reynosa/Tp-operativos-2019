@@ -24,6 +24,8 @@
 
 #include"API_Kernel.h"
 
+pthread_rwlock_t semaforo_tabla_gossiping;
+
 
 
 struct MemoriasEstructura{

@@ -21,8 +21,6 @@ int ejecutar_request(char* request_lql){
 	char* consistencia = string_new();
 	int tiempo_compactacion, particiones, numero_memoria, cantidad_parametros;
 
-	printf("hola\n");
-
 	memoria_t* memoria_utilizada;
 
 	u_int16_t key;
@@ -31,15 +29,9 @@ int ejecutar_request(char* request_lql){
 
 	describe_t describe_enviar;
 
-	printf("chau\n");
-
 	log_info(logger_kernel, request_lql);
 
-	printf("es el log\n");
-
 	cod_request = identificar_request(request_lql);
-
-	printf("llegue bro\n");
 
 	switch(cod_request){
 		case SELECT:
@@ -230,8 +222,6 @@ int ejecutar_request(char* request_lql){
 
 		case ADD:
 
-			printf("llegue hasta aca\n");
-
 			if(  obtener_parametros_add(request_lql, &numero_memoria, consistencia) &&  (identificar_consistencia(consistencia) >= 0 ) ){
 
 				log_info(logger_kernel, "\n---Se realizara la request ADD---\n");
@@ -247,13 +237,13 @@ int ejecutar_request(char* request_lql){
 
 			nombre_archivo = obtener_parametros_run(request_lql);
 
-			//log_info(logger_kernel , "--Se realizara el RUN del archivo %s--\n" , nombre_archivo);
+			log_info(logger_kernel , "--Se realizara el RUN del archivo %s--\n" , nombre_archivo);
 
 			if(nombre_archivo != NULL){
 
 				queue_push(cola_new , nombre_archivo);
 
-				//log_info(logger_kernel, "EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.\n");
+				log_info(logger_kernel, "EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.\n");
 
 
 				cola_new_to_ready();

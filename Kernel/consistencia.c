@@ -309,10 +309,6 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 	int numero_random;
 	memoria_t* memoria_a_retornar;
 
-	printf("estoy aca\n");
-
-	printf("codigo: %d\n" , codigo_consistencia);
-
 	switch(codigo_consistencia){
 
 		case SC:
@@ -439,7 +435,11 @@ void guardar_tabla_consistencia(char* tabla, metadata_t* metadata_tabla){
 
 int obtener_index_memoria(int key){
 
+	pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
+
 	int cantidad_de_memorias = list_size(tabla_gossiping);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 	return key%cantidad_de_memorias;
 }

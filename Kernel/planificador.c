@@ -46,32 +46,20 @@ void cancelar_hilos_execute(){
 
 t_queue* parsear_LQL(FILE* archivo_lql){
 
-	printf("aca\n");
 
 	t_queue* cola_requests = queue_create();
 
-	printf("aca\n");
 
 	char caracter;
 	char* caracter_temp;
 
-
-	printf("aca\n");
 	caracter = fgetc(archivo_lql);
-
-	printf("aca\n");
 
 	char* linea_leida = string_new();
 
-	printf("aca\n");
-
 	while(caracter != EOF){
 
-		printf("aca es\n");
-
 		caracter_temp = string_from_format("%c", caracter);
-
-		printf("String from formate: %s\n", caracter_temp);
 
 		string_append(&linea_leida, caracter_temp);
 
@@ -164,39 +152,23 @@ void cola_new_to_ready(){
 
 	FILE* archivo;
 
-	printf("holis\n");
-
 	int tamanio_cola_new = queue_size(cola_new);
-
-	printf("holis  \n");
 
 	for(int i = 0 ; i < tamanio_cola_new ; i++){
 
 		t_scripts* nuevo_lql = malloc(sizeof(t_scripts));
 
-		printf("kakak\n");
-
 		nuevo_lql->path_lql = (char*) queue_pop(cola_new);
-
-		printf("kakak  %s\n" , nuevo_lql->path_lql);
 
 		//nuevo_lql->path_lql = "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/lql.txt";
 
 		archivo = fopen(nuevo_lql->path_lql , "r");
 
-		printf("kakak\n");
-
 		if(archivo != NULL){
-
-			printf("kakadk\n");
 
 			nuevo_lql->cola_requests = parsear_LQL(archivo);
 
-			printf("kakak\n");
-
 			queue_push(cola_ready,(void*) nuevo_lql);
-
-			printf("kakak\n");
 
 			fclose(archivo);
 
@@ -204,14 +176,10 @@ void cola_new_to_ready(){
 
 		}else{
 
-			printf("kakadak\n");
-
 			log_error(logger_kernel, "NO SE PUDO ABRIR EL ARCHIVO %s.\n" , nuevo_lql->path_lql);
 
 		}
 	}
-
-	printf("chau\n");
 
 }
 
@@ -283,8 +251,6 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 			sem_post(&semaforo_ready);
 
 		}
-
-		printf("tiempo de ejecucion: %d\n " , tiempo_ejecucion);
 
 		usleep(tiempo_ejecucion*1000);
 

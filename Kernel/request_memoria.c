@@ -54,9 +54,19 @@ memoria_t* obtener_memoria_de_lista( int numero_memoria ){
 
 	struct MemoriasEstructura* dato_memoria_gossiping;
 
-	for( int i = 0 ; i < list_size(tabla_gossiping) ; i++){
+	pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
+
+	int tamanio_lista_gossip = list_size(tabla_gossiping) ;
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
+	for( int i = 0 ; i < tamanio_lista_gossip ; i++){
+
+		pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
 		dato_memoria_gossiping = list_get(tabla_gossiping , i);
+
+		pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 		if(dato_memoria_gossiping->numero_memoria == numero_memoria){
 
