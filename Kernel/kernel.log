@@ -2181,3 +2181,7 @@
 [INFO] 01:54:26:186 kernel/(19389:19398): SELECT MARCAS 1
 [INFO] 01:54:26:187 kernel/(19389:19398): ---Se realizara el SELECT---
 
+[INFO] 01:58:55:75 kernel/(19389:19398): JOURNAl
+[INFO] 01:58:55:75 kernel/(19389:19398): 
+---Se realizara la request JOURNAL---
+

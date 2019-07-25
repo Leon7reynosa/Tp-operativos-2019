@@ -55,19 +55,31 @@ void remover_memoria_de_consistencia(memoria_t* memoria){
 
 	memoria_t* memoria_devuelta_shc;
 
-	remover_conexion(memoria->socket, Eventual_C);
-
-	memoria_devuelta_shc = remover_conexion(memoria->socket, Strong_Hash_C);
-
-	if(memoria_devuelta_shc != NULL){
-
-		request_journal();
-
-	}
+	pthread_rwlock_wrlock(&semaforo_strong_c);
 
 	if(memoria == Strong_C){
 
 		Strong_C = NULL;
+
+	}
+
+	pthread_rwlock_unlock(&semaforo_strong_c);
+
+	pthread_rwlock_wrlock(&semaforo_eventual_c);
+
+	remover_conexion(memoria->socket, Eventual_C);
+
+	pthread_rwlock_unlock(&semaforo_eventual_c);
+
+	pthread_rwlock_wrlock(&semaforo_strong_hash_c);
+
+	memoria_devuelta_shc = remover_conexion(memoria->socket, Strong_Hash_C);
+
+	pthread_rwlock_unlock(&semaforo_strong_hash_c);
+
+	if(memoria_devuelta_shc != NULL){
+
+		request_journal();
 
 	}
 

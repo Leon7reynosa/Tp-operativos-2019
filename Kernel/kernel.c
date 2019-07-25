@@ -28,7 +28,7 @@ int main (int argc , char* argv[]){
 
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
-	pthread_rwlock_init(&semaforo_registro_tabla , NULL);
+	inicializar_semaforos_consistencias();
 
 	inicializar_tabla_gossiping();
 
@@ -93,6 +93,19 @@ int main (int argc , char* argv[]){
 	return EXIT_SUCCESS;
 }
 
+
+void inicializar_semaforos_consistencias(){
+
+	pthread_rwlock_init(&semaforo_registro_tabla , NULL);
+
+	pthread_rwlock_init(&semaforo_eventual_c , NULL);
+
+	pthread_rwlock_init(&semaforo_strong_c, NULL);
+
+	pthread_rwlock_init(&semaforo_strong_hash_c, NULL);
+
+
+}
 
 
 
