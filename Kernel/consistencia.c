@@ -123,6 +123,8 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 			break;
 	}
 
+	pthread_rwlock_rdlock(&semaforo_registro_tabla);
+
 	if(!dictionary_has_key(registro_tabla, tabla)){
 
 		printf("No existe la tabla en el registro de tablas\n"); //log
@@ -131,9 +133,9 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 	}
 
-	printf("consistencia de la tabla : %s\n"  , (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
-
 	codigo_consistencia =    identificar_consistencia(  (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 	return codigo_consistencia;
 }
@@ -294,7 +296,7 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 			}
 
-			return list_get(Strong_Hash_C , index);
+			return list_get(Strong_Hash_C , index_memoria);
 
 
 			break;
@@ -303,13 +305,15 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 			if(list_is_empty(Eventual_C)){
 
+				printf("ESTA TODO MAAAAL\n");
+
 				return NULL;
 
 			}
 
 
 
-			if ( memoria_siguiente >= list_size(Eventual_C) ){
+			if ( memoria_siguiente >= (list_size(Eventual_C) -1) ){
 
 				memoria_siguiente = 0;
 
@@ -397,6 +401,9 @@ void actualizar_metadata(t_list* datos_describe){
 
 void agregar_metadata_a_registro_tabla(Metadata metadata_guardar){
 
+
+	pthread_rwlock_wrlock( &semaforo_registro_tabla );
+
 	if(dictionary_has_key(registro_tabla, metadata_guardar->tabla)){
 
 		dictionary_remove_and_destroy(registro_tabla, metadata_guardar->tabla , liberar_metadata);
@@ -405,6 +412,8 @@ void agregar_metadata_a_registro_tabla(Metadata metadata_guardar){
 
 
 	dictionary_put(registro_tabla , metadata_guardar->tabla , metadata_guardar);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 }
 

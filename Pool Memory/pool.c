@@ -39,6 +39,11 @@ int main (int argc , char* argv[]){
 	int listener;
 	int i;
 
+	//CADA CUANTO TIEMPO, el select va a estar esperando que pase algo (cada 60 segundos)
+	struct timeval espera;
+	espera.tv_sec = 60;
+	espera.tv_usec = 0;
+
 	FD_ZERO(&master);
 	FD_ZERO(&read_fds);
 
@@ -58,7 +63,7 @@ int main (int argc , char* argv[]){
 
 		printf("SELECT ESCUCHANDO\n");
 
-		if(select(fd_max +1 , &read_fds, NULL, NULL, NULL) == -1){
+		if(select(fd_max +1 , &read_fds, NULL, NULL, &espera) == -1){
 			perror("select.");
 			exit(1);
 		}
@@ -87,7 +92,7 @@ int main (int argc , char* argv[]){
 
 				}else if(i == 0){
 //TODO parsear linea por requests!
-					desconexion_pool = leer_consola();
+					leer_consola();
 
 				}else{
 
@@ -124,11 +129,11 @@ int main (int argc , char* argv[]){
 
 			}
 
+			if(desconexion_pool) break;
+
 		}
 
-		if(desconexion_pool){
-			break;
-		}
+		if(desconexion_pool) break;
 
 	}
 

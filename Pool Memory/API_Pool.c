@@ -121,7 +121,7 @@ Dato request_select(select_t dato){
 
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
-//			log_info(logger, "Existe una pagina con la key: %i", dato->key);
+			log_info(logger, "Existe una pagina con la key: %i", dato->key);
 
 			mostrar_datos(pagina_encontrada);
 
@@ -131,7 +131,7 @@ Dato request_select(select_t dato){
 
 		}else{
 
-//			log_info(logger, "No existe una pagina con la key %i, la busco en el File System", dato->key);
+			log_info(logger, "No existe una pagina con la key %i, la busco en el File System", dato->key);
 
 			Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
 

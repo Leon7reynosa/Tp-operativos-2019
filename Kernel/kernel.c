@@ -28,9 +28,12 @@ int main (int argc , char* argv[]){
 
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
+	pthread_rwlock_init(&semaforo_registro_tabla , NULL);
+
 	inicializar_tabla_gossiping();
 
 	inicializar_registro_tabla();
+
 
 	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
 

@@ -64,7 +64,7 @@ bool leer_consola(void){
 
 		liberar_puntero_doble(tokens);
 
-		return true;
+		desconexion_pool = true;
 
 	}else{
 		printf("No es valido lo ingresado\n");

@@ -27,6 +27,8 @@ void realizar_handshake(void){
 		exit(1);
 	}
 
+	desconexion_pool = false;
+
 	bytes_recibidos = recv(socket_lissandra, &tamanio_value, sizeof(int), 0);
 
 	if(bytes_recibidos < 0){
@@ -40,16 +42,16 @@ void realizar_handshake(void){
 
 void creacion_del_config(){
 
-	char* array_ips = "[192.168.1.41]";
+	char* array_ips = "[]";
 
-	char* array_puertos = "[8001]";
+	char* array_puertos = "[]";
 
 	char* path_config = obtener_path_config();
 
 	g_config = config_create(path_config);
 
-	config_set_value(g_config, "PUERTO_ESCUCHA", "8000");
-	config_set_value(g_config, "IP_LFS", "192.168.1.41");
+	config_set_value(g_config, "PUERTO_ESCUCHA", "8001|");
+	config_set_value(g_config, "IP_LFS", "192.168.1.40");
 	config_set_value(g_config, "PUERTO_LFS", "5003");
 
 	config_set_value(g_config, "IP_SEEDS", array_ips);
@@ -60,7 +62,7 @@ void creacion_del_config(){
 	config_set_value(g_config, "TAMANIO_MEMORIA", "1280");
 	config_set_value(g_config, "TIEMPO_JOURNAL","60000");
 	config_set_value(g_config, "TIEMPO_GOSSIPING", "10000");
-	config_set_value(g_config, "NUMERO_MEMORIA", "1");
+	config_set_value(g_config, "NUMERO_MEMORIA", "2");
 
 	config_save(g_config);
 	config_destroy(g_config);

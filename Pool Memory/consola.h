@@ -26,7 +26,7 @@
 #include"Mensajeria/mensajes.h"
 #include"gossiping.h"
 
-bool desconexion_pool;
+
 
 bool leer_consola(void);
 void parsear_request(cod_operacion operacion, char** tokens);

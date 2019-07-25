@@ -151,9 +151,13 @@ dato_t* request_select(select_t datos_select){
          dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
          /////////////////////////////////
 
+         printf("OBTENGO EL DATO MAS NUEVO\n");
+
 		 dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
 
 		 dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
+
+		 printf("TERMINE DE OBTENER EL MAS NUEVO\n");
 
 		 if(dato_aux != NULL){
 			 liberar_dato(dato_aux);

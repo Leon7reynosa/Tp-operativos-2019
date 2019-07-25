@@ -124,7 +124,9 @@ int ejecutar_request(char* request_lql){
 		case CREATE:
 			if(obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion)){
 
+
 				log_info(logger_kernel , "---Se realizara el CREATE---\n");
+
 				create create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
 				memoria_utilizada = seleccionar_memoria_consistencia(CREATE, create_enviar);
@@ -150,7 +152,6 @@ int ejecutar_request(char* request_lql){
 				Metadata metadata_agregar =  crear_metadata(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
 				agregar_metadata_a_registro_tabla(metadata_agregar);
-
 
 
 				return 1;

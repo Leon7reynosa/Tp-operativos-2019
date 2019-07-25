@@ -65,24 +65,21 @@ void enviar_request(request request, int conexion){
 	int enviados_aux;
 
 	if(conexion == socket_lissandra){
-		usleep(retardo_lfs);
+			usleep(retardo_lfs);
 	}
 
 	while(bytes_enviados < bytes){
 
-		printf("Soy un printf\n");
 		enviados_aux = send(conexion, buffer + bytes_enviados, bytes_restantes, 0);
 
-		printf("terminaste despues del printf\n");
-
 		if(enviados_aux == -1){
-			perror("Send tiro -1");
-			//ver que hacer aca
+			desconexion_pool = true;
+			bytes_enviados = bytes;       // PARA QUE SALGA DEL WHILE
+
+		}else{
+			bytes_enviados += enviados_aux;
+			bytes_restantes -= enviados_aux;
 		}
-
-		bytes_enviados += enviados_aux;
-		bytes_restantes -= enviados_aux;
-
 	}
 
 	free(buffer);
