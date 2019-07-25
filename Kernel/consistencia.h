@@ -30,6 +30,9 @@ typedef struct{
 int memoria_siguiente;
 
 pthread_rwlock_t semaforo_registro_tabla;
+pthread_rwlock_t semaforo_strong_c;
+pthread_rwlock_t semaforo_eventual_c;
+pthread_rwlock_t semaforo_strong_hash_c;
 
 t_dictionary* registro_tabla; //va a tener char* nombre_tabla y los elementos van a ser metadata_t
 

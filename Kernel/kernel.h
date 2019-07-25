@@ -28,6 +28,7 @@ pthread_t hilo_planificador;
 pthread_t hilo_refresh_metadata;
 
 
+void inicializar_semaforos_consistencias(void);
 
 /*
 //###########################################DESTRIPADORES DEL REQUEST ##########################################################################
