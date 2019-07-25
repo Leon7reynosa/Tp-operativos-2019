@@ -40,9 +40,19 @@ void* refrescar_metadata(){
 
 			t_list* lista_describe = recibir_describe(memoria_utilizada->socket);
 
-			mostrar_lista_describe(lista_describe);
+			if(!list_is_empty(lista_describe)){
 
-			actualizar_metadata(lista_describe);
+				mostrar_lista_describe(lista_describe);
+
+				actualizar_metadata(lista_describe);
+
+			}else{
+
+				printf("NO SE PUDO ACTUALIZAR LA METADATA, INTENTELO MAS TARDE\n");
+
+			}
+
+
 
 			list_destroy(lista_describe); //aca no se si libearar los datos tambien
 
@@ -54,6 +64,7 @@ void* refrescar_metadata(){
 
 
 		}
+
 		printf("\n///////////////////////////FIN ACTUALIZACION METADATA//////////////////////////////\n");
 	}
 

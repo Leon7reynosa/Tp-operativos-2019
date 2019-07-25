@@ -35,7 +35,7 @@
 #include"commons/collections/list.h"
 
 
-void enviar_request(request request, int conexion);
+bool enviar_request(request request, int conexion);
 void liberar_request(request dato);
 void mandar_mensaje(int conexion);
 void enviar_dato(t_dato* dato, int conexion, estado_select estado);
