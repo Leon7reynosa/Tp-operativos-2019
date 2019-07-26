@@ -126,6 +126,16 @@ void trabajar_request(request nueva_request , int conexion){
 
 			break;
 
+		case JOURNAL:
+
+			printf("--JOURNAL--\n");
+
+			pthread_mutex_lock(&mutex_journal);
+			realizar_journal();
+			pthread_mutex_unlock(&mutex_journal);
+
+			break;
+
 		default:
 
 			break;

@@ -64,6 +64,16 @@ void* realizar_gossiping(){
 	}
 }
 
+void remover_memoria_de_tabla_gossiping(memoria_t* memoria_utilizada){
+
+	pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
+
+	remover_conexion(memoria_utilizada->socket , tabla_gossiping);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
+}
+
 void remover_memoria_de_consistencia(memoria_t* memoria){
 
 	memoria_t* memoria_devuelta_shc;
@@ -92,7 +102,18 @@ void remover_memoria_de_consistencia(memoria_t* memoria){
 
 	if(memoria_devuelta_shc != NULL){
 
-		request_journal();
+
+		void* _hacete_journal(void* _memoria_shc){
+
+			memoria_t* memoria_shc = (memoria_t* ) _memoria_shc;
+
+			mandar_journal(memoria_shc);
+
+			return NULL;
+
+		}
+
+		list_iterate(Strong_Hash_C , _hacete_journal);
 
 	}
 
@@ -110,6 +131,8 @@ memoria_t* remover_conexion( int conexion , t_list* lista_a_remover ){
 	}
 
 	memoria_t* dato = list_remove_by_condition(lista_a_remover, _tenes_esta_conexion);
+
+	//deberia liberarla?
 
 	return dato;
 

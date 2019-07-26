@@ -40,7 +40,7 @@ int main (int argc , char* argv[]){
 	creacion_del_config();
 	obtener_datos_config();
 
-	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  1); //si pasa pasa, modioficarlo en el config
+	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  numero_memoria_seed); //si pasa pasa, modioficarlo en el config
 
 	ingresar_a_tabla_gossiping(memoria_principal);
 

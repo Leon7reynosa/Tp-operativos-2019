@@ -14,6 +14,6 @@
 #include"request.h"
 
 
-char* serializar_journal(request request);
+void* serializar_journal(request request);
 
 #endif /* MENSAJERIA_REQUESTJOURNAL_H_ */

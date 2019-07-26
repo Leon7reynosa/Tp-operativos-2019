@@ -63,13 +63,19 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
+
+					remover_conexion(memoria_utilizada->socket , tabla_gossiping);
+
+					pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
 					return 0;
 
 				}
 
 				printf("PSE EL ENVIAR, AHORA ESPERO EL DATO\n");
 
-				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada->socket);
+				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada);
 
 				printf("YA RECIBI EL DATO\n");
 
@@ -120,11 +126,17 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
+
+					remover_conexion(memoria_utilizada->socket , tabla_gossiping);
+
+					pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
 					return 0;
 
 				}
 
-				if(recibir_estado_request(memoria_utilizada->socket) == ERROR){
+				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
 					log_error(logger_kernel,  "-Fallo la request INSERT.-\n");
 
@@ -163,11 +175,13 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					remover_memoria_de_tabla_gossiping(memoria_utilizada);
+
 					return 0;
 
 				}
 
-				if( recibir_estado_request(memoria_utilizada->socket) == ERROR ){
+				if( recibir_estado_request(memoria_utilizada) == ERROR ){
 
 					log_error(logger_kernel, "-Fallo el CREATE.-\n");
 
@@ -210,8 +224,12 @@ int ejecutar_request(char* request_lql){
 				if ( enviar_request(DESCRIBE, describe_enviar , memoria_utilizada->socket) == false ){
 
 					log_error(logger_kernel, ">>FALLO ENVIAR EL DESCRIBE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+
 					printf("consistencia de la request: %s\n" , consistencia);
+
 					remover_memoria_de_consistencia(memoria_utilizada);
+
+					remover_memoria_de_tabla_gossiping(memoria_utilizada);
 
 					return 0;
 
@@ -233,6 +251,8 @@ int ejecutar_request(char* request_lql){
 					log_error(logger_kernel, ">>FALLO ENVIAR EL DESCRIBE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
+
+					remover_memoria_de_tabla_gossiping(memoria_utilizada);
 
 					return 0;
 
@@ -330,6 +350,8 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					remover_memoria_de_tabla_gossiping(memoria_utilizada);
+
 					//liberar_drop(drop_enviar);
 
 					return 0;
@@ -337,7 +359,7 @@ int ejecutar_request(char* request_lql){
 				}
 
 
-				if(recibir_estado_request(memoria_utilizada->socket) == ERROR){
+				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
 					log_error(logger_kernel , "-Fallo la request DROP.\n");
 
@@ -402,6 +424,8 @@ void request_journal(){
 			log_error(logger_kernel, ">>FALLO ENVIAR EL JOURNAL ELIMINAMOS LA MEMORIA %d \n" , memoria_a_enviar->numero_memoria);
 
 			remover_memoria_de_consistencia(memoria_a_enviar);
+
+			remover_memoria_de_tabla_gossiping(memoria_a_enviar);
 
 		}
 

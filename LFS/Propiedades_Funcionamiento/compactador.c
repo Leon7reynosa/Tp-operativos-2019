@@ -9,7 +9,6 @@ void* compactar(thread_args* argumentos){
 
 	char* nombre_tabla = argumentos->nombre_tabla;
 
-
 	pthread_rwlock_wrlock(&(argumentos->lock_tabla));
 
 	transformar_tmp_a_tmpc(nombre_tabla);
@@ -103,8 +102,6 @@ void* compactar(thread_args* argumentos){
 		free(path_particion);                                                                    // (5)
 
 		liberar_dato(dato_a_cargar);															 // (6)
-
-
 
 	}
 

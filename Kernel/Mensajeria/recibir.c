@@ -127,47 +127,45 @@ t_list* recibir_describe(int conexion){
 
 }
 
-t_dato* recibir_dato_memoria(int conexion){
+t_dato* recibir_dato_memoria(memoria_t* memoria_utilizada){
 
 
 	estado_request estado;
 
-	printf("AHORA EL RECV\n");
+	if( recv(memoria_utilizada->socket, &estado , sizeof(estado_request) , MSG_WAITALL) <= 0){
 
-	recv(conexion, &estado , sizeof(estado_request) , MSG_WAITALL);
+		perror("Fallo al recibir el dato\n");
 
-	printf("PASE EL RECV\n");
+		remover_memoria_de_consistencia(memoria_utilizada);
+
+		remover_memoria_de_tabla_gossiping(memoria_utilizada);
+
+		return NULL;
+
+	}
 
 	if(estado == SUCCESS){
-
-		printf("sALIO BIEN\n");
 
 		t_dato* dato_recibido = malloc(sizeof(t_dato));
 
 		dato_recibido->value = malloc(sizeof(t_stream));
 
-		printf("voy a recibir\n");
-
-		int bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
+		int bytes = recv(memoria_utilizada->socket,&(dato_recibido->timestamp),sizeof(time_t), 0);
 
 		if(bytes == -1){
 			perror("NO RECIBIO EL TIMESTAMP;");
 		}
 
-		printf("Timestamp: %i\n", dato_recibido->timestamp);
-
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		bytes = recv(conexion,&(dato_recibido->key),sizeof(u_int16_t), 0);
+		bytes = recv(memoria_utilizada->socket ,&(dato_recibido->key),sizeof(u_int16_t), 0);
 
 		if(bytes == -1){
 				perror("NO RECIBIO LA KEY;");
 		}
 
-		printf("Key: %i\n", dato_recibido->key);
-
 		///////////////////////////////////////////////////////////////////////////////////
-		bytes = recv(conexion, &(dato_recibido->value->size),sizeof(int), 0);
+		bytes = recv(memoria_utilizada->socket, &(dato_recibido->value->size),sizeof(int), 0);
 
 		if(bytes == -1){
 			perror("NO RECIBIO EL TAMANIO DEL VALUE;");
@@ -179,7 +177,7 @@ t_dato* recibir_dato_memoria(int conexion){
 
 		dato_recibido->value->buffer = malloc(dato_recibido->value->size);
 
-		bytes = recv(conexion, dato_recibido->value->buffer, dato_recibido->value->size, 0);
+		bytes = recv(memoria_utilizada->socket , dato_recibido->value->buffer, dato_recibido->value->size, 0);
 
 		if(bytes == -1){
 			perror("NO RECIBIO EL VALUE;");
@@ -198,11 +196,22 @@ t_dato* recibir_dato_memoria(int conexion){
 	}
 }
 
-estado_request recibir_estado_request(int conexion){
+estado_request recibir_estado_request(memoria_t* memoria_utilizada){
 
 	estado_request estado;
 
-	recv(conexion , &estado , sizeof(estado_request) , 0);
+	int recibido;
+
+	recibido =	recv(memoria_utilizada->socket , &estado , sizeof(estado_request) , 0);
+
+	if(recibido <= 0){
+
+		remover_memoria_de_consistencia(memoria_utilizada);
+
+		remover_memoria_de_tabla_gossiping(memoria_utilizada);
+
+	}
+
 
 	return estado;
 

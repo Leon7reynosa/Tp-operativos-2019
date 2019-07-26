@@ -39,6 +39,15 @@ t_dictionary* registro_tabla; //va a tener char* nombre_tabla y los elementos va
 //van a ser listas de distintas memorias, es decir, sus sockets
 
 
+typedef struct{
+
+	cod_consistencia codigo_consistencia;
+	void* consistencia;
+
+
+}metricas_t;
+
+
 t_list* Eventual_C; //van a tener memoria_t*
 t_list* Strong_Hash_C;
 

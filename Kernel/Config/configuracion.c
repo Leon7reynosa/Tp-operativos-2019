@@ -17,6 +17,7 @@ void creacion_del_config(){
 
 	config_set_value(g_config, "IP_MEMORIA", "192.168.1.41");
 	config_set_value(g_config, "PUERTO_MEMORIA", "8001");
+	config_set_value(g_config, "NUMERO_MEMORIA" , "1");
 	config_set_value(g_config, "QUANTUM", "3");
 	config_set_value(g_config, "GRADO_MULTIPROCESAMIENTO", "1");
 	config_set_value(g_config, "REFRESH_METADATA", "15000");
@@ -35,6 +36,7 @@ void obtener_datos_config(){
 
 	puerto_memoria = config_get_int_value(g_config, "PUERTO_MEMORIA");
 	ip_auxiliar = config_get_string_value(g_config, "IP_MEMORIA");
+	numero_memoria_seed = config_get_int_value(g_config, "NUMERO_MEMORIA");
 	quantum = config_get_int_value(g_config , "QUANTUM");
 	grado_multiprocesamiento = config_get_int_value(g_config , "GRADO_MULTIPROCESAMIENTO");
 	tiempo_refresh_metadata = config_get_int_value(g_config, "REFRESH_METADATA");

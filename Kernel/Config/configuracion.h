@@ -20,6 +20,7 @@ t_config* g_config;
 
 char* ip_memoria;
 int puerto_memoria;
+int numero_memoria_seed;
 int quantum;
 int grado_multiprocesamiento;
 int tiempo_refresh_metadata;
