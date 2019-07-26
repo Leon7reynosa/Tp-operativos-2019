@@ -335,7 +335,7 @@ void request_journal(){
 
 		if ( enviar_request(JOURNAL, NULL , memoria_a_enviar->socket ) == false ){
 
-			log_error(logger_kernel, ">>FALLO ENVIAR EL DROP, ELIMINAMOS LA MEMORIA %d \n" , memoria_a_enviar->numero_memoria);
+			log_error(logger_kernel, ">>FALLO ENVIAR EL JOURNAL ELIMINAMOS LA MEMORIA %d \n" , memoria_a_enviar->numero_memoria);
 
 			remover_memoria_de_consistencia(memoria_a_enviar);
 
@@ -349,7 +349,6 @@ void request_journal(){
 	list_destroy(lista_memorias_a_enviar);
 
 }
-
 
 
 int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key){

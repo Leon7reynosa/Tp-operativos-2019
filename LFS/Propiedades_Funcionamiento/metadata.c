@@ -295,6 +295,8 @@ int obtener_cantidad_de_archivos_tmpc(char* nombre_tabla){
 void transformar_tmp_a_tmpc(char* nombre_tabla){
 	DIR* dir;
 
+	printf("[COMPACTACION] Se cambia el nombre de los temporales\n");
+
 	struct dirent* ent;
 
 	char* raiz_de_tabla = obtenerPathTabla(nombre_tabla);
@@ -326,6 +328,8 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 			}
 		}
 	}
+
+	printf("[COMPACTACION] Todos los .tmp ahora son .tmpc\n");
 
 	closedir(dir);
 }

@@ -3,7 +3,7 @@
 
 int main(int argc , char* argv[]){
 
-	printf("HOLA BEBE\n");
+	printf("Empieza el programa Lissandra\n");
 
 	////////////////////////////INICIALIZACIONES////////////////////////
 
@@ -13,26 +13,15 @@ int main(int argc , char* argv[]){
 
 	obtener_datos_config();
 
-	printf("PASE -1\n");
 	obtener_datos_metadata();
-
-	printf("PASE 0 \n");
 
 	inicializar_loggers();
 
-	printf("PASE 1\n");
-
 	inicializar_memtable(); //Inicializa la memtable como diccionario junto con su lock rw
-
-	printf("PASE 2\n");
 
 	inicializar_memorias_conectadas(); //Inicializa una lista de memorias
 
-	printf("PASE 3\n");
-
 	inicializar_compactador();
-
-	printf("PASE 4\n");
 
 
 	 /* Abre la carpeta TABLAS, y por cada tabla que haya, corre la  compactacion
@@ -58,6 +47,8 @@ int main(int argc , char* argv[]){
 	socket_servidor = iniciar_servidor(ip_escucha, puerto_lfs);
 
 	free(ip_escucha);
+
+
 
 	///////////////////////////////MAIN////////////////////////////////////
 
@@ -86,7 +77,7 @@ int main(int argc , char* argv[]){
 
 	pthread_detach(administrador_hilos);
 
-
+	printf("Se inicializo todo correctamente\n");
 
 	pthread_join(hilo_consola , NULL);
 

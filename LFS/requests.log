@@ -1,1444 +1,288 @@
-[TRACE] 16:58:03:514 requests/(8225:8263): Request de CREATE recibida por el socket 9 !
+[TRACE] 23:55:33:296 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 16:58:03:515 requests/(8225:8263): Request de CREATE terminada por el socket 9 !
+[TRACE] 23:55:33:296 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 16:58:41:375 requests/(8225:8263): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:55:34:365 requests/(16228:16267): Request de CREATE recibida por el socket 8 !
 
-[TRACE] 16:58:41:376 requests/(8225:8263): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:55:34:366 requests/(16228:16267): Request de CREATE terminada por el socket 8 !
 
-[TRACE] 16:59:48:854 requests/(8225:8263): Request de INSERT recibida por el socket 9 !
+[TRACE] 23:55:48:297 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 16:59:48:855 requests/(8225:8263): Request de INSERT terminada por el socket 9 !
+[TRACE] 23:55:48:297 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 17:11:38:344 requests/(8709:8732): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:56:03:299 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 17:11:38:344 requests/(8709:8732): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:56:03:300 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 17:44:16:856 requests/(11051:11076): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:56:14:870 requests/(16228:16267): Request de INSERT recibida por el socket 8 !
 
-[TRACE] 17:44:16:857 requests/(11051:11076): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:56:14:871 requests/(16228:16267): Request de INSERT terminada por el socket 8 !
 
-[TRACE] 17:44:25:543 requests/(11051:11076): Request de DROP recibida por el socket 9 !
+[TRACE] 23:56:14:910 requests/(16228:16267): Request de INSERT recibida por el socket 8 !
 
-[TRACE] 17:44:25:543 requests/(11051:11076): Request de DROP solicitada por el socket 9 !
+[TRACE] 23:56:14:910 requests/(16228:16267): Request de INSERT terminada por el socket 8 !
 
-[TRACE] 17:46:05:9 requests/(11051:11076): Request de SELECT recibida por el socket 9 !
+[TRACE] 23:56:18:301 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 17:46:05:10 requests/(11051:11076): Request de SELECT terminada por el socket 9 !
+[TRACE] 23:56:18:301 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 17:46:39:699 requests/(11051:11076): Request de CREATE recibida por el socket 9 !
+[TRACE] 23:56:33:303 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 17:46:39:700 requests/(11051:11076): Request de CREATE terminada por el socket 9 !
+[TRACE] 23:56:33:303 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 17:48:00:341 requests/(11051:11076): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:56:48:304 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 17:48:00:342 requests/(11051:11076): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:56:48:305 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 17:49:14:133 requests/(11051:11076): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:57:03:306 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 17:49:14:134 requests/(11051:11076): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:57:03:306 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 17:50:30:113 requests/(11051:11076): Request de INSERT recibida por el socket 9 !
+[TRACE] 23:57:18:307 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:04:15:75 requests/(11477:11504): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:57:18:307 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:04:15:75 requests/(11477:11504): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:57:33:309 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:04:46:554 requests/(11477:11504): Request de INSERT recibida por el socket 9 !
+[TRACE] 23:57:33:309 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:04:46:554 requests/(11477:11504): Request de INSERT terminada por el socket 9 !
+[TRACE] 23:57:48:310 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:40:37:524 requests/(5285:5323): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:57:48:310 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:40:37:545 requests/(5285:5323): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:58:03:311 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:40:48:597 requests/(5285:5323): Request de DROP recibida por el socket 9 !
+[TRACE] 23:58:03:312 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:40:48:615 requests/(5285:5323): Request de DROP solicitada por el socket 9 !
+[TRACE] 23:58:18:313 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:41:09:837 requests/(5285:5323): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:58:18:313 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:41:09:837 requests/(5285:5323): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:58:33:315 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:57:07:786 requests/(5816:5835): Request de CREATE recibida por el socket 9 !
+[TRACE] 23:58:33:315 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:57:07:786 requests/(5816:5835): Request de CREATE terminada por el socket 9 !
+[TRACE] 23:58:48:316 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:58:11:540 requests/(5816:5835): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:58:48:317 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:58:11:540 requests/(5816:5835): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:59:03:318 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 18:58:24:235 requests/(5816:5835): Request de DROP recibida por el socket 9 !
+[TRACE] 23:59:03:318 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 18:58:24:236 requests/(5816:5835): Request de DROP solicitada por el socket 9 !
+[TRACE] 23:59:18:320 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:02:32:713 requests/(6006:6026): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:59:18:320 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:02:32:713 requests/(6006:6026): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:59:33:321 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:14:30:122 requests/(6286:6309): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 23:59:33:322 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:14:30:122 requests/(6286:6309): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 23:59:48:322 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:19:18:283 requests/(6522:6541): Request de CREATE recibida por el socket 9 !
+[TRACE] 23:59:48:323 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:19:18:283 requests/(6522:6541): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:00:03:325 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:19:18:786 requests/(6522:6541): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:00:03:325 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:19:18:786 requests/(6522:6541): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:00:18:326 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:19:48:636 requests/(6522:6541): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:00:18:327 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:19:48:636 requests/(6522:6541): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:00:33:328 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:19:49:137 requests/(6522:6541): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:00:33:328 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:19:49:137 requests/(6522:6541): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:00:48:329 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:26:21:184 requests/(6522:6541): Request de DROP recibida por el socket 9 !
+[TRACE] 00:00:48:329 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:26:21:189 requests/(6522:6541): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:01:03:330 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:51:54:478 requests/(7016:7035): Request de CREATE recibida por el socket 9 !
+[TRACE] 00:01:03:330 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:51:54:479 requests/(7016:7035): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:01:18:331 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:51:54:979 requests/(7016:7035): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:01:18:332 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:51:54:981 requests/(7016:7035): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:01:33:333 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:52:33:836 requests/(7016:7035): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:01:33:333 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:52:33:836 requests/(7016:7035): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:01:48:334 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:52:34:337 requests/(7016:7035): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:01:48:335 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:52:34:337 requests/(7016:7035): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:02:03:336 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:56:57:766 requests/(7138:7159): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:02:03:336 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:56:57:768 requests/(7138:7159): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:02:18:337 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:57:00:462 requests/(7138:7159): Request de DROP recibida por el socket 9 !
+[TRACE] 00:02:18:337 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:57:00:464 requests/(7138:7159): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:02:33:339 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:57:15:681 requests/(7138:7159): Request de CREATE recibida por el socket 9 !
+[TRACE] 00:02:33:339 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:57:15:682 requests/(7138:7159): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:02:42:230 requests/(16228:16520): Request de CREATE recibida por el socket 9 !
 
-[TRACE] 19:57:16:182 requests/(7138:7159): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:02:42:231 requests/(16228:16520): Request de CREATE terminada por el socket 9 !
 
-[TRACE] 19:57:16:183 requests/(7138:7159): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:02:42:231 requests/(16228:16520): Request de SELECT recibida por el socket 9 !
 
-[TRACE] 19:57:23:117 requests/(7138:7159): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:02:42:232 requests/(16228:16520): Request de SELECT terminada por el socket 9 !
 
-[TRACE] 19:57:23:117 requests/(7138:7159): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:02:48:340 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 19:57:23:617 requests/(7138:7159): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:02:48:340 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 19:57:23:618 requests/(7138:7159): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:03:03:343 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:00:01:862 requests/(7138:7159): Request de SELECT recibida por el socket 9 !
+[TRACE] 00:03:03:343 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:00:01:863 requests/(7138:7159): Request de SELECT terminada por el socket 9 !
+[TRACE] 00:03:08:516 requests/(16228:16520): Request de INSERT recibida por el socket 9 !
 
-[TRACE] 20:00:35:6 requests/(7138:7159): Request de DROP recibida por el socket 9 !
+[TRACE] 00:03:08:517 requests/(16228:16520): Request de INSERT terminada por el socket 9 !
 
-[TRACE] 20:00:35:7 requests/(7138:7159): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:03:14:874 requests/(16228:16267): Request de INSERT recibida por el socket 8 !
 
-[TRACE] 20:07:52:94 requests/(7481:7524): Request de CREATE recibida por el socket 9 !
+[TRACE] 00:03:14:875 requests/(16228:16267): Request de INSERT terminada por el socket 8 !
 
-[TRACE] 20:07:52:96 requests/(7481:7524): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:03:18:344 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:07:52:600 requests/(7481:7524): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:03:18:345 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:07:52:604 requests/(7481:7524): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:03:33:347 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:08:24:816 requests/(7481:7524): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:03:33:347 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:08:24:816 requests/(7481:7524): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:03:48:348 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:08:25:317 requests/(7481:7524): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:03:48:348 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:08:25:317 requests/(7481:7524): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:04:03:349 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:12:42:203 requests/(7481:7524): Request de DROP recibida por el socket 9 !
+[TRACE] 00:04:03:350 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:12:42:205 requests/(7481:7524): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:04:14:620 requests/(16228:16520): Request de CREATE recibida por el socket 9 !
 
-[TRACE] 20:13:44:657 requests/(7660:7680): Request de CREATE recibida por el socket 9 !
+[TRACE] 00:04:14:625 requests/(16228:16520): Request de CREATE terminada por el socket 9 !
 
-[TRACE] 20:13:44:658 requests/(7660:7680): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:04:18:351 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:13:45:158 requests/(7660:7680): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:04:18:351 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:13:45:159 requests/(7660:7680): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:04:33:353 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:14:12:404 requests/(7660:7680): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:04:33:354 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:14:12:404 requests/(7660:7680): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:04:48:359 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:14:12:905 requests/(7660:7680): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:04:48:360 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:14:12:905 requests/(7660:7680): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:05:03:362 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:14:39:972 requests/(7660:7680): Request de DROP recibida por el socket 9 !
+[TRACE] 00:05:03:362 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:14:39:973 requests/(7660:7680): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:05:08:518 requests/(16228:16520): Request de INSERT recibida por el socket 9 !
 
-[TRACE] 20:16:56:589 requests/(7768:7787): Request de CREATE recibida por el socket 9 !
+[TRACE] 00:05:08:519 requests/(16228:16520): Request de INSERT terminada por el socket 9 !
 
-[TRACE] 20:16:56:589 requests/(7768:7787): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:05:14:876 requests/(16228:16267): Request de INSERT recibida por el socket 8 !
 
-[TRACE] 20:16:57:92 requests/(7768:7787): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:05:14:876 requests/(16228:16267): Request de INSERT terminada por el socket 8 !
 
-[TRACE] 20:16:57:93 requests/(7768:7787): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:05:18:364 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:17:34:571 requests/(7768:7787): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:05:18:365 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:17:34:571 requests/(7768:7787): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:05:33:366 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:17:35:72 requests/(7768:7787): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:05:33:366 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:17:35:72 requests/(7768:7787): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:05:48:368 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:19:26:510 requests/(7768:7787): Request de DROP recibida por el socket 9 !
+[TRACE] 00:05:48:369 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:19:26:513 requests/(7768:7787): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:06:03:374 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:23:23:998 requests/(7928:7948): Request de CREATE recibida por el socket 9 !
+[TRACE] 00:06:03:376 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:23:23:999 requests/(7928:7948): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:06:18:378 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:23:24:500 requests/(7928:7948): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:06:18:378 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:23:24:500 requests/(7928:7948): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:06:33:379 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:23:27:272 requests/(7928:7948): Request de DROP recibida por el socket 9 !
+[TRACE] 00:06:33:380 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:23:27:273 requests/(7928:7948): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:06:48:381 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:25:09:902 requests/(7928:7948): Request de CREATE recibida por el socket 9 !
+[TRACE] 00:06:48:382 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:25:09:902 requests/(7928:7948): Request de CREATE terminada por el socket 9 !
+[TRACE] 00:07:03:383 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:25:10:403 requests/(7928:7948): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:07:03:384 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:25:10:404 requests/(7928:7948): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:07:18:385 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:25:57:999 requests/(7928:7948): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:07:18:386 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:25:57:0 requests/(7928:7948): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:07:33:387 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:25:58:504 requests/(7928:7948): Request de INSERT recibida por el socket 9 !
+[TRACE] 00:07:33:387 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:25:58:505 requests/(7928:7948): Request de INSERT terminada por el socket 9 !
+[TRACE] 00:07:48:388 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:26:07:620 requests/(7928:7948): Request de DROP recibida por el socket 9 !
+[TRACE] 00:07:48:389 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:26:07:621 requests/(7928:7948): Request de DROP solicitada por el socket 9 !
+[TRACE] 00:08:03:390 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 15:30:34:128 requests/(5844:5880): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:08:03:391 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 15:30:34:130 requests/(5844:5880): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:08:18:395 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 15:37:22:955 requests/(6214:6320): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:08:18:395 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 15:37:22:955 requests/(6214:6320): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:08:33:399 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 15:37:48:414 requests/(6214:6320): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:08:33:399 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 15:37:48:414 requests/(6214:6320): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:08:48:401 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 15:38:29:282 requests/(6214:6320): Request de SELECT recibida por el socket 9 !
+[TRACE] 00:08:48:401 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 15:38:29:283 requests/(6214:6320): Request de SELECT terminada por el socket 9 !
+[TRACE] 00:09:03:403 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:54:13:26 requests/(24340:24361): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:09:03:403 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:54:13:26 requests/(24340:24361): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:09:18:404 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:54:16:337 requests/(24340:24361): Request de SELECT recibida por el socket 9 !
+[TRACE] 00:09:18:405 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:54:16:337 requests/(24340:24361): Request de SELECT terminada por el socket 9 !
+[TRACE] 00:09:33:406 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 19:54:23:28 requests/(24340:24361): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:09:33:407 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 19:54:23:29 requests/(24340:24361): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:09:48:408 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 19:54:36:967 requests/(24340:24361): Request de SELECT recibida por el socket 9 !
+[TRACE] 00:09:48:409 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 19:54:36:967 requests/(24340:24361): Request de SELECT terminada por el socket 9 !
+[TRACE] 00:10:03:410 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:01:45:52 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:10:03:410 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:01:45:52 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:10:18:411 requests/(16228:16520): Request de DESCRIBE recibida por el socket 9 !
 
-[TRACE] 20:01:47:855 requests/(25155:25200): Request de SELECT recibida por el socket 9 !
+[TRACE] 00:10:18:412 requests/(16228:16520): Request de DESCRIBE terminada por el socket 9 !
 
-[TRACE] 20:01:47:855 requests/(25155:25200): Request de SELECT terminada por el socket 9 !
+[TRACE] 00:10:33:414 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:01:55:56 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
+[TRACE] 00:10:33:414 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 
-[TRACE] 20:01:55:57 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
+[TRACE] 00:10:48:416 requests/(16228:16267): Request de DESCRIBE recibida por el socket 8 !
 
-[TRACE] 20:01:57:753 requests/(25155:25200): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 20:01:57:753 requests/(25155:25200): Request de SELECT terminada por el socket 9 !
-
-[TRACE] 20:02:04:290 requests/(25155:25200): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 20:02:04:290 requests/(25155:25200): Request de SELECT terminada por el socket 9 !
-
-[TRACE] 20:02:05:59 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 20:02:05:59 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 20:02:15:62 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 20:02:15:62 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 20:02:25:65 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 20:02:25:65 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 20:02:35:68 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 20:02:35:68 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 20:02:45:71 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 20:02:45:72 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 20:02:55:75 requests/(25155:25200): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 20:02:55:76 requests/(25155:25200): Request de DESCRIBE terminada por el socket 9 !
-
-                                                                                                                                                                                                                                                                                                                                                                                  [TRACE] 22:40:57:183 requests/(6877:6896): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 22:40:57:201 requests/(6877:6896): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 22:41:07:202 requests/(6877:6896): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 22:41:07:203 requests/(6877:6896): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 22:41:17:204 requests/(6877:6896): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 22:41:17:204 requests/(6877:6896): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 22:41:27:207 requests/(6877:6896): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 22:41:27:207 requests/(6877:6896): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 22:41:27:950 requests/(6877:6896): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 22:41:27:951 requests/(6877:6896): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 22:55:49:163 requests/(7176:7262): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 22:55:49:163 requests/(7176:7262): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 23:27:51:317 requests/(8289:8307): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 23:27:51:317 requests/(8289:8307): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 23:34:33:340 requests/(8428:8465): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 23:34:33:340 requests/(8428:8465): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 23:39:46:844 requests/(8699:8735): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 23:42:57:909 requests/(8814:8835): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 23:49:08:511 requests/(8988:9006): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 23:49:08:512 requests/(8988:9006): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 23:59:37:504 requests/(9170:9224): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 23:59:37:504 requests/(9170:9224): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:03:35:765 requests/(9340:9360): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:03:35:765 requests/(9340:9360): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:46:58:866 requests/(12842:13004): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:46:58:866 requests/(12842:13004): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:51:59:545 requests/(13270:13311): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:51:59:545 requests/(13270:13311): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:56:29:922 requests/(13400:13436): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:56:29:923 requests/(13400:13436): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:58:44:191 requests/(13483:13518): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:58:44:191 requests/(13483:13518): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:01:48:375 requests/(13603:13639): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:01:48:376 requests/(13603:13639): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:05:23:808 requests/(13696:13735): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:05:23:808 requests/(13696:13735): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:06:36:566 requests/(13778:13814): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:06:36:566 requests/(13778:13814): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:08:33:514 requests/(13873:13937): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:08:33:514 requests/(13873:13937): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:13:53:537 requests/(14150:14168): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:13:53:537 requests/(14150:14168): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:17:17:3 requests/(14439:14477): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:17:17:3 requests/(14439:14477): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:20:09:462 requests/(14543:14582): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:20:09:463 requests/(14543:14582): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:21:40:661 requests/(14634:14670): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:21:40:662 requests/(14634:14670): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:29:22:552 requests/(14776:14823): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:29:22:552 requests/(14776:14823): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:31:54:48 requests/(14906:14957): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:31:54:49 requests/(14906:14957): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:34:06:847 requests/(15018:15062): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:34:06:847 requests/(15018:15062): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:43:02:682 requests/(15350:15372): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:43:02:682 requests/(15350:15372): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:55:45:899 requests/(15806:15872): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:55:45:899 requests/(15806:15872): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:55:56:310 requests/(15806:15872): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:58:10:433 requests/(15932:15977): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:58:10:433 requests/(15932:15977): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:58:20:435 requests/(15932:15977): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:58:20:435 requests/(15932:15977): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:58:30:437 requests/(15932:15977): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:58:30:437 requests/(15932:15977): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:58:40:439 requests/(15932:15977): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:58:40:440 requests/(15932:15977): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:58:50:441 requests/(15932:15977): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:58:50:441 requests/(15932:15977): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:59:00:446 requests/(15932:15977): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:59:00:446 requests/(15932:15977): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:59:29:950 requests/(16034:16085): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:59:29:950 requests/(16034:16085): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:59:39:952 requests/(16034:16085): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:59:39:953 requests/(16034:16085): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:59:49:954 requests/(16034:16085): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:59:49:954 requests/(16034:16085): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:59:59:956 requests/(16034:16085): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:59:59:956 requests/(16034:16085): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 02:00:09:958 requests/(16034:16085): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 02:00:09:958 requests/(16034:16085): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:50:47:663 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:50:47:704 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:50:57:707 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:50:57:707 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:51:07:709 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:51:07:709 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:51:17:715 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:51:17:715 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:51:27:718 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:51:27:718 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:51:37:720 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:51:37:720 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:51:47:723 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:51:47:723 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:51:57:727 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:51:57:727 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 11:52:07:730 requests/(4294:4396): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 11:52:07:730 requests/(4294:4396): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:08:49:71 requests/(4861:4881): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:08:49:71 requests/(4861:4881): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:08:58:438 requests/(4861:4881): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 12:08:58:439 requests/(4861:4881): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 12:14:01:396 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:14:01:396 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:14:03:587 requests/(4985:5032): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 12:14:03:588 requests/(4985:5032): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 12:14:04:90 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:14:04:93 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:14:11:399 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:14:11:400 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:14:21:404 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:14:21:404 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:14:31:406 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:14:31:406 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:14:41:410 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:14:41:410 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:14:46:26 requests/(4985:5032): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 12:14:46:26 requests/(4985:5032): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 12:14:46:526 requests/(4985:5032): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 12:14:46:526 requests/(4985:5032): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 12:14:51:412 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:14:51:413 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:15:01:414 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:15:01:415 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:15:11:417 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:15:11:417 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:15:21:419 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:15:21:419 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:15:31:421 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:15:31:422 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:15:41:424 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:15:41:424 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:15:51:426 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:15:51:427 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:16:01:429 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:16:01:429 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:16:11:432 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:16:11:433 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:16:21:434 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:16:21:435 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:16:31:437 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:16:31:437 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:16:41:439 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:16:41:439 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:16:51:441 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:16:51:441 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:17:01:445 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:17:01:445 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:17:11:448 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:17:11:448 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:17:21:451 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:17:21:452 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:17:31:454 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:17:31:454 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:17:41:456 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:17:41:456 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:17:51:459 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:17:51:459 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:18:01:461 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:18:01:461 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:18:11:469 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:18:11:474 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:18:21:476 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:18:21:477 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:18:31:479 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:18:31:479 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:18:41:481 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:18:41:481 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:18:51:483 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:18:51:483 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:19:01:486 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:19:01:487 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:19:11:489 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:19:11:490 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:19:21:491 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:19:21:492 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:19:31:493 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:19:31:494 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:19:41:496 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:19:41:496 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:19:51:498 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:19:51:499 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:20:01:502 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:20:01:502 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:20:11:506 requests/(4985:5032): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:20:11:507 requests/(4985:5032): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:41:22:106 requests/(6502:6539): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:41:22:106 requests/(6502:6539): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:45:29:685 requests/(6688:6722): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:45:29:685 requests/(6688:6722): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:48:31:672 requests/(6840:6875): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:48:31:672 requests/(6840:6875): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 12:56:28:583 requests/(7050:7085): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 12:56:28:584 requests/(7050:7085): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:01:28:14 requests/(7333:7352): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:01:28:14 requests/(7333:7352): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:06:36:539 requests/(7527:7546): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:06:36:539 requests/(7527:7546): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:07:51:815 requests/(7612:7636): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:07:51:816 requests/(7612:7636): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:12:02:94 requests/(7810:7828): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:12:02:94 requests/(7810:7828): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:25:29:987 requests/(8250:8268): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 13:25:29:988 requests/(8250:8268): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 13:25:29:989 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:25:29:990 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:25:30:993 requests/(8250:8268): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 13:25:30:994 requests/(8250:8268): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 13:25:31:33 requests/(8250:8268): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 13:25:31:34 requests/(8250:8268): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 13:25:31:34 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:25:31:38 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:25:34:89 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:25:34:90 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:25:35:80 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:25:35:82 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:25:38:144 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:25:38:145 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:25:50:84 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:25:50:85 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:26:05:87 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:26:05:88 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:26:12:441 requests/(8250:8268): Request de DROP recibida por el socket 8 !
-
-[TRACE] 13:26:12:442 requests/(8250:8268): Request de DROP solicitada por el socket 8 !
-
-[TRACE] 13:26:14:860 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:860 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:860 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:860 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:861 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:861 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:862 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:862 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:863 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:863 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:863 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:863 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:864 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:864 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:865 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:865 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:14:865 requests/(8250:8268): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:26:14:865 requests/(8250:8268): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:26:16:74 requests/(8250:8268): Request de DROP recibida por el socket 8 !
-
-[TRACE] 13:26:16:75 requests/(8250:8268): Request de DROP solicitada por el socket 8 !
-
-[TRACE] 13:26:19:280 requests/(8250:8268): Request de DROP recibida por el socket 8 !
-
-[TRACE] 13:26:19:282 requests/(8250:8268): Request de DROP solicitada por el socket 8 !
-
-[TRACE] 13:26:20:92 requests/(8250:8268): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:26:20:92 requests/(8250:8268): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:27:55:841 requests/(8335:8353): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 13:27:55:842 requests/(8335:8353): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 13:27:59:286 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:27:59:286 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:28:14:289 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:28:14:290 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:28:26:511 requests/(8335:8353): Request de DROP recibida por el socket 8 !
-
-[TRACE] 13:28:26:512 requests/(8335:8353): Request de DROP solicitada por el socket 8 !
-
-[TRACE] 13:28:29:292 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:28:29:293 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:28:44:294 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:28:44:294 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:28:59:296 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:28:59:296 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:29:14:298 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:29:14:298 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:29:29:299 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:29:29:299 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:29:44:300 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:29:44:301 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:29:59:302 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:29:59:303 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:30:14:304 requests/(8335:8353): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:30:14:304 requests/(8335:8353): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:31:16:141 requests/(8416:8434): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:31:16:141 requests/(8416:8434): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:35:12:985 requests/(8551:8576): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 13:35:12:987 requests/(8551:8576): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 13:35:17:484 requests/(8551:8576): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:35:17:485 requests/(8551:8576): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:35:32:486 requests/(8551:8576): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:35:32:487 requests/(8551:8576): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:35:47:492 requests/(8551:8576): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:35:47:492 requests/(8551:8576): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:35:52:244 requests/(8551:8576): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:35:52:245 requests/(8551:8576): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:35:52:281 requests/(8551:8576): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:35:52:281 requests/(8551:8576): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:36:02:493 requests/(8551:8576): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:36:02:495 requests/(8551:8576): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:36:17:497 requests/(8551:8576): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:36:17:497 requests/(8551:8576): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:39:57:133 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:39:57:133 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:40:01:358 requests/(8669:8710): Request de CREATE recibida por el socket 8 !
-
-[TRACE] 13:40:01:359 requests/(8669:8710): Request de CREATE terminada por el socket 8 !
-
-[TRACE] 13:40:12:134 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:40:12:134 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:40:27:142 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:40:27:142 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:40:42:145 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:40:42:145 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:40:48:437 requests/(8669:8710): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:40:48:437 requests/(8669:8710): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:40:48:477 requests/(8669:8710): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 13:40:48:477 requests/(8669:8710): Request de INSERT terminada por el socket 8 !
-
-[TRACE] 13:40:52:146 requests/(8669:8741): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 13:40:52:147 requests/(8669:8741): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 13:40:57:147 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:40:57:147 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:41:12:154 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:41:12:155 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:41:27:157 requests/(8669:8741): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 13:41:27:157 requests/(8669:8741): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 13:41:42:159 requests/(8669:8741): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 13:41:42:160 requests/(8669:8741): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 13:41:57:161 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:41:57:161 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:42:12:164 requests/(8669:8710): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 13:42:12:164 requests/(8669:8710): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 13:42:24:911 requests/(8669:8741): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 00:03:42:842 requests/(15786:15808): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:03:42:842 requests/(15786:15808): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:03:57:845 requests/(15786:15808): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:03:57:845 requests/(15786:15808): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:04:12:851 requests/(15786:15846): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:04:12:851 requests/(15786:15846): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:04:27:853 requests/(15786:15846): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:04:27:853 requests/(15786:15846): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:04:42:860 requests/(15786:15808): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:04:42:860 requests/(15786:15808): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:04:57:863 requests/(15786:15846): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:04:57:863 requests/(15786:15846): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:05:12:883 requests/(15786:15846): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:05:12:883 requests/(15786:15846): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:05:27:886 requests/(15786:15846): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:05:27:886 requests/(15786:15846): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:05:42:893 requests/(15786:15808): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:05:42:893 requests/(15786:15808): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:05:43:605 requests/(15786:15846): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 00:05:43:606 requests/(15786:15846): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 00:05:57:897 requests/(15786:15846): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:05:57:897 requests/(15786:15846): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:06:12:900 requests/(15786:15808): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:06:12:900 requests/(15786:15808): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:06:28:41 requests/(15786:15808): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:06:28:41 requests/(15786:15808): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:06:43:43 requests/(15786:15808): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:06:43:43 requests/(15786:15808): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:06:47:104 requests/(15786:15846): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 00:26:53:444 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:26:53:444 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:27:08:446 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:27:08:446 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:27:23:448 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:27:23:449 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:27:38:450 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:27:38:450 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:27:53:455 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:27:53:455 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:28:08:457 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:28:08:457 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:28:23:461 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:28:23:462 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:28:38:463 requests/(16216:16273): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:28:38:463 requests/(16216:16273): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:34:43:383 requests/(16628:16662): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:34:43:383 requests/(16628:16662): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:34:58:384 requests/(16628:16662): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:34:58:384 requests/(16628:16662): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:35:13:322 requests/(16628:16691): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 00:35:13:323 requests/(16628:16691): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 00:35:13:386 requests/(16628:16691): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:35:13:387 requests/(16628:16691): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:35:28:390 requests/(16628:16691): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:35:28:391 requests/(16628:16691): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:35:43:393 requests/(16628:16662): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:35:43:393 requests/(16628:16662): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:35:58:396 requests/(16628:16691): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:35:58:396 requests/(16628:16691): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:36:13:399 requests/(16628:16691): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:36:13:400 requests/(16628:16691): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:36:28:403 requests/(16628:16691): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:36:28:403 requests/(16628:16691): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:36:43:200 requests/(16628:16691): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 00:42:10:734 requests/(16821:16859): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:42:10:735 requests/(16821:16859): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:42:25:738 requests/(16821:16859): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:42:25:738 requests/(16821:16859): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:42:40:955 requests/(16821:16859): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:42:40:966 requests/(16821:16859): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:42:55:960 requests/(16821:16859): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:42:55:960 requests/(16821:16859): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:43:00:962 requests/(16821:16859): Request de DROP recibida por el socket 8 !
-
-[TRACE] 00:43:00:963 requests/(16821:16859): Request de DROP solicitada por el socket 8 !
-
-[TRACE] 00:43:10:962 requests/(16821:16859): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:43:10:962 requests/(16821:16859): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:43:25:976 requests/(16821:16859): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:43:25:976 requests/(16821:16859): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:43:41:176 requests/(16821:16859): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:43:41:176 requests/(16821:16859): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:47:50:662 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:47:50:662 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:48:05:665 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:48:05:665 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:48:20:667 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:48:20:667 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:48:30:494 requests/(17413:17484): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 00:48:30:495 requests/(17413:17484): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 00:48:35:670 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:48:35:670 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:48:50:673 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:48:50:673 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:49:05:676 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:49:05:676 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:49:20:696 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:49:20:696 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:49:35:701 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:49:35:701 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:49:50:708 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:49:50:708 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:50:05:710 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:50:05:710 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:50:20:712 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:50:20:713 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:50:35:958 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:50:35:962 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:50:50:964 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:50:50:965 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:51:05:967 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:51:05:967 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:51:20:971 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:51:20:971 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:51:35:974 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:51:35:975 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:51:50:977 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:51:50:978 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:52:05:982 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:52:05:982 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:52:20:985 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:52:20:986 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:52:35:988 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:52:35:988 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:52:50:990 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:52:50:991 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:53:05:993 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:53:05:993 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:53:20:996 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:53:20:996 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:53:35:998 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:53:35:998 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:53:50:0 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:53:50:1 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:54:05:3 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:54:05:3 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:54:21:6 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:54:21:6 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:54:36:9 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:54:36:9 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:54:51:13 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:54:51:13 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:55:06:26 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:55:06:27 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:55:21:29 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:55:21:29 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:55:36:32 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:55:36:32 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:55:51:43 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:55:51:43 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:56:06:47 requests/(17413:17484): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:56:06:47 requests/(17413:17484): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:56:21:221 requests/(17413:17447): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:56:21:221 requests/(17413:17447): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:58:38:3 requests/(17757:17791): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 00:58:38:3 requests/(17757:17791): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 00:58:54:5 requests/(17757:17820): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 00:58:54:5 requests/(17757:17820): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 00:59:00:673 requests/(17757:17820): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 00:59:00:675 requests/(17757:17820): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 00:59:00:713 requests/(17757:17820): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:08:13:485 requests/(17974:18033): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:08:13:486 requests/(17974:18033): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:08:27:359 requests/(17974:18033): Request de DROP recibida por el socket 8 !
-
-[TRACE] 01:08:27:361 requests/(17974:18033): Request de DROP solicitada por el socket 8 !
-
-[TRACE] 01:08:28:487 requests/(17974:18033): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:08:28:487 requests/(17974:18033): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:08:43:488 requests/(17974:18033): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:08:43:489 requests/(17974:18033): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:08:52:543 requests/(17974:18065): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 01:08:52:544 requests/(17974:18065): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 01:08:52:547 requests/(17974:18065): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:19:01:698 requests/(18291:18326): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:19:01:699 requests/(18291:18326): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:19:16:706 requests/(18291:18326): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:19:16:706 requests/(18291:18326): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:19:31:707 requests/(18291:18357): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 01:19:31:707 requests/(18291:18357): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 01:19:32:595 requests/(18291:18357): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 01:19:32:596 requests/(18291:18357): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 01:19:32:643 requests/(18291:18357): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:24:18:833 requests/(18512:18549): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:24:18:834 requests/(18512:18549): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:24:33:834 requests/(18512:18549): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:24:33:834 requests/(18512:18549): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:24:45:716 requests/(18512:18579): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 01:24:45:719 requests/(18512:18579): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 01:24:45:722 requests/(18512:18579): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:32:43:781 requests/(18706:18741): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:32:43:782 requests/(18706:18741): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:32:58:783 requests/(18706:18741): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:32:58:783 requests/(18706:18741): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:33:11:756 requests/(18706:18773): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 01:33:11:757 requests/(18706:18773): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 01:33:11:759 requests/(18706:18773): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:39:51:406 requests/(18915:18955): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:39:51:406 requests/(18915:18955): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:40:06:407 requests/(18915:18955): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:40:06:407 requests/(18915:18955): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:40:21:410 requests/(18915:18985): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 01:40:21:410 requests/(18915:18985): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 01:40:21:605 requests/(18915:18985): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 01:40:21:618 requests/(18915:18985): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 01:40:21:647 requests/(18915:18985): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:49:20:275 requests/(19150:19186): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:49:20:275 requests/(19150:19186): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:49:25:604 requests/(19150:19217): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 01:49:25:615 requests/(19150:19217): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 01:49:25:624 requests/(19150:19217): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:53:53:956 requests/(19314:19350): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:53:53:956 requests/(19314:19350): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:54:08:956 requests/(19314:19350): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 01:54:08:957 requests/(19314:19350): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 01:54:23:959 requests/(19314:19379): Request de DESCRIBE recibida por el socket 9 !
-
-[TRACE] 01:54:23:959 requests/(19314:19379): Request de DESCRIBE terminada por el socket 9 !
-
-[TRACE] 01:54:24:142 requests/(19314:19379): Request de CREATE recibida por el socket 9 !
-
-[TRACE] 01:54:24:142 requests/(19314:19379): Request de CREATE terminada por el socket 9 !
-
-[TRACE] 01:54:24:181 requests/(19314:19379): Request de SELECT recibida por el socket 9 !
-
-[TRACE] 01:54:24:182 requests/(19314:19379): Request de SELECT terminada por el socket 9 !
-
-[TRACE] 01:54:27:762 requests/(19314:19379): Request de INSERT recibida por el socket 9 !
-
-[TRACE] 01:55:14:248 requests/(19314:19350): Request de INSERT recibida por el socket 8 !
-
-[TRACE] 15:09:31:116 requests/(5943:5962): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 15:09:31:116 requests/(5943:5962): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 15:09:46:118 requests/(5943:5962): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 15:09:46:118 requests/(5943:5962): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 15:26:19:227 requests/(6481:6743): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 15:26:19:228 requests/(6481:6743): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 15:26:34:234 requests/(6481:6743): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 15:26:34:234 requests/(6481:6743): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 15:29:34:207 requests/(6956:6993): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 15:29:34:209 requests/(6956:6993): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 16:02:14:391 requests/(8000:8104): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 16:02:14:392 requests/(8000:8104): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 16:14:18:202 requests/(8800:8843): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 16:14:18:202 requests/(8800:8843): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 16:15:44:751 requests/(8929:8948): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 16:15:44:751 requests/(8929:8948): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 16:29:31:544 requests/(9705:9741): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 16:29:31:545 requests/(9705:9741): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 16:29:46:546 requests/(9705:9741): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 16:29:46:546 requests/(9705:9741): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 16:30:01:548 requests/(9705:9741): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 16:30:01:548 requests/(9705:9741): Request de DESCRIBE terminada por el socket 8 !
-
-[TRACE] 16:31:32:625 requests/(9840:9887): Request de DESCRIBE recibida por el socket 8 !
-
-[TRACE] 16:31:32:625 requests/(9840:9887): Request de DESCRIBE terminada por el socket 8 !
+[TRACE] 00:10:48:416 requests/(16228:16267): Request de DESCRIBE terminada por el socket 8 !
 

@@ -9,7 +9,7 @@
 
 Bloque leer_bloque(int indice_bloque){
 
-	printf("Empiezo a leer el bloque\n");
+	printf("[LECTURA] Empiezo a leer el bloque %i\n", indice_bloque);
 
 	char* path_bloque = obtenerPath_Bloque(indice_bloque); //lion
 	Bloque bloque;
@@ -20,36 +20,36 @@ Bloque leer_bloque(int indice_bloque){
 	int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
 
 	if(fd_bloque <= -1){
-		printf("Fallo el abrir el bloque\n");
+		printf("[LECTURA] Fallo el abrir el bloque\n");
 	}
 
 	struct stat* atributos = malloc(sizeof(struct stat));
 
 	fstat(fd_bloque, atributos);
 
-	printf("Abro el map de tamanio %i\n", atributos->st_size);
+	printf("[LECTURA] Abro el map de tamanio %i\n", atributos->st_size);
 
 	char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0); //lion
 
 	if(datos == MAP_FAILED){
 
-		printf("Fallo el map!\n");
+		printf("[LECTURA] Fallo el map!\n");
 
 		if(errno == EINVAL){
-			printf("Tamanio del archivo es 0\n");
+			printf("[LECTURA] Tamanio del archivo es 0\n");
 		}
 
 		bloque = crear_bloque(indice_bloque, NULL);
 
 	}else{
 
-		printf("Pase el map\n");
+		printf("[LECTURA] Pase el map\n");
 
 		bloque= crear_bloque(indice_bloque, datos);
 
 		munmap(datos, atributos->st_size);
 
-		printf("Cree el bloque y cerre el map\n");
+		printf("[LECTURA] Cree el bloque y cerre el map\n");
 	}
 	free(atributos);
 	free(path_bloque);
@@ -192,6 +192,10 @@ char* llenar_bloque(int bloque , char* dato) {
 	}
 
 	string_trim_left(&dato);
+
+	close(fichero_bloque);
+
+	free(pathBloque);
 
 	return dato;
 

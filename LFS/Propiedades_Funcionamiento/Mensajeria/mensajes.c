@@ -104,11 +104,15 @@ void mandar_select(int conexion , dato_t* dato, estado_select estado){
 	int bytes;
 	void* buffer;
 
+	printf("[REQUEST] Mando el estado de la request\n");
+
 	buffer = serializar_dato_t(dato, &bytes, estado);
 
 	send(conexion, buffer, bytes, 0);
 
 	free(buffer);
+
+	printf("[REQUEST] Se mando el estado de la request\n");
 
 }
 

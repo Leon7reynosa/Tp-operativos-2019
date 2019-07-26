@@ -17,34 +17,35 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case SELECT:
 
-			printf(">>>REQUEST SELECT<<< \n");
+			printf("[REQUEST] Se realizara un SELECT\n");
 
 			log_trace(logger_request, "Request de SELECT recibida por el socket %i !\n", conexion);
-
 
 			dato_request = request_select( (select_t) request_a_operar->tipo_request );
 
 			if(dato_request == NULL){
+				printf("[REQUEST] No se encontro la key solicitada!\n");
 
-				printf("No se encontro la key solicitada!\n");
 				mandar_select(conexion, dato_request, ERROR);
 
 			}else{
 
-				printf("Se encontro la key: %i\n", dato_request->key);
-				printf("El value: %s\n", dato_request->value);
-				printf("El timestamp: %i\n", dato_request->timestamp);
+				printf("[REQUEST] Se encontro la key: %i\n", dato_request->key);
+				printf("[REQUEST] El value: %s\n", dato_request->value);
+				printf("[REQUEST] El timestamp: %i\n", dato_request->timestamp);
 				mandar_select(conexion, dato_request, SUCCESS);
 
 			}
 
 			log_trace(logger_request, "Request de SELECT terminada por el socket %i !\n", conexion);
 
+			printf("[REQUEST] Finalizo el SELECT\n\n");
+
 			break;
 
 		case INSERT:
 
-			printf(">>>REQUEST INSERT<<< \n");
+			printf("[REQUEST] Se realizara un INSERT\n");
 
 			log_trace(logger_request, "Request de INSERT recibida por el socket %i !\n", conexion);
 
@@ -52,11 +53,13 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			log_trace(logger_request, "Request de INSERT terminada por el socket %i !\n", conexion);
 
+			printf("[REQUEST] Finalizo el INSERT\n\n");
+
 			break;
 
 		case CREATE:
 
-			printf(">>>REQUEST CREATE<<< \n");
+			printf("[REQUEST] Se realizara un CREATE\n");
 
 			log_trace(logger_request, "Request de CREATE recibida por el socket %i !\n", conexion);
 
@@ -64,12 +67,13 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			log_trace(logger_request, "Request de CREATE terminada por el socket %i !\n", conexion);
 
+			printf("[REQUEST] Finalizo el CREATE\n\n");
 
 			break;
 
 		case DESCRIBE:
 
-			printf(">>>REQUEST DESCRIBE<<< \n");
+			printf("[REQUEST] Se realizara un DESCRIBE\n");
 
 			log_trace(logger_request, "Request de DESCRIBE recibida por el socket %i !\n", conexion);
 
@@ -91,17 +95,22 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			log_trace(logger_request, "Request de DESCRIBE terminada por el socket %i !\n", conexion);
 
+			printf("[REQUEST] Finalizo el DESCRIBE\n\n");
+
 			break;
 
 		case DROP:
 
-			printf(">>>REQUEST DROP<<< \n");
+			printf("[REQUEST] Se realizara un DROP\n");
 
 			log_trace(logger_request, "Request de DROP recibida por el socket %i !\n", conexion);
 
 			request_drop((Drop)(request_a_operar->tipo_request));
 
 			log_trace(logger_request, "Request de DROP solicitada por el socket %i !\n", conexion);
+
+			printf("[REQUEST] Finalizo el DROP\n\n");
+
 			break;
 
 		default:
@@ -137,9 +146,13 @@ dato_t* request_select(select_t datos_select){
 
 	 if(existe_la_tabla(nombre_tabla)){
 
+		 printf("[SELECT %s : key %i] Existe la tabla\n", nombre_tabla, datos_select->key);
+
 		 metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
 		 int particion_objetivo = calcular_particion(metadata_tabla->particion , datos_select->key);
+
+		 printf("[SELECT %s : key %i] La particion de la key deberia ser %i\n", nombre_tabla, datos_select->key, particion_objetivo);
 
 		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
@@ -151,13 +164,13 @@ dato_t* request_select(select_t datos_select){
          dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
          /////////////////////////////////
 
-         printf("OBTENGO EL DATO MAS NUEVO\n");
+         printf("[BUSQUEDA] OBTENGO EL DATO MAS NUEVO\n");
 
 		 dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
 
 		 dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
 
-		 printf("TERMINE DE OBTENER EL MAS NUEVO\n");
+		 printf("[BUSQUEDA] TERMINE DE OBTENER EL MAS NUEVO\n");
 
 		 if(dato_aux != NULL){
 			 liberar_dato(dato_aux);
@@ -178,6 +191,9 @@ dato_t* request_select(select_t datos_select){
 	 }
 
 	 else{
+
+		 printf("[SELECT %s : key %i] No existe la tabla\n", nombre_tabla, datos_select->key);
+
 		 log_info(logger_request, "NO SE ENCUENTRA LA TABLA");
 
 	 }
@@ -213,17 +229,26 @@ dato_t* request_select(select_t datos_select){
 
 	 if(existe_la_tabla(nombre_tabla)){
 
+		 printf("[INSERT] Existe la tabla\n");
+
 		 metadata_insert = obtener_metadata(nombre_tabla);
 
 		 dato_ingresar = crear_dato(datos_insert->key, (char *)datos_insert->value->buffer, datos_insert->timestamp);
 
 		 //ACA HAY UN SEMAFORO DE MEMTABLE
+
+		 printf("[INSERT] Se inserta en la memtable\n");
+
 		 ingresar_a_memtable(dato_ingresar, nombre_tabla);
+
+		 printf("[INSERT] Se inserto correctamente en la memtable\n");
 		 ///////////////////////////////////////////////////////////////////////
 
 	 }
 
 	 else{
+
+		 printf("[INSERT] No existe la tabla\n");
 
 //		 log_error(logger_lfs, "Fallo el -- INSERT -- \n");
 
@@ -250,19 +275,31 @@ dato_t* request_select(select_t datos_select){
 	 string_to_upper(nombre_tabla);
 
 	 if(existe_la_tabla(nombre_tabla)){
-		 //log ?
+		 //log
+		 printf("[CREATE] Ya existe la tabla\n");
 		 return;
 
 	 }
 
+	 printf("[CREATE] No existe la tabla\n");
+
 	 char* path_tabla = obtenerPathTabla(nombre_tabla);
 
 	 //ESTA FUNCION TE BLOQUEA EN ESCRITURA EL DICCIONARIO Y LA TABLA ESPECIFICA
+
+	 printf("[CREATE] Corro la compactacion de la tabla %s\n", nombre_tabla);
+
 	 correr_compactacion(datos_create->compactacion, nombre_tabla);
+
+	 printf("[CREATE] Creo el directorio asociado a la tabla\n");
 
 	 crear_directorio(path_tabla);
 
+	 printf("[CREATE] Creo la metadata asociada a la tabla\n");
+
 	 crear_metadata(nombre_tabla, criterio , datos_create->numero_particiones, datos_create->compactacion); //MAL?
+
+	 printf("[CREATE] Creo las particiones asociadas a la tabla\n");
 
 	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
 
@@ -279,6 +316,8 @@ dato_t* request_select(select_t datos_select){
 
 	 log_info(logger_lfs, "Request -- INSERT -- realizada !!!\n");
 
+	 printf("[CREATE] Termino correctamente\n");
+
  }
 
 t_list* request_describe(describe_t request){
@@ -287,12 +326,13 @@ t_list* request_describe(describe_t request){
 
 	if( request->global ){
 		//TIENE SEMAFOROS ADENTROO!
+		printf("[DESCRIBE] Es del tipo GLOBAL\n");
 		metadatas = request_describe_global();
 
 	}
 
 	else{
-
+		printf("[DESCRIBE] Es del tipo PARTICULAR \n");
 		// SEMAFOROOS
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
@@ -319,6 +359,8 @@ t_list* request_describe(describe_t request){
 		}
 
 	}
+
+	printf("[DESCRIBE] Termino correctamente\n");
 
 	return metadatas;
 
@@ -459,13 +501,13 @@ void request_drop(Drop request_drop){
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
 
-		printf("VOY A AGARRAR LOS SEMAFOROS DEL DICCIONARIO Y TABLA\n");
+		printf("[BUSQUEDA] AGARRO SEMAFOROS DEL DICCIONARIO Y TABLA\n");
 		//SEMAFOROS!!!!!!!!!!!!!!!!!
 		pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
 
-		printf("AGARRE TODOS\n");
+		printf("[BUSQUEDA] AGARRE TODOS\n");
 
 		while((tabla = readdir(dir1))){
 
@@ -513,8 +555,14 @@ void request_drop(Drop request_drop){
 							free(path_para_archivo);
 						}
 					}
+
+					printf("[DROP] Las particiones de la tabla fueron eliminadas\n");
+
 					closedir(dir2);
 					rmdir(path_para_tabla_particular);
+
+					printf("[DROP] El directorio fue eliminado\n");
+
 					free(path_para_tabla_particular);
 					break;
 				}
@@ -537,4 +585,6 @@ void request_drop(Drop request_drop){
 	free(path_directorio_tabla);
 
 	log_info(logger_lfs, "Request -- DROP-- realizada\n");
+
+	printf("[DROP] Termino correctamente\n");
 }

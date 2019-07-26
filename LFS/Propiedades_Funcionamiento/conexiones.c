@@ -103,11 +103,15 @@ void* administrar_conexiones_hilos(int* socket_servidor){
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
+		printf("[CONEXION] Se conecto un nuevo cliente\n");
+
 		Conexion_memoria nueva_conexion_memoria = crear_conexion_memoria(  nueva_conexion );
 
 		list_add(memorias_conectadas , nueva_conexion_memoria);
 
 		realizar_handshake(nueva_conexion_memoria->socket_memoria);
+
+		printf("[CONEXION] Cliente agregado correctamente\n\n");
 
 		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 
@@ -160,8 +164,6 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 	while(1){
 
-		usleep(retardo * 1000);
-
 		request_recibida = recibir_request(memoria_conectada->socket_memoria);
 
 		if(request_recibida->cod_op == DESCONEXION){
@@ -176,7 +178,7 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 		}else{
 
-			printf("\n//////////////////////////////////////NUEVA REQUEST////////////////////////////\n");
+			printf("\n//////////////////////////////////////NUEVA REQUEST////////////////////////////\n\n");
 
 			trabajar_request(request_recibida, memoria_conectada->socket_memoria); //nos faltaria esta funcion
 
@@ -184,9 +186,11 @@ void* manejar_requests(Conexion_memoria memoria_conectada){
 
 		liberar_request(request_recibida);
 
-		printf("\n/////////////////////////////////////FIN REQUEST//////////////////////////////////\n");
+		printf("\n/////////////////////////////////////FIN REQUEST//////////////////////////////////\n\n");
 
 		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE,NULL);
+
+		usleep(retardo * 1000);
 
 	}
 

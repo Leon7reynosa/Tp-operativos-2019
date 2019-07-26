@@ -234,7 +234,7 @@ void request_insert(insert dato){
 
 		}else{
 
-			log_info(logger, "Existe una pagina con la key: %i", dato->key);
+			log_info(logger, "No existe una pagina con la key: %i", dato->key);
 
 			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
@@ -251,7 +251,7 @@ void request_insert(insert dato){
 
 	}else{
 
-//		log_info(logger, "No existe el segmento. Se crea el segmento.");
+		log_info(logger, "No existe el segmento. Se crea el segmento.");
 
 		agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
 

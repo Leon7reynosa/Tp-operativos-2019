@@ -50,6 +50,13 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 		break;
 
+	case JOURNAL:
+
+		buffer = serializar_journal(request);
+		bytes = sizeof(cod_operacion);
+
+		break;
+
 	default:
 		//no deberia entrar aca
 		break;
@@ -91,8 +98,15 @@ void liberar_request(request dato){
 
 			liberar_drop(dato->tipo_request);
 			break;
+
+		case JOURNAL:
+
+			//NO SE LIBERA EL TIPO_REQUEST POR QUE ES NULL
+
+			break;
+
 		default:
-			printf("Algo fallo\n");
+			printf(">>No se pudo liberar la request\n");
 			break;
 
 	}

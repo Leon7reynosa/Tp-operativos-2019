@@ -24,19 +24,17 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_rdlock((&(argumentos->lock_tabla)));
 
-	printf("vamos con la metadata\n");
+	printf("[COMPACTACION] Obtengo la metadata de %s\n", nombre_tabla);
 
 	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
-	printf("voy a obtener los datos particiones\n");
+	printf("[COMPACTACION] Obtengo los datos de las particiones de %s\n", nombre_tabla);
 
 	datos_finales = obtener_datos_particiones(nombre_tabla);
 
-	printf("voy a obtener los datos temporales\n");
+	printf("[COMPACTACION] Obtengo los datos de los temporales de %s\n", nombre_tabla);
 
 	datos_tmpc = obtener_datos_temporales(nombre_tabla);
-
-	printf("Compactacion %s paso 1\n", nombre_tabla);
 
 	void _generar_lista_datos_finales(void* _dato_tmpc){
 
@@ -77,20 +75,16 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_wrlock(&(argumentos->lock_tabla));
 
-	printf("Compactacion %s paso 2\n", nombre_tabla);
+	printf("[COMPACTACION] Libero las particiones de  %s\n", nombre_tabla);
 
 	for(int i = 0; i < metadata_tabla->particion; i++){
 
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, i);
 
-		printf("PATH PARTICION: %s\n", path_particion);
-
 		liberar_bloques_particion(path_particion);
 
 		free(path_particion);
 	}
-
-	printf("Compactacion %s paso 3\n", nombre_tabla);
 
 	void _funcion_loca2(void* _dato_final){
 
@@ -114,12 +108,14 @@ void* compactar(thread_args* argumentos){
 
 	}
 
+	printf("[COMPACTACION] Cargo los datos finales a las particiones de%s\n", nombre_tabla);
+
 	//time_t inicio_de_bloqueo = time(NULL);
 	list_iterate(datos_finales, _funcion_loca2);
 	//time_t fin_de_bloqueo = time(NULL)
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
-	printf("Compactacion %s paso 4\n", nombre_tabla);
+	printf("[COMPACTACION] Libero los tmpc de %s\n", nombre_tabla);
 	liberar_tmpc(nombre_tabla);
 
 	pthread_rwlock_unlock(&(argumentos->lock_tabla));
@@ -131,7 +127,7 @@ void* compactar(thread_args* argumentos){
 
 //	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
 
-	printf("Compactacion %s paso 5\n", nombre_tabla);
+	printf("[COMPACTACION] Libero las estructuras administrativas %s\n", nombre_tabla);
 
 	list_destroy_and_destroy_elements(datos_tmpc, free);											//  (3) Libero los datos del .tmpc
 
@@ -241,11 +237,11 @@ void* ciclo_compactacion(thread_args* argumentos){
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
-		printf("\n/////////////////////////////// INICIO COMPACTACION ///////////////////////////////\n");
+		printf("[COMPACTACION] Se inicia la compactacion de la tabla %s\n", argumentos->nombre_tabla);
 
 		compactar(argumentos);
 
-		printf("\n///////////////////////////////// FIN COMPACTACION ////////////////////////////////\n");
+		printf("[COMPACTACION] Termino la compactacion de la tabla %s\n\n", argumentos->nombre_tabla);
 
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 

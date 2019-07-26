@@ -56,7 +56,7 @@ void liberar_particion(Particion particion){
 
 Particion leer_particion(char* path_particion){
 
-	printf("LEO PARTICION\n");
+	printf("[LECTURA] LEO PARTICION\n");
 
 	Particion particion_contenido;
 	int size;
@@ -65,7 +65,7 @@ Particion leer_particion(char* path_particion){
 	FILE* particion = fopen(path_particion, "rb");
 
 	if(!particion){
-		printf("RECURSAMOS!\n");
+		printf("[LECTURA] RECURSAMOS!\n");
 		exit(1);
 	}
 
@@ -93,7 +93,7 @@ Particion leer_particion(char* path_particion){
 
 	fclose(particion);
 
-	printf("TERMINE DE LEER PARTICION\n");
+	printf("[LECTURA] TERMINE DE LEER PARTICION\n");
 
 	return particion_contenido;
 
@@ -131,26 +131,26 @@ void actualiar_particion(char* path_particion){
 
 void mostrar_particion(Particion particion){
 
-	printf("Bytes = %i\n", particion->size);
+	printf("[LECTURA PARTICION] Bytes = %i\n", particion->size);
 
-	printf("BLOQUES: %i\n", list_size(particion->bloques));
+	printf("[LECTURA PARTICION] BLOQUES: %i\n", list_size(particion->bloques));
 	int* aux = list_get(particion->bloques, 1);
 
 	void _printear(void* _bloque){
 
 		int* bloque = (int *)_bloque;
 
-		printf("---BLOQUE: %i---\n ", *bloque);
+		printf("[LECTURA PARTICION] BLOQUE: %i\n ", *bloque);
 
 		mostrar_bloque(*bloque);
 
-		printf("Termine de leer el bloque!\n");
+		printf("[LECTURA PARTICION] Termine de leer el bloque!\n");
 
 	}
 
 	list_iterate(particion->bloques, _printear);
 
-	printf("Termine de mostrar la particion\n");
+	printf("[LECTURA PARTICION] Termine de mostrar la particion\n");
 }
 
 int obtener_numero_particion(char* path){
@@ -193,7 +193,7 @@ bool analizar_dato(u_int16_t key, char* dato){
 
 dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
-	printf("Busco en temporales\n");
+	printf("[BUSQUEDA] Busco en temporales\n");
 
 	char* path_tabla = obtenerPathTabla(nombre_tabla);
 
@@ -210,6 +210,8 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 			if(string_ends_with(entrada_directorio->d_name, ".tmp")){
 
+				printf("[BUSQUEDA] Se encontro el temporal %s\n", entrada_directorio->d_name );
+
 				char* path_temporal = obtenerPathTabla(nombre_tabla);
 
 				string_append(&path_temporal, entrada_directorio->d_name);
@@ -217,9 +219,15 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 				dato_t* dato_encontrado = buscar_dato_en_particion(path_temporal, key);
 
-				list_add(lista_de_datos, dato_encontrado);
+				if(dato_encontrado != NULL){
 
-				free(path_temporal);
+					list_add(lista_de_datos, dato_encontrado);
+
+					free(path_temporal);
+				}
+				else{
+
+				}
 
 
 			}
@@ -248,7 +256,7 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 	list_destroy_and_destroy_elements(lista_de_datos, liberar_dato);
 
-	printf("Termine de buscar en temporales\n");
+	printf("[BUSQUEDA] Termine de buscar en temporales\n");
 
 	return dato_mayor;
 
@@ -258,12 +266,13 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 //bloque_siguiente, si no hay siguiente, tiene que ser menor que 0 ( < 0)
 char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque_siguiente){
 
-	printf("Leo el bloque: %i\n", bloque_a_analizar);
+	printf("[BUSQUEDA] Leo el bloque: %i\n", bloque_a_analizar);
 	Bloque bloque = leer_bloque(bloque_a_analizar);
-	printf("Termine de leer el bloque\n");
+
+	printf("[BUSQUEDA] Termine de leer el bloque\n");
 
 	if(list_size(bloque->datos) > 0){
-		printf("Leo un dato aunquesea: %s\n", list_get(bloque->datos, 0));
+		printf("[BUSQUEDA] Leo un dato aunquesea: %s\n", list_get(bloque->datos, 0));
 	}
 
 	int index_dato = 0;
@@ -278,25 +287,27 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 
 		//TODO SI NO ES EL ULTIMO DATO
 		if(index_dato < (list_size(bloque->datos)) - 1){ //lion
-			printf("index_dato: %i\n", index_dato);
+			printf("[BUSQUEDA] Index dato a analizar: %i\n", index_dato);
 			//TODO LO ANALIZO NORMAL
 			index_dato++; //lion
 			return analizar_dato(key, dato_a_analizar);
 
 		}else{
 
-			printf("Estoy en el ultimo dato\n");
+			printf("[BUSQUEDA] Estoy analizando el ultimo dato del bloque\n");
 				//TODO SI ES EL ULTIMO DATO, PRIMERO ME FIJO SI EL SIGUIENTE ES VALIDO
 			if(indice_bloque_siguiente >= 0){
 
 				//SI ES VALIDO, OSEA ME PASARON UN BLOQUE SIGUIENTE
 
-				printf("Hay bloque siguiente\n");
+				printf("[BUSQUEDA] Este bloque tiene bloque siguiente n° %i\n", indice_bloque_siguiente);
 				Bloque bloque_siguiente = leer_bloque(indice_bloque_siguiente);
-				printf("Lo leo y obtengo el primer dato: %s\n", (char *)list_get(bloque_siguiente->datos, 0));
+
+				printf("[BUSQUEDA] Lo leo y obtengo el primer dato: %s\n", (char *)list_get(bloque_siguiente->datos, 0));
+
 				if(es_dato_cortado((char *) list_get(bloque_siguiente->datos, 0)) || es_dato_cortado(dato_a_analizar)){
 
-					printf("Es dato cortado\n");
+					printf("[BUSQUEDA] Entre los dos bloques hay dato cortado\n");
 					//OBTENGO EL PRIMER DATO DEL BLOQUE SIGUIENTE (QUE SERIA EL CORTADO)
 					dato_cortado = string_duplicate((char *) list_get(bloque_siguiente->datos, 0));
 
@@ -305,7 +316,7 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 					string_append(&dato_cortado_aux, dato_a_analizar);
 					string_append(&dato_cortado_aux, dato_cortado);
 
-					printf("dato cortado : %s\n" , dato_cortado);
+					printf("[BUSQUEDA] dato cortado : %s\n" , dato_cortado);
 
 					liberar_bloque(bloque_siguiente);
 
@@ -320,13 +331,14 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 
 			}else{
 
-				printf("No habia bloque siguiente\n");
+				printf("[BUSQUEDA] No hay un bloque siguiente al actual\n");
 				if(es_dato_cortado(dato_a_analizar)){
-					printf("El dato esta cortado\n");
+
+					printf("[BUSQUEDA] El dato esta cortado, algo paso aca, no deberia ya que no hay bloque siguiente\n");
 					return false;
 
 				}
-				printf("Analizo el dato\n");
+				printf("[BUSQUEDA] Analizo el dato\n");
 				return analizar_dato(key, dato_a_analizar);
 
 			}
@@ -337,7 +349,7 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 	}
 
 
-
+	printf("[BUSQUEDA] Itero entre los datos del bloque\n");
 //	printf("Busco entre los datos del bloque, el que estoy buscando\n");
 	//TODO PASO 1: itero la lista de datos del bloque a analizar buscando el dato
 	char* dato_encontrado = list_find(bloque->datos, _tenes_la_key);
@@ -346,24 +358,28 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 
 	if(dato_encontrado != NULL){
 
-		printf("El dato encontrado existe!\n");
+		printf("[BUSQUEDA] El dato fue encontrado!\n");
 		dato_completo = string_new();
 
 		string_append(&dato_completo, dato_encontrado);
 
 		if(dato_cortado != NULL){
+
+			printf("[BUSQUEDA] Y era cortado!\n");
+
 			string_append(&dato_completo, dato_cortado);
 
 		}
 
 	}else{
-		printf("No esta el dato en el bloque indicado\n");
+		printf("[BUSQUEDA] No esta el dato en el bloque indicado\n");
 	}
 
-	printf("LLEGUE HASTA ACA!\n");
 	//free(dato_cortado);
 
 	liberar_bloque(bloque);
+
+	printf("[BUSQUEDA] Se termino de buscar el dato en el bloque %i\n", bloque_a_analizar);
 
 	return dato_completo;
 
@@ -406,28 +422,30 @@ dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 	int* bloque;
 	int *bloque_siguiente;
 
-	printf("Empiezo a buscar el dato en los bloques\n");
+	printf("[BUSQUEDA] Empiezo a buscar en los bloques de la particion\n");
 	//por cada bloque de la particion
 	for( index_bloque = 0 ; index_bloque < list_size(particion->bloques) ; index_bloque++){
 
 		bloque = list_get(particion->bloques, index_bloque);
 
-		printf("Bloque: %i\n", *bloque);
+		printf("[BUSQUEDA] Bloque: %i\n", *bloque);
 
 		//si el bloque tiene un bloque siguiente
 		if( index_bloque < (list_size(particion->bloques) - 1)){
 
-			printf("Tiene bloque siguiente y es: ");
+			printf("[BUSQUEDA] Tiene bloque siguiente y el ");
 
 			int *bloque_siguiente = list_get( particion->bloques , index_bloque + 1 ) ;
 
 			printf("Bloque siguiente: %i\n", *bloque_siguiente);
 
-			printf("Busco el dato\n");
+			printf("[BUSQUEDA] Busco el dato\n");
 			dato  = buscar_dato_bloque(key, *bloque, *bloque_siguiente);
 
 		//si no tiene un bloque siguiente
 		}else{
+
+			printf("[BUSQUEDA] No tiene bloque siguiente\n");
 
 			dato = buscar_dato_bloque(key , *bloque  , -1);
 		}
@@ -435,11 +453,11 @@ dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 		//si se encontro el dato!
 		if(dato != NULL){
 
-			printf("Encontre el dato!\n");
+			printf("[RESULTADO] Encontre el dato!\n");
 			dato_encontrado = convertir_a_dato(dato);
-			printf("key: %i\n",dato_encontrado->key);
-			printf("timestamp: %i\n", dato_encontrado->timestamp);
-			printf("value: %s\n", dato_encontrado->value);
+			printf("[RESULTADO] key: %i\n",dato_encontrado->key);
+			printf("[RESULTADO] timestamp: %i\n", dato_encontrado->timestamp);
+			printf("[RESULTADO] value: %s\n", dato_encontrado->value);
 			free(dato);
 
 			break;
@@ -451,14 +469,14 @@ dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 
 	if(dato_encontrado == NULL){
 
-		printf("No encontre el dato en la particion!\n");
+		printf("[RESULTADO] No encontre el dato en la particion!\n");
 
 
 	}
 
-	printf("Libero la particion\n");
+	printf("[BUSQUEDA] Libero la particion\n");
 	liberar_particion(particion);
-	printf("Particion liberada \n");
+	printf("[BUSQUEDA] Particion liberada \n\n");
 	return dato_encontrado;
 }
 

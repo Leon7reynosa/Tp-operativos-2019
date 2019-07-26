@@ -55,13 +55,15 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
 
 	pthread_rwlock_rdlock(&(lock_memtable));
 
-	printf("BUSCO EN MEMTABLE\n");
+	printf("[BUSQUEDA] BUSCO EN MEMTABLE\n");
 
     t_list *tabla_a_filtrar = obtener_tabla(nombre_tabla);
     t_list *tabla_ordenada;
     dato_t* dato_mayor;
 
     if (tabla_a_filtrar == NULL) {
+    	pthread_rwlock_unlock(&(lock_memtable));
+    	printf("[BUSQUEDA] Termine de buscar en memtable\n");
         return NULL;
     }
 
@@ -90,9 +92,15 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
 
     dato_mayor = (dato_t *)list_get(tabla_ordenada, 0);
 
+    if(dato_mayor != NULL){
+    	printf("[RESULTADO] Se encontro el dato en memtable\n");
+    }else{
+    	printf("[RESULTADO] No se encontro el dato en memtable\n");
+    }
+
     list_destroy(tabla_ordenada);
 
-    printf("Termine de buscar en memtable\n");
+    printf("[BUSQUEDA] Termine de buscar en memtable\n");
 
     return dato_mayor;
 }

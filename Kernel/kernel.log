@@ -2217,3 +2217,757 @@
 [INFO] 19:18:23:676 kernel/(10859:10869): 
 --Se realizara la request DROP de la tabla TABLA_PRUEBA---
 
+[INFO] 20:23:25:346 kernel/(5391:5391): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:23:55:355 kernel/(5391:5396): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 20:24:36:960 kernel/(5391:5400): add memory 1 to sc
+[INFO] 20:24:36:960 kernel/(5391:5400): 
+---Se realizara la request ADD---
+
+[INFO] 20:24:36:961 kernel/(5391:5400): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:24:44:631 kernel/(5391:5400): run simple_sc.lql
+[INFO] 20:24:44:631 kernel/(5391:5400): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 20:24:44:631 kernel/(5391:5400): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:24:45:632 kernel/(5391:5400): CREATE COLORS SC 4 600000
+[INFO] 20:24:45:632 kernel/(5391:5400): ---Se realizara el CREATE---
+
+[INFO] 20:24:45:633 kernel/(5391:5400): INSERT COLORS 1 "Blue"
+[INFO] 20:24:45:633 kernel/(5391:5400): ---Se realizara el INSERT---
+
+[INFO] 20:24:45:634 kernel/(5391:5400): SELECT COLORS 1
+[INFO] 20:24:45:634 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:24:46:672 kernel/(5391:5400): INSERT COLORS 2 "Red"
+[INFO] 20:24:46:672 kernel/(5391:5400): ---Se realizara el INSERT---
+
+[INFO] 20:24:46:673 kernel/(5391:5400): SELECT COLORS 2
+[INFO] 20:24:46:673 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:24:46:711 kernel/(5391:5400): SELECT COLORS 2
+[INFO] 20:24:46:711 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:24:47:715 kernel/(5391:5400): SELECT COLORS 1
+[INFO] 20:24:47:715 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:24:47:717 kernel/(5391:5400): INSERT COLORS 1 "Black"
+[INFO] 20:24:47:717 kernel/(5391:5400): ---Se realizara el INSERT---
+
+[INFO] 20:24:47:718 kernel/(5391:5400): SELECT COLORS 1
+[INFO] 20:24:47:718 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:26:30:63 kernel/(5391:5400): add memory 1 to ec
+[INFO] 20:26:30:64 kernel/(5391:5400): 
+---Se realizara la request ADD---
+
+[INFO] 20:26:30:64 kernel/(5391:5400): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:26:34:922 kernel/(5391:5400): add memory 2 to ec
+[INFO] 20:26:34:922 kernel/(5391:5400): 
+---Se realizara la request ADD---
+
+[INFO] 20:26:34:922 kernel/(5391:5400): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:26:43:430 kernel/(5391:5400): run simple_ec.lql
+[INFO] 20:26:43:430 kernel/(5391:5400): --Se realizara el RUN del archivo simple_ec.lql--
+
+[INFO] 20:26:43:430 kernel/(5391:5400): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:26:44:431 kernel/(5391:5400): CREATE MARCAS EC 4 60000
+[INFO] 20:26:44:431 kernel/(5391:5400): ---Se realizara el CREATE---
+
+[INFO] 20:26:44:432 kernel/(5391:5400): INSERT MARCAS 1 "Nike"
+[INFO] 20:26:44:432 kernel/(5391:5400): ---Se realizara el INSERT---
+
+[INFO] 20:26:44:432 kernel/(5391:5400): SELECT MARCAS 1
+[INFO] 20:26:44:432 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:26:45:471 kernel/(5391:5400): SELECT MARCAS 1
+[INFO] 20:26:45:471 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:26:45:472 kernel/(5391:5400): INSERT MARCAS 1 "Adidas"
+[INFO] 20:26:45:473 kernel/(5391:5400): ---Se realizara el INSERT---
+
+[INFO] 20:26:45:473 kernel/(5391:5400): SELECT MARCAS 1
+[INFO] 20:26:45:473 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:26:46:479 kernel/(5391:5400): SELECT MARCAS 1
+[INFO] 20:26:46:479 kernel/(5391:5400): ---Se realizara el SELECT---
+
+[INFO] 20:28:08:78 kernel/(5391:5400): add memory 1 to shc
+[INFO] 20:28:08:78 kernel/(5391:5400): 
+---Se realizara la request ADD---
+
+[INFO] 20:32:31:208 kernel/(5732:5732): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:32:40:483 kernel/(5732:5742): add memory 1 to shc
+[INFO] 20:32:40:483 kernel/(5732:5742): 
+---Se realizara la request ADD---
+
+[INFO] 20:32:40:483 kernel/(5732:5742): 
+---Se realizara la request JOURNAL---
+
+[INFO] 20:32:40:483 kernel/(5732:5742): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:32:53:411 kernel/(5732:5742): add memory 1 to shc
+[INFO] 20:32:53:411 kernel/(5732:5742): 
+---Se realizara la request ADD---
+
+[INFO] 20:32:53:411 kernel/(5732:5742): 
+---Se realizara la request JOURNAL---
+
+[INFO] 20:32:53:411 kernel/(5732:5742): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:33:01:330 kernel/(5732:5742): add memory 1 to hsc
+[INFO] 20:33:01:330 kernel/(5732:5742): 
+---Se realizara la request ADD---
+
+[INFO] 20:33:58:592 kernel/(5819:5819): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:34:28:597 kernel/(5819:5824): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 20:34:58:363 kernel/(5819:5828): add memory 1 to shc
+[INFO] 20:34:58:363 kernel/(5819:5828): 
+---Se realizara la request ADD---
+
+[INFO] 20:34:58:363 kernel/(5819:5828): 
+---Se realizara la request JOURNAL---
+
+[INFO] 20:34:58:364 kernel/(5819:5828): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:35:08:150 kernel/(5819:5828): add memory 2 to shc
+[INFO] 20:35:08:150 kernel/(5819:5828): 
+---Se realizara la request ADD---
+
+[INFO] 20:35:08:150 kernel/(5819:5828): 
+---Se realizara la request JOURNAL---
+
+[INFO] 20:35:08:150 kernel/(5819:5828): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:35:15:678 kernel/(5819:5828): run simple_shc.lql
+[INFO] 20:35:15:678 kernel/(5819:5828): --Se realizara el RUN del archivo simple_shc.lql--
+
+[INFO] 20:35:15:678 kernel/(5819:5828): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:35:16:679 kernel/(5819:5828): CREATE CELULARES SHC 4 600000
+[INFO] 20:35:16:679 kernel/(5819:5828): ---Se realizara el CREATE---
+
+[INFO] 20:35:16:680 kernel/(5819:5828): INSERT CELULARES 1 "iPhone"
+[INFO] 20:35:16:680 kernel/(5819:5828): ---Se realizara el INSERT---
+
+[INFO] 20:35:16:680 kernel/(5819:5828): SELECT CELULARES 1
+[INFO] 20:35:16:681 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:17:720 kernel/(5819:5828): SELECT CELULARES 1
+[INFO] 20:35:17:720 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:17:721 kernel/(5819:5828): SELECT CELULARES 1
+[INFO] 20:35:17:721 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:17:723 kernel/(5819:5828): SELECT CELULARES 1
+[INFO] 20:35:17:723 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:18:729 kernel/(5819:5828): INSERT CELULARES 2 "Android"
+[INFO] 20:35:18:729 kernel/(5819:5828): ---Se realizara el INSERT---
+
+[INFO] 20:35:18:729 kernel/(5819:5828): SELECT CELULARES 2
+[INFO] 20:35:18:729 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:18:767 kernel/(5819:5828): SELECT CELULARES 2
+[INFO] 20:35:18:767 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:19:770 kernel/(5819:5828): SELECT CELULARES 2
+[INFO] 20:35:19:770 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:19:771 kernel/(5819:5828): SELECT CELULARES 2
+[INFO] 20:35:19:771 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:35:19:771 kernel/(5819:5828): SELECT CELULARES 2
+[INFO] 20:35:19:771 kernel/(5819:5828): ---Se realizara el SELECT---
+
+[INFO] 20:57:17:64 kernel/(7280:7280): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 20:57:47:70 kernel/(7280:7286): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 20:57:52:997 kernel/(7280:7290): add memory 1 to sc
+[INFO] 20:57:52:997 kernel/(7280:7290): 
+---Se realizara la request ADD---
+
+[INFO] 20:57:52:998 kernel/(7280:7290): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:57:58:546 kernel/(7280:7290): run simple_sc.lql
+[INFO] 20:57:58:546 kernel/(7280:7290): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 20:57:58:546 kernel/(7280:7290): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:57:59:547 kernel/(7280:7290): CREATE COLORS SC 4 600000
+[INFO] 20:57:59:547 kernel/(7280:7290): ---Se realizara el CREATE---
+
+[INFO] 20:57:59:547 kernel/(7280:7290): INSERT COLORS 1 "Blue"
+[INFO] 20:57:59:547 kernel/(7280:7290): ---Se realizara el INSERT---
+
+[INFO] 20:57:59:549 kernel/(7280:7290): SELECT COLORS 1
+[INFO] 20:57:59:549 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:58:00:552 kernel/(7280:7290): INSERT COLORS 2 "Red"
+[INFO] 20:58:00:552 kernel/(7280:7290): ---Se realizara el INSERT---
+
+[INFO] 20:58:00:552 kernel/(7280:7290): SELECT COLORS 2
+[INFO] 20:58:00:552 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:58:00:590 kernel/(7280:7290): SELECT COLORS 2
+[INFO] 20:58:00:590 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:58:01:595 kernel/(7280:7290): SELECT COLORS 1
+[INFO] 20:58:01:595 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:58:01:596 kernel/(7280:7290): INSERT COLORS 1 "Black"
+[INFO] 20:58:01:596 kernel/(7280:7290): ---Se realizara el INSERT---
+
+[INFO] 20:58:01:596 kernel/(7280:7290): SELECT COLORS 1
+[INFO] 20:58:01:596 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:59:38:17 kernel/(7280:7290): add memory 1 to ec
+[INFO] 20:59:38:18 kernel/(7280:7290): 
+---Se realizara la request ADD---
+
+[INFO] 20:59:38:18 kernel/(7280:7290): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:59:43:791 kernel/(7280:7290): add memory 2 to ec
+[INFO] 20:59:43:791 kernel/(7280:7290): 
+---Se realizara la request ADD---
+
+[INFO] 20:59:43:791 kernel/(7280:7290): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 20:59:49:168 kernel/(7280:7290): run simple_ec.lql
+[INFO] 20:59:49:168 kernel/(7280:7290): --Se realizara el RUN del archivo simple_ec.lql--
+
+[INFO] 20:59:49:168 kernel/(7280:7290): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 20:59:50:168 kernel/(7280:7290): CREATE MARCAS EC 4 60000
+[INFO] 20:59:50:169 kernel/(7280:7290): ---Se realizara el CREATE---
+
+[INFO] 20:59:50:169 kernel/(7280:7290): INSERT MARCAS 1 "Nike"
+[INFO] 20:59:50:169 kernel/(7280:7290): ---Se realizara el INSERT---
+
+[INFO] 20:59:50:169 kernel/(7280:7290): SELECT MARCAS 1
+[INFO] 20:59:50:169 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:59:51:208 kernel/(7280:7290): SELECT MARCAS 1
+[INFO] 20:59:51:209 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:59:51:209 kernel/(7280:7290): INSERT MARCAS 1 "Adidas"
+[INFO] 20:59:51:209 kernel/(7280:7290): ---Se realizara el INSERT---
+
+[INFO] 20:59:51:210 kernel/(7280:7290): SELECT MARCAS 1
+[INFO] 20:59:51:210 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 20:59:52:211 kernel/(7280:7290): SELECT MARCAS 1
+[INFO] 20:59:52:211 kernel/(7280:7290): ---Se realizara el SELECT---
+
+[INFO] 22:16:49:101 kernel/(11295:11295): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 22:17:01:579 kernel/(11295:11304): add memory 1 to sc
+[INFO] 22:17:01:579 kernel/(11295:11304): 
+---Se realizara la request ADD---
+
+[INFO] 22:17:01:579 kernel/(11295:11304): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:17:19:105 kernel/(11295:11300): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 22:17:30:843 kernel/(11295:11304): run simple_sc.lql
+[INFO] 22:17:30:843 kernel/(11295:11304): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 22:17:30:843 kernel/(11295:11304): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 22:17:31:843 kernel/(11295:11304): CREATE COLORS SC 4 600000
+[INFO] 22:17:31:843 kernel/(11295:11304): ---Se realizara el CREATE---
+
+[INFO] 22:17:31:844 kernel/(11295:11304): INSERT COLORS 1 "Blue"
+[INFO] 22:17:31:844 kernel/(11295:11304): ---Se realizara el INSERT---
+
+[INFO] 22:17:31:844 kernel/(11295:11304): SELECT COLORS 1
+[INFO] 22:17:31:844 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:17:32:883 kernel/(11295:11304): INSERT COLORS 2 "Red"
+[INFO] 22:17:32:884 kernel/(11295:11304): ---Se realizara el INSERT---
+
+[INFO] 22:17:32:884 kernel/(11295:11304): SELECT COLORS 2
+[INFO] 22:17:32:884 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:17:32:922 kernel/(11295:11304): SELECT COLORS 2
+[INFO] 22:17:32:923 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:17:33:924 kernel/(11295:11304): SELECT COLORS 1
+[INFO] 22:17:33:924 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:17:33:925 kernel/(11295:11304): INSERT COLORS 1 "Black"
+[INFO] 22:17:33:925 kernel/(11295:11304): ---Se realizara el INSERT---
+
+[INFO] 22:17:33:925 kernel/(11295:11304): SELECT COLORS 1
+[INFO] 22:17:33:925 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:17:46:737 kernel/(11295:11304): add memory 1 to ec
+[INFO] 22:17:46:737 kernel/(11295:11304): 
+---Se realizara la request ADD---
+
+[INFO] 22:17:46:738 kernel/(11295:11304): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:17:53:969 kernel/(11295:11304): add memory 2 to ec
+[INFO] 22:17:53:969 kernel/(11295:11304): 
+---Se realizara la request ADD---
+
+[INFO] 22:17:53:970 kernel/(11295:11304): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:18:03:471 kernel/(11295:11304): run simple_ec.lql
+[INFO] 22:18:03:471 kernel/(11295:11304): --Se realizara el RUN del archivo simple_ec.lql--
+
+[INFO] 22:18:03:471 kernel/(11295:11304): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 22:18:04:472 kernel/(11295:11304): CREATE MARCAS EC 4 60000
+[INFO] 22:18:04:472 kernel/(11295:11304): ---Se realizara el CREATE---
+
+[INFO] 22:18:04:472 kernel/(11295:11304): INSERT MARCAS 1 "Nike"
+[INFO] 22:18:04:472 kernel/(11295:11304): ---Se realizara el INSERT---
+
+[INFO] 22:18:04:473 kernel/(11295:11304): SELECT MARCAS 1
+[INFO] 22:18:04:473 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:18:05:479 kernel/(11295:11304): SELECT MARCAS 1
+[INFO] 22:18:05:479 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:18:05:480 kernel/(11295:11304): INSERT MARCAS 1 "Adidas"
+[INFO] 22:18:05:480 kernel/(11295:11304): ---Se realizara el INSERT---
+
+[INFO] 22:18:05:480 kernel/(11295:11304): SELECT MARCAS 1
+[INFO] 22:18:05:480 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:18:06:481 kernel/(11295:11304): SELECT MARCAS 1
+[INFO] 22:18:06:481 kernel/(11295:11304): ---Se realizara el SELECT---
+
+[INFO] 22:18:26:485 kernel/(11295:11304): add memory 1 to shc
+[INFO] 22:18:26:485 kernel/(11295:11304): 
+---Se realizara la request ADD---
+
+[INFO] 22:18:26:485 kernel/(11295:11304): 
+---Se realizara la request JOURNAL---
+
+[INFO] 22:18:26:485 kernel/(11295:11304): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:18:34:818 kernel/(11295:11304): add memory 2 to shc
+[INFO] 22:18:34:818 kernel/(11295:11304): 
+---Se realizara la request ADD---
+
+[INFO] 22:18:34:819 kernel/(11295:11304): 
+---Se realizara la request JOURNAL---
+
+[INFO] 22:18:34:819 kernel/(11295:11304): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:43:31:280 kernel/(12455:12455): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 22:43:43:392 kernel/(12455:12465): add memory 1 to sc
+[INFO] 22:43:43:392 kernel/(12455:12465): 
+---Se realizara la request ADD---
+
+[INFO] 22:43:43:392 kernel/(12455:12465): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:44:01:284 kernel/(12455:12461): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 22:44:19:790 kernel/(12455:12465): run simple_sc.lql
+[INFO] 22:44:19:790 kernel/(12455:12465): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 22:44:19:790 kernel/(12455:12465): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 22:44:20:791 kernel/(12455:12465): CREATE COLORS SC 4 600000
+[INFO] 22:44:20:791 kernel/(12455:12465): ---Se realizara el CREATE---
+
+[INFO] 22:44:20:791 kernel/(12455:12465): INSERT COLORS 1 "Blue"
+[INFO] 22:44:20:791 kernel/(12455:12465): ---Se realizara el INSERT---
+
+[INFO] 22:44:20:792 kernel/(12455:12465): SELECT COLORS 1
+[INFO] 22:44:20:792 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:21:832 kernel/(12455:12465): INSERT COLORS 2 "Red"
+[INFO] 22:44:21:832 kernel/(12455:12465): ---Se realizara el INSERT---
+
+[INFO] 22:44:21:832 kernel/(12455:12465): SELECT COLORS 2
+[INFO] 22:44:21:832 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:21:875 kernel/(12455:12465): SELECT COLORS 2
+[INFO] 22:44:21:875 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:22:877 kernel/(12455:12465): SELECT COLORS 1
+[INFO] 22:44:22:877 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:22:878 kernel/(12455:12465): INSERT COLORS 1 "Black"
+[INFO] 22:44:22:878 kernel/(12455:12465): ---Se realizara el INSERT---
+
+[INFO] 22:44:22:878 kernel/(12455:12465): SELECT COLORS 1
+[INFO] 22:44:22:878 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:30:911 kernel/(12455:12465): add memory 1 to ec
+[INFO] 22:44:30:911 kernel/(12455:12465): 
+---Se realizara la request ADD---
+
+[INFO] 22:44:30:911 kernel/(12455:12465): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:44:35:669 kernel/(12455:12465): add memory 2 to ec
+[INFO] 22:44:35:669 kernel/(12455:12465): 
+---Se realizara la request ADD---
+
+[INFO] 22:44:35:669 kernel/(12455:12465): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:44:42:868 kernel/(12455:12465): run simple_ec.lql
+[INFO] 22:44:42:868 kernel/(12455:12465): --Se realizara el RUN del archivo simple_ec.lql--
+
+[INFO] 22:44:42:868 kernel/(12455:12465): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 22:44:43:868 kernel/(12455:12465): CREATE MARCAS EC 4 60000
+[INFO] 22:44:43:868 kernel/(12455:12465): ---Se realizara el CREATE---
+
+[INFO] 22:44:43:868 kernel/(12455:12465): INSERT MARCAS 1 "Nike"
+[INFO] 22:44:43:868 kernel/(12455:12465): ---Se realizara el INSERT---
+
+[INFO] 22:44:43:869 kernel/(12455:12465): SELECT MARCAS 1
+[INFO] 22:44:43:869 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:44:877 kernel/(12455:12465): SELECT MARCAS 1
+[INFO] 22:44:44:877 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:44:885 kernel/(12455:12465): INSERT MARCAS 1 "Adidas"
+[INFO] 22:44:44:885 kernel/(12455:12465): ---Se realizara el INSERT---
+
+[INFO] 22:44:44:886 kernel/(12455:12465): SELECT MARCAS 1
+[INFO] 22:44:44:886 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:44:45:887 kernel/(12455:12465): SELECT MARCAS 1
+[INFO] 22:44:45:887 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:17:262 kernel/(12455:12465): add memory 1 to shc
+[INFO] 22:46:17:262 kernel/(12455:12465): 
+---Se realizara la request ADD---
+
+[INFO] 22:46:17:263 kernel/(12455:12465): 
+---Se realizara la request JOURNAL---
+
+[INFO] 22:46:17:263 kernel/(12455:12465): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:46:22:934 kernel/(12455:12465): add memory 2 to shc
+[INFO] 22:46:22:934 kernel/(12455:12465): 
+---Se realizara la request ADD---
+
+[INFO] 22:46:22:934 kernel/(12455:12465): 
+---Se realizara la request JOURNAL---
+
+[INFO] 22:46:22:934 kernel/(12455:12465): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 22:46:47:236 kernel/(12455:12465): run simple_shc.lql
+[INFO] 22:46:47:236 kernel/(12455:12465): --Se realizara el RUN del archivo simple_shc.lql--
+
+[INFO] 22:46:47:236 kernel/(12455:12465): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 22:46:48:237 kernel/(12455:12465): CREATE CELULARES SHC 4 600000
+[INFO] 22:46:48:237 kernel/(12455:12465): ---Se realizara el CREATE---
+
+[INFO] 22:46:48:237 kernel/(12455:12465): INSERT CELULARES 1 "iPhone"
+[INFO] 22:46:48:237 kernel/(12455:12465): ---Se realizara el INSERT---
+
+[INFO] 22:46:48:237 kernel/(12455:12465): SELECT CELULARES 1
+[INFO] 22:46:48:237 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:49:275 kernel/(12455:12465): SELECT CELULARES 1
+[INFO] 22:46:49:275 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:49:276 kernel/(12455:12465): SELECT CELULARES 1
+[INFO] 22:46:49:276 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:49:277 kernel/(12455:12465): SELECT CELULARES 1
+[INFO] 22:46:49:277 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:50:283 kernel/(12455:12465): INSERT CELULARES 2 "Android"
+[INFO] 22:46:50:283 kernel/(12455:12465): ---Se realizara el INSERT---
+
+[INFO] 22:46:50:283 kernel/(12455:12465): SELECT CELULARES 2
+[INFO] 22:46:50:283 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:50:284 kernel/(12455:12465): SELECT CELULARES 2
+[INFO] 22:46:50:284 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:51:286 kernel/(12455:12465): SELECT CELULARES 2
+[INFO] 22:46:51:286 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:51:286 kernel/(12455:12465): SELECT CELULARES 2
+[INFO] 22:46:51:286 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 22:46:51:287 kernel/(12455:12465): SELECT CELULARES 2
+[INFO] 22:46:51:287 kernel/(12455:12465): ---Se realizara el SELECT---
+
+[INFO] 23:28:04:733 kernel/(14872:14872): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 23:28:17:633 kernel/(14872:14881): add memory 1 to sc
+[INFO] 23:28:17:633 kernel/(14872:14881): 
+---Se realizara la request ADD---
+
+[INFO] 23:28:17:633 kernel/(14872:14881): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 23:28:29:41 kernel/(14872:14881): run simple_sc.lql
+[INFO] 23:28:29:41 kernel/(14872:14881): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 23:28:29:41 kernel/(14872:14881): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 23:28:30:42 kernel/(14872:14881): CREATE COLORS SC 300000
+[ERROR] 23:28:30:42 kernel/(14872:14881): -LA REQUEST CREATE RECIBIO PARAMETROS INCORRECTOS.-
+
+[ERROR] 23:28:30:42 kernel/(14872:14881): FALLO AL EJECUTAR LA REQUEST CREATE COLORS SC 300000.
+
+[INFO] 23:28:57:734 kernel/(14872:14881): run simple_sc.lql
+[INFO] 23:28:57:734 kernel/(14872:14881): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 23:28:57:734 kernel/(14872:14881): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 23:28:58:735 kernel/(14872:14881): CREATE COLORS SC 300000
+[ERROR] 23:28:58:735 kernel/(14872:14881): -LA REQUEST CREATE RECIBIO PARAMETROS INCORRECTOS.-
+
+[ERROR] 23:28:58:735 kernel/(14872:14881): FALLO AL EJECUTAR LA REQUEST CREATE COLORS SC 300000.
+
+[INFO] 23:30:34:881 kernel/(14872:14881): add memory 1 to sc 
+[INFO] 23:30:34:881 kernel/(14872:14881): 
+---Se realizara la request ADD---
+
+[INFO] 23:30:34:881 kernel/(14872:14881): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 23:30:40:472 kernel/(14872:14881): run simple_sc.lql
+[INFO] 23:30:40:472 kernel/(14872:14881): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 23:30:40:472 kernel/(14872:14881): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 23:30:41:473 kernel/(14872:14881): CREATE COLORS SC 300000
+[ERROR] 23:30:41:473 kernel/(14872:14881): -LA REQUEST CREATE RECIBIO PARAMETROS INCORRECTOS.-
+
+[ERROR] 23:30:41:473 kernel/(14872:14881): FALLO AL EJECUTAR LA REQUEST CREATE COLORS SC 300000.
+
+[INFO] 23:31:10:119 kernel/(14872:14881): run simple_sc.lql
+[INFO] 23:31:10:119 kernel/(14872:14881): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 23:31:10:119 kernel/(14872:14881): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 23:31:11:121 kernel/(14872:14881): CREATE COLORS SC 4 300000
+[INFO] 23:31:11:121 kernel/(14872:14881): ---Se realizara el CREATE---
+
+[INFO] 23:31:11:121 kernel/(14872:14881): INSERT COLORS 1 "Blue"
+[INFO] 23:31:11:121 kernel/(14872:14881): ---Se realizara el INSERT---
+
+[INFO] 23:31:11:121 kernel/(14872:14881): SELECT COLORS 1
+[INFO] 23:31:11:121 kernel/(14872:14881): ---Se realizara el SELECT---
+
+[INFO] 23:31:12:159 kernel/(14872:14881): INSERT COLORS 2 "Red"
+[INFO] 23:31:12:159 kernel/(14872:14881): ---Se realizara el INSERT---
+
+[INFO] 23:31:12:160 kernel/(14872:14881): SELECT COLORS 2
+[INFO] 23:31:12:160 kernel/(14872:14881): ---Se realizara el SELECT---
+
+[INFO] 23:31:12:198 kernel/(14872:14881): SELECT COLORS 2
+[INFO] 23:31:12:199 kernel/(14872:14881): ---Se realizara el SELECT---
+
+[INFO] 23:31:13:200 kernel/(14872:14881): SELECT COLORS 1
+[INFO] 23:31:13:200 kernel/(14872:14881): ---Se realizara el SELECT---
+
+[INFO] 23:31:13:201 kernel/(14872:14881): INSERT COLORS 1 "Black"
+[INFO] 23:31:13:201 kernel/(14872:14881): ---Se realizara el INSERT---
+
+[INFO] 23:31:13:201 kernel/(14872:14881): SELECT COLORS 1
+[INFO] 23:31:13:201 kernel/(14872:14881): ---Se realizara el SELECT---
+
+[INFO] 23:45:53:594 kernel/(15702:15702): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 23:46:02:376 kernel/(15702:15713): add memory 1 to sc
+[INFO] 23:46:02:376 kernel/(15702:15713): 
+---Se realizara la request ADD---
+
+[INFO] 23:46:02:377 kernel/(15702:15713): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 23:46:12:266 kernel/(15702:15713): run  simple_sc.lql
+[INFO] 23:46:12:266 kernel/(15702:15713): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 23:46:12:266 kernel/(15702:15713): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 23:46:13:267 kernel/(15702:15713): CREATE COLORS SC 4 300000
+[INFO] 23:46:13:267 kernel/(15702:15713): ---Se realizara el CREATE---
+
+[INFO] 23:46:13:267 kernel/(15702:15713): INSERT COLORS 1 "Blue"
+[INFO] 23:46:13:268 kernel/(15702:15713): ---Se realizara el INSERT---
+
+[INFO] 23:46:13:268 kernel/(15702:15713): SELECT COLORS 1
+[INFO] 23:46:13:268 kernel/(15702:15713): ---Se realizara el SELECT---
+
+[INFO] 23:46:14:307 kernel/(15702:15713): INSERT COLORS 2 "Red"
+[INFO] 23:46:14:307 kernel/(15702:15713): ---Se realizara el INSERT---
+
+[INFO] 23:46:14:308 kernel/(15702:15713): SELECT COLORS 2
+[INFO] 23:46:14:308 kernel/(15702:15713): ---Se realizara el SELECT---
+
+[INFO] 23:46:14:347 kernel/(15702:15713): SELECT COLORS 2
+[INFO] 23:46:14:347 kernel/(15702:15713): ---Se realizara el SELECT---
+
+[INFO] 23:46:15:349 kernel/(15702:15713): SELECT COLORS 1
+[INFO] 23:46:15:349 kernel/(15702:15713): ---Se realizara el SELECT---
+
+[INFO] 23:46:15:350 kernel/(15702:15713): INSERT COLORS 1 "Black"
+[INFO] 23:46:15:350 kernel/(15702:15713): ---Se realizara el INSERT---
+
+[INFO] 23:46:15:350 kernel/(15702:15713): SELECT COLORS 1
+[INFO] 23:46:15:350 kernel/(15702:15713): ---Se realizara el SELECT---
+
+[INFO] 23:53:25:935 kernel/(15970:15970): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 23:53:39:809 kernel/(15970:15979): add memory 1 to sc
+[INFO] 23:53:39:809 kernel/(15970:15979): 
+---Se realizara la request ADD---
+
+[INFO] 23:55:18:285 kernel/(16291:16291): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 23:55:26:278 kernel/(16291:16300): add memory 1 to sc
+[INFO] 23:55:26:278 kernel/(16291:16300): 
+---Se realizara la request ADD---
+
+[INFO] 23:55:26:278 kernel/(16291:16300): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 23:55:33:363 kernel/(16291:16300): run simple_sc.lql
+[INFO] 23:55:33:363 kernel/(16291:16300): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 23:55:33:363 kernel/(16291:16300): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 23:55:34:364 kernel/(16291:16300): CREATE COLORS SC 4 300000
+[INFO] 23:55:34:364 kernel/(16291:16300): ---Se realizara el CREATE---
+
+[INFO] 23:55:34:364 kernel/(16291:16300): INSERT COLORS 1 "Blue"
+[INFO] 23:55:34:364 kernel/(16291:16300): ---Se realizara el INSERT---
+
+[INFO] 23:55:34:364 kernel/(16291:16300): SELECT COLORS 1
+[INFO] 23:55:34:364 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 23:55:35:404 kernel/(16291:16300): INSERT COLORS 2 "Red"
+[INFO] 23:55:35:404 kernel/(16291:16300): ---Se realizara el INSERT---
+
+[INFO] 23:55:35:404 kernel/(16291:16300): SELECT COLORS 2
+[INFO] 23:55:35:404 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 23:55:35:442 kernel/(16291:16300): SELECT COLORS 2
+[INFO] 23:55:35:442 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 23:55:36:443 kernel/(16291:16300): SELECT COLORS 1
+[INFO] 23:55:36:443 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 23:55:36:444 kernel/(16291:16300): INSERT COLORS 1 "Black"
+[INFO] 23:55:36:444 kernel/(16291:16300): ---Se realizara el INSERT---
+
+[INFO] 23:55:36:444 kernel/(16291:16300): SELECT COLORS 1
+[INFO] 23:55:36:444 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:02:18:308 kernel/(16291:16296): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 00:02:30:67 kernel/(16291:16300): add memory 1 to ec
+[INFO] 00:02:30:67 kernel/(16291:16300): 
+---Se realizara la request ADD---
+
+[INFO] 00:02:30:67 kernel/(16291:16300): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 00:02:35:850 kernel/(16291:16300): add memory 2 to ec
+[INFO] 00:02:35:850 kernel/(16291:16300): 
+---Se realizara la request ADD---
+
+[INFO] 00:02:35:850 kernel/(16291:16300): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 00:02:41:226 kernel/(16291:16300): run simple_ec.lql
+[INFO] 00:02:41:226 kernel/(16291:16300): --Se realizara el RUN del archivo simple_ec.lql--
+
+[INFO] 00:02:41:226 kernel/(16291:16300): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 00:02:42:229 kernel/(16291:16300): CREATE MARCAS EC 4 60000
+[INFO] 00:02:42:229 kernel/(16291:16300): ---Se realizara el CREATE---
+
+[INFO] 00:02:42:229 kernel/(16291:16300): INSERT MARCAS 1 "Nike"
+[INFO] 00:02:42:229 kernel/(16291:16300): ---Se realizara el INSERT---
+
+[INFO] 00:02:42:229 kernel/(16291:16300): SELECT MARCAS 1
+[INFO] 00:02:42:229 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:02:43:232 kernel/(16291:16300): SELECT MARCAS 1
+[INFO] 00:02:43:232 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:02:43:233 kernel/(16291:16300): INSERT MARCAS 1 "Adidas"
+[INFO] 00:02:43:233 kernel/(16291:16300): ---Se realizara el INSERT---
+
+[INFO] 00:02:43:233 kernel/(16291:16300): SELECT MARCAS 1
+[INFO] 00:02:43:233 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:02:44:235 kernel/(16291:16300): SELECT MARCAS 1
+[INFO] 00:02:44:235 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:03:32:2 kernel/(16291:16300): add memory 1 to shc
+[INFO] 00:03:32:2 kernel/(16291:16300): 
+---Se realizara la request ADD---
+
+[INFO] 00:03:32:2 kernel/(16291:16300): 
+---Se realizara la request JOURNAL---
+
+[INFO] 00:03:32:2 kernel/(16291:16300): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 00:03:57:348 kernel/(16291:16300): addmemory 2 to shc
+[ERROR] 00:03:57:348 kernel/(16291:16300): -LA REQUEST NO ES VALIDA-
+
+[ERROR] 00:03:57:348 kernel/(16291:16300): FALLO AL EJECUTAR LA REQUEST addmemory 2 to shc.
+
+[INFO] 00:04:06:579 kernel/(16291:16300): add memory 2 to shc
+[INFO] 00:04:06:579 kernel/(16291:16300): 
+---Se realizara la request ADD---
+
+[INFO] 00:04:06:579 kernel/(16291:16300): 
+---Se realizara la request JOURNAL---
+
+[INFO] 00:04:06:579 kernel/(16291:16300): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 00:04:13:614 kernel/(16291:16300): run simple_shc.lql
+[INFO] 00:04:13:614 kernel/(16291:16300): --Se realizara el RUN del archivo simple_shc.lql--
+
+[INFO] 00:04:13:614 kernel/(16291:16300): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 00:04:14:620 kernel/(16291:16300): CREATE CELULARES SHC 4 300000
+[INFO] 00:04:14:620 kernel/(16291:16300): ---Se realizara el CREATE---
+
+[INFO] 00:04:14:620 kernel/(16291:16300): INSERT CELULARES 1 "iPhone"
+[INFO] 00:04:14:620 kernel/(16291:16300): ---Se realizara el INSERT---
+
+[INFO] 00:04:14:625 kernel/(16291:16300): SELECT CELULARES 1
+[INFO] 00:04:14:625 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:15:630 kernel/(16291:16300): SELECT CELULARES 1
+[INFO] 00:04:15:630 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:15:631 kernel/(16291:16300): SELECT CELULARES 1
+[INFO] 00:04:15:631 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:15:632 kernel/(16291:16300): SELECT CELULARES 1
+[INFO] 00:04:15:632 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:16:633 kernel/(16291:16300): INSERT CELULARES 2 "Android"
+[INFO] 00:04:16:633 kernel/(16291:16300): ---Se realizara el INSERT---
+
+[INFO] 00:04:16:634 kernel/(16291:16300): SELECT CELULARES 2
+[INFO] 00:04:16:634 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:16:670 kernel/(16291:16300): SELECT CELULARES 2
+[INFO] 00:04:16:670 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:17:672 kernel/(16291:16300): SELECT CELULARES 2
+[INFO] 00:04:17:672 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:17:673 kernel/(16291:16300): SELECT CELULARES 2
+[INFO] 00:04:17:673 kernel/(16291:16300): ---Se realizara el SELECT---
+
+[INFO] 00:04:17:673 kernel/(16291:16300): SELECT CELULARES 2
+[INFO] 00:04:17:673 kernel/(16291:16300): ---Se realizara el SELECT---
+
