@@ -426,10 +426,20 @@ int obtener_parametros_add(char* linea_request, int* numero_memoria, char* consi
 	char* memoria = string_new();
 	char* to = string_new();
 
+
+
 	if((sscanf(linea_request, "%s %s %i %s %s", funcion, memoria, numero_memoria, to, consistencia)) != 5){
 
 		//log
 		log_error(logger_kernel , "-LA REQUEST ADD RECIBIO PARAMETROS INCORRECTOS.-\n");
+		return 0;
+
+	}
+
+	if( !string_equals_ignore_case(consistencia, "SC") && !string_equals_ignore_case(consistencia, "EC") && !string_equals_ignore_case(consistencia, "SHC") ){
+
+		log_error(logger_kernel , "-LACONSISTENCIA NO ES VALIDA.-\n");
+
 		return 0;
 
 	}
