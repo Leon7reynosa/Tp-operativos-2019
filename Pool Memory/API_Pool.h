@@ -30,8 +30,9 @@
 
 Dato request_select(select_t dato);
 void request_insert(insert dato);
-void request_create(create dato_create);
+estado_request request_create(create dato_create);
 t_list* request_describe(describe_t dato_describe);
+estado_request request_drop(Drop datos_drop);
 
 
 #endif /* API_POOL_H_ */

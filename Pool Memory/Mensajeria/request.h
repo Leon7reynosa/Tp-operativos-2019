@@ -23,6 +23,12 @@ typedef enum{
 	DESCONEXION
 }cod_operacion;
 
+typedef enum{
+
+	SUCCESS = 1,
+	ERROR = 2
+
+}estado_request;
 
 struct requestEstructura{
 

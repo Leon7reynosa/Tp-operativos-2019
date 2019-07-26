@@ -136,7 +136,11 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 }
 
 char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
+
+	printf("pruebinha 2\n");
+
 	char* pathBase = obtenerPathTabla(nombre_tabla);
+	printf("pruebinha 2\n");
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
 	int auxiliar;
@@ -160,15 +164,25 @@ char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
 		numeroParaTemporal++;
 	}
 
+	printf("pruebinha 2\n");
 
 	char* numeroDesignado = string_new();
+	printf("pruebinha 2\n");
 	numeroDesignado = string_itoa(numeroParaTemporal);
 
+	printf("pruebinha 2\n");
+
 	char* pathCompleto = string_new();
+	printf("pruebinha 2\n");
 	string_append(&pathCompleto, pathBase);
+	printf("pruebinha 2\n");
 	string_append(&pathCompleto, "/");
+	printf("pruebinha 2\n");
 	string_append(&pathCompleto, numeroDesignado);
+	printf("pruebinha 2\n");
 	string_append(&pathCompleto, ".tmpc");
+
+	printf("pruebinha 2\n");
 
 	free(pathBase);
 

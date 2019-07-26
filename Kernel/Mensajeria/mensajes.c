@@ -7,6 +7,20 @@
 
 #include"mensajes.h"
 
+void enviar_estado(int conexion, estado_request estado){
+
+	void* buffer = malloc(sizeof(estado_request));
+
+	memcpy(buffer, &estado, sizeof(estado_request));
+
+	send(conexion, buffer, sizeof(estado_request), 0);
+
+	free(buffer);
+
+	return;
+
+}
+
 bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memoria){
 
 	void* buffer;

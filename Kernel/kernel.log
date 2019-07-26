@@ -2971,3 +2971,1043 @@
 [INFO] 00:04:17:673 kernel/(16291:16300): SELECT CELULARES 2
 [INFO] 00:04:17:673 kernel/(16291:16300): ---Se realizara el SELECT---
 
+[INFO] 14:52:47:102 kernel/(10859:10859): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 14:53:03:587 kernel/(10859:10868): add memory 1 to ec
+[INFO] 14:53:03:587 kernel/(10859:10868): 
+---Se realizara la request ADD---
+
+[INFO] 14:53:03:587 kernel/(10859:10868): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 14:53:17:123 kernel/(10859:10864): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 14:53:36:569 kernel/(10859:10868): add memory 2 to ec
+[INFO] 14:53:36:569 kernel/(10859:10868): 
+---Se realizara la request ADD---
+
+[INFO] 14:53:36:570 kernel/(10859:10868): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 14:53:40:585 kernel/(10859:10868): add memory 1 to shc
+[INFO] 14:53:40:585 kernel/(10859:10868): 
+---Se realizara la request ADD---
+
+[INFO] 14:53:40:586 kernel/(10859:10868): 
+---Se realizara la request JOURNAL---
+
+[INFO] 14:53:40:586 kernel/(10859:10868): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 14:53:48:638 kernel/(10859:10868): add memory 2 o
+[ERROR] 14:53:48:638 kernel/(10859:10868): -LA REQUEST ADD RECIBIO PARAMETROS INCORRECTOS.-
+
+[ERROR] 14:53:48:638 kernel/(10859:10868): FALLO AL EJECUTAR LA REQUEST add memory 2 o.
+
+[INFO] 14:53:56:681 kernel/(10859:10868): add memory 2 to shc
+[INFO] 14:53:56:681 kernel/(10859:10868): 
+---Se realizara la request ADD---
+
+[INFO] 14:53:56:681 kernel/(10859:10868): 
+---Se realizara la request JOURNAL---
+
+[INFO] 14:53:56:682 kernel/(10859:10868): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 14:54:19:172 kernel/(10859:10868): run cosas_falla.lql
+[INFO] 14:54:19:172 kernel/(10859:10868): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 14:54:19:172 kernel/(10859:10868): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 14:54:20:173 kernel/(10859:10868): CREATE COSAS EC 2 40000
+[INFO] 14:54:20:173 kernel/(10859:10868): ---Se realizara el CREATE---
+
+[INFO] 14:54:20:175 kernel/(10859:10868): INSERT COSAS 1 "Pizarron"
+[INFO] 14:54:20:176 kernel/(10859:10868): ---Se realizara el INSERT---
+
+[INFO] 14:54:20:180 kernel/(10859:10868): INSERT COSAS 55 "Marcador"
+[INFO] 14:54:20:180 kernel/(10859:10868): ---Se realizara el INSERT---
+
+[INFO] 14:54:21:190 kernel/(10859:10868): INSERT COSAS 239 "Auto"
+[INFO] 14:54:21:190 kernel/(10859:10868): ---Se realizara el INSERT---
+
+[INFO] 14:54:21:195 kernel/(10859:10868): INSERT COSAS 21 "Mesa"
+[INFO] 14:54:21:195 kernel/(10859:10868): ---Se realizara el INSERT---
+
+[INFO] 14:54:21:196 kernel/(10859:10868): SELECT COSAS 55
+[INFO] 14:54:21:196 kernel/(10859:10868): ---Se realizara el SELECT---
+
+[INFO] 14:54:22:200 kernel/(10859:10868): SELECT COSAS 21
+[INFO] 14:54:22:200 kernel/(10859:10868): ---Se realizara el SELECT---
+
+[INFO] 14:54:22:201 kernel/(10859:10868): CREATE COSAS SHC 8 40000
+[INFO] 14:54:22:201 kernel/(10859:10868): ---Se realizara el CREATE---
+
+[ERROR] 14:54:22:202 kernel/(10859:10868): -Fallo el CREATE.-
+
+[ERROR] 14:54:22:202 kernel/(10859:10868): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 14:55:24:900 kernel/(10859:10868): select cosas 55
+[INFO] 14:55:24:901 kernel/(10859:10868): ---Se realizara el SELECT---
+
+[INFO] 14:55:47:822 kernel/(10859:10868): select cosas 1
+[INFO] 14:55:47:822 kernel/(10859:10868): ---Se realizara el SELECT---
+
+[INFO] 15:01:04:596 kernel/(11571:11571): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:01:13:143 kernel/(11571:11581): add memory 1 to ec
+[INFO] 15:01:13:143 kernel/(11571:11581): 
+---Se realizara la request ADD---
+
+[INFO] 15:01:13:143 kernel/(11571:11581): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:01:34:612 kernel/(11571:11577): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 15:02:08:606 kernel/(11571:11581): add memory 2 to ec
+[INFO] 15:02:08:606 kernel/(11571:11581): 
+---Se realizara la request ADD---
+
+[INFO] 15:02:08:606 kernel/(11571:11581): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:02:12:366 kernel/(11571:11581): add memory 1 to shc
+[INFO] 15:02:12:366 kernel/(11571:11581): 
+---Se realizara la request ADD---
+
+[INFO] 15:02:12:366 kernel/(11571:11581): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:02:12:369 kernel/(11571:11581): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:02:17:790 kernel/(11571:11581): add memory 2 to shc
+[INFO] 15:02:17:790 kernel/(11571:11581): 
+---Se realizara la request ADD---
+
+[INFO] 15:02:17:790 kernel/(11571:11581): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:02:17:791 kernel/(11571:11581): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:02:32:486 kernel/(11571:11581): run cosas_falla.lql
+[INFO] 15:02:32:486 kernel/(11571:11581): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 15:02:32:486 kernel/(11571:11581): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 15:02:33:486 kernel/(11571:11581): CREATE COSAS EC 2 40000
+[INFO] 15:02:33:486 kernel/(11571:11581): ---Se realizara el CREATE---
+
+[INFO] 15:02:33:489 kernel/(11571:11581): INSERT COSAS 1 "Pizarron"
+[INFO] 15:02:33:489 kernel/(11571:11581): ---Se realizara el INSERT---
+
+[INFO] 15:02:33:490 kernel/(11571:11581): INSERT COSAS 55 "Marcador"
+[INFO] 15:02:33:490 kernel/(11571:11581): ---Se realizara el INSERT---
+
+[INFO] 15:02:34:492 kernel/(11571:11581): INSERT COSAS 239 "Auto"
+[INFO] 15:02:34:492 kernel/(11571:11581): ---Se realizara el INSERT---
+
+[INFO] 15:02:34:493 kernel/(11571:11581): INSERT COSAS 21 "Mesa"
+[INFO] 15:02:34:493 kernel/(11571:11581): ---Se realizara el INSERT---
+
+[INFO] 15:02:34:495 kernel/(11571:11581): SELECT COSAS 55
+[INFO] 15:02:34:495 kernel/(11571:11581): ---Se realizara el SELECT---
+
+[INFO] 15:02:35:497 kernel/(11571:11581): SELECT COSAS 21
+[INFO] 15:02:35:498 kernel/(11571:11581): ---Se realizara el SELECT---
+
+[INFO] 15:02:35:500 kernel/(11571:11581): CREATE COSAS SHC 8 40000
+[INFO] 15:02:35:500 kernel/(11571:11581): ---Se realizara el CREATE---
+
+[ERROR] 15:02:35:507 kernel/(11571:11581): -Fallo el CREATE.-
+
+[ERROR] 15:02:35:507 kernel/(11571:11581): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 15:02:56:260 kernel/(11571:11581): select cosas 1
+[INFO] 15:02:56:260 kernel/(11571:11581): ---Se realizara el SELECT---
+
+[INFO] 15:17:03:580 kernel/(12011:12011): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:17:09:189 kernel/(12011:12020): add memory 1 to ec
+[INFO] 15:17:09:189 kernel/(12011:12020): 
+---Se realizara la request ADD---
+
+[INFO] 15:17:09:189 kernel/(12011:12020): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:17:33:584 kernel/(12011:12016): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 15:17:38:216 kernel/(12011:12020): add memory 2 to ec
+[INFO] 15:17:38:216 kernel/(12011:12020): 
+---Se realizara la request ADD---
+
+[INFO] 15:17:38:217 kernel/(12011:12020): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:17:42:380 kernel/(12011:12020): add memory 1 to shc
+[INFO] 15:17:42:380 kernel/(12011:12020): 
+---Se realizara la request ADD---
+
+[INFO] 15:17:42:381 kernel/(12011:12020): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:17:42:381 kernel/(12011:12020): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:17:46:540 kernel/(12011:12020): add memory 2 to shc
+[INFO] 15:17:46:540 kernel/(12011:12020): 
+---Se realizara la request ADD---
+
+[INFO] 15:17:46:541 kernel/(12011:12020): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:17:46:542 kernel/(12011:12020): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:17:55:108 kernel/(12011:12020): run cosas_falla.lql
+[INFO] 15:17:55:108 kernel/(12011:12020): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 15:17:55:108 kernel/(12011:12020): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 15:17:56:109 kernel/(12011:12020): CREATE COSAS EC 2 40000
+[INFO] 15:17:56:109 kernel/(12011:12020): ---Se realizara el CREATE---
+
+[INFO] 15:17:56:111 kernel/(12011:12020): INSERT COSAS 1 "Pizarron"
+[INFO] 15:17:56:112 kernel/(12011:12020): ---Se realizara el INSERT---
+
+[INFO] 15:17:56:113 kernel/(12011:12020): INSERT COSAS 55 "Marcador"
+[INFO] 15:17:56:114 kernel/(12011:12020): ---Se realizara el INSERT---
+
+[INFO] 15:17:57:115 kernel/(12011:12020): INSERT COSAS 239 "Auto"
+[INFO] 15:17:57:116 kernel/(12011:12020): ---Se realizara el INSERT---
+
+[INFO] 15:17:57:116 kernel/(12011:12020): INSERT COSAS 21 "Mesa"
+[INFO] 15:17:57:116 kernel/(12011:12020): ---Se realizara el INSERT---
+
+[INFO] 15:17:57:117 kernel/(12011:12020): SELECT COSAS 55
+[INFO] 15:17:57:117 kernel/(12011:12020): ---Se realizara el SELECT---
+
+[INFO] 15:17:58:122 kernel/(12011:12020): SELECT COSAS 21
+[INFO] 15:17:58:122 kernel/(12011:12020): ---Se realizara el SELECT---
+
+[INFO] 15:17:58:126 kernel/(12011:12020): CREATE COSAS SHC 8 40000
+[INFO] 15:17:58:126 kernel/(12011:12020): ---Se realizara el CREATE---
+
+[INFO] 15:17:58:127 kernel/(12011:12020): SELECT COSAS 1
+[INFO] 15:17:58:128 kernel/(12011:12020): ---Se realizara el SELECT---
+
+[INFO] 15:17:59:143 kernel/(12011:12020): INSERT COSAS 3219 "Cama"
+[INFO] 15:17:59:143 kernel/(12011:12020): ---Se realizara el INSERT---
+
+[INFO] 15:17:59:143 kernel/(12011:12020): INSERT COSAS 769 "Campera"
+[INFO] 15:17:59:143 kernel/(12011:12020): ---Se realizara el INSERT---
+
+[INFO] 15:31:04:570 kernel/(12382:12382): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:31:34:574 kernel/(12382:12387): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 15:31:40:389 kernel/(12382:12391): add memory 1 to ec
+[INFO] 15:31:40:389 kernel/(12382:12391): 
+---Se realizara la request ADD---
+
+[INFO] 15:31:40:390 kernel/(12382:12391): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:31:43:797 kernel/(12382:12391): add memory 2 to ec
+[INFO] 15:31:43:797 kernel/(12382:12391): 
+---Se realizara la request ADD---
+
+[INFO] 15:31:43:798 kernel/(12382:12391): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:31:46:533 kernel/(12382:12391): add memory 1 to shc
+[INFO] 15:31:46:534 kernel/(12382:12391): 
+---Se realizara la request ADD---
+
+[INFO] 15:31:46:534 kernel/(12382:12391): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:31:46:534 kernel/(12382:12391): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:31:50:301 kernel/(12382:12391): add memory 2 to shc
+[INFO] 15:31:50:301 kernel/(12382:12391): 
+---Se realizara la request ADD---
+
+[INFO] 15:31:50:302 kernel/(12382:12391): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:31:50:303 kernel/(12382:12391): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:31:57:317 kernel/(12382:12391): run cosas_falla.lql
+[INFO] 15:31:57:318 kernel/(12382:12391): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 15:31:57:318 kernel/(12382:12391): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 15:31:58:318 kernel/(12382:12391): CREATE COSAS EC 2 40000
+[INFO] 15:31:58:318 kernel/(12382:12391): ---Se realizara el CREATE---
+
+[ERROR] 15:31:58:319 kernel/(12382:12391): -Fallo el CREATE.-
+
+[ERROR] 15:31:58:319 kernel/(12382:12391): FALLO AL EJECUTAR LA REQUEST CREATE COSAS EC 2 40000.
+
+[INFO] 15:32:23:316 kernel/(12382:12391): DROP COSAS
+[INFO] 15:32:23:316 kernel/(12382:12391): 
+--Se realizara la request DROP de la tabla COSAS---
+
+[INFO] 15:32:36:301 kernel/(12382:12391): run cosas_falla.lql
+[INFO] 15:32:36:301 kernel/(12382:12391): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 15:32:36:301 kernel/(12382:12391): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 15:32:37:302 kernel/(12382:12391): CREATE COSAS EC 2 40000
+[INFO] 15:32:37:302 kernel/(12382:12391): ---Se realizara el CREATE---
+
+[INFO] 15:32:37:304 kernel/(12382:12391): INSERT COSAS 1 "Pizarron"
+[INFO] 15:32:37:304 kernel/(12382:12391): ---Se realizara el INSERT---
+
+[INFO] 15:32:37:305 kernel/(12382:12391): INSERT COSAS 55 "Marcador"
+[INFO] 15:32:37:305 kernel/(12382:12391): ---Se realizara el INSERT---
+
+[INFO] 15:32:38:307 kernel/(12382:12391): INSERT COSAS 239 "Auto"
+[INFO] 15:32:38:307 kernel/(12382:12391): ---Se realizara el INSERT---
+
+[INFO] 15:32:38:308 kernel/(12382:12391): INSERT COSAS 21 "Mesa"
+[INFO] 15:32:38:308 kernel/(12382:12391): ---Se realizara el INSERT---
+
+[INFO] 15:32:38:309 kernel/(12382:12391): SELECT COSAS 55
+[INFO] 15:32:38:309 kernel/(12382:12391): ---Se realizara el SELECT---
+
+[INFO] 15:32:39:312 kernel/(12382:12391): SELECT COSAS 21
+[INFO] 15:32:39:312 kernel/(12382:12391): ---Se realizara el SELECT---
+
+[INFO] 15:32:39:313 kernel/(12382:12391): CREATE COSAS SHC 8 40000
+[INFO] 15:32:39:313 kernel/(12382:12391): ---Se realizara el CREATE---
+
+[ERROR] 15:32:39:314 kernel/(12382:12391): -Fallo el CREATE.-
+
+[ERROR] 15:32:39:314 kernel/(12382:12391): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 15:32:55:933 kernel/(12382:12391): SELECT COSAS 55
+[INFO] 15:32:55:933 kernel/(12382:12391): ---Se realizara el SELECT---
+
+[INFO] 15:45:00:427 kernel/(12870:12870): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 15:45:30:438 kernel/(12870:12875): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 15:45:38:773 kernel/(12870:12879): add memory 1 to ec
+[INFO] 15:45:38:773 kernel/(12870:12879): 
+---Se realizara la request ADD---
+
+[INFO] 15:45:38:773 kernel/(12870:12879): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:45:41:741 kernel/(12870:12879): add memory 2 to ec
+[INFO] 15:45:41:741 kernel/(12870:12879): 
+---Se realizara la request ADD---
+
+[INFO] 15:45:41:742 kernel/(12870:12879): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:45:44:557 kernel/(12870:12879): add memory 1 to shc
+[INFO] 15:45:44:557 kernel/(12870:12879): 
+---Se realizara la request ADD---
+
+[INFO] 15:45:44:557 kernel/(12870:12879): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:45:44:558 kernel/(12870:12879): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:45:47:540 kernel/(12870:12879): add memory 2 to shc
+[INFO] 15:45:47:540 kernel/(12870:12879): 
+---Se realizara la request ADD---
+
+[INFO] 15:45:47:541 kernel/(12870:12879): 
+---Se realizara la request JOURNAL---
+
+[INFO] 15:45:47:541 kernel/(12870:12879): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 15:45:54:580 kernel/(12870:12879): run cosas_falla.lql
+[INFO] 15:45:54:580 kernel/(12870:12879): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 15:45:54:580 kernel/(12870:12879): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 15:45:55:582 kernel/(12870:12879): CREATE COSAS EC 2 40000
+[INFO] 15:45:55:582 kernel/(12870:12879): ---Se realizara el CREATE---
+
+[ERROR] 15:45:55:583 kernel/(12870:12879): -Fallo el CREATE.-
+
+[ERROR] 15:45:55:583 kernel/(12870:12879): FALLO AL EJECUTAR LA REQUEST CREATE COSAS EC 2 40000.
+
+[INFO] 15:45:59:813 kernel/(12870:12879): DROP COSAS
+[INFO] 15:45:59:813 kernel/(12870:12879): 
+--Se realizara la request DROP de la tabla COSAS---
+
+[INFO] 15:46:07:620 kernel/(12870:12879): run cosas_falla.lql
+[INFO] 15:46:07:620 kernel/(12870:12879): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 15:46:07:620 kernel/(12870:12879): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 15:46:08:621 kernel/(12870:12879): CREATE COSAS EC 2 40000
+[INFO] 15:46:08:621 kernel/(12870:12879): ---Se realizara el CREATE---
+
+[INFO] 15:46:08:623 kernel/(12870:12879): INSERT COSAS 1 "Pizarron"
+[INFO] 15:46:08:623 kernel/(12870:12879): ---Se realizara el INSERT---
+
+[INFO] 15:46:08:624 kernel/(12870:12879): INSERT COSAS 55 "Marcador"
+[INFO] 15:46:08:624 kernel/(12870:12879): ---Se realizara el INSERT---
+
+[INFO] 15:46:09:626 kernel/(12870:12879): INSERT COSAS 239 "Auto"
+[INFO] 15:46:09:626 kernel/(12870:12879): ---Se realizara el INSERT---
+
+[INFO] 15:46:09:626 kernel/(12870:12879): INSERT COSAS 21 "Mesa"
+[INFO] 15:46:09:627 kernel/(12870:12879): ---Se realizara el INSERT---
+
+[INFO] 15:46:09:627 kernel/(12870:12879): SELECT COSAS 55
+[INFO] 15:46:09:627 kernel/(12870:12879): ---Se realizara el SELECT---
+
+[INFO] 15:46:10:631 kernel/(12870:12879): SELECT COSAS 21
+[INFO] 15:46:10:631 kernel/(12870:12879): ---Se realizara el SELECT---
+
+[INFO] 15:46:10:631 kernel/(12870:12879): CREATE COSAS SHC 8 40000
+[INFO] 15:46:10:631 kernel/(12870:12879): ---Se realizara el CREATE---
+
+[ERROR] 15:46:10:632 kernel/(12870:12879): -Fallo el CREATE.-
+
+[ERROR] 15:46:10:632 kernel/(12870:12879): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 15:46:26:612 kernel/(12870:12879): SELECT COSAS 55
+[INFO] 15:46:26:612 kernel/(12870:12879): ---Se realizara el SELECT---
+
+[INFO] 15:46:49:83 kernel/(12870:12879): SELECT COSAS 55
+[INFO] 15:46:49:83 kernel/(12870:12879): ---Se realizara el SELECT---
+
+[INFO] 15:48:13:318 kernel/(12870:12879): DROP COLORS
+[INFO] 15:48:13:318 kernel/(12870:12879): 
+--Se realizara la request DROP de la tabla COLORS---
+
+[ERROR] 15:48:13:318 kernel/(12870:12879): FALLO AL EJECUTAR LA REQUEST DROP COLORS.
+
+[INFO] 15:49:52:649 kernel/(12870:12879): SELECT COSAS 239
+[INFO] 15:49:52:649 kernel/(12870:12879): ---Se realizara el SELECT---
+
+[INFO] 16:12:34:50 kernel/(13598:13598): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:12:39:524 kernel/(13598:13607): DROP COSAS
+[INFO] 16:12:39:524 kernel/(13598:13607): 
+--Se realizara la request DROP de la tabla COSAS---
+
+[ERROR] 16:12:39:525 kernel/(13598:13607): FALLO AL EJECUTAR LA REQUEST DROP COSAS.
+
+[INFO] 16:12:56:420 kernel/(13598:13607): add memory 1 to ec
+[INFO] 16:12:56:420 kernel/(13598:13607): 
+---Se realizara la request ADD---
+
+[INFO] 16:12:56:421 kernel/(13598:13607): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:13:04:57 kernel/(13598:13603): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 16:13:09:956 kernel/(13598:13607): add memory 2 to ec
+[INFO] 16:13:09:956 kernel/(13598:13607): 
+---Se realizara la request ADD---
+
+[INFO] 16:13:09:956 kernel/(13598:13607): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:13:13:228 kernel/(13598:13607): add memory 1 to shc
+[INFO] 16:13:13:228 kernel/(13598:13607): 
+---Se realizara la request ADD---
+
+[INFO] 16:13:13:229 kernel/(13598:13607): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:13:13:229 kernel/(13598:13607): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:13:16:694 kernel/(13598:13607): add memory 2 to shc
+[INFO] 16:13:16:695 kernel/(13598:13607): 
+---Se realizara la request ADD---
+
+[INFO] 16:13:16:695 kernel/(13598:13607): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:13:16:696 kernel/(13598:13607): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:13:24:309 kernel/(13598:13607): DROP COSAS
+[INFO] 16:13:24:309 kernel/(13598:13607): 
+--Se realizara la request DROP de la tabla COSAS---
+
+[INFO] 16:13:38:723 kernel/(13598:13607): run cosas_falla.lql
+[INFO] 16:13:38:723 kernel/(13598:13607): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 16:13:38:723 kernel/(13598:13607): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 16:13:39:724 kernel/(13598:13607): CREATE COSAS EC 2 40000
+[INFO] 16:13:39:724 kernel/(13598:13607): ---Se realizara el CREATE---
+
+[INFO] 16:13:39:726 kernel/(13598:13607): INSERT COSAS 1 "Pizarron"
+[INFO] 16:13:39:727 kernel/(13598:13607): ---Se realizara el INSERT---
+
+[INFO] 16:13:39:728 kernel/(13598:13607): INSERT COSAS 55 "Marcador"
+[INFO] 16:13:39:728 kernel/(13598:13607): ---Se realizara el INSERT---
+
+[INFO] 16:13:40:733 kernel/(13598:13607): INSERT COSAS 239 "Auto"
+[INFO] 16:13:40:733 kernel/(13598:13607): ---Se realizara el INSERT---
+
+[INFO] 16:13:40:734 kernel/(13598:13607): INSERT COSAS 21 "Mesa"
+[INFO] 16:13:40:735 kernel/(13598:13607): ---Se realizara el INSERT---
+
+[INFO] 16:13:40:736 kernel/(13598:13607): SELECT COSAS 55
+[INFO] 16:13:40:736 kernel/(13598:13607): ---Se realizara el SELECT---
+
+[INFO] 16:13:41:739 kernel/(13598:13607): SELECT COSAS 21
+[INFO] 16:13:41:739 kernel/(13598:13607): ---Se realizara el SELECT---
+
+[INFO] 16:13:41:739 kernel/(13598:13607): CREATE COSAS SHC 8 40000
+[INFO] 16:13:41:739 kernel/(13598:13607): ---Se realizara el CREATE---
+
+[ERROR] 16:13:41:740 kernel/(13598:13607): -Fallo el CREATE.-
+
+[ERROR] 16:13:41:740 kernel/(13598:13607): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 16:14:17:18 kernel/(13598:13607): SELECT COSAS 239
+[INFO] 16:14:17:18 kernel/(13598:13607): ---Se realizara el SELECT---
+
+[INFO] 16:15:54:552 kernel/(13598:13607): SELECT COSAS 239
+[INFO] 16:15:54:552 kernel/(13598:13607): ---Se realizara el SELECT---
+
+[INFO] 16:24:31:806 kernel/(13876:13876): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:24:40:260 kernel/(13876:13885): add memory 1 to ec
+[INFO] 16:24:40:260 kernel/(13876:13885): 
+---Se realizara la request ADD---
+
+[INFO] 16:24:40:260 kernel/(13876:13885): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:24:44:429 kernel/(13876:13885): add memory 2 to ec
+[INFO] 16:24:44:429 kernel/(13876:13885): 
+---Se realizara la request ADD---
+
+[INFO] 16:24:59:966 kernel/(13895:13895): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:25:16:291 kernel/(13895:13906): add memory 1 to ec
+[INFO] 16:25:16:291 kernel/(13895:13906): 
+---Se realizara la request ADD---
+
+[INFO] 16:25:16:292 kernel/(13895:13906): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:25:25:587 kernel/(13895:13906): add memory 1 to shc
+[INFO] 16:25:25:587 kernel/(13895:13906): 
+---Se realizara la request ADD---
+
+[INFO] 16:25:25:587 kernel/(13895:13906): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:25:25:588 kernel/(13895:13906): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:25:29:983 kernel/(13895:13902): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 16:25:39:539 kernel/(13895:13906): add memory 2 to ec
+[INFO] 16:25:39:539 kernel/(13895:13906): 
+---Se realizara la request ADD---
+
+[INFO] 16:25:39:540 kernel/(13895:13906): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:25:43:923 kernel/(13895:13906): add memory 2 to shc
+[INFO] 16:25:43:923 kernel/(13895:13906): 
+---Se realizara la request ADD---
+
+[INFO] 16:25:43:923 kernel/(13895:13906): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:25:43:924 kernel/(13895:13906): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:25:51:706 kernel/(13895:13906): SELECT COSAS 239
+[INFO] 16:25:51:706 kernel/(13895:13906): ---Se realizara el SELECT---
+
+[INFO] 16:26:41:257 kernel/(14007:14007): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:26:48:403 kernel/(14007:14016): add memory 1 to ec
+[INFO] 16:26:48:403 kernel/(14007:14016): 
+---Se realizara la request ADD---
+
+[INFO] 16:26:48:403 kernel/(14007:14016): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:26:51:762 kernel/(14007:14016): DROP COSAS
+[INFO] 16:26:51:762 kernel/(14007:14016): 
+--Se realizara la request DROP de la tabla COSAS---
+
+[ERROR] 16:26:51:762 kernel/(14007:14016): FALLO AL EJECUTAR LA REQUEST DROP COSAS.
+
+[INFO] 16:27:00:396 kernel/(14007:14016): DROP COSAS
+[INFO] 16:27:00:396 kernel/(14007:14016): 
+--Se realizara la request DROP de la tabla COSAS---
+
+[INFO] 16:27:04:265 kernel/(14007:14016): add memory 1 to shc
+[INFO] 16:27:04:265 kernel/(14007:14016): 
+---Se realizara la request ADD---
+
+[INFO] 16:27:04:265 kernel/(14007:14016): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:27:04:265 kernel/(14007:14016): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:27:11:263 kernel/(14007:14012): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 16:27:17:208 kernel/(14007:14016): add memory 2 to ec
+[INFO] 16:27:17:208 kernel/(14007:14016): 
+---Se realizara la request ADD---
+
+[INFO] 16:27:17:209 kernel/(14007:14016): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:27:20:824 kernel/(14007:14016): add memory 2 to shc
+[INFO] 16:27:20:824 kernel/(14007:14016): 
+---Se realizara la request ADD---
+
+[INFO] 16:27:20:825 kernel/(14007:14016): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:27:20:825 kernel/(14007:14016): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:27:27:283 kernel/(14007:14016): run cosas_falla.lql
+[INFO] 16:27:27:283 kernel/(14007:14016): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 16:27:27:283 kernel/(14007:14016): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 16:27:28:284 kernel/(14007:14016): CREATE COSAS EC 2 40000
+[INFO] 16:27:28:284 kernel/(14007:14016): ---Se realizara el CREATE---
+
+[INFO] 16:27:28:286 kernel/(14007:14016): INSERT COSAS 1 "Pizarron"
+[INFO] 16:27:28:286 kernel/(14007:14016): ---Se realizara el INSERT---
+
+[INFO] 16:27:28:287 kernel/(14007:14016): INSERT COSAS 55 "Marcador"
+[INFO] 16:27:28:287 kernel/(14007:14016): ---Se realizara el INSERT---
+
+[INFO] 16:27:29:290 kernel/(14007:14016): INSERT COSAS 239 "Auto"
+[INFO] 16:27:29:290 kernel/(14007:14016): ---Se realizara el INSERT---
+
+[INFO] 16:27:29:293 kernel/(14007:14016): INSERT COSAS 21 "Mesa"
+[INFO] 16:27:29:293 kernel/(14007:14016): ---Se realizara el INSERT---
+
+[INFO] 16:27:29:294 kernel/(14007:14016): SELECT COSAS 55
+[INFO] 16:27:29:294 kernel/(14007:14016): ---Se realizara el SELECT---
+
+[INFO] 16:27:30:297 kernel/(14007:14016): SELECT COSAS 21
+[INFO] 16:27:30:297 kernel/(14007:14016): ---Se realizara el SELECT---
+
+[INFO] 16:27:30:298 kernel/(14007:14016): CREATE COSAS SHC 8 40000
+[INFO] 16:27:30:298 kernel/(14007:14016): ---Se realizara el CREATE---
+
+[ERROR] 16:27:30:299 kernel/(14007:14016): -Fallo el CREATE.-
+
+[ERROR] 16:27:30:299 kernel/(14007:14016): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 16:29:17:270 kernel/(14007:14016): SELECT COSAS 239
+[INFO] 16:29:17:270 kernel/(14007:14016): ---Se realizara el SELECT---
+
+[INFO] 16:33:10:566 kernel/(14276:14276): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:33:19:2 kernel/(14276:14285): add memory 1 to ec
+[INFO] 16:33:19:2 kernel/(14276:14285): 
+---Se realizara la request ADD---
+
+[INFO] 16:33:19:2 kernel/(14276:14285): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:33:25:682 kernel/(14276:14285): add memory 1 to shc
+[INFO] 16:33:25:682 kernel/(14276:14285): 
+---Se realizara la request ADD---
+
+[INFO] 16:33:25:683 kernel/(14276:14285): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:33:25:684 kernel/(14276:14285): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:33:40:569 kernel/(14276:14281): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 16:33:46:265 kernel/(14276:14285): add memory 2 to ec
+[INFO] 16:33:46:265 kernel/(14276:14285): 
+---Se realizara la request ADD---
+
+[INFO] 16:33:46:266 kernel/(14276:14285): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:33:49:266 kernel/(14276:14285): add memory 2 to shc
+[INFO] 16:33:49:266 kernel/(14276:14285): 
+---Se realizara la request ADD---
+
+[INFO] 16:33:49:267 kernel/(14276:14285): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:33:49:267 kernel/(14276:14285): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:33:54:977 kernel/(14276:14285): run cosas_falla.lql
+[INFO] 16:33:54:977 kernel/(14276:14285): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 16:33:54:977 kernel/(14276:14285): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 16:33:55:978 kernel/(14276:14285): CREATE COSAS EC 2 40000
+[INFO] 16:33:55:978 kernel/(14276:14285): ---Se realizara el CREATE---
+
+[INFO] 16:33:55:980 kernel/(14276:14285): INSERT COSAS 1 "Pizarron"
+[INFO] 16:33:55:981 kernel/(14276:14285): ---Se realizara el INSERT---
+
+[INFO] 16:33:55:982 kernel/(14276:14285): INSERT COSAS 55 "Marcador"
+[INFO] 16:33:55:982 kernel/(14276:14285): ---Se realizara el INSERT---
+
+[INFO] 16:33:56:985 kernel/(14276:14285): INSERT COSAS 239 "Auto"
+[INFO] 16:33:56:985 kernel/(14276:14285): ---Se realizara el INSERT---
+
+[INFO] 16:33:56:985 kernel/(14276:14285): INSERT COSAS 21 "Mesa"
+[INFO] 16:33:56:985 kernel/(14276:14285): ---Se realizara el INSERT---
+
+[INFO] 16:33:56:986 kernel/(14276:14285): SELECT COSAS 55
+[INFO] 16:33:56:986 kernel/(14276:14285): ---Se realizara el SELECT---
+
+[INFO] 16:33:57:989 kernel/(14276:14285): SELECT COSAS 21
+[INFO] 16:33:57:989 kernel/(14276:14285): ---Se realizara el SELECT---
+
+[INFO] 16:33:57:989 kernel/(14276:14285): CREATE COSAS SHC 8 40000
+[INFO] 16:33:57:989 kernel/(14276:14285): ---Se realizara el CREATE---
+
+[ERROR] 16:33:57:990 kernel/(14276:14285): -Fallo el CREATE.-
+
+[ERROR] 16:33:57:990 kernel/(14276:14285): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 16:41:18:165 kernel/(14478:14478): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:41:33:826 kernel/(14478:14487): add memory 1 to ec
+[INFO] 16:41:33:826 kernel/(14478:14487): 
+---Se realizara la request ADD---
+
+[INFO] 16:41:33:827 kernel/(14478:14487): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:41:38:922 kernel/(14478:14487): add memory 1 to shc
+[INFO] 16:41:38:923 kernel/(14478:14487): 
+---Se realizara la request ADD---
+
+[INFO] 16:41:38:923 kernel/(14478:14487): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:41:38:925 kernel/(14478:14487): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:41:48:179 kernel/(14478:14483): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 16:41:53:962 kernel/(14478:14487): add memory 2 to ec
+[INFO] 16:41:53:962 kernel/(14478:14487): 
+---Se realizara la request ADD---
+
+[INFO] 16:41:53:963 kernel/(14478:14487): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:41:57:634 kernel/(14478:14487): add memory 2 to shc
+[INFO] 16:41:57:634 kernel/(14478:14487): 
+---Se realizara la request ADD---
+
+[INFO] 16:41:57:635 kernel/(14478:14487): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:41:57:635 kernel/(14478:14487): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:42:05:4 kernel/(14478:14487): run cosas_fall.lql
+[INFO] 16:42:05:4 kernel/(14478:14487): --Se realizara el RUN del archivo cosas_fall.lql--
+
+[INFO] 16:42:05:4 kernel/(14478:14487): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[ERROR] 16:42:05:4 kernel/(14478:14487): NO SE PUDO ABRIR EL ARCHIVO cosas_fall.lql.
+
+[INFO] 16:42:15:411 kernel/(14478:14487): run cosas_falla.lql
+[INFO] 16:42:15:411 kernel/(14478:14487): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 16:42:15:411 kernel/(14478:14487): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 16:42:16:412 kernel/(14478:14487): CREATE COSAS EC 2 40000
+[INFO] 16:42:16:412 kernel/(14478:14487): ---Se realizara el CREATE---
+
+[INFO] 16:42:16:419 kernel/(14478:14487): INSERT COSAS 1 "Pizarron"
+[INFO] 16:42:16:419 kernel/(14478:14487): ---Se realizara el INSERT---
+
+[INFO] 16:42:16:421 kernel/(14478:14487): INSERT COSAS 55 "Marcador"
+[INFO] 16:42:16:421 kernel/(14478:14487): ---Se realizara el INSERT---
+
+[INFO] 16:42:17:423 kernel/(14478:14487): INSERT COSAS 239 "Auto"
+[INFO] 16:42:17:423 kernel/(14478:14487): ---Se realizara el INSERT---
+
+[INFO] 16:42:17:423 kernel/(14478:14487): INSERT COSAS 21 "Mesa"
+[INFO] 16:42:17:423 kernel/(14478:14487): ---Se realizara el INSERT---
+
+[INFO] 16:42:17:424 kernel/(14478:14487): SELECT COSAS 55
+[INFO] 16:42:17:424 kernel/(14478:14487): ---Se realizara el SELECT---
+
+[INFO] 16:42:18:433 kernel/(14478:14487): SELECT COSAS 21
+[INFO] 16:42:18:433 kernel/(14478:14487): ---Se realizara el SELECT---
+
+[INFO] 16:42:18:436 kernel/(14478:14487): CREATE COSAS SHC 8 40000
+[INFO] 16:42:18:436 kernel/(14478:14487): ---Se realizara el CREATE---
+
+[ERROR] 16:42:18:444 kernel/(14478:14487): -Fallo el CREATE.-
+
+[ERROR] 16:42:18:445 kernel/(14478:14487): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 16:42:35:282 kernel/(14478:14487): SELECT COSAS 55
+[INFO] 16:42:35:282 kernel/(14478:14487): ---Se realizara el SELECT---
+
+[INFO] 16:42:41:306 kernel/(14478:14487): SELECT COSAS 55
+[INFO] 16:42:41:306 kernel/(14478:14487): ---Se realizara el SELECT---
+
+[INFO] 16:54:09:808 kernel/(14862:14862): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 16:54:31:260 kernel/(14862:14871): add memory 1 to ec
+[INFO] 16:54:31:261 kernel/(14862:14871): 
+---Se realizara la request ADD---
+
+[INFO] 16:54:31:261 kernel/(14862:14871): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:54:35:860 kernel/(14862:14871): add memory 1 to shc
+[INFO] 16:54:35:860 kernel/(14862:14871): 
+---Se realizara la request ADD---
+
+[INFO] 16:54:35:861 kernel/(14862:14871): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:54:35:861 kernel/(14862:14871): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:54:39:816 kernel/(14862:14867): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 16:54:44:527 kernel/(14862:14871): add memory 2 to shc
+[INFO] 16:54:44:527 kernel/(14862:14871): 
+---Se realizara la request ADD---
+
+[INFO] 16:54:44:527 kernel/(14862:14871): 
+---Se realizara la request JOURNAL---
+
+[INFO] 16:54:44:527 kernel/(14862:14871): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:54:49:140 kernel/(14862:14871): add memory 2 to ec
+[INFO] 16:54:49:140 kernel/(14862:14871): 
+---Se realizara la request ADD---
+
+[INFO] 16:54:49:140 kernel/(14862:14871): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 16:54:58:371 kernel/(14862:14871): run cosas_falla.lql
+[INFO] 16:54:58:371 kernel/(14862:14871): --Se realizara el RUN del archivo cosas_falla.lql--
+
+[INFO] 16:54:58:371 kernel/(14862:14871): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 16:54:59:373 kernel/(14862:14871): CREATE COSAS EC 2 40000
+[INFO] 16:54:59:373 kernel/(14862:14871): ---Se realizara el CREATE---
+
+[INFO] 16:54:59:376 kernel/(14862:14871): INSERT COSAS 1 "Pizarron"
+[INFO] 16:54:59:377 kernel/(14862:14871): ---Se realizara el INSERT---
+
+[INFO] 16:54:59:378 kernel/(14862:14871): INSERT COSAS 55 "Marcador"
+[INFO] 16:54:59:380 kernel/(14862:14871): ---Se realizara el INSERT---
+
+[INFO] 16:55:00:383 kernel/(14862:14871): INSERT COSAS 239 "Auto"
+[INFO] 16:55:00:383 kernel/(14862:14871): ---Se realizara el INSERT---
+
+[INFO] 16:55:00:384 kernel/(14862:14871): INSERT COSAS 21 "Mesa"
+[INFO] 16:55:00:384 kernel/(14862:14871): ---Se realizara el INSERT---
+
+[INFO] 16:55:00:384 kernel/(14862:14871): SELECT COSAS 55
+[INFO] 16:55:00:385 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:55:01:387 kernel/(14862:14871): SELECT COSAS 21
+[INFO] 16:55:01:387 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:55:01:388 kernel/(14862:14871): CREATE COSAS SHC 8 40000
+[INFO] 16:55:01:388 kernel/(14862:14871): ---Se realizara el CREATE---
+
+[ERROR] 16:55:01:389 kernel/(14862:14871): -Fallo el CREATE.-
+
+[ERROR] 16:55:01:389 kernel/(14862:14871): FALLO AL EJECUTAR LA REQUEST CREATE COSAS SHC 8 40000.
+
+[INFO] 16:56:42:417 kernel/(14862:14871): SELECT COSAS 239
+[INFO] 16:56:42:417 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:56:57:296 kernel/(14862:14871): SELECT COSAS 21
+[INFO] 16:56:57:296 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:58:06:815 kernel/(14862:14871): SELECT COSAS 55
+[INFO] 16:58:06:815 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:58:32:558 kernel/(14862:14871): SELECT COSAS 55
+[INFO] 16:58:32:558 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:58:47:286 kernel/(14862:14871): SELECT COSAS 239
+[INFO] 16:58:47:286 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:58:52:997 kernel/(14862:14871): SELECT COSAS 21
+[INFO] 16:58:52:997 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:58:59:911 kernel/(14862:14871): SELECT COSAS 1
+[INFO] 16:58:59:911 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 16:59:04:605 kernel/(14862:14871): SELECT COSAS 55
+[INFO] 16:59:04:605 kernel/(14862:14871): ---Se realizara el SELECT---
+
+[INFO] 17:18:39:357 kernel/(15278:15278): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 17:18:55:67 kernel/(15278:15287): add memory 1 to ec
+[INFO] 17:18:55:67 kernel/(15278:15287): 
+---Se realizara la request ADD---
+
+[INFO] 17:18:55:67 kernel/(15278:15287): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:18:59:531 kernel/(15278:15287): add memory 1 to shc
+[INFO] 17:18:59:531 kernel/(15278:15287): 
+---Se realizara la request ADD---
+
+[INFO] 17:18:59:531 kernel/(15278:15287): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:18:59:531 kernel/(15278:15287): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:19:09:366 kernel/(15278:15283): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 17:19:19:918 kernel/(15278:15287): add memory 2 to ec
+[INFO] 17:19:19:918 kernel/(15278:15287): 
+---Se realizara la request ADD---
+
+[INFO] 17:19:19:918 kernel/(15278:15287): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:19:24:394 kernel/(15278:15287): add memory 2 to shc
+[INFO] 17:19:24:395 kernel/(15278:15287): 
+---Se realizara la request ADD---
+
+[INFO] 17:19:24:395 kernel/(15278:15287): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:19:24:396 kernel/(15278:15287): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:19:45:746 kernel/(15278:15287): SELECT COSAS 239
+[INFO] 17:19:45:746 kernel/(15278:15287): ---Se realizara el SELECT---
+
+[INFO] 17:19:53:138 kernel/(15278:15287): SELECT COSAS 21
+[INFO] 17:19:53:138 kernel/(15278:15287): ---Se realizara el SELECT---
+
+[INFO] 17:20:13:681 kernel/(15278:15287): SSELECT COSAS 55
+[ERROR] 17:20:13:681 kernel/(15278:15287): -LA REQUEST NO ES VALIDA-
+
+[ERROR] 17:20:13:681 kernel/(15278:15287): FALLO AL EJECUTAR LA REQUEST SSELECT COSAS 55.
+
+[INFO] 17:20:20:305 kernel/(15278:15287): SELECT COSAS 55
+[INFO] 17:20:20:305 kernel/(15278:15287): ---Se realizara el SELECT---
+
+[INFO] 17:20:36:705 kernel/(15278:15287): SELECT COSAS 21
+[INFO] 17:20:36:705 kernel/(15278:15287): ---Se realizara el SELECT---
+
+[INFO] 17:36:31:869 kernel/(15770:15770): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 17:36:40:153 kernel/(15770:15779): add memory 1 to ec
+[INFO] 17:36:40:153 kernel/(15770:15779): 
+---Se realizara la request ADD---
+
+[INFO] 17:36:40:153 kernel/(15770:15779): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:36:45:400 kernel/(15770:15779): add memory 1 to shc
+[INFO] 17:36:45:400 kernel/(15770:15779): 
+---Se realizara la request ADD---
+
+[INFO] 17:36:45:400 kernel/(15770:15779): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:36:45:400 kernel/(15770:15779): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:37:01:874 kernel/(15770:15775): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 17:37:11:72 kernel/(15770:15779): add memory 2 to ec
+[INFO] 17:37:11:72 kernel/(15770:15779): 
+---Se realizara la request ADD---
+
+[INFO] 17:37:11:72 kernel/(15770:15779): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:37:14:339 kernel/(15770:15779): add memory 2 to shc
+[INFO] 17:37:14:339 kernel/(15770:15779): 
+---Se realizara la request ADD---
+
+[INFO] 17:37:14:339 kernel/(15770:15779): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:37:14:340 kernel/(15770:15779): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:37:34:888 kernel/(15770:15779): SELECT COSAS 21
+[INFO] 17:37:34:888 kernel/(15770:15779): ---Se realizara el SELECT---
+
+[INFO] 17:37:41:903 kernel/(15770:15779): SELECT COSAS 55
+[INFO] 17:37:41:904 kernel/(15770:15779): ---Se realizara el SELECT---
+
+[INFO] 17:47:36:84 kernel/(15991:15991): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 17:47:45:135 kernel/(15991:16002): add memory 1 to ec
+[INFO] 17:47:45:135 kernel/(15991:16002): 
+---Se realizara la request ADD---
+
+[INFO] 17:47:45:135 kernel/(15991:16002): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:47:49:263 kernel/(15991:16002): add memory 1 to shc
+[INFO] 17:47:49:263 kernel/(15991:16002): 
+---Se realizara la request ADD---
+
+[INFO] 17:47:49:263 kernel/(15991:16002): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:47:49:263 kernel/(15991:16002): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:48:06:89 kernel/(15991:15998): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 17:48:18:54 kernel/(15991:16002): add memory 2 to ec
+[INFO] 17:48:18:54 kernel/(15991:16002): 
+---Se realizara la request ADD---
+
+[INFO] 17:48:18:55 kernel/(15991:16002): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:48:21:927 kernel/(15991:16002): add memory 2 to shc
+[INFO] 17:48:21:927 kernel/(15991:16002): 
+---Se realizara la request ADD---
+
+[INFO] 17:48:21:927 kernel/(15991:16002): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:48:21:928 kernel/(15991:16002): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:48:32:110 kernel/(15991:16002): SELECT COSAS 55
+[INFO] 17:48:32:110 kernel/(15991:16002): ---Se realizara el SELECT---
+
+[INFO] 17:48:38:96 kernel/(15991:16002): SELECT COSAS 239
+[INFO] 17:48:38:96 kernel/(15991:16002): ---Se realizara el SELECT---
+
+[INFO] 17:48:44:14 kernel/(15991:16002): SELECT COSAS 21
+[INFO] 17:48:44:14 kernel/(15991:16002): ---Se realizara el SELECT---
+
+[INFO] 17:54:44:11 kernel/(16208:16208): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 17:54:49:705 kernel/(16208:16217): add memory 1 to ec
+[INFO] 17:54:49:705 kernel/(16208:16217): 
+---Se realizara la request ADD---
+
+[INFO] 17:54:49:706 kernel/(16208:16217): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:54:54:612 kernel/(16208:16217): add memory 1 to shc
+[INFO] 17:54:54:612 kernel/(16208:16217): 
+---Se realizara la request ADD---
+
+[INFO] 17:54:54:612 kernel/(16208:16217): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:54:54:612 kernel/(16208:16217): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:55:14:17 kernel/(16208:16213): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 17:55:20:380 kernel/(16208:16217): add memory 2 to ec
+[INFO] 17:55:20:380 kernel/(16208:16217): 
+---Se realizara la request ADD---
+
+[INFO] 17:55:20:381 kernel/(16208:16217): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:55:23:530 kernel/(16208:16217): add memory 2 to shc
+[INFO] 17:55:23:530 kernel/(16208:16217): 
+---Se realizara la request ADD---
+
+[INFO] 17:55:23:530 kernel/(16208:16217): 
+---Se realizara la request JOURNAL---
+
+[INFO] 17:55:23:531 kernel/(16208:16217): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:55:31:433 kernel/(16208:16217): SELECT COSAS 55
+[INFO] 17:55:31:433 kernel/(16208:16217): ---Se realizara el SELECT---
+
+[INFO] 17:55:36:257 kernel/(16208:16217): SELECT COSAS 1
+[INFO] 17:55:36:257 kernel/(16208:16217): ---Se realizara el SELECT---
+
+[INFO] 17:55:39:970 kernel/(16208:16217): SELECT COSAS 21
+[INFO] 17:55:39:970 kernel/(16208:16217): ---Se realizara el SELECT---
+
+[INFO] 17:55:53:224 kernel/(16208:16217): SELECT COSAS 21
+[INFO] 17:55:53:224 kernel/(16208:16217): ---Se realizara el SELECT---
+
+[INFO] 17:56:03:996 kernel/(16208:16217): SELECT COSAS 55
+[INFO] 17:56:03:996 kernel/(16208:16217): ---Se realizara el SELECT---
+
+[INFO] 17:56:15:304 kernel/(16208:16217): SELECT COSAS 1
+[INFO] 17:56:15:304 kernel/(16208:16217): ---Se realizara el SELECT---
+

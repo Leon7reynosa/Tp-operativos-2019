@@ -224,7 +224,7 @@ void realizar_dump(void){
 			dato_t* dato = (dato_t *)_dato;
 			printf("[DUMP] VOY A CARGAR AL TEMPORAL LA KEY: %i\n", dato->key);
 			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL TIMESTAMP: %i\n", dato->timestamp);
-			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL VALUE: %i\n", dato->value);
+			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL VALUE: %s\n", dato->value);
 
 			cargar_a_particion(path_temporal, dato);
 

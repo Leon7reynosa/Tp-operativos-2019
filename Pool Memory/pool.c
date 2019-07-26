@@ -9,15 +9,18 @@
 
 int main (int argc , char* argv[]){
 
+	printf("uno\n");
+
 	creacion_del_config();
 
+	printf("uno\n");
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
 	ip_escucha = obtener_ip_local();
-
+	printf("uno\n");
 	obtener_datos_config();
-
+	printf("uno\n");
 	inicializar_logger();
-
+	printf("uno\n");
 //TODO HANDSHAKE CON LISSANDRA (en archivo config por ahora)
 	realizar_handshake();
 
@@ -101,13 +104,11 @@ int main (int argc , char* argv[]){
 
 //TODO Esta ranciada de la desconexion y los errores
 
-					printf("codigo op : %d\n" , nueva_request->cod_op);
-
 					if(nueva_request->cod_op == DESCONEXION){
 
 						FD_CLR(i, &master);
 						close(i);
-						log_info(logger, "Se desconecto un cliente.\n");
+						log_info(logger, "[DESCONEXION] Se desconecto un cliente.\n\n");
 
 					}else{
 
@@ -116,7 +117,6 @@ int main (int argc , char* argv[]){
 						printf("\n>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 						trabajar_request(nueva_request, i);
-
 
 						printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>FIN REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 

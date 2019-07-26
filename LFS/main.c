@@ -7,8 +7,6 @@ int main(int argc , char* argv[]){
 
 	////////////////////////////INICIALIZACIONES////////////////////////
 
-
-
 	creacion_del_config_fileSystem();
 
 	obtener_datos_config();

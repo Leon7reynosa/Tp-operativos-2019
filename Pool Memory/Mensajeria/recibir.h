@@ -42,6 +42,7 @@ typedef enum{
 }cod_op;
 */
 
+estado_request recibir_estado_request(int conexion);
 request recibir_request(int conexion);
 void recibir_mensaje(int conexion);
 t_dato* recibir_dato_LFS(int conexion );

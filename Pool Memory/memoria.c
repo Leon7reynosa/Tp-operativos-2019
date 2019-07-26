@@ -331,6 +331,13 @@ void realizar_journal(void){
 
 		enviar_request(request_a_enviar, socket_lissandra);
 
+		if(recibir_estado_request(socket_lissandra) == ERROR){
+
+			printf("HUBO UN ERROR CON EL JOURNAL\n");
+
+		}
+
+
 	}
 
 

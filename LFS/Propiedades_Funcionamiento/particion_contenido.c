@@ -61,6 +61,7 @@ Particion leer_particion(char* path_particion){
 	Particion particion_contenido;
 	int size;
 
+	printf("[LECTURA] PARTICION: %s\n", path_particion);
 
 	FILE* particion = fopen(path_particion, "rb");
 
@@ -214,8 +215,9 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 				char* path_temporal = obtenerPathTabla(nombre_tabla);
 
-				string_append(&path_temporal, entrada_directorio->d_name);
 				string_append(&path_temporal, "/");
+				string_append(&path_temporal, entrada_directorio->d_name);
+//				string_append(&path_temporal, "/");
 
 				dato_t* dato_encontrado = buscar_dato_en_particion(path_temporal, key);
 
@@ -290,6 +292,11 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 			printf("[BUSQUEDA] Index dato a analizar: %i\n", index_dato);
 			//TODO LO ANALIZO NORMAL
 			index_dato++; //lion
+
+			if(es_dato_cortado(dato_a_analizar)){
+				return false;
+			}
+
 			return analizar_dato(key, dato_a_analizar);
 
 		}else{

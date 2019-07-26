@@ -102,3 +102,680 @@
 [INFO] 00:11:14:879 Pool_memory/(16261:16268): Inicia el Auto-Journal
 [INFO] 00:11:14:880 Pool_memory/(16261:16268): Termina el Auto-Journal
 
+[INFO] 14:53:18:205 Pool_memory/(10794:10800): Inicia el Auto-Journal
+[INFO] 14:53:18:205 Pool_memory/(10794:10800): Termina el Auto-Journal
+
+[INFO] 14:53:41:543 Pool_memory/(10827:10835): Inicia el Auto-Journal
+[INFO] 14:53:41:543 Pool_memory/(10827:10835): Termina el Auto-Journal
+
+[INFO] 14:54:18:206 Pool_memory/(10794:10800): Inicia el Auto-Journal
+[INFO] 14:54:18:206 Pool_memory/(10794:10800): Termina el Auto-Journal
+
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Inicia el Auto-Journal
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Cantidad de paginas a mandar: 2
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Se manda al LFS la tabla COSAS
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Con el timestamp 1564163660
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Con la key 55
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Con el value Marcador
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Se manda al LFS la tabla COSAS
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Con el timestamp 1564163661
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Con la key 21
+[INFO] 14:54:41:544 Pool_memory/(10827:10835): Con el value Mesa
+[INFO] 14:54:41:545 Pool_memory/(10827:10835): Termina el Auto-Journal
+
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Inicia el Auto-Journal
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Cantidad de paginas a mandar: 2
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Se manda al LFS la tabla COSAS
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Con el timestamp 1564163660
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Con la key 1
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Con el value Pizarron
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Se manda al LFS la tabla COSAS
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Con el timestamp 1564163661
+[INFO] 14:55:18:206 Pool_memory/(10794:10800): Con la key 239
+[INFO] 14:55:18:207 Pool_memory/(10794:10800): Con el value Auto
+[INFO] 14:55:18:207 Pool_memory/(10794:10800): Termina el Auto-Journal
+
+[INFO] 14:55:41:546 Pool_memory/(10827:10835): Inicia el Auto-Journal
+[INFO] 14:55:41:546 Pool_memory/(10827:10835): Termina el Auto-Journal
+
+[INFO] 14:56:18:208 Pool_memory/(10794:10800): Inicia el Auto-Journal
+[INFO] 14:56:18:208 Pool_memory/(10794:10800): Cantidad de paginas a mandar: 0
+[INFO] 14:56:18:208 Pool_memory/(10794:10800): Termina el Auto-Journal
+
+[INFO] 14:56:41:547 Pool_memory/(10827:10835): Inicia el Auto-Journal
+[INFO] 14:56:41:547 Pool_memory/(10827:10835): Termina el Auto-Journal
+
+[INFO] 15:01:45:381 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:01:45:381 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:02:00:664 Pool_memory/(11541:11547): Inicia el Auto-Journal
+[INFO] 15:02:00:665 Pool_memory/(11541:11547): Termina el Auto-Journal
+
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Cantidad de paginas a mandar: 2
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Se manda al LFS la tabla COSAS
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Con el timestamp 1564164153
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Con la key 1
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Con el value Pizarron
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Se manda al LFS la tabla COSAS
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Con el timestamp 1564164154
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Con la key 239
+[INFO] 15:02:45:382 Pool_memory/(11507:11513): Con el value Auto
+[INFO] 15:02:45:383 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Inicia el Auto-Journal
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Cantidad de paginas a mandar: 2
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Se manda al LFS la tabla COSAS
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Con el timestamp 1564164153
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Con la key 55
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Con el value Marcador
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Se manda al LFS la tabla COSAS
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Con el timestamp 1564164154
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Con la key 21
+[INFO] 15:03:00:665 Pool_memory/(11541:11547): Con el value Mesa
+[INFO] 15:03:45:383 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:03:45:383 Pool_memory/(11507:11513): Cantidad de paginas a mandar: 0
+[INFO] 15:03:45:383 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:04:45:384 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:04:45:384 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:05:45:385 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:05:45:386 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:06:45:386 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:06:45:386 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:07:45:387 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:07:45:387 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:08:45:388 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:08:45:388 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:09:45:388 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:09:45:388 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:10:45:390 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:10:45:390 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:11:45:391 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:11:45:391 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:12:45:392 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:12:45:392 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:13:45:392 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:13:45:392 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:14:45:393 Pool_memory/(11507:11513): Inicia el Auto-Journal
+[INFO] 15:14:45:393 Pool_memory/(11507:11513): Termina el Auto-Journal
+
+[INFO] 15:17:36:84 Pool_memory/(11954:11960): Inicia el Auto-Journal
+[INFO] 15:17:36:85 Pool_memory/(11954:11960): Termina el Auto-Journal
+
+[INFO] 15:17:57:62 Pool_memory/(11995:12001): Inicia el Auto-Journal
+[INFO] 15:17:57:62 Pool_memory/(11995:12001): Cantidad de paginas a mandar: 1
+[INFO] 15:17:57:62 Pool_memory/(11995:12001): Se manda al LFS la tabla COSAS
+[INFO] 15:17:57:62 Pool_memory/(11995:12001): Con el timestamp 1564165076
+[INFO] 15:17:57:62 Pool_memory/(11995:12001): Con la key 55
+[INFO] 15:17:57:62 Pool_memory/(11995:12001): Con el value Marcador
+[INFO] 15:17:57:62 Pool_memory/(11995:12001): Termina el Auto-Journal
+
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Inicia el Auto-Journal
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Cantidad de paginas a mandar: 2
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Se manda al LFS la tabla COSAS
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Con el timestamp 1564165076
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Con la key 1
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Con el value Pizarron
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Se manda al LFS la tabla COSAS
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Con el timestamp 1564165077
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Con la key 239
+[INFO] 15:18:36:85 Pool_memory/(11954:11960): Con el value Auto
+[INFO] 15:31:54:984 Pool_memory/(12339:12345): Inicia el Auto-Journal
+[INFO] 15:31:54:984 Pool_memory/(12339:12345): Termina el Auto-Journal
+
+[INFO] 15:32:00:381 Pool_memory/(12368:12375): Inicia el Auto-Journal
+[INFO] 15:32:00:381 Pool_memory/(12368:12375): Termina el Auto-Journal
+
+[INFO] 15:32:54:984 Pool_memory/(12339:12345): Inicia el Auto-Journal
+[INFO] 15:32:54:984 Pool_memory/(12339:12345): Cantidad de paginas a mandar: 2
+[INFO] 15:32:54:984 Pool_memory/(12339:12345): Se manda al LFS la tabla COSAS
+[INFO] 15:32:54:984 Pool_memory/(12339:12345): Con el timestamp 1564165957
+[INFO] 15:32:54:984 Pool_memory/(12339:12345): Con la key 1
+[INFO] 15:32:54:985 Pool_memory/(12339:12345): Con el value Pizarron
+[INFO] 15:32:54:985 Pool_memory/(12339:12345): Se manda al LFS la tabla COSAS
+[INFO] 15:32:54:985 Pool_memory/(12339:12345): Con el timestamp 1564165958
+[INFO] 15:32:54:985 Pool_memory/(12339:12345): Con la key 239
+[INFO] 15:32:54:985 Pool_memory/(12339:12345): Con el value Auto
+[INFO] 15:32:54:985 Pool_memory/(12339:12345): Termina el Auto-Journal
+
+[INFO] 15:33:00:381 Pool_memory/(12368:12375): Inicia el Auto-Journal
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Cantidad de paginas a mandar: 2
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Se manda al LFS la tabla COSAS
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Con el timestamp 1564165957
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Con la key 55
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Con el value Marcador
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Se manda al LFS la tabla COSAS
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Con el timestamp 1564165958
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Con la key 21
+[INFO] 15:33:00:382 Pool_memory/(12368:12375): Con el value Mesa
+[INFO] 15:33:00:383 Pool_memory/(12368:12375): Termina el Auto-Journal
+
+[INFO] 15:34:00:384 Pool_memory/(12368:12375): Inicia el Auto-Journal
+[INFO] 15:34:00:384 Pool_memory/(12368:12375): Termina el Auto-Journal
+
+[INFO] 15:35:00:384 Pool_memory/(12368:12375): Inicia el Auto-Journal
+[INFO] 15:35:00:384 Pool_memory/(12368:12375): Termina el Auto-Journal
+
+[INFO] 15:45:52:499 Pool_memory/(12797:12805): Inicia el Auto-Journal
+[INFO] 15:45:52:500 Pool_memory/(12797:12805): Termina el Auto-Journal
+
+[INFO] 15:45:55:403 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:45:55:403 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Inicia el Auto-Journal
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Cantidad de paginas a mandar: 2
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Se manda al LFS la tabla COSAS
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Con el timestamp 1564166768
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Con la key 1
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Con el value Pizarron
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Se manda al LFS la tabla COSAS
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Con el timestamp 1564166769
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Con la key 239
+[INFO] 15:46:52:500 Pool_memory/(12797:12805): Con el value Auto
+[INFO] 15:46:52:501 Pool_memory/(12797:12805): Termina el Auto-Journal
+
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Cantidad de paginas a mandar: 2
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Se manda al LFS la tabla COSAS
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Con el timestamp 1564166768
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Con la key 55
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Con el value Marcador
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Se manda al LFS la tabla COSAS
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Con el timestamp 1564166769
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Con la key 21
+[INFO] 15:46:55:404 Pool_memory/(12831:12837): Con el value Mesa
+[INFO] 15:46:55:405 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 15:47:52:502 Pool_memory/(12797:12805): Inicia el Auto-Journal
+[INFO] 15:47:52:502 Pool_memory/(12797:12805): Termina el Auto-Journal
+
+[INFO] 15:47:55:406 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:47:55:407 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 15:48:52:502 Pool_memory/(12797:12805): Inicia el Auto-Journal
+[INFO] 15:48:52:502 Pool_memory/(12797:12805): Termina el Auto-Journal
+
+[INFO] 15:48:55:410 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:48:55:410 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 15:49:52:503 Pool_memory/(12797:12805): Inicia el Auto-Journal
+[INFO] 15:49:52:503 Pool_memory/(12797:12805): Termina el Auto-Journal
+
+[INFO] 15:49:55:410 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:49:55:410 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 15:50:52:503 Pool_memory/(12797:12805): Inicia el Auto-Journal
+[INFO] 15:50:52:503 Pool_memory/(12797:12805): Cantidad de paginas a mandar: 0
+[INFO] 15:50:52:503 Pool_memory/(12797:12805): Termina el Auto-Journal
+
+[INFO] 15:50:55:410 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:50:55:410 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 15:51:52:504 Pool_memory/(12797:12805): Inicia el Auto-Journal
+[INFO] 15:51:52:504 Pool_memory/(12797:12805): Termina el Auto-Journal
+
+[INFO] 15:51:55:411 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:51:55:411 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 15:52:55:411 Pool_memory/(12831:12837): Inicia el Auto-Journal
+[INFO] 15:52:55:411 Pool_memory/(12831:12837): Termina el Auto-Journal
+
+[INFO] 16:13:25:713 Pool_memory/(13553:13559): Inicia el Auto-Journal
+[INFO] 16:13:25:713 Pool_memory/(13553:13559): Termina el Auto-Journal
+
+[INFO] 16:13:30:819 Pool_memory/(13585:13591): Inicia el Auto-Journal
+[INFO] 16:13:30:819 Pool_memory/(13585:13591): Termina el Auto-Journal
+
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Inicia el Auto-Journal
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Cantidad de paginas a mandar: 2
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Se manda al LFS la tabla COSAS
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Con el timestamp 1564168419
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Con la key 55
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Con el value Marcador
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Se manda al LFS la tabla COSAS
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Con el timestamp 1564168420
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Con la key 21
+[INFO] 16:14:25:713 Pool_memory/(13553:13559): Con el value Mesa
+[INFO] 16:14:25:714 Pool_memory/(13553:13559): Termina el Auto-Journal
+
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Inicia el Auto-Journal
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Cantidad de paginas a mandar: 2
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Se manda al LFS la tabla COSAS
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Con el timestamp 1564168419
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Con la key 1
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Con el value Pizarron
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Se manda al LFS la tabla COSAS
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Con el timestamp 1564168420
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Con la key 239
+[INFO] 16:14:30:820 Pool_memory/(13585:13591): Con el value Auto
+[INFO] 16:14:30:821 Pool_memory/(13585:13591): Termina el Auto-Journal
+
+[INFO] 16:15:25:714 Pool_memory/(13553:13559): Inicia el Auto-Journal
+[INFO] 16:15:25:714 Pool_memory/(13553:13559): Termina el Auto-Journal
+
+[INFO] 16:15:30:822 Pool_memory/(13585:13591): Inicia el Auto-Journal
+[INFO] 16:15:30:822 Pool_memory/(13585:13591): Termina el Auto-Journal
+
+[INFO] 16:16:25:715 Pool_memory/(13553:13559): Inicia el Auto-Journal
+[INFO] 16:16:25:715 Pool_memory/(13553:13559): Cantidad de paginas a mandar: 0
+[INFO] 16:16:25:715 Pool_memory/(13553:13559): Termina el Auto-Journal
+
+[INFO] 16:16:30:823 Pool_memory/(13585:13591): Inicia el Auto-Journal
+[INFO] 16:16:30:823 Pool_memory/(13585:13591): Termina el Auto-Journal
+
+[INFO] 16:25:20:315 Pool_memory/(13833:13840): Inicia el Auto-Journal
+[INFO] 16:25:20:315 Pool_memory/(13833:13840): Termina el Auto-Journal
+
+[INFO] 16:25:28:269 Pool_memory/(13863:13869): Inicia el Auto-Journal
+[INFO] 16:25:28:269 Pool_memory/(13863:13869): Termina el Auto-Journal
+
+[INFO] 16:27:27:304 Pool_memory/(13965:13971): Inicia el Auto-Journal
+[INFO] 16:27:27:304 Pool_memory/(13965:13971): Termina el Auto-Journal
+
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Inicia el Auto-Journal
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Cantidad de paginas a mandar: 2
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Se manda al LFS la tabla COSAS
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Con el timestamp 1564169248
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Con la key 55
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Con el value Marcador
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Se manda al LFS la tabla COSAS
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Con el timestamp 1564169249
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Con la key 21
+[INFO] 16:27:36:234 Pool_memory/(13994:14000): Con el value Mesa
+[INFO] 16:27:36:235 Pool_memory/(13994:14000): Termina el Auto-Journal
+
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Inicia el Auto-Journal
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Cantidad de paginas a mandar: 2
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Se manda al LFS la tabla COSAS
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Con el timestamp 1564169248
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Con la key 1
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Con el value Pizarron
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Se manda al LFS la tabla COSAS
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Con el timestamp 1564169249
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Con la key 239
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Con el value Auto
+[INFO] 16:28:27:307 Pool_memory/(13965:13971): Termina el Auto-Journal
+
+[INFO] 16:28:36:236 Pool_memory/(13994:14000): Inicia el Auto-Journal
+[INFO] 16:28:36:236 Pool_memory/(13994:14000): Termina el Auto-Journal
+
+[INFO] 16:29:27:308 Pool_memory/(13965:13971): Inicia el Auto-Journal
+[INFO] 16:29:27:308 Pool_memory/(13965:13971): Termina el Auto-Journal
+
+[INFO] 16:29:36:238 Pool_memory/(13994:14000): Inicia el Auto-Journal
+[INFO] 16:29:36:239 Pool_memory/(13994:14000): Termina el Auto-Journal
+
+[INFO] 16:30:27:308 Pool_memory/(13965:13971): Inicia el Auto-Journal
+[INFO] 16:30:27:308 Pool_memory/(13965:13971): Termina el Auto-Journal
+
+[INFO] 16:30:36:241 Pool_memory/(13994:14000): Inicia el Auto-Journal
+[INFO] 16:30:36:241 Pool_memory/(13994:14000): Termina el Auto-Journal
+
+[INFO] 16:31:27:309 Pool_memory/(13965:13971): Inicia el Auto-Journal
+[INFO] 16:31:27:309 Pool_memory/(13965:13971): Termina el Auto-Journal
+
+[INFO] 16:31:36:242 Pool_memory/(13994:14000): Inicia el Auto-Journal
+[INFO] 16:31:36:242 Pool_memory/(13994:14000): Termina el Auto-Journal
+
+[INFO] 16:33:51:577 Pool_memory/(14214:14220): Inicia el Auto-Journal
+[INFO] 16:33:51:577 Pool_memory/(14214:14220): Termina el Auto-Journal
+
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Inicia el Auto-Journal
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Cantidad de paginas a mandar: 2
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Se manda al LFS la tabla COSAS
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Con el timestamp 1564169635
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Con la key 55
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Con el value Marcador
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Se manda al LFS la tabla COSAS
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Con el timestamp 1564169636
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Con la key 21
+[INFO] 16:34:04:307 Pool_memory/(14246:14252): Con el value Mesa
+[INFO] 16:34:04:308 Pool_memory/(14246:14252): Termina el Auto-Journal
+
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Inicia el Auto-Journal
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Cantidad de paginas a mandar: 2
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Se manda al LFS la tabla COSAS
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Con el timestamp 1564169635
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Con la key 1
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Con el value Pizarron
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Se manda al LFS la tabla COSAS
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Con el timestamp 1564169636
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Con la key 239
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Con el value Auto
+[INFO] 16:34:51:578 Pool_memory/(14214:14220): Termina el Auto-Journal
+
+[INFO] 16:35:04:309 Pool_memory/(14246:14252): Inicia el Auto-Journal
+[INFO] 16:35:04:309 Pool_memory/(14246:14252): Termina el Auto-Journal
+
+[INFO] 16:42:07:896 Pool_memory/(14432:14438): Inicia el Auto-Journal
+[INFO] 16:42:07:896 Pool_memory/(14432:14438): Termina el Auto-Journal
+
+[INFO] 16:42:14:161 Pool_memory/(14464:14470): Inicia el Auto-Journal
+[INFO] 16:42:14:161 Pool_memory/(14464:14470): Termina el Auto-Journal
+
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Inicia el Auto-Journal
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Cantidad de paginas a mandar: 2
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Se manda al LFS la tabla COSAS
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Con el timestamp 1564170136
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Con la key 1
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Con el value Pizarron
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Se manda al LFS la tabla COSAS
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Con el timestamp 1564170137
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Con la key 239
+[INFO] 16:43:07:896 Pool_memory/(14432:14438): Con el value Auto
+[INFO] 16:43:07:897 Pool_memory/(14432:14438): Termina el Auto-Journal
+
+[INFO] 16:43:14:161 Pool_memory/(14464:14470): Inicia el Auto-Journal
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Cantidad de paginas a mandar: 2
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Se manda al LFS la tabla COSAS
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Con el timestamp 1564170136
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Con la key 55
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Con el value Marcador
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Se manda al LFS la tabla COSAS
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Con el timestamp 1564170137
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Con la key 21
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Con el value Mesa
+[INFO] 16:43:14:162 Pool_memory/(14464:14470): Termina el Auto-Journal
+
+[INFO] 16:44:07:897 Pool_memory/(14432:14438): Inicia el Auto-Journal
+[INFO] 16:44:07:897 Pool_memory/(14432:14438): Termina el Auto-Journal
+
+[INFO] 16:44:14:163 Pool_memory/(14464:14470): Inicia el Auto-Journal
+[INFO] 16:44:14:163 Pool_memory/(14464:14470): Termina el Auto-Journal
+
+[INFO] 16:45:07:898 Pool_memory/(14432:14438): Inicia el Auto-Journal
+[INFO] 16:45:07:898 Pool_memory/(14432:14438): Termina el Auto-Journal
+
+[INFO] 16:54:48:100 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 16:54:48:100 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 16:54:53:493 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 16:54:53:493 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 16:55:48:100 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 16:55:48:100 Pool_memory/(14792:14798): Cantidad de paginas a mandar: 2
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Se manda al LFS la tabla COSAS
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Con el timestamp 1564170899
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Con la key 1
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Con el value Pizarron
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Se manda al LFS la tabla COSAS
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Con el timestamp 1564170900
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Con la key 239
+[INFO] 16:55:48:101 Pool_memory/(14792:14798): Con el value Auto
+[INFO] 16:55:48:102 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Cantidad de paginas a mandar: 2
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Se manda al LFS la tabla COSAS
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Con el timestamp 1564170899
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Con la key 55
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Con el value Marcador
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Se manda al LFS la tabla COSAS
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Con el timestamp 1564170900
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Con la key 21
+[INFO] 16:55:53:494 Pool_memory/(14823:14829): Con el value Mesa
+[INFO] 16:55:53:495 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 16:56:48:103 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 16:56:48:103 Pool_memory/(14792:14798): Cantidad de paginas a mandar: 0
+[INFO] 16:56:48:103 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 16:56:53:495 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 16:56:53:495 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 16:57:48:103 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 16:57:48:103 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 16:57:53:496 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 16:57:53:496 Pool_memory/(14823:14829): Cantidad de paginas a mandar: 0
+[INFO] 16:57:53:496 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 16:58:48:104 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 16:58:48:104 Pool_memory/(14792:14798): Cantidad de paginas a mandar: 0
+[INFO] 16:58:48:104 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 16:58:53:496 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 16:58:53:496 Pool_memory/(14823:14829): Cantidad de paginas a mandar: 0
+[INFO] 16:58:53:496 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 16:59:48:105 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 16:59:48:105 Pool_memory/(14792:14798): Cantidad de paginas a mandar: 0
+[INFO] 16:59:48:105 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 16:59:53:496 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 16:59:53:496 Pool_memory/(14823:14829): Cantidad de paginas a mandar: 0
+[INFO] 16:59:53:496 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:00:48:105 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:00:48:105 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:00:53:497 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:00:53:497 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:01:48:108 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:01:48:108 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:01:53:497 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:01:53:497 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:02:48:108 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:02:48:108 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:02:53:498 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:02:53:498 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:03:48:109 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:03:48:109 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:03:53:498 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:03:53:498 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:04:48:109 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:04:48:109 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:04:53:498 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:04:53:499 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:05:48:109 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:05:48:109 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:05:53:499 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:05:53:499 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:06:48:111 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:06:48:111 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:06:53:499 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:06:53:500 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:07:48:111 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:07:48:111 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:07:53:500 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:07:53:500 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:08:48:112 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:08:48:112 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:08:53:500 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:08:53:500 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:09:48:113 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:09:48:113 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:09:53:501 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:09:53:501 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:10:48:113 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:10:48:113 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:10:53:503 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:10:53:503 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:11:48:113 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:11:48:114 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:11:53:503 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:11:53:503 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:12:48:114 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:12:48:114 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:12:53:504 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:12:53:504 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:13:48:114 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:13:48:115 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:13:53:504 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:13:53:504 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:14:48:115 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:14:48:115 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:14:53:505 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:14:53:505 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:15:48:116 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:15:48:116 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:15:53:505 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:15:53:505 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:16:48:117 Pool_memory/(14792:14798): Inicia el Auto-Journal
+[INFO] 17:16:48:117 Pool_memory/(14792:14798): Termina el Auto-Journal
+
+[INFO] 17:16:53:506 Pool_memory/(14823:14829): Inicia el Auto-Journal
+[INFO] 17:16:53:506 Pool_memory/(14823:14829): Termina el Auto-Journal
+
+[INFO] 17:19:19:570 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:19:19:570 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:19:32:30 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:19:32:30 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:20:19:571 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:20:19:571 Pool_memory/(15233:15239): Cantidad de paginas a mandar: 0
+[INFO] 17:20:19:571 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:20:32:32 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:20:32:32 Pool_memory/(15264:15270): Cantidad de paginas a mandar: 0
+[INFO] 17:20:32:32 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:21:19:571 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:21:19:571 Pool_memory/(15233:15239): Cantidad de paginas a mandar: 0
+[INFO] 17:21:19:571 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:21:32:33 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:21:32:33 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:22:19:397 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:22:19:397 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:22:31:858 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:22:31:858 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:23:19:397 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:23:19:397 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:23:31:859 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:23:31:859 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:24:19:398 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:24:19:398 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:24:31:859 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:24:31:859 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:25:19:399 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:25:19:399 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:25:31:859 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:25:31:859 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:26:19:399 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:26:19:399 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:26:31:860 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:26:31:860 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:27:19:400 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:27:19:400 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:27:31:860 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:27:31:860 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:28:19:401 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:28:19:401 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:28:31:865 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:28:31:865 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:29:19:403 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:29:19:403 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:29:31:865 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:29:31:865 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:30:19:404 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:30:19:404 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:30:31:866 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:30:31:866 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:31:19:404 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:31:19:404 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:31:31:866 Pool_memory/(15264:15270): Inicia el Auto-Journal
+[INFO] 17:31:31:866 Pool_memory/(15264:15270): Termina el Auto-Journal
+
+[INFO] 17:32:19:405 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:32:19:405 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:33:19:405 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:33:19:405 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:34:19:406 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:34:19:406 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:35:19:409 Pool_memory/(15233:15239): Inicia el Auto-Journal
+[INFO] 17:35:19:410 Pool_memory/(15233:15239): Termina el Auto-Journal
+
+[INFO] 17:37:05:287 Pool_memory/(15722:15728): Inicia el Auto-Journal
+[INFO] 17:37:05:287 Pool_memory/(15722:15728): Termina el Auto-Journal
+
+[INFO] 17:37:23:999 Pool_memory/(15756:15763): Inicia el Auto-Journal
+[INFO] 17:37:23:999 Pool_memory/(15756:15763): Termina el Auto-Journal
+
+[INFO] 17:48:18:727 Pool_memory/(15947:15953): Inicia el Auto-Journal
+[INFO] 17:48:18:727 Pool_memory/(15947:15953): Termina el Auto-Journal
+
+[INFO] 17:48:25:801 Pool_memory/(15978:15984): Inicia el Auto-Journal
+[INFO] 17:48:25:801 Pool_memory/(15978:15984): Termina el Auto-Journal
+
+[INFO] 17:55:14:845 Pool_memory/(16146:16152): Inicia el Auto-Journal
+[INFO] 17:55:14:852 Pool_memory/(16146:16152): Termina el Auto-Journal
+
+[INFO] 17:55:38:794 Pool_memory/(16193:16199): Inicia el Auto-Journal
+[INFO] 17:55:38:794 Pool_memory/(16193:16199): Cantidad de paginas a mandar: 0
+[INFO] 17:55:38:794 Pool_memory/(16193:16199): Termina el Auto-Journal
+
+[INFO] 17:56:14:853 Pool_memory/(16146:16152): Inicia el Auto-Journal
+[INFO] 17:56:14:853 Pool_memory/(16146:16152): Cantidad de paginas a mandar: 0
+[INFO] 17:56:14:853 Pool_memory/(16146:16152): Termina el Auto-Journal
+
+[INFO] 17:56:38:795 Pool_memory/(16193:16199): Inicia el Auto-Journal
+[INFO] 17:56:38:795 Pool_memory/(16193:16199): Cantidad de paginas a mandar: 0
+[INFO] 17:56:38:795 Pool_memory/(16193:16199): Termina el Auto-Journal
+

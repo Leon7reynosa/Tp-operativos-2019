@@ -7,6 +7,20 @@
 
 #include"mensajes.h"
 
+void enviar_estado(int conexion, estado_request estado){
+
+	void* buffer = malloc(sizeof(estado_request));
+
+	memcpy(buffer, &estado, sizeof(estado_request));
+
+	send(conexion, buffer, sizeof(estado_request), 0);
+
+	free(buffer);
+
+	return;
+
+}
+
 //tipoRequest es una estructura del tipo "request" osea, puede ser selectEstructura, etc, entonces mi idea es depende de lo que llegue, castear a esa estructura
 bool enviar_request(request request, int conexion){
 
@@ -96,7 +110,7 @@ bool enviar_request(request request, int conexion){
 }
 
 
-void enviar_dato(t_dato* dato, int conexion, estado_select estado){
+void enviar_dato(t_dato* dato, int conexion, estado_request estado){
 
 	int desplazamiento = 0;
 	void* buffer;
@@ -104,12 +118,12 @@ void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 
 	if(estado == SUCCESS){
 
-		bytes = sizeof(estado_select) + sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
+		bytes = sizeof(estado_request) + sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
 
 		buffer = malloc(bytes);
 
-		memcpy(buffer + desplazamiento, &estado, sizeof(estado_select));
-		desplazamiento += sizeof(estado_select);
+		memcpy(buffer + desplazamiento, &estado, sizeof(estado_request));
+		desplazamiento += sizeof(estado_request);
 
 		memcpy(buffer + desplazamiento, &(dato->timestamp) , sizeof(dato->timestamp));
 		desplazamiento += sizeof(dato->timestamp);
@@ -125,11 +139,11 @@ void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 	}
 	else{
 
-		bytes = sizeof(estado_select);
+		bytes = sizeof(estado_request);
 		buffer = malloc(bytes);
 
-		memcpy(buffer + desplazamiento, &estado, sizeof(estado_select));
-		desplazamiento += sizeof(estado_select);
+		memcpy(buffer + desplazamiento, &estado, sizeof(estado_request));
+		desplazamiento += sizeof(estado_request);
 
 	}
 
@@ -139,7 +153,7 @@ void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 
 }
 
-void enviar_metadata(t_list* lista_metadata, int conexion){
+void enviar_metadata(t_list* lista_metadata, int conexion, estado_request estado){
 
 	int bytes;
 
@@ -148,7 +162,7 @@ void enviar_metadata(t_list* lista_metadata, int conexion){
 	int enviados_aux;
 
 	printf("serializo las metadatas\n");
-	void* buffer = serializar_metadata(lista_metadata, &bytes);
+	void* buffer = serializar_metadata(lista_metadata, &bytes, estado);
 
 	printf("Bytes a enviar: %i\n", bytes);
 

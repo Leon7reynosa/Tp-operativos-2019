@@ -318,14 +318,28 @@ Bloque crear_bloque(int numero, char* datos){
 
 	Bloque bloque = malloc(sizeof(struct bloque*));
 
+	int i = 0;
+
 	bloque->numero = numero;
 
 	bloque->datos = list_create();
 
+	if(string_starts_with(datos, "\n")){
+
+		printf("[LECTURA] SE CORTO EN EL HIJO DE RE MIL PUTA DE BARRA ENE\n");
+
+		char* barra_ene = malloc(2);
+		memcpy(barra_ene, "\n", 2);
+
+		list_add(bloque->datos,  barra_ene );
+
+		i++;
+	}
+
 	if(datos != NULL){
 		char** aux_datos = string_split(datos, "\n");
 
-		int i = 0;
+		i = 0;
 
 		while(*(aux_datos + i) != NULL){
 
@@ -337,6 +351,8 @@ Bloque crear_bloque(int numero, char* datos){
 
 		free(aux_datos);
 	}
+
+	printf("[LECTURA] EL BLOQUE TIENE %i DATOS\n", list_size(bloque->datos));
 
 	return bloque;
 
@@ -391,6 +407,16 @@ void mostrar_bloque(int bloque){
 			exit(1);
 		}
 
+	}
+
+	if(string_starts_with(archivo, "\n")){
+
+		char* barra_ene = malloc(2);
+		memcpy(barra_ene, "\n", 2);
+
+		printf("%s\n", barra_ene);
+
+		free(barra_ene);
 	}
 
 	char** datos = string_split(archivo, "\n");

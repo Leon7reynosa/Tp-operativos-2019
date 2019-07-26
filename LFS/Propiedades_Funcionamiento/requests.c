@@ -12,6 +12,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 	dato_t* dato_request;
 	t_list* metadata_describe;
+	estado_request estado;
 
 	switch( request_a_operar->cod_op ){
 
@@ -49,9 +50,20 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			log_trace(logger_request, "Request de INSERT recibida por el socket %i !\n", conexion);
 
-			request_insert((insert) request_a_operar->tipo_request );
+			estado = request_insert((insert) request_a_operar->tipo_request );
 
-			log_trace(logger_request, "Request de INSERT terminada por el socket %i !\n", conexion);
+			if(estado == ERROR){
+
+				log_error(logger_request , "Fallo la Request INSERT\n");
+
+
+			}else{
+
+				log_trace(logger_request, "Request de INSERT terminada por el socket %i !\n", conexion);
+
+			}
+
+			mandar_estado(conexion, estado);
 
 			printf("[REQUEST] Finalizo el INSERT\n\n");
 
@@ -63,9 +75,19 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			log_trace(logger_request, "Request de CREATE recibida por el socket %i !\n", conexion);
 
-			request_create( (create) request_a_operar->tipo_request);
+			estado = request_create( (create) request_a_operar->tipo_request);
 
-			log_trace(logger_request, "Request de CREATE terminada por el socket %i !\n", conexion);
+			if(estado == ERROR){
+
+				log_error(logger_request , "Fallo la Request CREATE\n");
+
+			}else{
+
+				log_trace(logger_request, "Request de CREATE terminada correctamente por el socket %i !\n", conexion);
+
+			}
+
+			mandar_estado(conexion, estado);
 
 			printf("[REQUEST] Finalizo el CREATE\n\n");
 
@@ -81,17 +103,20 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			if(metadata_describe != NULL){
 
-				enviar_metadata(metadata_describe, conexion);
+				estado = SUCCESS;
+
+				enviar_metadata(metadata_describe, conexion, estado);
 
 				list_destroy_and_destroy_elements(metadata_describe, liberar_metadata);
 
 			}else{
 
-				metadata_describe = list_create();
+				estado = ERROR;
 
-				enviar_metadata(metadata_describe, conexion);
+				mandar_estado(conexion, estado);
 
 			}
+
 
 			log_trace(logger_request, "Request de DESCRIBE terminada por el socket %i !\n", conexion);
 
@@ -105,9 +130,20 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			log_trace(logger_request, "Request de DROP recibida por el socket %i !\n", conexion);
 
-			request_drop((Drop)(request_a_operar->tipo_request));
+			estado = request_drop((Drop)(request_a_operar->tipo_request));
 
-			log_trace(logger_request, "Request de DROP solicitada por el socket %i !\n", conexion);
+			if(estado == ERROR){
+
+				log_error(logger_request , "-Hubo un error con la request DROP.-\n");
+
+
+			}else{
+
+				log_trace(logger_request, "Request de DROP solicitada por el socket %i !\n", conexion);
+
+			}
+
+			mandar_estado(conexion, estado);
 
 			printf("[REQUEST] Finalizo el DROP\n\n");
 
@@ -182,7 +218,7 @@ dato_t* request_select(select_t datos_select){
 			 liberar_dato(dato_temporales);
 		 }
 		 if(dato_memtable != NULL){
-			 liberar_dato(dato_memtable);
+		 	liberar_dato(dato_temporales);
 		 }
 
 		 free(metadata_tabla);
@@ -211,10 +247,11 @@ dato_t* request_select(select_t datos_select){
 
 
 
- void request_insert(insert datos_insert){
+ estado_request request_insert(insert datos_insert){
 
 	 dato_t* dato_ingresar;
 	 metadata_t* metadata_insert;
+	 estado_request estado;
 
 	 char* nombre_tabla = (char *) datos_insert->tabla->buffer;
 
@@ -242,15 +279,19 @@ dato_t* request_select(select_t datos_select){
 		 ingresar_a_memtable(dato_ingresar, nombre_tabla);
 
 		 printf("[INSERT] Se inserto correctamente en la memtable\n");
+
+		 estado = SUCCESS;
+
 		 ///////////////////////////////////////////////////////////////////////
 
-	 }
-
-	 else{
+	 }else{
 
 		 printf("[INSERT] No existe la tabla\n");
 
 //		 log_error(logger_lfs, "Fallo el -- INSERT -- \n");
+
+		 estado = ERROR;
+
 
 	 }
 
@@ -260,10 +301,12 @@ dato_t* request_select(select_t datos_select){
 
 	 log_info(logger_lfs, "Request -- INSERT -- realizada !!!\n");
 
+	 return estado;
+
  }
 
 
- void request_create(create datos_create){
+ estado_request request_create(create datos_create){
 
 	 log_info(logger_lfs, "Inicio de request -- INSERT -- \n");
 
@@ -276,8 +319,8 @@ dato_t* request_select(select_t datos_select){
 
 	 if(existe_la_tabla(nombre_tabla)){
 		 //log
-		 printf("[CREATE] Ya existe la tabla\n");
-		 return;
+		 log_error(logger_request , "Ya existe la tabla\n");
+		 return ERROR;
 
 	 }
 
@@ -317,6 +360,8 @@ dato_t* request_select(select_t datos_select){
 	 log_info(logger_lfs, "Request -- INSERT -- realizada !!!\n");
 
 	 printf("[CREATE] Termino correctamente\n");
+
+	 return SUCCESS;
 
  }
 
@@ -471,10 +516,10 @@ t_list* request_describe_global(void){
 	free(path_directorio_tabla);
 
 	//no deberia pasar, pero q c yo
-	if(list_size(metadatas) <= 0){
-		list_destroy(metadatas);
-		metadatas = NULL;
-	}
+//	if(list_size(metadatas) <= 0){
+//		list_destroy(metadatas);
+//		metadatas = NULL;
+//	}
 
 	log_info(logger_lfs, "Request -- DESCRIBE GLOBAL -- realizada\n");
 
@@ -485,13 +530,15 @@ t_list* request_describe_global(void){
 
 
 
-void request_drop(Drop request_drop){
+estado_request request_drop(Drop request_drop){
 
 	log_info(logger_lfs, "Inicio de request -- DROP --\n");
 
 	char* nombre_tabla = (char *)(request_drop->tabla->buffer);
 
 	DIR *dir1, *dir2;
+
+	estado_request estado;
 
 	struct dirent* tabla, *tabla_particular;
 
@@ -576,7 +623,11 @@ void request_drop(Drop request_drop){
 		//LIBERO EL SEMAFORO!
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
+		estado = SUCCESS;
 
+	}else{
+
+		estado = ERROR;
 
 	}
 
@@ -586,5 +637,8 @@ void request_drop(Drop request_drop){
 
 	log_info(logger_lfs, "Request -- DROP-- realizada\n");
 
-	printf("[DROP] Termino correctamente\n");
+	printf("[DROP] Termino el DROP\n");
+
+	return estado;
+
 }

@@ -72,16 +72,10 @@ request recibir_request(int conexion){
 
 	}
 
-
-	printf("hola\n");
-
 	request request = crear_request(*cod_op, tipo_request);
-
-	printf("chau\n");
 
 	free(cod_op);
 
-	printf("buen dia\n");
 	return request;
 
 }
@@ -113,19 +107,10 @@ t_dato* recibir_dato_LFS(int conexion){
 
 	dato_recibido->value = malloc(sizeof(t_stream));
 
-	estado_select estado;
+	estado_request estado;
+	int bytes;
 
-	int bytes = recv(conexion, &(estado), sizeof(estado_select), 0);
-
-	if(bytes <= 0){
-		printf("Fallo recibir del fileSystem\n");
-		free(dato_recibido->value);
-		free(dato_recibido);
-
-		desconexion_pool = true;
-
-		return NULL;
-	}
+	estado = recibir_estado_request(conexion);
 
 	if(estado == ERROR){
 
@@ -134,6 +119,8 @@ t_dato* recibir_dato_LFS(int conexion){
 
 		return NULL;
 	}
+
+	printf("Recibo los datos del select\n");
 
 	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
 
@@ -157,7 +144,7 @@ t_dato* recibir_dato_LFS(int conexion){
 	bytes = recv(conexion, &(dato_recibido->value->size),sizeof(int), 0);
 
 	if(bytes == -1){
-		perror("NO RECIBIO EL TAMANIO DEL VALUE;");
+		perror("NO RECIBIO EL TAMANIO Destado_request recibir_estado_request(int conexion)EL VALUE;");
 	}
 
 	printf("Size: %i\n", dato_recibido->value->size);
@@ -178,6 +165,27 @@ t_dato* recibir_dato_LFS(int conexion){
 
 }
 
+estado_request recibir_estado_request(int conexion){
+
+	estado_request estado;
+	int bytes;
+
+	bytes = recv(conexion, &estado, sizeof(estado_request), 0);
+
+	if(bytes <= 0){
+
+		log_info(logger, "No se recibio el estado de la request.");
+		desconexion_pool = true;
+		return ERROR;
+
+	}
+
+	printf("Recibi el estado de la request\n");
+
+	return estado;
+
+}
+
 t_list* recibir_describe(int conexion){
 
 	int numero_tablas, error_recv;
@@ -186,85 +194,95 @@ t_list* recibir_describe(int conexion){
 	char* tabla_recibida;
 	char* consistencia_recibida;
 	int particiones_recibidas, compactacion_recibida;
-
-	error_recv = recv(conexion, &numero_tablas, sizeof(int), 0);
-
-	printf("LLEGO LA RESPUESTA\n");
-
-	printf("Cant tablas: %i\n", numero_tablas);
-
 	t_list* datos_metadata = list_create();
 
-	if(error_recv == -1){
-		perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
-	}
+	estado_request estado = recibir_estado_request(conexion);
 
-	printf("Recibo el/los datos metadata\n");
-	for(int i = 0; i < numero_tablas; i++){
+	if(estado == SUCCESS){
 
-		Metadata metadata_recibida;
+		error_recv = recv(conexion, &numero_tablas, sizeof(int), 0);
 
-		error_recv = recv(conexion, &size, sizeof(int), 0);
+		printf("LLEGO LA RESPUESTA\n");
 
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL SIZE DE LA TABLA");
-		}
-
-		printf("size tabla: %i\n", size);
-
-		tabla_recibida = malloc(size);
-
-		error_recv = recv(conexion, tabla_recibida, size, 0);
+		printf("Cant tablas: %i\n", numero_tablas);
 
 		if(error_recv == -1){
-			perror("NO SE RECIBIO LA TABLA");
+			perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
 		}
 
-		printf("tabla: %s\n", tabla_recibida);
+		printf("Recibo el/los datos metadata\n");
+		for(int i = 0; i < numero_tablas; i++){
 
-		error_recv = recv(conexion, &size, sizeof(int), 0);
+			Metadata metadata_recibida;
 
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL SIZE DE LA CONSISTENCIA");
+			error_recv = recv(conexion, &size, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL SIZE DE LA TABLA");
+			}
+
+			printf("size tabla: %i\n", size);
+
+			tabla_recibida = malloc(size);
+
+			error_recv = recv(conexion, tabla_recibida, size, 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO LA TABLA");
+			}
+
+			printf("tabla: %s\n", tabla_recibida);
+
+			error_recv = recv(conexion, &size, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL SIZE DE LA CONSISTENCIA");
+			}
+
+			printf("size consistencia: %i\n", size);
+
+			consistencia_recibida = malloc(size);
+
+			error_recv = recv(conexion, consistencia_recibida, size, 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO LA CONSISTENCIA");
+			}
+
+			printf("consistencia: %s\n", consistencia_recibida);
+
+			error_recv = recv(conexion, &particiones_recibidas, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL NUMERO DE PARTICIONES");
+			}
+
+			printf("particiones: %i\n", particiones_recibidas);
+
+			error_recv = recv(conexion, &compactacion_recibida, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL TIEMPO DE COMPACTACION");
+			}
+
+			printf("compactacion: %i\n", compactacion_recibida);
+
+			printf("Creo la estructura metadata con los datos anteriores\n");
+			metadata_recibida = crear_metadata(tabla_recibida, consistencia_recibida, particiones_recibidas, compactacion_recibida);
+
+			printf("Lo agrego a la lista\n");
+			list_add(datos_metadata, metadata_recibida);
+
+			free(tabla_recibida);
+			free(consistencia_recibida);
 		}
+	}else{
 
-		printf("size consistencia: %i\n", size);
+		//log_error(logger_request, "No se recibio respuesta del FileSystem");
 
-		consistencia_recibida = malloc(size);
+		list_destroy(datos_metadata);
 
-		error_recv = recv(conexion, consistencia_recibida, size, 0);
-
-		if(error_recv == -1){
-			perror("NO SE RECIBIO LA CONSISTENCIA");
-		}
-
-		printf("consistencia: %s\n", consistencia_recibida);
-
-		error_recv = recv(conexion, &particiones_recibidas, sizeof(int), 0);
-
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL NUMERO DE PARTICIONES");
-		}
-
-		printf("particiones: %i\n", particiones_recibidas);
-
-		error_recv = recv(conexion, &compactacion_recibida, sizeof(int), 0);
-
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL TIEMPO DE COMPACTACION");
-		}
-
-		printf("compactacion: %i\n", compactacion_recibida);
-
-		printf("Creo la estructura metadata con los datos anteriores\n");
-		metadata_recibida = crear_metadata(tabla_recibida, consistencia_recibida, particiones_recibidas, compactacion_recibida);
-
-		printf("Lo agrego a la lista\n");
-		list_add(datos_metadata, metadata_recibida);
-
-		free(tabla_recibida);
-		free(consistencia_recibida);
-
+		datos_metadata = NULL;
 	}
 
 	return datos_metadata;

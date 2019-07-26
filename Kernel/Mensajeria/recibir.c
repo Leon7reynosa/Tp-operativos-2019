@@ -38,12 +38,20 @@ t_list* recibir_describe(int conexion){
 
 	int numero_tablas;
 	int error_recv;
+	estado_request estado;
 
 	int size;
 	char* tabla_recibida;
 	char* consistencia_recibida;
 	int particiones_recibidas, compactacion_recibida;
 
+	error_recv = recv(conexion, &estado , sizeof(estado_request), 0);
+
+	if(estado == ERROR){
+
+		return NULL;
+
+	}
 
 	error_recv = recv(conexion, &numero_tablas, sizeof(int), MSG_WAITALL);
 
@@ -122,13 +130,17 @@ t_list* recibir_describe(int conexion){
 t_dato* recibir_dato_memoria(int conexion){
 
 
-	estado_select estado;
+	estado_request estado;
 
-	recv(conexion, &estado , sizeof(estado_select) , 0);
+	printf("AHORA EL RECV\n");
 
+	recv(conexion, &estado , sizeof(estado_request) , MSG_WAITALL);
+
+	printf("PASE EL RECV\n");
 
 	if(estado == SUCCESS){
 
+		printf("sALIO BIEN\n");
 
 		t_dato* dato_recibido = malloc(sizeof(t_dato));
 
@@ -179,9 +191,21 @@ t_dato* recibir_dato_memoria(int conexion){
 
 	}else{
 
+		printf("SALIO MAL\n");
+
 		return NULL;
 
 	}
+}
+
+estado_request recibir_estado_request(int conexion){
+
+	estado_request estado;
+
+	recv(conexion , &estado , sizeof(estado_request) , 0);
+
+	return estado;
+
 }
 
 

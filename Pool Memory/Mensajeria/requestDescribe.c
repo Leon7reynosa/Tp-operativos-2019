@@ -7,14 +7,17 @@
 
 #include"requestDescribe.h"
 
-void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
+void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar, estado_request estado){
 
 	int bytes = 0;
 	int desplazamiento = 0;
 
 	int size_tabla, size_consistencia, cantidad_tablas;
 
-	void* buffer = malloc(sizeof(int)); //inicialmente con la cantidad de tablas;
+	void* buffer = malloc(sizeof(estado_request) + sizeof(int)); //inicialmente con la cantidad de tablas y el error;
+
+	memcpy(buffer + desplazamiento, &estado, sizeof(estado_request));
+	desplazamiento += sizeof(estado_request);
 
 	//le mando la cantidad de tablas primero
 	cantidad_tablas = list_size(lista_metadata);
@@ -22,7 +25,7 @@ void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
 	memcpy(buffer + desplazamiento, &cantidad_tablas, sizeof(int));
 	desplazamiento += sizeof(int);
 
-	bytes += sizeof(int);
+	bytes += sizeof(int) + sizeof(estado_request);
 
 	void _serializar_metadata(void* _metadata){
 

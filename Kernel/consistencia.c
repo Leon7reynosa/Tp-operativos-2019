@@ -491,5 +491,30 @@ void agregar_metadata_a_registro_tabla(Metadata metadata_guardar){
 }
 
 
+bool existe_en_registro_tabla(char* nombre_tabla){
+
+	bool contiene_tabla;
+
+	pthread_rwlock_rdlock(&semaforo_registro_tabla);
+
+	contiene_tabla = dictionary_has_key(registro_tabla,  nombre_tabla);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
+
+	return contiene_tabla;
+
+}
+
+void remover_tabla_de_registro(char* nombre_tabla){
+
+	pthread_rwlock_rdlock(&semaforo_registro_tabla);
+
+	dictionary_remove_and_destroy(registro_tabla, nombre_tabla, liberar_metadata);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
+
+}
+
+
 
 

@@ -11,14 +11,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include"request.h"
-
-typedef enum{
-
-	SUCCESS = 1,
-	ERROR = 2
-
-}estado_select;
 
 typedef struct{
 

@@ -30,16 +30,9 @@
 
 #define TAMANIO_MAX_VALUE 50
 
-typedef enum{
-
-	SUCCESS =  1,
-	ERROR = 2
-
-}estado_select;
-
 typedef struct{
 
-	estado_select estado;
+	estado_request estado;
 	u_int16_t key;
 	char* value;
 	time_t timestamp;
@@ -55,14 +48,13 @@ typedef struct{
 }t_dato_serializado;
 
 
-
+void enviar_metadata(t_list* metadatas, int conexion, estado_request estado);
 void* serializar_mensaje(t_stream* bufferA_serializar, int bytes);
-void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes, estado_select estado);
+void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes, estado_request estado);
 void mandar_mensaje(int conexion);
-void mandar_select(int conexion , dato_t* dato, estado_select estado);
+void mandar_select(int conexion , dato_t* dato, estado_request estado);
+void mandar_estado(int conexion, estado_request estado);
 void eliminar_tStream(t_stream* tStream);
-
-void enviar_metadata(t_list* metadatas, int conexion);
 
 
 #endif /* MENSAJES_H_ */

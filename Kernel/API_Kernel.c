@@ -53,7 +53,11 @@ int ejecutar_request(char* request_lql){
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
+				printf("YA MOSTRE LA MEMORIA, VOY A ENVIAR\n");
+
 				if( enviar_request(SELECT, select_enviar, memoria_utilizada->socket) == false ) {
+
+					printf("ALGO FALLO AL ENVIAR\n");
 
 					log_error(logger_kernel, ">>FALLO ENVIAR EL SELECT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
 
@@ -63,7 +67,11 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+				printf("PSE EL ENVIAR, AHORA ESPERO EL DATO\n");
+
 				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada->socket);
+
+				printf("YA RECIBI EL DATO\n");
 
 				if(dato_recibido == NULL){
 
@@ -86,6 +94,14 @@ int ejecutar_request(char* request_lql){
 
 				log_info(logger_kernel, "---Se realizara el INSERT---\n");
 
+				if( !existe_en_registro_tabla(nombre_tabla)){
+
+					log_error(logger_kernel , "-La Tabla %s no existe en el registro de tablas.-\n" , nombre_tabla);
+
+					return 0;
+
+				}
+
 				insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
 
 				memoria_utilizada = seleccionar_memoria_consistencia(INSERT, insert_enviar);
@@ -107,6 +123,16 @@ int ejecutar_request(char* request_lql){
 					return 0;
 
 				}
+
+				if(recibir_estado_request(memoria_utilizada->socket) == ERROR){
+
+					log_error(logger_kernel,  "-Fallo la request INSERT.-\n");
+
+					return 0;
+
+				}
+
+
 
 
 				return 1;
@@ -138,6 +164,15 @@ int ejecutar_request(char* request_lql){
 					remover_memoria_de_consistencia(memoria_utilizada);
 
 					return 0;
+
+				}
+
+				if( recibir_estado_request(memoria_utilizada->socket) == ERROR ){
+
+					log_error(logger_kernel, "-Fallo el CREATE.-\n");
+
+					return 0;
+
 
 				}
 
@@ -211,6 +246,14 @@ int ejecutar_request(char* request_lql){
 
 			t_list* lista_describe = recibir_describe(memoria_utilizada->socket);
 
+			if(lista_describe == NULL){
+
+				log_error(logger_kernel, "-Fallo la request DESCRIBE.-\n");
+
+				return 1;
+
+			}
+
 
 			mostrar_lista_describe(lista_describe);
 
@@ -261,6 +304,14 @@ int ejecutar_request(char* request_lql){
 
 				Drop drop_enviar = crear_drop(nombre_tabla);
 
+				if(!existe_en_registro_tabla(nombre_tabla)){
+
+					printf("-La Tabla %s No existe en el registro de tablas.-\n" , nombre_tabla);
+
+					return 0;
+
+				}
+
 
 				memoria_utilizada = seleccionar_memoria_consistencia(DROP , drop_enviar);
 
@@ -285,9 +336,22 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+
+				if(recibir_estado_request(memoria_utilizada->socket) == ERROR){
+
+					log_error(logger_kernel , "-Fallo la request DROP.\n");
+
+				}else{
+
+					printf("Tabla %s removida\n" , nombre_tabla);
+
+				}
+
+				remover_tabla_de_registro(nombre_tabla);
+
 				//liberar_drop(drop_enviar);
 
-				printf("Tabla %s removida\n" , nombre_tabla);
+				//sacar del registro de tablas
 
 				return 1;
 			}
