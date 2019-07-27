@@ -73,10 +73,7 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
         return dato_analizar->key == key;
     }
 
-
-
     tabla_a_filtrar = list_filter(tabla_a_filtrar, condicion);
-    pthread_rwlock_unlock(&(lock_memtable));
 
 
     bool comparador(void *dato1, void *dato2) {
@@ -88,7 +85,7 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
 
     tabla_ordenada = list_sorted(tabla_a_filtrar, comparador);
 
-    list_destroy(tabla_a_filtrar);
+//    list_destroy(tabla_a_filtrar);
 
     dato_mayor = (dato_t *)list_get(tabla_ordenada, 0);
 
@@ -98,10 +95,15 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
 
     	dato_t* dato_encontrado = crear_dato(dato_mayor->key, dato_mayor->value, dato_mayor->timestamp);
 
+    	pthread_rwlock_unlock(&(lock_memtable));
+
+    	list_destroy(tabla_ordenada);
+
     	return dato_encontrado;                // RETURN
 
     }else{
     	printf("[RESULTADO] No se encontro el dato en memtable\n");
+    	pthread_rwlock_unlock(&(lock_memtable));
     }
 
     list_destroy(tabla_ordenada);

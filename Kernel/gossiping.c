@@ -338,12 +338,6 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 
 }
 
-void sumar_contador_request(memoria_t* memoria){
-
-	memoria->contador_requests ++;
-
-}
-
 
 memoria_t* convertir_a_memoria_t(struct MemoriasEstructura* dato_memoria){
 

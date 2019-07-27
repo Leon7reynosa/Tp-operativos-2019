@@ -206,13 +206,17 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 }
 
 char* obtenerPath_Bloque(int indice){
+
 	char* path = string_new();
+	char* string_indice = string_new();
+	string_indice = string_itoa(indice);
 
 	string_append(&path, punto_montaje);
 	string_append(&path, "Bloques/");
-	string_append(&path, string_itoa(indice));
+	string_append(&path, string_indice); //aca iba string_itoa(indice), lo cambio por string_indice
 	string_append(&path, ".bin");
 
+	free(string_indice); //agregado, aca no iba nada
 
 	return path;
 

@@ -9,6 +9,8 @@
 
 int main (int argc , char* argv[]){
 
+	system("clear");
+
 	creacion_del_config();
 
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////

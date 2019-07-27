@@ -211,15 +211,25 @@ dato_t* request_select(select_t datos_select){
 		 if(dato_aux != NULL){
 			 liberar_dato(dato_aux);
 		 }
+
+		 printf("PASE 1\n");
+
 		 if(dato_binarios != NULL){
 			 liberar_dato(dato_binarios);
 		 }
+
+		 printf("PASE 2\n");
 		 if(dato_temporales != NULL){
 			 liberar_dato(dato_temporales);
 		 }
+		 printf("PASE 3\n");
 		 if(dato_memtable != NULL){
-		 	liberar_dato(dato_temporales);
+
+			 printf("[LIBERACION] dato a liberar : %s\n " , dato_memtable->value);
+
+		 	liberar_dato(dato_memtable);
 		 }
+		 printf("PASE 4\n");
 
 		 free(metadata_tabla);
 		 free(path_particion_a_buscar);

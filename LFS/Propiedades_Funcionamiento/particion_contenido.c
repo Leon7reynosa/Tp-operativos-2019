@@ -128,6 +128,8 @@ void actualiar_particion(char* path_particion){
 	particion_lectura->size = size_actualizado;
 
 	reescribir_bloques_en_particion(path_particion, particion_lectura);
+
+	liberar_particion(particion_lectura); //agregado por memory leak
 }
 
 void mostrar_particion(Particion particion){
@@ -201,7 +203,7 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 	DIR* directorio_tabla = opendir(path_tabla);
 	struct dirent* entrada_directorio;
 
-	t_list* lista_de_datos = list_create();
+//	t_list* lista_de_datos = list_create();
 
 	dato_t* dato_mayor = NULL;
 
@@ -222,17 +224,29 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 				dato_t* dato_encontrado = buscar_dato_en_particion(path_temporal, key);
 
 				if(dato_encontrado != NULL){
+//
+					printf("[BUSQUEDA] Se encontro el dato y lo comparo con el que ya tenia\n");
+//
+//					list_add(lista_de_datos, dato_encontrado);
+					if(dato_mayor != NULL){
+						dato_t* dato_aux = dato_mayor;
+						printf("[BUSQUEDA] Comparo\n");
+						dato_mayor = timestamp_mas_grande(dato_encontrado, dato_aux);
 
-					printf("[BUSQUEDA] Se encontro el dato y lo agrego a los datos temporales\n");
+						liberar_dato(dato_aux);
+						liberar_dato(dato_encontrado);
 
-					list_add(lista_de_datos, dato_encontrado);
-
-					free(path_temporal);
+						printf("[BUSQUEDA] Compare y libere\n");
+					}else{
+						dato_mayor = dato_encontrado;
+					}
+//
 				}
 				else{
 					printf("[BUSQUEDA] El temporal no tenia el dato\n");
 				}
-
+//
+				free(path_temporal);
 
 			}
 
@@ -241,31 +255,31 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 	}
 
-	void _timestamp_menor(void* _dato){
-
-		dato_t* dato_a_analizar = (dato_t *)_dato;
-
-		dato_t* dato_aux = dato_mayor;
-
-		dato_mayor = timestamp_mas_grande(dato_aux, dato_a_analizar);
-
-		if(dato_mayor != NULL){
-			liberar_dato(dato_aux);
-		}
-
-	}
-
-	printf("[BUSQUEDA] Busco el de menor timestamp entre los temporales (si encontre datos obvio)\n");
-	list_iterate(lista_de_datos, _timestamp_menor);
-	printf("[BUSQUEDA] Termine de buscar el menor\n");
+//	void _timestamp_menor(void* _dato){
+//
+//		dato_t* dato_a_analizar = (dato_t *)_dato;
+//
+//		dato_t* dato_aux = dato_mayor;
+//
+//		dato_mayor = timestamp_mas_grande(dato_aux, dato_a_analizar);
+//
+//		if(dato_aux != NULL){
+//			liberar_dato(dato_aux);
+//		}
+//
+//	}
+//
+//	printf("[BUSQUEDA] Busco el de menor timestamp entre los temporales (si encontre datos obvio)\n");
+//	list_iterate(lista_de_datos, _timestamp_menor);
+//	printf("[BUSQUEDA] Termine de buscar el menor\n");
 
 	closedir(directorio_tabla);
 	free(path_tabla);
 
 
-	printf("[BUSQUEDA] Libero los datos que encontre en los temporales\n");
-	list_destroy_and_destroy_elements(lista_de_datos, liberar_dato);
-
+//	printf("[BUSQUEDA] Libero los datos que encontre en los temporales\n");
+//	list_destroy_and_destroy_elements(lista_de_datos, liberar_dato);
+//
 	printf("[BUSQUEDA] Termine de buscar en temporales\n");
 
 	return dato_mayor;
@@ -520,6 +534,8 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 		Particion particion_a_obtener = leer_particion(path_particion);
 
+		free(path_particion); //agregado para mem leak
+
 		int i = 0;
 
 		int fd_bloque;
@@ -557,13 +573,13 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 					exit(1);
 				}
 
+			}else{
+
+				string_append(&datos_totales, datos);
+
+				munmap(datos, atributos->st_size);
+
 			}
-
-
-
-			string_append(&datos_totales, datos);
-
-			munmap(fd_bloque, atributos->st_size);
 
 			close(fd_bloque);
 
@@ -575,6 +591,8 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 
 		list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
+
+		liberar_particion(particion_a_obtener); //agregado por memory leak
 
 	}
 
@@ -686,6 +704,8 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 			printf("pruebinha\n");
 
 			list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
+
+			liberar_particion(particion_a_obtener);
 
 
 			printf("pruebinha\n");

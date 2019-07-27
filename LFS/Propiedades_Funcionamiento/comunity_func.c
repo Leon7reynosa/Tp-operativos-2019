@@ -7,66 +7,6 @@
 
 #include "comunity_func.h"
 
-
-//void responder_request(request request, int conexion){
-//
-//	int bytes;
-//	char* tabla;
-//	dato_t* dato_respuesta ;
-//	void* buffer;
-//	char* valor;
-//	char* consistencia;
-//
-//	switch(request->cod_op){
-//
-//		case SELECT:
-//
-//			tabla = (char*) ((select_t) request->tipo_request)->tabla->buffer;
-//
-//			dato_respuesta = request_select( tabla , ((select_t) request)->key  );
-//
-//			buffer = serializar_dato_t(dato_respuesta, &bytes);
-//
-//			send(conexion, buffer, bytes , 0 );
-//
-//			liberar_dato(dato_respuesta);
-//
-//			break;
-//
-//		case INSERT:
-//
-//			tabla = (char*) ((insert) request->tipo_request)->tabla->buffer;
-//
-//			valor = (char*) ((insert) request->tipo_request)->value->buffer;
-//
-//			request_insert( tabla, ((insert) request)->key , valor, ((insert) request)->timestamp );
-//
-//			//log de que se inserto todo en orden (tal vez adentro del insert)
-//
-//			break;
-//
-//		case CREATE:
-//
-//			tabla = (char*) ((create) request->tipo_request)->tabla->buffer;
-//
-//			consistencia =  (char*) ((create) request->tipo_request)->consistencia->buffer;
-//
-//			request_create(tabla, consistencia , ((create) request->tipo_request)->numero_particiones, ((create) request->tipo_request)->compactacion);
-//
-//			//log de que se creo todo en  orden. (tal vez va adentro del create)
-//
-//			break;
-//
-//		default:
-//
-//			//log de error
-//
-//			break;
-//
-//	}
-//
-//}
-
 int calcular_particion(int particion_metadata ,u_int16_t key){
 
 	return key % particion_metadata;
@@ -77,17 +17,25 @@ dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo){
 
 	dato_t* nuevo = malloc(sizeof(dato_t));
 
+	printf("[CREAR DATO] value que ingreso: %s\n" , valor);
+
 	nuevo->key = key;
-	nuevo->value = malloc(strlen(valor) + 1);
-	memcpy(nuevo->value, valor, strlen(valor) + 1);
+	nuevo->value = malloc(string_length(valor) + 1);
+	memcpy(nuevo->value, valor, string_length(valor) + 1);
 	nuevo->timestamp = tiempo;
+
+	printf("[CREAR DATO] Se ingreso el value: %s\n" , nuevo->value);
 
 	return nuevo;
 }
 
 void liberar_dato(dato_t* dato_remove){
 
+	printf("[LIBERACION] Voy a liberar un dato con el value : %s\n" , dato_remove->value);
+
 	free(dato_remove->value);
+	printf("[LIBERACION] ya libere el value ");
+
 	free(dato_remove);
 
 	printf("[LIBERACION] Se libero un dato\n");
@@ -135,6 +83,7 @@ dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato){
 		printf("[A. TIMESTAMP] TIME: %i\n", segundo_dato->timestamp);
 		printf("[A. TIMESTAMP] VALUE: %s\n", segundo_dato->value);
 		dato_mas_reciente = crear_dato(segundo_dato->key, segundo_dato->value, segundo_dato->timestamp);
+		printf("[REQUEST] Termine de crear el dato\n");
 
 	}
 

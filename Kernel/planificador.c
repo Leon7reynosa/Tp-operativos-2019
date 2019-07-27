@@ -160,9 +160,11 @@ void cola_new_to_ready(){
 
 		nuevo_lql->path_lql = (char*) queue_pop(cola_new);
 
-		//nuevo_lql->path_lql = "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/lql.txt";
+		char* path_archivo_lql = obtener_path_script(nuevo_lql->path_lql);
 
-		archivo = fopen(nuevo_lql->path_lql , "r");
+		printf("path: %s\n" , path_archivo_lql);
+
+		archivo = fopen(path_archivo_lql , "r");
 
 		if(archivo != NULL){
 

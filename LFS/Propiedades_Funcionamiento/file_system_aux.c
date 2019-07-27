@@ -149,6 +149,8 @@ void mostrar_tabla_y_particiones( char* nombre_tabla ){
 				mostrar_bloques(particion->bloques);
 
 				liberar_particion(particion);
+
+				free(path_particion); //agregado para memory leak
 			}
 
 		}

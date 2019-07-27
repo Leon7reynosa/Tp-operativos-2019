@@ -878,3 +878,301 @@
 [INFO] 02:02:18:191 Pool_memory/(25642:25648): Con el value Red
 [INFO] 02:02:18:198 Pool_memory/(25642:25648): Termina el Auto-Journal
 
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Inicia el Auto-Journal
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Cantidad de paginas a mandar: 2
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Se manda al LFS la tabla COLORS
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Con el timestamp 1564204718
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Con la key 1
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Con el value Black
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Se manda al LFS la tabla COLORS
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Con el timestamp 1564204717
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Con la key 2
+[INFO] 02:19:00:281 Pool_memory/(27070:27076): Con el value Red
+[INFO] 02:19:00:283 Pool_memory/(27070:27076): Termina el Auto-Journal
+
+[INFO] 12:21:49:528 Pool_memory/(4848:4854): Inicia el Auto-Journal
+[INFO] 12:21:49:556 Pool_memory/(4848:4854): Termina el Auto-Journal
+
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Inicia el Auto-Journal
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Cantidad de paginas a mandar: 2
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Se manda al LFS la tabla COLORS
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Con el timestamp 1564240963
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Con la key 1
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Con el value Black
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Se manda al LFS la tabla COLORS
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Con el timestamp 1564240962
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Con la key 2
+[INFO] 12:22:49:558 Pool_memory/(4848:4854): Con el value Red
+[INFO] 12:22:49:560 Pool_memory/(4848:4854): Termina el Auto-Journal
+
+[INFO] 12:30:35:110 Pool_memory/(5142:5148): Inicia el Auto-Journal
+[INFO] 12:30:35:110 Pool_memory/(5142:5148): Cantidad de paginas a mandar: 1
+[INFO] 12:30:35:110 Pool_memory/(5142:5148): Se manda al LFS la tabla COLORS
+[INFO] 12:30:35:110 Pool_memory/(5142:5148): Con el timestamp 1564241434
+[INFO] 12:30:35:110 Pool_memory/(5142:5148): Con la key 1
+[INFO] 12:30:35:110 Pool_memory/(5142:5148): Con el value Blue
+[INFO] 12:30:35:112 Pool_memory/(5142:5148): Termina el Auto-Journal
+
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Inicia el Auto-Journal
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Cantidad de paginas a mandar: 2
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Se manda al LFS la tabla COLORS
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Con el timestamp 1564244571
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Con la key 1
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Con el value Black
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Se manda al LFS la tabla COLORS
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Con el timestamp 1564244570
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Con la key 2
+[INFO] 13:23:21:725 Pool_memory/(5851:5857): Con el value Red
+[INFO] 13:23:21:726 Pool_memory/(5851:5857): Termina el Auto-Journal
+
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Inicia el Auto-Journal
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Cantidad de paginas a mandar: 2
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Se manda al LFS la tabla COLORS
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Con el timestamp 1564244704
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Con la key 1
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Con el value Black
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Se manda al LFS la tabla COLORS
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Con el timestamp 1564244703
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Con la key 2
+[INFO] 13:25:43:926 Pool_memory/(5953:5959): Con el value Red
+[INFO] 13:25:43:927 Pool_memory/(5953:5959): Termina el Auto-Journal
+
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Inicia el Auto-Journal
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Cantidad de paginas a mandar: 2
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Se manda al LFS la tabla COLORS
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Con el timestamp 1564245854
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Con la key 1
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Con el value Black
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Se manda al LFS la tabla COLORS
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Con el timestamp 1564245853
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Con la key 2
+[INFO] 13:44:53:271 Pool_memory/(6222:6229): Con el value Red
+[INFO] 13:44:53:273 Pool_memory/(6222:6229): Termina el Auto-Journal
+
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Inicia el Auto-Journal
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Cantidad de paginas a mandar: 2
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Se manda al LFS la tabla COLORS
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Con el timestamp 1564246099
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Con la key 1
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Con el value Black
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Se manda al LFS la tabla COLORS
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Con el timestamp 1564246098
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Con la key 2
+[INFO] 13:49:00:432 Pool_memory/(6333:6339): Con el value Red
+[INFO] 13:49:00:433 Pool_memory/(6333:6339): Termina el Auto-Journal
+
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Inicia el Auto-Journal
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Cantidad de paginas a mandar: 2
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Se manda al LFS la tabla COLORS
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Con el timestamp 1564246298
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Con la key 1
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Con el value Black
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Se manda al LFS la tabla COLORS
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Con el timestamp 1564246297
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Con la key 2
+[INFO] 13:52:13:600 Pool_memory/(6426:6434): Con el value Red
+[INFO] 13:52:13:602 Pool_memory/(6426:6434): Termina el Auto-Journal
+
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Inicia el Auto-Journal
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Cantidad de paginas a mandar: 2
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Se manda al LFS la tabla COLORS
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Con el timestamp 1564246623
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Con la key 1
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Con el value Black
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Se manda al LFS la tabla COLORS
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Con el timestamp 1564246622
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Con la key 2
+[INFO] 13:57:45:718 Pool_memory/(6564:6570): Con el value Red
+[INFO] 13:57:45:719 Pool_memory/(6564:6570): Termina el Auto-Journal
+
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Inicia el Auto-Journal
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Cantidad de paginas a mandar: 2
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Se manda al LFS la tabla COLORS
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Con el timestamp 1564246969
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Con la key 1
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Con el value Black
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Se manda al LFS la tabla COLORS
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Con el timestamp 1564246968
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Con la key 2
+[INFO] 14:03:29:924 Pool_memory/(6718:6724): Con el value Red
+[INFO] 14:03:29:925 Pool_memory/(6718:6724): Termina el Auto-Journal
+
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Inicia el Auto-Journal
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Cantidad de paginas a mandar: 2
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Se manda al LFS la tabla COLORS
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Con el timestamp 1564247212
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Con la key 1
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Con el value Black
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Se manda al LFS la tabla COLORS
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Con el timestamp 1564247211
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Con la key 2
+[INFO] 14:07:14:615 Pool_memory/(6831:6837): Con el value Red
+[INFO] 14:07:14:617 Pool_memory/(6831:6837): Termina el Auto-Journal
+
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Inicia el Auto-Journal
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Cantidad de paginas a mandar: 2
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Se manda al LFS la tabla COLORS
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Con el timestamp 1564247465
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Con la key 1
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Con el value Black
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Se manda al LFS la tabla COLORS
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Con el timestamp 1564247464
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Con la key 2
+[INFO] 14:11:28:330 Pool_memory/(7031:7038): Con el value Red
+[INFO] 14:11:28:331 Pool_memory/(7031:7038): Termina el Auto-Journal
+
+[INFO] 14:16:04:312 Pool_memory/(7135:7141): Inicia el Auto-Journal
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Cantidad de paginas a mandar: 2
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Se manda al LFS la tabla COLORS
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Con el timestamp 1564247740
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Con la key 1
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Con el value Black
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Se manda al LFS la tabla COLORS
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Con el timestamp 1564247739
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Con la key 2
+[INFO] 14:16:04:313 Pool_memory/(7135:7141): Con el value Red
+[INFO] 14:16:04:314 Pool_memory/(7135:7141): Termina el Auto-Journal
+
+[INFO] 14:20:14:670 Pool_memory/(7714:7716): Inicia el Auto-Journal
+[INFO] 14:20:14:670 Pool_memory/(7714:7716): Termina el Auto-Journal
+
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Inicia el Auto-Journal
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Cantidad de paginas a mandar: 2
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Se manda al LFS la tabla COLORS
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Con el timestamp 1564248072
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Con la key 1
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Con el value Black
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Se manda al LFS la tabla COLORS
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Con el timestamp 1564248071
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Con la key 2
+[INFO] 14:21:14:670 Pool_memory/(7714:7716): Con el value Red
+[INFO] 14:21:14:672 Pool_memory/(7714:7716): Termina el Auto-Journal
+
+[INFO] 14:31:15:896 Pool_memory/(8644:8648): Inicia el Auto-Journal
+[INFO] 14:31:15:896 Pool_memory/(8644:8648): Termina el Auto-Journal
+
+[INFO] 14:32:15:896 Pool_memory/(8644:8648): Inicia el Auto-Journal
+[INFO] 14:32:15:896 Pool_memory/(8644:8648): Cantidad de paginas a mandar: 1
+[INFO] 14:32:15:896 Pool_memory/(8644:8648): Se manda al LFS la tabla COLORS
+[INFO] 14:32:15:896 Pool_memory/(8644:8648): Con el timestamp 1564248735
+[INFO] 14:32:15:896 Pool_memory/(8644:8648): Con la key 1
+[INFO] 14:32:15:896 Pool_memory/(8644:8648): Con el value Blue
+[INFO] 14:32:15:919 Pool_memory/(8644:8648): Termina el Auto-Journal
+
+[INFO] 14:43:10:484 Pool_memory/(9553:9557): Inicia el Auto-Journal
+[INFO] 14:43:10:484 Pool_memory/(9553:9557): Termina el Auto-Journal
+
+[INFO] 14:46:14:530 Pool_memory/(9716:9724): Inicia el Auto-Journal
+[INFO] 14:46:14:530 Pool_memory/(9716:9724): Termina el Auto-Journal
+
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Inicia el Auto-Journal
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Cantidad de paginas a mandar: 2
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Se manda al LFS la tabla COLORS
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Con el timestamp 1564249732
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Con la key 1
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Con el value Black
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Se manda al LFS la tabla COLORS
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Con el timestamp 1564249731
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Con la key 2
+[INFO] 14:49:12:621 Pool_memory/(10321:10325): Con el value Red
+[INFO] 14:49:12:659 Pool_memory/(10321:10325): Termina el Auto-Journal
+
+[INFO] 15:52:34:356 Pool_memory/(11638:11646): Inicia el Auto-Journal
+[INFO] 15:52:34:356 Pool_memory/(11638:11646): Termina el Auto-Journal
+
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Inicia el Auto-Journal
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Cantidad de paginas a mandar: 2
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Se manda al LFS la tabla COLORS
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Con el timestamp 1564253559
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Con la key 1
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Con el value Black
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Se manda al LFS la tabla COLORS
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Con el timestamp 1564253558
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Con la key 2
+[INFO] 15:53:34:361 Pool_memory/(11638:11646): Con el value Red
+[INFO] 15:53:34:363 Pool_memory/(11638:11646): Termina el Auto-Journal
+
+[INFO] 16:07:52:849 Pool_memory/(11899:11908): Inicia el Auto-Journal
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Cantidad de paginas a mandar: 2
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Se manda al LFS la tabla COLORS
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Con el timestamp 1564254451
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Con la key 1
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Con el value Black
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Se manda al LFS la tabla COLORS
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Con el timestamp 1564254450
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Con la key 2
+[INFO] 16:07:52:850 Pool_memory/(11899:11908): Con el value Red
+[INFO] 16:07:52:851 Pool_memory/(11899:11908): Termina el Auto-Journal
+
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Inicia el Auto-Journal
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Cantidad de paginas a mandar: 2
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Se manda al LFS la tabla COLORS
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Con el timestamp 1564254739
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Con la key 1
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Con el value Black
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Se manda al LFS la tabla COLORS
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Con el timestamp 1564254738
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Con la key 2
+[INFO] 16:12:53:10 Pool_memory/(12055:12063): Con el value Red
+[INFO] 16:12:53:12 Pool_memory/(12055:12063): Termina el Auto-Journal
+
+[INFO] 16:15:23:958 Pool_memory/(12152:12160): Inicia el Auto-Journal
+[INFO] 16:15:23:958 Pool_memory/(12152:12160): Cantidad de paginas a mandar: 2
+[INFO] 16:15:23:958 Pool_memory/(12152:12160): Se manda al LFS la tabla COLORS
+[INFO] 16:15:23:958 Pool_memory/(12152:12160): Con el timestamp 1564254884
+[INFO] 16:15:23:958 Pool_memory/(12152:12160): Con la key 1
+[INFO] 16:15:23:958 Pool_memory/(12152:12160): Con el value Black
+[INFO] 16:15:23:959 Pool_memory/(12152:12160): Se manda al LFS la tabla COLORS
+[INFO] 16:15:23:959 Pool_memory/(12152:12160): Con el timestamp 1564254883
+[INFO] 16:15:23:959 Pool_memory/(12152:12160): Con la key 2
+[INFO] 16:15:23:959 Pool_memory/(12152:12160): Con el value Red
+[INFO] 16:15:23:960 Pool_memory/(12152:12160): Termina el Auto-Journal
+
+[INFO] 16:21:42:191 Pool_memory/(12613:12617): Inicia el Auto-Journal
+[INFO] 16:21:42:191 Pool_memory/(12613:12617): Termina el Auto-Journal
+
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Inicia el Auto-Journal
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Cantidad de paginas a mandar: 2
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Se manda al LFS la tabla COLORS
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Con el timestamp 1564255315
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Con la key 1
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Con el value Black
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Se manda al LFS la tabla COLORS
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Con el timestamp 1564255314
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Con la key 2
+[INFO] 16:22:42:191 Pool_memory/(12613:12617): Con el value Red
+[INFO] 16:22:42:230 Pool_memory/(12613:12617): Termina el Auto-Journal
+
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Inicia el Auto-Journal
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Cantidad de paginas a mandar: 2
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Se manda al LFS la tabla COLORS
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Con el timestamp 1564256572
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Con la key 1
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Con el value Black
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Se manda al LFS la tabla COLORS
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Con el timestamp 1564256571
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Con la key 2
+[INFO] 16:43:29:325 Pool_memory/(13167:13180): Con el value Red
+[INFO] 16:43:29:329 Pool_memory/(13167:13180): Termina el Auto-Journal
+
+[INFO] 16:44:29:330 Pool_memory/(13167:13180): Inicia el Auto-Journal
+[INFO] 16:44:29:330 Pool_memory/(13167:13180): Cantidad de paginas a mandar: 0
+[INFO] 16:44:29:330 Pool_memory/(13167:13180): Termina el Auto-Journal
+
+[INFO] 16:45:29:330 Pool_memory/(13167:13180): Inicia el Auto-Journal
+[INFO] 16:45:29:330 Pool_memory/(13167:13180): Termina el Auto-Journal
+
+[INFO] 16:46:29:331 Pool_memory/(13167:13180): Inicia el Auto-Journal
+[INFO] 16:46:29:331 Pool_memory/(13167:13180): Termina el Auto-Journal
+
+[INFO] 16:47:29:332 Pool_memory/(13167:13180): Inicia el Auto-Journal
+[INFO] 16:47:29:332 Pool_memory/(13167:13180): Termina el Auto-Journal
+
+[INFO] 16:48:29:333 Pool_memory/(13167:13180): Inicia el Auto-Journal
+[INFO] 16:48:29:333 Pool_memory/(13167:13180): Cantidad de paginas a mandar: 0
+[INFO] 16:48:29:333 Pool_memory/(13167:13180): Termina el Auto-Journal
+
+[INFO] 16:49:29:334 Pool_memory/(13167:13180): Inicia el Auto-Journal
+[INFO] 16:49:29:334 Pool_memory/(13167:13180): Cantidad de paginas a mandar: 0
+[INFO] 16:49:29:334 Pool_memory/(13167:13180): Termina el Auto-Journal
+

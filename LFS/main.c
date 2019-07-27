@@ -3,6 +3,8 @@
 
 int main(int argc , char* argv[]){
 
+	system("clear");
+
 	printf("Empieza el programa Lissandra\n");
 
 	////////////////////////////INICIALIZACIONES////////////////////////

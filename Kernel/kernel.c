@@ -19,6 +19,7 @@ void pruebas(){
 
 int main (int argc , char* argv[]){
 
+	system("clear");
 
 	/////////////////////////////////VARIABLES/////////////////////////////////
 
@@ -29,6 +30,7 @@ int main (int argc , char* argv[]){
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
 	inicializar_semaforos_consistencias();
+
 	inicializar_semaforos_metricas();
 
 	inicializar_tabla_gossiping();
@@ -37,16 +39,13 @@ int main (int argc , char* argv[]){
 
 	inicializar_metricas();
 
-
-	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
-	logger_metricas = log_create("metricas.log" , "Metricas" , 0, LOG_LEVEL_INFO);
+	inicializar_loggers();
 
 	creacion_del_config();
+
 	obtener_datos_config();
 
 	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  numero_memoria_seed); //si pasa pasa, modioficarlo en el config
-
-	ingresar_a_tabla_gossiping(memoria_principal);
 
 	conexion_memoria = memoria_principal->socket;
 
@@ -122,6 +121,13 @@ void inicializar_semaforos_metricas(){
 	pthread_rwlock_init(&semaforo_metrica_sc, NULL);
 	pthread_rwlock_init(&semaforo_metrica_ec, NULL);
 	pthread_rwlock_init(&semaforo_metrica_shc, NULL);
+}
+
+void inicializar_loggers(){
+
+	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
+	logger_metricas = log_create("metricas.log" , "Metricas" , 0, LOG_LEVEL_INFO);
+
 }
 
 

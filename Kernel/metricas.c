@@ -19,7 +19,7 @@ void* realizar_metrics(){
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
-		log_info(logger_metricas, ">>>METRICS<<<\n");
+		log_info(logger_metricas, ">>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<\n");
 
 		pthread_rwlock_rdlock(&semaforo_metrica_sc);
 		pthread_rwlock_rdlock(&semaforo_metrica_ec);
@@ -231,11 +231,13 @@ void mostrar_memory_load(){
 
 }
 
-void sumar_contador_memoria(memoria_t* memoria){
+void sumar_contador_memoria(memoria_t** memoria){
 
 	//semaforo de memoria?
 
-	memoria->contador_requests ++;
+	printf("Le sumo 1 al contador de la memoria %d\n" , (*memoria)->numero_memoria);
+
+	(*memoria)->contador_requests += 1;
 
 }
 
@@ -258,7 +260,11 @@ void loggear_memory_load(){
 
 			porcentaje_memory_load = (memoria->contador_requests / total_requests) * 100 ;
 
+
 		}
+
+		printf("porcentaje: %d\n" , porcentaje_memory_load);
+
 		log_info(logger_metricas , "Memoria %d : " , memoria->numero_memoria );
 		log_info(logger_metricas, "%d Ejecuciones  ->  %d % Memory load\n" , memoria->contador_requests , porcentaje_memory_load);
 
@@ -267,6 +273,8 @@ void loggear_memory_load(){
 	pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
 	total_requests = total_ejecuciones();
+
+	printf("total de request: %d\n" , total_requests);
 
 	list_iterate(tabla_gossiping , _mostrar_memory_load);
 
@@ -291,7 +299,7 @@ int total_ejecuciones(){
 
 int total_ejecucion_de_metrica(metrica_t* metrica){
 
-	return list_size(metrica->lista_insert) + list_size(metrica->lista_select);
+	return (list_size(metrica->lista_insert) + list_size(metrica->lista_select));
 
 }
 
