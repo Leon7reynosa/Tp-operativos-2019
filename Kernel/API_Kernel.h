@@ -20,6 +20,7 @@
 #include"Mensajeria/t_dato.h"
 
 t_log* logger_kernel;
+t_log* logger_metricas;
 
 t_queue* cola_new;
 

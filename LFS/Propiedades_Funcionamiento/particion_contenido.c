@@ -223,12 +223,14 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 				if(dato_encontrado != NULL){
 
+					printf("[BUSQUEDA] Se encontro el dato y lo agrego a los datos temporales\n");
+
 					list_add(lista_de_datos, dato_encontrado);
 
 					free(path_temporal);
 				}
 				else{
-
+					printf("[BUSQUEDA] El temporal no tenia el dato\n");
 				}
 
 
@@ -247,15 +249,21 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 		dato_mayor = timestamp_mas_grande(dato_aux, dato_a_analizar);
 
-		liberar_dato(dato_aux);
+		if(dato_mayor != NULL){
+			liberar_dato(dato_aux);
+		}
 
 	}
 
+	printf("[BUSQUEDA] Busco el de menor timestamp entre los temporales (si encontre datos obvio)\n");
 	list_iterate(lista_de_datos, _timestamp_menor);
+	printf("[BUSQUEDA] Termine de buscar el menor\n");
 
 	closedir(directorio_tabla);
 	free(path_tabla);
 
+
+	printf("[BUSQUEDA] Libero los datos que encontre en los temporales\n");
 	list_destroy_and_destroy_elements(lista_de_datos, liberar_dato);
 
 	printf("[BUSQUEDA] Termine de buscar en temporales\n");

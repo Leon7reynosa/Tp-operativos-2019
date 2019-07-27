@@ -15,7 +15,7 @@ void creacion_del_config(){
 
 	g_config = config_create("kernel.config");
 
-	config_set_value(g_config, "IP_MEMORIA", "192.168.1.41");
+	config_set_value(g_config, "IP_MEMORIA", "192.168.1.40");
 	config_set_value(g_config, "PUERTO_MEMORIA", "8001");
 	config_set_value(g_config, "NUMERO_MEMORIA" , "1");
 	config_set_value(g_config, "QUANTUM", "3");

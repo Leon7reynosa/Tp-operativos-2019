@@ -312,6 +312,8 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 
 	memoria_creada->numero_memoria = numero_memoria;
 
+	memoria_creada->contador_requests = 0;
+
 	memoria_creada->puerto = puerto;
 
 	memoria_creada->socket = conectar_servidor(memoria_creada->ip,	memoria_creada->puerto); //esto capaz no va.
@@ -333,6 +335,12 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 	}
 
 	return memoria_creada;
+
+}
+
+void sumar_contador_request(memoria_t* memoria){
+
+	memoria->contador_requests ++;
 
 }
 

@@ -86,7 +86,7 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 	//free(buffer);
 
-	liberar_request(request);
+	free(request);
 
 	return true;
 }

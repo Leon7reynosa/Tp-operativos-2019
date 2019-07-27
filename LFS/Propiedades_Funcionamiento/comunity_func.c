@@ -90,6 +90,8 @@ void liberar_dato(dato_t* dato_remove){
 	free(dato_remove->value);
 	free(dato_remove);
 
+	printf("[LIBERACION] Se libero un dato\n");
+
 }
 
 dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato){
@@ -99,36 +101,41 @@ dato_t* timestamp_mas_grande(dato_t* primer_dato , dato_t* segundo_dato){
 
 	if(primer_dato != NULL){
 
-//		printf("El primer dato no es null\n");
+		printf("[A. TIMESTAMP] El primer dato no es null\n");
 
 		if(segundo_dato != NULL){
 
-//			printf("El segundo dato no es null\n");
+			printf("[A. TIMESTAMP] El segundo dato no es null\n");
 
 			if(primer_dato->timestamp >= segundo_dato->timestamp){
-//				printf("El primer dato es mas grande\n");
+				printf("[A. TIMESTAMP] El primer dato es mas grande\n");
 				dato_mas_reciente = crear_dato(primer_dato->key, primer_dato->value, primer_dato->timestamp);
 
 			}else{
-//				printf("El segundo es mas grande\n");
+				printf("[A. TIMESTAMP] El segundo es mas grande\n");
 				dato_mas_reciente = crear_dato(segundo_dato->key, segundo_dato->value, segundo_dato->timestamp);
 
 			}
 
 		}else{
-//			printf("El segundo dato es null\n");
+			printf("[A. TIMESTAMP] El segundo dato es null, queda el primero\n");
 			dato_mas_reciente = crear_dato(primer_dato->key, primer_dato->value, primer_dato->timestamp);
+			printf("[A. TIMESTAMP] El segundo no es null\n");
+			printf("[A. TIMESTAMP] KEY: %i\n", primer_dato->key);
+			printf("[A. TIMESTAMP] TIME: %i\n", primer_dato->timestamp);
+			printf("[A. TIMESTAMP] VALUE: %s\n", primer_dato->value);
 
 		}
 
 	}else if(segundo_dato != NULL){
 
-//		printf("El segundo no es null\n");
-//		printf("KEY: %i\n", segundo_dato->key);
-//		printf("TIME: %i\n", segundo_dato->timestamp);
-//		printf("VALUE: %s\n", segundo_dato->value);
+		printf("[A. TIMESTAMP] Queda el segundo\n");
+		printf("[A. TIMESTAMP] El segundo no es null\n");
+		printf("[A. TIMESTAMP] KEY: %i\n", segundo_dato->key);
+		printf("[A. TIMESTAMP] TIME: %i\n", segundo_dato->timestamp);
+		printf("[A. TIMESTAMP] VALUE: %s\n", segundo_dato->value);
 		dato_mas_reciente = crear_dato(segundo_dato->key, segundo_dato->value, segundo_dato->timestamp);
-//		printf("Queda el segundo\n");
+
 	}
 
 	return dato_mas_reciente;

@@ -20,6 +20,8 @@ int ejecutar_request(char* request_lql){
 
 	char* consistencia = string_new();
 	int tiempo_compactacion, particiones, numero_memoria, cantidad_parametros;
+	time_t tiempo_inicio_ejecucion_request;
+	time_t tiempo_fin_ejecucion_request;
 
 	memoria_t* memoria_utilizada;
 
@@ -35,6 +37,8 @@ int ejecutar_request(char* request_lql){
 
 	switch(cod_request){
 		case SELECT:
+
+			tiempo_inicio_ejecucion_request = time(NULL);
 
 			if(obtener_parametros_select(request_lql, nombre_tabla, &key) == 3){
 
@@ -73,15 +77,19 @@ int ejecutar_request(char* request_lql){
 
 				}
 
-				printf("PSE EL ENVIAR, AHORA ESPERO EL DATO\n");
+				sumar_contador_request(memoria_utilizada);
 
 				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada);
-
-				printf("YA RECIBI EL DATO\n");
 
 				if(dato_recibido == NULL){
 
 					printf("NO SE PUDO REALIZAR EL SELECT\n");
+
+					tiempo_fin_ejecucion_request = time(NULL) - tiempo_inicio_ejecucion_request;
+
+					agregar_a_metrica(SELECT, select_enviar , tiempo_fin_ejecucion_request);
+
+					sumar_contador_memoria(memoria_utilizada);
 
 					return 1;
 
@@ -91,10 +99,20 @@ int ejecutar_request(char* request_lql){
 
 				liberar_t_dato(dato_recibido);
 
+				tiempo_fin_ejecucion_request = time(NULL) - tiempo_inicio_ejecucion_request;
+
+				agregar_a_metrica(SELECT, select_enviar , tiempo_fin_ejecucion_request);
+
+				sumar_contador_memoria(memoria_utilizada);
+
+				liberar_dato_select(select_enviar);
+
 				return 1;
 			}
 			break;
 		case INSERT:
+
+			tiempo_inicio_ejecucion_request = time(NULL);
 
 			if(obtener_parametros_insert(request_lql, nombre_tabla, &key, &value, &timestamp)){
 
@@ -108,18 +126,25 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+				printf("jajajaja\n");
+
 				insert insert_enviar = crear_dato_insert(nombre_tabla, key, value, timestamp);
 
+
+				printf("jajajaja\n");
 				memoria_utilizada = seleccionar_memoria_consistencia(INSERT, insert_enviar);
 
+				printf("jajajaja\n");
 				if(memoria_utilizada == NULL){
 
 					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
 					return 0;
 				}
 
+				printf("jajajaja\n");
 				mostrar_memoria_utilizada(memoria_utilizada);
 
+				printf("jajajaja\n");
 				if ( enviar_request(INSERT, insert_enviar, memoria_utilizada->socket) == false ){
 
 					log_error(logger_kernel, ">>FALLO ENVIAR EL INSERT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
@@ -136,6 +161,8 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+				printf("jajajaja\n");
+
 				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
 					log_error(logger_kernel,  "-Fallo la request INSERT.-\n");
@@ -144,8 +171,15 @@ int ejecutar_request(char* request_lql){
 
 				}
 
+				tiempo_fin_ejecucion_request = time(NULL) - tiempo_inicio_ejecucion_request;
 
+				agregar_a_metrica(INSERT, insert_enviar , tiempo_fin_ejecucion_request);
 
+				sumar_contador_memoria(memoria_utilizada);
+
+				liberar_dato_insert(insert_enviar);
+
+				sumar_contador_request(memoria_utilizada);
 
 				return 1;
 			}
@@ -387,6 +421,12 @@ int ejecutar_request(char* request_lql){
 			return 1;
 
 			break;
+
+		case METRICS:
+
+			request_metrics();
+
+			return 1;
 
 		default:
 			log_error( logger_kernel ,"-LA REQUEST NO ES VALIDA-\n");

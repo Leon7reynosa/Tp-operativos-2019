@@ -18,7 +18,8 @@ request_parser parser_list[] = {
 		{"GOSSIP" , GOSSIP},
 		{"ADD" , ADD},
 		{"RUN" , RUN},
-		{"EXIT" , EXIT}
+		{"EXIT" , EXIT},
+		{"METRICS" , METRICS}
 };
 
 cod_operacion identificar_request ( char* request_lql){

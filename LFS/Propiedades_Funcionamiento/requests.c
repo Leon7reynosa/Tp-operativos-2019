@@ -224,6 +224,8 @@ dato_t* request_select(select_t datos_select){
 		 free(metadata_tabla);
 		 free(path_particion_a_buscar);
 
+		 printf("[LIBERACION] Se libero el path de particion y la metadata_tabla\n");
+
 	 }
 
 	 else{

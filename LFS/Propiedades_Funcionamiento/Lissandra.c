@@ -93,11 +93,12 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
     dato_mayor = (dato_t *)list_get(tabla_ordenada, 0);
 
     if(dato_mayor != NULL){
+
     	printf("[RESULTADO] Se encontro el dato en memtable\n");
 
     	dato_t* dato_encontrado = crear_dato(dato_mayor->key, dato_mayor->value, dato_mayor->timestamp);
 
-    	return dato_encontrado;
+    	return dato_encontrado;                // RETURN
 
     }else{
     	printf("[RESULTADO] No se encontro el dato en memtable\n");
@@ -107,7 +108,7 @@ dato_t *obtener_dato_con_mayor_timestamp_tabla(char *nombre_tabla, u_int16_t key
 
     printf("[BUSQUEDA] Termine de buscar en memtable\n");
 
-    return dato_mayor;
+    return dato_mayor;                        //RETURN
 }
 
 

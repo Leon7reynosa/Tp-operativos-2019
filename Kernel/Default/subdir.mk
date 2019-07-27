@@ -10,6 +10,7 @@ C_SRCS += \
 ../gossiping.c \
 ../kernel.c \
 ../metadata.c \
+../metricas.c \
 ../parser.c \
 ../planificador.c \
 ../request_memoria.c \
@@ -22,6 +23,7 @@ OBJS += \
 ./gossiping.o \
 ./kernel.o \
 ./metadata.o \
+./metricas.o \
 ./parser.o \
 ./planificador.o \
 ./request_memoria.o \
@@ -34,6 +36,7 @@ C_DEPS += \
 ./gossiping.d \
 ./kernel.d \
 ./metadata.d \
+./metricas.d \
 ./parser.d \
 ./planificador.d \
 ./request_memoria.d \

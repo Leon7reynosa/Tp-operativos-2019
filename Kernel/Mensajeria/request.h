@@ -22,6 +22,7 @@ typedef enum{
 	GOSSIP,
 	ADD,
 	RUN,
+	METRICS,
 	EXIT
 }cod_operacion;
 

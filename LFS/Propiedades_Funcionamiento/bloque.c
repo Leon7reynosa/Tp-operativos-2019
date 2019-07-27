@@ -51,6 +51,7 @@ Bloque leer_bloque(int indice_bloque){
 
 		printf("[LECTURA] Cree el bloque y cerre el map\n");
 	}
+
 	free(atributos);
 	free(path_bloque);
 
@@ -324,19 +325,21 @@ Bloque crear_bloque(int numero, char* datos){
 
 	bloque->datos = list_create();
 
-	if(string_starts_with(datos, "\n")){
-
-		printf("[LECTURA] SE CORTO EN EL HIJO DE RE MIL PUTA DE BARRA ENE\n");
-
-		char* barra_ene = malloc(2);
-		memcpy(barra_ene, "\n", 2);
-
-		list_add(bloque->datos,  barra_ene );
-
-		i++;
-	}
 
 	if(datos != NULL){
+
+		if(string_starts_with(datos, "\n")){
+
+			printf("[LECTURA] SE CORTO EN EL HIJO DE RE MIL PUTA DE BARRA ENE\n");
+
+			char* barra_ene = malloc(2);
+			memcpy(barra_ene, "\n", 2);
+
+			list_add(bloque->datos,  barra_ene );
+
+			i++;
+		}
+
 		char** aux_datos = string_split(datos, "\n");
 
 		i = 0;

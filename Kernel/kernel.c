@@ -29,13 +29,17 @@ int main (int argc , char* argv[]){
 	/////////////////////////////INICIALIZACIONES//////////////////////////////
 
 	inicializar_semaforos_consistencias();
+	inicializar_semaforos_metricas();
 
 	inicializar_tabla_gossiping();
 
 	inicializar_registro_tabla();
 
+	inicializar_metricas();
+
 
 	logger_kernel = log_create("kernel.log" , "kernel" , 1 , LOG_LEVEL_INFO);
+	logger_metricas = log_create("metricas.log" , "Metricas" , 0, LOG_LEVEL_INFO);
 
 	creacion_del_config();
 	obtener_datos_config();
@@ -69,6 +73,10 @@ int main (int argc , char* argv[]){
 
 	pthread_detach(&hilo_refresh_metadata);
 
+	pthread_create(&hilo_metrics, NULL, realizar_metrics, NULL);
+
+	pthread_detach(&hilo_metrics);
+
 	cola_new_to_ready();
 
 	pthread_create(&hilo_planificador, NULL, planificador, colas_exec);
@@ -83,6 +91,8 @@ int main (int argc , char* argv[]){
 	pthread_join(hilo_consola , NULL);
 
 	cancelar_hilos_execute();
+
+	pthread_cancel(hilo_metrics);
 
 	pthread_cancel(hilo_gossiping);
 
@@ -105,6 +115,13 @@ void inicializar_semaforos_consistencias(){
 	pthread_rwlock_init(&semaforo_strong_hash_c, NULL);
 
 
+}
+
+void inicializar_semaforos_metricas(){
+
+	pthread_rwlock_init(&semaforo_metrica_sc, NULL);
+	pthread_rwlock_init(&semaforo_metrica_ec, NULL);
+	pthread_rwlock_init(&semaforo_metrica_shc, NULL);
 }
 
 

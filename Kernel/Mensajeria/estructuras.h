@@ -18,6 +18,7 @@ typedef struct{
 	char* ip;
 	int puerto;
 	int socket;
+	int contador_requests;
 
 }memoria_t;
 
