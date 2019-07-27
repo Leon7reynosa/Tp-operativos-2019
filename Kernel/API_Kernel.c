@@ -87,7 +87,7 @@ int ejecutar_request(char* request_lql){
 
 					agregar_a_metrica(SELECT, select_enviar , tiempo_fin_ejecucion_request);
 
-					sumar_contador_memoria(&memoria_utilizada);
+					sumar_contador_memoria(memoria_utilizada);
 
 					return 1;
 
@@ -101,7 +101,7 @@ int ejecutar_request(char* request_lql){
 
 				agregar_a_metrica(SELECT, select_enviar , tiempo_fin_ejecucion_request);
 
-				sumar_contador_memoria(&memoria_utilizada);
+				sumar_contador_memoria(memoria_utilizada);
 
 				liberar_dato_select(select_enviar);
 
@@ -164,7 +164,7 @@ int ejecutar_request(char* request_lql){
 
 				agregar_a_metrica(INSERT, insert_enviar , tiempo_fin_ejecucion_request);
 
-				sumar_contador_memoria(&memoria_utilizada);
+				sumar_contador_memoria(memoria_utilizada);
 
 				liberar_dato_insert(insert_enviar);
 

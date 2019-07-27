@@ -72,6 +72,8 @@ void remover_memoria_de_tabla_gossiping(memoria_t* memoria_utilizada){
 
 	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
+	liberar_memoria_t(memoria_utilizada); //cuidado
+
 }
 
 void remover_memoria_de_consistencia(memoria_t* memoria){

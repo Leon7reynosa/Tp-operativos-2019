@@ -70,8 +70,7 @@ memoria_t* obtener_memoria_de_lista( int numero_memoria ){
 
 		if(dato_memoria_gossiping->numero_memoria == numero_memoria){
 
-			memoria_t* memoria_encontrada =
-					crear_dato_memoria_consistencia(dato_memoria_gossiping->ip, dato_memoria_gossiping->numero_memoria, dato_memoria_gossiping->puerto);
+			memoria_t* memoria_encontrada = dato_memoria_gossiping; //si rompe todo es por esto
 
 			return memoria_encontrada;
 

@@ -231,13 +231,15 @@ void mostrar_memory_load(){
 
 }
 
-void sumar_contador_memoria(memoria_t** memoria){
+void sumar_contador_memoria(memoria_t* memoria){
 
 	//semaforo de memoria?
 
-	printf("Le sumo 1 al contador de la memoria %d\n" , (*memoria)->numero_memoria);
+	printf("Le sumo 1 al contador de la memoria %d\n" , memoria->numero_memoria);
 
-	(*memoria)->contador_requests += 1;
+	memoria->contador_requests += 1;
+
+	printf("nuevo_valor de contador: %d\n" , memoria->contador_requests);
 
 }
 

@@ -4134,3 +4134,87 @@
 
 [INFO] 16:49:53:372 file system/(13147:13179): Request -- DESCRIBE GLOBAL -- realizada
 
+[INFO] 17:03:35:359 file system/(13676:13687): Inicio de request -- DROP --
+
+[INFO] 17:03:35:362 file system/(13676:13687): Request -- DROP-- realizada
+
+[INFO] 17:04:36:60 file system/(13676:13703): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 17:04:36:60 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:04:36:60 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:04:36:60 file system/(13676:13703): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 17:04:49:89 file system/(13676:13703): Inicio de request -- INSERT -- 
+
+[INFO] 17:04:49:90 file system/(13676:13703): Request -- INSERT -- realizada !!!
+
+[INFO] 17:04:51:61 file system/(13676:13703): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 17:04:51:61 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:04:51:61 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:04:51:61 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:04:51:61 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:04:51:61 file system/(13676:13703): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 17:05:06:63 file system/(13676:13703): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 17:05:06:63 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:06:63 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:06:63 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:06:63 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:06:63 file system/(13676:13703): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 17:05:21:65 file system/(13676:13703): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 17:05:21:66 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:21:66 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:21:66 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:21:66 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:21:66 file system/(13676:13703): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 17:05:36:67 file system/(13676:13703): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 17:05:36:67 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:36:67 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:36:67 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:36:67 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:36:67 file system/(13676:13703): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 17:05:40:641 file system/(13676:13703): Inicio de request -- INSERT -- 
+
+[INFO] 17:05:40:641 file system/(13676:13703): Request -- INSERT -- realizada !!!
+
+[INFO] 17:05:40:642 file system/(13676:13703): Inicio de request -- INSERT -- 
+
+[INFO] 17:05:40:642 file system/(13676:13703): Request -- INSERT -- realizada !!!
+
+[INFO] 17:05:51:71 file system/(13676:13703): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 17:05:51:71 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:51:71 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:51:71 file system/(13676:13703): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 17:05:51:71 file system/(13676:13703): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 17:05:51:71 file system/(13676:13703): Request -- DESCRIBE GLOBAL -- realizada
+

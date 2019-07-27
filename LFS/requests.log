@@ -2116,3 +2116,39 @@
 
 [TRACE] 16:49:53:372 requests/(13147:13179): Request de DESCRIBE terminada por el socket 8 !
 
+[TRACE] 17:04:36:60 requests/(13676:13703): Request de DESCRIBE recibida por el socket 8 !
+
+[TRACE] 17:04:36:60 requests/(13676:13703): Request de DESCRIBE terminada por el socket 8 !
+
+[TRACE] 17:04:49:89 requests/(13676:13703): Request de CREATE recibida por el socket 8 !
+
+[TRACE] 17:04:49:90 requests/(13676:13703): Request de CREATE terminada correctamente por el socket 8 !
+
+[TRACE] 17:04:51:61 requests/(13676:13703): Request de DESCRIBE recibida por el socket 8 !
+
+[TRACE] 17:04:51:62 requests/(13676:13703): Request de DESCRIBE terminada por el socket 8 !
+
+[TRACE] 17:05:06:63 requests/(13676:13703): Request de DESCRIBE recibida por el socket 8 !
+
+[TRACE] 17:05:06:64 requests/(13676:13703): Request de DESCRIBE terminada por el socket 8 !
+
+[TRACE] 17:05:21:65 requests/(13676:13703): Request de DESCRIBE recibida por el socket 8 !
+
+[TRACE] 17:05:21:66 requests/(13676:13703): Request de DESCRIBE terminada por el socket 8 !
+
+[TRACE] 17:05:36:67 requests/(13676:13703): Request de DESCRIBE recibida por el socket 8 !
+
+[TRACE] 17:05:36:67 requests/(13676:13703): Request de DESCRIBE terminada por el socket 8 !
+
+[TRACE] 17:05:40:641 requests/(13676:13703): Request de INSERT recibida por el socket 8 !
+
+[TRACE] 17:05:40:641 requests/(13676:13703): Request de INSERT terminada por el socket 8 !
+
+[TRACE] 17:05:40:642 requests/(13676:13703): Request de INSERT recibida por el socket 8 !
+
+[TRACE] 17:05:40:642 requests/(13676:13703): Request de INSERT terminada por el socket 8 !
+
+[TRACE] 17:05:51:71 requests/(13676:13703): Request de DESCRIBE recibida por el socket 8 !
+
+[TRACE] 17:05:51:71 requests/(13676:13703): Request de DESCRIBE terminada por el socket 8 !
+

@@ -10484,3 +10484,111 @@
 
 [INFO] 16:49:56:579 Pool Memory/(13167:13167): Se termino de trabajar la request.
 
+[INFO] 17:03:40:638 Pool Memory/(13696:13696): Se establecion conexion con el File System.
+>> Tamanio value = 60
+
+[INFO] 17:03:40:638 Pool Memory/(13696:13696): Se inicializo correctamente la memoria.
+>> Tamanio de la memoria = 1280 -> Cantidad maxima de datos: 19 
+
+[INFO] 17:04:36:58 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:36:58 Pool Memory/(13696:13696): Se realizara un DESCRIBE GLOBAL
+[INFO] 17:04:36:61 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:49:88 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:49:90 Pool Memory/(13696:13696): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 17:04:49:91 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:49:91 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:49:91 Pool Memory/(13696:13696): Se realizara un INSERT
+[INFO] 17:04:49:91 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:49:92 Pool Memory/(13696:13696): No existe una pagina con la key: 1
+[INFO] 17:04:49:92 Pool Memory/(13696:13696): Se solicita una nueva pagina
+[INFO] 17:04:49:92 Pool Memory/(13696:13696): Hay una pagina libre para asignar
+[INFO] 17:04:49:92 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:49:94 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:49:94 Pool Memory/(13696:13696): Se realizara un SELECT
+[INFO] 17:04:49:95 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:49:95 Pool Memory/(13696:13696): Existe una pagina con la key: 1
+[INFO] 17:04:49:95 Pool Memory/(13696:13696): Se envio el dato encontrado
+[INFO] 17:04:49:95 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:50:104 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:50:104 Pool Memory/(13696:13696): Se realizara un INSERT
+[INFO] 17:04:50:104 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:50:105 Pool Memory/(13696:13696): No existe una pagina con la key: 2
+[INFO] 17:04:50:105 Pool Memory/(13696:13696): Se solicita una nueva pagina
+[INFO] 17:04:50:105 Pool Memory/(13696:13696): Hay una pagina libre para asignar
+[INFO] 17:04:50:105 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:50:105 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:50:105 Pool Memory/(13696:13696): Se realizara un SELECT
+[INFO] 17:04:50:105 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:50:106 Pool Memory/(13696:13696): Existe una pagina con la key: 2
+[INFO] 17:04:50:106 Pool Memory/(13696:13696): Se envio el dato encontrado
+[INFO] 17:04:50:106 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:50:106 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:50:107 Pool Memory/(13696:13696): Se realizara un SELECT
+[INFO] 17:04:50:107 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:50:107 Pool Memory/(13696:13696): Existe una pagina con la key: 2
+[INFO] 17:04:50:107 Pool Memory/(13696:13696): Se envio el dato encontrado
+[INFO] 17:04:50:107 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:51:60 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:51:60 Pool Memory/(13696:13696): Se realizar intercambio de tablas de gossiping
+[INFO] 17:04:51:60 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:51:61 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:51:61 Pool Memory/(13696:13696): Se realizara un DESCRIBE GLOBAL
+[INFO] 17:04:51:62 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:51:107 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:51:108 Pool Memory/(13696:13696): Se realizara un SELECT
+[INFO] 17:04:51:108 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:51:108 Pool Memory/(13696:13696): Existe una pagina con la key: 1
+[INFO] 17:04:51:108 Pool Memory/(13696:13696): Se envio el dato encontrado
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Se realizara un INSERT
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Existe una pagina con la key: 1. La actualizo.
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Se realizara un SELECT
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Existe un segmento para COLORS
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Existe una pagina con la key: 1
+[INFO] 17:04:51:109 Pool Memory/(13696:13696): Se envio el dato encontrado
+[INFO] 17:04:51:110 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:05:06:62 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:05:06:62 Pool Memory/(13696:13696): Se realizara un DESCRIBE GLOBAL
+[INFO] 17:05:06:64 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:05:21:61 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:05:21:61 Pool Memory/(13696:13696): Se realizar intercambio de tablas de gossiping
+[INFO] 17:05:21:61 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:05:21:64 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:05:21:65 Pool Memory/(13696:13696): Se realizara un DESCRIBE GLOBAL
+[INFO] 17:05:21:66 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:05:36:67 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:05:36:67 Pool Memory/(13696:13696): Se realizara un DESCRIBE GLOBAL
+[INFO] 17:05:36:68 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:05:51:62 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:05:51:62 Pool Memory/(13696:13696): Se realizar intercambio de tablas de gossiping
+[INFO] 17:05:51:63 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:05:51:69 Pool Memory/(13696:13696): Se recibio una nueva request.
+[INFO] 17:05:51:70 Pool Memory/(13696:13696): Se realizara un DESCRIBE GLOBAL
+[INFO] 17:05:51:72 Pool Memory/(13696:13696): Se termino de trabajar la request.
+
+[INFO] 17:05:59:79 Pool Memory/(13696:13696): [DESCONEXION] Se desconecto un cliente.
+
+
+[INFO] 17:05:59:79 Pool Memory/(13696:13696): Se termino de trabajar la request.
+

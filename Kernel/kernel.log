@@ -5385,3 +5385,57 @@
 
 [ERROR] 16:49:54:915 kernel/(13187:13201): FALLO AL EJECUTAR LA REQUEST EXIE.
 
+[INFO] 17:04:21:55 kernel/(13796:13796): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+
+[INFO] 17:04:28:224 kernel/(13796:13808): add memory 1 to sc
+[INFO] 17:04:28:224 kernel/(13796:13808): 
+---Se realizara la request ADD---
+
+[INFO] 17:04:28:224 kernel/(13796:13808): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:04:32:971 kernel/(13796:13808): add memory 1 to ec
+[INFO] 17:04:32:971 kernel/(13796:13808): 
+---Se realizara la request ADD---
+
+[INFO] 17:04:32:971 kernel/(13796:13808): SE AGREGO LA MEMORIA CORRECTAMENTE
+
+[INFO] 17:04:41:891 kernel/(13796:13808): run simple_sc.l1l
+[INFO] 17:04:41:891 kernel/(13796:13808): --Se realizara el RUN del archivo simple_sc.l1l--
+
+[INFO] 17:04:41:891 kernel/(13796:13808): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[ERROR] 17:04:41:891 kernel/(13796:13808): NO SE PUDO ABRIR EL ARCHIVO simple_sc.l1l.
+
+[INFO] 17:04:48:87 kernel/(13796:13808): run simple_sc.lql
+[INFO] 17:04:48:88 kernel/(13796:13808): --Se realizara el RUN del archivo simple_sc.lql--
+
+[INFO] 17:04:48:88 kernel/(13796:13808): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+
+[INFO] 17:04:49:88 kernel/(13796:13808): CREATE COLORS SC 4 300000
+[INFO] 17:04:49:88 kernel/(13796:13808): ---Se realizara el CREATE---
+
+[INFO] 17:04:49:91 kernel/(13796:13808): INSERT COLORS 1 "Blue"
+[INFO] 17:04:49:91 kernel/(13796:13808): ---Se realizara el INSERT---
+
+[INFO] 17:04:49:92 kernel/(13796:13808): SELECT COLORS 1
+[INFO] 17:04:49:92 kernel/(13796:13808): ---Se realizara el SELECT---
+
+[INFO] 17:04:50:103 kernel/(13796:13808): INSERT COLORS 2 "Red"
+[INFO] 17:04:50:103 kernel/(13796:13808): ---Se realizara el INSERT---
+
+[INFO] 17:04:50:105 kernel/(13796:13808): SELECT COLORS 2
+[INFO] 17:04:50:105 kernel/(13796:13808): ---Se realizara el SELECT---
+
+[INFO] 17:04:50:106 kernel/(13796:13808): SELECT COLORS 2
+[INFO] 17:04:50:106 kernel/(13796:13808): ---Se realizara el SELECT---
+
+[INFO] 17:04:51:107 kernel/(13796:13808): SELECT COLORS 1
+[INFO] 17:04:51:107 kernel/(13796:13808): ---Se realizara el SELECT---
+
+[INFO] 17:04:51:108 kernel/(13796:13808): INSERT COLORS 1 "Black"
+[INFO] 17:04:51:108 kernel/(13796:13808): ---Se realizara el INSERT---
+
+[INFO] 17:04:51:109 kernel/(13796:13808): SELECT COLORS 1
+[INFO] 17:04:51:109 kernel/(13796:13808): ---Se realizara el SELECT---
+
+[INFO] 17:04:54:856 kernel/(13796:13808): METRICS
