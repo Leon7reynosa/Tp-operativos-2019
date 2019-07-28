@@ -52,7 +52,7 @@ bool leer_consola(void){
 	}
 	else if(string_equals_ignore_case(tokens[0], "DROP")){
 
-		//parsear_request(DROP, tokens);
+		parsear_request(DROP, tokens);
 
 	}
 	else if(string_equals_ignore_case(tokens[0], "JOURNAL")){
@@ -82,13 +82,25 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 	char* tabla;
 	u_int16_t key;
+	char* value;
 	time_t timestamp;
+	char* consistencia;
+	int tiempo_compactacion;
+	int numero_particiones;
+	Dato dato;
+	estado_request estado;
+
 
 	select_t dato_select;
-	Dato dato;
 
 	insert dato_insert;
 
+	describe_t dato_describe;
+	t_list* list_describe;
+
+	create dato_create;
+
+	Drop dato_drop;
 
 	switch(operacion){
 
@@ -109,6 +121,96 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 				printf("Cantidad de argumentos invalido\n");
 
+			}
+
+			break;
+
+		case INSERT:
+
+			if(cantidad_argumentos == 4 || cantidad_argumentos == 5){
+					tabla = tokens[1];
+					key = atoi(tokens[2]);
+					value = tokens[3];
+					timestamp = atoi(tokens[4]);
+
+					dato_insert = crear_dato_insert(tabla, key, value, timestamp);
+
+					request_insert(dato_insert);
+
+			}
+
+			else{
+				printf("Cantidad de argumentos invalido\n");
+			}
+
+			break;
+
+		case CREATE:
+
+			if(cantidad_argumentos == 5){
+				tabla = tokens[1];
+				consistencia = tokens[2];
+				numero_particiones = atoi(tokens[3]);
+				tiempo_compactacion = atoi(tokens[4]);
+
+				dato_create = crear_dato_create(tabla, consistencia, numero_particiones, tiempo_compactacion);
+
+				estado = request_create(dato_describe);
+
+				liberar_dato_create(dato_create);
+
+			//	liberar_dato(dato_create);
+
+			}
+			else{
+				printf("Cantidad de argumentos invalido\n");
+			}
+
+			break;
+
+		case DESCRIBE:
+
+			if(cantidad_argumentos == 1 || cantidad_argumentos == 2){
+				tabla = tokens[1];
+
+				dato_describe = crear_dato_describe(tabla);
+
+				list_describe = request_describe(dato_describe);
+
+				liberar_dato_describe(dato_describe);
+
+			}
+			else{
+				printf("Cantidad de argumentos invalido\n");
+			}
+
+			break;
+
+		case DROP:
+
+			if(cantidad_argumentos == 2){
+				tabla = tokens[1];
+
+				dato_drop = crear_drop(tabla);
+
+				estado = request_drop(dato_drop);
+
+				liberar_drop(dato_drop);
+
+			}
+			else{
+				printf("Cantidad de argumentos invalido\n");
+			}
+
+			break;
+
+		case JOURNAL:
+
+			if(cantidad_argumentos == 2){
+
+			}
+			else{
+				printf("Cantidad de argumentos invalido\n");
 			}
 
 			break;

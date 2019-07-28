@@ -297,7 +297,7 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 	return 1;
 
 }
-
+/*
 int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value){
 	char* funcion = string_new();
 
@@ -313,7 +313,7 @@ int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_ta
 	free(funcion);
 	return 1;
 }
-
+*/
 int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* criterio, int* numero_particiones, int* tiempo_compactacion){
 	char* funcion = string_new();
 
@@ -368,8 +368,8 @@ void menu(){
 	printf("\n1. SELECT [NOMBRE TABLA] [KEY]\n");
 	printf("2. INSERT [NOMBRE TABLA] [KEY] [VALUE] [TIMESTAMP]\n");
 	printf("3. CREATE [NOMBRE TABLA] [CONSISTENCIA] [NUMERO PARTICIONES] [TIEMPO COMPACTACION]\n");
-	printf("4. ADD MEMORY [NUMERO MEMORIA] TO [CRITERIO]\n");
-	printf("5. RUN [ARCHIVO LQL]\n");
+	printf("4. DESCRIBE [NOMBRE TABLA]\n");
+	printf("4. DROP [NOMBRE TABLA]\n");
 	printf("Escriba una request: ");
 	printf("\n");
 }
