@@ -11,21 +11,25 @@ void* consola(void* argumento){
 
 	char* leido;
 
+	char* string_codigo = string_new();
+
 	cod_operacion codigo;
 
 	menu();
 
 	leido = readline(">> ");
 
-	printf("leido : %s\n" , leido);
+	printf("Leido : %s\n" , leido);
 
 	while(!string_equals_ignore_case(leido, "exit")){
 
-		printf("chau\n”");
-
 		codigo = identificar_request(leido);
 
-		printf("codigo = %d\n"  , codigo);
+		string_codigo = obtener_string_codigo(codigo);
+
+		printf("Request a realizar = %s\n"  , string_codigo);
+
+		free(string_codigo);
 
 		ejecutar_request(codigo, leido);
 
@@ -43,6 +47,41 @@ void* consola(void* argumento){
 }
 
 
+char* obtener_string_codigo(cod_operacion codigo){
+	char* string_codigo = string_new();
+
+	switch(codigo){
+		case SELECT:
+			string_codigo = string_duplicate("SELECT");
+			break;
+		case INSERT:
+			string_codigo = string_duplicate("INSERT");
+			break;
+		case CREATE:
+			string_codigo = string_duplicate("CREATE");
+			break;
+		case DESCRIBE:
+			string_codigo = string_duplicate("DESCRIBE");
+			break;
+		case DROP:
+			string_codigo = string_duplicate("DROP");
+			break;
+		case DESCONEXION:
+			string_codigo = string_duplicate("DESCONEXION");
+			break;
+		case EXIT:
+			string_codigo = string_duplicate("EXIT");
+			break;
+		default:
+			string_codigo = string_duplicate("REQUEST INVALIDA");
+			break;
+
+	}
+
+	return string_codigo;
+}
+
+
 bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 	printf("\n//////////////////////////////////////REQUEST NUEVA DE CONSOLA////////////////////////////////////\n");
@@ -54,7 +93,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 	void* tipo_request;
 
-	char*nombre_tabla = string_new() ;
+	char*nombre_tabla = string_new();
 	char* value = string_new();
 	u_int16_t key;
 	time_t timestamp;
@@ -98,6 +137,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 					timestamp = time(NULL);
 
 				}
+
+			printf("pase lol\n");
 
 				insert dato_insert = crear_dato_insert(nombre_tabla, key,value, timestamp  );
 
@@ -216,7 +257,7 @@ int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t
 	return cantidad_parametros;
 }
 
-int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp){
+int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value, time_t* timestamp){
 
 	char** auxiliar;
 	char* funcion = string_new();
@@ -225,24 +266,24 @@ int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t
 
 	auxiliar = string_n_split(linea_request, 3, comillas  );
 
+	printf("entre\n");
+
 	if(sscanf(auxiliar[0] , "%s %s %i" , funcion, nombre_tabla, key) != 3){
 
 //		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE NOMBRE Y KEY.-\n");
 		return 0;
 	}
 
-
-
-	string_append(value , auxiliar[1]);
+	string_append(&value , auxiliar[1]);
 
 	if(auxiliar[2] == NULL){
 
-		timestamp = -1;
+		*timestamp = -1;
 
 		return 1;
 
-	}else if( (sscanf(auxiliar[2] , " %d" , timestamp)) != 1 ){
-
+	}
+	else if( (sscanf(auxiliar[2] , " %d" , timestamp)) != 1 ){
 //		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE TIMESTAMP.-\n");
 		return 0;
 

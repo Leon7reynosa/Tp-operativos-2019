@@ -4218,3 +4218,23 @@
 
 [INFO] 17:05:51:71 file system/(13676:13703): Request -- DESCRIBE GLOBAL -- realizada
 
+[INFO] 12:45:44:110 file system/(4807:4818): Inicio de request -- INSERT -- 
+
+[INFO] 12:45:44:111 file system/(4807:4818): Request -- INSERT -- realizada !!!
+
+[INFO] 13:46:34:519 file system/(7678:7689): Inicio de request -- INSERT -- 
+
+[INFO] 13:46:34:519 file system/(7678:7689): Request -- INSERT -- realizada !!!
+
+[INFO] 13:50:18:628 file system/(7998:8009): Solicitud de request -- SELECT -- 
+
+[INFO] 13:50:18:629 file system/(7998:8009): Request -- SELECT -- realizada !!!
+
+[INFO] 14:23:33:443 file system/(9271:9282): Solicitud de request -- SELECT -- 
+
+[INFO] 14:23:33:444 file system/(9271:9282): Request -- SELECT -- realizada !!!
+
+[INFO] 14:23:42:462 file system/(9271:9282): Inicio de request -- DROP --
+
+[INFO] 14:23:42:463 file system/(9271:9282): Request -- DROP-- realizada
+
