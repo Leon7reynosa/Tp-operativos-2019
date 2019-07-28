@@ -209,6 +209,28 @@ describe_t crear_dato_describe(char* nombre_tabla){
 	return dato_describe;
 }
 
+void mostrar_lista_describe(t_list* lista_describe){
+
+	void _mostrar_metadata(void* dato_metadata){
+
+		Metadata dato_describe = (Metadata) dato_metadata;
+
+		printf("\n---TABLA: %s ---\n", dato_describe->tabla);
+
+		printf("consistencia: %s\n" , dato_describe->consistencia);
+
+		printf("particiones: %d\n" , dato_describe->particiones);
+
+		printf("tiempo compactacion: %d\n" , dato_describe->tiempo_compactacion);
+
+	}
+
+	list_iterate(lista_describe, _mostrar_metadata);
+
+	printf("\n");
+
+}
+
 void liberar_dato_describe(describe_t dato){
 
 	if(!(dato->global)){

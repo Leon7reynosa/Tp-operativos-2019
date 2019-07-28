@@ -31,5 +31,5 @@
 bool leer_consola(void);
 void parsear_request(cod_operacion operacion, char** tokens);
 int obtener_cantidad_argumentos(char** tokens);
-
+void mostrar_terminacion_request_segun_estado(estado_request estado);
 #endif /* CONSOLA_H_ */

@@ -31,37 +31,38 @@ bool leer_consola(void){
 	string_to_upper(tokens[0]);
 
 	if(string_equals_ignore_case(tokens[0], "SELECT")){
-
+		printf(">>>>>SELECT<<<<<\n");
 		parsear_request(SELECT, tokens);
+		printf("========================\n");
 
 	}
 	else if(string_equals_ignore_case(tokens[0], "INSERT")){
-
+		printf(">>>>>INSERT<<<<<\n")
 		parsear_request(INSERT, tokens);
-
+		printf("========================\n");
 	}
 	else if(string_equals_ignore_case(tokens[0], "CREATE")){
-
+		printf(">>>>>CREATE<<<<<\n")
 		parsear_request(CREATE, tokens);
-
+		printf("========================\n");
 	}
 	else if(string_equals_ignore_case(tokens[0], "DESCRIBE")){
-
+		printf(">>>>>DESCRIBE<<<<<\n")
 		parsear_request(DESCRIBE, tokens);
-
+		printf("========================\n");
 	}
 	else if(string_equals_ignore_case(tokens[0], "DROP")){
-
+		printf(">>>>>DROP<<<<<\n")
 		parsear_request(DROP, tokens);
-
+		printf("========================\n");
 	}
 	else if(string_equals_ignore_case(tokens[0], "JOURNAL")){
-
+		printf(">>>>>JOURNAL<<<<<\n")
 		//parsear_request(JOURNAL, tokens);
-
+		printf("========================\n");
 	}
 	else if(string_equals_ignore_case(tokens[0], "EXIT")){
-
+		printf(">>>>>EXIT<<<<<\n")
 		liberar_puntero_doble(tokens);
 
 		desconexion_pool = true;
@@ -115,6 +116,8 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 				dato = request_select(dato_select);
 
+				liberar_dato_select(dato_select); //agregado
+
 				liberar_dato(dato);
 
 			}else{
@@ -157,9 +160,10 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 				estado = request_create(dato_describe);
 
+				mostrar_terminacion_request_segun_estado(estado);
+
 				liberar_dato_create(dato_create);
 
-			//	liberar_dato(dato_create);
 
 			}
 			else{
@@ -171,6 +175,7 @@ void parsear_request(cod_operacion operacion, char** tokens){
 		case DESCRIBE:
 
 			if(cantidad_argumentos == 1 || cantidad_argumentos == 2){
+
 				tabla = tokens[1];
 
 				dato_describe = crear_dato_describe(tabla);
@@ -178,6 +183,10 @@ void parsear_request(cod_operacion operacion, char** tokens){
 				list_describe = request_describe(dato_describe);
 
 				liberar_dato_describe(dato_describe);
+
+				mostrar_lista_describe(list_describe);
+
+				//eliminar la lista ?
 
 			}
 			else{
@@ -194,6 +203,8 @@ void parsear_request(cod_operacion operacion, char** tokens){
 				dato_drop = crear_drop(tabla);
 
 				estado = request_drop(dato_drop);
+
+				mostrar_terminacion_request_segun_estado(estado);
 
 				liberar_drop(dato_drop);
 
@@ -249,4 +260,13 @@ int obtener_cantidad_argumentos(char** tokens){
 	}
 
 	return cantidad;
+}
+
+void mostrar_terminacion_request_segun_estado(estado_request estado){
+	if(estado == SUCCESS){
+		printf("==== TERMINO CORRECTAMENTE LA REQUEST ====\n");
+	}
+	else{
+		printf("==== ERROR AL REALIZAR LA REQUEST ====\n");
+	}
 }
