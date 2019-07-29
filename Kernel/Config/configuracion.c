@@ -15,7 +15,7 @@ void creacion_del_config(){
 
 	g_config = config_create("kernel.config");
 
-	config_set_value(g_config, "IP_MEMORIA", "192.168.1.40");
+	config_set_value(g_config, "IP_MEMORIA", "192.168.1.41");
 	config_set_value(g_config, "PUERTO_MEMORIA", "8001");
 	config_set_value(g_config, "NUMERO_MEMORIA" , "1");
 	config_set_value(g_config, "QUANTUM", "3");
@@ -23,6 +23,7 @@ void creacion_del_config(){
 	config_set_value(g_config, "REFRESH_METADATA", "15000");
 	config_set_value(g_config, "RETARDO_CICLO_EJECUCION", "1000");
 	config_set_value(g_config, "TIEMPO_GOSSIPING_KERNEL", "30000");
+	//capaz necesitemos un punto de montaje
 	config_save(g_config);
 	config_destroy(g_config);
 
@@ -48,6 +49,16 @@ void obtener_datos_config(){
 //	free(ip_auxiliar);
 
 	config_destroy(g_config);
+
+}
+
+void inicializar_semaforos_config(){
+
+	pthread_rwlock_init(&semaforo_quantum);
+
+	pthread_rwlock_init(&semaforo_tiempo_ejecucion);
+
+	pthread_rwlock_init(&semaforo_refresh_metadata);
 
 }
 

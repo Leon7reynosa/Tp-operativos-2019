@@ -18,7 +18,11 @@ void* refrescar_metadata(){
 
 		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 
+		pthread_rwlock_rdlock(&semaforo_refresh_metadata);
+
 		usleep(tiempo_refresh_metadata * 1000);
+
+		pthread_rwlock_unlock(&semaforo_refresh_metadata);
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 

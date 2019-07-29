@@ -84,14 +84,19 @@ void* realizar_inotify(inotify_config argumento){
 
 					t_config* archivo_config = config_create(argumento->path_config);
 
-					//SEMAFORO
+					pthread_rwlock_wrlock(&semaforo_refresh_metadata);
 					tiempo_refresh_metadata = config_get_int_value(archivo_config, "REFRESH_METADATA");
-
+					pthread_rwlock_unlock(&semaforo_refresh_metadata);
 					//SEMAFORO
+
+					pthread_rwlock_wrlock(&semaforo_tiempo_ejecucion);
 					tiempo_ejecucion = config_get_int_value(archivo_config, "RETARDO_CICLO_EJECUCION");
-
+					pthread_rwlock_unlock(&semaforo_tiempo_ejecucion);
 					//SEMAFORO
+
+					pthread_rwlock_wrlock(&semaforo_quantum);
 					quantum = config_get_int_value(archivo_config, "QUANTUM");
+					pthread_rwlock_unlock(&semaforo_quantum);
 
 					config_destroy(archivo_config);
 

@@ -12,15 +12,15 @@
 //no es el mismo que enviar_request
 int ejecutar_request(char* request_lql){
 
-	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 
 	log_info(logger_kernel, "  >>>NUEVA REQUEST: %s<<< " , request_lql);
 
 	int cod_request;
 	char* nombre_archivo;
-	char* nombre_tabla = string_new();
+	char* nombre_tabla ;
 
-	char* consistencia = string_new();
+	char* consistencia ;
 	int tiempo_compactacion, particiones, numero_memoria, cantidad_parametros;
 	time_t tiempo_inicio_ejecucion_request;
 	time_t tiempo_fin_ejecucion_request;
@@ -28,7 +28,7 @@ int ejecutar_request(char* request_lql){
 	memoria_t* memoria_utilizada;
 
 	u_int16_t key;
-	char* value = string_new();
+	char* value ;
 	time_t timestamp;
 
 	describe_t describe_enviar;
@@ -42,7 +42,7 @@ int ejecutar_request(char* request_lql){
 
 			printf("\n   --> REQUEST SELECT<-- \n");
 
-			if(obtener_parametros_select(request_lql, nombre_tabla, &key) == 3){
+			if(obtener_parametros_select(request_lql, &nombre_tabla, &key)){
 
 
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
@@ -131,7 +131,7 @@ int ejecutar_request(char* request_lql){
 
 			printf("\n   --> REQUEST INSERT<-- \n");
 
-			if(obtener_parametros_insert(request_lql, nombre_tabla, &key, &value, &timestamp)){
+			if(obtener_parametros_insert(request_lql, &nombre_tabla, &key, &value, &timestamp)){
 
 				if( !existe_en_registro_tabla(nombre_tabla)){
 
@@ -196,7 +196,7 @@ int ejecutar_request(char* request_lql){
 
 			printf("\n   --> REQUEST CREATE<-- \n");
 
-			if(obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion)){
+			if(obtener_parametros_create(request_lql, &nombre_tabla, &consistencia, &particiones, &tiempo_compactacion)){
 
 				create create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
@@ -251,7 +251,7 @@ int ejecutar_request(char* request_lql){
 
 			//todo tenemos que hacer en mensajeria, el requestDescribe y hace su respectiva estructura describe_t
 
-			cantidad_parametros = obtener_parametros_describe(request_lql, nombre_tabla);
+			cantidad_parametros = obtener_parametros_describe(request_lql, &nombre_tabla);
 
 			if(cantidad_parametros == 2){
 
@@ -351,27 +351,30 @@ int ejecutar_request(char* request_lql){
 
 			printf("\n   --> REQUEST ADD<-- \n");
 
-			if(  obtener_parametros_add(request_lql, &numero_memoria, consistencia) &&  (identificar_consistencia(consistencia) >= 0 ) ){
+			if(  obtener_parametros_add(request_lql, &numero_memoria, &consistencia) &&  (identificar_consistencia(consistencia) >= 0 ) ){
 
 				request_add(numero_memoria, consistencia);
 
 				return 1;
 			}
 
+			printf("\n>La REQUEST ADD FALLO.-");
+
 			break;
 
 		case RUN:
 
+			printf("\n   --> REQUEST RUN<-- \n");
 
 			nombre_archivo = obtener_parametros_run(request_lql);
 
-			log_info(logger_kernel , "--Se realizara el RUN del archivo %s--\n" , nombre_archivo);
-
 			if(nombre_archivo != NULL){
+
+				printf("\n>Se correrá el ARCHIVO: %s\n" , nombre_archivo);
 
 				queue_push(cola_new , nombre_archivo);
 
-				log_info(logger_kernel, "EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.\n");
+				log_info(logger_kernel, "El ARCHIVO ya está en la cola de EJECUCIÓN.");
 
 
 				cola_new_to_ready();
@@ -383,15 +386,17 @@ int ejecutar_request(char* request_lql){
 
 		case DROP:
 
-			if(obtener_parametros_drop(request_lql , nombre_tabla)){
+			if(obtener_parametros_drop(request_lql , &nombre_tabla)){
 
-				log_info(logger_kernel, "\n--Se realizara la request DROP de la tabla %s---\n" , nombre_tabla);
+				log_info(logger_kernel, "-Se realizara la request DROP de la tabla %s.-" , nombre_tabla);
 
 				Drop drop_enviar = crear_drop(nombre_tabla);
 
 				if(!existe_en_registro_tabla(nombre_tabla)){
 
-					printf("-La Tabla %s No existe en el registro de tablas.-" , nombre_tabla);
+					printf("\n>La Tabla %s NO existe en el registro de tablas\n");
+
+					log_error( logger_kernel, "-La Tabla %s No existe en el registro de tablas.-" , nombre_tabla);
 
 					return 0;
 
@@ -429,7 +434,7 @@ int ejecutar_request(char* request_lql){
 
 				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
-					log_error(logger_kernel , "-Fallo la request DROP.");
+					log_error(logger_kernel , "-Fallo la request DROP.-");
 
 					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
@@ -437,7 +442,7 @@ int ejecutar_request(char* request_lql){
 
 				}else{
 
-					printf("Tabla %s removida\n" , nombre_tabla);
+					printf("\n>Tabla %s removida\n" , nombre_tabla);
 
 				}
 
@@ -475,12 +480,6 @@ int ejecutar_request(char* request_lql){
 	}
 
 
-	free(nombre_tabla);
-	free(consistencia);
-	free(value);
-
-	printf("\n>>>>>>>>>>>>>>>>>>>>>>>><FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
-
 	return 0;
 
 }
@@ -488,7 +487,7 @@ int ejecutar_request(char* request_lql){
 
 void request_journal(){
 
-	log_info(logger_kernel, "\n---Se realizara la request JOURNAL---\n");
+	log_info(logger_kernel, "-Se realizara la request JOURNAL.-");
 
 
 	t_list* lista_memorias_a_enviar = lista_memorias_de_consistencia();
@@ -501,7 +500,7 @@ void request_journal(){
 
 		if ( enviar_request(JOURNAL, NULL , memoria_a_enviar->socket ) == false ){
 
-			log_error(logger_kernel, ">>FALLO ENVIAR EL JOURNAL ELIMINAMOS LA MEMORIA %d \n" , memoria_a_enviar->numero_memoria);
+			log_error(logger_kernel, "-FALLO enviar el JOURNAL, removemos la MEMORIA %d.-" , memoria_a_enviar->numero_memoria);
 
 			memoria_a_enviar->conectado = false;
 
@@ -519,186 +518,367 @@ void request_journal(){
 }
 
 
-int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key){
+int obtener_parametros_select(char* linea_request, char** nombre_tabla , u_int16_t* key){
 
-	char* funcion = string_new();
+	char** parametros = string_split(linea_request , " ");
 
-	int cantidad_parametros;
 
-	cantidad_parametros = sscanf(linea_request, "%s %s %d", funcion, nombre_tabla, key);
+	for(int i = 0; i < 3 ; i++){
 
-	if( cantidad_parametros != 3){
+		if(parametros[i] == NULL){
 
-		log_error(logger_kernel, "-LA REQUEST SELECT RECIBIO PARAMETROS INCORRECTOS.-\n");
+			log_error(logger_kernel, "-la REQUEST SELECT recibio parametros incorrectos.-");
+
+			printf("\n>La REQUEST SELECT recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(parametros);
+
+			return 0;
+		}
+
+	}
+
+	if( parametros[3] != NULL){
+
+		log_error(logger_kernel, "-la REQUEST ADD recibio parametros de mas.-");
+
+		printf("\n>La REQUEST ADD recibio parametros de mas\n");
+
+		liberar_puntero_doble(parametros);
+
 		return 0;
 
 	}
 
-	string_to_upper(nombre_tabla);
+	*nombre_tabla = malloc(strlen(parametros[1]) + 1);
+	memcpy(*nombre_tabla , parametros[1] , strlen(parametros[1]) + 1);
 
-	free(funcion);
+	*key = atoi(parametros[2]);
 
-	return cantidad_parametros;
+	liberar_puntero_doble(parametros);
+
+	return 1;
+
 }
 
-int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp){
+int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_t* key, char** value, time_t* timestamp ){
 
 	char** auxiliar;
-	char* funcion = string_new();
-
+	char** parametros;
 	char* comillas = "\"";
 
-	auxiliar = string_n_split(linea_request, 3, comillas  );
+	auxiliar = string_split(linea_request, comillas  );
 
-	printf("primer valor : %s\n", auxiliar[0]);
-	printf("segundo valor : %s\n", auxiliar[1]);
+	for(int i = 0; i < 2 ; i++){
 
-	if(sscanf(auxiliar[0] , "%s %s %i" , funcion, nombre_tabla, key) != 3){
+		if( auxiliar[i] == NULL){
 
-		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE NOMBRE Y KEY.-\n");
-		return 0;
+			log_error(logger_kernel, "-la REQUEST INSERT recibio parametros incorrectos.-");
+
+			printf("\n>La REQUEST INSERT recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(auxiliar);
+
+			return 0 ;
+
+		}
+
 	}
 
+	*value = malloc(strlen(auxiliar[1]) + 1);
+	memcpy(*value , auxiliar[1] , strlen(auxiliar[1]) + 1);
 
+	parametros = string_split(auxiliar[0] , " " );
 
-	string_append(value , auxiliar[1]);
+	for(int j = 0 ; j < 3 ; j++){
 
-	printf("timestamp: %s\n", auxiliar[2]);
+		if(parametros[j] == NULL){
+
+			log_error(logger_kernel, "-la REQUEST INSERT recibio parametros incorrectos.-");
+
+			printf("\n>La REQUEST INSERT recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(parametros);
+
+			liberar_puntero_doble(auxiliar);
+
+			free(value);
+
+			return 0;
+
+		}
+
+	}
+
+	if(parametros[3] != NULL){
+
+		log_error(logger_kernel, "-la REQUEST INSERT recibio parametros incorrectos.-");
+
+		printf("\n>La REQUEST INSERT recibio parametros incorrectos\n");
+
+		liberar_puntero_doble(parametros);
+
+		liberar_puntero_doble(auxiliar);
+
+		free(value);
+
+		return 0 ;
+
+	}
+
+	*nombre_tabla = malloc(strlen(parametros[1] ) + 1);
+	memcpy(*nombre_tabla , parametros[1] , strlen(parametros[1]) + 1);
+
+	*key = atoi(parametros[2]);
 
 	if(auxiliar[2] == NULL){
 
-		printf("si es null papa\n");
-
 		*timestamp = -1;
 
+	}else{
+
+		*timestamp = atoi(auxiliar[2]);
+
+	}
+
+
+	liberar_puntero_doble(parametros);
+
+	liberar_puntero_doble(auxiliar);
+
+	return 1;
+
+}
+
+int obtener_parametros_add(char* linea_request, int* numero_memoria, char** consistencia){
+
+	char** parametros = string_split(linea_request , " ");
+
+
+	for(int i = 0; i < 5 ; i++){
+
+		if(parametros[i] == NULL){
+
+			log_error(logger_kernel, "-la REQUEST ADD recibio parametros incorrectos.-");
+
+			printf("\n>La REQUEST ADD recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(parametros);
+
+			return 0;
+		}
+
+	}
+
+	if ( parametros[5] != NULL ){
+
+		log_error(logger_kernel, "-la REQUEST ADD recibio parametros de mas.-");
+
+		printf("\n>La REQUEST ADD recibio parametros de mas\n");
+
+		liberar_puntero_doble(parametros);
+
+		return 0;
+	}
+
+	*consistencia = malloc(strlen(parametros[4]) + 1);
+	memcpy(*consistencia, parametros[4] , strlen(parametros[4] ) + 1);
+
+	*numero_memoria = atoi(parametros[2]);
+
+	liberar_puntero_doble(parametros);
+
+	return 1;
+
+}
+
+int obtener_parametros_create(char* linea_request, char** nombre_tabla, char** criterio, int* numero_particiones, int* tiempo_compactacion){
+
+	char** parametros = string_split(linea_request, " ");
+
+	for(int  i =  0 ; i < 5 ; i++){
+
+		if(parametros[i] == NULL){
+
+			log_error(logger_kernel, "-la REQUEST CREATE recibio parametros incorrectos.-");
+
+			printf("\n>La REQUEST CREATE recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(parametros);
+
+			return 0;
+
+
+		}
+
+	}
+
+	if ( parametros[5] != NULL ){
+
+		log_error(logger_kernel, "-la REQUEST CREATE recibio parametros de mas.-");
+
+		printf("\n>La REQUEST CREATE recibio parametros de mas\n");
+
+		liberar_puntero_doble(parametros);
+
+		return 0;
+	}
+
+	*criterio = malloc(strlen(parametros[2]) + 1);
+	memcpy(*criterio, parametros[2] , strlen(parametros[2] ) + 1);
+
+	*nombre_tabla = malloc(strlen(parametros[1]) + 1);
+	memcpy(*nombre_tabla, parametros[1] , strlen(parametros[1] ) + 1);
+
+	*numero_particiones = atoi(parametros[3]);
+
+	*tiempo_compactacion = atoi(parametros[4]);
+
+	liberar_puntero_doble(parametros);
+
+	return 1;
+
+}
+
+
+int obtener_parametros_describe(char* linea_request , char** nombre_tabla){
+
+	char** parametros = string_split(linea_request, " ");
+
+	if(parametros[0] == NULL){
+
+		log_error(logger_kernel, "-la REQUEST DESCRIBE recibio parametros incorrectos.-");
+
+		printf("\n>La REQUEST DESCRIBE recibio parametros incorrectos\n");
+
+		return 0;
+
+	}
+
+	if(parametros[1] == NULL ){
+
+
+		liberar_puntero_doble(parametros);
+
 		return 1;
+	}else{
 
-	}else if( (sscanf(auxiliar[2] , " %d" , timestamp)) != 1 ){
+		if(parametros[2] != NULL ){
 
-		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS DE TIMESTAMP.-\n");
+			log_error(logger_kernel, "-la REQUEST DESCRIBE recibio parametros incorrectos.-");
+
+			printf("\n>La REQUEST DESCRIBE recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(parametros);
+
+			return 0;
+		}else{
+
+			*nombre_tabla = malloc(strlen(parametros[1] ) + 1);
+			memcpy(*nombre_tabla , parametros[1] , strlen(parametros[1]) + 1);
+
+			liberar_puntero_doble(parametros);
+
+			return 2;
+
+		}
+
+	}
+
+
+}
+
+int obtener_parametros_drop(char* linea_request, char** nombre_tabla){
+
+	char** parametros = string_split(linea_request, " ");
+
+	for(int i  = 0 ; i < 2 ; i++){
+
+		if(parametros[i] == NULL){
+
+			log_error(logger_kernel, "-la REQUEST DROP recibio parametros incorrectos.-");
+
+			printf("\n>La REQUEST DROP recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(parametros);
+
+			return 0;
+
+		}
+
+	}
+
+	if(parametros[2] != NULL){
+
+		log_error(logger_kernel, "-la REQUEST DROP recibio parametros de mas.-");
+
+		printf("\n>La REQUEST DROP recibio parametros de mas\n");
+
+		liberar_puntero_doble(parametros);
+
 		return 0;
 
 	}
 
-	string_to_upper(nombre_tabla);
+	*nombre_tabla = malloc(strlen(parametros[1] ) +1 );
+	memcpy(*nombre_tabla , parametros[1] , strlen(parametros[1]) + 1);
 
-	free(auxiliar);
-	//free(comillas);
-	free(funcion);
+	string_to_upper(*nombre_tabla);
+
+	liberar_puntero_doble(parametros);
+
 	return 1;
-
 }
-
-int obtener_parametros_add(char* linea_request, int* numero_memoria, char* consistencia){
-	char* funcion = string_new();
-	char* memoria = string_new();
-	char* to = string_new();
-
-
-
-	if((sscanf(linea_request, "%s %s %i %s %s", funcion, memoria, numero_memoria, to, consistencia)) != 5){
-
-		//log
-		log_error(logger_kernel , "-LA REQUEST ADD RECIBIO PARAMETROS INCORRECTOS.-\n");
-		return 0;
-
-	}
-
-	if( !string_equals_ignore_case(consistencia, "SC") && !string_equals_ignore_case(consistencia, "EC") && !string_equals_ignore_case(consistencia, "SHC") ){
-
-		log_error(logger_kernel , "-LACONSISTENCIA NO ES VALIDA.-\n");
-
-		return 0;
-
-	}
-
-	free(funcion);
-	free(memoria);
-	free(to);
-
-	return 1;
-}
-
-
-int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value){
-	char* funcion = string_new();
-
-	if( (sscanf(linea_request, "%s %s %i %s %i", funcion, nombre_tabla, key, value)) != 5 ){
-
-		log_error(logger_kernel, "-LA REQUEST INSERT RECIBIO PARAMETROS INCORRECTOS.-\n");
-		return 0;
-
-	}
-
-	string_to_upper(nombre_tabla);
-
-	free(funcion);
-	return 1;
-}
-
-int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* criterio, int* numero_particiones, int* tiempo_compactacion){
-	char* funcion = string_new();
-
-	if( (sscanf(linea_request, "%s %s %s %i %i", funcion, nombre_tabla, criterio, numero_particiones, tiempo_compactacion)) != 5 ){
-
-		//log
-		log_error( logger_kernel , "-LA REQUEST CREATE RECIBIO PARAMETROS INCORRECTOS.-\n");
-		return 0;
-	}
-
-	string_to_upper(nombre_tabla);
-
-	free(funcion);
-	return 1;
-
-}
-
-int obtener_parametros_describe(char* linea_request, char* nombre_tabla){
-	char* funcion = string_new();
-
-	int cantidad = sscanf(linea_request, "%s %s", funcion, nombre_tabla);
-
-	if(cantidad == -1){
-		log_error( logger_kernel , "-LA REQUEST DESCRIBE RECIBIO PARAMETROS INCORRECTOS.-\n");
-		return 0;
-	}
-
-	string_to_upper(nombre_tabla);
-
-	free(funcion);
-
-	return cantidad;
-}
-
-int obtener_parametros_drop(char* linea_request, char* nombre_tabla){
-	char* funcion = string_new();
-
-	int cantidad_parametros;
-
-	cantidad_parametros = sscanf(linea_request, "%s %s", funcion, nombre_tabla);
-
-	string_to_upper(nombre_tabla);
-
-
-	return cantidad_parametros;
-
-}
-
 
 char* obtener_parametros_run(char* linea_request){
 
-	char* funcion = string_new();
+	char** parametros = string_split(linea_request , " ");
 
-	char* archivo = malloc( strlen(linea_request) - 3 );
+	char* archivo;
 
-	sscanf(linea_request, "%s %s", funcion, archivo);
+	for(int i  = 0 ; i < 2 ; i++){
 
-	//free(funcion);
+		if(parametros[i] == NULL){
 
-	printf("archivo: %s\n" , archivo);
+			log_error(logger_kernel, "-la REQUEST RUN recibio parametros incorrectos.-");
 
-//	char* archivo_devuelto = string_duplicate(archivo);
+			printf("\n>La REQUEST RUN recibio parametros incorrectos\n");
+
+			liberar_puntero_doble(parametros);
+
+			return NULL;
+
+		}
+
+		printf("ESTO TIENE EL %d : %s\n" , i , parametros[i] );
+
+	}
+
+	if(parametros[2] != NULL){
+
+		printf("esto esta mal: %s\n" , parametros[2]);
+
+		log_error(logger_kernel, "-la REQUEST RUN recibio parametros de mas.-");
+
+		printf("\n>La REQUEST RUN recibio parametros de mas\n");
+
+		liberar_puntero_doble(parametros);
+
+		return NULL;
+
+	}
+
+	archivo = malloc(strlen(parametros[1]) + 1);
+	memcpy(archivo , parametros[1] , strlen(parametros[1]) + 1);
+
+	printf("\n>Archivo: %s\n" , archivo);
+	log_info(logger_kernel, "-ARCHIVO: %s.-" , archivo) ;
+
+	liberar_puntero_doble(parametros);
 
 	return archivo;
+
 }
+
+
 

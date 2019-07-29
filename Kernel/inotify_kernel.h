@@ -31,5 +31,7 @@ struct inotifyEstructura{
 typedef struct inotifyEstructura* inotify_config;
 
 void* realizar_inotify(inotify_config argumento);
+inotify_config crear_inotify(void);
+void liberar_inotify(inotify_config a_liberar);
 
 #endif /* INOTIFY_KERNEL_H_ */

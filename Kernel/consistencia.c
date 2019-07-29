@@ -74,17 +74,11 @@ cod_consistencia identificar_consistencia(char* consistencia){
 
 	if(strcmp(consistencia, "SC") == 0){
 
-		printf("\n>>La consistencia es Strong Consistency\n");
-
 		return SC;
 	}else if(strcmp(consistencia, "EC") == 0){
 
-		printf("\n>>La consistencia es Eventual Consistency\n");
-
 		return EC;
 	}else if(strcmp(consistencia, "SHC") == 0){
-
-		printf("\n>>La consitencia es Strong hash consistency\n");
 
 		return SHC;
 	}else{
@@ -134,6 +128,9 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 		default:
 			printf("CODIGO DE REQUEST INCORRECTO\n");
+
+			return -1;
+
 			break;
 	}
 
@@ -142,6 +139,8 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 	if(!dictionary_has_key(registro_tabla, tabla)){
 
 		printf("No existe la tabla en el registro de tablas\n"); //log
+
+		pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 		return -1;
 
@@ -483,7 +482,6 @@ int obtener_index_memoria(int key){
 
 
 void actualizar_metadata(t_list* datos_describe){
-
 
 	pthread_rwlock_wrlock(&semaforo_registro_tabla);
 

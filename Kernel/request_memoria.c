@@ -15,6 +15,8 @@ void request_add(int numero_memoria, char* consistencia){
 
 	if(	memoria_agregar == NULL	){
 
+		log_error(logger_kernel, "-NO se podra ingresar la MEMORIA.-");
+
 		printf("\nNO se podra INGRESAR la MEMORIA\n");
 
 		return;
@@ -97,6 +99,8 @@ memoria_t* obtener_memoria_de_lista( int numero_memoria ){
 		if(dato_memoria_gossiping->numero_memoria == numero_memoria){
 
 			memoria_t* memoria_encontrada = dato_memoria_gossiping; //si rompe todo es por esto
+
+			pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 			return memoria_encontrada;
 

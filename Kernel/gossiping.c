@@ -19,7 +19,7 @@ void* realizar_gossiping(){
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
-		printf("\n/////////////////////////////INICIANDO EL GOSSIPING///////////////////////////////////////\n");
+		printf("\n////////////////////INICIANDO EL GOSSIPING/////////////////////////\n");
 
 		pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
@@ -51,7 +51,7 @@ void* realizar_gossiping(){
 			printf(">>No hay memorias conectadas<<\n");
 		}
 
-		printf("\n//////////////////////////////////////FIN GOSSIP//////////////////////////////////////////////////////////\n");
+		printf("\n///////////////////////FIN GOSSIP///////////////////////////////\n");
 	}
 }
 

@@ -38,21 +38,32 @@ void* realizar_metrics(){
 		pthread_rwlock_unlock(&semaforo_metrica_ec);
 		pthread_rwlock_unlock(&semaforo_metrica_sc);
 
+		printf("[METRICAS] ya desblooquee\n");
+
 		pthread_rwlock_wrlock(&semaforo_metrica_sc);
+		printf("[METRICAS] voy a limpiar sc\n");
+
 		limpiar_metricas(metrica_sc);
 		pthread_rwlock_unlock(&semaforo_metrica_sc);
 
 
+		printf("[METRICAS] ya limpie sc\n");
+
 		pthread_rwlock_wrlock(&semaforo_metrica_ec);
+		printf("[METRICAS] voy a limpiar ec\n");
 		limpiar_metricas(metrica_ec);
 		pthread_rwlock_unlock(&semaforo_metrica_ec);
 
+		printf("[METRICAS] ya limpie ec\n");
 
 		pthread_rwlock_wrlock(&semaforo_metrica_shc);
+		printf("[METRICAS] voy a limpiar shc\n");
 		limpiar_metricas(metrica_shc);
 		pthread_rwlock_unlock(&semaforo_metrica_shc);
+		printf("[METRICAS] ya limpie shc\n");
 
 		reiniciar_memory_load();
+
 
 		printf("\n>>>>>>>>>>>FIN DE LAS METRICAS<<<<<<<<<<<<<<<\n");
 
@@ -235,11 +246,7 @@ void sumar_contador_memoria(memoria_t* memoria){
 
 	//LOS SEMAFOROS ESTAN AFUERA
 
-	printf("Le sumo 1 al contador de la memoria %d\n" , memoria->numero_memoria);
-
 	memoria->contador_requests += 1;
-
-	printf("nuevo_valor de contador: %d\n" , memoria->contador_requests);
 
 }
 
@@ -265,8 +272,6 @@ void loggear_memory_load(){
 
 		}
 
-		printf("porcentaje: %d\n" , porcentaje_memory_load);
-
 		log_info(logger_metricas , "Memoria %d : " , memoria->numero_memoria );
 		log_info(logger_metricas, "%d Ejecuciones  ->  %d % Memory load\n" , memoria->contador_requests , porcentaje_memory_load);
 
@@ -275,8 +280,7 @@ void loggear_memory_load(){
 	pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
 	total_requests = total_ejecuciones();
-
-	printf("total de request: %d\n" , total_requests);
+;
 
 	list_iterate(tabla_gossiping , _mostrar_memory_load);
 

@@ -102,6 +102,13 @@ void liberar_dato_describe(describe_t dato){
 
 void mostrar_lista_describe(t_list* lista_describe){
 
+	if(list_size(lista_describe) == 0){
+
+		printf("\n>No se recibieron TABLAS\n");
+
+
+	}
+
 	void _mostrar_metadata(void* dato_metadata){
 
 		Metadata dato_describe = (Metadata) dato_metadata;

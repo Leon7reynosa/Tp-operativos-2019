@@ -205,6 +205,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		int i = 0;
 
+		pthread_rwlock_rdlock(&semaforo_quantum);
+
 		while( i < quantum && !queue_is_empty(cola_exec)){
 
 
@@ -222,13 +224,17 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 				queue_clean(cola_exec);  //agrego esto no se si esta bien
 
+				log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
+
+				printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+
 				continue;
 
 			}
 
-			log_infor(logger_kernel , ">>FIN de la REQUEST<<\n");
+			log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
 
-			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 				 //hay que inicializar las conexiones
 				 //deberia ahora recibir la operacion
@@ -238,11 +244,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}
 
+		pthread_rwlock_unlock(&semaforo_quantum);
+
 		if(queue_is_empty(cola_exec)){
-
-			log_infor(logger_kernel , ">>FIN de la REQUEST<<\n");
-
-			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 			queue_push(cola_exit, siguiente_script);
 
@@ -250,9 +254,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}else{
 
-			log_infor(logger_kernel , ">>FIN de la REQUEST<<\n");
+			log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
 
-			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+			printf("\n>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 			queue_push(cola_ready, siguiente_script);
 
@@ -260,7 +264,11 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}
 
+		pthread_rwlock_rdlock(&semaforo_tiempo_ejecucion);
+
 		usleep(tiempo_ejecucion*1000);
+
+		pthread_rwlock_unlock(&semaforo_tiempo_ejecucion);
 
 	}
 
