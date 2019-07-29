@@ -51,3 +51,18 @@ void obtener_datos_config(){
 
 }
 
+char* obtener_path_config(){
+
+
+	char* path = string_new();
+
+	char* locacion = "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/";
+
+	string_append(&path, locacion );
+
+	string_append(&path , "kernel.config");
+
+	return path;
+
+}
+

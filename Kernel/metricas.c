@@ -233,7 +233,7 @@ void mostrar_memory_load(){
 
 void sumar_contador_memoria(memoria_t* memoria){
 
-	//semaforo de memoria?
+	//LOS SEMAFOROS ESTAN AFUERA
 
 	printf("Le sumo 1 al contador de la memoria %d\n" , memoria->numero_memoria);
 

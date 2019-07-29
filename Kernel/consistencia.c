@@ -163,7 +163,7 @@ memoria_t* tomar_memoria_al_azar(){
 
 	if(list_is_empty(lista_de_consistencias)){
 
-		printf("TODAVIA NO HAY MEMORIAS EN LAS CONSISENCIAS\n");
+		printf("\n>Todavia NO hay memorias en las consistencias\n");
 
 		return NULL;
 
@@ -172,6 +172,23 @@ memoria_t* tomar_memoria_al_azar(){
 	int numero_random_consistencia = rand() % list_size(lista_de_consistencias); // para determinar de cual de los tres codigos de operacion usamos para agarrar la memoria ( SC, EC, SHC)
 
 	memoria_a_retornar = (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
+
+	while(!memoria_a_retornar->conectado){
+
+		list_remove(lista_de_consistencias , numero_random_consistencia);
+
+		if(list_size(lista_de_consistencias) == 0){
+
+			list_destroy (lista_de_consistencias);
+
+			return NULL;
+		}
+
+		numero_random_consistencia = rand() % list_size(lista_de_consistencias);
+
+		memoria_a_retornar = (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
+
+	}
 
 	list_destroy(lista_de_consistencias);
 
@@ -247,11 +264,31 @@ memoria_t* memoria_al_azar_consistencia(t_list* lista_consistencia){
 //TOMA UNA MEMORIA SEGUN LA REQUEST QUE LE PASES
 memoria_t* seleccionar_memoria_consistencia(cod_operacion cod_op , void* tipo_request){
 
+	memoria_t* memoria_a_retornar;
+
 	cod_consistencia codigo_consistencia = identificar_consitencia_para_request(cod_op, tipo_request);
 
 	u_int16_t key_utilizada = determinar_key(cod_op , tipo_request);
 
-	return tomar_memoria_segun_codigo_consistencia(codigo_consistencia, key_utilizada);
+	memoria_a_retornar =  tomar_memoria_segun_codigo_consistencia(codigo_consistencia, key_utilizada);
+
+	if(memoria_a_retornar == NULL){
+
+		log_error( logger_kernel , "-NO se encuentran memorias para esa consistencia.-");
+
+		return NULL;
+
+	}
+
+	while( !memoria_a_retornar->conectado){
+
+		remover_memoria_de_consistencia(memoria_a_retornar);
+
+		memoria_a_retornar = tomar_memoria_segun_codigo_consistencia(codigo_consistencia, key_utilizada);
+
+	}
+
+	return memoria_a_retornar;
 
 }
 

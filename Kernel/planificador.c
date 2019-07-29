@@ -178,7 +178,7 @@ void cola_new_to_ready(){
 
 		}else{
 
-			log_error(logger_kernel, "NO SE PUDO ABRIR EL ARCHIVO %s.\n" , nuevo_lql->path_lql);
+			log_error(logger_kernel, "NO se pudo abrir el ARCHIVO %s.\n" , nuevo_lql->path_lql);
 
 		}
 	}
@@ -214,9 +214,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			if(!ejecutar_request(request )){
 
-				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST %s.\n", request);
+				log_error(logger_kernel , "FALLO al ejecutar la REQUEST:  %s.", request);
 
-				printf("NO SE SEGUIRA EJECUTANDO EL SCRIPT\n");
+				printf("\n>NO se seguira EJECTUANDO el SCRIPT\n");
 
 				queue_push(cola_exit, siguiente_script);
 
@@ -226,7 +226,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			}
 
+			log_infor(logger_kernel , ">>FIN de la REQUEST<<\n");
 
+			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 				 //hay que inicializar las conexiones
 				 //deberia ahora recibir la operacion
@@ -238,6 +240,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		if(queue_is_empty(cola_exec)){
 
+			log_infor(logger_kernel , ">>FIN de la REQUEST<<\n");
+
 			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 			queue_push(cola_exit, siguiente_script);
@@ -245,6 +249,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 			//menu();
 
 		}else{
+
+			log_infor(logger_kernel , ">>FIN de la REQUEST<<\n");
 
 			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 

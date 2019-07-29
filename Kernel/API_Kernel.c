@@ -14,6 +14,8 @@ int ejecutar_request(char* request_lql){
 
 	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 
+	log_info(logger_kernel, "  >>>NUEVA REQUEST: %s<<< " , request_lql);
+
 	int cod_request;
 	char* nombre_archivo;
 	char* nombre_tabla = string_new();
@@ -31,8 +33,6 @@ int ejecutar_request(char* request_lql){
 
 	describe_t describe_enviar;
 
-	log_info(logger_kernel, request_lql);
-
 	cod_request = identificar_request(request_lql);
 
 	switch(cod_request){
@@ -40,9 +40,10 @@ int ejecutar_request(char* request_lql){
 
 			tiempo_inicio_ejecucion_request = time(NULL);
 
+			printf("\n   --> REQUEST SELECT<-- \n");
+
 			if(obtener_parametros_select(request_lql, nombre_tabla, &key) == 3){
 
-				log_info(logger_kernel, "---Se realizara el SELECT---\n");
 
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
 
@@ -50,28 +51,40 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
-					log_error( logger_kernel , "NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
 					return 0;
 
 				}
 
-				mostrar_memoria_utilizada(memoria_utilizada);
+				pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
 
-				printf("YA MOSTRE LA MEMORIA, VOY A ENVIAR\n");
+			/*
+			 * tendrria que agregar esto?
+			 *
+			 * if( !memoria_utilizada->conectada){
+			 *
+			 * 	 	pthread_rwlock_unlock(memoria_utilizda->csemaforo);
+			 *
+			 * 		memoria_utilizada = seleccionar_memoria_consistencia;
+			 *
+			 * 		pthread_rwlock_wlock(memoria_utilizada->semaforo);
+			 *
+			 * }
+			 *
+			 */
+
+				mostrar_memoria_utilizada(memoria_utilizada);
 
 				if( enviar_request(SELECT, select_enviar, memoria_utilizada->socket) == false ) {
 
-					printf("ALGO FALLO AL ENVIAR\n");
+					printf("\n>Algo FALLO al enviar\n");
 
-					log_error(logger_kernel, ">>FALLO ENVIAR EL SELECT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+					log_error(logger_kernel, "-Fallo al enviar, removemos la memoria %d.- " , memoria_utilizada->numero_memoria);
+
+					memoria_utilizada->conectado = false;
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
-
-					pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
-
-					remover_conexion(memoria_utilizada->socket , tabla_gossiping);
-
-					pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 					return 0;
 
@@ -79,9 +92,15 @@ int ejecutar_request(char* request_lql){
 
 				t_dato* dato_recibido = recibir_dato_memoria(memoria_utilizada);
 
+				sumar_contador_memoria(memoria_utilizada);
+
+				pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
+
 				if(dato_recibido == NULL){
 
-					printf("NO SE PUDO REALIZAR EL SELECT\n");
+					log_error(logger_kernel , "-NO se pudo realizar el SELECT.-");
+
+					printf("\n>NO se pudo realizar el SELECT\n");
 
 					tiempo_fin_ejecucion_request = time(NULL) - tiempo_inicio_ejecucion_request;
 
@@ -101,8 +120,6 @@ int ejecutar_request(char* request_lql){
 
 				agregar_a_metrica(SELECT, select_enviar , tiempo_fin_ejecucion_request);
 
-				sumar_contador_memoria(memoria_utilizada);
-
 				liberar_dato_select(select_enviar);
 
 				return 1;
@@ -112,13 +129,13 @@ int ejecutar_request(char* request_lql){
 
 			tiempo_inicio_ejecucion_request = time(NULL);
 
-			if(obtener_parametros_insert(request_lql, nombre_tabla, &key, &value, &timestamp)){
+			printf("\n   --> REQUEST INSERT<-- \n");
 
-				log_info(logger_kernel, "---Se realizara el INSERT---\n");
+			if(obtener_parametros_insert(request_lql, nombre_tabla, &key, &value, &timestamp)){
 
 				if( !existe_en_registro_tabla(nombre_tabla)){
 
-					log_error(logger_kernel , "-La Tabla %s no existe en el registro de tablas.-\n" , nombre_tabla);
+					log_error(logger_kernel , "-La Tabla %s no existe en el registro de tablas.-" , nombre_tabla);
 
 					return 0;
 
@@ -130,23 +147,22 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
-					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
 					return 0;
 				}
+
+				pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
 				if ( enviar_request(INSERT, insert_enviar, memoria_utilizada->socket) == false ){
 
-					log_error(logger_kernel, ">>FALLO ENVIAR EL INSERT, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+					log_error(logger_kernel, "-FALLO al enviar el INSERT con la MEMORIA %d" , memoria_utilizada->numero_memoria);
+
+					memoria_utilizada->conectado = false;
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
-
-					pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
-
-					remover_conexion(memoria_utilizada->socket , tabla_gossiping);
-
-					pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 					return 0;
 
@@ -154,17 +170,21 @@ int ejecutar_request(char* request_lql){
 
 				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
-					log_error(logger_kernel,  "-Fallo la request INSERT.-\n");
+					log_error(logger_kernel,  "-Se RECIBIO un ERROR.-");
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					return 0;
 
 				}
 
+				sumar_contador_memoria(memoria_utilizada);
+
+				pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
+
 				tiempo_fin_ejecucion_request = time(NULL) - tiempo_inicio_ejecucion_request;
 
 				agregar_a_metrica(INSERT, insert_enviar , tiempo_fin_ejecucion_request);
-
-				sumar_contador_memoria(memoria_utilizada);
 
 				liberar_dato_insert(insert_enviar);
 
@@ -173,10 +193,10 @@ int ejecutar_request(char* request_lql){
 			break;
 
 		case CREATE:
+
+			printf("\n   --> REQUEST CREATE<-- \n");
+
 			if(obtener_parametros_create(request_lql, nombre_tabla, consistencia, &particiones, &tiempo_compactacion)){
-
-
-				log_info(logger_kernel , "---Se realizara el CREATE---\n");
 
 				create create_enviar = crear_dato_create(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
@@ -184,19 +204,22 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
-					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
 					return 0;
 				}
+
+				pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
 				if ( enviar_request(CREATE, create_enviar, memoria_utilizada->socket) == false ){
 
-					log_error(logger_kernel, ">>FALLO ENVIAR EL CREATE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+					log_error(logger_kernel, "-Fallo al enviar el CREATE con la memoria %d.-" , memoria_utilizada->numero_memoria);
+
+					memoria_utilizada->conectado = false;
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
-
-					remover_memoria_de_tabla_gossiping(memoria_utilizada);
 
 					return 0;
 
@@ -204,12 +227,16 @@ int ejecutar_request(char* request_lql){
 
 				if( recibir_estado_request(memoria_utilizada) == ERROR ){
 
-					log_error(logger_kernel, "-Fallo el CREATE.-\n");
+					log_error(logger_kernel, "-Fallo el CREATE.-");
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					return 0;
 
 
 				}
+
+				pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 				Metadata metadata_agregar =  crear_metadata(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
@@ -236,21 +263,25 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
-					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
 					return 0;
+
 				}
+
+				pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
 				if ( enviar_request(DESCRIBE, describe_enviar , memoria_utilizada->socket) == false ){
 
-					log_error(logger_kernel, ">>FALLO ENVIAR EL DESCRIBE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+					log_error(logger_kernel, "-FALLO al enviar el DESCRIBE, eliminamos la MEMORIA %d.-" , memoria_utilizada->numero_memoria);
 
-					printf("consistencia de la request: %s\n" , consistencia);
+					printf("\nconsistencia de la request: %s\n" , consistencia);
+
+					memoria_utilizada->conectado = false;
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
-
-					remover_memoria_de_tabla_gossiping(memoria_utilizada);
 
 					return 0;
 
@@ -265,15 +296,25 @@ int ejecutar_request(char* request_lql){
 
 				memoria_utilizada = tomar_memoria_al_azar();
 
+				if(memoria_utilizada == NULL){
+
+					return 0;
+
+				}
+
+				pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
+
 				mostrar_memoria_utilizada(memoria_utilizada);
 
 				if ( enviar_request(DESCRIBE, describe_enviar , memoria_utilizada->socket) == false ){
 
-					log_error(logger_kernel, ">>FALLO ENVIAR EL DESCRIBE, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+					log_error(logger_kernel, "-Fallo al enviar el DESCRIBE con la memoria %d.- " , memoria_utilizada->numero_memoria);
+
+					memoria_utilizada->conectado = false;
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
-
-					remover_memoria_de_tabla_gossiping(memoria_utilizada);
 
 					return 0;
 
@@ -287,9 +328,11 @@ int ejecutar_request(char* request_lql){
 
 			t_list* lista_describe = recibir_describe(memoria_utilizada->socket);
 
+			pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
+
 			if(lista_describe == NULL){
 
-				log_error(logger_kernel, "-Fallo la request DESCRIBE.-\n");
+				log_error(logger_kernel, "-Fallo la request DESCRIBE.-");
 
 				return 1;
 
@@ -306,11 +349,12 @@ int ejecutar_request(char* request_lql){
 
 		case ADD:
 
+			printf("\n   --> REQUEST ADD<-- \n");
+
 			if(  obtener_parametros_add(request_lql, &numero_memoria, consistencia) &&  (identificar_consistencia(consistencia) >= 0 ) ){
 
-				log_info(logger_kernel, "\n---Se realizara la request ADD---\n");
 				request_add(numero_memoria, consistencia);
-				log_info(logger_kernel , "SE AGREGO LA MEMORIA CORRECTAMENTE\n");
+
 				return 1;
 			}
 
@@ -347,7 +391,7 @@ int ejecutar_request(char* request_lql){
 
 				if(!existe_en_registro_tabla(nombre_tabla)){
 
-					printf("-La Tabla %s No existe en el registro de tablas.-\n" , nombre_tabla);
+					printf("-La Tabla %s No existe en el registro de tablas.-" , nombre_tabla);
 
 					return 0;
 
@@ -358,20 +402,23 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
-					printf("NO SE ENCUENTRAN MEMORIAS DISPONIBLES PARA ESA CONSISTENCIA\n");
 					return 0;
 
 				}
+
+				pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 
 				if ( enviar_request(DROP, drop_enviar , memoria_utilizada->socket ) == false ){
 
-					log_error(logger_kernel, ">>FALLO ENVIAR EL DROP, ELIMINAMOS LA MEMORIA %d \n" , memoria_utilizada->numero_memoria);
+					log_error(logger_kernel, "-FALLO al enviar el DROP, eliminamos la MEMORIA %d.-" , memoria_utilizada->numero_memoria);
+
+					memoria_utilizada->conectado = false;
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 					remover_memoria_de_consistencia(memoria_utilizada);
-
-					remover_memoria_de_tabla_gossiping(memoria_utilizada);
 
 					//liberar_drop(drop_enviar);
 
@@ -382,13 +429,19 @@ int ejecutar_request(char* request_lql){
 
 				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
-					log_error(logger_kernel , "-Fallo la request DROP.\n");
+					log_error(logger_kernel , "-Fallo la request DROP.");
+
+					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
+
+					return 0; //esto no se si esta bien
 
 				}else{
 
 					printf("Tabla %s removida\n" , nombre_tabla);
 
 				}
+
+				pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
 				remover_tabla_de_registro(nombre_tabla);
 
@@ -416,7 +469,7 @@ int ejecutar_request(char* request_lql){
 			return 1;
 
 		default:
-			log_error( logger_kernel ,"-LA REQUEST NO ES VALIDA-\n");
+			log_error( logger_kernel ,"-LA REQUEST NO ES VALIDA-");
 			return 0;
 			break;
 	}
@@ -450,9 +503,9 @@ void request_journal(){
 
 			log_error(logger_kernel, ">>FALLO ENVIAR EL JOURNAL ELIMINAMOS LA MEMORIA %d \n" , memoria_a_enviar->numero_memoria);
 
-			remover_memoria_de_consistencia(memoria_a_enviar);
+			memoria_a_enviar->conectado = false;
 
-			remover_memoria_de_tabla_gossiping(memoria_a_enviar);
+			remover_memoria_de_consistencia(memoria_a_enviar);
 
 		}
 

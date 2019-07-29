@@ -15,11 +15,41 @@ void request_add(int numero_memoria, char* consistencia){
 
 	if(	memoria_agregar == NULL	){
 
-		printf("NO SE PODRA INGRESAR LA MEMORIA, TE TIRO UN EXIT\n");
+		printf("\nNO se podra INGRESAR la MEMORIA\n");
 
-		exit(1);
+		return;
 
 	}
+
+	pthread_rwlock_wrlock(&memoria_agregar->semaforo_memoria);
+
+	if( !memoria_agregar->conectado){
+
+		memoria_agregar->socket = conectar_servidor(memoria_agregar->ip , memoria_agregar->puerto);
+
+		if(memoria_agregar->socket < 0 ){
+
+			memoria_agregar->conectado = false;
+
+			log_error(logger_kernel , "-La MEMORIA no esta conectada, NO la agregamos a la consistencia.-");
+
+			printf("\n>La MEMORIA no esta conectada\n");
+
+			pthread_rwlock_unlock(&memoria_agregar->semaforo_memoria);
+
+			return ;
+
+		}else{
+
+			memoria_agregar->conectado = true;
+
+
+		}
+
+
+	}
+
+	pthread_rwlock_unlock(&memoria_agregar->semaforo_memoria);
 
 	switch(codigo){
 
@@ -45,7 +75,9 @@ void request_add(int numero_memoria, char* consistencia){
 
 	}
 
-	printf("\nSE INGRESO CORRECTAMENTE LA MEMORIA\n");
+	log_info(logger_kernel, "-Se ingreso la MEMORIA CORRECTAMENTE.-");
+
+	printf("\n>Se ingreso la MEMORIA CORRECTAMENTE\n");
 
 }
 
@@ -58,15 +90,9 @@ memoria_t* obtener_memoria_de_lista( int numero_memoria ){
 
 	int tamanio_lista_gossip = list_size(tabla_gossiping) ;
 
-	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
-
 	for( int i = 0 ; i < tamanio_lista_gossip ; i++){
 
-		pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
-
 		dato_memoria_gossiping = list_get(tabla_gossiping , i);
-
-		pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 		if(dato_memoria_gossiping->numero_memoria == numero_memoria){
 
@@ -78,7 +104,11 @@ memoria_t* obtener_memoria_de_lista( int numero_memoria ){
 
 	}
 
-	printf("NO se encuentra la memoria %d en tabla de gossip\n", numero_memoria);
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
+	printf("\n>NO se encuentra la memoria %d en tabla de gossip\n", numero_memoria);
+
+	log_error(logger_kernel , "-NO se encuentra la MEMORIA en la tabla gossip.-");
 
 	return NULL;
 

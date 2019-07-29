@@ -35,16 +35,7 @@ void* realizar_gossiping(){
 
 			printf("Fallo el gossiping, lo intento denuevo\n");
 
-			close(conexion);
-
-			pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
-
-			memoria_t* memoria = remover_conexion(conexion, tabla_gossiping);
-
-			pthread_rwlock_unlock(&semaforo_tabla_gossiping);
-
-			remover_memoria_de_consistencia(memoria);
-			eliminar_memoria_t(memoria);
+			poner_memoria_desconectada(conexion);
 
 			pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
@@ -62,6 +53,28 @@ void* realizar_gossiping(){
 
 		printf("\n//////////////////////////////////////FIN GOSSIP//////////////////////////////////////////////////////////\n");
 	}
+}
+
+void poner_memoria_desconectada(int conexion){
+
+	pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
+
+	void _sos_la_memoria(void* _memoria){
+
+		memoria_t* memoria = (memoria_t* ) _memoria;
+
+		if( memoria->socket = conexion){
+
+			memoria->conectado = false;
+
+		}
+
+	}
+
+	list_iterate(tabla_gossiping , _sos_la_memoria);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
 }
 
 void remover_memoria_de_tabla_gossiping(memoria_t* memoria_utilizada){
@@ -154,13 +167,23 @@ int tomar_socket_memoria_aleatorio(t_list* lista_memorias){
 	int socket_return;
 	int numero_random;
 
-	if(list_size(lista_memorias) > 0){
-		numero_random = rand() % list_size(lista_memorias);
+	bool _estas_conectada(void* _memoria){
+
+		memoria_t* memoria = (memoria_t* ) _memoria;
+
+		return memoria->conectado;
+
+	}
+
+	t_list* lista_memorias_conectadas = list_filter(lista_memorias , _estas_conectada);
+
+	if(list_size(lista_memorias_conectadas) > 0){
+		numero_random = rand() % list_size(lista_memorias_conectadas);
 	}else{
 		return -1;
 	}
 
-	memoria_t* dato_lista = (memoria_t* ) list_get(lista_memorias , numero_random);
+	memoria_t* dato_lista = (memoria_t* ) list_get(lista_memorias_conectadas , numero_random);
 
 	return dato_lista->socket;
 
@@ -239,20 +262,22 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 			if(dato_memoria_ingresar->socket > 0){
 
-
-				ingresar_a_tabla_gossiping(dato_memoria_ingresar);
-
 				log_info(logger_kernel, "SE ESTABLECION LA CONEXION CON LA MEMORIA %d.\n" ,
 						dato_memoria_ingresar->numero_memoria);
 
+				dato_memoria_ingresar->conectado = true;
+
+
 			}else{
+
+				dato_memoria_ingresar->conectado = false;
 
 				log_error(logger_kernel, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.\n",
 						dato_memoria_ingresar->numero_memoria);
 
-				liberar_memoria_t(dato_memoria_ingresar);
-
 			}
+
+			ingresar_a_tabla_gossiping(dato_memoria_ingresar);
 
 		}
 
@@ -277,7 +302,7 @@ void ingresar_a_tabla_gossiping(memoria_t* dato_memoria_ingresar){
 
 	list_add(tabla_gossiping, dato_memoria_ingresar);
 
-	printf(">>Memoria %d Agregada a Tabla de Gossiping--\n" , dato_memoria_ingresar->numero_memoria);
+	printf("\n>Memoria %d Agregada a Tabla de Gossiping--\n" , dato_memoria_ingresar->numero_memoria);
 
 	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
@@ -320,21 +345,26 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 
 	memoria_creada->socket = conectar_servidor(memoria_creada->ip,	memoria_creada->puerto); //esto capaz no va.
 
+	pthread_rwlock_init(&memoria_creada->semaforo_memoria , NULL);
+
 	if(memoria_creada->socket > 0){
 
-		ingresar_a_tabla_gossiping(memoria_creada);
 
-		log_info(logger_kernel, "SE ESTABLECION LA CONEXION CON LA MEMORIA %d.\n" ,
+		log_info(logger_kernel, "-Se establecio la conexion con la MEMORIA %d.-" ,
 				memoria_creada->numero_memoria);
+
+		memoria_creada->conectado = true;
 
 	}else{
 
-		log_error(logger_kernel, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.\n",
+		log_error(logger_kernel, "NO se pudo establecer la conexion con la MEMORIA%d.-",
 				memoria_creada->numero_memoria);
 
-		liberar_memoria_t(memoria_creada);
+		memoria_creada->conectado = false;
 
 	}
+
+
 
 	return memoria_creada;
 
@@ -351,6 +381,8 @@ memoria_t* convertir_a_memoria_t(struct MemoriasEstructura* dato_memoria){
 	dato_convertido->numero_memoria = dato_memoria->numero_memoria;
 	dato_convertido->puerto = dato_memoria->puerto;
 	memcpy(dato_convertido->ip , dato_memoria->ip->buffer , dato_memoria->ip->size);
+
+	pthread_rwlock_init(&dato_convertido->semaforo_memoria , NULL);
 
 	dato_convertido->socket = conectar_servidor(dato_convertido->ip, dato_convertido->puerto); //esto capaz no va.
 

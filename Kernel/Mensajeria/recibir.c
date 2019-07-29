@@ -58,9 +58,12 @@ t_list* recibir_describe(int conexion){
 	t_list* datos_metadata = list_create();
 
 	if(error_recv <= 0){
-		perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
 
-		return datos_metadata;
+		printf("\n>FALLO al Recibir\n");
+
+		list_destroy(datos_metadata);
+
+		return NULL;
 
 	}
 
@@ -130,15 +133,17 @@ t_list* recibir_describe(int conexion){
 t_dato* recibir_dato_memoria(memoria_t* memoria_utilizada){
 
 
+	//EL SEMAFORO ESTA AFUERA
+
 	estado_request estado;
 
 	if( recv(memoria_utilizada->socket, &estado , sizeof(estado_request) , MSG_WAITALL) <= 0){
 
 		perror("Fallo al recibir el dato\n");
 
-		remover_memoria_de_consistencia(memoria_utilizada);
+		memoria_utilizada->conectado = false;
 
-		remover_memoria_de_tabla_gossiping(memoria_utilizada);
+		remover_memoria_de_consistencia(memoria_utilizada);
 
 		return NULL;
 
@@ -198,6 +203,8 @@ t_dato* recibir_dato_memoria(memoria_t* memoria_utilizada){
 
 estado_request recibir_estado_request(memoria_t* memoria_utilizada){
 
+	//el semaforo va a estar en el otro lado
+
 	estado_request estado;
 
 	int recibido;
@@ -206,9 +213,9 @@ estado_request recibir_estado_request(memoria_t* memoria_utilizada){
 
 	if(recibido <= 0){
 
-		remover_memoria_de_consistencia(memoria_utilizada);
+		memoria_utilizada->conectado = false;
 
-		remover_memoria_de_tabla_gossiping(memoria_utilizada);
+		remover_memoria_de_consistencia(memoria_utilizada);
 
 	}
 

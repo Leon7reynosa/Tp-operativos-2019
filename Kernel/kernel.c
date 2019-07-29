@@ -47,6 +47,8 @@ int main (int argc , char* argv[]){
 
 	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  numero_memoria_seed); //si pasa pasa, modioficarlo en el config
 
+	ingresar_a_tabla_gossiping(memoria_principal);
+
 	conexion_memoria = memoria_principal->socket;
 
 	inicializar_semaforo_ready();
@@ -99,7 +101,23 @@ int main (int argc , char* argv[]){
 
 	pthread_cancel(hilo_planificador);
 
+	destruir_semaforos();
+
 	return EXIT_SUCCESS;
+}
+
+void destruir_semaforos(){
+
+	pthread_rwlock_destroy(&semaforo_tabla_gossiping);
+	pthread_rwlock_destroy(&semaforo_metrica_ec);
+	pthread_rwlock_destroy(&semaforo_metrica_sc);
+	pthread_rwlock_destroy(&semaforo_metrica_shc);
+	pthread_rwlock_destroy(&semaforo_registro_tabla);
+	pthread_rwlock_destroy(&semaforo_eventual_c);
+	pthread_rwlock_destroy(&semaforo_strong_c);
+	pthread_rwlock_destroy(&semaforo_strong_hash_c);
+	pthread_rwlock_destroy(&semaforo_ready);
+
 }
 
 
