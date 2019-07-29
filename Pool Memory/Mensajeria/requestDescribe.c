@@ -211,6 +211,14 @@ describe_t crear_dato_describe(char* nombre_tabla){
 
 void mostrar_lista_describe(t_list* lista_describe){
 
+	if(list_size(lista_describe) == 0){
+
+		printf("No hay ninguna tabla en el File System\n");
+
+		return;
+
+	}
+
 	void _mostrar_metadata(void* dato_metadata){
 
 		Metadata dato_describe = (Metadata) dato_metadata;

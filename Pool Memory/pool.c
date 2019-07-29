@@ -11,15 +11,17 @@ int main (int argc , char* argv[]){
 
 	system("clear");
 
-	creacion_del_config();
+	printf("aca\n");
 
+	creacion_del_config();
+	printf("aca\n");
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
 	ip_escucha = obtener_ip_local();
-
+	printf("aca\n");
 	obtener_datos_config();
-
+	printf("aca\n");
 	inicializar_logger();
-
+	printf("aca\n");
 //TODO HANDSHAKE CON LISSANDRA (en archivo config por ahora)
 	realizar_handshake();
 

@@ -8,6 +8,9 @@
 #ifndef PROPIEDADES_FUNCIONAMIENTO_LOGGERS_H_
 #define PROPIEDADES_FUNCIONAMIENTO_LOGGERS_H_
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<commons/log.h>
 
 t_log* logger_lissandra;
 t_log* logger_lfs;

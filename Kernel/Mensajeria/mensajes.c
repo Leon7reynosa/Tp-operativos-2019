@@ -78,7 +78,7 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 	int error_send = send(conexion_memoria , buffer, bytes, 0);
 
-	if(error_send < 0){
+	if(error_send <= 0){
 		perror("FALLO EL SEND");
 
 		return false;

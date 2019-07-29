@@ -232,7 +232,7 @@ Dato request_select(select_t dato){
 	return dato_encontrado;
 }
 
-void request_insert(insert dato){
+estado_request request_insert(insert dato){
 
 	log_info(logger, "Se realizara un INSERT");
 
@@ -242,7 +242,7 @@ void request_insert(insert dato){
 
 	if(string_length((char *)dato->value->buffer) > tamanio_value){
 		log_info(logger, "Segmentation Fault! Value demasiado grande");
-		return;
+		return ERROR;
 	}
 	if(dato->timestamp < 0){
 		time_t timestamp = time(NULL);
@@ -317,6 +317,8 @@ void request_insert(insert dato){
 	pthread_mutex_unlock(&mutex_journal);
 
 	liberar_dato(dato_insert);
+
+	return SUCCESS;
 }
 
 

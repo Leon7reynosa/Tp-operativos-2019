@@ -29,7 +29,7 @@
 //estos dos creo que estarian en servidor y cliente (deberian)
 
 Dato request_select(select_t dato);
-void request_insert(insert dato);
+estado_request request_insert(insert dato);
 estado_request request_create(create dato_create);
 t_list* request_describe(describe_t dato_describe);
 estado_request request_drop(Drop datos_drop);

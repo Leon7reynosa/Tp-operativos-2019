@@ -59,8 +59,8 @@ void creacion_del_config(){
 
 	config_set_value(g_config, "RETARDO_MEMORIA", "0");
 	config_set_value(g_config, "RETARDO_LFS", "0");
-	config_set_value(g_config, "TAMANIO_MEMORIA", "1280");
-	config_set_value(g_config, "TIEMPO_JOURNAL","60000");
+	config_set_value(g_config, "TAMANIO_MEMORIA", "340");
+	config_set_value(g_config, "TIEMPO_JOURNAL","1000000");
 	config_set_value(g_config, "TIEMPO_GOSSIPING", "10000");
 	config_set_value(g_config, "NUMERO_MEMORIA", "1");
 

@@ -33,7 +33,7 @@ void creacion_del_config_fileSystem(){
 	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
 	config_set_value(g_config, "RETARDO", "0");
 	config_set_value(g_config, "TAMANIO_VALUE", "60");
-	config_set_value(g_config, "TIEMPO_DUMP", "20000");
+	config_set_value(g_config, "TIEMPO_DUMP", "3000");
 
 
 	config_save(g_config);
@@ -51,7 +51,7 @@ void creacion_del_metadata_fileSystem(){
 
 
 	config_set_value(g_config, "BLOCK_SIZE", "64");
-	config_set_value(g_config, "BLOCKS", "5192");
+	config_set_value(g_config, "BLOCKS", "4096");
 	config_set_value(g_config, "MAGIC_NUMBER", "LISSANDRA");
 
 	config_save(g_config);

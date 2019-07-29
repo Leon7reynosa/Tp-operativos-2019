@@ -1,229 +1,247 @@
-[INFO] 13:45:46:439 kernel/(5428:5428): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 13:45:54:742 kernel/(5428:5440):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 13:45:54:742 kernel/(5428:5440): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 13:45:54:742 kernel/(5428:5440): >>FIN de la REQUEST<<
+[INFO] 19:02:52:386 kernel/(13677:13677): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 19:02:58:830 kernel/(13677:13692):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 19:02:58:830 kernel/(13677:13692): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 19:02:58:830 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:45:54:742 kernel/(5428:5440): >>FIN de la REQUEST<<
+[INFO] 19:03:01:838 kernel/(13677:13692):   >>>NUEVA REQUEST: DESCRIBE<<< 
+[INFO] 19:03:01:838 kernel/(13677:13692): ---SE REALIZARA UN DESCRIBE GLOBAL--
+[INFO] 19:03:01:846 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:46:11:437 kernel/(5428:5440):   >>>NUEVA REQUEST: DROP COLORS<<< 
-[INFO] 13:46:11:438 kernel/(5428:5440): 
---Se realizara la request DROP de la tabla COLORS---
+[INFO] 19:03:05:733 kernel/(13677:13692):   >>>NUEVA REQUEST: DROP POSTRES<<< 
+[INFO] 19:03:05:733 kernel/(13677:13692): -Se realizara la request DROP de la tabla POSTRES.-
+[INFO] 19:03:05:736 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:46:11:442 kernel/(5428:5440): >>FIN de la REQUEST<<
+[INFO] 19:03:10:600 kernel/(13677:13692):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
+[INFO] 19:03:10:600 kernel/(13677:13692): -ARCHIVO: reemplazo1.lql.-
+[INFO] 19:03:10:600 kernel/(13677:13692): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 19:03:10:600 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:46:11:442 kernel/(5428:5440): >>FIN de la REQUEST<<
+[INFO] 19:03:10:601 kernel/(13677:13692):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
+[INFO] 19:03:10:604 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:50:50:555 kernel/(5583:5583): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 13:50:58:938 kernel/(5583:5595):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 13:50:58:938 kernel/(5583:5595): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 13:50:58:938 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:03:10:604 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
+[INFO] 19:03:10:606 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:51:33:499 kernel/(5583:5595):   >>>NUEVA REQUEST: run simple_sc.lql<<< 
-[INFO] 13:51:33:499 kernel/(5583:5595): --Se realizara el RUN del archivo simple_sc.lql--
+[INFO] 19:03:10:606 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
+[INFO] 19:03:10:607 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:51:33:499 kernel/(5583:5595): EL ARCHIVO YA ESTA EN LA COLA DE EJECUCION.
+[INFO] 19:03:10:608 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:51:33:499 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:03:10:608 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
+[INFO] 19:03:10:609 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:51:34:499 kernel/(5583:5595):   >>>NUEVA REQUEST: CREATE COLORS SC 4 300000<<< 
-[INFO] 13:51:34:501 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:03:10:609 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
+[INFO] 19:03:10:610 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:51:34:502 kernel/(5583:5595):   >>>NUEVA REQUEST: INSERT COLORS 1 "Blue"<<< 
-[INFO] 13:51:34:505 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:03:10:610 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
+[INFO] 19:03:10:611 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:51:34:505 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 13:51:34:506 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:04:12:207 kernel/(13677:13692):   >>>NUEVA REQUEST: DROP POSTRES<<< 
+[INFO] 19:04:12:207 kernel/(13677:13692): -Se realizara la request DROP de la tabla POSTRES.-
+[INFO] 19:04:12:210 kernel/(13677:13692): >>FIN de la REQUEST<<
 
-[INFO] 13:51:34:506 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:05:49:383 kernel/(13833:13833): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 19:06:38:782 kernel/(13833:13846):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 19:06:38:783 kernel/(13833:13846): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 19:06:38:783 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:51:35:507 kernel/(5583:5595):   >>>NUEVA REQUEST: INSERT COLORS 2 "Red"<<< 
-[INFO] 13:51:35:507 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:270 kernel/(13833:13846):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
+[INFO] 19:06:43:272 kernel/(13833:13846): -ARCHIVO: reemplazo1.lql.-
+[INFO] 19:06:43:272 kernel/(13833:13846): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 19:06:43:273 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:51:35:508 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COLORS 2<<< 
-[INFO] 13:51:35:508 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:273 kernel/(13833:13846):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
+[INFO] 19:06:43:275 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:51:35:508 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COLORS 2<<< 
-[INFO] 13:51:35:510 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:275 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
+[INFO] 19:06:43:277 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:51:35:510 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:277 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
+[INFO] 19:06:43:278 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:51:36:510 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 13:51:36:515 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:278 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:51:36:515 kernel/(5583:5595):   >>>NUEVA REQUEST: INSERT COLORS 1 "Black"<<< 
-[INFO] 13:51:36:516 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:279 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
+[INFO] 19:06:43:280 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:51:36:516 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 13:51:36:517 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:280 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
+[INFO] 19:06:43:281 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:52:19:507 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COLORS 2<<< 
-[INFO] 13:52:19:510 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:43:281 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
+[INFO] 19:06:43:282 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:52:23:923 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COSAS 239<<< 
-[ERROR] 13:52:23:923 kernel/(5583:5595): -NO se encuentran memorias para esa consistencia.-
-[ERROR] 13:52:23:923 kernel/(5583:5595): FALLO al ejecutar la REQUEST:  SELECT COSAS 239.
-[INFO] 13:52:23:923 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:06:45:647 kernel/(13833:13846):   >>>NUEVA REQUEST: JOURNAL<<< 
+[INFO] 19:06:45:647 kernel/(13833:13846): -Se realizara la request JOURNAL.-
+[INFO] 19:06:45:647 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:52:28:532 kernel/(5583:5595):   >>>NUEVA REQUEST: SELECT COSAS 1<<< 
-[ERROR] 13:52:28:532 kernel/(5583:5595): -NO se encuentran memorias para esa consistencia.-
-[ERROR] 13:52:28:532 kernel/(5583:5595): FALLO al ejecutar la REQUEST:  SELECT COSAS 1.
-[INFO] 13:52:28:533 kernel/(5583:5595): >>FIN de la REQUEST<<
+[INFO] 19:07:09:314 kernel/(13833:13846):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
+[INFO] 19:07:09:314 kernel/(13833:13846): -ARCHIVO: reemplazo2.lql.-
+[INFO] 19:07:09:314 kernel/(13833:13846): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 19:07:09:315 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 13:52:35:634 kernel/(5583:5595):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
-[INFO] 14:13:27:772 kernel/(6098:6098): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 14:13:52:414 kernel/(6098:6109):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 14:13:52:481 kernel/(6098:6109): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 14:13:52:483 kernel/(6098:6109): >>FIN de la REQUEST<<
+[INFO] 19:07:09:315 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
+[ERROR] 19:07:09:318 kernel/(13833:13846): -NO se pudo realizar el SELECT.-
+[INFO] 19:07:09:318 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 14:14:03:255 kernel/(6098:6109):   >>>NUEVA REQUEST: run simple_sc.lql<<< 
-[INFO] 14:14:03:262 kernel/(6098:6109): -ARCHIVO: simple_sc.lql.-
-[INFO] 14:14:03:268 kernel/(6098:6109): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 14:14:03:329 kernel/(6098:6109): >>FIN de la REQUEST<<
+[INFO] 19:07:09:318 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 178<<< 
+[INFO] 19:07:09:325 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 14:14:04:342 kernel/(6098:6109):   >>>NUEVA REQUEST: CREATE COLORS SC 4 300000<<< 
-[ERROR] 14:14:04:361 kernel/(6098:6109): -Fallo el CREATE.-
-[ERROR] 14:14:04:362 kernel/(6098:6109): FALLO al ejecutar la REQUEST:  CREATE COLORS SC 4 300000.
-[INFO] 14:14:04:364 kernel/(6098:6109): >>FIN de la REQUEST<<
+[INFO] 19:07:09:325 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 1888<<< 
+[INFO] 19:07:09:336 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 15:55:09:941 kernel/(8256:8256): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 15:55:14:764 kernel/(8256:8268):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 15:55:14:785 kernel/(8256:8268): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 15:55:14:787 kernel/(8256:8268): >>FIN de la REQUEST<<
+[INFO] 19:07:09:336 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 15:55:30:861 kernel/(8256:8268):   >>>NUEVA REQUEST: DROP COLORS<<< 
-[INFO] 15:55:30:867 kernel/(8256:8268): -Se realizara la request DROP de la tabla COLORS.-
-[INFO] 15:55:30:926 kernel/(8256:8268): >>FIN de la REQUEST<<
+[INFO] 19:07:09:336 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 80<<< 
+[INFO] 19:07:09:343 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 15:55:44:202 kernel/(8256:8268):   >>>NUEVA REQUEST: run simple_sc.lql<<< 
-[ERROR] 15:55:44:213 kernel/(8256:8268): -la REQUEST RUN recibio parametros de mas.-
-[ERROR] 15:55:44:227 kernel/(8256:8268): FALLO al ejecutar la REQUEST:  run simple_sc.lql.
-[INFO] 15:55:44:244 kernel/(8256:8268): >>FIN de la REQUEST<<
+[INFO] 19:07:09:343 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 120<<< 
+[INFO] 19:07:09:348 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 15:55:57:770 kernel/(8256:8268):   >>>NUEVA REQUEST: run simple_sc.lql<<< 
-[ERROR] 15:55:57:770 kernel/(8256:8268): -la REQUEST RUN recibio parametros de mas.-
-[ERROR] 15:55:57:771 kernel/(8256:8268): FALLO al ejecutar la REQUEST:  run simple_sc.lql.
-[INFO] 15:55:57:772 kernel/(8256:8268): >>FIN de la REQUEST<<
+[INFO] 19:07:09:348 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Chocolate"<<< 
+[INFO] 19:07:09:350 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:01:52:457 kernel/(8483:8483): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 16:01:58:608 kernel/(8483:8495):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 16:01:58:608 kernel/(8483:8495): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:01:58:608 kernel/(8483:8495): >>FIN de la REQUEST<<
+[INFO] 19:07:09:350 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:02:07:627 kernel/(8483:8495):   >>>NUEVA REQUEST: run simple_sc.lql<<< 
-[INFO] 16:03:05:828 kernel/(8579:8579): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 16:03:13:577 kernel/(8579:8592):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 16:03:13:577 kernel/(8579:8592): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:03:13:577 kernel/(8579:8592): >>FIN de la REQUEST<<
+[INFO] 19:07:09:351 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Torta de ricota"<<< 
+[INFO] 19:07:09:357 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:03:18:482 kernel/(8579:8592):   >>>NUEVA REQUEST: run simple_sc.lql<<< 
-[INFO] 16:04:44:567 kernel/(8676:8676): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 16:04:49:534 kernel/(8676:8688):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 16:04:49:534 kernel/(8676:8688): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:04:49:534 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:07:09:357 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Gelatina"<<< 
+[INFO] 19:07:09:359 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:04:54:841 kernel/(8676:8688):   >>>NUEVA REQUEST: run simple_sc.lql<<< 
-[INFO] 16:04:54:841 kernel/(8676:8688): -ARCHIVO: simple_sc.lql.-
-[INFO] 16:04:54:841 kernel/(8676:8688): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 16:04:54:841 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:07:09:359 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Helado"<<< 
+[INFO] 19:07:09:366 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:04:55:842 kernel/(8676:8688):   >>>NUEVA REQUEST: CREATE COLORS SC 4 300000<<< 
-[INFO] 16:04:55:845 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:07:09:366 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:04:55:845 kernel/(8676:8688):   >>>NUEVA REQUEST: INSERT COLORS 1 "Blue"<<< 
-[INFO] 16:04:55:845 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:07:09:366 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Tiramisu"<<< 
+[INFO] 19:07:09:367 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:04:55:845 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 16:04:55:847 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:07:09:367 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 999 "Queso y dulce"<<< 
+[INFO] 19:07:09:369 kernel/(13833:13846): >>FIN de la REQUEST<<
 
-[INFO] 16:04:55:847 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:29:317 kernel/(13983:13983): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 19:12:35:726 kernel/(13983:13997):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 19:12:35:726 kernel/(13983:13997): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 19:12:35:726 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:04:56:847 kernel/(8676:8688):   >>>NUEVA REQUEST: INSERT COLORS 2 "Red"<<< 
-[INFO] 16:04:56:848 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:41:873 kernel/(13983:13997):   >>>NUEVA REQUEST: run remplazo1.lql<<< 
+[INFO] 19:12:41:873 kernel/(13983:13997): -ARCHIVO: remplazo1.lql.-
+[INFO] 19:12:41:873 kernel/(13983:13997): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[ERROR] 19:12:41:874 kernel/(13983:13997): NO se pudo abrir el ARCHIVO remplazo1.lql.
 
-[INFO] 16:04:56:848 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 2<<< 
-[INFO] 16:04:56:848 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:41:874 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:04:56:848 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 2<<< 
-[INFO] 16:04:56:850 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:152 kernel/(13983:13997):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
+[INFO] 19:12:50:153 kernel/(13983:13997): -ARCHIVO: reemplazo1.lql.-
+[INFO] 19:12:50:153 kernel/(13983:13997): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 19:12:50:153 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:04:56:850 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:154 kernel/(13983:13997):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
+[INFO] 19:12:50:166 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:04:57:850 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 16:04:57:851 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:166 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
+[INFO] 19:12:50:168 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:04:57:851 kernel/(8676:8688):   >>>NUEVA REQUEST: INSERT COLORS 1 "Black"<<< 
-[INFO] 16:04:57:852 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:168 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
+[INFO] 19:12:50:169 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:04:57:852 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 16:04:57:853 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:169 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:05:17:357 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 16:05:17:358 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:170 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
+[INFO] 19:12:50:177 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:05:21:245 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS<<< 
-[ERROR] 16:05:21:245 kernel/(8676:8688): -la REQUEST SELECT recibio parametros incorrectos.-
-[ERROR] 16:05:21:245 kernel/(8676:8688): FALLO al ejecutar la REQUEST:  SELECT COLORS.
-[INFO] 16:05:21:245 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:178 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
+[INFO] 19:12:50:179 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:05:27:613 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 2 12<<< 
-[ERROR] 16:05:27:613 kernel/(8676:8688): -la REQUEST ADD recibio parametros de mas.-
-[ERROR] 16:05:27:613 kernel/(8676:8688): FALLO al ejecutar la REQUEST:  SELECT COLORS 2 12.
-[INFO] 16:05:27:613 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:50:179 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
+[INFO] 19:12:50:180 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:05:36:28 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORssda 12<<< 
-[ERROR] 16:05:36:28 kernel/(8676:8688): -NO se encuentran memorias para esa consistencia.-
-[ERROR] 16:05:36:28 kernel/(8676:8688): FALLO al ejecutar la REQUEST:  SELECT COLORssda 12.
-[INFO] 16:05:36:28 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:12:54:0 kernel/(13983:13997):   >>>NUEVA REQUEST: JOURNAL<<< 
+[INFO] 19:12:54:0 kernel/(13983:13997): -Se realizara la request JOURNAL.-
+[INFO] 19:12:54:0 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:05:55:50 kernel/(8676:8688):   >>>NUEVA REQUEST: SELECT COLORS 1<<< 
-[INFO] 16:05:55:58 kernel/(8676:8688): >>FIN de la REQUEST<<
+[INFO] 19:13:40:478 kernel/(13983:13997):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
+[INFO] 19:13:40:478 kernel/(13983:13997): -ARCHIVO: reemplazo2.lql.-
+[INFO] 19:13:40:478 kernel/(13983:13997): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 19:13:40:479 kernel/(13983:13997): >>FIN de la REQUEST<<
 
-[INFO] 16:06:11:540 kernel/(8676:8688):   >>>NUEVA REQUEST: DESCRIBE<<< 
-[INFO] 16:06:11:540 kernel/(8676:8688): ---SE REALIZARA UN DESCRIBE GLOBAL--
-[INFO] 16:16:08:75 kernel/(8900:8900): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 16:16:15:544 kernel/(8900:8912):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 16:16:15:544 kernel/(8900:8912): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:16:15:544 kernel/(8900:8912): >>FIN de la REQUEST<<
+[INFO] 19:13:40:479 kernel/(13983:13997):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
+[INFO] 19:38:11:644 kernel/(14718:14718): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 19:38:18:260 kernel/(14718:14731):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 19:38:18:260 kernel/(14718:14731): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 19:38:18:260 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:16:35:964 kernel/(8900:8912):   >>>NUEVA REQUEST: DROP COLORS<<< 
-[INFO] 16:16:35:965 kernel/(8900:8912): -Se realizara la request DROP de la tabla COLORS.-
-[INFO] 16:16:35:968 kernel/(8900:8912): >>FIN de la REQUEST<<
+[INFO] 19:38:31:139 kernel/(14718:14731):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
+[INFO] 19:38:31:139 kernel/(14718:14731): -ARCHIVO: reemplazo1.lql.-
+[INFO] 19:38:31:139 kernel/(14718:14731): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 19:38:31:139 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:17:04:319 kernel/(8900:8912):   >>>NUEVA REQUEST: SELECT COLORSRRS 2<<< 
-[ERROR] 16:17:04:319 kernel/(8900:8912): -NO se encuentran memorias para esa consistencia.-
-[ERROR] 16:17:04:319 kernel/(8900:8912): FALLO al ejecutar la REQUEST:  SELECT COLORSRRS 2.
-[INFO] 16:17:04:319 kernel/(8900:8912): >>FIN de la REQUEST<<
+[INFO] 19:38:31:140 kernel/(14718:14731):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
+[INFO] 19:38:31:147 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:17:17:86 kernel/(8900:8912):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
-[INFO] 16:17:17:86 kernel/(8900:8912): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:17:17:87 kernel/(8900:8912): >>FIN de la REQUEST<<
+[INFO] 19:38:31:147 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
+[INFO] 19:38:31:148 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:17:21:740 kernel/(8900:8912):   >>>NUEVA REQUEST: select cosas 1<<< 
-[INFO] 16:17:21:743 kernel/(8900:8912): >>FIN de la REQUEST<<
+[INFO] 19:38:31:148 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
+[INFO] 19:38:31:149 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:17:27:998 kernel/(8900:8912):   >>>NUEVA REQUEST: select cosas 239<<< 
-[INFO] 16:17:27:1 kernel/(8900:8912): >>FIN de la REQUEST<<
+[INFO] 19:38:31:149 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:17:37:966 kernel/(8900:8912):   >>>NUEVA REQUEST:  exit<<< 
-[ERROR] 16:17:37:966 kernel/(8900:8912): -LA REQUEST NO ES VALIDA-
-[ERROR] 16:17:37:966 kernel/(8900:8912): FALLO al ejecutar la REQUEST:   exit.
-[INFO] 16:17:37:966 kernel/(8900:8912): >>FIN de la REQUEST<<
+[INFO] 19:38:31:150 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
+[INFO] 19:38:31:151 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:22:00:556 kernel/(9053:9053): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 16:22:18:119 kernel/(9053:9065):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 16:22:18:119 kernel/(9053:9065): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:22:18:119 kernel/(9053:9065): >>FIN de la REQUEST<<
+[INFO] 19:38:31:151 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
+[INFO] 19:38:31:153 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:22:23:380 kernel/(9053:9065):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
-[INFO] 16:22:23:381 kernel/(9053:9065): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:22:23:381 kernel/(9053:9065): >>FIN de la REQUEST<<
+[INFO] 19:38:31:153 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
+[INFO] 19:38:31:154 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:22:28:212 kernel/(9053:9065):   >>>NUEVA REQUEST: DESCRIBE<<< 
-[INFO] 16:22:28:212 kernel/(9053:9065): ---SE REALIZARA UN DESCRIBE GLOBAL--
-[INFO] 16:22:28:214 kernel/(9053:9065): >>FIN de la REQUEST<<
+[INFO] 19:38:35:275 kernel/(14718:14731):   >>>NUEVA REQUEST: JOURNAL<<< 
+[INFO] 19:38:35:275 kernel/(14718:14731): -Se realizara la request JOURNAL.-
+[INFO] 19:38:35:275 kernel/(14718:14731): >>FIN de la REQUEST<<
 
-[INFO] 16:25:56:913 kernel/(9171:9171): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 16:26:01:795 kernel/(9171:9183):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 16:26:01:795 kernel/(9171:9183): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 16:26:01:795 kernel/(9171:9183): >>FIN de la REQUEST<<
+[INFO] 19:39:24:105 kernel/(14718:14731):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
+[INFO] 19:39:24:105 kernel/(14718:14731): -ARCHIVO: reemplazo2.lql.-
+[INFO] 19:39:24:105 kernel/(14718:14731): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 19:39:24:105 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:106 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
+[ERROR] 19:39:24:113 kernel/(14718:14731): -NO se pudo realizar el SELECT.-
+[INFO] 19:39:24:114 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:114 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 178<<< 
+[INFO] 19:39:24:118 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:119 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 1888<<< 
+[INFO] 19:39:24:125 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:125 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:126 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 80<<< 
+[INFO] 19:39:24:141 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:141 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 120<<< 
+[INFO] 19:39:24:152 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:152 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Chocolate"<<< 
+[INFO] 19:39:24:153 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:153 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:153 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Torta de ricota"<<< 
+[INFO] 19:39:24:155 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:155 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Gelatina"<<< 
+[INFO] 19:39:24:157 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:157 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Helado"<<< 
+[INFO] 19:39:24:158 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:158 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:158 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Tiramisu"<<< 
+[INFO] 19:39:24:160 kernel/(14718:14731): >>FIN de la REQUEST<<
+
+[INFO] 19:39:24:160 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 999 "Queso y dulce"<<< 
+[INFO] 19:39:24:161 kernel/(14718:14731): >>FIN de la REQUEST<<
 

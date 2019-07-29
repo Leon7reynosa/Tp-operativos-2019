@@ -215,7 +215,7 @@ void realizar_dump(void){
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
 		//SEMAFORO TABLA ESPECIFICA
-		printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE LA TABLA ESPECIFICA\n");
+//		printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE LA TABLA ESPECIFICA\n");
 
 		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
 
@@ -226,9 +226,9 @@ void realizar_dump(void){
 		void _cargar_a_temporal(void* _dato){
 
 			dato_t* dato = (dato_t *)_dato;
-			printf("[DUMP] VOY A CARGAR AL TEMPORAL LA KEY: %i\n", dato->key);
-			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL TIMESTAMP: %i\n", dato->timestamp);
-			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL VALUE: %s\n", dato->value);
+//			printf("[DUMP] VOY A CARGAR AL TEMPORAL LA KEY: %i\n", dato->key);
+//			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL TIMESTAMP: %i\n", dato->timestamp);
+//			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL VALUE: %s\n", dato->value);
 
 			cargar_a_particion(path_temporal, dato);
 
@@ -238,29 +238,29 @@ void realizar_dump(void){
 
 		//DESBLOQUEO LA TABLA ESPECIFICA
 		pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
-		printf("[DUMP] LIBERO EL SEMAFORO DE TABLA ESPECIFICA\n");
+//		printf("[DUMP] LIBERO EL SEMAFORO DE TABLA ESPECIFICA\n");
 
 		free(path_temporal);
 
 	}
 
-	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE MEMTABLE\n");
+//	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE MEMTABLE\n");
 	//SEMAFORO MEMTABLE
 	pthread_rwlock_wrlock(&(lock_memtable));
 	//SEMAFORO DICCIONARIO COMPACTACION
-	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DEL DICCIONARIO COMPACTADOR\n");
+//	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DEL DICCIONARIO COMPACTADOR\n");
 	pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
 	dictionary_iterator(memtable, _crear_temporal);
 
-	printf("[DUMP] LIBERO EL SEMAFORO DE DICCIONARIOA\n");
+//	printf("[DUMP] LIBERO EL SEMAFORO DE DICCIONARIOA\n");
 	pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 
 	vaciar_memtable();
 
 	//LIBERO SEMAFORO MEMTABLE
-	printf("[DUMP] LIBERO EL SEMAFORO DE MEMTABLEA\n");
+//	printf("[DUMP] LIBERO EL SEMAFORO DE MEMTABLEA\n");
 	pthread_rwlock_unlock(&(lock_memtable));
 
 }

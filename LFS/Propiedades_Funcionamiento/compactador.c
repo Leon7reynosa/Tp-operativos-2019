@@ -23,15 +23,15 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_rdlock((&(argumentos->lock_tabla)));
 
-	printf("[COMPACTACION] Obtengo la metadata de %s\n", nombre_tabla);
+//	printf("[COMPACTACION] Obtengo la metadata de %s\n", nombre_tabla);
 
 	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
-	printf("[COMPACTACION] Obtengo los datos de las particiones de %s\n", nombre_tabla);
+//	printf("[COMPACTACION] Obtengo los datos de las particiones de %s\n", nombre_tabla);
 
 	datos_finales = obtener_datos_particiones(nombre_tabla);
 
-	printf("[COMPACTACION] Obtengo los datos de los temporales de %s\n", nombre_tabla);
+//	printf("[COMPACTACION] Obtengo los datos de los temporales de %s\n", nombre_tabla);
 
 	datos_tmpc = obtener_datos_temporales(nombre_tabla);
 
@@ -74,7 +74,7 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_wrlock(&(argumentos->lock_tabla));
 
-	printf("[COMPACTACION] Libero las particiones de  %s\n", nombre_tabla);
+//	printf("[COMPACTACION] Libero las particiones de  %s\n", nombre_tabla);
 
 	for(int i = 0; i < metadata_tabla->particion; i++){
 
@@ -105,14 +105,14 @@ void* compactar(thread_args* argumentos){
 
 	}
 
-	printf("[COMPACTACION] Cargo los datos finales a las particiones de%s\n", nombre_tabla);
+//	printf("[COMPACTACION] Cargo los datos finales a las particiones de%s\n", nombre_tabla);
 
 	//time_t inicio_de_bloqueo = time(NULL);
 	list_iterate(datos_finales, _funcion_loca2);
 	//time_t fin_de_bloqueo = time(NULL)
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
-	printf("[COMPACTACION] Libero los tmpc de %s\n", nombre_tabla);
+//	printf("[COMPACTACION] Libero los tmpc de %s\n", nombre_tabla);
 	liberar_tmpc(nombre_tabla);
 
 	pthread_rwlock_unlock(&(argumentos->lock_tabla));
@@ -124,7 +124,7 @@ void* compactar(thread_args* argumentos){
 
 //	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
 
-	printf("[COMPACTACION] Libero las estructuras administrativas %s\n", nombre_tabla);
+//	printf("[COMPACTACION] Libero las estructuras administrativas %s\n", nombre_tabla);
 
 	list_destroy_and_destroy_elements(datos_tmpc, free);											//  (3) Libero los datos del .tmpc
 

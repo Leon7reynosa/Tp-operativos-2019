@@ -29,6 +29,18 @@ dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo){
 	return nuevo;
 }
 
+void mostrar_dato(dato_t* dato_a_mostrar){
+
+	printf("\nObtuve el siguiente dato: \n\n");
+
+	printf("Key: %d\n" , dato_a_mostrar->key );
+	printf("Value: %s\n" , dato_a_mostrar->value);
+	printf("Timestamp: %d\n" , dato_a_mostrar->timestamp);
+
+	printf("\n");
+
+};
+
 void liberar_dato(dato_t* dato_remove){
 
 	printf("[LIBERACION] Voy a liberar un dato con el value : %s\n" , dato_remove->value);

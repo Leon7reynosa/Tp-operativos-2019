@@ -626,15 +626,9 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 		for (int i = 0; i < cantidad_temporales ; i++){
 
-			printf("pruebinha\n");
-
 			char* path_particion = obtenerPathParaTemporalMientrasCompacto(nombre_tabla, i);
 
-			printf("pruebinha\n");
-
 			Particion particion_a_obtener = leer_particion(path_particion);
-
-			printf("pruebinha\n");
 
 			int i = 0;
 
@@ -642,19 +636,13 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 			void _generar_lista_datos(void* dato_bloque){
 
-				printf("entre aca bro\n");
-
 				int * bloque = (int* ) dato_bloque;
 
 				char* path_bloque = obtenerPath_Bloque(*bloque);
 
-				printf("path: %s\n" , path_bloque);
-
 				int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
 
 				struct stat* atributos = malloc(sizeof(struct stat));
-
-				printf("termine el malloc\n");
 
 				fstat(fd_bloque, atributos);
 
@@ -662,10 +650,10 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 				if(datos == MAP_FAILED){
 
-					printf("datos == map faiiled\n");
+//					printf("datos == map faiiled\n");
 					if(atributos->st_size == 0){
 
-						printf("atributos zise = 0\n");
+//						printf("atributos zise = 0\n");
 
 						close(fd_bloque);
 
@@ -687,37 +675,21 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 				munmap(datos, atributos->st_size);
 
-				printf("HOLA\n");
-
 				close(fd_bloque);
-
-				printf("HOLA\n");
 
 				free(path_bloque);
 
-				printf("HOLA\n");
 				free(atributos);
-				printf("HOLA\n");
 			}
-
-
-			printf("pruebinha\n");
 
 			list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
 
 			liberar_particion(particion_a_obtener);
-
-
-			printf("pruebinha\n");
 		}
-
-		printf("sali del for\n");
 
 		int j = 0;
 
 		char** cadena_datos = string_split(datos_totales , "\n");
-
-		printf("el split bien\n");
 
 		while( cadena_datos[j] != NULL ){
 

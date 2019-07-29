@@ -11,6 +11,8 @@ int main(int argc , char* argv[]){
 
 	creacion_del_config_fileSystem();
 
+	creacion_del_metadata_fileSystem();
+
 	obtener_datos_config();
 
 	obtener_datos_metadata();
@@ -55,6 +57,10 @@ int main(int argc , char* argv[]){
 	pthread_t administrador_hilos;
 	pthread_t hilo_consola;
 	int error_pthread;
+
+	set_estado(6, LIBRE);
+	set_estado(9, LIBRE);
+	set_estado(10, LIBRE);
 
 	error_pthread = pthread_create(&hilo_consola, NULL , consola, NULL);
 
