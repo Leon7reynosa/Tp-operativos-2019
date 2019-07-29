@@ -97,6 +97,37 @@ Metadata crear_estructura_metadata(char* tabla, char* consistencia, int particio
 
 }
 
+void mostrar_lista_describe(t_list* lista_describe){
+
+	if(lista_describe != NULL){
+		void _mostrar_metadata(void* dato_metadata){
+
+		Metadata dato_describe = (Metadata) dato_metadata;
+
+		printf("\n---TABLA: %s ---\n", (char*)dato_describe->tabla->buffer);
+
+			printf("consistencia: %s\n" , (char*)dato_describe->consistencia->buffer);
+
+			printf("particiones: %d\n" , dato_describe->particiones);
+
+			printf("tiempo compactacion: %d\n" , dato_describe->tiempo_compactacion);
+
+		}
+
+		list_iterate(lista_describe, _mostrar_metadata);
+
+		printf("\n");
+	}
+
+	else{
+		printf("No existe dicha tabla\n");
+	}
+
+
+
+}
+
+
 void liberar_metadata(Metadata metadata_a_liberar){
 
 	free(metadata_a_liberar->tabla->buffer);

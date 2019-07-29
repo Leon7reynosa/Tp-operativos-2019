@@ -173,68 +173,66 @@ dato_t* request_select(select_t datos_select){
 
 	 log_info(logger_lfs, "Solicitud de request -- SELECT -- \n");
 
-	 // SEMAFORO DE ESTRUCTURA TABLAS
-	 pthread_rwlock_rdlock(&(lock_diccionario_compactacion)); 		            // turbios
-	 thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
-
-	 //SEMAFORO DE TABLA ESPECIFICA
-	 pthread_rwlock_rdlock(&(argumentos_tabla->lock_tabla)); 	 	 	 	   //  turbios
+	pthread_rwlock_rdlock(&(lock_diccionario_compactacion));	// SEMAFORO DE ESTRUCTURA TABLAS
 
 	 if(existe_la_tabla(nombre_tabla)){
 
-		 printf("[SELECT %s : key %i] Existe la tabla\n", nombre_tabla, datos_select->key);
+		thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
-		 metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
+		pthread_rwlock_rdlock(&(argumentos_tabla->lock_tabla));		//SEMAFORO DE TABLA ESPECIFICA
 
-		 int particion_objetivo = calcular_particion(metadata_tabla->particion , datos_select->key);
+		printf("[SELECT %s : key %i] Existe la tabla\n", nombre_tabla, datos_select->key);
 
-		 printf("[SELECT %s : key %i] La particion de la key deberia ser %i\n", nombre_tabla, datos_select->key, particion_objetivo);
+		metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
-		 path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
+		int particion_objetivo = calcular_particion(metadata_tabla->particion , datos_select->key);
 
-		 dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, datos_select->key);
+		printf("[SELECT %s : key %i] La particion de la key deberia ser %i\n", nombre_tabla, datos_select->key, particion_objetivo);
 
-		 dato_temporales = buscar_dato_en_temporales(nombre_tabla, datos_select->key);
+		path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
+
+		dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, datos_select->key);
+
+		dato_temporales = buscar_dato_en_temporales(nombre_tabla, datos_select->key);
 
 		 //ACA HAY UN SEMAFORO DE MEMTABLE
-         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
+        dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
          /////////////////////////////////
 
-         printf("[BUSQUEDA] OBTENGO EL DATO MAS NUEVO\n");
+        printf("[BUSQUEDA] OBTENGO EL DATO MAS NUEVO\n");
 
-		 dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
+		dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
 
-		 dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
+		dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
 
-		 printf("[BUSQUEDA] TERMINE DE OBTENER EL MAS NUEVO\n");
+		printf("[BUSQUEDA] TERMINE DE OBTENER EL MAS NUEVO\n");
 
-		 if(dato_aux != NULL){
+		if(dato_aux != NULL){
 			 liberar_dato(dato_aux);
-		 }
+		}
 
-		 printf("PASE 1\n");
-
-		 if(dato_binarios != NULL){
+		if(dato_binarios != NULL){
 			 liberar_dato(dato_binarios);
-		 }
+		}
 
-		 printf("PASE 2\n");
-		 if(dato_temporales != NULL){
+		if(dato_temporales != NULL){
 			 liberar_dato(dato_temporales);
-		 }
-		 printf("PASE 3\n");
-		 if(dato_memtable != NULL){
+		}
+
+		if(dato_memtable != NULL){
 
 			 printf("[LIBERACION] dato a liberar : %s\n " , dato_memtable->value);
 
 		 	liberar_dato(dato_memtable);
-		 }
-		 printf("PASE 4\n");
+		}
 
-		 free(metadata_tabla);
-		 free(path_particion_a_buscar);
+		free(metadata_tabla);
 
-		 printf("[LIBERACION] Se libero el path de particion y la metadata_tabla\n");
+		free(path_particion_a_buscar);
+
+		printf("[LIBERACION] Se libero el path de particion y la metadata_tabla\n");
+
+		pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
 
 	 }
 
@@ -247,11 +245,7 @@ dato_t* request_select(select_t datos_select){
 	 }
 
 
-	 pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
-	 ////////////////////////////////////////////////////////
 	 pthread_rwlock_unlock(&(lock_diccionario_compactacion));
-	 ///////////////////////////////////////////////////////////////////////////////
-
 	 log_info(logger_lfs, "Request -- SELECT -- realizada !!!\n");
 	 return  dato_mas_nuevo;
 
@@ -269,14 +263,13 @@ dato_t* request_select(select_t datos_select){
 
 	 log_info(logger_lfs, "Inicio de request -- INSERT -- \n");
 
-	 //SEMAFORO DE DICCIONARIO COMPACTACION
-	 pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
-	 thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
-
-	 //SEMAFORO DE TABLA EN ESPECIFICO
-	 pthread_rwlock_rdlock(&(argumentos_tabla->lock_tabla));
+	 pthread_rwlock_rdlock(&(lock_diccionario_compactacion)); 	//SEMAFORO DE DICCIONARIO COMPACTACION
 
 	 if(existe_la_tabla(nombre_tabla)){
+
+		 thread_args* argumentos_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+
+		 pthread_rwlock_rdlock(&(argumentos_tabla->lock_tabla)); 	//SEMAFORO DE TABLA EN ESPECIFICO
 
 		 printf("[INSERT] Existe la tabla\n");
 
@@ -294,6 +287,8 @@ dato_t* request_select(select_t datos_select){
 
 		 estado = SUCCESS;
 
+		 pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
+
 		 ///////////////////////////////////////////////////////////////////////
 
 	 }else{
@@ -304,10 +299,7 @@ dato_t* request_select(select_t datos_select){
 
 		 estado = ERROR;
 
-
 	 }
-
-	 pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
 
 	 pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
@@ -390,30 +382,32 @@ t_list* request_describe(describe_t request){
 
 	else{
 		printf("[DESCRIBE] Es del tipo PARTICULAR \n");
-		// SEMAFOROOS
+
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
-		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, (char *) request->tabla->buffer);
+		if(existe_la_tabla((char *)(request->tabla->buffer))){
 
-		pthread_rwlock_rdlock(&(argumento_tabla->lock_tabla));
+			thread_args* argumento_tabla = dictionary_get(diccionario_compactador, (char *) request->tabla->buffer);
 
+			pthread_rwlock_rdlock(&(argumento_tabla->lock_tabla));
 
-		Metadata metadata_obtenida = request_describe_particular((char*) request->tabla->buffer);
+			Metadata metadata_obtenida = request_describe_particular((char*) request->tabla->buffer);
 
-		///////////////////////////////////////////////////////////
-		pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
-		//////////////////////////////////////////////////////////////
-		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
-
-		if(metadata_obtenida != NULL){
+					///////////////////////////////////////////////////////////
+			pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
+					//////////////////////////////////////////////////////////////
 
 			metadatas = list_create();
 
 			list_add(metadatas, metadata_obtenida);
 
 		}else{
+
 			metadatas = NULL;
+
 		}
+
+		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 	}
 
@@ -432,7 +426,7 @@ Metadata request_describe_particular(char* nombre_tabla){
 
 	log_info(logger_lfs, "Inicio de request -- DESCRIBE PARTICULAR --\n");
 
-	if(existe_la_tabla(nombre_tabla)){
+//	if(existe_la_tabla(nombre_tabla)){
 
 		char* path_tabla_metadata = obtener_path_metadata_de_tabla(nombre_tabla);
 
@@ -452,12 +446,12 @@ Metadata request_describe_particular(char* nombre_tabla){
 
 		free(path_tabla_metadata);
 
-	 }
-
-	else{
-
-		metadata_tabla = NULL;
-	 }
+//	 }
+//
+//	else{
+//
+//		metadata_tabla = NULL;
+//	 }
 
 	log_info(logger_lfs, "Request -- DESCRIBE -- realizada !!!\n");
 
@@ -550,21 +544,22 @@ estado_request request_drop(Drop request_drop){
 
 	DIR *dir1, *dir2;
 
-	estado_request estado;
+	estado_request estado = ERROR;
 
 	struct dirent* tabla, *tabla_particular;
 
 	char* path_directorio_tabla = obtenerPathDirectorio_Tablas();
 
-	//IF EXISTE_TABLA!
+//	if(existe_tabla((char*)request_drop->tabla->buffer)){
+//	}
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
 
 		printf("[BUSQUEDA] AGARRO SEMAFOROS DEL DICCIONARIO Y TABLA\n");
 		//SEMAFOROS!!!!!!!!!!!!!!!!!
 		pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
-		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
-		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
+//		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+//		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
 
 		printf("[BUSQUEDA] AGARRE TODOS\n");
 
@@ -575,6 +570,10 @@ estado_request request_drop(Drop request_drop){
 
 
 				if(string_equals_ignore_case(tabla->d_name, nombre_tabla)){
+
+					thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
+					pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
+
 					char* path_para_tabla_particular = string_new();
 
 					string_append(&path_para_tabla_particular, path_directorio_tabla);
@@ -582,8 +581,6 @@ estado_request request_drop(Drop request_drop){
 					string_append(&path_para_tabla_particular, tabla->d_name);
 
 					dir2 = opendir(path_para_tabla_particular);
-
-
 
 					while((tabla_particular = readdir(dir2)) != NULL){
 
@@ -623,6 +620,11 @@ estado_request request_drop(Drop request_drop){
 					printf("[DROP] El directorio fue eliminado\n");
 
 					free(path_para_tabla_particular);
+
+					estado = SUCCESS;
+
+					abortar_hilo_compactador(nombre_tabla);
+
 					break;
 				}
 
@@ -630,16 +632,12 @@ estado_request request_drop(Drop request_drop){
 		}
 
 		//TIENE ELIMINACION DEL SEMAFORO ADENTRO
-		abortar_hilo_compactador(nombre_tabla);
+//		abortar_hilo_compactador(nombre_tabla);
 
 		//LIBERO EL SEMAFORO!
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
-		estado = SUCCESS;
-
-	}else{
-
-		estado = ERROR;
+//		estado = SUCCESS;
 
 	}
 

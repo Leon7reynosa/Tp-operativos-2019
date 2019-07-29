@@ -176,6 +176,8 @@ void liberar_dump(void){
 
 	pthread_cancel(hilo_dump);
 
+	realizar_dump();
+
 }
 
 void* ciclo_dump(void* argumentos){

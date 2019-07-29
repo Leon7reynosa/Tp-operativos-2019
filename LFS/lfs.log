@@ -4238,3 +4238,77 @@
 
 [INFO] 14:23:42:463 file system/(9271:9282): Request -- DROP-- realizada
 
+[INFO] 23:36:04:468 file system/(22370:22381): Inicio de request -- DROP --
+
+[INFO] 23:36:20:36 file system/(22402:22412): Inicio de request -- DROP --
+
+[INFO] 23:46:09:232 file system/(22791:22802): Inicio de request -- DROP --
+
+[INFO] 23:46:09:232 file system/(22791:22802): Request -- DROP-- realizada
+
+[INFO] 23:46:27:354 file system/(22791:22802): Solicitud de request -- SELECT -- 
+
+[INFO] 23:47:34:771 file system/(22876:22887): Solicitud de request -- SELECT -- 
+
+[INFO] 23:50:30:73 file system/(23019:23030): Solicitud de request -- SELECT -- 
+
+[INFO] 23:50:30:74 file system/(23019:23030): Request -- SELECT -- realizada !!!
+
+[INFO] 23:51:56:577 file system/(23128:23138): Solicitud de request -- SELECT -- 
+
+[INFO] 23:51:56:577 file system/(23128:23138): Request -- SELECT -- realizada !!!
+
+[INFO] 23:53:22:340 file system/(23291:23306): Inicio de request -- INSERT -- 
+
+[INFO] 23:59:51:418 file system/(23791:23802): Inicio de request -- INSERT -- 
+
+[INFO] 23:59:51:418 file system/(23791:23802): Request -- INSERT -- realizada !!!
+
+[INFO] 00:01:06:425 file system/(23849:23860): Inicio de request -- DROP --
+
+[INFO] 00:01:06:426 file system/(23849:23860): Request -- DROP-- realizada
+
+[INFO] 00:06:43:358 file system/(24061:24071): Solicitud de request -- SELECT -- 
+
+[INFO] 00:06:43:374 file system/(24061:24071): Request -- SELECT -- realizada !!!
+
+[INFO] 00:06:48:193 file system/(24061:24071): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 00:06:48:204 file system/(24061:24071): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 00:07:13:796 file system/(24061:24071): Inicio de request -- INSERT -- 
+
+[INFO] 00:07:13:872 file system/(24061:24071): Request -- INSERT -- realizada !!!
+
+[INFO] 00:16:50:956 file system/(24334:24345): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 00:16:50:956 file system/(24334:24345): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 00:16:57:12 file system/(24334:24345): Solicitud de request -- SELECT -- 
+
+[INFO] 00:16:57:13 file system/(24334:24345): Request -- SELECT -- realizada !!!
+
+[INFO] 00:17:33:198 file system/(24334:24345): Inicio de request -- DROP --
+
+[INFO] 00:17:33:199 file system/(24334:24345): Request -- DROP-- realizada
+
+[INFO] 00:18:50:322 file system/(24439:24449): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 00:18:50:322 file system/(24439:24449): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 00:19:10:639 file system/(24488:24498): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 00:19:10:665 file system/(24488:24498): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 00:19:13:399 file system/(24488:24498): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 00:19:13:402 file system/(24488:24498): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 00:19:23:834 file system/(24488:24498): Inicio de request -- DROP --
+
+[INFO] 00:19:23:842 file system/(24488:24498): Request -- DROP-- realizada
+
+[INFO] 00:19:33:504 file system/(24488:24498): Solicitud de request -- SELECT -- 
+
+[INFO] 00:19:33:522 file system/(24488:24498): Request -- SELECT -- realizada !!!
+

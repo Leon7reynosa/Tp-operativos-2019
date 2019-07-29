@@ -203,6 +203,7 @@ void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
 	pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
+	pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
 
 	pthread_rwlock_wrlock(&(argumentos_hilos->lock_tabla));
 
@@ -213,8 +214,6 @@ void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
 	}
 
 	pthread_attr_destroy(&attr);
-
-	pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
 
 	dictionary_put(diccionario_compactador , nombre_tabla , argumentos_hilos);
 

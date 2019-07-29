@@ -83,7 +83,6 @@ int main(int argc , char* argv[]){
 
 	//mandaron exit por la consola
 
-
 	pthread_cancel(administrador_hilos);
 
 	liberar_conexiones();

@@ -112,13 +112,16 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 			if(obtener_parametros_select(linea_request, nombre_tabla, &key) == 3){
 
+
 				select_t dato_select = crear_dato_select(nombre_tabla, key);
 
 				dato_t* dato = request_select(dato_select);
 
-				//mostrar_dato(dato);
+				if(dato != NULL){
 
-				liberar_dato(dato);
+					liberar_dato(dato);
+
+				}
 
 				liberar_dato_select(dato_select);
 
@@ -153,7 +156,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case CREATE:
 
-			printf(">>CREATE<<");
+			printf(">>CREATE<<\n");
 
 			if(obtener_parametros_create(linea_request, nombre_tabla, consistencia, &particiones, &compactacion)){
 
@@ -169,7 +172,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case DESCRIBE:
 
-			printf(">>DESCRIBE<<");
+			printf(">>DESCRIBE<<\n");
 
 			cantidad_parametros = obtener_parametros_describe(linea_request, nombre_tabla);
 
@@ -179,26 +182,34 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 				describe_t describe_enviar = crear_dato_describe(nombre_tabla);
 
-				printf("tabla que enviamos %s\n" , (char*)describe_enviar->tabla->buffer);
-
 				lista_describe = request_describe(describe_enviar);
 
-				liberar_dato_describe(describe_enviar); //capaz no hya que liberaar
+				mostrar_lista_describe(lista_describe);
+
+				liberar_dato_describe(describe_enviar);
 
 			}else if(cantidad_parametros == 1){
 
 				//log_info(logger_kernel, "---SE REALIZARA UN DESCRIBE GLOBAL--")
 
-				lista_describe = request_describe_global();
+				describe_t describe_enviar = crear_dato_describe(NULL);
 
+				lista_describe = request_describe(describe_enviar);
+
+				mostrar_lista_describe(lista_describe);
+
+				liberar_dato_describe(describe_enviar);
 
 			}else{
+
 				return false;
 			}
 
-			//mostrar_lista_describe(lista_describe); // falta esta funcion?
+			if(lista_describe != NULL){
 
-			list_destroy_and_destroy_elements(lista_describe, liberar_metadata); //falta el liberar metadata?
+				list_destroy_and_destroy_elements(lista_describe, liberar_metadata); //falta el liberar metadata?
+
+			}
 
 			break;
 		case DROP:
