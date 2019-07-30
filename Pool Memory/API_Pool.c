@@ -255,6 +255,8 @@ estado_request request_insert(insert dato){
 		dato->timestamp = timestamp;
 	}
 
+	printf("EN request_insert tabla: %s\n" , dato->tabla->buffer);
+
 	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
 	pthread_mutex_lock(&mutex_journal);

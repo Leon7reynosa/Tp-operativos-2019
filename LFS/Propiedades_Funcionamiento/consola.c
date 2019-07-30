@@ -154,10 +154,9 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 				}
 
-			printf("pase lol\n");
-
-			printf("NOMBRE TABLA: %s\n");
-			printf("KEY: %d\n" , key);
+//			printf("NOMBRE TABLA: %s\n" , nombre_tabla);
+//			printf("KEY: %d\n" , key);
+//			printf("VALUE : %s\n" , value);
 
 				insert dato_insert = crear_dato_insert(nombre_tabla, key,value, timestamp  );
 
@@ -218,7 +217,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 			}else{
 
-				return false;
+				fin_funcion = false;
 			}
 
 			if(lista_describe != NULL){
@@ -238,7 +237,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 				request_drop(drop_dato);
 
-				return true;
+				fin_funcion = true;
 			}
 
 
@@ -296,9 +295,9 @@ int obtener_parametros_select(char* linea_request, char** nombre_tabla , u_int16
 
 	if( parametros[3] != NULL){
 
-		log_error(logger_request, "-la REQUEST ADD recibio parametros de mas.-");
+		log_error(logger_request, "-la REQUEST SELECT recibio parametros de mas.-");
 
-		printf("\n>La REQUEST ADD recibio parametros de mas\n");
+		printf("\n>La REQUEST SELECT recibio parametros de mas\n");
 
 		liberar_puntero_doble(parametros);
 
@@ -401,6 +400,8 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 
 	}
 
+	//printf("EN EL OBTENER PARAMETROS LA TABLA ES %s\n" , *nombre_tabla);
+	printf("EN EL OBTENER PARAMETROS LA KEY ES %d\n" , *key);
 
 	liberar_puntero_doble(parametros);
 

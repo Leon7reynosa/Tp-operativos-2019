@@ -38,29 +38,19 @@ void* realizar_metrics(){
 		pthread_rwlock_unlock(&semaforo_metrica_ec);
 		pthread_rwlock_unlock(&semaforo_metrica_sc);
 
-		printf("[METRICAS] ya desblooquee\n");
-
 		pthread_rwlock_wrlock(&semaforo_metrica_sc);
-		printf("[METRICAS] voy a limpiar sc\n");
 
 		limpiar_metricas(metrica_sc);
 		pthread_rwlock_unlock(&semaforo_metrica_sc);
 
 
-		printf("[METRICAS] ya limpie sc\n");
-
 		pthread_rwlock_wrlock(&semaforo_metrica_ec);
-		printf("[METRICAS] voy a limpiar ec\n");
 		limpiar_metricas(metrica_ec);
 		pthread_rwlock_unlock(&semaforo_metrica_ec);
 
-		printf("[METRICAS] ya limpie ec\n");
-
 		pthread_rwlock_wrlock(&semaforo_metrica_shc);
-		printf("[METRICAS] voy a limpiar shc\n");
 		limpiar_metricas(metrica_shc);
 		pthread_rwlock_unlock(&semaforo_metrica_shc);
-		printf("[METRICAS] ya limpie shc\n");
 
 		reiniciar_memory_load();
 

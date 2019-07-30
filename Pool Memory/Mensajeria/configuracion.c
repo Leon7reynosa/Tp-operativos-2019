@@ -51,7 +51,7 @@ void creacion_del_config(){
 	g_config = config_create(path_config);
 
 	config_set_value(g_config, "PUERTO_ESCUCHA", "8001");
-	config_set_value(g_config, "IP_LFS", "192.168.1.40");
+	config_set_value(g_config, "IP_LFS", "192.168.1.50");
 	config_set_value(g_config, "PUERTO_LFS", "5003");
 
 	config_set_value(g_config, "IP_SEEDS", array_ips);

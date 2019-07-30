@@ -1,536 +1,356 @@
-[INFO] 19:02:48:732 Pool Memory/(13657:13657): Se establecion conexion con el File System.
+[INFO] 02:30:52:376 Pool Memory/(8376:8376): Se establecion conexion con el File System.
 >> Tamanio value = 60
 
-[INFO] 19:02:48:732 Pool Memory/(13657:13657): Se inicializo correctamente la memoria.
+[INFO] 02:30:52:376 Pool Memory/(8376:8376): Se inicializo correctamente la memoria.
 >> Tamanio de la memoria = 340 -> Cantidad maxima de datos: 5 
 
-[INFO] 19:03:01:839 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:01:839 Pool Memory/(13657:13657): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:03:01:840 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:07:406 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:07:410 Pool Memory/(8376:8376): No existe un segmento asociado a POSTRES. Se crea el segmento.
+[INFO] 02:31:07:410 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:05:733 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:05:736 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:07:411 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:07:412 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:07:413 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:07:413 Pool Memory/(8376:8376): No existe una pagina con la key: 100
+[INFO] 02:31:07:413 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:07:413 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:07:413 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:07:394 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:07:394 Pool Memory/(13657:13657): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:03:07:395 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:07:413 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:07:413 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:07:414 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:07:414 Pool Memory/(8376:8376): No existe una pagina con la key: 101
+[INFO] 02:31:07:414 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:07:414 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:07:414 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:10:602 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:10:603 Pool Memory/(13657:13657): No existe un segmento asociado a POSTRES. Se crea el segmento.
-[INFO] 19:03:10:603 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:07:415 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:07:415 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:07:415 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:07:415 Pool Memory/(8376:8376): No existe una pagina con la key: 1888
+[INFO] 02:31:07:415 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:07:415 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:07:416 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:10:604 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:10:605 Pool Memory/(13657:13657): Se realizara un INSERT
-[INFO] 19:03:10:605 Pool Memory/(13657:13657): Existe un segmento para POSTRES
-[INFO] 19:03:10:605 Pool Memory/(13657:13657): No existe una pagina con la key: 100
-[INFO] 19:03:10:605 Pool Memory/(13657:13657): Se solicita una nueva pagina
-[INFO] 19:03:10:605 Pool Memory/(13657:13657): Hay una pagina libre para asignar
-[INFO] 19:03:10:606 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:07:416 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:07:416 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:07:416 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:07:416 Pool Memory/(8376:8376): No existe una pagina con la key: 80
+[INFO] 02:31:07:416 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:07:416 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:07:417 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:10:606 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:10:607 Pool Memory/(13657:13657): Se realizara un INSERT
-[INFO] 19:03:10:607 Pool Memory/(13657:13657): Existe un segmento para POSTRES
-[INFO] 19:03:10:607 Pool Memory/(13657:13657): No existe una pagina con la key: 101
-[INFO] 19:03:10:607 Pool Memory/(13657:13657): Se solicita una nueva pagina
-[INFO] 19:03:10:607 Pool Memory/(13657:13657): Hay una pagina libre para asignar
-[INFO] 19:03:10:608 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:07:417 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:07:417 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:07:417 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:07:417 Pool Memory/(8376:8376): No existe una pagina con la key: 120
+[INFO] 02:31:07:417 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:07:417 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:07:418 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:10:608 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:10:608 Pool Memory/(13657:13657): Se realizara un INSERT
-[INFO] 19:03:10:608 Pool Memory/(13657:13657): Existe un segmento para POSTRES
-[INFO] 19:03:10:609 Pool Memory/(13657:13657): No existe una pagina con la key: 1888
-[INFO] 19:03:10:609 Pool Memory/(13657:13657): Se solicita una nueva pagina
-[INFO] 19:03:10:609 Pool Memory/(13657:13657): Hay una pagina libre para asignar
-[INFO] 19:03:10:609 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:10:149 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:10:166 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:10:609 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:10:609 Pool Memory/(13657:13657): Se realizara un INSERT
-[INFO] 19:03:10:609 Pool Memory/(13657:13657): Existe un segmento para POSTRES
-[INFO] 19:03:10:610 Pool Memory/(13657:13657): No existe una pagina con la key: 80
-[INFO] 19:03:10:610 Pool Memory/(13657:13657): Se solicita una nueva pagina
-[INFO] 19:03:10:610 Pool Memory/(13657:13657): Hay una pagina libre para asignar
-[INFO] 19:03:10:610 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:11:987 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:11:987 Pool Memory/(8376:8376): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:31:11:991 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:10:610 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:10:610 Pool Memory/(13657:13657): Se realizara un INSERT
-[INFO] 19:03:10:610 Pool Memory/(13657:13657): Existe un segmento para POSTRES
-[INFO] 19:03:10:611 Pool Memory/(13657:13657): No existe una pagina con la key: 120
-[INFO] 19:03:10:611 Pool Memory/(13657:13657): Se solicita una nueva pagina
-[INFO] 19:03:10:611 Pool Memory/(13657:13657): Hay una pagina libre para asignar
-[INFO] 19:03:10:611 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:26:987 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:26:987 Pool Memory/(8376:8376): Se realizar intercambio de tablas de gossiping
+[INFO] 02:31:26:989 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:22:395 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:22:395 Pool Memory/(13657:13657): Se realizar intercambio de tablas de gossiping
-[INFO] 19:03:22:395 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:26:992 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:26:992 Pool Memory/(8376:8376): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:31:26:994 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:22:395 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:22:395 Pool Memory/(13657:13657): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:03:22:397 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:40:892 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:895 Pool Memory/(8376:8376): Se realizara un SELECT
+[INFO] 02:31:40:895 Pool Memory/(8376:8376): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 02:31:40:899 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:899 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:40:899 Pool Memory/(8376:8376): Se envio el dato encontrado
+[INFO] 02:31:40:899 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:37:398 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:37:398 Pool Memory/(13657:13657): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:03:37:406 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:40:900 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:900 Pool Memory/(8376:8376): Se realizara un SELECT
+[INFO] 02:31:40:900 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:900 Pool Memory/(8376:8376): No existe una pagina con la key 178, la busco en el File System
+[INFO] 02:31:40:903 Pool Memory/(8376:8376): Key encontrada en el File System
+[INFO] 02:31:40:903 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:903 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:40:903 Pool Memory/(8376:8376): Se envio el dato encontrado
+[INFO] 02:31:40:904 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:52:396 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:52:396 Pool Memory/(13657:13657): Se realizar intercambio de tablas de gossiping
-[INFO] 19:03:52:396 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:40:904 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:906 Pool Memory/(8376:8376): Se realizara un SELECT
+[INFO] 02:31:40:906 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:906 Pool Memory/(8376:8376): No existe una pagina con la key 1888, la busco en el File System
+[INFO] 02:31:40:910 Pool Memory/(8376:8376): Key encontrada en el File System
+[INFO] 02:31:40:910 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:910 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:40:910 Pool Memory/(8376:8376): Se envio el dato encontrado
+[INFO] 02:31:40:910 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:03:52:406 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:03:52:407 Pool Memory/(13657:13657): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:03:52:408 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:40:911 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:911 Pool Memory/(8376:8376): Se realizara un SELECT
+[INFO] 02:31:40:911 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:911 Pool Memory/(8376:8376): No existe una pagina con la key 80, la busco en el File System
+[INFO] 02:31:40:917 Pool Memory/(8376:8376): Key encontrada en el File System
+[INFO] 02:31:40:917 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:917 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:40:917 Pool Memory/(8376:8376): Se envio el dato encontrado
+[INFO] 02:31:40:917 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:04:07:408 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:04:07:409 Pool Memory/(13657:13657): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:04:07:412 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:40:918 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:918 Pool Memory/(8376:8376): Se realizara un SELECT
+[INFO] 02:31:40:918 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:919 Pool Memory/(8376:8376): No existe una pagina con la key 120, la busco en el File System
+[INFO] 02:31:40:930 Pool Memory/(8376:8376): Key encontrada en el File System
+[INFO] 02:31:40:930 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:930 Pool Memory/(8376:8376): Hay una pagina libre para asignar
+[INFO] 02:31:40:930 Pool Memory/(8376:8376): Se envio el dato encontrado
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:04:12:207 Pool Memory/(13657:13657): Se recibio una nueva request.
-[INFO] 19:04:12:209 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): No existe una pagina con la key: 100
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): Estan todas las paginas ocupadas
+[INFO] 02:31:40:931 Pool Memory/(8376:8376): La pagina a reemplazar pertenecia a POSTRES y tenia la key 819
+[INFO] 02:31:40:932 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:04:20:478 Pool Memory/(13657:13657): [DESCONEXION] Se desconecto un cliente.
+[INFO] 02:31:40:932 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:933 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:40:933 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:933 Pool Memory/(8376:8376): No existe una pagina con la key: 101
+[INFO] 02:31:40:933 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:933 Pool Memory/(8376:8376): Estan todas las paginas ocupadas
+[INFO] 02:31:40:933 Pool Memory/(8376:8376): La pagina a reemplazar pertenecia a POSTRES y tenia la key 100
+[INFO] 02:31:40:934 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
+[INFO] 02:31:40:934 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:943 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:40:943 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:943 Pool Memory/(8376:8376): Existe una pagina con la key: 1888. La actualizo.
+[INFO] 02:31:40:943 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:04:20:478 Pool Memory/(13657:13657): Se termino de trabajar la request.
+[INFO] 02:31:40:943 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:944 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:40:944 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:944 Pool Memory/(8376:8376): Existe una pagina con la key: 80. La actualizo.
+[INFO] 02:31:40:944 Pool Memory/(8376:8376): Se termino de trabajar la request.
 
-[INFO] 19:05:44:476 Pool Memory/(13817:13817): Se establecion conexion con el File System.
+[INFO] 02:31:40:945 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:946 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:40:946 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:946 Pool Memory/(8376:8376): Existe una pagina con la key: 120. La actualizo.
+[INFO] 02:31:40:946 Pool Memory/(8376:8376): Se termino de trabajar la request.
+
+[INFO] 02:31:40:946 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:40:947 Pool Memory/(8376:8376): Se realizara un INSERT
+[INFO] 02:31:40:947 Pool Memory/(8376:8376): Existe un segmento para POSTRES
+[INFO] 02:31:40:947 Pool Memory/(8376:8376): No existe una pagina con la key: 999
+[INFO] 02:31:40:947 Pool Memory/(8376:8376): Se solicita una nueva pagina
+[INFO] 02:31:40:947 Pool Memory/(8376:8376): Estan todas las paginas ocupadas
+[INFO] 02:31:40:947 Pool Memory/(8376:8376): La pagina a reemplazar pertenecia a POSTRES y tenia la key 101
+[INFO] 02:31:40:947 Pool Memory/(8376:8376): Se termino de trabajar la request.
+
+[INFO] 02:31:41:994 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:41:995 Pool Memory/(8376:8376): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:31:41:995 Pool Memory/(8376:8376): Se termino de trabajar la request.
+
+[INFO] 02:31:56:990 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:56:990 Pool Memory/(8376:8376): Se realizar intercambio de tablas de gossiping
+[INFO] 02:31:56:990 Pool Memory/(8376:8376): Se termino de trabajar la request.
+
+[INFO] 02:31:56:996 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:31:56:996 Pool Memory/(8376:8376): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:31:56:997 Pool Memory/(8376:8376): Se termino de trabajar la request.
+
+[INFO] 02:32:11:998 Pool Memory/(8376:8376): Se recibio una nueva request.
+[INFO] 02:32:11:998 Pool Memory/(8376:8376): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:32:11:999 Pool Memory/(8376:8376): Se termino de trabajar la request.
+
+[INFO] 02:46:14:972 Pool Memory/(8676:8676): Se establecion conexion con el File System.
 >> Tamanio value = 60
 
-[INFO] 19:05:44:476 Pool Memory/(13817:13817): Se inicializo correctamente la memoria.
+[INFO] 02:46:14:972 Pool Memory/(8676:8676): Se inicializo correctamente la memoria.
 >> Tamanio de la memoria = 340 -> Cantidad maxima de datos: 5 
 
-[INFO] 19:06:19:392 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:19:392 Pool Memory/(13817:13817): Se realizar intercambio de tablas de gossiping
-[INFO] 19:06:19:393 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:43:273 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:43:275 Pool Memory/(13817:13817): No existe un segmento asociado a POSTRES. Se crea el segmento.
-[INFO] 19:06:43:275 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:43:276 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:43:277 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:06:43:277 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:06:43:277 Pool Memory/(13817:13817): No existe una pagina con la key: 100
-[INFO] 19:06:43:277 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:06:43:277 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:06:43:277 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:43:277 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:43:278 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:06:43:278 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:06:43:278 Pool Memory/(13817:13817): No existe una pagina con la key: 101
-[INFO] 19:06:43:278 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:06:43:278 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:06:43:278 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:43:279 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:43:280 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:06:43:280 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:06:43:280 Pool Memory/(13817:13817): No existe una pagina con la key: 1888
-[INFO] 19:06:43:280 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:06:43:280 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:06:43:280 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:43:280 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:43:281 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:06:43:281 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:06:43:281 Pool Memory/(13817:13817): No existe una pagina con la key: 80
-[INFO] 19:06:43:281 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:06:43:281 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:06:43:281 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:43:281 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:43:282 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:06:43:282 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:06:43:282 Pool Memory/(13817:13817): No existe una pagina con la key: 120
-[INFO] 19:06:43:282 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:06:43:282 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:06:43:282 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:45:647 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:45:654 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:49:394 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:49:394 Pool Memory/(13817:13817): Se realizar intercambio de tablas de gossiping
-[INFO] 19:06:49:394 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:06:49:394 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:06:49:394 Pool Memory/(13817:13817): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:06:49:396 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:04:400 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:04:400 Pool Memory/(13817:13817): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:07:04:402 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:315 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:315 Pool Memory/(13817:13817): Se realizara un SELECT
-[INFO] 19:07:09:315 Pool Memory/(13817:13817): No existe el segmento. Se crea el segmento y se pide el dato al File System.
-[INFO] 19:07:09:317 Pool Memory/(13817:13817): No existe la key en el LFS
-[INFO] 19:07:09:317 Pool Memory/(13817:13817): No se completo correctamente el select
-[INFO] 19:07:09:318 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:318 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:319 Pool Memory/(13817:13817): Se realizara un SELECT
-[INFO] 19:07:09:319 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:319 Pool Memory/(13817:13817): No existe una pagina con la key 178, la busco en el File System
-[INFO] 19:07:09:324 Pool Memory/(13817:13817): Key encontrada en el File System
-[INFO] 19:07:09:324 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:07:09:324 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:07:09:325 Pool Memory/(13817:13817): Se envio el dato encontrado
-[INFO] 19:07:09:325 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:325 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:326 Pool Memory/(13817:13817): Se realizara un SELECT
-[INFO] 19:07:09:326 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:326 Pool Memory/(13817:13817): No existe una pagina con la key 1888, la busco en el File System
-[INFO] 19:07:09:336 Pool Memory/(13817:13817): Key encontrada en el File System
-[INFO] 19:07:09:336 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:07:09:336 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:07:09:336 Pool Memory/(13817:13817): Se envio el dato encontrado
-[INFO] 19:07:09:336 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:337 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:337 Pool Memory/(13817:13817): Se realizara un SELECT
-[INFO] 19:07:09:337 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:338 Pool Memory/(13817:13817): No existe una pagina con la key 80, la busco en el File System
-[INFO] 19:07:09:342 Pool Memory/(13817:13817): Key encontrada en el File System
-[INFO] 19:07:09:342 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:07:09:342 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:07:09:342 Pool Memory/(13817:13817): Se envio el dato encontrado
-[INFO] 19:07:09:343 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:343 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:343 Pool Memory/(13817:13817): Se realizara un SELECT
-[INFO] 19:07:09:343 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:343 Pool Memory/(13817:13817): No existe una pagina con la key 120, la busco en el File System
-[INFO] 19:07:09:348 Pool Memory/(13817:13817): Key encontrada en el File System
-[INFO] 19:07:09:348 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:07:09:348 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:07:09:348 Pool Memory/(13817:13817): Se envio el dato encontrado
-[INFO] 19:07:09:349 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:349 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:349 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:07:09:349 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:349 Pool Memory/(13817:13817): No existe una pagina con la key: 100
-[INFO] 19:07:09:349 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:07:09:349 Pool Memory/(13817:13817): Hay una pagina libre para asignar
-[INFO] 19:07:09:350 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:351 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:357 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:07:09:357 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:357 Pool Memory/(13817:13817): No existe una pagina con la key: 101
-[INFO] 19:07:09:357 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:07:09:357 Pool Memory/(13817:13817): Estan todas las paginas ocupadas
-[INFO] 19:07:09:358 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:358 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:359 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:07:09:359 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:359 Pool Memory/(13817:13817): Existe una pagina con la key: 1888. La actualizo.
-[INFO] 19:07:09:361 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:365 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:366 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:07:09:366 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:366 Pool Memory/(13817:13817): Existe una pagina con la key: 80. La actualizo.
-[INFO] 19:07:09:366 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:367 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:367 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:07:09:367 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:367 Pool Memory/(13817:13817): Existe una pagina con la key: 120. La actualizo.
-[INFO] 19:07:09:367 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:09:368 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:09:369 Pool Memory/(13817:13817): Se realizara un INSERT
-[INFO] 19:07:09:369 Pool Memory/(13817:13817): Existe un segmento para POSTRES
-[INFO] 19:07:09:369 Pool Memory/(13817:13817): No existe una pagina con la key: 999
-[INFO] 19:07:09:369 Pool Memory/(13817:13817): Se solicita una nueva pagina
-[INFO] 19:07:09:369 Pool Memory/(13817:13817): Estan todas las paginas ocupadas
-[INFO] 19:07:09:369 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:19:399 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:19:399 Pool Memory/(13817:13817): Se realizar intercambio de tablas de gossiping
-[INFO] 19:07:19:399 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:19:402 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:19:402 Pool Memory/(13817:13817): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:07:19:404 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:34:408 Pool Memory/(13817:13817): Se recibio una nueva request.
-[INFO] 19:07:34:410 Pool Memory/(13817:13817): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:07:34:414 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:07:45:214 Pool Memory/(13817:13817): [DESCONEXION] Se desconecto un cliente.
-
-
-[INFO] 19:07:45:214 Pool Memory/(13817:13817): Se termino de trabajar la request.
-
-[INFO] 19:12:22:979 Pool Memory/(13967:13967): Se establecion conexion con el File System.
->> Tamanio value = 60
-
-[INFO] 19:12:22:979 Pool Memory/(13967:13967): Se inicializo correctamente la memoria.
->> Tamanio de la memoria = 340 -> Cantidad maxima de datos: 5 
-
-[INFO] 19:12:44:321 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:44:321 Pool Memory/(13967:13967): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:12:44:322 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:50:154 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:50:166 Pool Memory/(13967:13967): No existe un segmento asociado a POSTRES. Se crea el segmento.
-[INFO] 19:12:50:166 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:50:166 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:50:167 Pool Memory/(13967:13967): Se realizara un INSERT
-[INFO] 19:12:50:167 Pool Memory/(13967:13967): Existe un segmento para POSTRES
-[INFO] 19:12:50:167 Pool Memory/(13967:13967): No existe una pagina con la key: 100
-[INFO] 19:12:50:167 Pool Memory/(13967:13967): Se solicita una nueva pagina
-[INFO] 19:12:50:167 Pool Memory/(13967:13967): Hay una pagina libre para asignar
-[INFO] 19:12:50:168 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:50:168 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:50:169 Pool Memory/(13967:13967): Se realizara un INSERT
-[INFO] 19:12:50:169 Pool Memory/(13967:13967): Existe un segmento para POSTRES
-[INFO] 19:12:50:169 Pool Memory/(13967:13967): No existe una pagina con la key: 101
-[INFO] 19:12:50:169 Pool Memory/(13967:13967): Se solicita una nueva pagina
-[INFO] 19:12:50:169 Pool Memory/(13967:13967): Hay una pagina libre para asignar
-[INFO] 19:12:50:169 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:50:170 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:50:177 Pool Memory/(13967:13967): Se realizara un INSERT
-[INFO] 19:12:50:177 Pool Memory/(13967:13967): Existe un segmento para POSTRES
-[INFO] 19:12:50:177 Pool Memory/(13967:13967): No existe una pagina con la key: 1888
-[INFO] 19:12:50:177 Pool Memory/(13967:13967): Se solicita una nueva pagina
-[INFO] 19:12:50:177 Pool Memory/(13967:13967): Hay una pagina libre para asignar
-[INFO] 19:12:50:178 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:50:178 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:50:179 Pool Memory/(13967:13967): Se realizara un INSERT
-[INFO] 19:12:50:179 Pool Memory/(13967:13967): Existe un segmento para POSTRES
-[INFO] 19:12:50:179 Pool Memory/(13967:13967): No existe una pagina con la key: 80
-[INFO] 19:12:50:179 Pool Memory/(13967:13967): Se solicita una nueva pagina
-[INFO] 19:12:50:179 Pool Memory/(13967:13967): Hay una pagina libre para asignar
-[INFO] 19:12:50:179 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:50:179 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:50:180 Pool Memory/(13967:13967): Se realizara un INSERT
-[INFO] 19:12:50:180 Pool Memory/(13967:13967): Existe un segmento para POSTRES
-[INFO] 19:12:50:180 Pool Memory/(13967:13967): No existe una pagina con la key: 120
-[INFO] 19:12:50:180 Pool Memory/(13967:13967): Se solicita una nueva pagina
-[INFO] 19:12:50:180 Pool Memory/(13967:13967): Hay una pagina libre para asignar
-[INFO] 19:12:50:180 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:54:0 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:55:7 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:59:323 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:59:323 Pool Memory/(13967:13967): Se realizar intercambio de tablas de gossiping
-[INFO] 19:12:59:323 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:12:59:323 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:12:59:323 Pool Memory/(13967:13967): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:12:59:326 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:13:40:479 Pool Memory/(13967:13967): Se recibio una nueva request.
-[INFO] 19:13:40:484 Pool Memory/(13967:13967): Se realizara un SELECT
-[INFO] 19:13:40:484 Pool Memory/(13967:13967): No existe el segmento. Se crea el segmento y se pide el dato al File System.
-[INFO] 19:13:40:488 Pool Memory/(13967:13967): No existe la key en el LFS
-[INFO] 19:13:40:488 Pool Memory/(13967:13967): No se completo correctamente el select
-[INFO] 19:13:40:488 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:14:04:653 Pool Memory/(13967:13967): [DESCONEXION] Se desconecto un cliente.
-
-
-[INFO] 19:14:04:653 Pool Memory/(13967:13967): Se termino de trabajar la request.
-
-[INFO] 19:38:02:110 Pool Memory/(14702:14702): Se establecion conexion con el File System.
->> Tamanio value = 60
-
-[INFO] 19:38:02:110 Pool Memory/(14702:14702): Se inicializo correctamente la memoria.
->> Tamanio de la memoria = 340 -> Cantidad maxima de datos: 5 
-
-[INFO] 19:38:26:651 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:26:651 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:38:26:652 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:31:140 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:31:147 Pool Memory/(14702:14702): No existe un segmento asociado a POSTRES. Se crea el segmento.
-[INFO] 19:38:31:147 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:31:147 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:31:148 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:38:31:148 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:38:31:148 Pool Memory/(14702:14702): No existe una pagina con la key: 100
-[INFO] 19:38:31:148 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:38:31:148 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:38:31:148 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:31:148 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:31:149 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:38:31:149 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:38:31:149 Pool Memory/(14702:14702): No existe una pagina con la key: 101
-[INFO] 19:38:31:149 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:38:31:149 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:38:31:149 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:31:150 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:31:151 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:38:31:151 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:38:31:151 Pool Memory/(14702:14702): No existe una pagina con la key: 1888
-[INFO] 19:38:31:151 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:38:31:151 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:38:31:151 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:31:152 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:31:152 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:38:31:152 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:38:31:153 Pool Memory/(14702:14702): No existe una pagina con la key: 80
-[INFO] 19:38:31:153 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:38:31:153 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:38:31:154 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:31:154 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:31:154 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:38:31:154 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:38:31:154 Pool Memory/(14702:14702): No existe una pagina con la key: 120
-[INFO] 19:38:31:154 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:38:31:154 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:38:31:155 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:35:275 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:35:285 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:41:651 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:41:651 Pool Memory/(14702:14702): Se realizar intercambio de tablas de gossiping
-[INFO] 19:38:41:651 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:41:652 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:41:652 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:38:41:652 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:38:56:653 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:38:56:653 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:38:56:655 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:11:652 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:11:652 Pool Memory/(14702:14702): Se realizar intercambio de tablas de gossiping
-[INFO] 19:39:11:653 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:11:655 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:11:655 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:39:11:666 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:106 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:110 Pool Memory/(14702:14702): Se realizara un SELECT
-[INFO] 19:39:24:110 Pool Memory/(14702:14702): No existe el segmento. Se crea el segmento y se pide el dato al File System.
-[INFO] 19:39:24:113 Pool Memory/(14702:14702): No existe la key en el LFS
-[INFO] 19:39:24:113 Pool Memory/(14702:14702): No se completo correctamente el select
-[INFO] 19:39:24:114 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:114 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:114 Pool Memory/(14702:14702): Se realizara un SELECT
-[INFO] 19:39:24:114 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:114 Pool Memory/(14702:14702): No existe una pagina con la key 178, la busco en el File System
-[INFO] 19:39:24:118 Pool Memory/(14702:14702): Key encontrada en el File System
-[INFO] 19:39:24:118 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:39:24:118 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:39:24:118 Pool Memory/(14702:14702): Se envio el dato encontrado
-[INFO] 19:39:24:119 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:119 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:119 Pool Memory/(14702:14702): Se realizara un SELECT
-[INFO] 19:39:24:119 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:119 Pool Memory/(14702:14702): No existe una pagina con la key 1888, la busco en el File System
-[INFO] 19:39:24:125 Pool Memory/(14702:14702): Key encontrada en el File System
-[INFO] 19:39:24:125 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:39:24:125 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:39:24:125 Pool Memory/(14702:14702): Se envio el dato encontrado
-[INFO] 19:39:24:126 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:126 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:127 Pool Memory/(14702:14702): Se realizara un SELECT
-[INFO] 19:39:24:127 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:127 Pool Memory/(14702:14702): No existe una pagina con la key 80, la busco en el File System
-[INFO] 19:39:24:141 Pool Memory/(14702:14702): Key encontrada en el File System
-[INFO] 19:39:24:141 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:39:24:141 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:39:24:141 Pool Memory/(14702:14702): Se envio el dato encontrado
-[INFO] 19:39:24:141 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:142 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:143 Pool Memory/(14702:14702): Se realizara un SELECT
-[INFO] 19:39:24:143 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:143 Pool Memory/(14702:14702): No existe una pagina con la key 120, la busco en el File System
-[INFO] 19:39:24:152 Pool Memory/(14702:14702): Key encontrada en el File System
-[INFO] 19:39:24:152 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:39:24:152 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:39:24:152 Pool Memory/(14702:14702): Se envio el dato encontrado
-[INFO] 19:39:24:152 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:152 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:153 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:39:24:153 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:153 Pool Memory/(14702:14702): No existe una pagina con la key: 100
-[INFO] 19:39:24:153 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:39:24:153 Pool Memory/(14702:14702): Hay una pagina libre para asignar
-[INFO] 19:39:24:153 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:154 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:154 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:39:24:154 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:155 Pool Memory/(14702:14702): No existe una pagina con la key: 101
-[INFO] 19:39:24:155 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:39:24:155 Pool Memory/(14702:14702): Estan todas las paginas ocupadas
-[INFO] 19:39:24:155 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:155 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:156 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:39:24:156 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:156 Pool Memory/(14702:14702): Existe una pagina con la key: 1888. La actualizo.
-[INFO] 19:39:24:157 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:157 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:157 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:39:24:157 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:157 Pool Memory/(14702:14702): Existe una pagina con la key: 80. La actualizo.
-[INFO] 19:39:24:158 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:158 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:159 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:39:24:159 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:159 Pool Memory/(14702:14702): Existe una pagina con la key: 120. La actualizo.
-[INFO] 19:39:24:160 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:24:160 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:24:160 Pool Memory/(14702:14702): Se realizara un INSERT
-[INFO] 19:39:24:160 Pool Memory/(14702:14702): Existe un segmento para POSTRES
-[INFO] 19:39:24:161 Pool Memory/(14702:14702): No existe una pagina con la key: 999
-[INFO] 19:39:24:161 Pool Memory/(14702:14702): Se solicita una nueva pagina
-[INFO] 19:39:24:161 Pool Memory/(14702:14702): Estan todas las paginas ocupadas
-[INFO] 19:39:24:161 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:26:666 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:26:667 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:39:26:667 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:41:653 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:41:653 Pool Memory/(14702:14702): Se realizar intercambio de tablas de gossiping
-[INFO] 19:39:41:653 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:41:668 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:41:668 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:39:41:669 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:39:56:670 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:39:56:670 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:39:56:671 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:40:11:653 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:40:11:653 Pool Memory/(14702:14702): Se realizar intercambio de tablas de gossiping
-[INFO] 19:40:11:653 Pool Memory/(14702:14702): Se termino de trabajar la request.
-
-[INFO] 19:40:11:672 Pool Memory/(14702:14702): Se recibio una nueva request.
-[INFO] 19:40:11:672 Pool Memory/(14702:14702): Se realizara un DESCRIBE GLOBAL
-[INFO] 19:40:11:672 Pool Memory/(14702:14702): No se recibio el estado de la request.
-[INFO] 19:40:11:672 Pool Memory/(14702:14702): Se termino de trabajar la request.
+[INFO] 02:46:29:563 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:29:565 Pool Memory/(8676:8676): No existe un segmento asociado a POSTRES. Se crea el segmento.
+[INFO] 02:46:29:565 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:29:565 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:29:565 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): No existe una pagina con la key: 100
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:46:29:566 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:46:29:567 Pool Memory/(8676:8676): No existe una pagina con la key: 101
+[INFO] 02:46:29:567 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:46:29:567 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:46:29:567 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:29:567 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:29:568 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:46:29:568 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:46:29:568 Pool Memory/(8676:8676): No existe una pagina con la key: 1888
+[INFO] 02:46:29:568 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:46:29:568 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:46:29:568 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): No existe una pagina con la key: 80
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:29:569 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:29:570 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:46:29:570 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:46:29:570 Pool Memory/(8676:8676): No existe una pagina con la key: 120
+[INFO] 02:46:29:570 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:46:29:570 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:46:29:570 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:32:748 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:32:755 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:33:889 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:33:889 Pool Memory/(8676:8676): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:46:33:890 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:48:890 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:48:890 Pool Memory/(8676:8676): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:46:48:892 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:46:48:893 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:46:48:893 Pool Memory/(8676:8676): Se realizar intercambio de tablas de gossiping
+[INFO] 02:46:48:893 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:03:893 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:03:894 Pool Memory/(8676:8676): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:47:03:895 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:811 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:811 Pool Memory/(8676:8676): Se realizara un SELECT
+[INFO] 02:47:05:811 Pool Memory/(8676:8676): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 02:47:05:814 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:814 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:47:05:814 Pool Memory/(8676:8676): Se envio el dato encontrado
+[INFO] 02:47:05:815 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:815 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:815 Pool Memory/(8676:8676): Se realizara un SELECT
+[INFO] 02:47:05:815 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:816 Pool Memory/(8676:8676): No existe una pagina con la key 178, la busco en el File System
+[INFO] 02:47:05:819 Pool Memory/(8676:8676): Key encontrada en el File System
+[INFO] 02:47:05:819 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:819 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:47:05:819 Pool Memory/(8676:8676): Se envio el dato encontrado
+[INFO] 02:47:05:820 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:820 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:820 Pool Memory/(8676:8676): Se realizara un SELECT
+[INFO] 02:47:05:820 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:820 Pool Memory/(8676:8676): No existe una pagina con la key 1888, la busco en el File System
+[INFO] 02:47:05:827 Pool Memory/(8676:8676): Key encontrada en el File System
+[INFO] 02:47:05:827 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:827 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:47:05:828 Pool Memory/(8676:8676): Se envio el dato encontrado
+[INFO] 02:47:05:828 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:829 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:830 Pool Memory/(8676:8676): Se realizara un SELECT
+[INFO] 02:47:05:830 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:830 Pool Memory/(8676:8676): No existe una pagina con la key 80, la busco en el File System
+[INFO] 02:47:05:836 Pool Memory/(8676:8676): Key encontrada en el File System
+[INFO] 02:47:05:836 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:836 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:47:05:836 Pool Memory/(8676:8676): Se envio el dato encontrado
+[INFO] 02:47:05:837 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:837 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:837 Pool Memory/(8676:8676): Se realizara un SELECT
+[INFO] 02:47:05:837 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:838 Pool Memory/(8676:8676): No existe una pagina con la key 120, la busco en el File System
+[INFO] 02:47:05:843 Pool Memory/(8676:8676): Key encontrada en el File System
+[INFO] 02:47:05:843 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:843 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:47:05:843 Pool Memory/(8676:8676): Se envio el dato encontrado
+[INFO] 02:47:05:843 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:843 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:844 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:47:05:844 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:844 Pool Memory/(8676:8676): No existe una pagina con la key: 100
+[INFO] 02:47:05:844 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:844 Pool Memory/(8676:8676): Estan todas las paginas ocupadas
+[INFO] 02:47:05:846 Pool Memory/(8676:8676): La pagina a reemplazar pertenecia a POSTRES y tenia la key 819
+[INFO] 02:47:05:846 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:847 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:848 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:47:05:848 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:848 Pool Memory/(8676:8676): No existe una pagina con la key: 101
+[INFO] 02:47:05:848 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:848 Pool Memory/(8676:8676): Estan todas las paginas ocupadas
+[INFO] 02:47:05:848 Pool Memory/(8676:8676): La pagina a reemplazar pertenecia a POSTRES y tenia la key 178
+[INFO] 02:47:05:849 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:849 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:849 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:47:05:849 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:849 Pool Memory/(8676:8676): Existe una pagina con la key: 1888. La actualizo.
+[INFO] 02:47:05:850 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:851 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:851 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:47:05:851 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:851 Pool Memory/(8676:8676): Existe una pagina con la key: 80. La actualizo.
+[INFO] 02:47:05:852 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:852 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:853 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:47:05:853 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:853 Pool Memory/(8676:8676): Existe una pagina con la key: 120. La actualizo.
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): Se realizara un INSERT
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): Existe un segmento para POSTRES
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): No existe una pagina con la key: 999
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): Estan todas las paginas ocupadas
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): La memoria esta FULL
+[INFO] 02:47:05:854 Pool Memory/(8676:8676): Realizo Journal para tener espacio disponible
+[INFO] 02:47:05:863 Pool Memory/(8676:8676): Se solicita una nueva pagina
+[INFO] 02:47:05:863 Pool Memory/(8676:8676): Hay una pagina libre para asignar
+[INFO] 02:47:05:864 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:18:894 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:18:894 Pool Memory/(8676:8676): Se realizar intercambio de tablas de gossiping
+[INFO] 02:47:18:894 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:18:896 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:18:896 Pool Memory/(8676:8676): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:47:18:898 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:33:898 Pool Memory/(8676:8676): Se recibio una nueva request.
+[INFO] 02:47:33:899 Pool Memory/(8676:8676): Se realizara un DESCRIBE GLOBAL
+[INFO] 02:47:33:900 Pool Memory/(8676:8676): Se termino de trabajar la request.
+
+[INFO] 02:47:44:762 Pool Memory/(8676:8676): [DESCONEXION] Se desconecto un cliente.
+
+
+[INFO] 02:47:44:762 Pool Memory/(8676:8676): Se termino de trabajar la request.
 

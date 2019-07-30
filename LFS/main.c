@@ -9,6 +9,9 @@ int main(int argc , char* argv[]){
 
 	////////////////////////////INICIALIZACIONES////////////////////////
 
+
+
+
 	creacion_del_config_fileSystem();
 
 	creacion_del_metadata_fileSystem();
@@ -16,6 +19,8 @@ int main(int argc , char* argv[]){
 	obtener_datos_config();
 
 	obtener_datos_metadata();
+
+	set_all_estados(LIBRE);
 
 	inicializar_loggers();
 
@@ -58,9 +63,8 @@ int main(int argc , char* argv[]){
 	pthread_t hilo_consola;
 	int error_pthread;
 
-	set_estado(6, LIBRE);
-	set_estado(9, LIBRE);
-	set_estado(10, LIBRE);
+	set_estado(5, LIBRE);
+
 
 	error_pthread = pthread_create(&hilo_consola, NULL , consola, NULL);
 

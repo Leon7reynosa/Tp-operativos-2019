@@ -348,6 +348,9 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 
 	}
 
+	printf("HASTA ACA LA TABLA ES: %s\n" , *nombre_tabla);
+	printf("Y LA KEY ES: %d\n"  ,  *key);
+
 
 	liberar_puntero_doble(parametros);
 

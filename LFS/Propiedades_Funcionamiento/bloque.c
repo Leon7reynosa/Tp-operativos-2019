@@ -9,12 +9,8 @@
 
 Bloque leer_bloque(int indice_bloque){
 
-	printf("[LECTURA] Empiezo a leer el bloque %i\n", indice_bloque);
-
 	char* path_bloque = obtenerPath_Bloque(indice_bloque); //lion
 	Bloque bloque;
-
-	printf("path: %s\n" , path_bloque);
 
 	//ABRO EL BLOQUE
 	int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
@@ -27,7 +23,6 @@ Bloque leer_bloque(int indice_bloque){
 
 	fstat(fd_bloque, atributos);
 
-	printf("[LECTURA] Abro el map de tamanio %i\n", atributos->st_size);
 
 	char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0); //lion
 
@@ -43,13 +38,10 @@ Bloque leer_bloque(int indice_bloque){
 
 	}else{
 
-		printf("[LECTURA] Pase el map\n");
-
 		bloque= crear_bloque(indice_bloque, datos);
 
 		munmap(datos, atributos->st_size);
 
-		printf("[LECTURA] Cree el bloque y cerre el map\n");
 	}
 
 	free(atributos);
@@ -57,7 +49,6 @@ Bloque leer_bloque(int indice_bloque){
 
 	close(fd_bloque);
 
-	printf("Termine de leer el bloque!\n");
 	return bloque;
 
 }
@@ -330,8 +321,6 @@ Bloque crear_bloque(int numero, char* datos){
 
 		if(string_starts_with(datos, "\n")){
 
-			printf("[LECTURA] SE CORTO EN EL HIJO DE RE MIL PUTA DE BARRA ENE\n");
-
 			char* barra_ene = malloc(2);
 			memcpy(barra_ene, "\n", 2);
 
@@ -354,8 +343,6 @@ Bloque crear_bloque(int numero, char* datos){
 
 		free(aux_datos);
 	}
-
-	printf("[LECTURA] EL BLOQUE TIENE %i DATOS\n", list_size(bloque->datos));
 
 	return bloque;
 
@@ -382,11 +369,11 @@ void mostrar_bloque(int bloque){
 
 	if(fichero_bloque < 0){
 
-		printf("No existe el bloque %i\n" , bloque);
+		printf("\n>No existe el bloque %i\n" , bloque);
 
 	}
 
-	printf("---LEYENDO BLOQUE %d---\n" , bloque);
+	printf("\n---LEYENDO BLOQUE %d---\n" , bloque);
 
 	int i = 0;
 
@@ -396,7 +383,7 @@ void mostrar_bloque(int bloque){
 
 	if(archivo == MAP_FAILED){
 		if(atributos_bloque->st_size == 0){
-			printf("Bloque vacio c:\n");
+			printf("\n>Bloque vacio c:\n");
 
 			close(fichero_bloque);
 
@@ -433,8 +420,6 @@ void mostrar_bloque(int bloque){
 
 	}
 
-	printf("Hay %i datos en este bloque!\n", i);
-
 	munmap(archivo, atributos_bloque->st_size);
 	close(fichero_bloque);
 
@@ -447,6 +432,7 @@ void mostrar_bloque(int bloque){
 	free(path_bloque);
 	free(atributos_bloque);
 
+	printf("\n");
 
 }
 

@@ -16,6 +16,8 @@ int ejecutar_request(char* request_lql){
 
 	log_info(logger_kernel, "  >>>NUEVA REQUEST: %s<<< " , request_lql);
 
+	printf("\n>REQUEST: %s\n" , request_lql);
+
 	int cod_request;
 	char* nombre_archivo;
 	char* nombre_tabla ;

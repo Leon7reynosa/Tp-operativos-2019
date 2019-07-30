@@ -226,9 +226,6 @@ void realizar_dump(void){
 		void _cargar_a_temporal(void* _dato){
 
 			dato_t* dato = (dato_t *)_dato;
-//			printf("[DUMP] VOY A CARGAR AL TEMPORAL LA KEY: %i\n", dato->key);
-//			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL TIMESTAMP: %i\n", dato->timestamp);
-//			printf("[DUMP] VOY A CARGAR AL TEMPORAL EL VALUE: %s\n", dato->value);
 
 			cargar_a_particion(path_temporal, dato);
 
@@ -298,29 +295,22 @@ bool no_es_ubicacion_prohibida(char* path){
 int obtenerNumeroTemporal(char* path){
 	int numero;
 	char** aux;
-	char* numeroString;
 	char delimitador[2] = ".";
 
-	char* extension = extension_del_archivo(path);
-
-	if(string_equals_ignore_case("tmp", extension)){
+	if(string_ends_with(path  , "tmp")){
 
 		aux = string_split(path, delimitador);
-		numeroString = string_substring_from(aux[0], 1);
+
+		numero = atoi(aux[0]);
 
 		liberar_puntero_doble(aux);
 
-		numero = atoi(numeroString);
-
-		free(numeroString);
-		free(extension);
 		return numero;
 	}
 	else{
 		return -1;
 	}
 }
-
 
 char* extension_del_archivo(char* path){
 

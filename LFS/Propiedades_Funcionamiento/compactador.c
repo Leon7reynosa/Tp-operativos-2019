@@ -95,7 +95,13 @@ void* compactar(thread_args* argumentos){
 
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, particion_perteneciente);  // (5)
 
-		dato_t* dato_a_cargar = convertir_a_dato(dato_final);                                     // (6)
+		dato_t* dato_a_cargar = convertir_a_dato(dato_final);    // (6)
+
+		printf("[COMPACTACION] Muestro el dato que voy a cargar en la particion\n");
+
+		mostrar_dato(dato_a_cargar);
+
+		printf("[COMPACTACION] Termine de mostrar \n");
 
 		cargar_a_particion(path_particion, dato_a_cargar);
 
@@ -233,11 +239,11 @@ void* ciclo_compactacion(thread_args* argumentos){
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
-		printf("[COMPACTACION] Se inicia la compactacion de la tabla %s\n", argumentos->nombre_tabla);
+		printf("\n>>>>>>>>>>>>compactacion de la tabla %s<<<<<<<<<<<<<<<<\n", argumentos->nombre_tabla);
 
 		compactar(argumentos);
 
-		printf("[COMPACTACION] Termino la compactacion de la tabla %s\n\n", argumentos->nombre_tabla);
+		printf("\n>>>>>>>>>>>Termino la compactacion de la tabla %s<<<<<<<<<<<<\n\n", argumentos->nombre_tabla);
 
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 

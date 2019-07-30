@@ -374,14 +374,12 @@ t_list* request_describe(describe_t request){
 	t_list* metadatas;
 
 	if( request->global ){
-		//TIENE SEMAFOROS ADENTROO!
-		printf("[DESCRIBE] Es del tipo GLOBAL\n");
+		//TIENE SEMAFOROS ADENTROO!;
 		metadatas = request_describe_global();
 
 	}
 
 	else{
-		printf("[DESCRIBE] Es del tipo PARTICULAR \n");
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
@@ -410,8 +408,6 @@ t_list* request_describe(describe_t request){
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
 	}
-
-	printf("[DESCRIBE] Termino correctamente\n");
 
 	return metadatas;
 
@@ -555,13 +551,10 @@ estado_request request_drop(Drop request_drop){
 
 	if((dir1 = opendir(path_directorio_tabla)) != NULL){
 
-		printf("[BUSQUEDA] AGARRO SEMAFOROS DEL DICCIONARIO Y TABLA\n");
 		//SEMAFOROS!!!!!!!!!!!!!!!!!
 		pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
 //		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 //		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
-
-		printf("[BUSQUEDA] AGARRE TODOS\n");
 
 		while((tabla = readdir(dir1))){
 
@@ -597,8 +590,7 @@ estado_request request_drop(Drop request_drop){
 							{
 
 								Particion particion = leer_particion(path_para_archivo);
-								printf("Se va a eliminar el siguiente archivo: \n");
-								printf("%s\n", path_para_archivo);
+
 								mostrar_particion(particion);
 								printf("\n\n");
 								liberar_particion(particion);
@@ -612,12 +604,8 @@ estado_request request_drop(Drop request_drop){
 						}
 					}
 
-					printf("[DROP] Las particiones de la tabla fueron eliminadas\n");
-
 					closedir(dir2);
 					rmdir(path_para_tabla_particular);
-
-					printf("[DROP] El directorio fue eliminado\n");
 
 					free(path_para_tabla_particular);
 
@@ -646,8 +634,6 @@ estado_request request_drop(Drop request_drop){
 	free(path_directorio_tabla);
 
 	log_info(logger_lfs, "Request -- DROP-- realizada\n");
-
-	printf("[DROP] Termino el DROP\n");
 
 	return estado;
 

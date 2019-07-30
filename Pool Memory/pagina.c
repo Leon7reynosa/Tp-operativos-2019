@@ -50,9 +50,9 @@ Pagina pagina_menos_usada(t_list* paginas){
 	Pagina pagina_encontrada;
 	time_t ts_menor;
 	t_list* paginas_no_modificadas = paginas_sin_modificar(paginas);
-	printf("PAGINAS SIN MODIFICAR: %i\n", list_size(paginas));
+	printf("[REEMPLAZO] PAGINAS SIN MODIFICAR: %i\n", list_size(paginas_no_modificadas));
 
-	if(list_size(paginas) == 0){
+	if(list_size(paginas_no_modificadas) == 0){
 
 		pagina_encontrada = NULL;
 
@@ -69,11 +69,11 @@ Pagina pagina_menos_usada(t_list* paginas){
 
 			ts_menor = pagina->ultimo_uso;
 
-			return list_all_satisfy(paginas, _condicion_mas_usado);
+			return list_all_satisfy(paginas_no_modificadas, _condicion_mas_usado);
 
 		}
 
-		pagina_encontrada = list_find(paginas, _condicion_timestamp_menor);
+		pagina_encontrada = list_find(paginas_no_modificadas, _condicion_timestamp_menor);
 	}
 
 	list_destroy(paginas_no_modificadas);

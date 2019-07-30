@@ -360,7 +360,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 	if(pagina_reemplazada == NULL){
 
-//		log_info(logger, "La memoria esta FULL");
+		log_info(logger, "La memoria esta FULL");
 
 	}else{
 
@@ -372,7 +372,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 		Dato dato_para_logg = decodificar_dato_de_memoria(pagina_reemplazada->referencia_memoria);
 
-//		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
+		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
 
 		liberar_dato(dato_para_logg);
 	}

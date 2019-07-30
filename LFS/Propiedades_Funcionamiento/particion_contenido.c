@@ -10,6 +10,9 @@
 
 void eliminar_particion(char* path_particion){
 
+
+	printf("\n>Se ELIMINARÁ la siguiente Particion:\n");
+
 	Particion particion = leer_particion(path_particion);
 
 	void _eliminar_bloque(void* _nro_bloque){
@@ -56,17 +59,13 @@ void liberar_particion(Particion particion){
 
 Particion leer_particion(char* path_particion){
 
-	printf("[LECTURA] LEO PARTICION\n");
-
 	Particion particion_contenido;
 	int size;
-
-	printf("[LECTURA] PARTICION: %s\n", path_particion);
 
 	FILE* particion = fopen(path_particion, "rb");
 
 	if(!particion){
-		printf("[LECTURA] RECURSAMOS!\n");
+		printf("\nNO se pudo abrir la particion\n");
 		exit(1);
 	}
 
@@ -93,8 +92,6 @@ Particion leer_particion(char* path_particion){
 	free(bloque);
 
 	fclose(particion);
-
-	printf("[LECTURA] TERMINE DE LEER PARTICION\n");
 
 	return particion_contenido;
 
@@ -134,20 +131,14 @@ void actualiar_particion(char* path_particion){
 
 void mostrar_particion(Particion particion){
 
-	printf("[LECTURA PARTICION] Bytes = %i\n", particion->size);
-
-	printf("[LECTURA PARTICION] BLOQUES: %i\n", list_size(particion->bloques));
+	printf("\n>[LECTURA PARTICION] BLOQUES: %i\n", list_size(particion->bloques));
 	int* aux = list_get(particion->bloques, 1);
 
 	void _printear(void* _bloque){
 
 		int* bloque = (int *)_bloque;
 
-		printf("[LECTURA PARTICION] BLOQUE: %i\n ", *bloque);
-
 		mostrar_bloque(*bloque);
-
-		printf("[LECTURA PARTICION] Termine de leer el bloque!\n");
 
 	}
 
@@ -536,7 +527,7 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 		free(path_particion); //agregado para mem leak
 
-		int i = 0;
+	//	int i = 0;
 
 		int fd_bloque;
 
@@ -626,11 +617,9 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 		for (int i = 0; i < cantidad_temporales ; i++){
 
-			char* path_particion = obtenerPathParaTemporalMientrasCompacto(nombre_tabla, i);
+			char* path_particion = obtener_path_de_temporal_para_compactar_de_tabla(nombre_tabla, i);
 
 			Particion particion_a_obtener = leer_particion(path_particion);
-
-			int i = 0;
 
 			int fd_bloque;
 
@@ -700,6 +689,8 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 	//	liberar_puntero_doble(cadena_datos);
 
 		free(metadata_tabla);
+
+//		free(cadena_datos);
 
 		return lista_datos_particion;
 

@@ -162,8 +162,6 @@ void cola_new_to_ready(){
 
 		char* path_archivo_lql = obtener_path_script(nuevo_lql->path_lql);
 
-		printf("path: %s\n" , path_archivo_lql);
-
 		archivo = fopen(path_archivo_lql , "r");
 
 		if(archivo != NULL){
@@ -177,6 +175,8 @@ void cola_new_to_ready(){
 			sem_post(&semaforo_ready);
 
 		}else{
+
+			printf("\nNO se pudo abrir el archivo %s\n" , nuevo_lql->path_lql);
 
 			log_error(logger_kernel, "NO se pudo abrir el ARCHIVO %s.\n" , nuevo_lql->path_lql);
 

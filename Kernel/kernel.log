@@ -1,247 +1,156 @@
-[INFO] 19:02:52:386 kernel/(13677:13677): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 19:02:58:830 kernel/(13677:13692):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 19:02:58:830 kernel/(13677:13692): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 19:02:58:830 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:30:56:983 kernel/(8392:8392): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 02:31:03:149 kernel/(8392:8405):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 02:31:03:149 kernel/(8392:8405): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 02:31:03:149 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:01:838 kernel/(13677:13692):   >>>NUEVA REQUEST: DESCRIBE<<< 
-[INFO] 19:03:01:838 kernel/(13677:13692): ---SE REALIZARA UN DESCRIBE GLOBAL--
-[INFO] 19:03:01:846 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:405 kernel/(8392:8405):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
+[INFO] 02:31:07:405 kernel/(8392:8405): -ARCHIVO: reemplazo1.lql.-
+[INFO] 02:31:07:405 kernel/(8392:8405): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 02:31:07:405 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:05:733 kernel/(13677:13692):   >>>NUEVA REQUEST: DROP POSTRES<<< 
-[INFO] 19:03:05:733 kernel/(13677:13692): -Se realizara la request DROP de la tabla POSTRES.-
-[INFO] 19:03:05:736 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:405 kernel/(8392:8405):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
+[INFO] 02:31:07:410 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:600 kernel/(13677:13692):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
-[INFO] 19:03:10:600 kernel/(13677:13692): -ARCHIVO: reemplazo1.lql.-
-[INFO] 19:03:10:600 kernel/(13677:13692): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 19:03:10:600 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:410 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
+[INFO] 02:31:07:413 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:601 kernel/(13677:13692):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
-[INFO] 19:03:10:604 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:413 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
+[INFO] 02:31:07:414 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:604 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
-[INFO] 19:03:10:606 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:414 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:606 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
-[INFO] 19:03:10:607 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:414 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
+[INFO] 02:31:07:416 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:608 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:416 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
+[INFO] 02:31:07:417 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:608 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
-[INFO] 19:03:10:609 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:07:417 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
+[INFO] 02:31:07:418 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:609 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
-[INFO] 19:03:10:610 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:10:149 kernel/(8392:8405):   >>>NUEVA REQUEST: JOURNAL<<< 
+[INFO] 02:31:10:149 kernel/(8392:8405): -Se realizara la request JOURNAL.-
+[INFO] 02:31:10:149 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:03:10:610 kernel/(13677:13692):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
-[INFO] 19:03:10:611 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:40:891 kernel/(8392:8405):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
+[INFO] 02:31:40:891 kernel/(8392:8405): -ARCHIVO: reemplazo2.lql.-
+[INFO] 02:31:40:891 kernel/(8392:8405): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 02:31:40:892 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:04:12:207 kernel/(13677:13692):   >>>NUEVA REQUEST: DROP POSTRES<<< 
-[INFO] 19:04:12:207 kernel/(13677:13692): -Se realizara la request DROP de la tabla POSTRES.-
-[INFO] 19:04:12:210 kernel/(13677:13692): >>FIN de la REQUEST<<
+[INFO] 02:31:40:892 kernel/(8392:8405):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
+[INFO] 02:31:40:899 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:05:49:383 kernel/(13833:13833): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 19:06:38:782 kernel/(13833:13846):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 19:06:38:783 kernel/(13833:13846): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 19:06:38:783 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:899 kernel/(8392:8405):   >>>NUEVA REQUEST: SELECT POSTRES 178<<< 
+[INFO] 02:31:40:903 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:270 kernel/(13833:13846):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
-[INFO] 19:06:43:272 kernel/(13833:13846): -ARCHIVO: reemplazo1.lql.-
-[INFO] 19:06:43:272 kernel/(13833:13846): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 19:06:43:273 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:903 kernel/(8392:8405):   >>>NUEVA REQUEST: SELECT POSTRES 1888<<< 
+[INFO] 02:31:40:910 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:273 kernel/(13833:13846):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
-[INFO] 19:06:43:275 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:910 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:275 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
-[INFO] 19:06:43:277 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:911 kernel/(8392:8405):   >>>NUEVA REQUEST: SELECT POSTRES 80<<< 
+[INFO] 02:31:40:917 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:277 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
-[INFO] 19:06:43:278 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:917 kernel/(8392:8405):   >>>NUEVA REQUEST: SELECT POSTRES 120<<< 
+[INFO] 02:31:40:930 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:278 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:930 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Chocolate"<<< 
+[INFO] 02:31:40:932 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:279 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
-[INFO] 19:06:43:280 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:932 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:280 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
-[INFO] 19:06:43:281 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:932 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Torta de ricota"<<< 
+[INFO] 02:31:40:934 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:43:281 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
-[INFO] 19:06:43:282 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:934 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Gelatina"<<< 
+[INFO] 02:31:40:943 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:06:45:647 kernel/(13833:13846):   >>>NUEVA REQUEST: JOURNAL<<< 
-[INFO] 19:06:45:647 kernel/(13833:13846): -Se realizara la request JOURNAL.-
-[INFO] 19:06:45:647 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:943 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Helado"<<< 
+[INFO] 02:31:40:944 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:314 kernel/(13833:13846):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
-[INFO] 19:07:09:314 kernel/(13833:13846): -ARCHIVO: reemplazo2.lql.-
-[INFO] 19:07:09:314 kernel/(13833:13846): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 19:07:09:315 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:944 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:315 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
-[ERROR] 19:07:09:318 kernel/(13833:13846): -NO se pudo realizar el SELECT.-
-[INFO] 19:07:09:318 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:945 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Tiramisu"<<< 
+[INFO] 02:31:40:946 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:318 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 178<<< 
-[INFO] 19:07:09:325 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:31:40:946 kernel/(8392:8405):   >>>NUEVA REQUEST: INSERT POSTRES 999 "Queso y dulce"<<< 
+[INFO] 02:31:40:947 kernel/(8392:8405): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:325 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 1888<<< 
-[INFO] 19:07:09:336 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:18:885 kernel/(8691:8691): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 02:46:24:708 kernel/(8691:8704):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 02:46:24:708 kernel/(8691:8704): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 02:46:24:708 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:336 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:560 kernel/(8691:8704):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
+[INFO] 02:46:29:560 kernel/(8691:8704): -ARCHIVO: reemplazo1.lql.-
+[INFO] 02:46:29:560 kernel/(8691:8704): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 02:46:29:561 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:336 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 80<<< 
-[INFO] 19:07:09:343 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:563 kernel/(8691:8704):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
+[INFO] 02:46:29:565 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:343 kernel/(13833:13846):   >>>NUEVA REQUEST: SELECT POSTRES 120<<< 
-[INFO] 19:07:09:348 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:565 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
+[INFO] 02:46:29:566 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:348 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Chocolate"<<< 
-[INFO] 19:07:09:350 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:566 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
+[INFO] 02:46:29:567 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:350 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:567 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:351 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Torta de ricota"<<< 
-[INFO] 19:07:09:357 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:567 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
+[INFO] 02:46:29:568 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:357 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Gelatina"<<< 
-[INFO] 19:07:09:359 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:568 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
+[INFO] 02:46:29:569 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:359 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Helado"<<< 
-[INFO] 19:07:09:366 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:29:569 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
+[INFO] 02:46:29:570 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:366 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:46:32:748 kernel/(8691:8704):   >>>NUEVA REQUEST: JOURNAL<<< 
+[INFO] 02:46:32:748 kernel/(8691:8704): -Se realizara la request JOURNAL.-
+[INFO] 02:46:32:748 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:366 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Tiramisu"<<< 
-[INFO] 19:07:09:367 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:47:05:808 kernel/(8691:8704):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
+[INFO] 02:47:05:808 kernel/(8691:8704): -ARCHIVO: reemplazo2.lql.-
+[INFO] 02:47:05:808 kernel/(8691:8704): El ARCHIVO ya está en la cola de EJECUCIÓN.
+[INFO] 02:47:05:808 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:07:09:367 kernel/(13833:13846):   >>>NUEVA REQUEST: INSERT POSTRES 999 "Queso y dulce"<<< 
-[INFO] 19:07:09:369 kernel/(13833:13846): >>FIN de la REQUEST<<
+[INFO] 02:47:05:810 kernel/(8691:8704):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
+[INFO] 02:47:05:815 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:29:317 kernel/(13983:13983): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 19:12:35:726 kernel/(13983:13997):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 19:12:35:726 kernel/(13983:13997): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 19:12:35:726 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:815 kernel/(8691:8704):   >>>NUEVA REQUEST: SELECT POSTRES 178<<< 
+[INFO] 02:47:05:819 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:41:873 kernel/(13983:13997):   >>>NUEVA REQUEST: run remplazo1.lql<<< 
-[INFO] 19:12:41:873 kernel/(13983:13997): -ARCHIVO: remplazo1.lql.-
-[INFO] 19:12:41:873 kernel/(13983:13997): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[ERROR] 19:12:41:874 kernel/(13983:13997): NO se pudo abrir el ARCHIVO remplazo1.lql.
+[INFO] 02:47:05:820 kernel/(8691:8704):   >>>NUEVA REQUEST: SELECT POSTRES 1888<<< 
+[INFO] 02:47:05:828 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:41:874 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:828 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:152 kernel/(13983:13997):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
-[INFO] 19:12:50:153 kernel/(13983:13997): -ARCHIVO: reemplazo1.lql.-
-[INFO] 19:12:50:153 kernel/(13983:13997): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 19:12:50:153 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:829 kernel/(8691:8704):   >>>NUEVA REQUEST: SELECT POSTRES 80<<< 
+[INFO] 02:47:05:837 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:154 kernel/(13983:13997):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
-[INFO] 19:12:50:166 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:837 kernel/(8691:8704):   >>>NUEVA REQUEST: SELECT POSTRES 120<<< 
+[INFO] 02:47:05:843 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:166 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
-[INFO] 19:12:50:168 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:843 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Chocolate"<<< 
+[INFO] 02:47:05:846 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:168 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
-[INFO] 19:12:50:169 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:846 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:169 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:847 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Torta de ricota"<<< 
+[INFO] 02:47:05:849 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:170 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
-[INFO] 19:12:50:177 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:849 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Gelatina"<<< 
+[INFO] 02:47:05:850 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:178 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
-[INFO] 19:12:50:179 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:850 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Helado"<<< 
+[INFO] 02:47:05:851 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:50:179 kernel/(13983:13997):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
-[INFO] 19:12:50:180 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:851 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:12:54:0 kernel/(13983:13997):   >>>NUEVA REQUEST: JOURNAL<<< 
-[INFO] 19:12:54:0 kernel/(13983:13997): -Se realizara la request JOURNAL.-
-[INFO] 19:12:54:0 kernel/(13983:13997): >>FIN de la REQUEST<<
+[INFO] 02:47:05:852 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Tiramisu"<<< 
+[INFO] 02:47:05:853 kernel/(8691:8704): >>FIN de la REQUEST<<
 
-[INFO] 19:13:40:478 kernel/(13983:13997):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
-[INFO] 19:13:40:478 kernel/(13983:13997): -ARCHIVO: reemplazo2.lql.-
-[INFO] 19:13:40:478 kernel/(13983:13997): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 19:13:40:479 kernel/(13983:13997): >>FIN de la REQUEST<<
-
-[INFO] 19:13:40:479 kernel/(13983:13997):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
-[INFO] 19:38:11:644 kernel/(14718:14718): -Se establecio la conexion con la MEMORIA 1.-
-[INFO] 19:38:18:260 kernel/(14718:14731):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
-[INFO] 19:38:18:260 kernel/(14718:14731): -Se ingreso la MEMORIA CORRECTAMENTE.-
-[INFO] 19:38:18:260 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:139 kernel/(14718:14731):   >>>NUEVA REQUEST: run reemplazo1.lql<<< 
-[INFO] 19:38:31:139 kernel/(14718:14731): -ARCHIVO: reemplazo1.lql.-
-[INFO] 19:38:31:139 kernel/(14718:14731): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 19:38:31:139 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:140 kernel/(14718:14731):   >>>NUEVA REQUEST: CREATE POSTRES SC 3 60000<<< 
-[INFO] 19:38:31:147 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:147 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Flan"<<< 
-[INFO] 19:38:31:148 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:148 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Chocotorta"<<< 
-[INFO] 19:38:31:149 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:149 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:150 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Almendrado"<<< 
-[INFO] 19:38:31:151 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:151 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Bizcochuelo"<<< 
-[INFO] 19:38:31:153 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:31:153 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Muffin"<<< 
-[INFO] 19:38:31:154 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:38:35:275 kernel/(14718:14731):   >>>NUEVA REQUEST: JOURNAL<<< 
-[INFO] 19:38:35:275 kernel/(14718:14731): -Se realizara la request JOURNAL.-
-[INFO] 19:38:35:275 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:105 kernel/(14718:14731):   >>>NUEVA REQUEST: run reemplazo2.lql<<< 
-[INFO] 19:39:24:105 kernel/(14718:14731): -ARCHIVO: reemplazo2.lql.-
-[INFO] 19:39:24:105 kernel/(14718:14731): El ARCHIVO ya está en la cola de EJECUCIÓN.
-[INFO] 19:39:24:105 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:106 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 819<<< 
-[ERROR] 19:39:24:113 kernel/(14718:14731): -NO se pudo realizar el SELECT.-
-[INFO] 19:39:24:114 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:114 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 178<<< 
-[INFO] 19:39:24:118 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:119 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 1888<<< 
-[INFO] 19:39:24:125 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:125 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:126 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 80<<< 
-[INFO] 19:39:24:141 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:141 kernel/(14718:14731):   >>>NUEVA REQUEST: SELECT POSTRES 120<<< 
-[INFO] 19:39:24:152 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:152 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 100 "Chocolate"<<< 
-[INFO] 19:39:24:153 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:153 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:153 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 101 "Torta de ricota"<<< 
-[INFO] 19:39:24:155 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:155 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 1888 "Gelatina"<<< 
-[INFO] 19:39:24:157 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:157 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 80 "Helado"<<< 
-[INFO] 19:39:24:158 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:158 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:158 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 120 "Tiramisu"<<< 
-[INFO] 19:39:24:160 kernel/(14718:14731): >>FIN de la REQUEST<<
-
-[INFO] 19:39:24:160 kernel/(14718:14731):   >>>NUEVA REQUEST: INSERT POSTRES 999 "Queso y dulce"<<< 
-[INFO] 19:39:24:161 kernel/(14718:14731): >>FIN de la REQUEST<<
+[INFO] 02:47:05:853 kernel/(8691:8704):   >>>NUEVA REQUEST: INSERT POSTRES 999 "Queso y dulce"<<< 
+[INFO] 02:47:05:863 kernel/(8691:8704): >>FIN de la REQUEST<<
 

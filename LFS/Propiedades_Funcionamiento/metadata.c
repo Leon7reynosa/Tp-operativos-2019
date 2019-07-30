@@ -98,6 +98,7 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
 	int auxiliar;
+	int mayor_temporal = -1;
 
 	struct dirent *ent;
 
@@ -106,19 +107,26 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 
 			auxiliar = obtenerNumeroTemporal(ent->d_name);
 
+			if(auxiliar > mayor_temporal){
 
-			if(auxiliar > numeroParaTemporal){
-				numeroParaTemporal = auxiliar;
+				mayor_temporal = auxiliar;
+
 			}
-			else if (auxiliar == numeroParaTemporal){
-				numeroParaTemporal = 1;
-			}
+
+//			if(auxiliar > numeroParaTemporal){
+//				numeroParaTemporal = auxiliar;
+//			}
+//			else if (auxiliar == 0){
+//				numeroParaTemporal = 1;
+//			}
 		}
 	}
 
-	if(numeroParaTemporal > 1){
-		numeroParaTemporal++;
-	}
+//	if(numeroParaTemporal >= 1 && ){
+//		numeroParaTemporal++;
+//	}
+
+	numeroParaTemporal = mayor_temporal + 1;
 
 
 	char* numeroDesignado = string_new();
@@ -135,17 +143,17 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	return pathCompleto;
 }
 
+
 char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
 
-	printf("pruebinha 2\n");
-
 	char* pathBase = obtenerPathTabla(nombre_tabla);
-	printf("pruebinha 2\n");
+
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
 	int auxiliar;
 
-	struct dirent *ent;
+	struct dirent *ent;				//0.tmp
+									//1.tmp
 
 	while((ent = readdir(dir)) != NULL){
 		if(no_es_ubicacion_prohibida(pathBase)){
@@ -154,39 +162,48 @@ char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
 			if(auxiliar > numeroParaTemporal){
 				numeroParaTemporal = auxiliar;
 			}
-			else if (auxiliar == numeroParaTemporal){
-				numeroParaTemporal = 1;
-			}
+//			else if (auxiliar == numeroParaTemporal){
+//				numeroParaTemporal = 1;
+//			}
 		}
 	}
 
-	if(numeroParaTemporal > 1){
+	if(numeroParaTemporal >= 1){
 		numeroParaTemporal++;
 	}
 
-	printf("pruebinha 2\n");
 
 	char* numeroDesignado = string_new();
-	printf("pruebinha 2\n");
+
 	numeroDesignado = string_itoa(numeroParaTemporal);
 
-	printf("pruebinha 2\n");
-
 	char* pathCompleto = string_new();
-	printf("pruebinha 2\n");
-	string_append(&pathCompleto, pathBase);
-	printf("pruebinha 2\n");
-	string_append(&pathCompleto, "/");
-	printf("pruebinha 2\n");
-	string_append(&pathCompleto, numeroDesignado);
-	printf("pruebinha 2\n");
-	string_append(&pathCompleto, ".tmpc");
 
-	printf("pruebinha 2\n");
+	string_append(&pathCompleto, pathBase);
+
+	string_append(&pathCompleto, "/");
+
+	string_append(&pathCompleto, numeroDesignado);
+
+	string_append(&pathCompleto, ".tmpc");
 
 	free(pathBase);
 
 	return pathCompleto;
+}
+
+char* obtener_path_de_temporal_para_compactar_de_tabla(char* nombre_tabla, int indice_elegido){
+
+	char* path = obtenerPathDirectorio_Tablas();
+
+	string_append(&path, "/");
+	string_append(&path, nombre_tabla);
+	string_append(&path, "/");
+	string_append(&path, string_itoa(indice_elegido));
+	string_append(&path, ".tmpc");
+
+	return path;
+
 }
 
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
@@ -313,8 +330,6 @@ int obtener_cantidad_de_archivos_tmpc(char* nombre_tabla){
 void transformar_tmp_a_tmpc(char* nombre_tabla){
 	DIR* dir;
 
-	printf("[COMPACTACION] Se cambia el nombre de los temporales\n");
-
 	struct dirent* ent;
 
 	char* raiz_de_tabla = obtenerPathTabla(nombre_tabla);
@@ -347,8 +362,6 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 		}
 	}
 
-	printf("[COMPACTACION] Todos los .tmp ahora son .tmpc\n");
-
 	closedir(dir);
 }
 
@@ -374,12 +387,10 @@ void liberar_bloques_particion(char* path_particion){
 
 
 	if(string_ends_with(path_particion , ".bin")){
-		printf("Creo la particion otra vez\n");
 		crear_archivo_particion(path_particion);
 
 	}
 
-	printf("Libero estructura particion\n");
 	liberar_particion(particion);
 
 }
@@ -417,15 +428,12 @@ void eliminar_bloque(int bloque){
 
 	char* path_bloque = obtenerPath_Bloque(bloque);
 
-	printf("Elimino el bloque %s\n", path_bloque);
-
 	unlink(path_bloque);
 
 	set_estado(bloque, LIBRE);
 
 	free(path_bloque);
 
-	printf("TERMINE DE ELIMINAR");
 }
 
 char* obtener_path_bitmap(){
