@@ -146,3 +146,7 @@
 
 [INFO] 13:00:17:4 file system/(7109:7119): Request -- INSERT -- realizada !!!
 
+[INFO] 14:29:57:953 file system/(11851:11860): Inicio de request -- DROP --
+
+[INFO] 14:29:57:953 file system/(11851:11860): Request -- DROP-- realizada
+

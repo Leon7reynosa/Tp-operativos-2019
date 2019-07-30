@@ -42,9 +42,9 @@ void realizar_handshake(void){
 
 void creacion_del_config(){
 
-	char* array_ips = "[]";
+	char* array_ips = "[192.168.0.168]";
 
-	char* array_puertos = "[]";
+	char* array_puertos = "[8001]";
 
 	char* path_config = obtener_path_config();
 
@@ -59,8 +59,8 @@ void creacion_del_config(){
 
 	config_set_value(g_config, "RETARDO_MEMORIA", "0");
 	config_set_value(g_config, "RETARDO_LFS", "0");
-	config_set_value(g_config, "TAMANIO_MEMORIA", "340");
-	config_set_value(g_config, "TIEMPO_JOURNAL","1000000");
+	config_set_value(g_config, "TAMANIO_MEMORIA", "320");
+	config_set_value(g_config, "TIEMPO_JOURNAL","60000");
 	config_set_value(g_config, "TIEMPO_GOSSIPING", "10000");
 	config_set_value(g_config, "NUMERO_MEMORIA", "1");
 
