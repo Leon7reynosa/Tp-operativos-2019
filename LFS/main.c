@@ -20,7 +20,7 @@ int main(int argc , char* argv[]){
 
 	obtener_datos_metadata();
 
-	set_all_estados(LIBRE);
+//	set_all_estados(LIBRE);
 
 	inicializar_loggers();
 

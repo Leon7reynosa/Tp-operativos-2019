@@ -97,11 +97,11 @@ void* compactar(thread_args* argumentos){
 
 		dato_t* dato_a_cargar = convertir_a_dato(dato_final);    // (6)
 
-		printf("[COMPACTACION] Muestro el dato que voy a cargar en la particion\n");
+//		printf("[COMPACTACION] Muestro el dato que voy a cargar en la particion\n");
 
 		mostrar_dato(dato_a_cargar);
 
-		printf("[COMPACTACION] Termine de mostrar \n");
+//		printf("[COMPACTACION] Termine de mostrar \n");
 
 		cargar_a_particion(path_particion, dato_a_cargar);
 
@@ -114,6 +114,7 @@ void* compactar(thread_args* argumentos){
 //	printf("[COMPACTACION] Cargo los datos finales a las particiones de%s\n", nombre_tabla);
 
 	//time_t inicio_de_bloqueo = time(NULL);
+	printf("[COMPACTACION] Muestro los datos que voy a cargar en la particion\n");
 	list_iterate(datos_finales, _funcion_loca2);
 	//time_t fin_de_bloqueo = time(NULL)
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla

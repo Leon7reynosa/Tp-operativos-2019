@@ -27,11 +27,9 @@ dato_t* crear_dato(u_int16_t key, char* valor, time_t tiempo){
 
 void mostrar_dato(dato_t* dato_a_mostrar){
 
-	printf("\nObtuve el siguiente dato: \n\n");
-
-	printf("Key: %d\n" , dato_a_mostrar->key );
-	printf("Value: %s\n" , dato_a_mostrar->value);
-	printf("Timestamp: %d\n" , dato_a_mostrar->timestamp);
+	printf(">>>Key: %d\n" , dato_a_mostrar->key );
+	printf(">>>Value: %s\n" , dato_a_mostrar->value);
+	printf(">>>Timestamp: %d\n" , dato_a_mostrar->timestamp);
 
 	printf("\n");
 

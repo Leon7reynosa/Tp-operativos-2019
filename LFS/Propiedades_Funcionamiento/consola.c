@@ -305,6 +305,8 @@ int obtener_parametros_select(char* linea_request, char** nombre_tabla , u_int16
 
 	}
 
+	string_to_upper(parametros[1]);
+
 	*nombre_tabla = malloc(strlen(parametros[1]) + 1);
 	memcpy(*nombre_tabla , parametros[1] , strlen(parametros[1]) + 1);
 
@@ -324,7 +326,7 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 	char** parametros;
 	char* comillas = "\"";
 
-	auxiliar = string_split(linea_request, comillas  );
+	auxiliar = string_split(linea_request, comillas);
 
 	for(int i = 0; i < 2 ; i++){
 
@@ -385,6 +387,8 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 
 	}
 
+	string_to_upper(parametros[1]);
+
 	*nombre_tabla = malloc(strlen(parametros[1] ) + 1);
 	memcpy(*nombre_tabla , parametros[1] , strlen(parametros[1]) + 1);
 
@@ -401,7 +405,6 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 	}
 
 	//printf("EN EL OBTENER PARAMETROS LA TABLA ES %s\n" , *nombre_tabla);
-	printf("EN EL OBTENER PARAMETROS LA KEY ES %d\n" , *key);
 
 	liberar_puntero_doble(parametros);
 
@@ -496,6 +499,8 @@ int obtener_parametros_describe(char* linea_request , char** nombre_tabla){
 
 			return 0;
 		}else{
+
+			string_to_upper(parametros[1]);
 
 			*nombre_tabla = malloc(strlen(parametros[1] ) + 1);
 			memcpy(*nombre_tabla , parametros[1] , strlen(parametros[1]) + 1);

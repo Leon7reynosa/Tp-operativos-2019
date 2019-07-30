@@ -198,14 +198,9 @@ dato_t* request_select(select_t datos_select){
 		 //ACA HAY UN SEMAFORO DE MEMTABLE
         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
          /////////////////////////////////
-
-        printf("[BUSQUEDA] OBTENGO EL DATO MAS NUEVO\n");
-
 		dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
 
 		dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
-
-		printf("[BUSQUEDA] TERMINE DE OBTENER EL MAS NUEVO\n");
 
 		if(dato_aux != NULL){
 			 liberar_dato(dato_aux);
@@ -221,16 +216,12 @@ dato_t* request_select(select_t datos_select){
 
 		if(dato_memtable != NULL){
 
-			 printf("[LIBERACION] dato a liberar : %s\n " , dato_memtable->value);
-
 		 	liberar_dato(dato_memtable);
 		}
 
 		free(metadata_tabla);
 
 		free(path_particion_a_buscar);
-
-		printf("[LIBERACION] Se libero el path de particion y la metadata_tabla\n");
 
 		pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
 
@@ -278,8 +269,6 @@ dato_t* request_select(select_t datos_select){
 		 dato_ingresar = crear_dato(datos_insert->key, (char *)datos_insert->value->buffer, datos_insert->timestamp);
 
 		 //ACA HAY UN SEMAFORO DE MEMTABLE
-
-		 printf("[INSERT] Se inserta en la memtable\n");
 
 		 ingresar_a_memtable(dato_ingresar, nombre_tabla);
 
@@ -592,9 +581,12 @@ estado_request request_drop(Drop request_drop){
 								Particion particion = leer_particion(path_para_archivo);
 
 								mostrar_particion(particion);
-								printf("\n\n");
+								printf("\n");
 								liberar_particion(particion);
+
 								eliminar_particion(path_para_archivo);
+
+								printf("====Se elimino dicha particion====\n");
 
 								//get_all_estados();
 							}
