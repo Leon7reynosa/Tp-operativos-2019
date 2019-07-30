@@ -19,6 +19,7 @@
 t_config* g_config;
 
 char* ip_memoria;
+char* punto_montaje;
 int puerto_memoria;
 int numero_memoria_seed;
 int quantum;

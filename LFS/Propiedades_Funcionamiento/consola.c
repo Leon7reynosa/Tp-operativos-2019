@@ -17,7 +17,7 @@ void* consola(void* argumento){
 
 	menu();
 
-	leido = readline(">> ");
+	leido = readline("");
 
 	printf("Leido : %s\n" , leido);
 
@@ -27,15 +27,13 @@ void* consola(void* argumento){
 
 		string_codigo = obtener_string_codigo(codigo);
 
-		printf("Request a realizar = %s\n"  , string_codigo);
-
 		free(string_codigo);
 
 		ejecutar_request(codigo, leido);
 
 		free(leido);
 
-		leido = readline(">> ");
+		leido = readline("");
 
 	}
 
@@ -84,7 +82,9 @@ char* obtener_string_codigo(cod_operacion codigo){
 
 bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
-	printf("\n//////////////////////////////////////REQUEST NUEVA DE CONSOLA////////////////////////////////////\n");
+	printf("\n/////////////////////////REQUEST NUEVA DE CONSOLA////////////////////////////\n");
+
+	printf("\nREQUEST: %s\n" , linea_request);
 
 	request nueva_request;
 	bool fin_funcion = false;
@@ -108,7 +108,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 		case SELECT:
 
-			printf(">>SELECT<<\n");
+			printf("\n>>SELECT<<\n");
 
 			if(obtener_parametros_select(linea_request, &nombre_tabla, &key)){
 
@@ -144,7 +144,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case INSERT:
 
-			printf(">>INSERT<<\n");
+			printf("\n>>INSERT<<\n");
 
 			if( obtener_parametros_insert(linea_request, &nombre_tabla, &key , &value, &timestamp) ){
 
@@ -171,7 +171,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case CREATE:
 
-			printf(">>CREATE<<\n");
+			printf("\n>>CREATE<<\n");
 
 			if(obtener_parametros_create(linea_request, &nombre_tabla, &consistencia, &particiones, &compactacion)){
 
@@ -187,7 +187,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case DESCRIBE:
 
-			printf(">>DESCRIBE<<\n");
+			printf("\n>>DESCRIBE<<\n");
 
 			cantidad_parametros = obtener_parametros_describe(linea_request, &nombre_tabla);
 
@@ -229,7 +229,7 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 			break;
 		case DROP:
 
-			printf(">>DROP<<\n");
+			printf("\n>>DROP<<\n");
 
 			if(obtener_parametros_drop(linea_request , &nombre_tabla)){
 

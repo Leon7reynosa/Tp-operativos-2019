@@ -111,15 +111,12 @@ void* compactar(thread_args* argumentos){
 
 	}
 
-//	printf("[COMPACTACION] Cargo los datos finales a las particiones de%s\n", nombre_tabla);
-
 	//time_t inicio_de_bloqueo = time(NULL);
 	printf("[COMPACTACION] Muestro los datos que voy a cargar en la particion\n");
 	list_iterate(datos_finales, _funcion_loca2);
 	//time_t fin_de_bloqueo = time(NULL)
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
-//	printf("[COMPACTACION] Libero los tmpc de %s\n", nombre_tabla);
 	liberar_tmpc(nombre_tabla);
 
 	pthread_rwlock_unlock(&(argumentos->lock_tabla));
@@ -130,8 +127,6 @@ void* compactar(thread_args* argumentos){
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
 //	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
-
-//	printf("[COMPACTACION] Libero las estructuras administrativas %s\n", nombre_tabla);
 
 	list_destroy_and_destroy_elements(datos_tmpc, free);											//  (3) Libero los datos del .tmpc
 
@@ -240,7 +235,7 @@ void* ciclo_compactacion(thread_args* argumentos){
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
-		printf("\n>>>>>>>>>>>>compactacion de la tabla %s<<<<<<<<<<<<<<<<\n", argumentos->nombre_tabla);
+		printf("\n>>>>>>>>>>>>compactacion de la tabla %s<<<<<<<<<<<<<<<<\n\n", argumentos->nombre_tabla);
 
 		compactar(argumentos);
 

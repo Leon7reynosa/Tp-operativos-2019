@@ -82,9 +82,11 @@ char* obtener_path_script(char* archivo){
 
 	char* path = string_new();
 
-	char* path_scripts = "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/Scripts";
+	string_append(&path , punto_montaje);
 
-	string_append(&path , path_scripts);
+	string_append(&path, "/");
+
+	string_append(&path, "Scripts");
 
 	string_append(&path , "/");
 
