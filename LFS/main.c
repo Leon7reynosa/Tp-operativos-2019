@@ -12,19 +12,26 @@ int main(int argc , char* argv[]){
 
 
 
-	creacion_del_config_fileSystem();
+	//creacion_del_config_fileSystem();
 
-	creacion_del_metadata_fileSystem();
+	//creacion_del_metadata_fileSystem();
+	printf("es por el condifg\n");
 
 	obtener_datos_config();
 
+	printf("si\n");
+
 	obtener_datos_metadata();
 
+	printf("si\n");
 //	set_all_estados(LIBRE);
 
 	inicializar_loggers();
 
+	printf("si\n");
+
 	inicializar_memtable(); //Inicializa la memtable como diccionario junto con su lock rw
+	printf("si\n");
 
 	inicializar_memorias_conectadas(); //Inicializa una lista de memorias
 

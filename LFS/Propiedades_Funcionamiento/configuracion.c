@@ -28,8 +28,7 @@ void creacion_del_config_fileSystem(){
 
 	g_config = config_create("fileSystem.config");
 
-	config_set_value(g_config, "IP", "127.0.0.1");
-	config_set_value(g_config, "PUERTO", "5003");
+	config_set_value(g_config, "PUERTO_ESCUCHA", "5003");
 	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
 	config_set_value(g_config, "RETARDO", "0");
 	config_set_value(g_config, "TAMANIO_VALUE", "60");
@@ -161,17 +160,19 @@ void obtener_datos_metadata(){
 }
 
 void obtener_datos_config(){
-	g_config = config_create("fileSystem.config");
+
+	char* path = "../fileSystem.config";
+
+	g_config = config_create(path);
 
 	char* punto_montaje_aux;
 	char* ip_lfs_aux;
 
 	tamanio_value_max   = config_get_int_value(g_config, "TAMANIO_VALUE");
 	tiempo_dump         = config_get_int_value(g_config, "TIEMPO_DUMP");
-	puerto_lfs          = config_get_int_value(g_config, "PUERTO");
+	puerto_lfs          = config_get_int_value(g_config, "PUERTO_ESCUCHA");
 	punto_montaje_aux   = config_get_string_value(g_config, "PUNTO_MONTAJE");
 	retardo             = config_get_int_value(g_config, "RETARDO");
-	ip_lfs_aux          = config_get_string_value(g_config, "IP");
 
 	ip_lfs = malloc(strlen(ip_lfs_aux) + 1);
 	punto_montaje = string_new();//malloc(strlen(punto_montaje_aux) + 1);

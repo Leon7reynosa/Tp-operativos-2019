@@ -45,25 +45,25 @@ t_list* recibir_describe(int conexion){
 	char* consistencia_recibida;
 	int particiones_recibidas, compactacion_recibida;
 
+	t_list* datos_metadata = list_create();
+
 	error_recv = recv(conexion, &estado , sizeof(estado_request), 0);
 
 	if(estado == ERROR){
 
-		return NULL;
+		return datos_metadata;
 
 	}
 
 	error_recv = recv(conexion, &numero_tablas, sizeof(int), MSG_WAITALL);
 
-	t_list* datos_metadata = list_create();
+
 
 	if(error_recv <= 0){
 
 		printf("\n>FALLO al Recibir\n");
 
-		list_destroy(datos_metadata);
-
-		return NULL;
+		return datos_metadata;
 
 	}
 

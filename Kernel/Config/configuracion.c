@@ -32,7 +32,7 @@ void creacion_del_config(){
 
 void obtener_datos_config(){
 
-	g_config = config_create("kernel.config");
+	g_config = config_create("/home/utnso/kernel-compactacion/kernel.config");
 	ip_memoria = string_new();
 	char* ip_auxiliar;
 	char* punto_montaje_aux;

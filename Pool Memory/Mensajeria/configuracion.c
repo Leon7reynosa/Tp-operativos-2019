@@ -11,7 +11,7 @@ char* obtener_path_config(void){
 
 	char* path_config = string_new();
 
-	string_append(&path_config, "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Pool Memory/pool.config");
+	string_append(&path_config, "/home/utnso/memoria-3/pool.config");
 
 	return path_config;
 }

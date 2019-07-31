@@ -19,6 +19,7 @@ void generadorConfig(){
     char* magic_number = string_new();
     //MEMORIA
     int puerto_memoria, puerto_fileSystem;
+    char* ip_lfs  =string_new();
     char* ip_seeds = string_new();
     char* puerto_seeds = string_new();
     int retardo_mem, retardo_fs, tam_mem, retardo_journal, retardo_gossiping, mem_num;
@@ -51,14 +52,14 @@ while(opcion != 5){
             crear_config_metadata_fileSystem(block_size, blocks, magic_number);
             break;
         case 3:
-            printf("Ingrese parametros [[IP SEEDS]] [PUERTO MEMORIA] [PUERTO FS] [[PUERTO SEEDS]] [RETARDO MEM] [RETARDO FS] [TAM MEM] [RETARDO JOURNAL] [RETARDO GOSSIPING] [MEMORY NUMBER]\n");
-            scanf("%s %i %i %s %i %i %i %i %i %i", ip_seeds, &puerto_memoria, &puerto_fileSystem, puerto_seeds, &retardo_mem, &retardo_fs, &tam_mem, &retardo_journal, &retardo_gossiping, &mem_num);
-            crear_config_memoria(puerto_memoria, puerto_fileSystem, ip_seeds, puerto_seeds, retardo_mem, retardo_fs, tam_mem, retardo_journal, retardo_gossiping, mem_num);
+            printf("Ingrese parametros [[IP SEEDS]] [PUERTO MEMORIA] [IP FS] [PUERTO FS] [[PUERTO SEEDS]] [RETARDO MEM] [RETARDO FS] [TAM MEM] [RETARDO JOURNAL] [RETARDO GOSSIPING] [MEMORY NUMBER]\n");
+            scanf("%s %i %s %i %s %i %i %i %i %i %i", ip_seeds, &puerto_memoria, ip_lfs, &puerto_fileSystem, puerto_seeds, &retardo_mem, &retardo_fs, &tam_mem, &retardo_journal, &retardo_gossiping, &mem_num);
+            crear_config_memoria(puerto_memoria,ip_lfs,  puerto_fileSystem, ip_seeds, puerto_seeds, retardo_mem, retardo_fs, tam_mem, retardo_journal, retardo_gossiping, mem_num);
             break;
         case 4:
-            printf("Ingrese parametros [IP MEMORIA] [PUERTO MEMORIA] [NUMERO MEMORIA] [QUANTUM] [MULTIPROCESAMIENTO] [METADATA REFRESH] [SLEEP EJECUCION] [PUNTO_MONTAJE]\n");
-            scanf("%s %i %i %i %i %i", ip_memoria, &puerto_memoria, &numero_memoria, &quantum, &multiprocesamiento, &metadata_refresh, &sleep_ejecucion, punto_montaje);
-            crear_config_kernel(ip_memoria, puerto_memoria, numero_memoria, quantum, multiprocesamiento, metadata_refresh, sleep_ejecucion, punto_montaje);
+            printf("Ingrese parametros [IP MEMORIA] [PUERTO MEMORIA] [NUMERO MEMORIA] [QUANTUM] [MULTIPROCESAMIENTO] [METADATA REFRESH] [TIEMPO GOSSIPING KERNEL] [SLEEP EJECUCION] [PUNTO_MONTAJE]\n");
+            scanf("%s %i %i %i %i %i %i %i %s", ip_memoria, &puerto_memoria, &numero_memoria, &quantum, &multiprocesamiento, &metadata_refresh, &retardo_gossiping, &sleep_ejecucion, punto_montaje);
+            crear_config_kernel(ip_memoria, puerto_memoria, numero_memoria, quantum, multiprocesamiento, metadata_refresh, retardo_gossiping, sleep_ejecucion, punto_montaje);
             break;
         case 5:
             exit(1);
@@ -83,6 +84,7 @@ while(opcion != 5){
 }
 
 void crear_config_fileSystem(int puerto_escucha, char* punto_montaje, int retardo, int tamanio_value, int tiempo_dump){
+
 	char* string_puerto, *string_retardo, *string_tamanio_value, *string_tiempo_dump;
 
 	string_puerto = string_itoa(puerto_escucha);
@@ -131,7 +133,7 @@ void crear_config_metadata_fileSystem(int block_size, int blocks, char* magic_nu
 
 }
 
-void crear_config_memoria(int puerto_memoria, int puerto_fileSystem, char* ip_seeds, char* puerto_seeds, int retardo_mem, int retardo_fs, int tam_mem, int retardo_journal, int retardo_gossiping, int mem_num){
+void crear_config_memoria(int puerto_memoria,char* ip_lfs,  int puerto_fileSystem, char* ip_seeds, char* puerto_seeds, int retardo_mem, int retardo_fs, int tam_mem, int retardo_journal, int retardo_gossiping, int mem_num){
     char* string_puerto_memoria = string_new();
     char* string_puerto_fileSystem = string_new();
     char* string_retardo_mem = string_new();
@@ -156,29 +158,31 @@ void crear_config_memoria(int puerto_memoria, int puerto_fileSystem, char* ip_se
     string_mem_num = string_itoa(mem_num);
 
     t_config* config_pool = config_create("/home/utnso/Escritorio/pool.config");
-    config_set_value(config_pool, "PUERTO_MEMORIA", string_puerto_memoria);
-    config_set_value(config_pool, "PUERTO_FILESYSTEM", string_puerto_fileSystem);
+    config_set_value(config_pool, "PUERTO_ESCUCHA", string_puerto_memoria);
+    config_set_value(config_pool, "IP_LFS", ip_lfs);
+    config_set_value(config_pool, "PUERTO_LFS", string_puerto_fileSystem);
     config_set_value(config_pool, "IP_SEEDS", ip_seeds);
-    config_set_value(config_pool, "PUERTO_SEEDS", puerto_seeds);
-    config_set_value(config_pool, "RETARDO_MEM", string_retardo_mem);
-    config_set_value(config_pool, "RETARDO_FS", string_retardo_fs);
-    config_set_value(config_pool, "TAM_MEM", string_tam_mem);
-    config_set_value(config_pool, "RETARDO_JOURNAL", string_retardo_journal);
-    config_set_value(config_pool, "RETARDO_GOSSIPING", string_retardo_gossiping);
-    config_set_value(config_pool, "MEM_NUM", string_mem_num);
+    config_set_value(config_pool, "ARRAY_PUERTOS", puerto_seeds);
+    config_set_value(config_pool, "RETARDO_MEMORIA", string_retardo_mem);
+    config_set_value(config_pool, "RETARDO_LFS", string_retardo_fs);
+    config_set_value(config_pool, "TAMANIO_MEMORIA", string_tam_mem);
+    config_set_value(config_pool, "TIEMPO_JOURNAL", string_retardo_journal);
+    config_set_value(config_pool, "TIEMPO_GOSSIPING", string_retardo_gossiping);
+    config_set_value(config_pool, "NUMERO_MEMORIA", string_mem_num);
 
     config_save(config_pool);
     config_destroy(config_pool);
 }
 
 
-void crear_config_kernel(char* ip_memoria, int puerto_memoria, int numero_memoria, int quantum, int multiprocesamiento, int metadata_refresh, int sleep_ejecucion, char* punto_montaje){
+void crear_config_kernel(char* ip_memoria, int puerto_memoria, int numero_memoria, int quantum, int multiprocesamiento, int metadata_refresh,int tiempo_gossiping, int sleep_ejecucion, char* punto_montaje){
     char* string_puerto_memoria = string_new();
     char* string_quantum = string_new();
     char* string_multiprocesamiento = string_new();
     char* string_metadata_refresh = string_new();
     char* string_sleep_ejecucion = string_new();
     char* string_numero_memoria = string_new();
+    char* string_tiempo_gossiping = string_new();
     
     // TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/
 
@@ -191,6 +195,7 @@ void crear_config_kernel(char* ip_memoria, int puerto_memoria, int numero_memori
     string_metadata_refresh = string_itoa(metadata_refresh);
     string_sleep_ejecucion = string_itoa(sleep_ejecucion);
     string_numero_memoria = string_itoa(numero_memoria);
+    string_tiempo_gossiping = string_itoa(tiempo_gossiping);
 
     // TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/
 
@@ -201,6 +206,7 @@ void crear_config_kernel(char* ip_memoria, int puerto_memoria, int numero_memori
     config_set_value(config_kernel, "QUANTUM", string_quantum);
     config_set_value(config_kernel, "MULTIPROCESAMIENTO", string_multiprocesamiento);
     config_set_value(config_kernel, "METADATA_REFRESH", string_metadata_refresh);
+    config_set_value(config_kernel , "TIEMPO_GOSSIPING_KERNEL" , string_tiempo_gossiping);
     config_set_value(config_kernel, "SLEEP_EJECUCION", string_sleep_ejecucion);
     config_set_value(config_kernel, "PUNTO_MONTAJE", punto_montaje);
 

@@ -20,7 +20,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			printf("[REQUEST] Se realizara un SELECT\n");
 
-			log_trace(logger_request, "Request de SELECT recibida por el socket %i !\n", conexion);
+			log_info(logger_request, "Request de SELECT recibida por el socket %i !", conexion);
 
 			dato_request = request_select( (select_t) request_a_operar->tipo_request );
 
@@ -48,7 +48,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			printf("[REQUEST] Se realizara un INSERT\n");
 
-			log_trace(logger_request, "Request de INSERT recibida por el socket %i !\n", conexion);
+			log_info(logger_request, "Request de INSERT recibida por el socket %i !", conexion);
 
 			estado = request_insert((insert) request_a_operar->tipo_request );
 
@@ -59,7 +59,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			}else{
 
-				log_trace(logger_request, "Request de INSERT terminada por el socket %i !\n", conexion);
+				log_info(logger_request, "Request de INSERT terminada por el socket %i !\n", conexion);
 
 			}
 
@@ -73,7 +73,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			printf("[REQUEST] Se realizara un CREATE\n");
 
-			log_trace(logger_request, "Request de CREATE recibida por el socket %i !\n", conexion);
+			log_info(logger_request, "Request de CREATE recibida por el socket %i !", conexion);
 
 			estado = request_create( (create) request_a_operar->tipo_request);
 
@@ -83,7 +83,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			}else{
 
-				log_trace(logger_request, "Request de CREATE terminada correctamente por el socket %i !\n", conexion);
+				log_info(logger_request, "Request de CREATE terminada correctamente por el socket %i !\n", conexion);
 
 			}
 
@@ -97,7 +97,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			printf("[REQUEST] Se realizara un DESCRIBE\n");
 
-			log_trace(logger_request, "Request de DESCRIBE recibida por el socket %i !\n", conexion);
+			log_info(logger_request, "Request de DESCRIBE recibida por el socket %i !", conexion);
 
 			metadata_describe = request_describe( (describe_t) request_a_operar->tipo_request );
 
@@ -118,7 +118,7 @@ void trabajar_request(request request_a_operar , int conexion){
 			}
 
 
-			log_trace(logger_request, "Request de DESCRIBE terminada por el socket %i !\n", conexion);
+			log_info(logger_request, "Request de DESCRIBE terminada por el socket %i !\n", conexion);
 
 			printf("[REQUEST] Finalizo el DESCRIBE\n\n");
 
@@ -128,7 +128,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			printf("[REQUEST] Se realizara un DROP\n");
 
-			log_trace(logger_request, "Request de DROP recibida por el socket %i !\n", conexion);
+			log_info(logger_request, "Request de DROP recibida por el socket %i !", conexion);
 
 			estado = request_drop((Drop)(request_a_operar->tipo_request));
 
@@ -139,7 +139,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 			}else{
 
-				log_trace(logger_request, "Request de DROP solicitada por el socket %i !\n", conexion);
+				log_info(logger_request, "Request de DROP solicitada por el socket %i !\n", conexion);
 
 			}
 

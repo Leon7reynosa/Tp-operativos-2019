@@ -45,7 +45,7 @@ int main (int argc , char* argv[]){
 
 	inicializar_loggers();
 
-	creacion_del_config();
+	//creacion_del_config();
 
 	obtener_datos_config();
 
