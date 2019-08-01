@@ -32,7 +32,7 @@ void* refrescar_metadata(){
 
 		memoria_utilizada = tomar_memoria_al_azar();
 
-		printf("Ya agarre una memoria\n");
+		printf("Ya agarre una memoria: %d\n", memoria_utilizada->numero_memoria);
 
 		if(memoria_utilizada == NULL){
 
@@ -43,6 +43,8 @@ void* refrescar_metadata(){
 		}
 
 		pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
+
+		printf("Ya agarre el semaforo de la memoria\n");
 
 
 		if(enviar_request(DESCRIBE, dato_describe ,memoria_utilizada->socket)){

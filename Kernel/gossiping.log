@@ -1,0 +1,360 @@
+[INFO] 15:00:10:636 Gossiping_Kernel/(17896:17896): La Memoria 5 agregada a la tabla de gossiping
+[INFO] 15:00:20:637 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:00:20:637 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:00:20:638 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:00:20:638 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:00:20:638 Gossiping_Kernel/(17896:17900): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+[INFO] 15:00:20:638 Gossiping_Kernel/(17896:17900): La Memoria 2 agregada a la tabla de gossiping
+[INFO] 15:00:20:638 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:00:20:638 Gossiping_Kernel/(17896:17900): SE ESTABLECION LA CONEXION CON LA MEMORIA 1.
+[INFO] 15:00:20:638 Gossiping_Kernel/(17896:17900): La Memoria 1 agregada a la tabla de gossiping
+[INFO] 15:00:20:639 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:00:20:639 Gossiping_Kernel/(17896:17900): SE ESTABLECION LA CONEXION CON LA MEMORIA 3.
+[INFO] 15:00:20:639 Gossiping_Kernel/(17896:17900): La Memoria 3 agregada a la tabla de gossiping
+[INFO] 15:00:20:639 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:00:20:639 Gossiping_Kernel/(17896:17900): SE ESTABLECION LA CONEXION CON LA MEMORIA 4.
+[INFO] 15:00:20:639 Gossiping_Kernel/(17896:17900): La Memoria 4 agregada a la tabla de gossiping
+[INFO] 15:00:20:639 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:00:30:639 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:00:40:640 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:00:50:640 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:00:50:640 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 3
+[INFO] 15:00:50:642 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:00:50:642 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:00:50:642 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:00:50:642 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:00:50:642 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:00:50:642 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:01:00:642 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:01:00:642 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:01:00:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:01:00:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:01:00:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:01:00:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:01:00:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:01:00:643 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:01:10:643 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:01:10:643 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:01:10:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:01:10:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:01:10:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:01:10:643 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:01:10:644 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:01:10:644 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:01:20:647 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:01:20:647 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:01:20:649 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:01:20:649 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:01:20:649 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:01:20:649 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:01:20:649 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:01:20:649 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:01:30:650 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:01:40:650 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:01:40:650 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:01:40:651 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:01:40:651 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:01:40:651 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:01:40:651 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:01:40:651 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:01:40:651 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:01:50:651 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:01:50:651 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:01:50:652 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:01:50:652 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:01:50:652 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:01:50:652 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:01:50:652 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:01:50:652 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:02:00:652 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:02:00:653 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:02:00:653 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:02:00:653 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:02:00:653 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:02:00:653 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:02:00:653 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:02:00:654 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:02:10:654 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:02:20:655 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:02:30:655 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:02:30:655 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:02:30:656 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:02:30:656 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:02:30:656 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:02:30:656 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:02:30:656 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:02:30:656 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:02:40:661 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:02:40:661 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:02:40:662 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:02:40:662 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:02:40:662 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:02:40:662 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:02:40:662 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:02:40:662 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:02:50:662 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:02:50:662 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:02:50:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:02:50:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:02:50:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:02:50:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:02:50:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:02:50:663 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:03:00:663 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:03:10:664 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:03:10:664 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:03:10:665 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:03:10:665 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:03:10:665 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:03:10:665 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:03:10:665 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:03:10:665 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:03:20:665 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:03:20:666 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 3
+[INFO] 15:03:20:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:03:20:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:03:20:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:03:20:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:03:20:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:03:20:666 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:03:30:666 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:03:40:667 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:03:50:667 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:03:50:667 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:03:50:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:03:50:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:03:50:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:03:50:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:03:50:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:03:50:668 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:04:00:668 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:04:00:668 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:04:00:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:04:00:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:04:00:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:04:00:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:04:00:668 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:04:00:669 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:04:10:669 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:04:20:670 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:04:20:670 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:04:20:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:04:20:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:04:20:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:04:20:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:04:20:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:04:20:671 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:04:30:671 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:04:40:676 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:04:50:677 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:04:50:677 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 3
+[INFO] 15:04:50:677 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:04:50:677 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:04:50:677 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:04:50:677 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:04:50:677 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:04:50:678 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:05:00:679 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:05:00:682 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:05:00:684 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:05:00:684 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:05:00:684 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:05:00:684 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:05:00:684 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:05:00:684 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:05:10:685 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:05:10:685 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 3
+[INFO] 15:05:10:689 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:05:10:689 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:05:10:689 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:05:10:689 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:05:10:689 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:05:10:689 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:05:20:690 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:05:20:690 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:05:20:692 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:05:20:692 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:05:20:692 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:05:20:692 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:05:20:692 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:05:20:692 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:05:30:693 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:05:40:693 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:05:50:694 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:05:50:694 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 2
+[INFO] 15:05:50:695 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:05:50:695 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:05:50:695 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:05:50:695 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:05:50:695 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:05:50:695 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:06:00:695 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:06:00:695 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:06:00:697 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:06:00:697 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:06:00:697 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:06:00:697 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:06:00:697 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:06:00:697 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 4
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:06:10:698 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:06:20:699 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:06:20:699 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:06:20:701 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:06:20:701 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:06:20:701 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:06:20:701 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:06:20:701 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:06:20:701 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:06:30:701 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:06:30:701 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 5
+[INFO] 15:06:30:705 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:06:30:705 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:06:30:705 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:06:30:705 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:06:30:705 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:06:30:705 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): Iniciando el GOSSIPING KERNEL
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): MEMORIA utilizada: memoria 1
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): Me llego la memoria: 1
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): Me llego la memoria: 2
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): Me llego la memoria: 4
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): Me llego la memoria: 3
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): Me llego la memoria: 5
+[INFO] 15:06:40:706 Gossiping_Kernel/(17896:17900): Fin del GOSSIPING KERNEL
+
