@@ -37,8 +37,13 @@ char* ip_lfs;
 
 pthread_rwlock_t semaforo_bitmap;
 
+pthread_rwlock_t semaforo_tiempo_dump;
+
+pthread_rwlock_t semaforo_retardo;
+
 int tamanioDeValue;
 
+char* obtener_path_config(void);
 void creacion_bitmap(void);
 void creacion_del_config_fileSystem(void);
 void creacion_del_metadata_fileSystem(void);

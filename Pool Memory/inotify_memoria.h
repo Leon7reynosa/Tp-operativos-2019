@@ -1,27 +1,22 @@
 /*
  * inotify.h
  *
- *  Created on: 13 jul. 2019
+ *  Created on: 1 ago. 2019
  *      Author: utnso
  */
 
-#ifndef INOTIFY_PRUEBA_H_
-#define INOTIFY_PRUEBA_H_
+#ifndef INOTIFY_MEMORIA_H_
+#define INOTIFY_MEMORIA_H_
+
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<commons/string.h>
-#include<pthread.h>
-#include<stdbool.h>
 
-#include"Propiedades_Funcionamiento/metadata.h"
-
-#include<errno.h>
-#include<poll.h>
 #include<sys/inotify.h>
+#include<errno.h>
 #include<unistd.h>
 
-#include"Propiedades_Funcionamiento/configuracion.h"
+#include"Mensajeria/configuracion.h"
 
 struct inotifyEstructura{
 
@@ -41,4 +36,4 @@ void* realizar_inotify(inotify_config argumento);
 inotify_config crear_inotify(void);
 void liberar_inotify(inotify_config a_liberar);
 
-#endif /* INOTIFY_PRUEBA_H_ */
+#endif /* INOTIFY_MEMORIA_H_ */

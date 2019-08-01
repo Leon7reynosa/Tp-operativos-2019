@@ -11,6 +11,8 @@ int main (int argc , char* argv[]){
 
 	system("clear");
 
+	arg_inotify = crear_inotify();
+
 	//creacion_del_config();
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
 	ip_escucha = obtener_ip_local();
@@ -25,6 +27,8 @@ int main (int argc , char* argv[]){
 	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
 
 	conexion_lissandra = true;
+
+	arg_inotify = crear_inotify();
 
 	inicializar_memoria(tamanio, tamanio_value, tamanio_dato); //TODO ARREGLAR ESTA FUNCION UN POCO
 
@@ -184,8 +188,12 @@ void abortar_hilos(void){
 	pthread_cancel(gossip_thread);
 //	pthread_mutex_lock(&mutex_gossip);
 
+	pthread_cancel(inotify_thread);
+
 	pthread_mutex_destroy(&mutex_journal);
 	pthread_mutex_destroy(&mutex_gossip);
+
+	liberar_inotify(arg_inotify);
 
 }
 
@@ -216,6 +224,15 @@ void inicializar_hilos(void){
 		perror("pthread_create gossip");
 		exit(1);
 
+	}
+
+	err = pthread_create(&inotify_thread, &attr, realizar_inotify, arg_inotify);
+
+	if(err){
+
+		perror("pthread_create inotify");
+
+		exit(1);
 	}
 
 	pthread_attr_destroy(&attr);

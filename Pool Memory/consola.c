@@ -60,8 +60,8 @@ bool leer_consola(void){
 		printf("========================\n");
 	}
 	else if(string_equals_ignore_case(tokens[0], "EXIT")){
+
 		printf(">>>>>EXIT<<<<<\n");
-		liberar_puntero_doble(tokens);
 
 		desconexion_pool = true;
 

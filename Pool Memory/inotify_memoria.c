@@ -1,39 +1,12 @@
 /*
  * inotify.c
  *
- *  Created on: 13 jul. 2019
+ *  Created on: 1 ago. 2019
  *      Author: utnso
  */
 
-#include"inotify_prueba.h"
 
-void inicializar_hilo_inotify(void){
-
-	pthread_attr_t attr;
-
-	pthread_attr_init(&attr);
-
-	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-
-	int err = pthread_create(&inotify_thread, &attr, realizar_inotify, arg_inotify);
-
-	if(err){
-		perror("pthread_create inotify");
-		exit(1);
-	}
-
-	pthread_attr_destroy(&attr);
-
-}
-
-void liberar_hilo_inotify(void){
-
-
-	pthread_cancel(inotify_thread);
-
-	liberar_inotify(arg_inotify);
-
-}
+#include"inotify_memoria.h"
 
 void liberar_inotify(inotify_config a_liberar){
 
@@ -43,8 +16,8 @@ void liberar_inotify(inotify_config a_liberar){
 
 	free(a_liberar);
 
-	pthread_rwlock_destroy(&semaforo_tiempo_dump);
-	pthread_rwlock_destroy(&semaforo_retardo);              //estos quedan aca y punto
+	pthread_rwlock_destroy(&semaforo_tiempo_gossiping);
+	pthread_rwlock_destroy(&semaforo_tiempo_journal);              //estos quedan aca y punto
 
 }
 
@@ -58,8 +31,8 @@ inotify_config crear_inotify(void){
 
 	nuevo->fd_watch = inotify_add_watch(nuevo->fd_inotify, nuevo->path_config, IN_OPEN | IN_MODIFY | IN_CLOSE); // OJO SI DEVUELVE -1
 
-	pthread_rwlock_init(&semaforo_tiempo_dump, NULL);
-	pthread_rwlock_init(&semaforo_retardo, NULL);     //ya fue, estos quedan aca y punto
+	pthread_rwlock_init(&semaforo_tiempo_gossiping, NULL);
+	pthread_rwlock_init(&semaforo_tiempo_journal, NULL);     //ya fue, estos quedan aca y punto
 
 	return nuevo;
 }
@@ -73,7 +46,7 @@ void* realizar_inotify(inotify_config argumento){
 
 		int  tamanio_leido;
 
-		int tamanio_buffer = sizeof(struct inotify_event) + string_length("fileSystem.config")  + 1;
+		int tamanio_buffer = sizeof(struct inotify_event) + string_length("pool.config")  + 1;
 
 		char buffer[tamanio_buffer*4];
 		char* buffer_aux;
@@ -119,18 +92,18 @@ void* realizar_inotify(inotify_config argumento){
 
 					t_config* archivo_config = config_create(argumento->path_config);
 
-					pthread_rwlock_wrlock(&semaforo_tiempo_dump);
-					tiempo_dump = config_get_int_value(archivo_config, "TIEMPO_GOSSIPING");
-					pthread_rwlock_unlock(&semaforo_tiempo_dump);
+					pthread_rwlock_wrlock(&semaforo_tiempo_gossiping);
+					tiempo_gossiping= config_get_int_value(archivo_config, "TIEMPO_GOSSIPING");
+					pthread_rwlock_unlock(&semaforo_tiempo_gossiping);
 					//SEMAFORO
 
-					pthread_rwlock_wrlock(&semaforo_retardo);
-					retardo = config_get_int_value(archivo_config, "TIEMPO_JOURNAL");
-					pthread_rwlock_unlock(&semaforo_retardo);
+					pthread_rwlock_wrlock(&semaforo_tiempo_journal);
+					tiempo_journal = config_get_int_value(archivo_config, "TIEMPO_JOURNAL");
+					pthread_rwlock_unlock(&semaforo_tiempo_journal);
 					//SEMAFORO
 
-					printf("[INOTIFY] TIEMPO DUMP: %i\n", tiempo_dump);
-					printf("[INOTIFY] RETARDO: %i\n", retardo);
+					printf("[INOTIFY] TIEMPO GOSSIPING: %i\n", tiempo_gossiping);
+					printf("[INOTIFY] TIEMPO JOURNAL: %i\n", tiempo_journal);
 
 					config_destroy(archivo_config);
 

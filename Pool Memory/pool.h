@@ -24,6 +24,7 @@
 #include"Mensajeria/mensajes.h"
 #include"gossiping.h"
 #include"consola.h"
+#include"inotify_memoria.h"
 
 //void* conectar_kernel();
 //void* conectar_lissandra();

@@ -28,13 +28,16 @@ int main(int argc , char* argv[]){
 
 	printf("si\n");
 
+	arg_inotify = crear_inotify();
+
 	inicializar_memtable(); //Inicializa la memtable como diccionario junto con su lock rw
 	printf("si\n");
+
+	inicializar_hilo_inotify();
 
 	inicializar_memorias_conectadas(); //Inicializa una lista de memorias
 
 	inicializar_compactador();
-
 
 	 /* Abre la carpeta TABLAS, y por cada tabla que haya, corre la  compactacion
 	 * y agrega dicha tabla como thread_args* al diccionario compactador
@@ -102,6 +105,8 @@ int main(int argc , char* argv[]){
 
 	liberar_dump();
 
+	liberar_hilo_inotify();
+
 	liberar_memtable();
 
 	liberar_compactadores();
@@ -116,52 +121,6 @@ int main(int argc , char* argv[]){
 	printf("Termine bien\n");
 
 	return EXIT_SUCCESS;
-
-
-}
-
-
-void main_inotify(){
-	pthread_t inotify_config;
-
-	int error_pthread;
-
-	obtener_datos_config();
-	obtener_datos_metadata();
-
-	metadata_t* metadata_actual = obtener_metadata("Tabla_A");
-	printf("Metadata inicial: \n");
-	printf("compactacion = %i\n\n\n", metadata_actual->compactacion);
-
-	free(metadata_actual);
-
-	printf("Empiezo con los hilos ;)\n");
-	error_pthread = pthread_create(&inotify_config, NULL , notificar_cambio_config,(void *) "Tabla_A");
-
-	if(error_pthread != 0){
-		perror("pthread_create");
-		exit(EXIT_FAILURE);
-	}
-
-	char* buffer_io = readline("Mete un valor a la compactacion: ");
-
-	char* path_config = obtener_path_metadata_de_tabla("Tabla_A");
-
-	t_config* metadata_config = config_create(path_config);
-
-	config_set_value(metadata_config, "COMPACTION_TIME", buffer_io);
-
-	printf("VOY A GUARDAR EN EL CONFIG\n");
-	config_save(metadata_config);
-	printf("GUARDE EN EL CONFIG\n");
-
-	config_destroy(metadata_config);
-
-	free(path_config);
-	free(buffer_io);
-
-	pthread_join(inotify_config, NULL);
-	printf("Termino todo bien\n");
 
 
 }

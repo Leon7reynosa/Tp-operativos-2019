@@ -161,10 +161,21 @@ void obtener_datos_metadata(){
 	config_destroy(g_config);
 }
 
+char* obtener_path_config(void){
+
+	char* path_config;
+
+	char* ruta = "../fileSystem.config";
+
+	memcpy(path_config, ruta, string_length(ruta) + 1);
+
+	return path_config;
+}
+
 void obtener_datos_config(){
 
 	//char* path = "../fileSystem.config";
-	char* path = "/home/utnso/lfs-compactacion/fileSystem.config";
+	char* path = "../fileSystem.config";
 
 	g_config = config_create(path);
 	char* punto_montaje_aux;

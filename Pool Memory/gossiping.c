@@ -14,7 +14,11 @@ void* auto_gossip(void* argumentos){
 
 	while(1){
 
+		pthread_rwlock_rdlock(&semaforo_tiempo_gossiping);
+
 		usleep(tiempo_gossiping * 1000);
+
+		pthread_rwlock_unlock(&semaforo_tiempo_gossiping);
 
 		printf("\n//////////////////////Auto-Gossip///////////////////////////\n\n");
 

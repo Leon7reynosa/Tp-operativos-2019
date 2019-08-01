@@ -22,6 +22,8 @@
 #include"Cliente/cliente.h"
 #include"logger.h"
 
+#include<pthread.h>
+
 bool desconexion_pool;
 
 char* ip_escucha;
@@ -42,6 +44,9 @@ int tamanio_dato;
 
 
 t_config* g_config;
+
+pthread_rwlock_t semaforo_tiempo_journal;
+pthread_rwlock_t semaforo_tiempo_gossiping;
 
 
 char* obtener_path_config(void);

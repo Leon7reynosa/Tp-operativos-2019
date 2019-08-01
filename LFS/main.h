@@ -20,6 +20,8 @@
 #include"Propiedades_Funcionamiento/Servidor/servidor.h"
 #include"Propiedades_Funcionamiento/loggers.h"
 #include"Propiedades_Funcionamiento/conexiones.h"
+#include"inotify_prueba.h"
+
 /*
 t_log* logger_lissandra;
 t_log* logger_lfs;

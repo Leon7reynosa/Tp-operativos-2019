@@ -253,7 +253,11 @@ void* auto_journal(void* argumento){
 
 	while(1){
 
+		pthread_rwlock_rdlock(&semaforo_tiempo_journal);
+
 		usleep(tiempo_journal * 1000);
+
+		pthread_rwlock_unlock(&semaforo_tiempo_journal);
 
 		printf("\n///////////////////////// Auto-Journal/////////////////////////////\n\n");
 
