@@ -21,6 +21,7 @@
 
 t_log* logger_kernel;
 t_log* logger_metricas;
+t_log* logger_gossip;
 
 t_queue* cola_new;
 

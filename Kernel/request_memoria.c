@@ -91,7 +91,7 @@ void request_add(int numero_memoria, char* consistencia){
 			//log de error
 			printf("FALLO\n");
 
-			exit(1);
+			//exit(1);
 
 	}
 

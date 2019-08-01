@@ -32,6 +32,8 @@ void* refrescar_metadata(){
 
 		memoria_utilizada = tomar_memoria_al_azar();
 
+		printf("Ya agarre una memoria\n");
+
 		if(memoria_utilizada == NULL){
 
 			printf("\n///////////////////////////FIN ACTUALIZACION METADATA//////////////////////////////\n");
@@ -45,13 +47,19 @@ void* refrescar_metadata(){
 
 		if(enviar_request(DESCRIBE, dato_describe ,memoria_utilizada->socket)){
 
+			printf("Se envio bien\n");
+
 			t_list* lista_describe = recibir_describe(memoria_utilizada->socket);
 
 			if(!list_is_empty(lista_describe)){
 
+				printf("la lista no esta vacia\n");
+
 				mostrar_lista_describe(lista_describe);
 
 				actualizar_metadata(lista_describe);
+
+				printf("ya actualice\n");
 
 			}else{
 

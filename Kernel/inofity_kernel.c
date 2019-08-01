@@ -85,12 +85,12 @@ void* realizar_inotify(inotify_config argumento){
 					t_config* archivo_config = config_create(argumento->path_config);
 
 					pthread_rwlock_wrlock(&semaforo_refresh_metadata);
-					tiempo_refresh_metadata = config_get_int_value(archivo_config, "REFRESH_METADATA");
+					tiempo_refresh_metadata = config_get_int_value(archivo_config, "METADATA_REFRESH");
 					pthread_rwlock_unlock(&semaforo_refresh_metadata);
 					//SEMAFORO
 
 					pthread_rwlock_wrlock(&semaforo_tiempo_ejecucion);
-					tiempo_ejecucion = config_get_int_value(archivo_config, "RETARDO_CICLO_EJECUCION");
+					tiempo_ejecucion = config_get_int_value(archivo_config, "SLEEP_EJECUCION");
 					pthread_rwlock_unlock(&semaforo_tiempo_ejecucion);
 					//SEMAFORO
 
@@ -98,10 +98,13 @@ void* realizar_inotify(inotify_config argumento){
 					quantum = config_get_int_value(archivo_config, "QUANTUM");
 					pthread_rwlock_unlock(&semaforo_quantum);
 
+					printf("[INOTIFY] REFRESH METADATA: %i\n", tiempo_refresh_metadata);
+					printf("[INOTIFY] TIEMPO EJECUCION: %i\n", tiempo_ejecucion);
+					printf("[INOTIFY] QUANTUM: %i\n", quantum);
+
 					config_destroy(archivo_config);
 
-
-					printf("[INOTIFY] Se Cerro el metadata.config");
+					printf("[INOTIFY] Se Cerro el metadata.config\n");
 
 				}else if(cambio_config->mask & IN_CLOSE_NOWRITE){
 

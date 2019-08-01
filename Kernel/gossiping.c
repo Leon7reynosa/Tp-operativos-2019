@@ -19,7 +19,7 @@ void* realizar_gossiping(){
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
-		printf("\n////////////////////INICIANDO EL GOSSIPING/////////////////////////\n");
+		log_info(logger_gossip , "Iniciando el GOSSIPING KERNEL");
 
 		pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
@@ -29,7 +29,9 @@ void* realizar_gossiping(){
 
 		if(memoria_utilizada != NULL){
 
-			printf(">>La Memoria Utilizada sera la Memoria N° %d\n" , memoria_utilizada->numero_memoria) ;
+			//printf(">>La Memoria Utilizada sera la Memoria N° %d\n" , memoria_utilizada->numero_memoria) ;
+
+			log_info(logger_gossip , "MEMORIA utilizada: memoria %d" , memoria_utilizada->numero_memoria);
 
 		}
 
@@ -39,6 +41,8 @@ void* realizar_gossiping(){
 		while((memoria_utilizada != NULL) && !terminaste){
 
 			printf("Fallo el gossiping, lo intento denuevo\n");
+
+			log_error(logger_gossip, "Fallo el gossiping, lo intento de nuevo");
 
 			pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
@@ -52,9 +56,11 @@ void* realizar_gossiping(){
 
 		if( memoria_utilizada == NULL ){
 			printf(">>No hay memorias conectadas<<\n");
+			log_error(logger_gossip , "No hay memorias conectadas");
 		}
 
-		printf("\n///////////////////////FIN GOSSIP///////////////////////////////\n");
+		//printf("\n///////////////////////FIN GOSSIP///////////////////////////////\n");
+		log_info(logger_gossip , "Fin del GOSSIPING KERNEL\n");
 	}
 }
 
@@ -259,7 +265,7 @@ bool recibir_actualizacion_gossiping(memoria_t* memoria){
 
 	memoria_t* dato_memoria_ingresar;
 
-	printf("\n>>Cantidad de memorias : %d\n"  , *cantidad_memorias);
+	//printf("\n>>Cantidad de memorias : %d\n"  , *cantidad_memorias);
 
 	for(int i = 0 ; i < *cantidad_memorias ; i++){
 
@@ -277,16 +283,19 @@ bool recibir_actualizacion_gossiping(memoria_t* memoria){
 
 		recv(memoria->socket, &(memoria_recv->puerto) , sizeof(int) , 0 );
 
-		printf("\n>>Me llego la memoria: \n\n");
+		log_info(logger_gossip , "Me llego la memoria: %d" , memoria_recv->numero_memoria);
 
-		printf("NUMERO: %i\n", memoria_recv->numero_memoria);
-		printf("SIZE IP: %i\n", memoria_recv->ip->size);
-		printf("IP: %s\n", (char *)memoria_recv->ip->buffer);
-		printf("PUERTO: %i\n", memoria_recv->puerto);
+//		//printf("\n>>Me llego la memoria: \n\n");
+
+//
+//		//printf("NUMERO: %i\n", memoria_recv->numero_memoria);
+//		printf("SIZE IP: %i\n", memoria_recv->ip->size);
+//		printf("IP: %s\n", (char *)memoria_recv->ip->buffer);
+//		printf("PUERTO: %i\n", memoria_recv->puerto);
 
 		if(!existe_en_tabla_gossiping(memoria_recv)){
 
-			printf("\n>>La memoria no existe en tablaa gossiping<<\n\n");
+//			printf("\n>>La memoria no existe en tablaa gossiping<<\n\n");
 
 			dato_memoria_ingresar = convertir_a_memoria_t(memoria_recv);
 
@@ -295,7 +304,7 @@ bool recibir_actualizacion_gossiping(memoria_t* memoria){
 
 			if(dato_memoria_ingresar->socket > 0){
 
-				log_info(logger_kernel, "SE ESTABLECION LA CONEXION CON LA MEMORIA %d.\n" ,
+				log_info(logger_gossip, "SE ESTABLECION LA CONEXION CON LA MEMORIA %d." ,
 						dato_memoria_ingresar->numero_memoria);
 
 				dato_memoria_ingresar->conectado = true;
@@ -305,7 +314,7 @@ bool recibir_actualizacion_gossiping(memoria_t* memoria){
 
 				dato_memoria_ingresar->conectado = false;
 
-				log_error(logger_kernel, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.\n",
+				log_error(logger_gossip, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.",
 						dato_memoria_ingresar->numero_memoria);
 
 			}
@@ -336,6 +345,8 @@ void ingresar_a_tabla_gossiping(memoria_t* dato_memoria_ingresar){
 	list_add(tabla_gossiping, dato_memoria_ingresar);
 
 	printf("\n>Memoria %d Agregada a Tabla de Gossiping--\n" , dato_memoria_ingresar->numero_memoria);
+
+	log_info(logger_gossip , "La Memoria %d agregada a la tabla de gossiping");
 
 	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 

@@ -1,0 +1,48 @@
+[INFO] 14:35:11:683 compactador/(15406:15420): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARINOS
+[INFO] 14:35:11:683 compactador/(15406:15420): Obtengo la metadata
+[INFO] 14:35:11:683 compactador/(15406:15420): Los datos finales
+[INFO] 14:35:11:683 compactador/(15406:15420): Particion 0 -> bloque: 2, tiene = 1564680204;983;Orca
+1564680190;33;Pulpo
+1564680198;22;Delfin
+1564680207;310;Calamar
+
+[INFO] 14:35:11:683 compactador/(15406:15420): Obtengo los datos de los temporales
+[INFO] 14:35:11:684 compactador/(15406:15420): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARINOS
+
+[INFO] 14:35:11:684 compactador/(15406:15410): INICIO DE LA -- COMPACTACION -- DE LA TABLA BEBIDAS
+[INFO] 14:35:11:684 compactador/(15406:15410): Obtengo la metadata
+[INFO] 14:35:11:684 compactador/(15406:15410): Los datos finales
+[INFO] 14:35:11:685 compactador/(15406:15410): Particion 0 -> bloque: 18, esta vacio
+[INFO] 14:35:11:685 compactador/(15406:15410): Particion 1 -> bloque: 19, esta vacio
+[INFO] 14:35:11:685 compactador/(15406:15410): Particion 2 -> bloque: 20, esta vacio
+[INFO] 14:35:11:685 compactador/(15406:15410): Particion 3 -> bloque: 21, esta vacio
+[INFO] 14:35:11:685 compactador/(15406:15410): Particion 4 -> bloque: 22, tiene = 1564680255;10;Pepsi
+
+[INFO] 14:35:11:685 compactador/(15406:15410): Particion 5 -> bloque: 23, esta vacio
+[INFO] 14:35:11:685 compactador/(15406:15410): Obtengo los datos de los temporales
+[INFO] 14:35:11:687 compactador/(15406:15410): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA BEBIDAS
+
+[INFO] 14:35:21:687 compactador/(15406:15420): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARINOS
+[INFO] 14:35:21:687 compactador/(15406:15420): Obtengo la metadata
+[INFO] 14:35:21:687 compactador/(15406:15420): Los datos finales
+[INFO] 14:35:21:687 compactador/(15406:15420): Particion 0 -> bloque: 2, tiene = 1564680204;983;Orca
+1564680190;33;Pulpo
+1564680198;22;Delfin
+1564680207;310;Calamar
+
+[INFO] 14:35:21:687 compactador/(15406:15420): Obtengo los datos de los temporales
+[INFO] 14:35:21:688 compactador/(15406:15420): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARINOS
+
+[INFO] 14:35:21:688 compactador/(15406:15410): INICIO DE LA -- COMPACTACION -- DE LA TABLA BEBIDAS
+[INFO] 14:35:21:688 compactador/(15406:15410): Obtengo la metadata
+[INFO] 14:35:21:688 compactador/(15406:15410): Los datos finales
+[INFO] 14:35:21:688 compactador/(15406:15410): Particion 0 -> bloque: 18, esta vacio
+[INFO] 14:35:21:688 compactador/(15406:15410): Particion 1 -> bloque: 19, esta vacio
+[INFO] 14:35:21:688 compactador/(15406:15410): Particion 2 -> bloque: 20, esta vacio
+[INFO] 14:35:21:688 compactador/(15406:15410): Particion 3 -> bloque: 21, esta vacio
+[INFO] 14:35:21:688 compactador/(15406:15410): Particion 4 -> bloque: 22, tiene = 1564680255;10;Pepsi
+
+[INFO] 14:35:21:689 compactador/(15406:15410): Particion 5 -> bloque: 23, esta vacio
+[INFO] 14:35:21:689 compactador/(15406:15410): Obtengo los datos de los temporales
+[INFO] 14:35:21:691 compactador/(15406:15410): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA BEBIDAS
+

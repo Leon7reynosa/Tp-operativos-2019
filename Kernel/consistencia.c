@@ -496,6 +496,20 @@ int obtener_index_memoria(int key){
 }
 
 
+void agregar_a_metadata(t_list* dato_describe){
+
+	Metadata dato_metadata = (Metadata) list_get(dato_describe, 0);
+
+	pthread_rwlock_wrlock(&semaforo_registro_tabla);
+
+	if(!dictionary_has_key(registro_tabla, dato_metadata->tabla)){
+		dictionary_put(registro_tabla, dato_metadata->tabla , dato_metadata);
+	}
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
+
+}
+
 void actualizar_metadata(t_list* datos_describe){
 
 	pthread_rwlock_wrlock(&semaforo_registro_tabla);

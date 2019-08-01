@@ -143,6 +143,8 @@ int ejecutar_request(char* request_lql){
 
 				if( !existe_en_registro_tabla(nombre_tabla)){
 
+					printf("\n>No eciste la TABLA %s en el registro de tabla\n", nombre_tabla);
+
 					log_error(logger_kernel , "-La Tabla %s no existe en el registro de tablas.-" , nombre_tabla);
 
 					return 0;
@@ -155,6 +157,8 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
+					printf("\n>NO existen memorias para esa consistencia\n");
+
 					return 0;
 				}
 
@@ -165,6 +169,8 @@ int ejecutar_request(char* request_lql){
 				if ( enviar_request(INSERT, insert_enviar, memoria_utilizada->socket) == false ){
 
 					log_error(logger_kernel, "-FALLO al enviar el INSERT con la MEMORIA %d" , memoria_utilizada->numero_memoria);
+
+					printf("\n>Fallo al enviar el insert a la memoria\n");
 
 					memoria_utilizada->conectado = false;
 
@@ -179,6 +185,8 @@ int ejecutar_request(char* request_lql){
 				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
 					log_error(logger_kernel,  "-Se RECIBIO un ERROR.-");
+
+					printf("\n>Se RECIBIO un estado de ERROR\n");
 
 					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
@@ -362,8 +370,13 @@ int ejecutar_request(char* request_lql){
 
 			mostrar_lista_describe(lista_describe);
 
-			actualizar_metadata(lista_describe);
+			if(cantidad_parametros == 2){
 
+				agregar_a_metadata(lista_describe);
+
+			}else{
+				actualizar_metadata(lista_describe);
+			}
 			list_destroy(lista_describe);
 
 			return 1;
