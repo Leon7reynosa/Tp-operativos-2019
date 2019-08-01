@@ -19,9 +19,8 @@ void* consola(void* argumento){
 
 	leido = readline("");
 
-	printf("Leido : %s\n" , leido);
-
 	while(!string_equals_ignore_case(leido, "exit")){
+
 
 		codigo = identificar_request(leido);
 

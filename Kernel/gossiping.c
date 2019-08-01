@@ -207,7 +207,7 @@ bool actualizar_gossiping(memoria_t* memoria){
 
 	bool respuesta;
 
-	if(memoria == NULL){
+	if(memoria == NULL || !memoria->conectado){
 
 		return false;
 
@@ -226,6 +226,8 @@ bool actualizar_gossiping(memoria_t* memoria){
 	memcpy((buffer +  sizeof(cod_operacion)) , &cantidad_memorias , sizeof(int));
 
 	if(  (send(memoria->socket , buffer, sizeof(cod_operacion) + sizeof(int) , 0) ) <= 0 ){
+
+		log_error(logger_gossip, "Fallo al enviar la request");
 
 		memoria->conectado = false;
 

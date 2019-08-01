@@ -11,7 +11,7 @@ char* obtener_path_config(void){
 
 	char* path_config = string_new();
 
-	string_append(&path_config, "/home/utnso/memoria-1/pool.config");
+	string_append(&path_config, "../pool.config");
 
 	return path_config;
 }

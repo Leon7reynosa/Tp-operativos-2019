@@ -29,18 +29,20 @@ bool es_un_numero(char* numero){
 
 	int i = 0;
 
+	string_trim_left(&numero);
+
 	if(numero == NULL){
 
 		return false;
 	}
 
-	if(string_equals_ignore_case(numero , "\n") || string_equals_ignore_case(numero , "\0") || string_is_empty(numero)){
+	if(string_equals_ignore_case(numero , "\n") || string_is_empty(numero)){
 
 		return false ;
 
 	}
 
-	while( numero[i] != NULL ){
+	while( numero[i] != '\0' ){
 
 		if( !isdigit(numero[i]) ){
 

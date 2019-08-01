@@ -45,7 +45,6 @@ t_list* recibir_describe(int conexion){
 	char* consistencia_recibida;
 	int particiones_recibidas, compactacion_recibida;
 
-	printf("ESTOY EN RECIBIR DESCRIBE\n");
 
 	t_list* datos_metadata = list_create();
 

@@ -32,8 +32,6 @@ void* refrescar_metadata(){
 
 		memoria_utilizada = tomar_memoria_al_azar();
 
-		printf("Ya agarre una memoria: %d\n", memoria_utilizada->numero_memoria);
-
 		if(memoria_utilizada == NULL){
 
 			printf("\n///////////////////////////FIN ACTUALIZACION METADATA//////////////////////////////\n");
@@ -41,6 +39,8 @@ void* refrescar_metadata(){
 			continue;
 
 		}
+
+		printf("Ya agarre una memoria: %d\n", memoria_utilizada->numero_memoria);
 
 		pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
 
@@ -101,8 +101,6 @@ char* obtener_path_script(char* archivo){
 	char* path = string_new();
 
 	string_append(&path , punto_montaje);
-
-	string_append(&path, "/");
 
 	string_append(&path, "Scripts");
 

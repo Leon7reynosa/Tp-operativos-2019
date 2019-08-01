@@ -13,21 +13,17 @@ void creacion_del_config(){
 	FILE* config_kernel = fopen("kernel.config" , "w");
 	fclose(config_kernel);
 
-	g_config = config_create("kernel.config");
-	printf("kjajaa\n");
+	g_config = config_create("../kernel.config");
 	config_set_value(g_config, "IP_MEMORIA", "192.168.1.50");
 	config_set_value(g_config, "PUERTO_MEMORIA", "8001");
 	config_set_value(g_config, "NUMERO_MEMORIA" , "1");
 	config_set_value(g_config, "QUANTUM", "3");
-	printf("kjajaa\n");
 	config_set_value(g_config, "MULTIPROCESAMIENTO", "1");
 	config_set_value(g_config, "REFRESH_METADATA", "15000");
 	config_set_value(g_config, "RETARDO_CICLO_EJECUCION", "10");
 	config_set_value(g_config, "TIEMPO_GOSSIPING_KERNEL", "30000");
 	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel");
 	//capaz necesitemos un punto de montaje
-
-	printf("kjajaa\n");
 	config_save(g_config);
 	config_destroy(g_config);
 
@@ -75,8 +71,6 @@ char* obtener_path_config(){
 	char* path = string_new();
 
 	string_append(&path, punto_montaje );
-
-	string_append(&path, "/");
 
 	string_append(&path , "kernel.config");
 

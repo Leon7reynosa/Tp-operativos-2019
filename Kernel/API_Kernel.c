@@ -308,15 +308,9 @@ int ejecutar_request(char* request_lql){
 
 				log_info(logger_kernel, "---SE REALIZARA UN DESCRIBE GLOBAL--");
 
-				printf("\nSe realizara un DESCRIBE GLOBAL\n");
-
 				describe_enviar = crear_dato_describe(NULL);  //creo que hay que lierar el dato este
 
-				printf("\n[DESCRIBE] SE CREO EL DATO\n");
-
 				memoria_utilizada = tomar_memoria_al_azar();
-
-				printf("[DESCRIBE] SE OBTUVO LA MEMORIA\n");
 
 				if(memoria_utilizada == NULL){
 
@@ -324,11 +318,7 @@ int ejecutar_request(char* request_lql){
 
 				}
 
-				printf("[DESCRIBE] Voy a agarrrar el semaforo\n");
-
 				pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
-
-				printf("[DESCRIBE] No agarre el semaforo\n");
 
 				mostrar_memoria_utilizada(memoria_utilizada);
 

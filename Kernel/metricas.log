@@ -518,3 +518,423 @@
 [INFO] 15:06:40:651 Metricas/(17896:17902): Memoria 4 : 
 [INFO] 15:06:40:651 Metricas/(17896:17902): 0 Ejecuciones  ->  0 % Memory load
 
+[INFO] 16:26:48:223 Metricas/(14943:14949): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): >>STRONG CONSISTENCY<<
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Read Latency : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Write Latency : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Reads : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Writes : 0
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Read Latency : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Write Latency : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Reads : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Writes : 0
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Read Latency : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Write Latency : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Reads : 0
+[INFO] 16:26:48:223 Metricas/(14943:14949): >Writes : 0
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): --->MEMORY LOAD<---
+
+[INFO] 16:26:48:223 Metricas/(14943:14949): Memoria 1 : 
+[INFO] 16:26:48:223 Metricas/(14943:14949): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:30:53:833 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:30:53:833 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:30:53:833 Metricas/(15143:15149): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:31:23:834 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:31:23:834 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:31:23:834 Metricas/(15143:15149): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Writes : 1
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:31:53:834 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:31:53:834 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:31:53:834 Metricas/(15143:15149): 1 Ejecuciones  ->  100 % Memory load
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:32:23:835 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:32:23:835 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:32:23:835 Metricas/(15143:15149): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:32:53:839 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:32:53:839 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:32:53:839 Metricas/(15143:15149): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Writes : 1
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:33:23:839 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:33:23:839 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:33:23:839 Metricas/(15143:15149): 1 Ejecuciones  ->  100 % Memory load
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:33:53:840 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:33:53:840 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:33:53:840 Metricas/(15143:15149): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): >>STRONG CONSISTENCY<<
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Writes : 1
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Read Latency : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Write Latency : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Reads : 0
+[INFO] 16:34:23:840 Metricas/(15143:15149): >Writes : 0
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): --->MEMORY LOAD<---
+
+[INFO] 16:34:23:840 Metricas/(15143:15149): Memoria 1 : 
+[INFO] 16:34:23:840 Metricas/(15143:15149): 1 Ejecuciones  ->  100 % Memory load
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): >>STRONG CONSISTENCY<<
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Read Latency : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Write Latency : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Reads : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Writes : 0
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Read Latency : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Write Latency : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Reads : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Writes : 0
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Read Latency : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Write Latency : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Reads : 0
+[INFO] 16:38:22:11 Metricas/(15296:15302): >Writes : 0
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): --->MEMORY LOAD<---
+
+[INFO] 16:38:22:11 Metricas/(15296:15302): Memoria 1 : 
+[INFO] 16:38:22:11 Metricas/(15296:15302): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): >>STRONG CONSISTENCY<<
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Read Latency : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Write Latency : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Reads : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Writes : 0
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Read Latency : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Write Latency : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Reads : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Writes : 1
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Read Latency : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Write Latency : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Reads : 0
+[INFO] 16:38:52:12 Metricas/(15296:15302): >Writes : 0
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): --->MEMORY LOAD<---
+
+[INFO] 16:38:52:12 Metricas/(15296:15302): Memoria 1 : 
+[INFO] 16:38:52:12 Metricas/(15296:15302): 1 Ejecuciones  ->  100 % Memory load
+
+[INFO] 16:41:15:483 Metricas/(15409:15415): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): >>STRONG CONSISTENCY<<
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:41:15:484 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): --->MEMORY LOAD<---
+
+[INFO] 16:41:15:484 Metricas/(15409:15415): Memoria 1 : 
+[INFO] 16:41:15:484 Metricas/(15409:15415): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): >>STRONG CONSISTENCY<<
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:41:45:484 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): --->MEMORY LOAD<---
+
+[INFO] 16:41:45:484 Metricas/(15409:15415): Memoria 1 : 
+[INFO] 16:41:45:484 Metricas/(15409:15415): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): >>STRONG CONSISTENCY<<
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:42:15:485 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): --->MEMORY LOAD<---
+
+[INFO] 16:42:15:485 Metricas/(15409:15415): Memoria 1 : 
+[INFO] 16:42:15:485 Metricas/(15409:15415): 0 Ejecuciones  ->  0 % Memory load
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): >>STRONG CONSISTENCY<<
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Read Latency : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Write Latency : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Reads : 0
+[INFO] 16:42:45:486 Metricas/(15409:15415): >Writes : 0
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): --->MEMORY LOAD<---
+
+[INFO] 16:42:45:486 Metricas/(15409:15415): Memoria 1 : 
+[INFO] 16:42:45:486 Metricas/(15409:15415): 0 Ejecuciones  ->  0 % Memory load
+

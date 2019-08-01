@@ -43,13 +43,9 @@ int main (int argc , char* argv[]){
 
 	inicializar_metricas();
 
-	printf("Voy a crear los loggers\n");
-
 	inicializar_loggers();
 
 	//creacion_del_config();
-
-	printf("Voy a agarrar el config \n");
 
 	obtener_datos_config();
 
