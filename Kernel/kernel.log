@@ -1,0 +1,123 @@
+[INFO] 01:03:26:699 kernel/(16670:16670): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:03:36:701 kernel/(16670:16674): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:05:27:466 kernel/(16759:16759): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:05:37:470 kernel/(16759:16763): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:07:09:84 kernel/(16970:16970): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:07:19:100 kernel/(16970:16974): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:17:29:626 kernel/(18234:18234): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:17:39:638 kernel/(18234:18238): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:17:42:286 kernel/(18234:18243):   >>>NUEVA REQUEST: CREATE TABLA_A EC 2 20000<<< 
+[ERROR] 01:17:42:286 kernel/(18234:18243): -NO se encuentran memorias para esa consistencia.-
+[ERROR] 01:17:42:286 kernel/(18234:18243): FALLO al ejecutar la REQUEST:  CREATE TABLA_A EC 2 20000.
+[INFO] 01:17:42:286 kernel/(18234:18243): >>FIN de la REQUEST<<
+
+[INFO] 01:17:46:558 kernel/(18234:18243):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:20:21:907 kernel/(18332:18332): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:20:29:380 kernel/(18332:18341):   >>>NUEVA REQUEST: CREATE TABLAA EC 1 20000<<< 
+[ERROR] 01:20:29:381 kernel/(18332:18341): -NO se encuentran memorias para esa consistencia.-
+[ERROR] 01:20:29:381 kernel/(18332:18341): FALLO al ejecutar la REQUEST:  CREATE TABLAA EC 1 20000.
+[INFO] 01:20:29:381 kernel/(18332:18341): >>FIN de la REQUEST<<
+
+[INFO] 01:20:31:917 kernel/(18332:18336): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:20:32:865 kernel/(18332:18341):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:21:22:413 kernel/(18385:18385): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:21:30:199 kernel/(18385:18394):   >>>NUEVA REQUEST: CREATE TABLA_A EC 1 200000<<< 
+[ERROR] 01:21:30:199 kernel/(18385:18394): -NO se encuentran memorias para esa consistencia.-
+[ERROR] 01:21:30:200 kernel/(18385:18394): FALLO al ejecutar la REQUEST:  CREATE TABLA_A EC 1 200000.
+[INFO] 01:21:30:200 kernel/(18385:18394): >>FIN de la REQUEST<<
+
+[INFO] 01:21:32:424 kernel/(18385:18389): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:21:33:327 kernel/(18385:18394):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:22:05:156 kernel/(18456:18456): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:22:13:750 kernel/(18456:18465):   >>>NUEVA REQUEST: CREATE TABLA_A Ec 2 20000<<< 
+[ERROR] 01:22:13:750 kernel/(18456:18465): -NO se encuentran memorias para esa consistencia.-
+[ERROR] 01:22:13:750 kernel/(18456:18465): FALLO al ejecutar la REQUEST:  CREATE TABLA_A Ec 2 20000.
+[INFO] 01:22:13:750 kernel/(18456:18465): >>FIN de la REQUEST<<
+
+[INFO] 01:22:15:162 kernel/(18456:18460): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:22:16:702 kernel/(18456:18465):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:23:55:800 kernel/(18554:18554): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:24:04:483 kernel/(18554:18563):   >>>NUEVA REQUEST: CREATE TABLA_A EC 2 200000<<< 
+[ERROR] 01:24:04:483 kernel/(18554:18563): -NO se encuentran memorias para esa consistencia.-
+[ERROR] 01:24:04:483 kernel/(18554:18563): FALLO al ejecutar la REQUEST:  CREATE TABLA_A EC 2 200000.
+[INFO] 01:24:04:483 kernel/(18554:18563): >>FIN de la REQUEST<<
+
+[INFO] 01:24:05:804 kernel/(18554:18558): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:24:08:523 kernel/(18554:18563):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:25:27:309 kernel/(18743:18743): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:25:34:913 kernel/(18743:18752):   >>>NUEVA REQUEST: CREATE TABLA_A EC 2 2000000<<< 
+[ERROR] 01:25:34:913 kernel/(18743:18752): -NO se encuentran memorias para esa consistencia.-
+[ERROR] 01:25:34:913 kernel/(18743:18752): FALLO al ejecutar la REQUEST:  CREATE TABLA_A EC 2 2000000.
+[INFO] 01:25:34:913 kernel/(18743:18752): >>FIN de la REQUEST<<
+
+[INFO] 01:25:37:327 kernel/(18743:18747): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:25:37:808 kernel/(18743:18752):   >>>NUEVA REQUEST: add memory1 t o ec<<< 
+[ERROR] 01:25:37:809 kernel/(18743:18752): -NO se encuentra la MEMORIA en la tabla gossip.-
+[ERROR] 01:25:37:809 kernel/(18743:18752): -NO se podra ingresar la MEMORIA.-
+[INFO] 01:25:37:809 kernel/(18743:18752): >>FIN de la REQUEST<<
+
+[INFO] 01:25:42:272 kernel/(18743:18752):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:25:42:273 kernel/(18743:18752): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:25:42:273 kernel/(18743:18752): >>FIN de la REQUEST<<
+
+[INFO] 01:28:35:584 kernel/(18805:18805): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:28:45:591 kernel/(18805:18809): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:28:49:635 kernel/(18805:18814):   >>>NUEVA REQUEST: add memory 2 to ec<<< 
+[INFO] 01:28:49:635 kernel/(18805:18814): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:28:49:635 kernel/(18805:18814): >>FIN de la REQUEST<<
+
+[INFO] 01:28:53:411 kernel/(18805:18814):   >>>NUEVA REQUEST: add memory 2 to ec<<< 
+[INFO] 01:28:53:411 kernel/(18805:18814): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:28:53:412 kernel/(18805:18814): >>FIN de la REQUEST<<
+
+[INFO] 01:28:58:267 kernel/(18805:18814):   >>>NUEVA REQUEST: add memory 2 to ec<<< 
+[INFO] 01:28:58:267 kernel/(18805:18814): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:28:58:267 kernel/(18805:18814): >>FIN de la REQUEST<<
+
+[INFO] 01:29:04:627 kernel/(18805:18814):   >>>NUEVA REQUEST: add memory 3 to ec<<< 
+[ERROR] 01:29:04:627 kernel/(18805:18814): -NO se encuentra la MEMORIA en la tabla gossip.-
+[ERROR] 01:29:04:627 kernel/(18805:18814): -NO se podra ingresar la MEMORIA.-
+[INFO] 01:29:04:627 kernel/(18805:18814): >>FIN de la REQUEST<<
+
+[INFO] 01:29:11:835 kernel/(18805:18814):   >>>NUEVA REQUEST: add memory 2 to sc<<< 
+[INFO] 01:29:11:835 kernel/(18805:18814): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:29:11:835 kernel/(18805:18814): >>FIN de la REQUEST<<
+
+[INFO] 01:39:06:416 kernel/(19137:19137): -Se establecio la conexion con la MEMORIA 1.-
+[INFO] 01:39:10:332 kernel/(19137:19146):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:39:10:332 kernel/(19137:19146): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:39:10:332 kernel/(19137:19146): >>FIN de la REQUEST<<
+
+[INFO] 01:39:15:284 kernel/(19137:19146):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:39:15:284 kernel/(19137:19146): >>FIN de la REQUEST<<
+
+[INFO] 01:39:16:429 kernel/(19137:19141): SE ESTABLECION LA CONEXION CON LA MEMORIA 2.
+
+[INFO] 01:39:19:453 kernel/(19137:19146):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:39:19:453 kernel/(19137:19146): >>FIN de la REQUEST<<
+
+[INFO] 01:39:27:244 kernel/(19137:19146):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 01:39:27:244 kernel/(19137:19146): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:39:27:244 kernel/(19137:19146): >>FIN de la REQUEST<<
+
+[INFO] 01:39:32:395 kernel/(19137:19146):   >>>NUEVA REQUEST: add memory 1 to ec<<< 
+[INFO] 01:39:32:395 kernel/(19137:19146): >>FIN de la REQUEST<<
+
+[INFO] 01:39:36:907 kernel/(19137:19146):   >>>NUEVA REQUEST: add memory 1 to sc<<< 
+[INFO] 01:39:36:907 kernel/(19137:19146): >>FIN de la REQUEST<<
+
+[INFO] 01:39:40:259 kernel/(19137:19146):   >>>NUEVA REQUEST: add memory 1 to shc<<< 
+[INFO] 01:39:40:259 kernel/(19137:19146): -Se realizara la request JOURNAL.-
+[INFO] 01:39:40:259 kernel/(19137:19146): -Se ingreso la MEMORIA CORRECTAMENTE.-
+[INFO] 01:39:40:260 kernel/(19137:19146): >>FIN de la REQUEST<<
+

@@ -40,7 +40,11 @@ void agregar_a_consistencia(cod_consistencia codigo, memoria_t* memoria_a_guarda
 
 		case EC:
 
+			printf("[ADD] Voy a agarrar el semaforo ec\n");
+
 			pthread_rwlock_wrlock(&semaforo_eventual_c);
+
+			printf("[ADD] Solte el semaforo ec\n");
 
 			list_add(Eventual_C, memoria_a_guardar);
 
@@ -404,6 +408,8 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 			pthread_rwlock_rdlock(&semaforo_eventual_c);
 
 			if(list_is_empty(Eventual_C)){
+
+				pthread_rwlock_unlock(&semaforo_eventual_c);
 
 				return NULL;
 

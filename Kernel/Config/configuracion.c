@@ -35,7 +35,7 @@ void creacion_del_config(){
 
 void obtener_datos_config(){
 
-	g_config = config_create("/home/utnso/kernel-compactacion/kernel.config");
+	g_config = config_create("../kernel.config");
 	ip_memoria = string_new();
 	char* ip_auxiliar;
 	char* punto_montaje_aux;
@@ -45,14 +45,11 @@ void obtener_datos_config(){
 	numero_memoria_seed = config_get_int_value(g_config, "NUMERO_MEMORIA");
 	quantum = config_get_int_value(g_config , "QUANTUM");
 	grado_multiprocesamiento = config_get_int_value(g_config , "MULTIPROCESAMIENTO");
-	printf("hla\n");
 	tiempo_refresh_metadata = config_get_int_value(g_config, "METADATA_REFRESH");
 	tiempo_ejecucion = config_get_int_value(g_config, "SLEEP_EJECUCION");
 	tiempo_gossiping_kernel = config_get_int_value(g_config , "TIEMPO_GOSSIPING_KERNEL");
 	punto_montaje_aux = config_get_string_value(g_config, "PUNTO_MONTAJE");
-	printf("hla\n");
 	string_append(&ip_memoria, ip_auxiliar);
-	printf("hla\n");
 	punto_montaje = malloc(strlen(punto_montaje_aux) + 1);
 	memcpy(punto_montaje , punto_montaje_aux , strlen(punto_montaje_aux) + 1);
 

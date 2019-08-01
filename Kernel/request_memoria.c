@@ -23,9 +23,25 @@ void request_add(int numero_memoria, char* consistencia){
 
 	}
 
+	printf("[ADD] Voy a agarrar el semaforo\n");
+
 	pthread_rwlock_wrlock(&memoria_agregar->semaforo_memoria);
 
+	if(ya_estas_en_consistencia(memoria_agregar, codigo)){
+
+		printf("\n> La MEMORIA %d ya esta en la consistencia\n" , memoria_agregar->numero_memoria );
+
+		pthread_rwlock_unlock(&memoria_agregar->semaforo_memoria);
+
+		return;
+
+	}
+
+	printf("[ADD] Agarre el semaforo\n");
+
 	if( !memoria_agregar->conectado){
+
+		printf("[ADD]NO ESTA CONECTADA\n");
 
 		memoria_agregar->socket = conectar_servidor(memoria_agregar->ip , memoria_agregar->puerto);
 
@@ -50,6 +66,8 @@ void request_add(int numero_memoria, char* consistencia){
 
 
 	}
+
+	printf("[ADD] ESTA CONECTADA\n");
 
 	pthread_rwlock_unlock(&memoria_agregar->semaforo_memoria);
 
@@ -80,6 +98,69 @@ void request_add(int numero_memoria, char* consistencia){
 	log_info(logger_kernel, "-Se ingreso la MEMORIA CORRECTAMENTE.-");
 
 	printf("\n>Se ingreso la MEMORIA CORRECTAMENTE\n");
+
+}
+
+bool ya_estas_en_consistencia( memoria_t* memoria , cod_consistencia codigo){
+
+	bool resultado;
+
+	bool _sos_esta_memoria(void* _memoria_encontrada){
+
+		memoria_t* memoria_encontrada = (memoria_t* ) _memoria_encontrada;
+
+		return memoria == memoria_encontrada;
+
+	}
+
+	switch(codigo){
+
+		case SC:
+
+			pthread_rwlock_rdlock(&semaforo_strong_c);
+
+			if(memoria == Strong_C){
+
+				resultado = true;
+
+			}else{
+
+				resultado = false;
+			}
+
+			pthread_rwlock_unlock(&semaforo_strong_c);
+
+
+			break;
+
+		case EC:
+
+			pthread_rwlock_rdlock(&semaforo_eventual_c);
+
+			resultado = list_any_satisfy(Eventual_C , _sos_esta_memoria);
+
+			pthread_rwlock_unlock(&semaforo_eventual_c);
+
+			break;
+
+		case SHC:
+			pthread_rwlock_rdlock(&semaforo_strong_hash_c);
+
+			resultado = list_any_satisfy(Strong_Hash_C , _sos_esta_memoria);
+
+			pthread_rwlock_unlock(&semaforo_strong_hash_c);
+
+			break;
+
+		default:
+
+			return false;
+
+	}
+
+
+	return resultado;
+
 
 }
 

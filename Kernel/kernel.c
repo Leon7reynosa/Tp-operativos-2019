@@ -43,14 +43,20 @@ int main (int argc , char* argv[]){
 
 	inicializar_metricas();
 
+	printf("Voy a crear los loggers\n");
+
 	inicializar_loggers();
 
 	//creacion_del_config();
 
+	printf("Voy a agarrar el config \n");
+
 	obtener_datos_config();
-	printf("caa\n");
+
+	printf("ya agarre el config-> multiprocesamiento:  %d\n" , grado_multiprocesamiento);
+
 	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  numero_memoria_seed); //si pasa pasa, modioficarlo en el config
-	printf("caa\n");
+
 	ingresar_a_tabla_gossiping(memoria_principal);
 
 	conexion_memoria = memoria_principal->socket;
@@ -159,8 +165,8 @@ void inicializar_semaforos_metricas(){
 
 void inicializar_loggers(){
 
-	logger_kernel = log_create("/home/utnso/kernel-compactacion/kernel.log" , "kernel" , 0 , LOG_LEVEL_INFO);
-	logger_metricas = log_create("/home/utnso/kernel-compactacion/metricas.log" , "Metricas" , 0, LOG_LEVEL_INFO);
+	logger_kernel = log_create("../kernel.log" , "kernel" , 0 , LOG_LEVEL_INFO);
+	logger_metricas = log_create("../metricas.log" , "Metricas" , 0, LOG_LEVEL_INFO);
 
 }
 

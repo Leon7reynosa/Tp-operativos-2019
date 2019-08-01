@@ -16,6 +16,7 @@
 
 
 void request_add(int numero_memoria, char* consistencia);
+bool ya_estas_en_consistencia( memoria_t* memoria , cod_consistencia codigo);
 memoria_t* obtener_memoria_de_lista( int numero_memoria );
 memoria_t* crear_dato_memoria_consistencia(char* ip , int numero_memoria, int puerto);
 
