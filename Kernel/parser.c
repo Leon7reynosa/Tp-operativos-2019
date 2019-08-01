@@ -18,7 +18,8 @@ request_parser parser_list[] = {
 		{"GOSSIP" , GOSSIP},
 		{"ADD" , ADD},
 		{"RUN" , RUN},
-		{"EXIT" , EXIT}
+		{"EXIT" , EXIT},
+		{"METRICS" , METRICS}
 };
 
 cod_operacion identificar_request ( char* request_lql){
@@ -27,17 +28,18 @@ cod_operacion identificar_request ( char* request_lql){
 
 	cod_operacion codigo_return;
 
-	request_split = string_split(request_lql , " ");
+	if( string_is_empty(request_lql) || string_equals_ignore_case(request_lql , "\n") || request_lql == NULL ){
 
-	printf("ENCONTRAR CODIGO\n");
+		printf("ES VACIA LA REQUEST\n");
+		return -1;
+
+	}
+
+	request_split = string_split(request_lql , " ");
 
 	codigo_return  = encontrar_codigo_request(request_split[0]);
 
-	printf("Liberar puntero doble\n");
-
 	liberar_puntero_doble(request_split);
-
-	printf("LIBERE!\n");
 
 	return codigo_return;
 

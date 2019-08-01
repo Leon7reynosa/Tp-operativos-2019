@@ -3,36 +3,37 @@
 
 int main(int argc , char* argv[]){
 
-	printf("HOLA BEBE\n");
+	system("clear");
+
+	printf("Empieza el programa Lissandra\n");
 
 	////////////////////////////INICIALIZACIONES////////////////////////
 
+	//creacion_del_config_fileSystem();
 
+	//creacion_del_metadata_fileSystem();
 
-	creacion_del_config_fileSystem();
+	printf("es por el condifg\n");
 
 	obtener_datos_config();
 
-	printf("PASE -1\n");
+	printf("si\n");
+
 	obtener_datos_metadata();
 
-	printf("PASE 0 \n");
+	printf("si\n");
+	//set_all_estados(LIBRE);
 
 	inicializar_loggers();
 
-	printf("PASE 1\n");
+	printf("si\n");
 
 	inicializar_memtable(); //Inicializa la memtable como diccionario junto con su lock rw
-
-	printf("PASE 2\n");
+	printf("si\n");
 
 	inicializar_memorias_conectadas(); //Inicializa una lista de memorias
 
-	printf("PASE 3\n");
-
 	inicializar_compactador();
-
-	printf("PASE 4\n");
 
 
 	 /* Abre la carpeta TABLAS, y por cada tabla que haya, corre la  compactacion
@@ -59,11 +60,14 @@ int main(int argc , char* argv[]){
 
 	free(ip_escucha);
 
+
+
 	///////////////////////////////MAIN////////////////////////////////////
 
 	pthread_t administrador_hilos;
 	pthread_t hilo_consola;
 	int error_pthread;
+
 
 	error_pthread = pthread_create(&hilo_consola, NULL , consola, NULL);
 
@@ -86,12 +90,11 @@ int main(int argc , char* argv[]){
 
 	pthread_detach(administrador_hilos);
 
-
+	printf("Se inicializo todo correctamente\n");
 
 	pthread_join(hilo_consola , NULL);
 
 	//mandaron exit por la consola
-
 
 	pthread_cancel(administrador_hilos);
 
@@ -116,6 +119,7 @@ int main(int argc , char* argv[]){
 
 
 }
+
 
 void main_inotify(){
 	pthread_t inotify_config;
@@ -164,7 +168,6 @@ void main_inotify(){
 
 void pruebas(){
 
-	prueba_dump();
 
 //	Particion temporal = leer_particion("/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/Tabla_A/0.tmp");
 //
@@ -190,30 +193,6 @@ void pruebas(){
 //
 //	}
 
-}
-
-void prueba_dump(){
-	char* path_particion = obtenerPath_ParticionTabla("TABLA_A" , 0);
-
-	dato_t* dato_prueba_uno = crear_dato( 15, "alan el desaparecido" , 8000); //si
-	dato_t* dato_prueba_dos = crear_dato( 6, "thais alta zorra" , 10600); //sii
-	dato_t* dato_prueba_tres = crear_dato( 9, "chino LoL" , 300); //no
-	dato_t* dato_prueba_cuatro = crear_dato( 7 , "leon vergadura" , 8000 ); //si
-	dato_t* dato_prueba_cinco = crear_dato( 10 , "fede el recursante" ,  10000 ); //SI
-	dato_t* dato_prueba_seis = crear_dato( 10 , "fede el maincra king" ,  2000 ); //NO
-
-	printf("Voy a ingresar los datos a la memtable\n");
-	ingresar_a_memtable(dato_prueba_uno, "TABLA_A");
-	ingresar_a_memtable(dato_prueba_dos, "TABLA_A");
-	ingresar_a_memtable(dato_prueba_tres, "TABLA_A");
-	ingresar_a_memtable(dato_prueba_cuatro, "TABLA_A");
-	ingresar_a_memtable(dato_prueba_cinco, "TABLA_A");
-	ingresar_a_memtable(dato_prueba_seis, "TABLA_A");
-
-	printf("\nVoy a realizar el dump\n");
-	realizar_dump();
-
-	printf("\nTermino el DUMP\n");
 }
 
 

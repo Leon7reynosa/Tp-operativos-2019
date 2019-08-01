@@ -20,6 +20,7 @@
 #include"Mensajeria/t_dato.h"
 
 t_log* logger_kernel;
+t_log* logger_metricas;
 
 t_queue* cola_new;
 
@@ -48,14 +49,13 @@ int ejecutar_request(char* request_lql);
 void request_journal(void);
 t_list* lista_memorias_de_consistencia(void);
 //int identificar_request(char* request_lql);
-int obtener_parametros_select(char* linea_request, char* nombre_tabla, u_int16_t* key);
-int obtener_parametros_insert(char* linea_request, char* nombre_tabla, u_int16_t* key, char** value, time_t* timestamp);
-int obtener_parametros_add(char* linea_request, int* numero_memoria, char* consistencia);
-int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value);
-int obtener_parametros_create(char* linea_request, char* nombre_tabla, char* criterio, int* numero_particiones, int* tiempo_compactacion);
-void obtener_parametros_describe_de_una_tabla(char* linea_request, char* nombre_tabla);
-int obtener_parametros_describe(char* linea_request, char* nombre_tabla);
-int obtener_parametros_drop(char* linea_request, char* nombre_tabla);
+int obtener_parametros_select(char* linea_request, char** nombre_tabla, u_int16_t* key);
+int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_t* key, char** value, time_t* timestamp);
+int obtener_parametros_add(char* linea_request, int* numero_memoria, char** consistencia);
+int obtener_parametros_create(char* linea_request, char** nombre_tabla, char** criterio, int* numero_particiones, int* tiempo_compactacion);
+void obtener_parametros_describe_de_una_tabla(char* linea_request, char** nombre_tabla);
+int obtener_parametros_describe(char* linea_request, char** nombre_tabla);
+int obtener_parametros_drop(char* linea_request, char** nombre_tabla);
 char* obtener_parametros_run(char* linea_request);
 
 

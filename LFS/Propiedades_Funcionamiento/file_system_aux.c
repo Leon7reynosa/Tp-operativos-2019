@@ -13,6 +13,9 @@ int existe_la_tabla(char* tabla){
 	DIR* dir = opendir(path_tabla);
 
  	if(dir){
+ 		closedir(dir);
+ 		free(path_tabla);
+
  		return 1;
  	}
 
@@ -49,13 +52,19 @@ void crear_archivos_particiones(char* nombre_tabla, int numero_particiones){
 
 void crear_archivo_particion(char* path){
 
+	//tiene semaforo de bitmap
+
 	Particion base = crear_particion(0);
+
+	pthread_rwlock_wrlock(&semaforo_bitmap);
 
 	int indice_vacio = buscar_primer_indice_vacio();
 
 	aniadir_bloque(base, indice_vacio);
 
 	set_estado(indice_vacio, OCUPADO);
+
+	pthread_rwlock_unlock(&semaforo_bitmap);
 
 	crear_bloque_vacio( indice_vacio );
 
@@ -82,6 +91,8 @@ void crear_bloque_vacio(int bloque){
 	int ficheroBloque = open(pathBloque, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
 
 	close(ficheroBloque);
+
+	free(pathBloque);
 
 }
 
@@ -114,6 +125,10 @@ void reescribir_bloques_en_particion( char* path_particion , Particion particion
 
 	void _escribir_bloques(void* _bloque){
 		int* bloque_escribir = (int *)_bloque;
+
+		if(string_ends_with(path_particion, ".tmp")){
+			log_info(logger_dump, "Le actualizo a la particion, el bloque: %i", *bloque_escribir);
+		}
 		fwrite( bloque_escribir  , sizeof(int) , 1, archivo );
 
 	}
@@ -149,6 +164,8 @@ void mostrar_tabla_y_particiones( char* nombre_tabla ){
 				mostrar_bloques(particion->bloques);
 
 				liberar_particion(particion);
+
+				free(path_particion); //agregado para memory leak
 			}
 
 		}
@@ -174,6 +191,8 @@ void liberar_dump(void){
 
 	pthread_cancel(hilo_dump);
 
+	realizar_dump();
+
 }
 
 void* ciclo_dump(void* argumentos){
@@ -187,9 +206,9 @@ void* ciclo_dump(void* argumentos){
 		usleep(tiempo_dump * 1000);
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
-		log_info(logger_lissandra, "INICIO DEL DUMP");
+		log_info(logger_dump, "INICIO DEL DUMP");
 		realizar_dump();
-		log_info(logger_lissandra, "TERMINO EL DUMP");
+		log_info(logger_dump, "TERMINO EL DUMP\n");
 
 		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 
@@ -198,6 +217,7 @@ void* ciclo_dump(void* argumentos){
 }
 
 void realizar_dump(void){
+
 	t_list* dato_de_tabla;
 
 	void _crear_temporal(char* nombre_tabla, void* elementoDeMemtable){
@@ -205,24 +225,38 @@ void realizar_dump(void){
 		dato_de_tabla = (t_list*) elementoDeMemtable;
 
 		if(!existe_la_tabla(nombre_tabla)){
+
+			log_info(logger_dump, "No existe la tabla %s", nombre_tabla);
+
 			return;
 		}
+
+		log_info(logger_dump, "Existe la tabla %s\n", nombre_tabla);
 
 		thread_args* argumento_tabla = dictionary_get(diccionario_compactador, nombre_tabla);
 
 		//SEMAFORO TABLA ESPECIFICA
-		printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE LA TABLA ESPECIFICA\n");
+//		printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE LA TABLA ESPECIFICA\n");
 
 		pthread_rwlock_wrlock(&(argumento_tabla->lock_tabla));
+
+		log_info(logger_dump, "BLOQUEE LA TABLA PARA GENERAR TMP");
 
 		char* path_temporal = obtenerPathParaTemporalEnLaTabla(nombre_tabla);
 
 		crear_archivo_particion(path_temporal);
 
+		log_info(logger_dump, "Cree el tmp en %s", path_temporal);
+
 		void _cargar_a_temporal(void* _dato){
 
 			dato_t* dato = (dato_t *)_dato;
+
+			log_info(logger_dump, "Le  cargo el dato %i;%i;%s\n", dato->timestamp, dato->key, dato->value);
+
 			cargar_a_particion(path_temporal, dato);
+
+			log_info(logger_dump, "Cargado correctamente");
 
 		}
 
@@ -230,30 +264,42 @@ void realizar_dump(void){
 
 		//DESBLOQUEO LA TABLA ESPECIFICA
 		pthread_rwlock_unlock(&(argumento_tabla->lock_tabla));
-		printf("[DUMP] LIBERO EL SEMAFORO DE TABLA ESPECIFICA\n");
+//		printf("[DUMP] LIBERO EL SEMAFORO DE TABLA ESPECIFICA\n");
 
 		free(path_temporal);
 
 	}
 
-	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE MEMTABLE\n");
+//	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DE MEMTABLE\n");
 	//SEMAFORO MEMTABLE
-	pthread_rwlock_wrlock(&(lock_memtable));
+
 	//SEMAFORO DICCIONARIO COMPACTACION
-	printf("[DUMP] VOY A AGARRAR EL SEMAFORO DEL DICCIONARIO COMPACTADOR\n");
+
 	pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
+
+	log_info(logger_dump,"[DUMP] AGARRE EL SEMAFORO DEL DICCIONARIO COMPACTADOR");
+
+	pthread_rwlock_wrlock(&(lock_memtable));
+
+	log_info(logger_dump,"[DUMP] AGARRE EL SEMAFORO DEL MEMTABLE");
 
 	dictionary_iterator(memtable, _crear_temporal);
 
-	printf("[DUMP] LIBERO EL SEMAFORO DE DICCIONARIOA\n");
+//	printf("[DUMP] LIBERO EL SEMAFORO DE DICCIONARIOA\n");
 	pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
+	log_info(logger_dump, "LIBERE SEMAFORO COMPACTACION");
+
+
+	log_info(logger_dump, "Se vacia la memtable");
 
 	vaciar_memtable();
 
 	//LIBERO SEMAFORO MEMTABLE
-	printf("[DUMP] LIBERO EL SEMAFORO DE MEMTABLEA\n");
+//	printf("[DUMP] LIBERO EL SEMAFORO DE MEMTABLEA\n");
 	pthread_rwlock_unlock(&(lock_memtable));
+
+	log_info(logger_dump,"[DUMP] LIBERE MEMTABLE");
 
 }
 
@@ -290,29 +336,22 @@ bool no_es_ubicacion_prohibida(char* path){
 int obtenerNumeroTemporal(char* path){
 	int numero;
 	char** aux;
-	char* numeroString;
 	char delimitador[2] = ".";
 
-	char* extension = extension_del_archivo(path);
-
-	if(string_equals_ignore_case("tmp", extension)){
+	if(string_ends_with(path  , "tmp")){
 
 		aux = string_split(path, delimitador);
-		numeroString = string_substring_from(aux[0], 1);
+
+		numero = atoi(aux[0]);
 
 		liberar_puntero_doble(aux);
 
-		numero = atoi(numeroString);
-
-		free(numeroString);
-		free(extension);
 		return numero;
 	}
 	else{
 		return -1;
 	}
 }
-
 
 char* extension_del_archivo(char* path){
 

@@ -16,13 +16,16 @@ request recibir_request(int conexion){
 	void* tipo_request = NULL;
 
 	int pene = 0;
+
 	pene = recv(conexion, cod_op,sizeof(cod_operacion),MSG_WAITALL);
 
 	if(pene == -1){
 			perror("Fallo al recibir el codigo de operacion.");
+			return crear_request(DESCONEXION, NULL);
 		}
 
 	if(pene == 0){
+
 		return crear_request(DESCONEXION, NULL);
 	}
 
@@ -72,16 +75,10 @@ request recibir_request(int conexion){
 
 	}
 
-
-	printf("hola\n");
-
 	request request = crear_request(*cod_op, tipo_request);
-
-	printf("chau\n");
 
 	free(cod_op);
 
-	printf("buen dia\n");
 	return request;
 
 }
@@ -106,71 +103,6 @@ void* recibir_buffer(int* size, int conexion){
 	return buffer;
 
 }
-/*
-cod_op determinar_operacion(char* buffer){
-
-	int size = strlen(buffer);
-
-	char* aux = malloc(size+1);
-	memcpy(aux,buffer,size);
-	aux[size + 1] = '\0';
-	memcpy(aux,buffer,size);
-
-	int i;
-
-	for(i = 0; i<size; i++){
-		aux [i] = toupper(aux[i]);
-	}
-
-	switch(strcmp(aux,"EXIT")){
-
-		case 0:
-			free(aux);
-			return DESCONEXION;
-			break;
-		default:
-			free(aux);
-			return MENSAJE;
-	}
-
-}
-
-void desconectar_cliente(int conexion){
-
-	close(conexion);
-	printf("Cliente %d Desconectado\n", conexion);
-
-}
-
-
-void recibir_mensaje(int conexion){
-
-	int size;
-	char* buffer;
-
-	buffer = recibir_buffer(&size,conexion);
-
-	buffer[size] = '\0';
-
-	switch(determinar_operacion(buffer)){
-
-		case MENSAJE:
-			printf("[Cliente %d] Mensaje : %s \n",conexion,buffer);
-			break;
-		case DESCONEXION:
-			desconectar_cliente(conexion);
-			break;
-		default:
-			printf("No deberia haber entrado aca por ahora\n\n");
-			exit(1);
-	}
-
-	free(buffer);
-
-}
-*/
-//////////////////////////////////////////////////////////////////////////////////////////
-
 
 t_dato* recibir_dato_LFS(int conexion){
 
@@ -178,9 +110,10 @@ t_dato* recibir_dato_LFS(int conexion){
 
 	dato_recibido->value = malloc(sizeof(t_stream));
 
-	estado_select estado;
+	estado_request estado;
+	int bytes;
 
-	int bytes = recv(conexion, &(estado), sizeof(estado_select), 0);
+	estado = recibir_estado_request(conexion);
 
 	if(estado == ERROR){
 
@@ -190,9 +123,7 @@ t_dato* recibir_dato_LFS(int conexion){
 		return NULL;
 	}
 
-	if(bytes == -1){
-		perror("NO RECIBIO EL ESTADO");
-	}
+	printf("Recibo los datos del select\n");
 
 	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
 
@@ -216,7 +147,7 @@ t_dato* recibir_dato_LFS(int conexion){
 	bytes = recv(conexion, &(dato_recibido->value->size),sizeof(int), 0);
 
 	if(bytes == -1){
-		perror("NO RECIBIO EL TAMANIO DEL VALUE;");
+		perror("NO RECIBIO EL TAMANIO Destado_request recibir_estado_request(int conexion)EL VALUE;");
 	}
 
 	printf("Size: %i\n", dato_recibido->value->size);
@@ -237,6 +168,36 @@ t_dato* recibir_dato_LFS(int conexion){
 
 }
 
+estado_request recibir_estado_request(int conexion){
+
+	estado_request estado;
+	int bytes;
+
+	bytes = recv(conexion, &estado, sizeof(estado_request), 0);
+
+	if(bytes <= 0){
+
+		log_info(logger, "No se recibio el estado de la request.");
+
+		if(socket_lissandra == conexion){
+
+			log_info(logger, "Se desconecto el fileSystem");
+
+			conexion_lissandra = false;
+
+			close(socket_lissandra);
+
+		}
+		return ERROR;
+
+	}
+
+	printf("Recibi el estado de la request\n");
+
+	return estado;
+
+}
+
 t_list* recibir_describe(int conexion){
 
 	int numero_tablas, error_recv;
@@ -245,103 +206,119 @@ t_list* recibir_describe(int conexion){
 	char* tabla_recibida;
 	char* consistencia_recibida;
 	int particiones_recibidas, compactacion_recibida;
-
-	error_recv = recv(conexion, &numero_tablas, sizeof(int), 0);
-
-	printf("LLEGO LA RESPUESTA\n");
-
-	printf("Cant tablas: %i\n", numero_tablas);
-
 	t_list* datos_metadata = list_create();
 
-	if(error_recv == -1){
-		perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
-	}
+	estado_request estado = recibir_estado_request(conexion);
 
-	printf("Recibo el/los datos metadata\n");
-	for(int i = 0; i < numero_tablas; i++){
+	if(estado == SUCCESS){
 
-		Metadata metadata_recibida;
+		error_recv = recv(conexion, &numero_tablas, sizeof(int), 0);
 
-		error_recv = recv(conexion, &size, sizeof(int), 0);
+		printf("LLEGO LA RESPUESTA\n");
 
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL SIZE DE LA TABLA");
-		}
-
-		printf("size tabla: %i\n", size);
-
-		tabla_recibida = malloc(size);
-
-		error_recv = recv(conexion, tabla_recibida, size, 0);
+		printf("Cant tablas: %i\n", numero_tablas);
 
 		if(error_recv == -1){
-			perror("NO SE RECIBIO LA TABLA");
+			perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
 		}
 
-		printf("tabla: %s\n", tabla_recibida);
+		printf("Recibo el/los datos metadata\n");
+		for(int i = 0; i < numero_tablas; i++){
 
-		error_recv = recv(conexion, &size, sizeof(int), 0);
+			Metadata metadata_recibida;
 
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL SIZE DE LA CONSISTENCIA");
+			error_recv = recv(conexion, &size, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL SIZE DE LA TABLA");
+			}
+
+			printf("size tabla: %i\n", size);
+
+			tabla_recibida = malloc(size);
+
+			error_recv = recv(conexion, tabla_recibida, size, 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO LA TABLA");
+			}
+
+			printf("tabla: %s\n", tabla_recibida);
+
+			error_recv = recv(conexion, &size, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL SIZE DE LA CONSISTENCIA");
+			}
+
+			printf("size consistencia: %i\n", size);
+
+			consistencia_recibida = malloc(size);
+
+			error_recv = recv(conexion, consistencia_recibida, size, 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO LA CONSISTENCIA");
+			}
+
+			printf("consistencia: %s\n", consistencia_recibida);
+
+			error_recv = recv(conexion, &particiones_recibidas, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL NUMERO DE PARTICIONES");
+			}
+
+			printf("particiones: %i\n", particiones_recibidas);
+
+			error_recv = recv(conexion, &compactacion_recibida, sizeof(int), 0);
+
+			if(error_recv == -1){
+				perror("NO SE RECIBIO EL TIEMPO DE COMPACTACION");
+			}
+
+			printf("compactacion: %i\n", compactacion_recibida);
+
+			printf("Creo la estructura metadata con los datos anteriores\n");
+			metadata_recibida = crear_metadata(tabla_recibida, consistencia_recibida, particiones_recibidas, compactacion_recibida);
+
+			printf("Lo agrego a la lista\n");
+			list_add(datos_metadata, metadata_recibida);
+
+			free(tabla_recibida);
+			free(consistencia_recibida);
 		}
+	}else{
 
-		printf("size consistencia: %i\n", size);
+		log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
 
-		consistencia_recibida = malloc(size);
+		list_destroy(datos_metadata);
 
-		error_recv = recv(conexion, consistencia_recibida, size, 0);
-
-		if(error_recv == -1){
-			perror("NO SE RECIBIO LA CONSISTENCIA");
-		}
-
-		printf("consistencia: %s\n", consistencia_recibida);
-
-		error_recv = recv(conexion, &particiones_recibidas, sizeof(int), 0);
-
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL NUMERO DE PARTICIONES");
-		}
-
-		printf("particiones: %i\n", particiones_recibidas);
-
-		error_recv = recv(conexion, &compactacion_recibida, sizeof(int), 0);
-
-		if(error_recv == -1){
-			perror("NO SE RECIBIO EL TIEMPO DE COMPACTACION");
-		}
-
-		printf("compactacion: %i\n", compactacion_recibida);
-
-		printf("Creo la estructura metadata con los datos anteriores\n");
-		metadata_recibida = crear_metadata(tabla_recibida, consistencia_recibida, particiones_recibidas, compactacion_recibida);
-
-		printf("Lo agrego a la lista\n");
-		list_add(datos_metadata, metadata_recibida);
-
-		free(tabla_recibida);
-		free(consistencia_recibida);
-
+		datos_metadata = NULL;
 	}
 
 	return datos_metadata;
 
 }
 
-tabla_gossip_dto recibir_datos_gossip(socket_seed){
+tabla_gossip_dto recibir_datos_gossip(int socket_seed){
 
 	int cantidad_memorias;
 	int bytes_recv;
-
 
 	tabla_gossip_dto dato_recibido;
 
 	bytes_recv = recv(socket_seed, &cantidad_memorias, sizeof(int), 0);
 
 	if(bytes_recv <= 0){
-		perror("Recibir cantidad de memorias");
+
+		printf("No se recibio la tabla de la seed\n");
+
+		log_info(logger_gossip, "No se recibio nada de la seed. Posible desconexion de esa memoria");
+
+		dato_recibido = crear_dto_gossip(0);
+
+		return dato_recibido;
 	}
 
 	printf("Recibi cantidad de memorias : %i\n", cantidad_memorias);

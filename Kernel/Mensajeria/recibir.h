@@ -30,6 +30,6 @@
 void recibir_mensaje(int conexion);
 void* recibir_buffer(int* size,int conexion);
 void desconectar_cliente(int conexion);
-t_dato* recibir_dato_memoria(int conexion);
+t_dato* recibir_dato_memoria(memoria_t* memoria_utilizada);
 
 #endif /* RECIBIR_H_ */

@@ -21,7 +21,7 @@ void* serializar_mensaje(t_stream* bufferA_serializar, int bytes){
 	return msg_Ser;
 }
 
-void enviar_metadata(t_list* metadatas, int conexion){
+void enviar_metadata(t_list* metadatas, int conexion, estado_request estado){
 
 	int bytes;
 	void* buffer;
@@ -31,7 +31,7 @@ void enviar_metadata(t_list* metadatas, int conexion){
 	int enviados_aux;
 
 	printf("Serializo las metadatas\n");
-	buffer = serializar_metadata(metadatas, &bytes);
+	buffer = serializar_metadata(metadatas, &bytes, estado);
 
 	printf("Serialize las metadatas\n");
 
@@ -46,7 +46,7 @@ void enviar_metadata(t_list* metadatas, int conexion){
 
 		if(enviados_aux == -1){
 			perror("Send tiro -1");
-			//ver que hacer aca
+			//ver que hacer aca NADA!
 		}
 
 		bytes_enviados += enviados_aux;
@@ -54,33 +54,35 @@ void enviar_metadata(t_list* metadatas, int conexion){
 
 	}
 
+	free(buffer);
+
 }
 
-void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes, estado_select estado){
+void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes, estado_request estado){
 
 	void* dato_serializado;
 	int desplazamiento = 0;
 
 	if(estado == ERROR){
 
-		*bytes = sizeof(estado_select);
+		*bytes = sizeof(estado_request);
 
 		dato_serializado = malloc(*bytes);
 
-		memcpy(dato_serializado + desplazamiento, &(estado), sizeof(estado_select));
-		desplazamiento += sizeof(estado_select);
+		memcpy(dato_serializado + desplazamiento, &(estado), sizeof(estado_request));
+		desplazamiento += sizeof(estado_request);
 
 	}
 	else{
 		int size_value = string_length(dato_a_serializar->value) + 1;
-		*bytes = sizeof(estado_select) + sizeof(u_int16_t) + sizeof(time_t) + sizeof(int) + size_value;
+		*bytes = sizeof(estado_request) + sizeof(u_int16_t) + sizeof(time_t) + sizeof(int) + size_value;
 
 		printf("BYTES A ENVIAR: %i\n", *bytes);
 
 		dato_serializado = malloc(*bytes);
 
-		memcpy(dato_serializado + desplazamiento, &(estado), sizeof(estado_select));
-		desplazamiento += sizeof(estado_select);
+		memcpy(dato_serializado + desplazamiento, &(estado), sizeof(estado_request));
+		desplazamiento += sizeof(estado_request);
 
 		memcpy(dato_serializado + desplazamiento, &(dato_a_serializar->timestamp), sizeof(time_t));
 		desplazamiento += sizeof(time_t);
@@ -94,21 +96,34 @@ void* serializar_dato_t(dato_t* dato_a_serializar, int* bytes, estado_select est
 
 		memcpy(dato_serializado + desplazamiento, dato_a_serializar->value, size_value);
 		desplazamiento += size_value;
+
+		printf("[REQUEST] SE ENVIO KEY: %i\n", dato_a_serializar->key);
+		printf("[REQUEST] SE ENVIO EL TIMESTAMP: %i\n", dato_a_serializar->timestamp);
+		printf("[REQUEST] SE ENVIO EL SIZE: %i\n", size_value);
+		printf("[REQUEST] SE ENVIO VALUE: %s\n", dato_a_serializar->value);
+
 	}
+
+	printf("[REQUEST] SE ENVIO EL ESTADO: %s\n", estado == SUCCESS ? "SUCCESS" : "ERROR");
+
 	return dato_serializado;
 
 }
 
-void mandar_select(int conexion , dato_t* dato, estado_select estado){
+void mandar_select(int conexion , dato_t* dato, estado_request estado){
 
 	int bytes;
 	void* buffer;
+
+	printf("[REQUEST] Mando el estado de la request\n");
 
 	buffer = serializar_dato_t(dato, &bytes, estado);
 
 	send(conexion, buffer, bytes, 0);
 
 	free(buffer);
+
+	printf("[REQUEST] Se mando el estado de la request\n");
 
 }
 
@@ -132,6 +147,18 @@ void mandar_mensaje(int conexion){
 
 	free(buffer_serializado);
 	eliminar_tStream(bufferA_serializar);
+
+}
+
+void mandar_estado(int conexion, estado_request estado){
+
+	void* buffer = malloc(sizeof(estado_request));
+
+	memcpy(buffer, &estado , sizeof(estado_request));
+
+	send(conexion, buffer, sizeof(estado_request) ,  0);
+
+	free(buffer);
 
 }
 

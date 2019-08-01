@@ -7,10 +7,25 @@
 
 #include"mensajes.h"
 
+void enviar_estado(int conexion, estado_request estado){
+
+	void* buffer = malloc(sizeof(estado_request));
+
+	memcpy(buffer, &estado, sizeof(estado_request));
+
+	send(conexion, buffer, sizeof(estado_request), 0);
+
+	free(buffer);
+
+	return;
+
+}
+
 //tipoRequest es una estructura del tipo "request" osea, puede ser selectEstructura, etc, entonces mi idea es depende de lo que llegue, castear a esa estructura
-void enviar_request(request request, int conexion){
+bool enviar_request(request request, int conexion){
 
 	void* buffer;
+	bool exito = true;
 	int bytes = 0;
 
 	switch(request->cod_op){
@@ -64,33 +79,73 @@ void enviar_request(request request, int conexion){
 	int bytes_restantes = bytes;
 	int enviados_aux;
 
-	if(conexion == socket_lissandra){
-		usleep(retardo_lfs);
+	if(&conexion == &socket_lissandra){
+
+		if(!conexion_lissandra){
+
+			socket_lissandra = conectar_servidor(ip_lfs, puerto_lfs);
+
+			if(socket_lissandra <= -1){
+
+				free(buffer);
+
+				return false;
+
+			}else{
+
+				conexion_lissandra = true;
+
+				conexion = socket_lissandra;
+
+				int aux_handshake;
+
+				recv(socket_lissandra, &aux_handshake, sizeof(int), 0); // cada vez que te conectas al LFS te da el value el chotin
+
+			}
+		}
+
 	}
+
+	usleep(retardo_lfs * 1000);
 
 	while(bytes_enviados < bytes){
 
-		printf("Soy un printf\n");
 		enviados_aux = send(conexion, buffer + bytes_enviados, bytes_restantes, 0);
 
-		printf("terminaste despues del printf\n");
-
 		if(enviados_aux == -1){
-			perror("Send tiro -1");
-			//ver que hacer aca
+
+			bytes_enviados = bytes;
+
+			exito = false;
+
+			if(&socket_lissandra == &conexion){
+
+				conexion_lissandra = false;
+
+				close(socket_lissandra);
+			}
+
+		}else{
+
+			bytes_enviados += enviados_aux;
+
+			bytes_restantes -= enviados_aux;
+
 		}
+	}
 
-		bytes_enviados += enviados_aux;
-		bytes_restantes -= enviados_aux;
-
+	if(bytes_enviados == bytes){
+		exito = true;
 	}
 
 	free(buffer);
 
+	return exito;
+
 }
 
 
-void enviar_dato(t_dato* dato, int conexion, estado_select estado){
+void enviar_dato(t_dato* dato, int conexion, estado_request estado){
 
 	int desplazamiento = 0;
 	void* buffer;
@@ -98,12 +153,12 @@ void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 
 	if(estado == SUCCESS){
 
-		bytes = sizeof(estado_select) + sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
+		bytes = sizeof(estado_request) + sizeof(dato->timestamp) + sizeof(dato->key) +  sizeof(dato->value->size) + dato->value->size;
 
 		buffer = malloc(bytes);
 
-		memcpy(buffer + desplazamiento, &estado, sizeof(estado_select));
-		desplazamiento += sizeof(estado_select);
+		memcpy(buffer + desplazamiento, &estado, sizeof(estado_request));
+		desplazamiento += sizeof(estado_request);
 
 		memcpy(buffer + desplazamiento, &(dato->timestamp) , sizeof(dato->timestamp));
 		desplazamiento += sizeof(dato->timestamp);
@@ -119,11 +174,11 @@ void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 	}
 	else{
 
-		bytes = sizeof(estado_select);
+		bytes = sizeof(estado_request);
 		buffer = malloc(bytes);
 
-		memcpy(buffer + desplazamiento, &estado, sizeof(estado_select));
-		desplazamiento += sizeof(estado_select);
+		memcpy(buffer + desplazamiento, &estado, sizeof(estado_request));
+		desplazamiento += sizeof(estado_request);
 
 	}
 
@@ -133,7 +188,7 @@ void enviar_dato(t_dato* dato, int conexion, estado_select estado){
 
 }
 
-void enviar_metadata(t_list* lista_metadata, int conexion){
+void enviar_metadata(t_list* lista_metadata, int conexion, estado_request estado){
 
 	int bytes;
 
@@ -142,7 +197,7 @@ void enviar_metadata(t_list* lista_metadata, int conexion){
 	int enviados_aux;
 
 	printf("serializo las metadatas\n");
-	void* buffer = serializar_metadata(lista_metadata, &bytes);
+	void* buffer = serializar_metadata(lista_metadata, &bytes, estado);
 
 	printf("Bytes a enviar: %i\n", bytes);
 

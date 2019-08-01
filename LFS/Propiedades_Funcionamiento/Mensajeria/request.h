@@ -21,6 +21,14 @@ typedef enum{
 	EXIT
 }cod_operacion;
 
+typedef enum{
+
+	SUCCESS =  1,
+	ERROR = 2
+
+}estado_request;
+
+
 typedef struct{
 
 	int size;

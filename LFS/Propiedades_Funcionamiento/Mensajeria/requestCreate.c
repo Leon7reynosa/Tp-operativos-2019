@@ -116,4 +116,3 @@ void liberar_dato_create(create dato){
 	free(dato);
 
 }
-

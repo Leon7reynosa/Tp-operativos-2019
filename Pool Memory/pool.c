@@ -9,8 +9,9 @@
 
 int main (int argc , char* argv[]){
 
-	creacion_del_config();
+	system("clear");
 
+	//creacion_del_config();
 	////////////////////////////////////INICIALIZACIONES/////////////////////////////////
 	ip_escucha = obtener_ip_local();
 
@@ -23,7 +24,7 @@ int main (int argc , char* argv[]){
 
 	tamanio_dato = tamanio_value + sizeof(u_int16_t) + sizeof(time_t);
 
-	desconexion_pool = false;
+	conexion_lissandra = true;
 
 	inicializar_memoria(tamanio, tamanio_value, tamanio_dato); //TODO ARREGLAR ESTA FUNCION UN POCO
 
@@ -38,6 +39,9 @@ int main (int argc , char* argv[]){
 	int new_fd;
 	int listener;
 	int i;
+
+	//CADA CUANTO TIEMPO, el select va a estar esperando que pase algo (cada 60 segundos)
+	struct timeval espera;
 
 	FD_ZERO(&master);
 	FD_ZERO(&read_fds);
@@ -56,9 +60,10 @@ int main (int argc , char* argv[]){
 
 		read_fds = master;
 
-		printf("SELECT ESCUCHANDO\n");
+		espera.tv_sec = 30;
+		espera.tv_usec = 0;
 
-		if(select(fd_max +1 , &read_fds, NULL, NULL, NULL) == -1){
+		if(select(fd_max +1 , &read_fds, NULL, NULL, &espera) == -1){
 			perror("select.");
 			exit(1);
 		}
@@ -87,7 +92,7 @@ int main (int argc , char* argv[]){
 
 				}else if(i == 0){
 //TODO parsear linea por requests!
-					desconexion_pool = leer_consola();
+					leer_consola();
 
 				}else{
 
@@ -95,13 +100,11 @@ int main (int argc , char* argv[]){
 
 //TODO Esta ranciada de la desconexion y los errores
 
-					printf("codigo op : %d\n" , nueva_request->cod_op);
-
 					if(nueva_request->cod_op == DESCONEXION){
 
 						FD_CLR(i, &master);
 						close(i);
-						log_info(logger, "Se desconecto un cliente.\n");
+						log_info(logger, "[DESCONEXION] Se desconecto un cliente.\n\n");
 
 					}else{
 
@@ -124,11 +127,11 @@ int main (int argc , char* argv[]){
 
 			}
 
+			if(desconexion_pool) break;
+
 		}
 
-		if(desconexion_pool){
-			break;
-		}
+		if(desconexion_pool) break;
 
 	}
 
@@ -148,10 +151,15 @@ int main (int argc , char* argv[]){
 
 	}
 
-
-	close(socket_lissandra);
-
 	abortar_hilos();
+
+	if(conexion_lissandra){
+
+		realizar_journal();
+
+		close(socket_lissandra);
+
+	}
 
 	liberar_memoria();
 

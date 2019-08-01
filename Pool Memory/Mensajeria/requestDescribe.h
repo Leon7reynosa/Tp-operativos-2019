@@ -34,9 +34,11 @@ struct metadataEstructura{
 
 typedef struct metadataEstructura*  Metadata;
 
+void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar, estado_request estado);
 describe_t decodificar_describe(int conexion);
 void* serializar_describe(request request_describe);
 describe_t crear_dato_describe(char* nombre_tabla);
+void mostrar_lista_describe(t_list* lista_describe);
 void liberar_dato_describe(describe_t dato);
 
 Metadata crear_metadata(char* tabla, char* consistencia, int particiones, int compactacion);

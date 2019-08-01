@@ -26,6 +26,8 @@
 
 int socket_lissandra;
 
+bool conexion_lissandra;
+
 int conectar_servidor(char* ip, int puerto);
 
 

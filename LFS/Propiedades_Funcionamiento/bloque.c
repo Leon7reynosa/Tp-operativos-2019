@@ -10,11 +10,14 @@
 Bloque leer_bloque(int indice_bloque){
 
 	char* path_bloque = obtenerPath_Bloque(indice_bloque); //lion
-
-//	printf("path: %s\n" , path_bloque);
+	Bloque bloque;
 
 	//ABRO EL BLOQUE
 	int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
+
+	if(fd_bloque <= -1){
+		printf("[LECTURA] Fallo el abrir el bloque\n");
+	}
 
 	struct stat* atributos = malloc(sizeof(struct stat));
 
@@ -22,11 +25,23 @@ Bloque leer_bloque(int indice_bloque){
 
 	char* datos = mmap(NULL, atributos->st_size, PROT_READ, MAP_SHARED, fd_bloque, 0); //lion
 
-//	printf("datos map : %s\n" , datos);
+	if(datos == MAP_FAILED){
 
-	Bloque bloque= crear_bloque(indice_bloque, datos);
+		printf("[LECTURA] Fallo el map!\n");
 
-	munmap(fd_bloque, atributos->st_size);
+		if(errno == EINVAL){
+			printf("[LECTURA] Tamanio del archivo es 0\n");
+		}
+
+		bloque = crear_bloque(indice_bloque, NULL);
+
+	}else{
+
+		bloque= crear_bloque(indice_bloque, datos);
+
+		munmap(datos, atributos->st_size);
+
+	}
 
 	free(atributos);
 	free(path_bloque);
@@ -108,10 +123,20 @@ void cargar_a_particion(char* path_particion, dato_t* dato_a_escribir){
 
 	char* dato_convertido = convertir_dato_en_string(dato_a_escribir);
 
+	if(string_ends_with(path_particion, ".tmp")){
+		log_info(logger_dump, "Lleno el bloque: %i", bloque);
+	}
+
 	dato_convertido = llenar_bloque(bloque, dato_convertido);
 
 
 	while( !string_is_empty(dato_convertido) ){
+
+		if(string_ends_with(path_particion, ".tmp")){
+			log_info(logger_dump, "No se pudo cargar por completo el dato en el bloque, quedo por cargar: %s", dato_convertido);
+		}
+
+		pthread_rwlock_wrlock(&semaforo_bitmap);
 
 		int nuevo_bloque = buscar_primer_indice_vacio();
 
@@ -120,11 +145,23 @@ void cargar_a_particion(char* path_particion, dato_t* dato_a_escribir){
 		}
 
 		asignar_bloque_vacio_a_particion(path_particion, nuevo_bloque);
+
+		pthread_rwlock_unlock(&semaforo_bitmap);
+
+		if(string_ends_with(path_particion, ".tmp")){
+			log_info(logger_dump, "Asigno y lleno un nuevo bloque vacio: %i", nuevo_bloque);
+		}
+
 		dato_convertido = llenar_bloque(nuevo_bloque, dato_convertido);
 	}
 
+	if(string_ends_with(path_particion, ".tmp")){
+		log_info(logger_dump, "Termine de cargar el dato en el/los bloque/s");
+	}
 
 	actualiar_particion(path_particion);
+
+	free(dato_convertido); // MIEDO, MUCHO!
 
 }
 
@@ -169,6 +206,10 @@ char* llenar_bloque(int bloque , char* dato) {
 
 	string_trim_left(&dato);
 
+	close(fichero_bloque);
+
+	free(pathBloque);
+
 	return dato;
 
 }
@@ -184,6 +225,8 @@ void set_all_estados( estadoBloque estado){
 }
 
 void set_estado(int indiceBloque, estadoBloque estado){
+
+	//semaforo arafue
 
 	char* path_bitmap = obtener_path_bitmap();
 
@@ -222,6 +265,8 @@ void set_estado(int indiceBloque, estadoBloque estado){
 
 bool get_estado(int indice){
 
+	//agarrar el semaforo antes
+
 	char* path_bitmap = obtener_path_bitmap();
 
 	int fichero = open(path_bitmap, O_RDONLY, S_IRUSR);
@@ -250,6 +295,8 @@ int buscar_primer_indice_vacio(){
 
 	int i;
 
+	//semaforo bitmap arafue
+
 	for (i = 0; i < blocks ; i++){
 
 		if( get_estado(i) == LIBRE ){
@@ -267,6 +314,7 @@ int buscar_primer_indice_vacio(){
 char* convertir_dato_en_string( dato_t* dato ){
 
 	char* string_key, *string_timestamp;
+
 	char* string_dato = string_new();
 
 	string_key = string_from_format("%i", dato->key);
@@ -290,23 +338,39 @@ Bloque crear_bloque(int numero, char* datos){
 
 	Bloque bloque = malloc(sizeof(struct bloque*));
 
+	int i = 0;
+
 	bloque->numero = numero;
 
 	bloque->datos = list_create();
 
-	char** aux_datos = string_split(datos, "\n");
 
-	int i = 0;
+	if(datos != NULL){
 
-	while(*(aux_datos + i) != NULL){
+		if(string_starts_with(datos, "\n")){
 
-		list_add(bloque->datos, *(aux_datos + i));
+			char* barra_ene = malloc(2);
+			memcpy(barra_ene, "\n", 2);
 
-		i++;
+			list_add(bloque->datos,  barra_ene );
 
+			i++;
+		}
+
+		char** aux_datos = string_split(datos, "\n");
+
+		i = 0;
+
+		while(*(aux_datos + i) != NULL){
+
+			list_add(bloque->datos, *(aux_datos + i));
+
+			i++;
+
+		}
+
+		free(aux_datos);
 	}
-
-	free(aux_datos);
 
 	return bloque;
 
@@ -333,21 +397,23 @@ void mostrar_bloque(int bloque){
 
 	if(fichero_bloque < 0){
 
-		printf("No existe el bloque %i\n" , bloque);
+		printf("\n>No existe el bloque %i\n" , bloque);
+
+		return;
 
 	}
 
-	printf("---LEYENDO BLOQUE %d---\n" , bloque);
+	printf("\n---LEYENDO BLOQUE %d---\n" , bloque);
 
 	int i = 0;
 
 	char* archivo = mmap(NULL, atributos_bloque->st_size, PROT_READ, MAP_SHARED, fichero_bloque, 0);
 
-	printf("Tamanio del bloque: %i\n", atributos_bloque->st_size);
+//	printf("Tamanio del bloque: %i\n", atributos_bloque->st_size);
 
 	if(archivo == MAP_FAILED){
 		if(atributos_bloque->st_size == 0){
-			printf("Bloque vacio c:\n");
+			printf("\n>Bloque vacio c:\n");
 
 			close(fichero_bloque);
 
@@ -363,6 +429,16 @@ void mostrar_bloque(int bloque){
 
 	}
 
+	if(string_starts_with(archivo, "\n")){
+
+		char* barra_ene = malloc(2);
+		memcpy(barra_ene, "\n", 2);
+
+		printf("%s\n", barra_ene);
+
+		free(barra_ene);
+	}
+
 	char** datos = string_split(archivo, "\n");
 
 //	printf("Llegue hasta aca\n");
@@ -373,8 +449,6 @@ void mostrar_bloque(int bloque){
 		i++;
 
 	}
-
-	printf("Hay %i datos en este bloque!\n", i);
 
 	munmap(archivo, atributos_bloque->st_size);
 	close(fichero_bloque);
@@ -388,6 +462,7 @@ void mostrar_bloque(int bloque){
 	free(path_bloque);
 	free(atributos_bloque);
 
+	printf("\n");
 
 }
 

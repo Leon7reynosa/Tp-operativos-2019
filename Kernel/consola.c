@@ -13,7 +13,7 @@ void* consola(){
 
 	menu();
 
-	leido = readline(">>");
+	leido = readline("");
 
 	while( !string_equals_ignore_case(leido, "EXIT") ){
 
@@ -29,9 +29,11 @@ void* consola(){
 
 		sem_post(&semaforo_ready);
 
-		leido = readline(">>");
+		leido = readline("");
 
 	}
+
+	printf("\n> Se realizo un EXIT el programa terminara\n");
 
 	free(leido);
 
@@ -41,12 +43,17 @@ void* consola(){
 
 void menu(){
 
-	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CONSOLA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CONSOLA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 	printf("\n1. SELECT [NOMBRE TABLA] [KEY]\n");
 	printf("2. INSERT [NOMBRE TABLA] [KEY] \"[VALUE]\" [TIMESTAMP]\n");
 	printf("3. CREATE [NOMBRE TABLA] [CONSISTENCIA] [NUMERO PARTICIONES] [TIEMPO COMPACTACION]\n");
 	printf("4. ADD MEMORY [NUMERO MEMORIA] TO [CRITERIO]\n");
-	printf("5. RUN [ARCHIVO LQL]\n\n");
+	printf("5. RUN [ARCHIVO LQL]\n");
+	printf("6. DROP [NOMBRE TABLA]\n");
+	printf("7. DESCRIBE ([NOMBRE TABLA])\n");
+	printf("8. JOURNAL\n");
+	printf("9. METRICS\n");
+	printf("10. EXIT\n");
 	printf("Escriba una request: ");
 	printf("\n");
 }

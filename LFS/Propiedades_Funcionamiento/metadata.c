@@ -9,10 +9,14 @@
 
 metadata_t* obtener_metadata(char* nombre_tabla){
 
+	printf("nombre_tabla: %s\n" , nombre_tabla);
+
 	metadata_t* obtener_metadata = malloc(sizeof(metadata_t));
 	t_config* metadata_config;
 
 	char* path_metadata_tabla = obtener_path_metadata_de_tabla(nombre_tabla);
+
+	printf("path metadata: %s\n" , path_metadata_tabla);
 
 	char* aux_consistencia;
 	metadata_config = config_create(path_metadata_tabla);
@@ -32,9 +36,13 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 		obtener_metadata->consistencia = EC;
 	}
 
+	printf("ya termine, ahora libero'n");
+
 	free(path_metadata_tabla);
 
 	config_destroy(metadata_config);
+
+	printf("final\n");
 
 	return obtener_metadata;
 }
@@ -98,6 +106,7 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
 	int auxiliar;
+	int mayor_temporal = -1;
 
 	struct dirent *ent;
 
@@ -106,19 +115,26 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 
 			auxiliar = obtenerNumeroTemporal(ent->d_name);
 
+			if(auxiliar > mayor_temporal){
 
-			if(auxiliar > numeroParaTemporal){
-				numeroParaTemporal = auxiliar;
+				mayor_temporal = auxiliar;
+
 			}
-			else if (auxiliar == numeroParaTemporal){
-				numeroParaTemporal = 1;
-			}
+
+//			if(auxiliar > numeroParaTemporal){
+//				numeroParaTemporal = auxiliar;
+//			}
+//			else if (auxiliar == 0){
+//				numeroParaTemporal = 1;
+//			}
 		}
 	}
 
-	if(numeroParaTemporal > 1){
-		numeroParaTemporal++;
-	}
+//	if(numeroParaTemporal >= 1 && ){
+//		numeroParaTemporal++;
+//	}
+
+	numeroParaTemporal = mayor_temporal + 1;
 
 
 	char* numeroDesignado = string_new();
@@ -135,13 +151,17 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	return pathCompleto;
 }
 
+
 char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
+
 	char* pathBase = obtenerPathTabla(nombre_tabla);
+
 	DIR* dir = opendir(pathBase);
 	int numeroParaTemporal = 0;
 	int auxiliar;
 
-	struct dirent *ent;
+	struct dirent *ent;				//0.tmp
+									//1.tmp
 
 	while((ent = readdir(dir)) != NULL){
 		if(no_es_ubicacion_prohibida(pathBase)){
@@ -150,29 +170,48 @@ char* obtenerPathParaTemporalMientrasCompacto(char* nombre_tabla){
 			if(auxiliar > numeroParaTemporal){
 				numeroParaTemporal = auxiliar;
 			}
-			else if (auxiliar == numeroParaTemporal){
-				numeroParaTemporal = 1;
-			}
+//			else if (auxiliar == numeroParaTemporal){
+//				numeroParaTemporal = 1;
+//			}
 		}
 	}
 
-	if(numeroParaTemporal > 1){
+	if(numeroParaTemporal >= 1){
 		numeroParaTemporal++;
 	}
 
 
 	char* numeroDesignado = string_new();
+
 	numeroDesignado = string_itoa(numeroParaTemporal);
 
 	char* pathCompleto = string_new();
+
 	string_append(&pathCompleto, pathBase);
+
 	string_append(&pathCompleto, "/");
+
 	string_append(&pathCompleto, numeroDesignado);
+
 	string_append(&pathCompleto, ".tmpc");
 
 	free(pathBase);
 
 	return pathCompleto;
+}
+
+char* obtener_path_de_temporal_para_compactar_de_tabla(char* nombre_tabla, int indice_elegido){
+
+	char* path = obtenerPathDirectorio_Tablas();
+
+	string_append(&path, "/");
+	string_append(&path, nombre_tabla);
+	string_append(&path, "/");
+	string_append(&path, string_itoa(indice_elegido));
+	string_append(&path, ".tmpc");
+
+	return path;
+
 }
 
 char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
@@ -192,13 +231,17 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 }
 
 char* obtenerPath_Bloque(int indice){
+
 	char* path = string_new();
+	char* string_indice = string_new();
+	string_indice = string_itoa(indice);
 
 	string_append(&path, punto_montaje);
 	string_append(&path, "Bloques/");
-	string_append(&path, string_itoa(indice));
+	string_append(&path, string_indice); //aca iba string_itoa(indice), lo cambio por string_indice
 	string_append(&path, ".bin");
 
+	free(string_indice); //agregado, aca no iba nada
 
 	return path;
 
@@ -265,6 +308,7 @@ int obtener_puerto(){
 }
 
 int obtener_cantidad_de_archivos_tmpc(char* nombre_tabla){
+
 	DIR* dir;
 
 	struct dirent* ent;
@@ -289,10 +333,13 @@ int obtener_cantidad_de_archivos_tmpc(char* nombre_tabla){
 
 	closedir(dir);
 
+	free(raiz_de_tabla);
+
 	return temporales_compactados;
 }
 
 void transformar_tmp_a_tmpc(char* nombre_tabla){
+
 	DIR* dir;
 
 	struct dirent* ent;
@@ -321,13 +368,20 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 				string_append(&nuevo, ".");
 				string_append(&nuevo, "tmpc");
 
+				log_info(logger_compactador, "Cambio el nombre \"%s\" a \"%s\"", viejo, nuevo);
 
 				rename(viejo, nuevo);
+
+				free(viejo);
+				free(nuevo);
+
 			}
 		}
 	}
 
 	closedir(dir);
+
+	free(raiz_de_tabla);
 }
 
 void liberar_bloques_particion(char* path_particion){
@@ -345,32 +399,33 @@ void liberar_bloques_particion(char* path_particion){
 
 	list_iterate(particion->bloques, _eliminar_bloque);
 
-	list_clean_and_destroy_elements(particion->bloques, free);
+//	list_clean_and_destroy_elements(particion->bloques, free);
 
-
-	//de aca para abajo nose si esta bien, revisar
+	liberar_particion(particion);
 
 
 	if(string_ends_with(path_particion , ".bin")){
-		printf("Creo la particion otra vez\n");
 		crear_archivo_particion(path_particion);
 
 	}
 
-	printf("Libero estructura particion\n");
-	liberar_particion(particion);
+//	liberar_particion(particion);
 
 }
 
 void liberar_tmpc(char* nombre_tabla){
+
 	DIR* dir;
 	struct dirent* ent;
 
 	char* path_tabla = obtenerPathTabla(nombre_tabla);
 
 	if((dir = opendir(path_tabla)) != NULL){
+
 		while((ent = readdir(dir)) != NULL){
+
 			if(string_ends_with(ent->d_name, ".tmpc")){
+
 				char* aux = string_new();
 				string_append(&aux, path_tabla);
 				string_append(&aux, "/");
@@ -391,19 +446,23 @@ void liberar_tmpc(char* nombre_tabla){
 
 }
 
+
 void eliminar_bloque(int bloque){
+
+	//tiene semaforo!
 
 	char* path_bloque = obtenerPath_Bloque(bloque);
 
-	printf("Elimino el bloque %s\n", path_bloque);
-
 	unlink(path_bloque);
+
+	pthread_rwlock_wrlock(&semaforo_bitmap);
 
 	set_estado(bloque, LIBRE);
 
+	pthread_rwlock_unlock(&semaforo_bitmap);
+
 	free(path_bloque);
 
-	printf("TERMINE DE ELIMINAR");
 }
 
 char* obtener_path_bitmap(){

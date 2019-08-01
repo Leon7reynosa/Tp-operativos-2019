@@ -18,6 +18,9 @@ typedef struct{
 	char* ip;
 	int puerto;
 	int socket;
+	int contador_requests;
+	bool conectado;
+	pthread_rwlock_t semaforo_memoria;
 
 }memoria_t;
 

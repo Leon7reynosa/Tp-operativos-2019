@@ -19,55 +19,121 @@ void* realizar_gossiping(){
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
-		printf("\n/////////////////////////////INICIANDO EL GOSSIPING///////////////////////////////////////\n");
+		printf("\n////////////////////INICIANDO EL GOSSIPING/////////////////////////\n");
 
-		int conexion = tomar_socket_memoria_aleatorio(tabla_gossiping);
+		pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
-		printf(">>El socket utilizado es: %d<<\n" , conexion);
+		memoria_t* memoria_utilizada = tomar_socket_memoria_aleatorio(tabla_gossiping);
 
-		bool terminaste = actualizar_gossiping(conexion);
+		pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
-		while((conexion > 0) && !terminaste){
+		if(memoria_utilizada != NULL){
 
-			printf("Fallo el gossiping, lo intento denuevo");
+			printf(">>La Memoria Utilizada sera la Memoria N° %d\n" , memoria_utilizada->numero_memoria) ;
 
-			close(conexion);
-
-			memoria_t* memoria = remover_conexion(conexion, tabla_gossiping);
-			remover_memoria_de_consistencia(memoria);
-			eliminar_memoria_t(memoria);
-
-			conexion = tomar_socket_memoria_aleatorio(tabla_gossiping);
-
-			terminaste = actualizar_gossiping(conexion);
 		}
 
 
-		if(conexion < 0 ){
+		bool terminaste = actualizar_gossiping(memoria_utilizada); //semaforo adentro
+
+		while((memoria_utilizada != NULL) && !terminaste){
+
+			printf("Fallo el gossiping, lo intento denuevo\n");
+
+			pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
+
+			memoria_utilizada= tomar_socket_memoria_aleatorio(tabla_gossiping);
+
+			pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
+			terminaste = actualizar_gossiping(memoria_utilizada);
+		}
+
+
+		if( memoria_utilizada == NULL ){
 			printf(">>No hay memorias conectadas<<\n");
 		}
 
-		printf("\n//////////////////////////////////////FIN GOSSIP//////////////////////////////////////////////////////////\n");
+		printf("\n///////////////////////FIN GOSSIP///////////////////////////////\n");
 	}
+}
+
+void poner_memoria_desconectada(int conexion){
+
+	pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
+
+	void _sos_la_memoria(void* _memoria){
+
+		memoria_t* memoria = (memoria_t* ) _memoria;
+
+		if( memoria->socket = conexion){
+
+			memoria->conectado = false;
+
+		}
+
+	}
+
+	list_iterate(tabla_gossiping , _sos_la_memoria);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
+}
+
+void remover_memoria_de_tabla_gossiping(memoria_t* memoria_utilizada){
+
+	pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
+
+	remover_conexion(memoria_utilizada->socket , tabla_gossiping);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
+	liberar_memoria_t(memoria_utilizada); //cuidado
+
 }
 
 void remover_memoria_de_consistencia(memoria_t* memoria){
 
+	//SEMAFOROS AFUERA
+
 	memoria_t* memoria_devuelta_shc;
 
-	remover_conexion(memoria->socket, Eventual_C);
-
-	memoria_devuelta_shc = remover_conexion(memoria->socket, Strong_Hash_C);
-
-	if(memoria_devuelta_shc != NULL){
-
-		request_journal();
-
-	}
+	pthread_rwlock_wrlock(&semaforo_strong_c);
 
 	if(memoria == Strong_C){
 
 		Strong_C = NULL;
+
+	}
+
+	pthread_rwlock_unlock(&semaforo_strong_c);
+
+	pthread_rwlock_wrlock(&semaforo_eventual_c);
+
+	remover_conexion(memoria->socket, Eventual_C);
+
+	pthread_rwlock_unlock(&semaforo_eventual_c);
+
+	pthread_rwlock_wrlock(&semaforo_strong_hash_c);
+
+	memoria_devuelta_shc = remover_conexion(memoria->socket, Strong_Hash_C);
+
+	pthread_rwlock_unlock(&semaforo_strong_hash_c);
+
+	if(memoria_devuelta_shc != NULL){
+
+
+		void* _hacete_journal(void* _memoria_shc){
+
+			memoria_t* memoria_shc = (memoria_t* ) _memoria_shc;
+
+			mandar_journal(memoria_shc);
+
+			return NULL;
+
+		}
+
+		list_iterate(Strong_Hash_C , _hacete_journal);
 
 	}
 
@@ -86,6 +152,8 @@ memoria_t* remover_conexion( int conexion , t_list* lista_a_remover ){
 
 	memoria_t* dato = list_remove_by_condition(lista_a_remover, _tenes_esta_conexion);
 
+	//deberia liberarla?
+
 	return dato;
 
 }
@@ -99,25 +167,47 @@ void eliminar_memoria_t( memoria_t* dato_memoria ){
 }
 
 
-int tomar_socket_memoria_aleatorio(t_list* lista_memorias){
+memoria_t* tomar_socket_memoria_aleatorio(t_list* lista_memorias){
 
 	int socket_return;
 	int numero_random;
 
-	if(list_size(lista_memorias) > 0){
-		numero_random = rand() % list_size(lista_memorias);
-	}else{
-		return -1;
+	bool _estas_conectada(void* _memoria){
+
+		memoria_t* memoria = (memoria_t* ) _memoria;
+
+		return memoria->conectado;
+
 	}
 
-	memoria_t* dato_lista = (memoria_t* ) list_get(lista_memorias , numero_random);
+	t_list* lista_memorias_conectadas = list_filter(lista_memorias , _estas_conectada);
 
-	return dato_lista->socket;
+	if(list_size(lista_memorias_conectadas) > 0){
+		numero_random = rand() % list_size(lista_memorias_conectadas);
+	}else{
+		return NULL;
+	}
+
+	memoria_t* dato_lista = (memoria_t* ) list_get(lista_memorias_conectadas , numero_random);
+
+	return dato_lista;
 
 }
 
 
-bool actualizar_gossiping(int conexion){
+bool actualizar_gossiping(memoria_t* memoria){
+
+	//EL SEMAFORO ESTA AFUERA
+
+	bool respuesta;
+
+	if(memoria == NULL){
+
+		return false;
+
+	}
+
+	pthread_rwlock_wrlock(&memoria->semaforo_memoria);
 
 	void* buffer ;
 	cod_operacion gossip= GOSSIP;
@@ -129,7 +219,13 @@ bool actualizar_gossiping(int conexion){
 
 	memcpy((buffer +  sizeof(cod_operacion)) , &cantidad_memorias , sizeof(int));
 
-	if(  (send(conexion , buffer, sizeof(cod_operacion) + sizeof(int) , 0) ) < 0 ){
+	if(  (send(memoria->socket , buffer, sizeof(cod_operacion) + sizeof(int) , 0) ) <= 0 ){
+
+		memoria->conectado = false;
+
+		pthread_rwlock_unlock(&memoria->semaforo_memoria);
+
+		free(buffer);
 
 		return false;
 
@@ -137,15 +233,25 @@ bool actualizar_gossiping(int conexion){
 
 	free(buffer);
 
-	return recibir_actualizacion_gossiping(conexion);
+	respuesta = recibir_actualizacion_gossiping( memoria);
+
+	pthread_rwlock_unlock(&memoria->semaforo_memoria);
+
+	return respuesta;
 }
 
 
-bool recibir_actualizacion_gossiping(int conexion){
+bool recibir_actualizacion_gossiping(memoria_t* memoria){
+
+	//el semaforo de memoria esta afuera
 
 	int *cantidad_memorias = malloc(sizeof(int));
 
-	if((recv(conexion ,cantidad_memorias,sizeof(int),0)) < 0 ){
+	if((recv(memoria->socket ,cantidad_memorias,sizeof(int),0)) <= 0 ){
+
+		memoria->conectado =false;
+
+		remover_memoria_de_consistencia(memoria);
 
 		return false;
 
@@ -153,7 +259,7 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 	memoria_t* dato_memoria_ingresar;
 
-	printf("cantidad de memorias : %d\n"  , *cantidad_memorias);
+	printf("\n>>Cantidad de memorias : %d\n"  , *cantidad_memorias);
 
 	for(int i = 0 ; i < *cantidad_memorias ; i++){
 
@@ -161,17 +267,17 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 		memoria_recv->ip = malloc(sizeof(t_stream));
 
-		recv(conexion, &(memoria_recv->numero_memoria) , sizeof(int) , 0 );
+		recv(memoria->socket, &(memoria_recv->numero_memoria) , sizeof(int) , 0 );
 
-		recv(conexion, &(memoria_recv->ip->size) , sizeof(int) , 0  );
+		recv(memoria->socket, &(memoria_recv->ip->size) , sizeof(int) , 0  );
 
 		memoria_recv->ip->buffer = malloc(memoria_recv->ip->size);
 
-		recv(conexion, memoria_recv->ip->buffer , memoria_recv->ip->size , 0  );
+		recv(memoria->socket, memoria_recv->ip->buffer , memoria_recv->ip->size , 0  );
 
-		recv(conexion, &(memoria_recv->puerto) , sizeof(int) , 0 );
+		recv(memoria->socket, &(memoria_recv->puerto) , sizeof(int) , 0 );
 
-		printf("\nMe llego la memoria: \n\n");
+		printf("\n>>Me llego la memoria: \n\n");
 
 		printf("NUMERO: %i\n", memoria_recv->numero_memoria);
 		printf("SIZE IP: %i\n", memoria_recv->ip->size);
@@ -180,7 +286,7 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 		if(!existe_en_tabla_gossiping(memoria_recv)){
 
-			printf(">>La memoria no existe en tablaa gossiping<<\n");
+			printf("\n>>La memoria no existe en tablaa gossiping<<\n\n");
 
 			dato_memoria_ingresar = convertir_a_memoria_t(memoria_recv);
 
@@ -189,20 +295,22 @@ bool recibir_actualizacion_gossiping(int conexion){
 
 			if(dato_memoria_ingresar->socket > 0){
 
-
-				ingresar_a_tabla_gossiping(dato_memoria_ingresar);
-
 				log_info(logger_kernel, "SE ESTABLECION LA CONEXION CON LA MEMORIA %d.\n" ,
 						dato_memoria_ingresar->numero_memoria);
 
+				dato_memoria_ingresar->conectado = true;
+
+
 			}else{
+
+				dato_memoria_ingresar->conectado = false;
 
 				log_error(logger_kernel, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.\n",
 						dato_memoria_ingresar->numero_memoria);
 
-				liberar_memoria_t(dato_memoria_ingresar);
-
 			}
+
+			ingresar_a_tabla_gossiping(dato_memoria_ingresar);
 
 		}
 
@@ -223,7 +331,13 @@ void inicializar_tabla_gossiping(){
 
 void ingresar_a_tabla_gossiping(memoria_t* dato_memoria_ingresar){
 
+	pthread_rwlock_wrlock(&semaforo_tabla_gossiping);
+
 	list_add(tabla_gossiping, dato_memoria_ingresar);
+
+	printf("\n>Memoria %d Agregada a Tabla de Gossiping--\n" , dato_memoria_ingresar->numero_memoria);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 }
 
@@ -258,27 +372,32 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 
 	memoria_creada->numero_memoria = numero_memoria;
 
+	memoria_creada->contador_requests = 0;
+
 	memoria_creada->puerto = puerto;
 
 	memoria_creada->socket = conectar_servidor(memoria_creada->ip,	memoria_creada->puerto); //esto capaz no va.
 
+	pthread_rwlock_init(&memoria_creada->semaforo_memoria , NULL);
+
 	if(memoria_creada->socket > 0){
 
-		ingresar_a_tabla_gossiping(memoria_creada);
 
-		log_info(logger_kernel, "SE ESTABLECION LA CONEXION CON LA MEMORIA %d.\n" ,
+		log_info(logger_kernel, "-Se establecio la conexion con la MEMORIA %d.-" ,
 				memoria_creada->numero_memoria);
+
+		memoria_creada->conectado = true;
 
 	}else{
 
-		log_error(logger_kernel, "NO SE PUDO ESTABLECER LA CONEXION CON LA MEMORIA %d.\n",
+		log_error(logger_kernel, "NO se pudo establecer la conexion con la MEMORIA%d.-",
 				memoria_creada->numero_memoria);
 
-		liberar_memoria_t(memoria_creada);
+		memoria_creada->conectado = false;
 
 	}
 
-	printf("termine el crear memoria_t\n");
+
 
 	return memoria_creada;
 
@@ -287,7 +406,6 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 
 memoria_t* convertir_a_memoria_t(struct MemoriasEstructura* dato_memoria){
 
-	printf("llegue a convertir memoria t\n");
 
 	memoria_t* dato_convertido = malloc(sizeof(memoria_t));
 
@@ -297,6 +415,8 @@ memoria_t* convertir_a_memoria_t(struct MemoriasEstructura* dato_memoria){
 	dato_convertido->puerto = dato_memoria->puerto;
 	memcpy(dato_convertido->ip , dato_memoria->ip->buffer , dato_memoria->ip->size);
 
+	pthread_rwlock_init(&dato_convertido->semaforo_memoria , NULL);
+
 	dato_convertido->socket = conectar_servidor(dato_convertido->ip, dato_convertido->puerto); //esto capaz no va.
 
 	return dato_convertido;
@@ -304,7 +424,7 @@ memoria_t* convertir_a_memoria_t(struct MemoriasEstructura* dato_memoria){
 
 bool existe_en_tabla_gossiping(struct MemoriasEstructura* dato_memoria){
 
-
+	bool valor_return;
 
 	bool _estas_en_la_tabla(memoria_t* dato){
 
@@ -313,9 +433,14 @@ bool existe_en_tabla_gossiping(struct MemoriasEstructura* dato_memoria){
 
 	}
 
-	return list_any_satisfy(tabla_gossiping, _estas_en_la_tabla);
+	pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
 
-	printf("pase el any satysfy\n");
+	valor_return = list_any_satisfy(tabla_gossiping, _estas_en_la_tabla);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
+
+	return valor_return;
+
 
 }
 

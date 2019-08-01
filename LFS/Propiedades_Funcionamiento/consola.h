@@ -22,10 +22,18 @@
 #include"Mensajeria/requestInsert.h"
 #include"Mensajeria/requestSelect.h"
 #include"Mensajeria/mensajes.h"
+#include"loggers.h"
 
 
 void* consola(void* argumento);
+char* obtener_string_codigo(cod_operacion codigo);
 bool ejecutar_request(cod_operacion codigo_request , char* linea_request);
+int obtener_parametros_select(char* linea_request, char** nombre_tabla, u_int16_t* key);
+int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_t* key, char** value, time_t* timestamp);
+//int obtener_parametros_insert_sin_timestamp(char* linea_request, char* nombre_tabla, u_int16_t* key, char* value);
+int obtener_parametros_create(char* linea_request, char** nombre_tabla, char** criterio, int* numero_particiones, int* tiempo_compactacion);
+int obtener_parametros_describe(char* linea_request, char** nombre_tabla);
+int obtener_parametros_drop(char* linea_request, char** nombre_tabla);
 void menu(void);
 
 

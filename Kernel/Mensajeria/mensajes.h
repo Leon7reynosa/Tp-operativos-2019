@@ -29,6 +29,7 @@
 #include"requestDrop.h"
 #include"Cliente/cliente.h"
 
+void enviar_estado(int conexion, estado_request estado);
 bool enviar_request(cod_operacion cod_op, void* tipoRequest , int conexion_memoria);
 void liberar_request(request dato);
 

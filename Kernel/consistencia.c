@@ -30,17 +30,31 @@ void agregar_a_consistencia(cod_consistencia codigo, memoria_t* memoria_a_guarda
 
 		case SC:
 
+			pthread_rwlock_wrlock(&semaforo_strong_c);
+
 			Strong_C = memoria_a_guardar;
+
+			pthread_rwlock_unlock(&semaforo_strong_c);
+
 			break;
 
 		case EC:
 
+			pthread_rwlock_wrlock(&semaforo_eventual_c);
+
 			list_add(Eventual_C, memoria_a_guardar);
+
+			pthread_rwlock_unlock(&semaforo_eventual_c);
+
 			break;
 
 		case SHC:
 
+			pthread_rwlock_wrlock(&semaforo_strong_hash_c);
+
 			list_add(Strong_Hash_C, memoria_a_guardar);
+
+			pthread_rwlock_unlock(&semaforo_strong_hash_c);
 
 			request_journal();
 
@@ -60,17 +74,11 @@ cod_consistencia identificar_consistencia(char* consistencia){
 
 	if(strcmp(consistencia, "SC") == 0){
 
-		printf("\n>>La consistencia es Strong Consistency\n");
-
 		return SC;
 	}else if(strcmp(consistencia, "EC") == 0){
 
-		printf("\n>>La consistencia es Eventual Consistency\n");
-
 		return EC;
 	}else if(strcmp(consistencia, "SHC") == 0){
-
-		printf("\n>>La consitencia es Strong hash consistency\n");
 
 		return SHC;
 	}else{
@@ -120,20 +128,27 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 		default:
 			printf("CODIGO DE REQUEST INCORRECTO\n");
+
+			return -1;
+
 			break;
 	}
+
+	pthread_rwlock_rdlock(&semaforo_registro_tabla);
 
 	if(!dictionary_has_key(registro_tabla, tabla)){
 
 		printf("No existe la tabla en el registro de tablas\n"); //log
 
+		pthread_rwlock_unlock(&semaforo_registro_tabla);
+
 		return -1;
 
 	}
 
-	printf("consistencia de la tabla : %s\n"  , (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
-
 	codigo_consistencia =    identificar_consistencia(  (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 	return codigo_consistencia;
 }
@@ -147,7 +162,7 @@ memoria_t* tomar_memoria_al_azar(){
 
 	if(list_is_empty(lista_de_consistencias)){
 
-		printf("TODAVIA NO HAY MEMORIAS EN LAS CONSISENCIAS\n");
+		printf("\n>Todavia NO hay memorias en las consistencias\n");
 
 		return NULL;
 
@@ -156,6 +171,23 @@ memoria_t* tomar_memoria_al_azar(){
 	int numero_random_consistencia = rand() % list_size(lista_de_consistencias); // para determinar de cual de los tres codigos de operacion usamos para agarrar la memoria ( SC, EC, SHC)
 
 	memoria_a_retornar = (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
+
+	while(!memoria_a_retornar->conectado){
+
+		list_remove(lista_de_consistencias , numero_random_consistencia);
+
+		if(list_size(lista_de_consistencias) == 0){
+
+			list_destroy (lista_de_consistencias);
+
+			return NULL;
+		}
+
+		numero_random_consistencia = rand() % list_size(lista_de_consistencias);
+
+		memoria_a_retornar = (memoria_t*) list_get(lista_de_consistencias , numero_random_consistencia);
+
+	}
 
 	list_destroy(lista_de_consistencias);
 
@@ -169,7 +201,11 @@ t_list* lista_memorias_de_consistencia(){
 
 	if(Strong_C != NULL){
 
+		pthread_rwlock_rdlock(&semaforo_strong_c);
+
 		list_add(lista_de_memorias, Strong_C);
+
+		pthread_rwlock_unlock(&semaforo_strong_c);
 
 	}
 
@@ -196,9 +232,20 @@ t_list* lista_memorias_de_consistencia(){
 
 	}
 
+
+	pthread_rwlock_rdlock(&semaforo_strong_hash_c);
+
 	list_iterate(Strong_Hash_C, _agregar_si_cumple);
 
+	pthread_rwlock_unlock(&semaforo_strong_hash_c);
+
+
+	pthread_rwlock_rdlock(&semaforo_eventual_c);
+
 	list_iterate(Eventual_C, _agregar_si_cumple);
+
+	pthread_rwlock_unlock(&semaforo_eventual_c);
+
 
 	return lista_de_memorias;
 
@@ -216,11 +263,40 @@ memoria_t* memoria_al_azar_consistencia(t_list* lista_consistencia){
 //TOMA UNA MEMORIA SEGUN LA REQUEST QUE LE PASES
 memoria_t* seleccionar_memoria_consistencia(cod_operacion cod_op , void* tipo_request){
 
+	memoria_t* memoria_a_retornar;
+
 	cod_consistencia codigo_consistencia = identificar_consitencia_para_request(cod_op, tipo_request);
 
 	u_int16_t key_utilizada = determinar_key(cod_op , tipo_request);
 
-	return tomar_memoria_segun_codigo_consistencia(codigo_consistencia, key_utilizada);
+	memoria_a_retornar =  tomar_memoria_segun_codigo_consistencia(codigo_consistencia, key_utilizada);
+
+	if(memoria_a_retornar == NULL){
+
+		log_error( logger_kernel , "-NO se encuentran memorias para esa consistencia.-");
+
+		return NULL;
+
+	}
+
+	while( !memoria_a_retornar->conectado){
+
+		remover_memoria_de_consistencia(memoria_a_retornar);
+
+		memoria_a_retornar = tomar_memoria_segun_codigo_consistencia(codigo_consistencia, key_utilizada);
+
+		if(memoria_a_retornar == NULL){
+
+			log_error( logger_kernel , "-NO se encuentran memorias para esa consistencia.-");
+
+			return NULL;
+
+		}
+
+
+	}
+
+	return memoria_a_retornar;
 
 }
 
@@ -230,6 +306,8 @@ u_int16_t determinar_key(cod_operacion cod_op , void* tipo_request){
 
 	insert request_insert;
 	select_t request_select;
+
+	int resultado_return;
 
 	switch(cod_op){
 
@@ -247,14 +325,22 @@ u_int16_t determinar_key(cod_operacion cod_op , void* tipo_request){
 
 		default:
 
+
+			pthread_rwlock_rdlock(&semaforo_strong_hash_c);
+
 			if(list_is_empty(Strong_Hash_C)){
 
-				return -1;
+				resultado_return =  -1;
+
+			}else{
+
+				resultado_return = rand() % list_size(Strong_Hash_C);
 
 			}
 
-			return rand() & list_size(Strong_Hash_C);
+			pthread_rwlock_unlock(&semaforo_strong_hash_c);
 
+			return resultado_return;
 
 	}
 
@@ -266,50 +352,80 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 	int index_memoria;
 	int numero_random;
-
-	printf("estoy aca\n");
-
-	printf("codigo: %d\n" , codigo_consistencia);
+	memoria_t* memoria_a_retornar;
 
 	switch(codigo_consistencia){
 
 		case SC:
 
-			return Strong_C;
+			pthread_rwlock_rdlock(&semaforo_strong_c);
+
+			memoria_a_retornar = Strong_C;
+
+			pthread_rwlock_unlock(&semaforo_strong_c);
+
+			return memoria_a_retornar;
+
 			break;
 
 		case SHC:
 
+
+			pthread_rwlock_rdlock(&semaforo_strong_hash_c);
+
 			if(list_is_empty(Strong_Hash_C)){
 
-				return NULL;
-			}
-			if( key < 0 ){
-
-				index_memoria = rand() % list_size(Strong_Hash_C);
+				memoria_a_retornar =  NULL;
 
 			}else{
 
-				index_memoria = funcion_hash(key);
+				if( key < 0 ){
+
+					index_memoria = rand() % list_size(Strong_Hash_C);
+
+				}else{
+
+					index_memoria = funcion_hash(key);
+
+				}
+
+				memoria_a_retornar =  (memoria_t*)list_get(Strong_Hash_C , index_memoria);
 
 			}
 
-			return list_get(Strong_Hash_C , index);
+			pthread_rwlock_unlock(&semaforo_strong_hash_c);
 
+			return memoria_a_retornar;
 
 			break;
 
 		case EC:
 
+			pthread_rwlock_rdlock(&semaforo_eventual_c);
+
 			if(list_is_empty(Eventual_C)){
 
 				return NULL;
 
+			}else{
+
+				if ( memoria_siguiente >= (list_size(Eventual_C) -1) ){
+
+					memoria_siguiente = 0;
+
+				}else{
+
+					memoria_siguiente++;
+
+				}
+
+				memoria_a_retornar = (memoria_t*) list_get(Eventual_C, memoria_siguiente);
+
 			}
 
-			numero_random = rand() % list_size(Eventual_C);
+			pthread_rwlock_unlock(&semaforo_eventual_c);
 
-			return list_get(Eventual_C, numero_random);
+			return memoria_a_retornar;
 
 			break;
 
@@ -320,7 +436,6 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 	}
 
-	printf("termine :/\n");
 
 	return NULL;
 
@@ -329,9 +444,15 @@ memoria_t* tomar_memoria_segun_codigo_consistencia(cod_consistencia codigo_consi
 
 int funcion_hash(u_int16_t key) {
 
+	int indice_return;
 
-	return key % list_size(Strong_Hash_C);
+	pthread_rwlock_rdlock(&semaforo_strong_hash_c);
 
+	indice_return =  key % list_size(Strong_Hash_C);
+
+	pthread_rwlock_unlock(&semaforo_strong_hash_c);
+
+	return indice_return;
 
 }
 
@@ -348,14 +469,22 @@ void mostrar_memoria_utilizada(memoria_t* memoria_utilizada){
 
 void guardar_tabla_consistencia(char* tabla, metadata_t* metadata_tabla){
 
+	pthread_rwlock_wrlock(&semaforo_registro_tabla);
+
 	dictionary_put(registro_tabla , tabla, metadata_tabla);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 }
 
 
 int obtener_index_memoria(int key){
 
+	pthread_rwlock_rdlock(&semaforo_tabla_gossiping);
+
 	int cantidad_de_memorias = list_size(tabla_gossiping);
+
+	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
 
 	return key%cantidad_de_memorias;
 }
@@ -363,29 +492,34 @@ int obtener_index_memoria(int key){
 
 void actualizar_metadata(t_list* datos_describe){
 
+	pthread_rwlock_wrlock(&semaforo_registro_tabla);
 
 	dictionary_clean_and_destroy_elements(registro_tabla, liberar_metadata);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 	void _actualizar_en_tabla_metadata(void* dato_describe){
 
 		Metadata dato_metadata = (Metadata) dato_describe;
 
-		//agregar semaforo de escritura
+		pthread_rwlock_wrlock(&semaforo_registro_tabla);
 
 		dictionary_put(registro_tabla, dato_metadata->tabla, dato_metadata);
 
-		//agregar semaforo de escritura
+		pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 	}
 
 	list_iterate(datos_describe, _actualizar_en_tabla_metadata);
 
 
-
 }
 
 
 void agregar_metadata_a_registro_tabla(Metadata metadata_guardar){
+
+
+	pthread_rwlock_wrlock( &semaforo_registro_tabla );
 
 	if(dictionary_has_key(registro_tabla, metadata_guardar->tabla)){
 
@@ -395,6 +529,33 @@ void agregar_metadata_a_registro_tabla(Metadata metadata_guardar){
 
 
 	dictionary_put(registro_tabla , metadata_guardar->tabla , metadata_guardar);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
+
+}
+
+
+bool existe_en_registro_tabla(char* nombre_tabla){
+
+	bool contiene_tabla;
+
+	pthread_rwlock_rdlock(&semaforo_registro_tabla);
+
+	contiene_tabla = dictionary_has_key(registro_tabla,  nombre_tabla);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
+
+	return contiene_tabla;
+
+}
+
+void remover_tabla_de_registro(char* nombre_tabla){
+
+	pthread_rwlock_rdlock(&semaforo_registro_tabla);
+
+	dictionary_remove_and_destroy(registro_tabla, nombre_tabla, liberar_metadata);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
 
 }
 

@@ -8,8 +8,10 @@ C_SRCS += \
 ../consistencia.c \
 ../consola.c \
 ../gossiping.c \
+../inofity_kernel.c \
 ../kernel.c \
 ../metadata.c \
+../metricas.c \
 ../parser.c \
 ../planificador.c \
 ../request_memoria.c \
@@ -20,8 +22,10 @@ OBJS += \
 ./consistencia.o \
 ./consola.o \
 ./gossiping.o \
+./inofity_kernel.o \
 ./kernel.o \
 ./metadata.o \
+./metricas.o \
 ./parser.o \
 ./planificador.o \
 ./request_memoria.o \
@@ -32,8 +36,10 @@ C_DEPS += \
 ./consistencia.d \
 ./consola.d \
 ./gossiping.d \
+./inofity_kernel.d \
 ./kernel.d \
 ./metadata.d \
+./metricas.d \
 ./parser.d \
 ./planificador.d \
 ./request_memoria.d \

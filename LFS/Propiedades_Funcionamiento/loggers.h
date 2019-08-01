@@ -8,11 +8,16 @@
 #ifndef PROPIEDADES_FUNCIONAMIENTO_LOGGERS_H_
 #define PROPIEDADES_FUNCIONAMIENTO_LOGGERS_H_
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<commons/log.h>
 
 t_log* logger_lissandra;
 t_log* logger_lfs;
 t_log* logger_compactador;
 t_log* logger_request;
+
+t_log* logger_dump;
 
 
 #endif /* PROPIEDADES_FUNCIONAMIENTO_LOGGERS_H_ */

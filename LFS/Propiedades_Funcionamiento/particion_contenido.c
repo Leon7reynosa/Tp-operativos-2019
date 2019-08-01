@@ -10,6 +10,9 @@
 
 void eliminar_particion(char* path_particion){
 
+
+	printf("\n>Se ELIMINARÁ la siguiente Particion:\n");
+
 	Particion particion = leer_particion(path_particion);
 
 	void _eliminar_bloque(void* _nro_bloque){
@@ -56,16 +59,13 @@ void liberar_particion(Particion particion){
 
 Particion leer_particion(char* path_particion){
 
-	printf("LEO PARTICION\n");
-
 	Particion particion_contenido;
 	int size;
-
 
 	FILE* particion = fopen(path_particion, "rb");
 
 	if(!particion){
-		printf("RECURSAMOS!\n");
+		printf("\nNO se pudo abrir la particion\n");
 		exit(1);
 	}
 
@@ -93,8 +93,6 @@ Particion leer_particion(char* path_particion){
 
 	fclose(particion);
 
-	printf("TERMINE DE LEER PARTICION\n");
-
 	return particion_contenido;
 
 }
@@ -121,36 +119,36 @@ void actualiar_particion(char* path_particion){
 
 	}
 
+	if(string_ends_with(path_particion, ".tmp")){
+		log_info(logger_dump, "Actualize la particion. Antes %i bytes ---- Despues %i bytes", particion_lectura->size, size_actualizado );
+	}
 
 	list_iterate(particion_lectura->bloques, _tamanio_por_bloque);
 
 	particion_lectura->size = size_actualizado;
 
 	reescribir_bloques_en_particion(path_particion, particion_lectura);
+
+	liberar_particion(particion_lectura); //agregado por memory leak
+
 }
 
 void mostrar_particion(Particion particion){
 
-	printf("Bytes = %i\n", particion->size);
-
-	printf("BLOQUES: %i\n", list_size(particion->bloques));
+	printf("\n>[LECTURA PARTICION] CANTIDAD DE BLOQUES: %i\n", list_size(particion->bloques));
 	int* aux = list_get(particion->bloques, 1);
 
 	void _printear(void* _bloque){
 
 		int* bloque = (int *)_bloque;
 
-		printf("---BLOQUE: %i---\n ", *bloque);
-
 		mostrar_bloque(*bloque);
-
-		printf("Termine de leer el bloque!\n");
 
 	}
 
 	list_iterate(particion->bloques, _printear);
 
-	printf("Termine de mostrar la particion\n");
+	printf("[LECTURA PARTICION] Termine de mostrar la particion\n");
 }
 
 int obtener_numero_particion(char* path){
@@ -198,8 +196,6 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 	DIR* directorio_tabla = opendir(path_tabla);
 	struct dirent* entrada_directorio;
 
-	t_list* lista_de_datos = list_create();
-
 	dato_t* dato_mayor = NULL;
 
 	if(directorio_tabla != NULL){
@@ -210,15 +206,34 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 				char* path_temporal = obtenerPathTabla(nombre_tabla);
 
-				string_append(&path_temporal, entrada_directorio->d_name);
 				string_append(&path_temporal, "/");
+				string_append(&path_temporal, entrada_directorio->d_name);
 
 				dato_t* dato_encontrado = buscar_dato_en_particion(path_temporal, key);
 
-				list_add(lista_de_datos, dato_encontrado);
+				if(dato_encontrado != NULL){
+
+					if(dato_mayor != NULL){
+
+						dato_t* dato_aux = dato_mayor;
+
+						dato_mayor = timestamp_mas_grande(dato_encontrado, dato_aux);
+
+						liberar_dato(dato_aux);
+
+						liberar_dato(dato_encontrado);
+
+					}
+
+					else{
+
+						dato_mayor = dato_encontrado;
+
+					}
+
+				}
 
 				free(path_temporal);
-
 
 			}
 
@@ -227,24 +242,8 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 
 	}
 
-	void _timestamp_menor(void* _dato){
-
-		dato_t* dato_a_analizar = (dato_t *)_dato;
-
-		dato_t* dato_aux = dato_mayor;
-
-		dato_mayor = timestamp_mas_grande(dato_aux, dato_a_analizar);
-
-		liberar_dato(dato_aux);
-
-	}
-
-	list_iterate(lista_de_datos, _timestamp_menor);
-
 	closedir(directorio_tabla);
 	free(path_tabla);
-
-	list_destroy_and_destroy_elements(lista_de_datos, liberar_dato);
 
 	return dato_mayor;
 
@@ -254,14 +253,12 @@ dato_t* buscar_dato_en_temporales(char* nombre_tabla, u_int16_t key){
 //bloque_siguiente, si no hay siguiente, tiene que ser menor que 0 ( < 0)
 char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque_siguiente){
 
-//	printf("Leo el bloque: %i\n", bloque_a_analizar);
 	Bloque bloque = leer_bloque(bloque_a_analizar);
-//	printf("Termine de leer el bloque\n");
 
-/*	if(list_size(bloque->datos) > 0){
-		printf("Leo un dato aunquesea: %s\n", list_get(bloque->datos, 0));
-	}
-*/
+//	if(list_size(bloque->datos) > 0){
+//		printf("[BUSQUEDA] Leo un dato aunquesea: %s\n", list_get(bloque->datos, 0));
+//	}
+
 	int index_dato = 0;
 
 	char* dato_cortado = NULL;
@@ -273,26 +270,25 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 		char* dato_a_analizar = (char *) _dato_a_analizar;
 
 		//TODO SI NO ES EL ULTIMO DATO
-		if(index_dato < (list_size(bloque->datos)) - 1){ //lion
-//			printf("index_dato: %i\n", index_dato);
+		if(index_dato < (list_size(bloque->datos)) - 1){
+
 			//TODO LO ANALIZO NORMAL
-			index_dato++; //lion
+			index_dato++;
+
+			if(es_dato_cortado(dato_a_analizar)){
+				return false;
+			}
+
 			return analizar_dato(key, dato_a_analizar);
 
 		}else{
-
-//			printf("Estoy en el ultimo dato\n");
 				//TODO SI ES EL ULTIMO DATO, PRIMERO ME FIJO SI EL SIGUIENTE ES VALIDO
 			if(indice_bloque_siguiente >= 0){
 
 				//SI ES VALIDO, OSEA ME PASARON UN BLOQUE SIGUIENTE
-
-//				printf("Hay bloque siguiente\n");
 				Bloque bloque_siguiente = leer_bloque(indice_bloque_siguiente);
-//				printf("Lo leo y obtengo el primer dato: %s\n", (char *)list_get(bloque_siguiente->datos, 0));
-				if(es_dato_cortado((char *) list_get(bloque_siguiente->datos, 0)) || es_dato_cortado(dato_a_analizar)){
 
-//					printf("Es dato cortado\n");
+				if(es_dato_cortado((char *) list_get(bloque_siguiente->datos, 0)) || es_dato_cortado(dato_a_analizar)){
 					//OBTENGO EL PRIMER DATO DEL BLOQUE SIGUIENTE (QUE SERIA EL CORTADO)
 					dato_cortado = string_duplicate((char *) list_get(bloque_siguiente->datos, 0));
 
@@ -300,8 +296,6 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 
 					string_append(&dato_cortado_aux, dato_a_analizar);
 					string_append(&dato_cortado_aux, dato_cortado);
-
-//					printf("dato cortado : %s\n" , dato_cortado);
 
 					liberar_bloque(bloque_siguiente);
 
@@ -314,15 +308,16 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 
 				liberar_bloque(bloque_siguiente);
 
-			}else{
+			}
 
-//				printf("No habia bloque siguiente\n");
+			else{
+
 				if(es_dato_cortado(dato_a_analizar)){
-//					printf("El dato esta cortado\n");
+
 					return false;
 
 				}
-//				printf("Analizo el dato\n");
+
 				return analizar_dato(key, dato_a_analizar);
 
 			}
@@ -332,8 +327,6 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 		index_dato++;
 	}
 
-
-
 //	printf("Busco entre los datos del bloque, el que estoy buscando\n");
 	//TODO PASO 1: itero la lista de datos del bloque a analizar buscando el dato
 	char* dato_encontrado = list_find(bloque->datos, _tenes_la_key);
@@ -342,21 +335,21 @@ char* buscar_dato_bloque(u_int16_t key, int bloque_a_analizar, int indice_bloque
 
 	if(dato_encontrado != NULL){
 
-//		printf("El dato encontrado existe!\n");
 		dato_completo = string_new();
 
 		string_append(&dato_completo, dato_encontrado);
 
 		if(dato_cortado != NULL){
+
 			string_append(&dato_completo, dato_cortado);
+
+			free(dato_cortado);
 
 		}
 
+	}else{
+		printf("[BUSQUEDA] No esta el dato en el bloque indicado\n");
 	}
-
-//	printf("El dato es: %s\n", dato_encontrado);
-//	printf("LLEGUE HASTA ACA!\n");
-	//free(dato_cortado);
 
 	liberar_bloque(bloque);
 
@@ -387,42 +380,33 @@ bool es_dato_cortado(char* dato_a_analizar){
 dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 //asumimos que hay una sola key en la particion
 
-//	printf("Leo la particion\n");
 	Particion particion = leer_particion(path_particion_a_buscar);
-//	printf("Particion leida\n");
 	int index_bloque;
 
-//	printf("\n Voy a mostrar la particion\n");
-	mostrar_particion(particion);
-//	printf("Termine de mostrar\n\n");
+//	mostrar_particion(particion);
+
 	dato_t* dato_encontrado = NULL;
 	char* dato;
 
 	int* bloque;
 	int *bloque_siguiente;
 
-//	printf("Empiezo a buscar el dato en los bloques\n");
 	//por cada bloque de la particion
 	for( index_bloque = 0 ; index_bloque < list_size(particion->bloques) ; index_bloque++){
 
 		bloque = list_get(particion->bloques, index_bloque);
 
-//		printf("Bloque: %i\n", *bloque);
-
 		//si el bloque tiene un bloque siguiente
 		if( index_bloque < (list_size(particion->bloques) - 1)){
 
-//			printf("Tiene bloque siguiente y es: ");
-
 			int *bloque_siguiente = list_get( particion->bloques , index_bloque + 1 ) ;
 
-//			printf("Bloque siguiente: %i\n", *bloque_siguiente);
-
-//			printf("Busco el dato\n");
 			dato  = buscar_dato_bloque(key, *bloque, *bloque_siguiente);
 
+
+		}
 		//si no tiene un bloque siguiente
-		}else{
+		else{
 
 			dato = buscar_dato_bloque(key , *bloque  , -1);
 		}
@@ -430,30 +414,27 @@ dato_t* buscar_dato_en_particion(char* path_particion_a_buscar , int key){
 		//si se encontro el dato!
 		if(dato != NULL){
 
-//			printf("Encontre el dato!\n");
+//			printf("[RESULTADO] Encontre el dato!\n");
 			dato_encontrado = convertir_a_dato(dato);
-//			printf("key: %i\n",dato_encontrado->key);
-//			printf("timestamp: %i\n", dato_encontrado->timestamp);
-//			printf("value: %s\n", dato_encontrado->value);
+//			printf("[RESULTADO] key: %i\n",dato_encontrado->key);
+//			printf("[RESULTADO] timestamp: %i\n", dato_encontrado->timestamp);
+//			printf("[RESULTADO] value: %s\n", dato_encontrado->value);
 			free(dato);
 
 			break;
 
 		}
 
-
 	}
 
 	if(dato_encontrado == NULL){
 
-//		printf("No encontre el dato!\n");
-		//logear que no lo encontre ! no existe
+		printf("[RESULTADO] No encontre el dato en la particion!\n");
 
 	}
 
-//	printf("Libero la particion\n");
 	liberar_particion(particion);
-//	printf("Particion liberada \n");
+
 	return dato_encontrado;
 }
 
@@ -482,7 +463,9 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 		Particion particion_a_obtener = leer_particion(path_particion);
 
-		int i = 0;
+		free(path_particion); //agregado para mem leak
+
+	//	int i = 0;
 
 		int fd_bloque;
 
@@ -492,9 +475,15 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 			char* path_bloque = obtenerPath_Bloque(*bloque);
 
+//			printf(">>PATH BLOQUE : %s\n" , path_bloque);
 
 			int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
 
+			if(fd_bloque <= -1){
+
+				perror("Open bloque");
+				exit(1);
+			}
 
 			struct stat* atributos = malloc(sizeof(struct stat));
 
@@ -505,6 +494,8 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 			if(datos == MAP_FAILED){
 				if(atributos->st_size == 0){
+
+					log_info(logger_compactador, "Particion %i -> bloque: %i, esta vacio", i, *bloque);
 
 					close(fd_bloque);
 
@@ -519,13 +510,17 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 					exit(1);
 				}
 
+			}else{
+
+//				printf("[MMAP PARTICION] dato append %s\n", datos);
+
+				log_info(logger_compactador, "Particion %i -> bloque: %i, tiene = %s", i, *bloque, datos);
+
+				string_append(&datos_totales, datos);
+
+				munmap(datos, atributos->st_size);
+
 			}
-
-
-
-			string_append(&datos_totales, datos);
-
-			munmap(fd_bloque, atributos->st_size);
 
 			close(fd_bloque);
 
@@ -535,12 +530,15 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 
 		}
 
-
 		list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
+
+		liberar_particion(particion_a_obtener); //agregado por memory leak
 
 	}
 
 	int j = 0;
+
+//	printf("\nDATOS TOTALES: %s\n\n", datos_totales);
 
 	char** cadena_datos = string_split(datos_totales , "\n");
 
@@ -550,9 +548,11 @@ t_list* obtener_datos_particiones(char* nombre_tabla){
 		j++;
 	}
 
-	//liberar_puntero_doble(cadena_datos);
+	free(cadena_datos);
 
 	free(metadata_tabla);
+
+	free(datos_totales);
 
 	return lista_datos_particion;
 }
@@ -562,43 +562,31 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
-		t_list* lista_datos_particion = list_create();
+	t_list* lista_datos_particion = list_create();
 
-		int cantidad_temporales = obtener_cantidad_de_archivos_tmpc(nombre_tabla);
+	int cantidad_temporales = obtener_cantidad_de_archivos_tmpc(nombre_tabla);
 
-		char* datos_totales = string_new();
+	char* datos_totales = string_new();
 
-		for (int i = 0; i < cantidad_temporales ; i++){
+	for (int i = 0; i < cantidad_temporales ; i++){
 
-			printf("pruebinha\n");
-
-			char* path_particion = obtenerPathParaTemporalMientrasCompacto(nombre_tabla, i);
-
-			printf("pruebinha\n");
+			char* path_particion = obtener_path_de_temporal_para_compactar_de_tabla(nombre_tabla, i);
 
 			Particion particion_a_obtener = leer_particion(path_particion);
-
-			printf("pruebinha\n");
-
-			int i = 0;
 
 			int fd_bloque;
 
 			void _generar_lista_datos(void* dato_bloque){
 
-				printf("entre aca bro\n");
-
 				int * bloque = (int* ) dato_bloque;
 
 				char* path_bloque = obtenerPath_Bloque(*bloque);
 
-				printf("path: %s\n" , path_bloque);
+	//			printf("BLOQUE: %i\n", *bloque);
 
 				int fd_bloque = open(path_bloque, O_RDONLY , S_IRUSR);
 
 				struct stat* atributos = malloc(sizeof(struct stat));
-
-				printf("termine el malloc\n");
 
 				fstat(fd_bloque, atributos);
 
@@ -609,14 +597,14 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 					printf("datos == map faiiled\n");
 					if(atributos->st_size == 0){
 
+						log_info(logger_compactador, "Particion %i -> bloque: %i, esta vacio", i, *bloque);
+
 						printf("atributos zise = 0\n");
 
 						close(fd_bloque);
 
 						free(path_bloque);
 						free(atributos);
-
-						//free(metadata_tabla);
 
 						return;
 
@@ -627,39 +615,30 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 
 				}
 
+				log_info(logger_compactador, "Particion %i -> bloque: %i, tiene = %s", i, *bloque, datos);
+
 				string_append(&datos_totales,datos);
 
 				munmap(datos, atributos->st_size);
 
-				printf("HOLA\n");
-
 				close(fd_bloque);
-
-				printf("HOLA\n");
 
 				free(path_bloque);
 
-				printf("HOLA\n");
 				free(atributos);
-				printf("HOLA\n");
 			}
-
-
-			printf("pruebinha\n");
 
 			list_iterate(particion_a_obtener->bloques , _generar_lista_datos);
 
+			liberar_particion(particion_a_obtener);
 
-			printf("pruebinha\n");
+			free(path_particion);
+
 		}
-
-		printf("sali del for\n");
 
 		int j = 0;
 
 		char** cadena_datos = string_split(datos_totales , "\n");
-
-		printf("el split bien\n");
 
 		while( cadena_datos[j] != NULL ){
 
@@ -667,9 +646,11 @@ t_list* obtener_datos_temporales(char* nombre_tabla){
 			j++;
 		}
 
-	//	liberar_puntero_doble(cadena_datos);
-
 		free(metadata_tabla);
+
+		free(datos_totales);
+
+		free(cadena_datos);
 
 		return lista_datos_particion;
 

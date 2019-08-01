@@ -4,11 +4,10 @@
 void* compactar(thread_args* argumentos){
 
 
-	log_trace(logger_compactador, "INICIO DE LA -- COMPACTACION -- DE LA TABLA %s\n", argumentos->nombre_tabla);
+	log_info(logger_compactador, "INICIO DE LA -- COMPACTACION -- DE LA TABLA %s", argumentos->nombre_tabla);
 	//los comentarios entre parentesis son para ver donde se libera cada variable;
 
 	char* nombre_tabla = argumentos->nombre_tabla;
-
 
 	pthread_rwlock_wrlock(&(argumentos->lock_tabla));
 
@@ -24,19 +23,29 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_rdlock((&(argumentos->lock_tabla)));
 
-	printf("vamos con la metadata\n");
+//	printf("[COMPACTACION] Obtengo la metadata de %s\n", nombre_tabla);
+
+	log_info(logger_compactador, "Obtengo la metadata");
 
 	metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
-	printf("voy a obtener los datos particiones\n");
+//	printf("[COMPACTACION] Obtengo los datos de las particiones de %s\n", nombre_tabla);
+
+	log_info(logger_compactador, "Los datos finales");
 
 	datos_finales = obtener_datos_particiones(nombre_tabla);
 
-	printf("voy a obtener los datos temporales\n");
+//	printf("[COMPACTACION] Obtengo los datos de los temporales de %s\n", nombre_tabla);
+
+	log_info(logger_compactador, "Obtengo los datos de los temporales");
 
 	datos_tmpc = obtener_datos_temporales(nombre_tabla);
 
-	printf("Compactacion %s paso 1\n", nombre_tabla);
+//	printf("[COMPACTACION] Sali del obtener datos temporales\n");
+
+//	printf("cantidad de datos: %d\n" , list_size(datos_tmpc));
+
+//	printf("TREINTA dato: %s\n" , ((char* ) list_get(datos_tmpc, 30)));
 
 	void _generar_lista_datos_finales(void* _dato_tmpc){
 
@@ -51,6 +60,7 @@ void* compactar(thread_args* argumentos){
 			char* dato_timestamp_mayor = comparar_y_obtener_dato_actualizado( (char*) list_get(datos_finales, index) , dato_tmpc);
 
 			list_replace_and_destroy_element(datos_finales , index  , dato_timestamp_mayor , free);
+
 
 		}
 
@@ -77,20 +87,16 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_wrlock(&(argumentos->lock_tabla));
 
-	printf("Compactacion %s paso 2\n", nombre_tabla);
+//	printf("[COMPACTACION] Libero las particiones de  %s\n", nombre_tabla);
 
 	for(int i = 0; i < metadata_tabla->particion; i++){
 
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, i);
 
-		printf("PATH PARTICION: %s\n", path_particion);
-
 		liberar_bloques_particion(path_particion);
 
 		free(path_particion);
 	}
-
-	printf("Compactacion %s paso 3\n", nombre_tabla);
 
 	void _funcion_loca2(void* _dato_final){
 
@@ -102,7 +108,13 @@ void* compactar(thread_args* argumentos){
 
 		char* path_particion = obtenerPath_ParticionTabla(nombre_tabla, particion_perteneciente);  // (5)
 
-		dato_t* dato_a_cargar = convertir_a_dato(dato_final);                                     // (6)
+		dato_t* dato_a_cargar = convertir_a_dato(dato_final);    // (6)
+
+//		printf("[COMPACTACION] Muestro el dato que voy a cargar en la particion\n");
+
+		//mostrar_dato(dato_a_cargar);
+
+//		printf("[COMPACTACION] Termine de mostrar \n");
 
 		cargar_a_particion(path_particion, dato_a_cargar);
 
@@ -110,16 +122,14 @@ void* compactar(thread_args* argumentos){
 
 		liberar_dato(dato_a_cargar);															 // (6)
 
-
-
 	}
 
 	//time_t inicio_de_bloqueo = time(NULL);
+//	printf("[COMPACTACION] Muestro los datos que voy a cargar en la particion\n");
 	list_iterate(datos_finales, _funcion_loca2);
 	//time_t fin_de_bloqueo = time(NULL)
 	//Sacar la diferencia entre estos dos para saber cuanto tiempo estuvo bloqueadoa la tabla
 
-	printf("Compactacion %s paso 4\n", nombre_tabla);
 	liberar_tmpc(nombre_tabla);
 
 	pthread_rwlock_unlock(&(argumentos->lock_tabla));
@@ -131,8 +141,6 @@ void* compactar(thread_args* argumentos){
 
 //	list_destroy_and_destroy_elements(datos_particiones, free);										//  (2) Libero los datos del .bin ANTES de la compactacion
 
-	printf("Compactacion %s paso 5\n", nombre_tabla);
-
 	list_destroy_and_destroy_elements(datos_tmpc, free);											//  (3) Libero los datos del .tmpc
 
 	list_destroy_and_destroy_elements(datos_finales, free);										// (4) Libero los datos del .bin DESPUES de la compactacion
@@ -140,7 +148,7 @@ void* compactar(thread_args* argumentos){
 	//TODO liberar_metadata(metadata_tabla); resuelto abajo por ahora, seguramente cambie la estructura metadata!
 	free(metadata_tabla);
 
-	log_trace(logger_compactador, "FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA %s\n", argumentos->nombre_tabla);
+	log_info(logger_compactador, "FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA %s\n", argumentos->nombre_tabla);
 
 	return NULL;
 
@@ -210,6 +218,7 @@ void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
 	pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
+	pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
 
 	pthread_rwlock_wrlock(&(argumentos_hilos->lock_tabla));
 
@@ -220,8 +229,6 @@ void correr_compactacion(int tiempo_compactacion , char* nombre_tabla){
 	}
 
 	pthread_attr_destroy(&attr);
-
-	pthread_rwlock_wrlock(&(lock_diccionario_compactacion));
 
 	dictionary_put(diccionario_compactador , nombre_tabla , argumentos_hilos);
 
@@ -241,7 +248,11 @@ void* ciclo_compactacion(thread_args* argumentos){
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
+		printf("\n>>>>>>>>>>>>compactacion de la tabla %s<<<<<<<<<<<<<<<<\n\n", argumentos->nombre_tabla);
+
 		compactar(argumentos);
+
+		printf("\n>>>>>>>>>>>Termino la compactacion de la tabla %s<<<<<<<<<<<<\n\n", argumentos->nombre_tabla);
 
 		pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
@@ -297,7 +308,9 @@ u_int16_t obtener_key_dato(char* dato){
 
 	char** dato_separado = string_split(dato, ";");
 
-	u_int16_t key = (u_int16_t )atoi(dato_separado[1]);
+	//printf("ANTES DE ATOI D:D: %s\n", dato_separado[1]);
+
+	u_int16_t key = atoi(dato_separado[1]);
 
 	liberar_puntero_doble(dato_separado);
 
@@ -310,6 +323,8 @@ time_t obtener_timestamp_dato(char* dato){
 	char** dato_separado = string_split(dato, ";");
 
 	time_t timestamp =  (time_t)atoi(dato_separado[0]);
+
+
 
 	liberar_puntero_doble(dato_separado);
 
@@ -353,6 +368,7 @@ char* comparar_y_obtener_dato_actualizado(char* dato_a_ser_comparado, char* dato
 		free(dato_actualizado);
 
 		dato_actualizado = string_duplicate(dato_a_analizar);
+
 		timestamp_mayor = timestamp_menor;
 
 	}
@@ -364,9 +380,23 @@ char* comparar_y_obtener_dato_actualizado(char* dato_a_ser_comparado, char* dato
 
 int buscar_index_misma_key(char*  dato_tmpc, t_list*  datos_finales  ){
 
+	int key_tmpc = obtener_key_dato(dato_tmpc);
+
+//	printf("KEY DATO TMPC %i\n", key_tmpc);
+
+	int key_dato_final;
+
+	char* dato;
+
 	for( int i = 0 ; i < list_size(datos_finales) 	; i++){
 
-		if( obtener_key_dato(dato_tmpc) == obtener_key_dato( (char*)list_get(datos_finales, i) ) ){
+		dato = (char*)list_get(datos_finales, i);
+
+//		printf("DATO A COMPARAR: %s\n", dato);
+
+		key_dato_final = obtener_key_dato( dato);
+
+		if( key_tmpc == key_dato_final ){
 
 			return i;
 

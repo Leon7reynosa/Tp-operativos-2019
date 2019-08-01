@@ -14,6 +14,8 @@ void trabajar_request(request nueva_request , int conexion){
 	tabla_gossip_dto tabla_recibida;
 	t_list* metadata_a_enviar;
 
+	estado_request estado;
+
 	switch(nueva_request->cod_op){
 
 		case SELECT:
@@ -26,18 +28,26 @@ void trabajar_request(request nueva_request , int conexion){
 
 			if(dato_select == NULL){
 
-				enviar_dato(NULL, conexion, ERROR);
+				estado = ERROR;
+
+				log_info(logger, "No se completo correctamente el select");
+
+				enviar_dato(NULL, conexion, estado);
 
 			}
 			 else{
 
 				dato_a_enviar = crear_t_dato(dato_select->key, dato_select->timestamp , dato_select->value);
 
-				enviar_dato(dato_a_enviar, conexion, SUCCESS);
+				estado = SUCCESS;
+
+				enviar_dato(dato_a_enviar, conexion, estado);
 
 				liberar_t_dato(dato_a_enviar);
 
 				liberar_dato(dato_select);
+
+				log_info(logger, "Se envio el dato encontrado");
 
 			}
 
@@ -50,6 +60,9 @@ void trabajar_request(request nueva_request , int conexion){
 
 			request_insert((insert) nueva_request->tipo_request);
 
+			estado = SUCCESS;
+
+			enviar_estado(conexion, estado);
 
 			break;
 
@@ -57,8 +70,9 @@ void trabajar_request(request nueva_request , int conexion){
 
 			printf(" --CREATE--\n");
 
-			request_create((create) nueva_request->tipo_request );
+			estado = request_create((create) nueva_request->tipo_request );
 
+			enviar_estado(conexion, estado);
 
 			break;
 
@@ -68,11 +82,23 @@ void trabajar_request(request nueva_request , int conexion){
 
 			metadata_a_enviar = request_describe((describe_t) nueva_request->tipo_request);
 
-			enviar_metadata(metadata_a_enviar, conexion);
+			if(metadata_a_enviar != NULL){
 
-			list_destroy_and_destroy_elements(metadata_a_enviar, liberar_metadata);
+				estado = SUCCESS;
 
-			printf("LIBERE LA METADATA!\n");
+				enviar_metadata(metadata_a_enviar, conexion, estado);
+
+				list_destroy_and_destroy_elements(metadata_a_enviar, liberar_metadata);
+
+				printf("LIBERE LA METADATA!\n");
+
+			}else{
+
+				estado = ERROR;
+
+				enviar_estado(conexion, estado);
+
+			}
 
 			break;
 
@@ -80,7 +106,9 @@ void trabajar_request(request nueva_request , int conexion){
 
 			printf(" --DROP--\n");
 
-			request_drop((Drop)nueva_request->tipo_request);
+			estado = request_drop((Drop)nueva_request->tipo_request);
+
+			enviar_estado(conexion, estado);
 
 			break;
 
@@ -91,9 +119,22 @@ void trabajar_request(request nueva_request , int conexion){
 			pthread_mutex_lock(&mutex_gossip);
 
 			log_info(logger, "Se realizar intercambio de tablas de gossiping");
+
+			printf("Pase el mutex gossip\n");
+
 			intercambiar_datos( ((tabla_gossip_dto) nueva_request->tipo_request), conexion);
 
 			pthread_mutex_unlock(&mutex_gossip);
+
+			break;
+
+		case JOURNAL:
+
+			printf("--JOURNAL--\n");
+
+			pthread_mutex_lock(&mutex_journal);
+			realizar_journal();
+			pthread_mutex_unlock(&mutex_journal);
 
 			break;
 
@@ -115,13 +156,14 @@ Dato request_select(select_t dato){
 	Dato dato_encontrado;
 
 	pthread_mutex_lock(&mutex_journal);
+
 	if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){
 
 		log_info(logger, "Existe un segmento para %s", (char*) dato->tabla->buffer);
 
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
-//			log_info(logger, "Existe una pagina con la key: %i", dato->key);
+			log_info(logger, "Existe una pagina con la key: %i", dato->key);
 
 			mostrar_datos(pagina_encontrada);
 
@@ -131,7 +173,7 @@ Dato request_select(select_t dato){
 
 		}else{
 
-//			log_info(logger, "No existe una pagina con la key %i, la busco en el File System", dato->key);
+			log_info(logger, "No existe una pagina con la key %i, la busco en el File System", dato->key);
 
 			Dato dato_lfs = pedir_dato_al_LFS(dato->tabla->buffer, dato->key);
 
@@ -192,7 +234,7 @@ Dato request_select(select_t dato){
 	return dato_encontrado;
 }
 
-void request_insert(insert dato){
+estado_request request_insert(insert dato){
 
 	log_info(logger, "Se realizara un INSERT");
 
@@ -202,7 +244,7 @@ void request_insert(insert dato){
 
 	if(string_length((char *)dato->value->buffer) > tamanio_value){
 		log_info(logger, "Segmentation Fault! Value demasiado grande");
-		return;
+		return ERROR;
 	}
 	if(dato->timestamp < 0){
 		time_t timestamp = time(NULL);
@@ -214,6 +256,8 @@ void request_insert(insert dato){
 
 		dato->timestamp = timestamp;
 	}
+
+	printf("EN request_insert tabla: %s\n" , dato->tabla->buffer);
 
 	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
@@ -234,7 +278,7 @@ void request_insert(insert dato){
 
 		}else{
 
-			log_info(logger, "Existe una pagina con la key: %i", dato->key);
+			log_info(logger, "No existe una pagina con la key: %i", dato->key);
 
 			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
@@ -251,7 +295,7 @@ void request_insert(insert dato){
 
 	}else{
 
-//		log_info(logger, "No existe el segmento. Se crea el segmento.");
+		log_info(logger, "No existe el segmento. Se crea el segmento.");
 
 		agregar_segmento((char*)dato->tabla->buffer, memoria->tabla_segmentos);
 
@@ -277,46 +321,58 @@ void request_insert(insert dato){
 	pthread_mutex_unlock(&mutex_journal);
 
 	liberar_dato(dato_insert);
+
+	return SUCCESS;
 }
 
 
-void request_create(create dato_create){
+estado_request request_create(create dato_create){
 
 //	log_info(logger, "Se realizara un CREATE");
 
 	request nuevo_create = crear_request(CREATE, dato_create);
 
-	enviar_request(nuevo_create, socket_lissandra);
+	estado_request estado;
+
+	if(enviar_request(nuevo_create, socket_lissandra)){
+
+		estado = recibir_estado_request(socket_lissandra);
+
+		if(estado == SUCCESS){
+
+			Segmento segmento_aux;
+
+			pthread_mutex_lock(&mutex_journal);
+			if(!existe_segmento((char *)dato_create->tabla->buffer, &segmento_aux)){
+
+				log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
+
+				agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
+
+			}else{
+
+				log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
+
+			}
+			pthread_mutex_unlock(&mutex_journal);
+
+		}else{
+
+			log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
+
+		}
+	}else{
+
+		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+		estado = ERROR;
+
+	}
 
 	free(nuevo_create);
 
-	Segmento segmento_aux;
+	return estado;
 
-	pthread_mutex_lock(&mutex_journal);
-	if(!existe_segmento((char *)dato_create->tabla->buffer, segmento_aux)){
-
-//		log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
-
-		agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
-
-	}else{
-
-//		log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
-
-	}
-	pthread_mutex_unlock(&mutex_journal);
-
-//	error_request estado = recibir_estado_request();
-
-/*	if(estado == SUCCESS){
-		//log
-		agregar_segmento((char *)dato_create->tabla->buffer);
-
-	}else{
-		//log
-	}
-*/
-	//return estado;
 
 }
 
@@ -326,7 +382,15 @@ t_list* request_describe(describe_t dato_describe){
 
 	request nuevo_describe = crear_request(DESCRIBE, dato_describe);
 
-	enviar_request(nuevo_describe, socket_lissandra);
+	if(! enviar_request(nuevo_describe, socket_lissandra) ){
+
+		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+		free(nuevo_describe);
+
+		return NULL;
+
+	}
 
 	t_list* datos_describe;
 
@@ -342,31 +406,49 @@ t_list* request_describe(describe_t dato_describe){
 
 }
 
-int request_drop(Drop datos_drop){
+estado_request request_drop(Drop datos_drop){
 
 //	log_info(logger, "Se realizara un DROP de tabla: %s", (char *) datos_drop->tabla->buffer);
 
 	request request_drop = crear_request(DROP, datos_drop);
 
-	enviar_request(request_drop, socket_lissandra);
+	if(! enviar_request(request_drop, socket_lissandra) ){
+
+		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+		free(request_drop);
+
+		return ERROR;
+
+	}
 
 	free(request_drop);
 
 	Segmento segmento_drop;
 
-	pthread_mutex_lock(&mutex_journal);
+	estado_request estado;
 
-	if(existe_segmento( (char *) datos_drop->tabla->buffer ,  &segmento_drop )){
+	estado = recibir_estado_request(socket_lissandra);
 
-//		log_info(logger, "Existe el segmento asociado a %s. Se elimina el segmento.",(char *) datos_drop->tabla->buffer );
-		sacar_segmento(segmento_drop);
+	if(estado == SUCCESS){
+		pthread_mutex_lock(&mutex_journal);
+
+		if(existe_segmento( (char *) datos_drop->tabla->buffer ,  &segmento_drop )){
+
+//			log_info(logger, "Existe el segmento asociado a %s. Se elimina el segmento.",(char *) datos_drop->tabla->buffer );
+			sacar_segmento(segmento_drop);
+
+		}else{
+//		log_info(logger, "No existe el segmento asociado a %s",(char *) datos_drop->tabla->buffer );
+		}
+
+		pthread_mutex_unlock(&mutex_journal);
 
 	}else{
-//		log_info(logger, "No existe el segmento asociado a %s",(char *) datos_drop->tabla->buffer );
+
+		log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
+
 	}
 
-	pthread_mutex_unlock(&mutex_journal);
-	//recibir la poronga de SUCCESS o NOSUCCESS
-
-	return 0;
+	return estado;
 }

@@ -252,6 +252,7 @@ void* auto_journal(void* argumento){
 	pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
 	while(1){
+
 		usleep(tiempo_journal * 1000);
 
 		printf("\n///////////////////////// Auto-Journal/////////////////////////////\n\n");
@@ -260,11 +261,11 @@ void* auto_journal(void* argumento){
 
 		pthread_mutex_lock(&mutex_journal);
 
-		//log_info(logger_journal, "Inicia el Auto-Journal");
+		log_info(logger_journal, "Inicia el Auto-Journal");
 
 		realizar_journal();
 
-//		log_info(logger_journal, "Termina el Auto-Journal\n");
+		log_info(logger_journal, "Termina el Auto-Journal\n");
 
 		pthread_mutex_unlock(&mutex_journal);
 
@@ -290,6 +291,8 @@ void realizar_journal(void){
 		//saco las paginas modificadas de un segmento
 		t_list* _paginas_modificadas = paginas_modificadas(segmento->Tabla_paginas);
 
+		log_info(logger_journal, "Cantidad de paginas a mandar: %i", list_size(_paginas_modificadas));
+
 		void _agregar_a_inserts(void* _pagina){
 
 			Pagina pagina = (Pagina)_pagina;
@@ -297,6 +300,11 @@ void realizar_journal(void){
 			Dato dato_a_enviar = decodificar_dato_de_memoria(pagina->referencia_memoria);
 
 			insert nuevo_insert = crear_dato_insert(segmento->nombre_tabla, dato_a_enviar->key, dato_a_enviar->value, dato_a_enviar->timestamp);
+
+			log_info(logger_journal, "Se manda al LFS la tabla %s", (char *)nuevo_insert->tabla->buffer);
+			log_info(logger_journal, "Con el timestamp %i", (char *)nuevo_insert->timestamp);
+			log_info(logger_journal, "Con la key %i", (char *)nuevo_insert->key);
+			log_info(logger_journal, "Con el value %s", (char *)nuevo_insert->value->buffer);
 
 			request nueva_request = crear_request(INSERT, nuevo_insert);
 
@@ -317,12 +325,30 @@ void realizar_journal(void){
 	//itero todos los segmentos
 	list_iterate(memoria->tabla_segmentos, _crear_inserts);
 
-
 	void _enviar_request(void* _request){
 
 		request request_a_enviar = (request)_request;
 
-		enviar_request(request_a_enviar, socket_lissandra);
+		if(! enviar_request(request_a_enviar, socket_lissandra)){
+
+			log_info(logger_journal, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+			return;
+
+		}
+
+		if(recibir_estado_request(socket_lissandra) == ERROR){
+
+			log_info(logger_journal, "No se recibio respuesta del FileSystem, esta desconectado");
+
+			printf("HUBO UN ERROR CON EL JOURNAL\n");
+
+		}else{
+
+			log_info(logger_journal, "Se mando correctamente");
+
+		}
+
 
 	}
 
@@ -346,7 +372,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 	if(pagina_reemplazada == NULL){
 
-//		log_info(logger, "La memoria esta FULL");
+		log_info(logger, "La memoria esta FULL");
 
 	}else{
 
@@ -358,7 +384,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 		Dato dato_para_logg = decodificar_dato_de_memoria(pagina_reemplazada->referencia_memoria);
 
-//		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
+		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
 
 		liberar_dato(dato_para_logg);
 	}
@@ -403,7 +429,15 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	request nuevo_select = crear_request(SELECT, dato_select);
 
-	enviar_request(nuevo_select, socket_lissandra); // ya se libera la request aca
+	if(! enviar_request(nuevo_select, socket_lissandra)){
+
+		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+		liberar_request(nuevo_select);
+
+		return NULL;
+
+	}
 
 	liberar_request(nuevo_select);
 
@@ -412,6 +446,8 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 	t_dato* dato_crudo = recibir_dato_LFS(socket_lissandra);
 
 	if(dato_crudo == NULL){
+
+		log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
 
 		return NULL;
 

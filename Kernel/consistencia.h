@@ -27,11 +27,25 @@ typedef struct{
 
 }metadata_t;
 
+int memoria_siguiente;
 
+pthread_rwlock_t semaforo_registro_tabla;
+pthread_rwlock_t semaforo_strong_c;
+pthread_rwlock_t semaforo_eventual_c;
+pthread_rwlock_t semaforo_strong_hash_c;
 
 t_dictionary* registro_tabla; //va a tener char* nombre_tabla y los elementos van a ser metadata_t
 
 //van a ser listas de distintas memorias, es decir, sus sockets
+
+
+typedef struct{
+
+	cod_consistencia codigo_consistencia;
+	void* consistencia;
+
+
+}metricas_t;
 
 
 t_list* Eventual_C; //van a tener memoria_t*

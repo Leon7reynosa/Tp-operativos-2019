@@ -7,6 +7,20 @@
 
 #include"mensajes.h"
 
+void enviar_estado(int conexion, estado_request estado){
+
+	void* buffer = malloc(sizeof(estado_request));
+
+	memcpy(buffer, &estado, sizeof(estado_request));
+
+	send(conexion, buffer, sizeof(estado_request), 0);
+
+	free(buffer);
+
+	return;
+
+}
+
 bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memoria){
 
 	void* buffer;
@@ -50,6 +64,13 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 		break;
 
+	case JOURNAL:
+
+		buffer = serializar_journal(request);
+		bytes = sizeof(cod_operacion);
+
+		break;
+
 	default:
 		//no deberia entrar aca
 		break;
@@ -57,7 +78,7 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 	int error_send = send(conexion_memoria , buffer, bytes, 0);
 
-	if(error_send < 0){
+	if(error_send <= 0){
 		perror("FALLO EL SEND");
 
 		return false;
@@ -65,7 +86,7 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 	//free(buffer);
 
-	liberar_request(request);
+	free(request);
 
 	return true;
 }
@@ -91,8 +112,15 @@ void liberar_request(request dato){
 
 			liberar_drop(dato->tipo_request);
 			break;
+
+		case JOURNAL:
+
+			//NO SE LIBERA EL TIPO_REQUEST POR QUE ES NULL
+
+			break;
+
 		default:
-			printf("Algo fallo\n");
+			printf(">>No se pudo liberar la request\n");
 			break;
 
 	}

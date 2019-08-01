@@ -24,6 +24,8 @@
 
 #include"API_Kernel.h"
 
+pthread_rwlock_t semaforo_tabla_gossiping;
+
 
 
 struct MemoriasEstructura{
@@ -44,9 +46,9 @@ void* realizar_gossiping(void);
 void remover_memoria_de_consistencia(memoria_t* memoria);
 memoria_t* remover_conexion( int conexion , t_list* lista_a_remover );
 void eliminar_memoria_t( memoria_t* dato_memoria );
-int tomar_socket_memoria_aleatorio(t_list* lista_memorias);
-bool actualizar_gossiping(int conexion);
-bool recibir_actualizacion_gossiping(int conexion);
+memoria_t* tomar_socket_memoria_aleatorio(t_list* lista_memorias);
+bool actualizar_gossiping(memoria_t* conexion);
+bool recibir_actualizacion_gossiping(memoria_t* conexion);
 void inicializar_tabla_gossiping();
 void ingresar_a_tabla_gossiping(memoria_t* dato_memoria_ingresar);
 struct MemoriasEstructura* crear_memoria_estructura(char* ip , int puerto, int numero_memoria);

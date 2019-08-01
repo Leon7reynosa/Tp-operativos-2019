@@ -25,6 +25,36 @@ t_dato* crear_t_dato(u_int16_t key, time_t timestamp , char* value){
 
 }
 
+bool es_un_numero(char* numero){
+
+	int i = 0;
+
+	if(numero == NULL){
+
+		return false;
+	}
+
+	if(string_equals_ignore_case(numero , "\n") || string_equals_ignore_case(numero , "\0") || string_is_empty(numero)){
+
+		return false ;
+
+	}
+
+	while( numero[i] != NULL ){
+
+		if( !isdigit(numero[i]) ){
+
+			return false;
+
+		}
+
+		i++;
+	}
+
+
+	return true;
+}
+
 
 void liberar_t_dato(t_dato* dato){
 

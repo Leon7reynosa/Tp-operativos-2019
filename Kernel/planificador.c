@@ -46,7 +46,9 @@ void cancelar_hilos_execute(){
 
 t_queue* parsear_LQL(FILE* archivo_lql){
 
+
 	t_queue* cola_requests = queue_create();
+
 
 	char caracter;
 	char* caracter_temp;
@@ -158,9 +160,11 @@ void cola_new_to_ready(){
 
 		nuevo_lql->path_lql = (char*) queue_pop(cola_new);
 
-		//nuevo_lql->path_lql = "/home/utnso/Escritorio/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/Kernel/lql.txt";
+		char* path_archivo_lql = obtener_path_script(nuevo_lql->path_lql);
 
-		archivo = fopen(nuevo_lql->path_lql , "r");
+		printf("\n>Path: %s\n" , path_archivo_lql);
+
+		archivo = fopen(path_archivo_lql , "r");
 
 		if(archivo != NULL){
 
@@ -174,7 +178,9 @@ void cola_new_to_ready(){
 
 		}else{
 
-			log_error(logger_kernel, "NO SE PUDO ABRIR EL ARCHIVO %s.\n" , nuevo_lql->path_lql);
+			printf("\nNO se pudo abrir el archivo %s\n" , nuevo_lql->path_lql);
+
+			log_error(logger_kernel, "NO se pudo abrir el ARCHIVO %s.\n" , nuevo_lql->path_lql);
 
 		}
 	}
@@ -201,6 +207,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		int i = 0;
 
+		pthread_rwlock_rdlock(&semaforo_quantum);
+
 		while( i < quantum && !queue_is_empty(cola_exec)){
 
 
@@ -210,19 +218,25 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			if(!ejecutar_request(request )){
 
-				log_error(logger_kernel , "FALLO AL EJECUTAR LA REQUEST %s.\n", request);
+				log_error(logger_kernel , "FALLO al ejecutar la REQUEST:  %s.", request);
 
-				printf("NO SE SEGUIRA EJECUTANDO EL SCRIPT\n");
+				printf("\n>NO se seguira EJECTUANDO el SCRIPT\n");
 
 				queue_push(cola_exit, siguiente_script);
 
 				queue_clean(cola_exec);  //agrego esto no se si esta bien
 
+				log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
+
+				printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+
 				continue;
 
 			}
 
+			log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
 
+			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 				 //hay que inicializar las conexiones
 				 //deberia ahora recibir la operacion
@@ -232,9 +246,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}
 
-		if(queue_is_empty(cola_exec)){
+		pthread_rwlock_unlock(&semaforo_quantum);
 
-			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+		if(queue_is_empty(cola_exec)){
 
 			queue_push(cola_exit, siguiente_script);
 
@@ -242,7 +256,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}else{
 
-			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+			log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
+
+			printf("\n>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 			queue_push(cola_ready, siguiente_script);
 
@@ -250,9 +266,11 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}
 
-		printf("tiempo de ejecucion: %d\n " , tiempo_ejecucion);
+		pthread_rwlock_rdlock(&semaforo_tiempo_ejecucion);
 
 		usleep(tiempo_ejecucion*1000);
+
+		pthread_rwlock_unlock(&semaforo_tiempo_ejecucion);
 
 	}
 

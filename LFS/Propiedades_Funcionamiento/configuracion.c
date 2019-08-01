@@ -28,12 +28,11 @@ void creacion_del_config_fileSystem(){
 
 	g_config = config_create("fileSystem.config");
 
-	config_set_value(g_config, "IP", "127.0.0.1");
-	config_set_value(g_config, "PUERTO", "4445");
+	config_set_value(g_config, "PUERTO_ESCUCHA", "5003");
 	config_set_value(g_config, "PUNTO_MONTAJE", "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/");
-	config_set_value(g_config, "RETARDO", "500");
-	config_set_value(g_config, "TAMANIO_VALUE", "20");
-	config_set_value(g_config, "TIEMPO_DUMP", "50000");
+	config_set_value(g_config, "RETARDO", "0");
+	config_set_value(g_config, "TAMANIO_VALUE", "60");
+	config_set_value(g_config, "TIEMPO_DUMP", "5000");
 
 
 	config_save(g_config);
@@ -51,7 +50,7 @@ void creacion_del_metadata_fileSystem(){
 
 
 	config_set_value(g_config, "BLOCK_SIZE", "64");
-	config_set_value(g_config, "BLOCKS", "5192");
+	config_set_value(g_config, "BLOCKS", "4096");
 	config_set_value(g_config, "MAGIC_NUMBER", "LISSANDRA");
 
 	config_save(g_config);
@@ -65,6 +64,8 @@ void creacion_bitmap(){
 	char* path = "Metadata/bitmap.bin";
 	char* bitmap;
 	int trunqueador;
+
+	pthread_rwlock_init(&semaforo_bitmap, NULL);
 
 
 	if(!existe_el_bitmap()){
@@ -161,27 +162,29 @@ void obtener_datos_metadata(){
 }
 
 void obtener_datos_config(){
-	g_config = config_create("fileSystem.config");
 
+	//char* path = "../fileSystem.config";
+	char* path = "/home/utnso/lfs-compactacion/fileSystem.config";
+
+	g_config = config_create(path);
 	char* punto_montaje_aux;
 	char* ip_lfs_aux;
 
 	tamanio_value_max   = config_get_int_value(g_config, "TAMANIO_VALUE");
 	tiempo_dump         = config_get_int_value(g_config, "TIEMPO_DUMP");
-	puerto_lfs          = config_get_int_value(g_config, "PUERTO");
+	puerto_lfs          = config_get_int_value(g_config, "PUERTO_ESCUCHA");
 	punto_montaje_aux   = config_get_string_value(g_config, "PUNTO_MONTAJE");
 	retardo             = config_get_int_value(g_config, "RETARDO");
-	ip_lfs_aux          = config_get_string_value(g_config, "IP");
 
-	ip_lfs = malloc(strlen(ip_lfs_aux) + 1);
+
 	punto_montaje = string_new();//malloc(strlen(punto_montaje_aux) + 1);
 
 	string_append(&punto_montaje, punto_montaje_aux);
 
-	memcpy(ip_lfs, ip_lfs_aux, strlen(ip_lfs_aux) +1 );
 	//memcpy(punto_montaje , punto_montaje_aux, strlen(punto_montaje_aux) +1 );
 
 	config_destroy(g_config);
+
 }
 
 void crearYObtenerDatos(){
@@ -222,10 +225,11 @@ bool existe_el_bitmap(){
 }
 
 void inicializar_loggers(){
-	logger_lissandra = 		log_create("lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
-	logger_lfs = 			log_create("lfs.log", "file system", 0, LOG_LEVEL_INFO);
-	logger_compactador = 	log_create("compactador.log", "compactador", 0, LOG_LEVEL_TRACE);
-	logger_request = 		log_create("requests.log", "requests", 0, LOG_LEVEL_TRACE );
+	logger_lissandra = 		log_create("/home/utnso/lfs-compactacion/lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
+	logger_lfs = 			log_create("/home/utnso/lfs-compactacion/lfs.log", "file system", 0, LOG_LEVEL_INFO);
+	logger_compactador = 	log_create("/home/utnso/lfs-compactacion/compactador.log", "compactador", 0, LOG_LEVEL_INFO);
+	logger_request = 		log_create("/home/utnso/lfs-compactacion/requests.log", "requests", 0, LOG_LEVEL_INFO );
+	logger_dump = 			log_create("/home/utnso/lfs-compactacion/dump.log", "dump", 0, LOG_LEVEL_INFO);
 }
 
 void destruir_loggers(){
@@ -233,6 +237,8 @@ void destruir_loggers(){
 	log_destroy(logger_lfs);
 	log_destroy(logger_compactador);
 	log_destroy(logger_request);
+
+	log_destroy(logger_dump);
 }
 
 void inicializar_compactador(){

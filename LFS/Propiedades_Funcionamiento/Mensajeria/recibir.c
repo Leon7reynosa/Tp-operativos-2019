@@ -30,8 +30,6 @@ request recibir_request(int conexion){
 		return request;
 	}
 
-	printf("codigo_op : %d\n" , cod_op);
-
 	switch(cod_op){
 
 		case SELECT:

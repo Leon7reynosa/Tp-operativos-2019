@@ -22,11 +22,12 @@
 #include"Mensajeria/requestDrop.h"
 
 dato_t* request_select(select_t dato_select);
-void request_insert(insert dato_insert);
-void request_create(create dato_create);
+estado_request request_insert(insert datos_insert);
+estado_request request_create(create dato_create);
 
 t_list* request_describe(describe_t dato_describe);
 Metadata request_describe_particular(char* tabla);
 t_list* request_describe_global(void);
+estado_request request_drop(Drop request_drop);
 
 #endif /* REQUESTS_H_ */

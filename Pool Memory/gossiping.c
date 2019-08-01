@@ -23,6 +23,7 @@ void* auto_gossip(void* argumentos){
 		pthread_mutex_lock(&mutex_gossip);
 //		log_info(logger_gossip, "Inicia el Auto-Gossiping");
 		gossiping();
+
 		pthread_mutex_unlock(&mutex_gossip);
 //		log_info(logger_gossip, "Termina el Auto-Gossiping\n");
 
@@ -54,14 +55,26 @@ void gossiping(){
 
 			request nueva_request = crear_request(GOSSIP, dato_gossip);
 
-			enviar_request(nueva_request, socket_seed);
+			if(! enviar_request(nueva_request, socket_seed)){
 
-			liberar_request(nueva_request);
+				printf("No se pudo mandar la request a la memoria seed\n");
+
+				log_info(logger_gossip, "No se pudo mandar la request Gossip a la memoria %i", seed_aux->numero_memoria);
+
+				liberar_request(nueva_request);
+
+				close(socket_seed);
+
+				continue;
+
+			}
 
 			datos_gossip = recibir_datos_gossip(socket_seed);
 
 //			log_info(logger, "Actualizacion de tabla gossip");
 			actualizar_tabla_gossip(datos_gossip);
+
+			liberar_request(nueva_request);
 
 			liberar_dato_gossiping(datos_gossip);
 

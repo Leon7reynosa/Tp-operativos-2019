@@ -35,7 +35,7 @@ char* punto_montaje;
 int retardo;
 char* ip_lfs;
 
-
+pthread_rwlock_t semaforo_bitmap;
 
 int tamanioDeValue;
 

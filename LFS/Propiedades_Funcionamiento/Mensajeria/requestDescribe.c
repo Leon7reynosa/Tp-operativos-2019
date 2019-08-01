@@ -7,16 +7,19 @@
 
 #include"requestDescribe.h"
 
-void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
+void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar, estado_request estado){
 
 	int bytes = 0;
 	int desplazamiento = 0;
 
 	int size_tabla, size_consistencia, cantidad_tablas;
 
-	void* buffer = malloc(sizeof(int)); //inicialmente con la cantidad de tablas;
+	void* buffer = malloc(sizeof(int) + sizeof(estado_request)); //inicialmente con la cantidad de tablas;
 
 	//le mando la cantidad de tablas primero
+
+	memcpy(buffer + desplazamiento, &estado, sizeof(estado_request));
+	desplazamiento += sizeof(estado_request);
 
 	cantidad_tablas = list_size(lista_metadata);
 
@@ -25,7 +28,7 @@ void* serializar_metadata(t_list* lista_metadata, int* bytes_a_enviar){
 	memcpy(buffer + desplazamiento, &cantidad_tablas, sizeof(int));
 	desplazamiento += sizeof(int);
 
-	bytes += sizeof(int);
+	bytes += sizeof(int) + sizeof(estado_request);
 
 	printf("Bytes despues de copiar la cantidad de tablas = %i\n", bytes);
 
@@ -93,6 +96,37 @@ Metadata crear_estructura_metadata(char* tabla, char* consistencia, int particio
 	return dato_metadata;
 
 }
+
+void mostrar_lista_describe(t_list* lista_describe){
+
+	if(lista_describe != NULL){
+		void _mostrar_metadata(void* dato_metadata){
+
+		Metadata dato_describe = (Metadata) dato_metadata;
+
+		printf("\n---TABLA: %s ---\n", (char*)dato_describe->tabla->buffer);
+
+			printf("consistencia: %s\n" , (char*)dato_describe->consistencia->buffer);
+
+			printf("particiones: %d\n" , dato_describe->particiones);
+
+			printf("tiempo compactacion: %d\n" , dato_describe->tiempo_compactacion);
+
+		}
+
+		list_iterate(lista_describe, _mostrar_metadata);
+
+		printf("\n");
+	}
+
+	else{
+		printf("No existe dicha tabla\n");
+	}
+
+
+
+}
+
 
 void liberar_metadata(Metadata metadata_a_liberar){
 

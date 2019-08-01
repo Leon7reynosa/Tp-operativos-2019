@@ -22,6 +22,8 @@
 #include"Cliente/cliente.h"
 #include"logger.h"
 
+bool desconexion_pool;
+
 char* ip_escucha;
 int puerto_escucha;
 char* ip_lfs;
