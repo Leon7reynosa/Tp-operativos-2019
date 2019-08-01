@@ -329,23 +329,51 @@ void realizar_journal(void){
 
 		request request_a_enviar = (request)_request;
 
-		if(! enviar_request(request_a_enviar, socket_lissandra)){
+		estado_request estado;
 
-			log_info(logger_journal, "No se pudo mandar la request al FileSystem, esta desconectado");
+		if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-			return;
+			printf("Lissandra esta conectada\n");
 
-		}
+			if(!enviar_request(request_a_enviar, socket_lissandra)){
 
-		if(recibir_estado_request(socket_lissandra) == ERROR){
+				log_info(logger_journal, "No se pudo mandar la request al FileSystem, esta desconectado");
 
-			log_info(logger_journal, "No se recibio respuesta del FileSystem, esta desconectado");
+				desconectar_lissandra();
 
-			printf("HUBO UN ERROR CON EL JOURNAL\n");
+				return;
+
+			}else{
+
+				usleep(retardo_lfs* 1000);
+
+				estado = recibir_estado_request(socket_lissandra);
+
+				if(estado == ERROR_CONEXION){
+
+					log_info(logger_journal, "No se recibio respuesta del FileSystem, esta desconectado");
+
+					desconectar_lissandra();
+
+					printf("HUBO UN ERROR CON EL JOURNAL\n");
+
+				}else if(estado == ERROR){
+
+					log_info(logger_journal, "No se pudo insertar en el FileSystem");
+
+				}else{
+
+					log_info(logger_journal, "Se mando correctamente");
+
+				}
+
+
+			}
+
 
 		}else{
 
-			log_info(logger_journal, "Se mando correctamente");
+			printf("Lissandra esta desconectada\n");
 
 		}
 
@@ -429,33 +457,50 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	request nuevo_select = crear_request(SELECT, dato_select);
 
-	if(! enviar_request(nuevo_select, socket_lissandra)){
+	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+		printf("Lissandra esta conectado\n");
 
-		liberar_request(nuevo_select);
+		if(!enviar_request(nuevo_select, socket_lissandra)){
 
-		return NULL;
+			desconectar_lissandra();
+
+			log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+			dato_recibido = NULL;
+
+		}else{
+
+			printf("ESTOY ESPERANDO LA RESPUESTA\n");
+
+			usleep(retardo_lfs* 1000);
+
+			t_dato* dato_crudo = recibir_dato_LFS(socket_lissandra);
+
+			if(dato_crudo == NULL){
+
+				dato_recibido = NULL;
+
+			}else{
+
+				printf("Llego la respuesta del File System\n");
+
+				dato_recibido = crear_dato(dato_crudo->key, (char *) dato_crudo->value->buffer, dato_crudo->timestamp);
+
+				liberar_t_dato(dato_crudo);
+			}
+
+		}
+
+
+	}else{
+
+		printf("Lissandra esta desconectada\n");
+		//LISSANDRA NO ESTA CONECTADA
 
 	}
 
 	liberar_request(nuevo_select);
 
-	printf("ESTOY ESPERANDO LA RESPUESTA\n");
-
-	t_dato* dato_crudo = recibir_dato_LFS(socket_lissandra);
-
-	if(dato_crudo == NULL){
-
-		log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
-
-		return NULL;
-
-	}else{
-
-		dato_recibido = crear_dato(dato_crudo->key, (char *) dato_crudo->value->buffer, dato_crudo->timestamp);
-
-		liberar_t_dato(dato_crudo);
-	}
 	return dato_recibido;
 }

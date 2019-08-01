@@ -29,6 +29,7 @@ int socket_lissandra;
 bool conexion_lissandra;
 
 int conectar_servidor(char* ip, int puerto);
-
+bool comprobar_conexion_lissandra(char* ip_lissandra, int puerto_lissandra);
+void desconectar_lissandra(void);
 
 #endif /* CLIENTE_CLIENTE_H_ */

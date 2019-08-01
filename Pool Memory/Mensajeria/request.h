@@ -26,7 +26,9 @@ typedef enum{
 typedef enum{
 
 	SUCCESS = 1,
-	ERROR = 2
+	ERROR = 2,
+	ERROR_CONEXION = 3
+
 
 }estado_request;
 

@@ -179,7 +179,7 @@ Dato request_select(select_t dato){
 
 			if(dato_lfs == NULL){
 
-				log_info(logger, "No existe la key en el LFS");
+				log_info(logger, "No se encontro la key");  //
 				dato_encontrado = NULL;
 
 			}
@@ -334,40 +334,71 @@ estado_request request_create(create dato_create){
 
 	estado_request estado;
 
-	if(enviar_request(nuevo_create, socket_lissandra)){
+	pthread_mutex_lock(&mutex_journal);
 
-		estado = recibir_estado_request(socket_lissandra);
+	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-		if(estado == SUCCESS){
+		printf("Lissandra esta conectada\n");
 
-			Segmento segmento_aux;
+		if(enviar_request(nuevo_create, socket_lissandra)){
 
-			pthread_mutex_lock(&mutex_journal);
-			if(!existe_segmento((char *)dato_create->tabla->buffer, &segmento_aux)){
+				usleep(retardo_lfs* 1000);
 
-				log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
+				estado = recibir_estado_request(socket_lissandra);
 
-				agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
+				if(estado == SUCCESS){
+
+					Segmento segmento_aux;
+
+					if(!existe_segmento((char *)dato_create->tabla->buffer, &segmento_aux)){
+
+						log_info(logger, "No existe un segmento asociado a %s. Se crea el segmento.", (char *)dato_create->tabla->buffer);
+
+						agregar_segmento((char *)dato_create->tabla->buffer , memoria->tabla_segmentos);
+
+					}else{
+
+						log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
+
+					}
+
+				}else if (estado == ERROR_CONEXION){
+
+					log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
+
+					estado = ERROR;
+
+					desconectar_lissandra();
+
+				}else{
+
+					log_info(logger, "No se pudo realizar el create en el FileSystem");
+
+				}
+
 
 			}else{
 
-				log_info(logger , "Existe el segmento asociado a %s.",(char *)dato_create->tabla->buffer );
+				log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+				desconectar_lissandra();
+
+				estado = ERROR;
 
 			}
-			pthread_mutex_unlock(&mutex_journal);
 
-		}else{
-
-			log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
-
-		}
 	}else{
 
-		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+		printf("Lissandra no esta conectada\n");
+
+		log_info(logger, "Lissandra no esta conectada");
 
 		estado = ERROR;
 
 	}
+
+	pthread_mutex_unlock(&mutex_journal);
+
 
 	free(nuevo_create);
 
@@ -382,25 +413,46 @@ t_list* request_describe(describe_t dato_describe){
 
 	request nuevo_describe = crear_request(DESCRIBE, dato_describe);
 
-	if(! enviar_request(nuevo_describe, socket_lissandra) ){
+	t_list* datos_describe;
 
-		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+	pthread_mutex_lock(&mutex_journal);
 
-		free(nuevo_describe);
+	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-		return NULL;
+		printf("Lissandra esta conectada");
+
+		if(!enviar_request(nuevo_describe, socket_lissandra) ){
+
+			log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+			desconectar_lissandra();
+
+			free(nuevo_describe);
+
+			pthread_mutex_unlock(&mutex_journal);
+
+			return NULL;
+
+		}else{
+
+			usleep(retardo_lfs* 1000);
+
+			datos_describe = recibir_describe(socket_lissandra);
+
+		}
+
+
+	}else{
+
+		printf("Lissandra no esta conectada\n");
+
+		log_info(logger, "Lissandra no esta conectada");
 
 	}
 
-	t_list* datos_describe;
-
-	printf("Libero la request describe\n");
+	pthread_mutex_unlock(&mutex_journal);
 
 	free(nuevo_describe);
-
-	printf("ESPERO LA RESPUESTA DEL DESCRIBE!\n");
-
-	datos_describe = recibir_describe(socket_lissandra);
 
 	return datos_describe;
 
@@ -412,43 +464,75 @@ estado_request request_drop(Drop datos_drop){
 
 	request request_drop = crear_request(DROP, datos_drop);
 
-	if(! enviar_request(request_drop, socket_lissandra) ){
-
-		log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
-
-		free(request_drop);
-
-		return ERROR;
-
-	}
-
-	free(request_drop);
-
 	Segmento segmento_drop;
 
 	estado_request estado;
 
-	estado = recibir_estado_request(socket_lissandra);
+	pthread_mutex_lock(&mutex_journal);
 
-	if(estado == SUCCESS){
-		pthread_mutex_lock(&mutex_journal);
+	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-		if(existe_segmento( (char *) datos_drop->tabla->buffer ,  &segmento_drop )){
+		printf("Lissandra esta conectada\n");
 
-//			log_info(logger, "Existe el segmento asociado a %s. Se elimina el segmento.",(char *) datos_drop->tabla->buffer );
-			sacar_segmento(segmento_drop);
+		if(! enviar_request(request_drop, socket_lissandra) ){
+
+			log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
+
+			desconectar_lissandra();
+
+			free(request_drop);
+
+			pthread_mutex_unlock(&mutex_journal);
+
+			return ERROR;
 
 		}else{
-//		log_info(logger, "No existe el segmento asociado a %s",(char *) datos_drop->tabla->buffer );
+
+			usleep(retardo_lfs* 1000);
+
+			estado = recibir_estado_request(socket_lissandra);
+
+			if(estado == SUCCESS){
+
+				if(existe_segmento( (char *) datos_drop->tabla->buffer ,  &segmento_drop )){
+
+					log_info(logger, "Existe el segmento asociado a %s. Se elimina el segmento.",(char *) datos_drop->tabla->buffer );
+					sacar_segmento(segmento_drop);
+
+				}else{
+					log_info(logger, "No existe el segmento asociado a %s",(char *) datos_drop->tabla->buffer );
+				}
+
+
+			}else if(estado == ERROR_CONEXION){
+
+				log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
+
+				estado = ERROR;
+
+				desconectar_lissandra();
+
+			}else{
+
+				log_info(logger, "No se pudo realizar el Drop en el FileSystem");
+
+			}
+
 		}
 
-		pthread_mutex_unlock(&mutex_journal);
 
 	}else{
 
-		log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
+		printf("Lissandra no esta conectada\n");
+
+		log_info(logger, "Lissandra esta desconectada");
 
 	}
+
+	pthread_mutex_unlock(&mutex_journal);
+
+	free(request_drop);
+
 
 	return estado;
 }

@@ -16,8 +16,6 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 
 	char* path_metadata_tabla = obtener_path_metadata_de_tabla(nombre_tabla);
 
-	printf("path metadata: %s\n" , path_metadata_tabla);
-
 	char* aux_consistencia;
 	metadata_config = config_create(path_metadata_tabla);
 
@@ -36,13 +34,9 @@ metadata_t* obtener_metadata(char* nombre_tabla){
 		obtener_metadata->consistencia = EC;
 	}
 
-	printf("ya termine, ahora libero'n");
-
 	free(path_metadata_tabla);
 
 	config_destroy(metadata_config);
-
-	printf("final\n");
 
 	return obtener_metadata;
 }

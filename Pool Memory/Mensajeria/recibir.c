@@ -115,7 +115,18 @@ t_dato* recibir_dato_LFS(int conexion){
 
 	estado = recibir_estado_request(conexion);
 
-	if(estado == ERROR){
+	if(estado == ERROR_CONEXION){
+
+		free(dato_recibido->value);
+		free(dato_recibido);
+
+		log_info(logger, "Se desconecto Lissandra");
+
+		desconectar_lissandra();
+
+		return NULL;
+
+	}else if(estado == ERROR){
 
 		free(dato_recibido->value);
 		free(dato_recibido);
@@ -179,16 +190,7 @@ estado_request recibir_estado_request(int conexion){
 
 		log_info(logger, "No se recibio el estado de la request.");
 
-		if(socket_lissandra == conexion){
-
-			log_info(logger, "Se desconecto el fileSystem");
-
-			conexion_lissandra = false;
-
-			close(socket_lissandra);
-
-		}
-		return ERROR;
+		return ERROR_CONEXION;
 
 	}
 
@@ -287,10 +289,19 @@ t_list* recibir_describe(int conexion){
 
 			free(tabla_recibida);
 			free(consistencia_recibida);
+
 		}
-	}else{
+	}else if(estado == ERROR_CONEXION){
 
 		log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
+
+		list_destroy(datos_metadata);
+
+		datos_metadata = NULL;
+
+		desconectar_lissandra();
+
+	}else{
 
 		list_destroy(datos_metadata);
 

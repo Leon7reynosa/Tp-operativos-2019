@@ -79,51 +79,13 @@ bool enviar_request(request request, int conexion){
 	int bytes_restantes = bytes;
 	int enviados_aux;
 
-	if(&conexion == &socket_lissandra){
-
-		if(!conexion_lissandra){
-
-			socket_lissandra = conectar_servidor(ip_lfs, puerto_lfs);
-
-			if(socket_lissandra <= -1){
-
-				free(buffer);
-
-				return false;
-
-			}else{
-
-				conexion_lissandra = true;
-
-				conexion = socket_lissandra;
-
-				int aux_handshake;
-
-				recv(socket_lissandra, &aux_handshake, sizeof(int), 0); // cada vez que te conectas al LFS te da el value el chotin
-
-			}
-		}
-
-	}
-
-	usleep(retardo_lfs * 1000);
-
-	while(bytes_enviados < bytes){
+	while((bytes_enviados < bytes) && exito){
 
 		enviados_aux = send(conexion, buffer + bytes_enviados, bytes_restantes, 0);
 
 		if(enviados_aux == -1){
 
-			bytes_enviados = bytes;
-
 			exito = false;
-
-			if(&socket_lissandra == &conexion){
-
-				conexion_lissandra = false;
-
-				close(socket_lissandra);
-			}
 
 		}else{
 
@@ -132,6 +94,7 @@ bool enviar_request(request request, int conexion){
 			bytes_restantes -= enviados_aux;
 
 		}
+
 	}
 
 	if(bytes_enviados == bytes){

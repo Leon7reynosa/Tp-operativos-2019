@@ -7,6 +7,45 @@
 
 #include "cliente.h"
 
+void desconectar_lissandra(void){
+
+	conexion_lissandra = false;
+
+	close(socket_lissandra);
+
+}
+
+bool comprobar_conexion_lissandra(char* ip_lissandra, int puerto_lissandra){
+
+	int value_aux;
+
+	if(!conexion_lissandra){
+
+		socket_lissandra = conectar_servidor(ip_lissandra, puerto_lissandra);
+
+		if(socket_lissandra <= -1){
+
+			conexion_lissandra = false;
+
+			return false;
+
+		}else{
+
+			recv(socket_lissandra, &value_aux, sizeof(int), 0);
+
+			conexion_lissandra = true;
+
+		}
+
+	}else{
+		//esta conectada
+	}
+
+	return true;
+
+
+}
+
 int conectar_servidor(char* ip, int puerto){
 
 	int error_conexion;
