@@ -93,7 +93,6 @@ int main (int argc , char* argv[]){
 
 	cancelar_hilos_execute();
 
-
 	pthread_cancel(hilo_inotify);
 
 	pthread_cancel(hilo_metrics);
@@ -123,8 +122,6 @@ int main (int argc , char* argv[]){
 		pthread_cancel(hilo);
 
 	}
-
-	list_destroy_and_destroy_elements(lista_hilos_exec, _destruir_hilo);
 
 	liberar_logs();
 
