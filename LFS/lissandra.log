@@ -268,3 +268,7 @@
 
 [INFO] 19:10:10:162 lissandra/(24043:24048): Ingresamos un dato a la tabla NANI con la key 10
 
+[INFO] 19:18:02:131 lissandra/(24413:24418): Ingresamos un dato a la tabla NANI con la key 10
+
+[INFO] 19:19:03:289 lissandra/(24505:24516): Ingresamos un dato a la tabla NANI con la key 10
+

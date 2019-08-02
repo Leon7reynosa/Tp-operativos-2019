@@ -3658,3 +3658,59 @@
 
 [INFO] 19:10:18:732 file system/(24043:24048): Request -- DROP-- realizada
 
+[INFO] 19:17:47:498 file system/(24413:24418): Solicitud de request -- SELECT -- 
+
+[INFO] 19:17:47:526 file system/(24413:24418): Request -- SELECT -- realizada !!!
+
+[INFO] 19:17:49:883 file system/(24413:24418): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 19:17:49:892 file system/(24413:24418): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 19:17:54:548 file system/(24413:24418): Inicio de request -- INSERT -- 
+
+[INFO] 19:17:54:601 file system/(24413:24418): Request -- INSERT -- realizada !!!
+
+[INFO] 19:18:02:113 file system/(24413:24418): Inicio de request -- INSERT -- 
+
+[INFO] 19:18:02:134 file system/(24413:24418): Request -- INSERT -- realizada !!!
+
+[INFO] 19:18:05:932 file system/(24413:24418): Solicitud de request -- SELECT -- 
+
+[INFO] 19:18:05:989 file system/(24413:24418): Request -- SELECT -- realizada !!!
+
+[INFO] 19:18:07:697 file system/(24413:24418): Inicio de request -- DROP --
+
+[INFO] 19:18:07:782 file system/(24413:24418): Request -- DROP-- realizada
+
+[INFO] 19:18:53:76 file system/(24505:24516): Solicitud de request -- SELECT -- 
+
+[INFO] 19:18:53:108 file system/(24505:24516): Request -- SELECT -- realizada !!!
+
+[INFO] 19:18:54:442 file system/(24505:24516): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 19:18:54:445 file system/(24505:24516): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 19:18:59:363 file system/(24505:24516): Inicio de request -- INSERT -- 
+
+[INFO] 19:18:59:410 file system/(24505:24516): Request -- INSERT -- realizada !!!
+
+[INFO] 19:19:03:284 file system/(24505:24516): Inicio de request -- INSERT -- 
+
+[INFO] 19:19:03:297 file system/(24505:24516): Request -- INSERT -- realizada !!!
+
+[INFO] 19:19:05:745 file system/(24505:24516): Solicitud de request -- SELECT -- 
+
+[INFO] 19:19:05:794 file system/(24505:24516): Request -- SELECT -- realizada !!!
+
+[INFO] 19:19:07:927 file system/(24505:24516): Inicio de request -- DROP --
+
+[INFO] 19:19:08:29 file system/(24505:24516): Request -- DROP-- realizada
+
+[INFO] 19:20:28:981 file system/(24608:24613): Solicitud de request -- SELECT -- 
+
+[INFO] 19:20:29:19 file system/(24608:24613): Request -- SELECT -- realizada !!!
+
+[INFO] 19:20:31:529 file system/(24608:24613): Inicio de request -- DROP --
+
+[INFO] 19:20:31:531 file system/(24608:24613): Request -- DROP-- realizada
+
