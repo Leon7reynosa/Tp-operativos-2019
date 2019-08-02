@@ -30,18 +30,18 @@ void enviar_metadata(t_list* metadatas, int conexion, estado_request estado){
 	int bytes_enviados = 0;
 	int enviados_aux;
 
-	printf("Serializo las metadatas\n");
+//	printf("Serializo las metadatas\n");
 	buffer = serializar_metadata(metadatas, &bytes, estado);
 
-	printf("Serialize las metadatas\n");
+//	printf("Serialize las metadatas\n");
 
 	bytes_restantes = bytes;
 
-	printf("bytes a enviar = %i\n", bytes);
+//	printf("bytes a enviar = %i\n", bytes);
 
 	while(bytes_enviados < bytes){
 
-		printf("Envio las metadata serializada\n");
+//		printf("Envio las metadata serializada\n");
 		enviados_aux = send(conexion, buffer + bytes_enviados, bytes_restantes, 0);
 
 		if(enviados_aux == -1){
@@ -115,7 +115,7 @@ void mandar_select(int conexion , dato_t* dato, estado_request estado){
 	int bytes;
 	void* buffer;
 
-	printf("[REQUEST] Mando el estado de la request\n");
+//	printf("[REQUEST] Mando el estado de la request\n");
 
 	buffer = serializar_dato_t(dato, &bytes, estado);
 
@@ -123,7 +123,7 @@ void mandar_select(int conexion , dato_t* dato, estado_request estado){
 
 	free(buffer);
 
-	printf("[REQUEST] Se mando el estado de la request\n");
+//	printf("[REQUEST] Se mando el estado de la request\n");
 
 }
 

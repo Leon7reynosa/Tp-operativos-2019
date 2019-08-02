@@ -37,8 +37,6 @@ void ingresar_a_memtable(dato_t *dato_a_ingresar, char *nombre_tabla) {
 
     }
 
-    printf("[MEMTABLA] ya pase el if\n");
-
     log_info(logger_lissandra, "Ingresamos un dato a la tabla %s con la key %d\n", nombre_tabla , dato_a_ingresar->key);
 
 }

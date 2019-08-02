@@ -36,7 +36,7 @@ void realizar_handshake(void){
 		exit(1);
 	}
 
-	log_info(logger, "Se establecion conexion con el File System.\n>> Tamanio value = %i\n", tamanio_value);
+	log_info(logger, "Se establecio conexion con el File System.\n>> Tamanio value = %i\n", tamanio_value);
 
 }
 
@@ -63,6 +63,8 @@ void creacion_del_config(){
 	config_set_value(g_config, "TIEMPO_JOURNAL","60000");
 	config_set_value(g_config, "TIEMPO_GOSSIPING", "10000");
 	config_set_value(g_config, "NUMERO_MEMORIA", "1");
+
+	free(path_config);
 
 	config_save(g_config);
 	config_destroy(g_config);
@@ -124,6 +126,9 @@ void obtener_datos_config(){
 		i++;
 	}
 
+	liberar_puntero_doble(ips_seeds);
+	liberar_puntero_doble(puertos_seeds);
+	free(path_config);
 
 	//SI HAY ALGO LOCO, ES ESTO DE ABAJO XD
 	config_destroy(g_config);

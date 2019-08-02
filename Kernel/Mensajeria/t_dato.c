@@ -29,12 +29,12 @@ bool es_un_numero(char* numero){
 
 	int i = 0;
 
-	string_trim_left(&numero);
-
 	if(numero == NULL){
 
 		return false;
 	}
+
+	string_trim_left(&numero);
 
 	if(string_equals_ignore_case(numero , "\n") || string_is_empty(numero)){
 

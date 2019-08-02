@@ -149,13 +149,19 @@ void trabajar_request(request nueva_request , int conexion){
 
 Dato request_select(select_t dato){
 
+	printf("hola\n");
+
 	log_info(logger, "Se realizara un SELECT");
 
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
 	Dato dato_encontrado;
 
+	printf("chaau\n");
+
 	pthread_mutex_lock(&mutex_journal);
+
+	printf("llegue aca\n");
 
 	if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){
 
@@ -165,7 +171,7 @@ Dato request_select(select_t dato){
 
 			log_info(logger, "Existe una pagina con la key: %i", dato->key);
 
-			mostrar_datos(pagina_encontrada);
+//			mostrar_datos(pagina_encontrada);
 
 			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria);
 
@@ -195,7 +201,7 @@ Dato request_select(select_t dato){
 
 				dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre																							  //lo mismo
 
-				mostrar_datos(pagina_encontrada);
+//				mostrar_datos(pagina_encontrada);
 			}
 
 		}
@@ -216,16 +222,21 @@ Dato request_select(select_t dato){
 
 		}else{
 
+			printf("alo\n");
 			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
+			printf("fue aca\n");
+
 			agregar_pagina(segmento_tabla, pagina_encontrada);
+
+			printf("fue aca\n");
 			actualizar_pagina(pagina_encontrada, dato_lfs);
-
+			printf("fue aca\n");
 			liberar_dato(dato_lfs);
-
+			printf("fue aca\n");
 			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
-																							 //lo mismo
-			mostrar_datos(pagina_encontrada);
+			printf("fue aca\n");															 //lo mismo
+//			mostrar_datos(pagina_encontrada);
 		}
 
 	}
@@ -257,7 +268,7 @@ estado_request request_insert(insert dato){
 		dato->timestamp = timestamp;
 	}
 
-	printf("EN request_insert tabla: %s\n" , dato->tabla->buffer);
+//	printf("EN request_insert tabla: %s\n" , dato->tabla->buffer);
 
 	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
@@ -274,7 +285,7 @@ estado_request request_insert(insert dato){
 
 			pagina_encontrada->flag_modificado = 1;                      //ver si se puede mover esto
 
-			mostrar_datos(pagina_encontrada);
+//			mostrar_datos(pagina_encontrada);
 
 		}else{
 
@@ -288,7 +299,7 @@ estado_request request_insert(insert dato){
 
 			agregar_pagina(segmento_tabla, pagina_encontrada);
 
-			mostrar_datos(pagina_encontrada);
+//			mostrar_datos(pagina_encontrada);
 
 		}
 
@@ -315,7 +326,7 @@ estado_request request_insert(insert dato){
 
 		agregar_pagina(segmento_tabla, pagina_encontrada);
 
-		mostrar_datos(pagina_encontrada);
+//		mostrar_datos(pagina_encontrada);
 
 	}
 	pthread_mutex_unlock(&mutex_journal);
@@ -338,7 +349,6 @@ estado_request request_create(create dato_create){
 
 	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-		printf("Lissandra esta conectada\n");
 
 		if(enviar_request(nuevo_create, socket_lissandra)){
 
@@ -419,8 +429,6 @@ t_list* request_describe(describe_t dato_describe){
 
 	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-		printf("Lissandra esta conectada");
-
 		if(!enviar_request(nuevo_describe, socket_lissandra) ){
 
 			log_info(logger, "No se pudo mandar la request al FileSystem, esta desconectado");
@@ -471,8 +479,6 @@ estado_request request_drop(Drop datos_drop){
 	pthread_mutex_lock(&mutex_journal);
 
 	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
-
-		printf("Lissandra esta conectada\n");
 
 		if(! enviar_request(request_drop, socket_lissandra) ){
 

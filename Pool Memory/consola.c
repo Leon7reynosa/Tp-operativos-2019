@@ -16,6 +16,8 @@ bool leer_consola(void){
 
 	fgets(buffer, tamanio_buffer, stdin);
 
+	string_trim_right(&buffer);
+
 	*(buffer + tamanio_buffer) = '\0';
 
 	if(string_length(buffer) + 1 >= tamanio_buffer){
@@ -59,7 +61,7 @@ bool leer_consola(void){
 		parsear_request(JOURNAL, tokens);
 		printf("========================\n");
 	}
-	else if(string_equals_ignore_case(tokens[0], "EXIT")){
+	else if(string_starts_with(tokens[0], "EXIT") ){
 
 		printf(">>>>>EXIT<<<<<\n");
 
@@ -115,14 +117,32 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 		case SELECT:
 
-			if(cantidad_argumentos == 2){
+			if(cantidad_argumentos == 2 ){
 
 				tabla = tokens[1];
-				key = atoi(tokens[2]);       //VER ESTO
+
+				printf("KEY STRING: %s\n" , tokens[2]);
+
+//				if(!es_un_numero(tokens[2])){
+//
+//					printf("La key no es valida\n");
+//					return;
+//
+//				}
+
+				printf("KEY STRING: %s\n" , tokens[2]);
+
+				key = atoi(tokens[2]);
+				printf("key: %d\n" , key);
 
 				dato_select = crear_dato_select(tabla, key);
 
+				printf("aca\n");
+
 				dato = request_select(dato_select);
+
+				printf("aca\n");
+
 
 				if(dato == NULL){
 
@@ -150,7 +170,21 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 		case INSERT:
 
-			if(cantidad_argumentos ){
+			if(cantidad_argumentos == 3 || cantidad_argumentos == 4){
+
+/*					tabla = tokens[1];
+					key = atoi(tokens[2]);
+					value = tokens[3];
+					timestamp = tokens[4];
+
+*/
+					if(!es_un_numero(tokens[2])){
+
+						printf("La KEY no es valida\n");
+
+						return;
+
+					}
 
 					dato_insert = crear_dato_insert(tabla, key, value, timestamp);
 
@@ -172,15 +206,23 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 		case CREATE:
 
-			if(cantidad_argumentos == 5){
+			if(cantidad_argumentos == 4){
 				tabla = tokens[1];
 				consistencia = tokens[2];
+
+				if(!es_un_numero(tokens[3]) || !es_un_numero(tokens[4])){
+
+					printf("Las particiones o el Tiempo compactacion no es valido\n");
+
+					return;
+				}
+
 				numero_particiones = atoi(tokens[3]);
 				tiempo_compactacion = atoi(tokens[4]);
 
 				dato_create = crear_dato_create(tabla, consistencia, numero_particiones, tiempo_compactacion);
 
-				estado = request_create(dato_describe);
+				estado = request_create(dato_create);
 
 				mostrar_terminacion_request_segun_estado(estado);
 
@@ -189,14 +231,14 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 			}
 			else{
-				printf("Cantidad de argumentos invalido\n");
+				printf("Cantidad de argumentos invalido, pasaste %i\n", cantidad_argumentos);
 			}
 
 			break;
 
 		case DESCRIBE:
 
-			if(cantidad_argumentos == 1 || cantidad_argumentos == 2){
+			if(cantidad_argumentos == 0 || cantidad_argumentos == 1){
 
 				tabla = tokens[1];
 
@@ -217,7 +259,7 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 				mostrar_lista_describe(list_describe);
 
-				list_destroy_and_destroy_elements(list_describe, liberar_dato_describe);
+				list_destroy_and_destroy_elements(list_describe, liberar_metadata);
 
 			}
 			else{
@@ -228,7 +270,7 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 		case DROP:
 
-			if(cantidad_argumentos == 2){
+			if(cantidad_argumentos == 1){
 				tabla = tokens[1];
 
 				dato_drop = crear_drop(tabla);
@@ -248,7 +290,7 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 		case JOURNAL:
 
-			if(cantidad_argumentos == 1){
+			if(cantidad_argumentos == 0){
 
 				pthread_mutex_lock(&mutex_journal);
 
@@ -274,11 +316,91 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 }
 
+bool estan_bien_los_numeros(cod_operacion codigo , char** tokens ){
+
+	switch(codigo){
+
+		case SELECT:
+
+			if(es_un_numero(tokens[2])){
+				return true;
+			}
+
+			return false;
+
+		case CREATE:
+
+			if(es_un_numero(tokens[3])){
+
+				return true;
+
+			}
+
+			return false;
+
+		case INSERT:
+
+			if(es_un_numero(tokens[2])){
+				return true;
+			}
+
+			return false;
+
+		default:
+
+			return true;
+
+	}
+
+}
+
+bool es_un_numero(char* numero_aux){
+
+	int i = 0;
+
+	if(numero_aux == NULL){
+
+		return false;
+	}
+
+	char* numero = malloc(strlen(numero_aux) + 1);
+	memcpy(numero, numero_aux, strlen(numero_aux) + 1);
+
+
+
+	string_trim_left(&numero);
+
+	if(string_equals_ignore_case(numero , "\n") || string_is_empty(numero)){
+
+		free(numero);
+
+		return false ;
+
+	}
+
+	while( numero[i] != '\0' ){
+
+		if( !isdigit(numero[i]) ){
+
+			free(numero);
+
+			return false;
+
+		}
+
+		i++;
+	}
+
+	free(numero);
+	return true;
+}
+
 int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_t* key, char** value, time_t* timestamp ){
 
 	char** auxiliar;
 	char** parametros;
 	char* comillas = "\"";
+	int return_cantidad = 3;
 
 	auxiliar = string_split(linea_request, comillas  );
 
@@ -338,7 +460,7 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 
 	*key = atoi(parametros[2]);
 
-	if(auxiliar[2] == NULL){
+	if(!es_un_numero(auxiliar[2])){
 
 		*timestamp = -1;
 
@@ -348,15 +470,11 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 
 	}
 
-	printf("HASTA ACA LA TABLA ES: %s\n" , *nombre_tabla);
-	printf("Y LA KEY ES: %d\n"  ,  *key);
-
-
 	liberar_puntero_doble(parametros);
 
 	liberar_puntero_doble(auxiliar);
 
-	return 1;
+	return 3;
 
 }
 

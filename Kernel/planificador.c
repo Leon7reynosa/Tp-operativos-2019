@@ -63,6 +63,8 @@ t_queue* parsear_LQL(FILE* archivo_lql){
 
 		string_append(&linea_leida, caracter_temp);
 
+		free(caracter_temp);
+
 		caracter = fgetc(archivo_lql);
 
 		if(caracter == '\n'){
@@ -165,6 +167,8 @@ void cola_new_to_ready(){
 		printf("\n>Path: %s\n" , path_archivo_lql);
 
 		archivo = fopen(path_archivo_lql , "r");
+
+		free(path_archivo_lql);
 
 		if(archivo != NULL){
 

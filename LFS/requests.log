@@ -33333,3 +33333,1378 @@
 [INFO] 15:06:16:371 requests/(17772:17870): Request de DESCRIBE recibida por el socket 14 !
 [INFO] 15:06:16:376 requests/(17772:17870): Request de DESCRIBE terminada por el socket 14 !
 
+[INFO] 18:38:55:527 requests/(8943:8953): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:38:56:391 requests/(8943:8953): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:39:26:393 requests/(8943:8987): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 18:39:26:393 requests/(8943:8987): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 18:39:56:394 requests/(8943:9007): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 18:39:56:394 requests/(8943:9007): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 18:40:02:811 requests/(8943:9007): Request de CREATE recibida por el socket 13 !
+[INFO] 18:40:02:812 requests/(8943:9007): Request de CREATE terminada correctamente por el socket 13 !
+
+[INFO] 18:40:11:395 requests/(8943:9007): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 18:40:11:396 requests/(8943:9007): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 18:41:31:157 requests/(8943:9007): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 18:41:31:157 requests/(8943:9007): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 18:42:01:158 requests/(8943:9082): Request de DESCRIBE recibida por el socket 14 !
+[INFO] 18:42:01:159 requests/(8943:9082): Request de DESCRIBE terminada por el socket 14 !
+
+[INFO] 18:42:01:911 requests/(8943:9082): Request de CREATE recibida por el socket 14 !
+[INFO] 18:42:01:912 requests/(8943:9082): Request de CREATE terminada correctamente por el socket 14 !
+
+[INFO] 18:42:10:132 requests/(8943:9082): Request de DESCRIBE recibida por el socket 14 !
+[INFO] 18:42:10:132 requests/(8943:9082): Request de DESCRIBE terminada por el socket 14 !
+
+[INFO] 18:42:16:160 requests/(8943:9082): Request de DESCRIBE recibida por el socket 14 !
+[INFO] 18:42:16:160 requests/(8943:9082): Request de DESCRIBE terminada por el socket 14 !
+
+[INFO] 18:46:18:535 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:46:18:535 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:46:23:298 requests/(9281:9298): Request de CREATE recibida por el socket 11 !
+[INFO] 18:46:23:299 requests/(9281:9298): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 18:46:27:846 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:46:27:847 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:46:33:537 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:46:33:537 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:46:40:353 requests/(9281:9298): Request de INSERT recibida por el socket 11 !
+[INFO] 18:46:40:367 requests/(9281:9298): Request de INSERT terminada por el socket 11 !
+
+[INFO] 18:46:48:538 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:46:48:539 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:47:03:540 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:47:03:540 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:47:18:543 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:47:18:544 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:47:33:549 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:47:33:550 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:47:48:551 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:47:48:552 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:48:03:553 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:48:03:554 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:48:18:556 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:48:18:557 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:48:33:558 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:48:33:558 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:48:48:560 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:48:48:561 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:49:03:562 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:49:03:562 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:49:18:563 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:49:18:563 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:49:33:564 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:49:33:564 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:49:48:566 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:49:48:566 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:50:03:568 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:50:03:568 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:50:18:570 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:50:18:570 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:50:33:571 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:50:33:572 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:50:48:573 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:50:48:573 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:51:03:574 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:51:03:575 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:51:06:247 requests/(9281:9298): Request de SELECT recibida por el socket 11 !
+[INFO] 18:51:06:247 requests/(9281:9298): [REQUEST] Se encontro la key: 10
+[INFO] 18:51:06:247 requests/(9281:9298): [REQUEST] El value: NANO
+
+[INFO] 18:51:06:247 requests/(9281:9298): [REQUEST] El timestamp: 1564695995
+
+[INFO] 18:51:06:248 requests/(9281:9298): Request de SELECT terminada por el socket 11 !
+
+[INFO] 18:51:18:576 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:51:18:576 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:51:33:577 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:51:33:577 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:51:48:578 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:51:48:579 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:52:03:580 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:52:03:580 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:52:18:581 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:52:18:582 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:52:33:583 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:52:33:583 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:52:48:585 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:52:48:585 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:53:03:586 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:53:03:587 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:53:18:589 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:53:18:590 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:53:33:591 requests/(9281:9298): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 18:53:33:591 requests/(9281:9298): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 18:57:09:845 requests/(9757:9803): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 18:57:09:845 requests/(9757:9803): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 19:01:51:990 requests/(10105:10116): Request de SELECT recibida por el socket 11 !
+[INFO] 19:01:51:991 requests/(10105:10116): [REQUEST] Se encontro la key: 10
+[INFO] 19:01:51:991 requests/(10105:10116): [REQUEST] El value: NANO
+
+[INFO] 19:01:51:991 requests/(10105:10116): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:01:51:991 requests/(10105:10116): Request de SELECT terminada por el socket 11 !
+
+[INFO] 19:07:27:844 requests/(10105:10393): Request de SELECT recibida por el socket 12 !
+[INFO] 19:07:27:845 requests/(10105:10393): [REQUEST] Se encontro la key: 10
+[INFO] 19:07:27:845 requests/(10105:10393): [REQUEST] El value: NANO
+
+[INFO] 19:07:27:845 requests/(10105:10393): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:07:27:846 requests/(10105:10393): Request de SELECT terminada por el socket 12 !
+
+[INFO] 19:07:41:682 requests/(10105:10393): Request de INSERT recibida por el socket 12 !
+[INFO] 19:07:41:682 requests/(10105:10393): Request de INSERT terminada por el socket 12 !
+
+[INFO] 19:08:11:684 requests/(10105:10393): Request de INSERT recibida por el socket 12 !
+[INFO] 19:08:11:684 requests/(10105:10393): Request de INSERT terminada por el socket 12 !
+
+[INFO] 19:14:53:321 requests/(10105:10703): Request de SELECT recibida por el socket 17 !
+[INFO] 19:14:53:322 requests/(10105:10703): [REQUEST] Se encontro la key: 10
+[INFO] 19:14:53:322 requests/(10105:10703): [REQUEST] El value: NANO
+
+[INFO] 19:14:53:322 requests/(10105:10703): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:14:53:322 requests/(10105:10703): Request de SELECT terminada por el socket 17 !
+
+[INFO] 19:21:58:520 requests/(11373:11384): Request de SELECT recibida por el socket 11 !
+[INFO] 19:21:58:521 requests/(11373:11384): [REQUEST] Se encontro la key: 10
+[INFO] 19:21:58:521 requests/(11373:11384): [REQUEST] El value: NANO
+
+[INFO] 19:21:58:521 requests/(11373:11384): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:21:58:521 requests/(11373:11384): Request de SELECT terminada por el socket 11 !
+
+[INFO] 19:26:29:461 requests/(11373:11672): Request de SELECT recibida por el socket 13 !
+[INFO] 19:26:29:462 requests/(11373:11672): [REQUEST] Se encontro la key: 10
+[INFO] 19:26:29:462 requests/(11373:11672): [REQUEST] El value: NANO
+
+[INFO] 19:26:29:462 requests/(11373:11672): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:26:29:462 requests/(11373:11672): Request de SELECT terminada por el socket 13 !
+
+[INFO] 19:27:41:712 requests/(11373:11766): Request de SELECT recibida por el socket 14 !
+[INFO] 19:27:41:713 requests/(11373:11766): [REQUEST] Se encontro la key: 10
+[INFO] 19:27:41:713 requests/(11373:11766): [REQUEST] El value: NANO
+
+[INFO] 19:27:41:713 requests/(11373:11766): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:27:41:713 requests/(11373:11766): Request de SELECT terminada por el socket 14 !
+
+[INFO] 19:30:55:50 requests/(11373:11924): Request de SELECT recibida por el socket 15 !
+[INFO] 19:30:55:50 requests/(11373:11924): [REQUEST] Se encontro la key: 10
+[INFO] 19:30:55:50 requests/(11373:11924): [REQUEST] El value: NANO
+
+[INFO] 19:30:55:50 requests/(11373:11924): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:30:55:51 requests/(11373:11924): Request de SELECT terminada por el socket 15 !
+
+[INFO] 19:33:46:409 requests/(11373:12082): Request de SELECT recibida por el socket 16 !
+[INFO] 19:33:46:410 requests/(11373:12082): [REQUEST] Se encontro la key: 10
+[INFO] 19:33:46:410 requests/(11373:12082): [REQUEST] El value: NANO
+
+[INFO] 19:33:46:410 requests/(11373:12082): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:33:46:410 requests/(11373:12082): Request de SELECT terminada por el socket 16 !
+
+[INFO] 19:35:17:192 requests/(11373:12201): Request de SELECT recibida por el socket 17 !
+[INFO] 19:35:17:192 requests/(11373:12201): [REQUEST] Se encontro la key: 10
+[INFO] 19:35:17:192 requests/(11373:12201): [REQUEST] El value: NANO
+
+[INFO] 19:35:17:192 requests/(11373:12201): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:35:17:193 requests/(11373:12201): Request de SELECT terminada por el socket 17 !
+
+[INFO] 19:35:32:860 requests/(11373:12201): Request de CREATE recibida por el socket 17 !
+[INFO] 19:35:32:862 requests/(11373:12201): Request de CREATE terminada correctamente por el socket 17 !
+
+[INFO] 19:35:46:442 requests/(11373:12201): Request de DESCRIBE recibida por el socket 17 !
+[INFO] 19:35:46:442 requests/(11373:12201): Request de DESCRIBE terminada por el socket 17 !
+
+[INFO] 19:43:20:254 requests/(11373:12639): Request de SELECT recibida por el socket 18 !
+[INFO] 19:43:20:255 requests/(11373:12639): [REQUEST] Se encontro la key: 10
+[INFO] 19:43:20:255 requests/(11373:12639): [REQUEST] El value: NANO
+
+[INFO] 19:43:20:255 requests/(11373:12639): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:43:20:255 requests/(11373:12639): Request de SELECT terminada por el socket 18 !
+
+[INFO] 19:43:25:559 requests/(11373:12639): Request de DESCRIBE recibida por el socket 18 !
+[INFO] 19:43:25:560 requests/(11373:12639): Request de DESCRIBE terminada por el socket 18 !
+
+[INFO] 19:43:46:546 requests/(11373:12639): Request de CREATE recibida por el socket 18 !
+[INFO] 19:43:46:547 requests/(11373:12639): Request de CREATE terminada correctamente por el socket 18 !
+
+[INFO] 19:45:20:540 requests/(11373:12914): Request de SELECT recibida por el socket 19 !
+[INFO] 19:45:20:540 requests/(11373:12914): [REQUEST] Se encontro la key: 10
+[INFO] 19:45:20:540 requests/(11373:12914): [REQUEST] El value: NANO
+
+[INFO] 19:45:20:540 requests/(11373:12914): [REQUEST] El timestamp: 1564695995
+
+[INFO] 19:45:20:541 requests/(11373:12914): Request de SELECT terminada por el socket 19 !
+
+[INFO] 19:45:37:32 requests/(11373:12926): Request de DESCRIBE recibida por el socket 20 !
+[INFO] 19:45:37:33 requests/(11373:12926): Request de DESCRIBE terminada por el socket 20 !
+
+[INFO] 19:50:31:439 requests/(13228:13356): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 19:50:31:439 requests/(13228:13356): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 19:53:58:985 requests/(13518:13532): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 19:53:58:986 requests/(13518:13532): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 19:58:07:766 requests/(13676:13689): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 19:58:07:768 requests/(13676:13689): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 19:59:57:637 requests/(13781:13799): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 19:59:57:638 requests/(13781:13799): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 20:01:17:762 requests/(13870:13883): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 20:01:17:763 requests/(13870:13883): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 20:03:51:936 requests/(13870:13988): Request de SELECT recibida por el socket 12 !
+[INFO] 20:03:51:936 requests/(13870:13988): [REQUEST] Se encontro la key: 10
+[INFO] 20:03:51:936 requests/(13870:13988): [REQUEST] El value: NANO
+
+[INFO] 20:03:51:936 requests/(13870:13988): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:03:51:938 requests/(13870:13988): Request de SELECT terminada por el socket 12 !
+
+[INFO] 20:04:02:373 requests/(13870:13988): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 20:04:02:374 requests/(13870:13988): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 20:04:21:53 requests/(13870:14042): Request de SELECT recibida por el socket 13 !
+[INFO] 20:04:21:54 requests/(13870:14042): [REQUEST] Se encontro la key: 10
+[INFO] 20:04:21:54 requests/(13870:14042): [REQUEST] El value: NANO
+
+[INFO] 20:04:21:54 requests/(13870:14042): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:04:21:54 requests/(13870:14042): Request de SELECT terminada por el socket 13 !
+
+[INFO] 20:04:28:20 requests/(13870:14042): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 20:04:28:21 requests/(13870:14042): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 20:06:27:532 requests/(13870:14184): Request de SELECT recibida por el socket 14 !
+[INFO] 20:06:27:533 requests/(13870:14184): [REQUEST] Se encontro la key: 10
+[INFO] 20:06:27:533 requests/(13870:14184): [REQUEST] El value: NANO
+
+[INFO] 20:06:27:533 requests/(13870:14184): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:06:27:533 requests/(13870:14184): Request de SELECT terminada por el socket 14 !
+
+[INFO] 20:06:42:260 requests/(13870:14184): Request de DESCRIBE recibida por el socket 14 !
+[INFO] 20:06:42:262 requests/(13870:14184): Request de DESCRIBE terminada por el socket 14 !
+
+[INFO] 20:11:16:775 requests/(13870:14413): Request de SELECT recibida por el socket 15 !
+[INFO] 20:11:16:776 requests/(13870:14413): [REQUEST] Se encontro la key: 10
+[INFO] 20:11:16:776 requests/(13870:14413): [REQUEST] El value: NANO
+
+[INFO] 20:11:16:776 requests/(13870:14413): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:11:16:776 requests/(13870:14413): Request de SELECT terminada por el socket 15 !
+
+[INFO] 20:15:58:652 requests/(14690:14703): Request de SELECT recibida por el socket 11 !
+[INFO] 20:15:58:653 requests/(14690:14703): [REQUEST] Se encontro la key: 10
+[INFO] 20:15:58:653 requests/(14690:14703): [REQUEST] El value: NANO
+
+[INFO] 20:15:58:653 requests/(14690:14703): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:15:58:653 requests/(14690:14703): Request de SELECT terminada por el socket 11 !
+
+[INFO] 20:16:37:852 requests/(14771:14784): Request de SELECT recibida por el socket 11 !
+[INFO] 20:16:37:853 requests/(14771:14784): [REQUEST] Se encontro la key: 10
+[INFO] 20:16:37:853 requests/(14771:14784): [REQUEST] El value: NANO
+
+[INFO] 20:16:37:853 requests/(14771:14784): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:16:37:853 requests/(14771:14784): Request de SELECT terminada por el socket 11 !
+
+[INFO] 20:16:51:118 requests/(14771:14784): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 20:16:51:119 requests/(14771:14784): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 20:17:06:37 requests/(14771:14784): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 20:17:06:38 requests/(14771:14784): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 20:17:15:762 requests/(14771:14784): Request de DROP recibida por el socket 11 !
+[INFO] 20:17:15:763 requests/(14771:14784): Request de DROP solicitada por el socket 11 !
+
+[INFO] 20:17:19:211 requests/(14771:14784): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 20:17:19:212 requests/(14771:14784): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 20:17:52:759 requests/(14771:14784): Request de CREATE recibida por el socket 11 !
+[INFO] 20:17:52:761 requests/(14771:14784): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 20:17:55:626 requests/(14771:14784): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 20:17:55:628 requests/(14771:14784): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 20:20:32:790 requests/(14771:14978): Request de SELECT recibida por el socket 12 !
+[INFO] 20:20:32:792 requests/(14771:14978): [REQUEST] Se encontro la key: 10
+[INFO] 20:20:32:792 requests/(14771:14978): [REQUEST] El value: NANO
+
+[INFO] 20:20:32:792 requests/(14771:14978): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:20:32:792 requests/(14771:14978): Request de SELECT terminada por el socket 12 !
+
+[INFO] 20:20:55:400 requests/(14771:14978): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 20:20:55:402 requests/(14771:14978): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 20:25:30:652 requests/(14771:14978): Request de INSERT recibida por el socket 12 !
+[INFO] 20:25:30:654 requests/(14771:14978): Request de INSERT terminada por el socket 12 !
+
+[INFO] 20:25:35:558 requests/(14771:15226): Request de SELECT recibida por el socket 13 !
+[INFO] 20:25:35:560 requests/(14771:15226): [REQUEST] Se encontro la key: 10
+[INFO] 20:25:35:560 requests/(14771:15226): [REQUEST] El value: NANO
+
+[INFO] 20:25:35:560 requests/(14771:15226): [REQUEST] El timestamp: 1564695995
+
+[INFO] 20:25:35:560 requests/(14771:15226): Request de SELECT terminada por el socket 13 !
+
+[INFO] 20:25:39:965 requests/(14771:15226): Request de SELECT recibida por el socket 13 !
+[INFO] 20:25:39:966 requests/(14771:15226): [REQUEST] Se encontro la key: 99
+[INFO] 20:25:39:966 requests/(14771:15226): [REQUEST] El value: Super nani
+
+[INFO] 20:25:39:966 requests/(14771:15226): [REQUEST] El timestamp: 1564701646
+
+[INFO] 20:25:39:966 requests/(14771:15226): Request de SELECT terminada por el socket 13 !
+
+[INFO] 20:25:46:858 requests/(14771:15226): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 20:25:46:861 requests/(14771:15226): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 20:26:24:834 requests/(14771:15226): Request de CREATE recibida por el socket 13 !
+[INFO] 20:26:24:835 requests/(14771:15226): Request de CREATE terminada correctamente por el socket 13 !
+
+[INFO] 20:26:31:439 requests/(14771:15226): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 20:26:31:442 requests/(14771:15226): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 20:26:41:69 requests/(14771:15267): Request de DESCRIBE recibida por el socket 15 !
+[INFO] 20:26:41:70 requests/(14771:15267): Request de DESCRIBE terminada por el socket 15 !
+
+[INFO] 20:27:15:71 requests/(14771:15267): Request de DESCRIBE recibida por el socket 15 !
+[INFO] 20:27:15:72 requests/(14771:15267): Request de DESCRIBE terminada por el socket 15 !
+
+[INFO] 20:27:24:238 requests/(14771:15292): Request de DESCRIBE recibida por el socket 16 !
+[INFO] 20:27:24:239 requests/(14771:15292): Request de DESCRIBE terminada por el socket 16 !
+
+[INFO] 20:27:25:609 requests/(14771:15292): Request de DESCRIBE recibida por el socket 16 !
+[INFO] 20:27:25:610 requests/(14771:15292): Request de DESCRIBE terminada por el socket 16 !
+
+[INFO] 21:07:06:770 requests/(17257:17276): Request de SELECT recibida por el socket 11 !
+[INFO] 21:07:06:770 requests/(17257:17276): [REQUEST] Se encontro la key: 10
+[INFO] 21:07:06:770 requests/(17257:17276): [REQUEST] El value: NANO
+
+[INFO] 21:07:06:770 requests/(17257:17276): [REQUEST] El timestamp: 1564695995
+
+[INFO] 21:07:06:771 requests/(17257:17276): Request de SELECT terminada por el socket 11 !
+
+[INFO] 21:07:12:563 requests/(17257:17276): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:07:12:564 requests/(17257:17276): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:07:15:243 requests/(17257:17276): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:07:15:244 requests/(17257:17276): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:07:24:15 requests/(17257:17276): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:07:24:16 requests/(17257:17276): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:07:31:280 requests/(17257:17276): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:07:31:282 requests/(17257:17276): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:16:56:387 requests/(17989:18020): Request de SELECT recibida por el socket 11 !
+[INFO] 21:16:56:387 requests/(17989:18020): [REQUEST] Se encontro la key: 10
+[INFO] 21:16:56:387 requests/(17989:18020): [REQUEST] El value: NANO
+
+[INFO] 21:16:56:387 requests/(17989:18020): [REQUEST] El timestamp: 1564695995
+
+[INFO] 21:16:56:387 requests/(17989:18020): Request de SELECT terminada por el socket 11 !
+
+[INFO] 21:16:59:864 requests/(17989:18020): Request de SELECT recibida por el socket 11 !
+[INFO] 21:16:59:864 requests/(17989:18020): [REQUEST] Se encontro la key: 99
+[INFO] 21:16:59:864 requests/(17989:18020): [REQUEST] El value: Super nani
+
+[INFO] 21:16:59:864 requests/(17989:18020): [REQUEST] El timestamp: 1564701646
+
+[INFO] 21:16:59:864 requests/(17989:18020): Request de SELECT terminada por el socket 11 !
+
+[INFO] 21:17:06:364 requests/(17989:18020): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:17:06:365 requests/(17989:18020): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:17:07:971 requests/(17989:18020): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:17:07:972 requests/(17989:18020): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:17:09:658 requests/(17989:18020): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:17:09:659 requests/(17989:18020): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:17:12:278 requests/(17989:18020): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:17:12:279 requests/(17989:18020): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:17:14:895 requests/(17989:18020): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:17:14:896 requests/(17989:18020): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:17:25:76 requests/(17989:18020): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:17:25:77 requests/(17989:18020): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:17:26:182 requests/(17989:18020): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:17:26:183 requests/(17989:18020): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:14:555 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:14:556 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:17:296 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:17:296 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:19:949 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:19:950 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:22:447 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:22:453 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:24:254 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:24:255 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:25:868 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:25:869 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:27:547 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:27:548 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:29:82 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:29:83 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:30:559 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:30:560 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:32:433 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:32:434 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:24:34:450 requests/(18323:18339): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 21:24:34:451 requests/(18323:18339): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 21:25:28:295 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:28:296 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:32:300 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:32:301 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:33:815 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:33:816 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:40:335 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:40:336 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:43:121 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:43:122 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:46:512 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:46:515 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:50:12 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:50:13 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:52:454 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:52:455 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:54:840 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:54:841 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:56:872 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:56:873 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:25:58:899 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:25:58:899 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:00:641 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:00:642 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:02:480 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:02:481 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:04:606 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:04:607 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:06:202 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:06:203 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:08:190 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:08:191 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:10:91 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:10:92 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:11:998 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:11:999 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:15:799 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:15:800 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:17:637 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:17:637 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:20:601 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:20:601 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:23:76 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:23:77 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:24:795 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:24:795 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:26:627 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:26:628 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:29:331 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:29:331 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:31:234 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:31:235 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:33:474 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:33:475 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:34:739 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:34:740 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:36:288 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:36:289 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:43:49 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:43:50 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:47:176 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:47:177 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:51:960 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:51:961 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:53:958 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:53:959 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:55:549 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:55:550 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:26:57:44 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:26:57:45 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:27:10:116 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:27:10:117 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:27:15:854 requests/(18323:18379): Request de SELECT recibida por el socket 12 !
+[INFO] 21:27:15:854 requests/(18323:18379): No se encontro el dato, mando error
+[INFO] 21:27:15:854 requests/(18323:18379): Request de SELECT terminada por el socket 12 !
+
+[INFO] 21:27:18:121 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:27:18:122 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:27:26:61 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:27:26:61 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:27:30:440 requests/(18323:18379): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 21:27:30:441 requests/(18323:18379): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 21:30:06:569 requests/(18323:18531): Request de SELECT recibida por el socket 13 !
+[INFO] 21:30:06:569 requests/(18323:18531): No se encontro el dato, mando error
+[INFO] 21:30:06:569 requests/(18323:18531): Request de SELECT terminada por el socket 13 !
+
+[INFO] 21:30:44:549 requests/(18323:18531): Request de SELECT recibida por el socket 13 !
+[INFO] 21:30:44:549 requests/(18323:18531): No se encontro el dato, mando error
+[INFO] 21:30:44:549 requests/(18323:18531): Request de SELECT terminada por el socket 13 !
+
+[INFO] 21:30:54:312 requests/(18323:18531): Request de SELECT recibida por el socket 13 !
+[INFO] 21:30:54:313 requests/(18323:18531): No se encontro el dato, mando error
+[INFO] 21:30:54:313 requests/(18323:18531): Request de SELECT terminada por el socket 13 !
+
+[INFO] 21:31:27:166 requests/(18323:18531): Request de CREATE recibida por el socket 13 !
+[INFO] 21:31:27:167 requests/(18323:18531): Request de CREATE terminada correctamente por el socket 13 !
+
+[INFO] 21:31:44:901 requests/(18323:18531): Request de DROP recibida por el socket 13 !
+[INFO] 21:31:52:249 requests/(18323:18531): Request de DROP solicitada por el socket 13 !
+
+[INFO] 21:49:18:868 requests/(19683:19738): Request de SELECT recibida por el socket 11 !
+[INFO] 21:49:18:869 requests/(19683:19738): No se encontro el dato, mando error
+[INFO] 21:49:18:869 requests/(19683:19738): Request de SELECT terminada por el socket 11 !
+
+[INFO] 21:49:34:297 requests/(19683:19746): Request de SELECT recibida por el socket 12 !
+[INFO] 21:49:34:297 requests/(19683:19746): No se encontro el dato, mando error
+[INFO] 21:49:34:297 requests/(19683:19746): Request de SELECT terminada por el socket 12 !
+
+[INFO] 21:50:44:386 requests/(19683:19791): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 21:50:44:386 requests/(19683:19791): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 21:50:54:278 requests/(19683:19791): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 21:50:54:279 requests/(19683:19791): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 21:50:57:973 requests/(19683:19791): Request de SELECT recibida por el socket 13 !
+[INFO] 21:50:57:973 requests/(19683:19791): No se encontro el dato, mando error
+[INFO] 21:50:57:973 requests/(19683:19791): Request de SELECT terminada por el socket 13 !
+
+[INFO] 21:52:27:759 requests/(19868:19882): Request de SELECT recibida por el socket 11 !
+[INFO] 21:52:27:759 requests/(19868:19882): No se encontro el dato, mando error
+[INFO] 21:52:27:759 requests/(19868:19882): Request de SELECT terminada por el socket 11 !
+
+[INFO] 21:55:20:639 requests/(19868:20059): Request de SELECT recibida por el socket 12 !
+[INFO] 21:55:20:640 requests/(19868:20059): No se encontro el dato, mando error
+[INFO] 21:55:20:640 requests/(19868:20059): Request de SELECT terminada por el socket 12 !
+
+[INFO] 21:58:12:440 requests/(19868:20203): Request de SELECT recibida por el socket 13 !
+[INFO] 21:58:12:440 requests/(19868:20203): [REQUEST] Se encontro la key: 10
+[INFO] 21:58:12:440 requests/(19868:20203): [REQUEST] El value: NANO
+
+[INFO] 21:58:12:440 requests/(19868:20203): [REQUEST] El timestamp: 1564695995
+
+[INFO] 21:58:12:442 requests/(19868:20203): Request de SELECT terminada por el socket 13 !
+
+[INFO] 21:59:30:974 requests/(20236:20273): Request de SELECT recibida por el socket 12 !
+[INFO] 21:59:30:974 requests/(20236:20273): [REQUEST] Se encontro la key: 10
+[INFO] 21:59:30:974 requests/(20236:20273): [REQUEST] El value: NANO
+
+[INFO] 21:59:30:974 requests/(20236:20273): [REQUEST] El timestamp: 1564695995
+
+[INFO] 21:59:30:975 requests/(20236:20273): Request de SELECT terminada por el socket 12 !
+
+[INFO] 22:02:14:121 requests/(20236:20447): Request de SELECT recibida por el socket 13 !
+[INFO] 22:02:14:121 requests/(20236:20447): [REQUEST] Se encontro la key: 99
+[INFO] 22:02:14:121 requests/(20236:20447): [REQUEST] El value: Super nani
+
+[INFO] 22:02:14:121 requests/(20236:20447): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:02:14:122 requests/(20236:20447): Request de SELECT terminada por el socket 13 !
+
+[INFO] 22:06:15:117 requests/(20766:20780): Request de SELECT recibida por el socket 11 !
+[INFO] 22:06:15:118 requests/(20766:20780): [REQUEST] Se encontro la key: 10
+[INFO] 22:06:15:118 requests/(20766:20780): [REQUEST] El value: NANO
+
+[INFO] 22:06:15:118 requests/(20766:20780): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:06:15:118 requests/(20766:20780): Request de SELECT terminada por el socket 11 !
+
+[INFO] 22:06:18:419 requests/(20766:20780): Request de SELECT recibida por el socket 11 !
+[INFO] 22:06:18:420 requests/(20766:20780): [REQUEST] Se encontro la key: 99
+[INFO] 22:06:18:420 requests/(20766:20780): [REQUEST] El value: Super nani
+
+[INFO] 22:06:18:420 requests/(20766:20780): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:06:18:420 requests/(20766:20780): Request de SELECT terminada por el socket 11 !
+
+[INFO] 22:06:23:520 requests/(20766:20780): Request de SELECT recibida por el socket 11 !
+[INFO] 22:06:23:521 requests/(20766:20780): [REQUEST] Se encontro la key: 10
+[INFO] 22:06:23:521 requests/(20766:20780): [REQUEST] El value: NANO
+
+[INFO] 22:06:23:521 requests/(20766:20780): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:06:23:521 requests/(20766:20780): Request de SELECT terminada por el socket 11 !
+
+[INFO] 22:06:30:320 requests/(20766:20780): Request de SELECT recibida por el socket 11 !
+[INFO] 22:06:30:320 requests/(20766:20780): [REQUEST] Se encontro la key: 99
+[INFO] 22:06:30:320 requests/(20766:20780): [REQUEST] El value: Super nani
+
+[INFO] 22:06:30:320 requests/(20766:20780): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:06:30:320 requests/(20766:20780): Request de SELECT terminada por el socket 11 !
+
+[INFO] 22:06:32:844 requests/(20766:20780): Request de SELECT recibida por el socket 11 !
+[INFO] 22:06:32:844 requests/(20766:20780): [REQUEST] Se encontro la key: 99
+[INFO] 22:06:32:844 requests/(20766:20780): [REQUEST] El value: Super nani
+
+[INFO] 22:06:32:844 requests/(20766:20780): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:06:32:845 requests/(20766:20780): Request de SELECT terminada por el socket 11 !
+
+[INFO] 22:08:05:292 requests/(20766:20858): Request de SELECT recibida por el socket 12 !
+[INFO] 22:08:05:292 requests/(20766:20858): [REQUEST] Se encontro la key: 10
+[INFO] 22:08:05:292 requests/(20766:20858): [REQUEST] El value: NANO
+
+[INFO] 22:08:05:292 requests/(20766:20858): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:08:05:293 requests/(20766:20858): Request de SELECT terminada por el socket 12 !
+
+[INFO] 22:08:14:89 requests/(20766:20858): Request de SELECT recibida por el socket 12 !
+[INFO] 22:08:14:89 requests/(20766:20858): [REQUEST] Se encontro la key: 99
+[INFO] 22:08:14:89 requests/(20766:20858): [REQUEST] El value: Super nani
+
+[INFO] 22:08:14:89 requests/(20766:20858): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:08:14:90 requests/(20766:20858): Request de SELECT terminada por el socket 12 !
+
+[INFO] 22:08:45:899 requests/(20766:20920): Request de SELECT recibida por el socket 14 !
+[INFO] 22:08:45:899 requests/(20766:20920): [REQUEST] Se encontro la key: 10
+[INFO] 22:08:45:899 requests/(20766:20920): [REQUEST] El value: NANO
+
+[INFO] 22:08:45:899 requests/(20766:20920): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:08:45:900 requests/(20766:20920): Request de SELECT terminada por el socket 14 !
+
+[INFO] 22:09:20:620 requests/(20766:20950): Request de SELECT recibida por el socket 15 !
+[INFO] 22:09:20:620 requests/(20766:20950): [REQUEST] Se encontro la key: 10
+[INFO] 22:09:20:620 requests/(20766:20950): [REQUEST] El value: NANO
+
+[INFO] 22:09:20:620 requests/(20766:20950): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:09:20:621 requests/(20766:20950): Request de SELECT terminada por el socket 15 !
+
+[INFO] 22:09:37:678 requests/(20766:20990): Request de SELECT recibida por el socket 16 !
+[INFO] 22:09:37:678 requests/(20766:20990): [REQUEST] Se encontro la key: 10
+[INFO] 22:09:37:678 requests/(20766:20990): [REQUEST] El value: NANO
+
+[INFO] 22:09:37:678 requests/(20766:20990): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:09:37:678 requests/(20766:20990): Request de SELECT terminada por el socket 16 !
+
+[INFO] 22:09:44:174 requests/(20766:20990): Request de SELECT recibida por el socket 16 !
+[INFO] 22:09:44:175 requests/(20766:20990): [REQUEST] Se encontro la key: 99
+[INFO] 22:09:44:175 requests/(20766:20990): [REQUEST] El value: Super nani
+
+[INFO] 22:09:44:175 requests/(20766:20990): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:09:44:175 requests/(20766:20990): Request de SELECT terminada por el socket 16 !
+
+[INFO] 22:10:04:563 requests/(20766:21009): Request de SELECT recibida por el socket 17 !
+[INFO] 22:10:04:563 requests/(20766:21009): [REQUEST] Se encontro la key: 99
+[INFO] 22:10:04:563 requests/(20766:21009): [REQUEST] El value: Super nani
+
+[INFO] 22:10:04:563 requests/(20766:21009): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:10:04:564 requests/(20766:21009): Request de SELECT terminada por el socket 17 !
+
+[INFO] 22:10:18:835 requests/(20766:21009): Request de SELECT recibida por el socket 17 !
+[INFO] 22:10:18:835 requests/(20766:21009): [REQUEST] Se encontro la key: 99
+[INFO] 22:10:18:835 requests/(20766:21009): [REQUEST] El value: Super nani
+
+[INFO] 22:10:18:835 requests/(20766:21009): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:10:18:835 requests/(20766:21009): Request de SELECT terminada por el socket 17 !
+
+[INFO] 22:10:31:434 requests/(20766:21009): Request de SELECT recibida por el socket 17 !
+[INFO] 22:10:31:434 requests/(20766:21009): [REQUEST] Se encontro la key: 10
+[INFO] 22:10:31:434 requests/(20766:21009): [REQUEST] El value: NANO
+
+[INFO] 22:10:31:434 requests/(20766:21009): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:10:31:435 requests/(20766:21009): Request de SELECT terminada por el socket 17 !
+
+[INFO] 22:11:32:12 requests/(20766:21043): Request de SELECT recibida por el socket 18 !
+[INFO] 22:11:32:12 requests/(20766:21043): [REQUEST] Se encontro la key: 10
+[INFO] 22:11:32:12 requests/(20766:21043): [REQUEST] El value: NANO
+
+[INFO] 22:11:32:12 requests/(20766:21043): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:11:32:13 requests/(20766:21043): Request de SELECT terminada por el socket 18 !
+
+[INFO] 22:11:35:36 requests/(20766:21043): Request de SELECT recibida por el socket 18 !
+[INFO] 22:11:35:36 requests/(20766:21043): [REQUEST] Se encontro la key: 99
+[INFO] 22:11:35:36 requests/(20766:21043): [REQUEST] El value: Super nani
+
+[INFO] 22:11:35:36 requests/(20766:21043): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:11:35:36 requests/(20766:21043): Request de SELECT terminada por el socket 18 !
+
+[INFO] 22:11:47:906 requests/(20766:21057): Request de SELECT recibida por el socket 19 !
+[INFO] 22:11:47:906 requests/(20766:21057): [REQUEST] Se encontro la key: 10
+[INFO] 22:11:47:906 requests/(20766:21057): [REQUEST] El value: NANO
+
+[INFO] 22:11:47:906 requests/(20766:21057): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:11:47:907 requests/(20766:21057): Request de SELECT terminada por el socket 19 !
+
+[INFO] 22:11:52:650 requests/(20766:21057): Request de SELECT recibida por el socket 19 !
+[INFO] 22:11:52:650 requests/(20766:21057): [REQUEST] Se encontro la key: 10
+[INFO] 22:11:52:650 requests/(20766:21057): [REQUEST] El value: NANO
+
+[INFO] 22:11:52:650 requests/(20766:21057): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:11:52:650 requests/(20766:21057): Request de SELECT terminada por el socket 19 !
+
+[INFO] 22:12:07:965 requests/(20766:21072): Request de SELECT recibida por el socket 20 !
+[INFO] 22:12:07:965 requests/(20766:21072): [REQUEST] Se encontro la key: 10
+[INFO] 22:12:07:965 requests/(20766:21072): [REQUEST] El value: NANO
+
+[INFO] 22:12:07:965 requests/(20766:21072): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:12:07:966 requests/(20766:21072): Request de SELECT terminada por el socket 20 !
+
+[INFO] 22:12:16:258 requests/(20766:21072): Request de SELECT recibida por el socket 20 !
+[INFO] 22:12:16:259 requests/(20766:21072): [REQUEST] Se encontro la key: 10
+[INFO] 22:12:16:259 requests/(20766:21072): [REQUEST] El value: NANO
+
+[INFO] 22:12:16:259 requests/(20766:21072): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:12:16:259 requests/(20766:21072): Request de SELECT terminada por el socket 20 !
+
+[INFO] 22:12:26:298 requests/(20766:21072): Request de SELECT recibida por el socket 20 !
+[INFO] 22:12:26:298 requests/(20766:21072): [REQUEST] Se encontro la key: 10
+[INFO] 22:12:26:298 requests/(20766:21072): [REQUEST] El value: NANO
+
+[INFO] 22:12:26:298 requests/(20766:21072): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:12:26:298 requests/(20766:21072): Request de SELECT terminada por el socket 20 !
+
+[INFO] 22:14:33:327 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:14:33:327 requests/(20766:21174): [REQUEST] Se encontro la key: 10
+[INFO] 22:14:33:327 requests/(20766:21174): [REQUEST] El value: NANO
+
+[INFO] 22:14:33:327 requests/(20766:21174): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:14:33:327 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:14:41:431 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:14:41:431 requests/(20766:21174): [REQUEST] Se encontro la key: 10
+[INFO] 22:14:41:431 requests/(20766:21174): [REQUEST] El value: NANO
+
+[INFO] 22:14:41:431 requests/(20766:21174): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:14:41:432 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:14:48:828 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:14:48:828 requests/(20766:21174): [REQUEST] Se encontro la key: 99
+[INFO] 22:14:48:828 requests/(20766:21174): [REQUEST] El value: Super nani
+
+[INFO] 22:14:48:828 requests/(20766:21174): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:14:48:829 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:14:51:37 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:14:51:37 requests/(20766:21174): [REQUEST] Se encontro la key: 10
+[INFO] 22:14:51:37 requests/(20766:21174): [REQUEST] El value: NANO
+
+[INFO] 22:14:51:37 requests/(20766:21174): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:14:51:37 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:14:56:176 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:14:56:176 requests/(20766:21174): [REQUEST] Se encontro la key: 99
+[INFO] 22:14:56:176 requests/(20766:21174): [REQUEST] El value: Super nani
+
+[INFO] 22:14:56:176 requests/(20766:21174): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:14:56:177 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:15:02:356 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:15:02:356 requests/(20766:21174): [REQUEST] Se encontro la key: 10
+[INFO] 22:15:02:356 requests/(20766:21174): [REQUEST] El value: NANO
+
+[INFO] 22:15:02:356 requests/(20766:21174): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:15:02:356 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:15:09:236 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:15:09:236 requests/(20766:21174): [REQUEST] Se encontro la key: 99
+[INFO] 22:15:09:236 requests/(20766:21174): [REQUEST] El value: Super nani
+
+[INFO] 22:15:09:236 requests/(20766:21174): [REQUEST] El timestamp: 1564701646
+
+[INFO] 22:15:09:237 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:15:11:947 requests/(20766:21174): Request de SELECT recibida por el socket 21 !
+[INFO] 22:15:11:947 requests/(20766:21174): [REQUEST] Se encontro la key: 10
+[INFO] 22:15:11:947 requests/(20766:21174): [REQUEST] El value: NANO
+
+[INFO] 22:15:11:947 requests/(20766:21174): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:15:11:948 requests/(20766:21174): Request de SELECT terminada por el socket 21 !
+
+[INFO] 22:16:18:362 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:16:18:362 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:16:18:362 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:16:18:362 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:16:18:363 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:16:24:938 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:16:24:938 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:16:24:938 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:16:24:938 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:16:24:939 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:16:33:805 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:16:33:805 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:16:33:805 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:16:33:805 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:16:33:805 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:16:36:644 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:16:36:645 requests/(20766:21225): No se encontro el dato, mando error
+[INFO] 22:16:36:645 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:16:43:244 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:16:43:244 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:16:43:244 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:16:43:244 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:16:43:244 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:16:53:688 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:16:53:689 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:16:53:689 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:16:53:689 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:16:53:689 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:17:03:417 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:17:03:418 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:17:03:418 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:17:03:418 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:17:03:418 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:17:14:4 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:17:14:4 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:17:14:4 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:17:14:4 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:17:14:6 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:18:23:73 requests/(20766:21225): Request de SELECT recibida por el socket 22 !
+[INFO] 22:18:23:73 requests/(20766:21225): [REQUEST] Se encontro la key: 10
+[INFO] 22:18:23:73 requests/(20766:21225): [REQUEST] El value: NANO
+
+[INFO] 22:18:23:73 requests/(20766:21225): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:18:23:74 requests/(20766:21225): Request de SELECT terminada por el socket 22 !
+
+[INFO] 22:22:53:792 requests/(20766:21468): Request de SELECT recibida por el socket 23 !
+[INFO] 22:22:53:792 requests/(20766:21468): [REQUEST] Se encontro la key: 10
+[INFO] 22:22:53:792 requests/(20766:21468): [REQUEST] El value: NANO
+
+[INFO] 22:22:53:792 requests/(20766:21468): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:22:53:792 requests/(20766:21468): Request de SELECT terminada por el socket 23 !
+
+[INFO] 22:23:13:169 requests/(20766:21468): Request de SELECT recibida por el socket 23 !
+[INFO] 22:23:13:169 requests/(20766:21468): [REQUEST] Se encontro la key: 10
+[INFO] 22:23:13:169 requests/(20766:21468): [REQUEST] El value: NANO
+
+[INFO] 22:23:13:169 requests/(20766:21468): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:23:13:170 requests/(20766:21468): Request de SELECT terminada por el socket 23 !
+
+[INFO] 22:23:23:834 requests/(20766:21468): Request de SELECT recibida por el socket 23 !
+[INFO] 22:23:23:835 requests/(20766:21468): [REQUEST] Se encontro la key: 10
+[INFO] 22:23:23:835 requests/(20766:21468): [REQUEST] El value: NANO
+
+[INFO] 22:23:23:835 requests/(20766:21468): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:23:23:835 requests/(20766:21468): Request de SELECT terminada por el socket 23 !
+
+[INFO] 22:23:50:939 requests/(20766:21498): Request de SELECT recibida por el socket 24 !
+[INFO] 22:23:50:940 requests/(20766:21498): [REQUEST] Se encontro la key: 10
+[INFO] 22:23:50:940 requests/(20766:21498): [REQUEST] El value: NANO
+
+[INFO] 22:23:50:940 requests/(20766:21498): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:23:50:940 requests/(20766:21498): Request de SELECT terminada por el socket 24 !
+
+[INFO] 22:24:11:912 requests/(20766:21506): Request de SELECT recibida por el socket 25 !
+[INFO] 22:24:11:912 requests/(20766:21506): [REQUEST] Se encontro la key: 10
+[INFO] 22:24:11:912 requests/(20766:21506): [REQUEST] El value: NANO
+
+[INFO] 22:24:11:912 requests/(20766:21506): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:24:11:912 requests/(20766:21506): Request de SELECT terminada por el socket 25 !
+
+[INFO] 22:25:03:33 requests/(20766:21538): Request de SELECT recibida por el socket 26 !
+[INFO] 22:25:03:33 requests/(20766:21538): [REQUEST] Se encontro la key: 10
+[INFO] 22:25:03:33 requests/(20766:21538): [REQUEST] El value: NANO
+
+[INFO] 22:25:03:33 requests/(20766:21538): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:25:03:34 requests/(20766:21538): Request de SELECT terminada por el socket 26 !
+
+[INFO] 22:25:36:350 requests/(21686:21710): Request de SELECT recibida por el socket 11 !
+[INFO] 22:25:36:350 requests/(21686:21710): [REQUEST] Se encontro la key: 10
+[INFO] 22:25:36:350 requests/(21686:21710): [REQUEST] El value: NANO
+
+[INFO] 22:25:36:350 requests/(21686:21710): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:25:36:350 requests/(21686:21710): Request de SELECT terminada por el socket 11 !
+
+[INFO] 22:39:54:408 requests/(21686:22121): Request de SELECT recibida por el socket 12 !
+[INFO] 22:39:54:408 requests/(21686:22121): [REQUEST] Se encontro la key: 10
+[INFO] 22:39:54:408 requests/(21686:22121): [REQUEST] El value: NANO
+
+[INFO] 22:39:54:408 requests/(21686:22121): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:39:54:408 requests/(21686:22121): Request de SELECT terminada por el socket 12 !
+
+[INFO] 22:54:38:256 requests/(22784:22804): Request de SELECT recibida por el socket 11 !
+[INFO] 22:54:38:256 requests/(22784:22804): [REQUEST] Se encontro la key: 10
+[INFO] 22:54:38:256 requests/(22784:22804): [REQUEST] El value: NANO
+
+[INFO] 22:54:38:256 requests/(22784:22804): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:54:38:256 requests/(22784:22804): Request de SELECT terminada por el socket 11 !
+
+[INFO] 22:54:54:240 requests/(22784:22827): Request de SELECT recibida por el socket 12 !
+[INFO] 22:54:54:241 requests/(22784:22827): [REQUEST] Se encontro la key: 10
+[INFO] 22:54:54:241 requests/(22784:22827): [REQUEST] El value: NANO
+
+[INFO] 22:54:54:241 requests/(22784:22827): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:54:54:241 requests/(22784:22827): Request de SELECT terminada por el socket 12 !
+
+[INFO] 22:55:01:286 requests/(22784:22827): Request de SELECT recibida por el socket 12 !
+[INFO] 22:55:01:286 requests/(22784:22827): [REQUEST] Se encontro la key: 10
+[INFO] 22:55:01:286 requests/(22784:22827): [REQUEST] El value: NANO
+
+[INFO] 22:55:01:286 requests/(22784:22827): [REQUEST] El timestamp: 1564695995
+
+[INFO] 22:55:01:286 requests/(22784:22827): Request de SELECT terminada por el socket 12 !
+
+[INFO] 23:01:30:367 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:30:367 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:30:367 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:30:367 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:30:367 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:37:550 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:37:550 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:37:550 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:37:550 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:37:550 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:40:269 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:40:270 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:40:270 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:40:270 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:40:270 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:44:919 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:44:919 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:44:919 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:44:919 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:44:919 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:47:167 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:47:167 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:47:167 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:47:167 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:47:167 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:49:179 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:49:179 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:49:179 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:49:179 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:49:179 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:51:604 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:51:604 requests/(22784:23036): NO SE ENCUENTRA LA TABLA
+[INFO] 23:01:51:604 requests/(22784:23036): No se encontro el dato, mando error
+[INFO] 23:01:51:604 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:53:524 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:53:524 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:53:524 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:53:524 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:53:524 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:01:55:517 requests/(22784:23036): Request de SELECT recibida por el socket 13 !
+[INFO] 23:01:55:517 requests/(22784:23036): [REQUEST] Se encontro la key: 10
+[INFO] 23:01:55:517 requests/(22784:23036): [REQUEST] El value: NANO
+
+[INFO] 23:01:55:517 requests/(22784:23036): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:01:55:517 requests/(22784:23036): Request de SELECT terminada por el socket 13 !
+
+[INFO] 23:03:46:416 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:03:46:416 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:03:46:416 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:03:46:416 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:03:46:416 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:03:50:703 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:03:50:703 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:03:50:703 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:03:50:703 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:03:50:704 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:03:52:600 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:03:52:600 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:03:52:600 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:03:52:600 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:03:52:600 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:03:54:641 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:03:54:641 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:03:54:641 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:03:54:641 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:03:54:641 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:03:56:502 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:03:56:502 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:03:56:502 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:03:56:502 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:03:56:502 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:03:58:294 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:03:58:294 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:03:58:294 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:03:58:294 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:03:58:294 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:04:00:165 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:04:00:165 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:04:00:165 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:04:00:165 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:04:00:165 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:04:02:72 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:04:02:73 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:04:02:73 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:04:02:73 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:04:02:73 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:04:06:368 requests/(22784:23190): Request de SELECT recibida por el socket 14 !
+[INFO] 23:04:06:370 requests/(22784:23190): [REQUEST] Se encontro la key: 10
+[INFO] 23:04:06:370 requests/(22784:23190): [REQUEST] El value: NANO
+
+[INFO] 23:04:06:370 requests/(22784:23190): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:04:06:371 requests/(22784:23190): Request de SELECT terminada por el socket 14 !
+
+[INFO] 23:05:32:51 requests/(22784:23319): Request de SELECT recibida por el socket 15 !
+[INFO] 23:05:32:51 requests/(22784:23319): [REQUEST] Se encontro la key: 10
+[INFO] 23:05:32:51 requests/(22784:23319): [REQUEST] El value: NANO
+
+[INFO] 23:05:32:51 requests/(22784:23319): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:05:32:51 requests/(22784:23319): Request de SELECT terminada por el socket 15 !
+
+[INFO] 23:05:33:972 requests/(22784:23319): Request de SELECT recibida por el socket 15 !
+[INFO] 23:05:33:972 requests/(22784:23319): [REQUEST] Se encontro la key: 10
+[INFO] 23:05:33:972 requests/(22784:23319): [REQUEST] El value: NANO
+
+[INFO] 23:05:33:972 requests/(22784:23319): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:05:33:972 requests/(22784:23319): Request de SELECT terminada por el socket 15 !
+
+[INFO] 23:06:50:211 requests/(22784:23369): Request de SELECT recibida por el socket 16 !
+[INFO] 23:06:50:211 requests/(22784:23369): No se encontro el dato, mando error
+[INFO] 23:06:50:211 requests/(22784:23369): Request de SELECT terminada por el socket 16 !
+
+[INFO] 23:06:52:65 requests/(22784:23369): Request de SELECT recibida por el socket 16 !
+[INFO] 23:06:52:65 requests/(22784:23369): [REQUEST] Se encontro la key: 10
+[INFO] 23:06:52:65 requests/(22784:23369): [REQUEST] El value: NANO
+
+[INFO] 23:06:52:65 requests/(22784:23369): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:06:52:65 requests/(22784:23369): Request de SELECT terminada por el socket 16 !
+
+[INFO] 23:06:54:482 requests/(22784:23369): Request de SELECT recibida por el socket 16 !
+[INFO] 23:06:54:482 requests/(22784:23369): [REQUEST] Se encontro la key: 10
+[INFO] 23:06:54:482 requests/(22784:23369): [REQUEST] El value: NANO
+
+[INFO] 23:06:54:482 requests/(22784:23369): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:06:54:483 requests/(22784:23369): Request de SELECT terminada por el socket 16 !
+
+[INFO] 23:07:16:478 requests/(22784:23418): Request de SELECT recibida por el socket 17 !
+[INFO] 23:07:16:478 requests/(22784:23418): [REQUEST] Se encontro la key: 10
+[INFO] 23:07:16:478 requests/(22784:23418): [REQUEST] El value: NANO
+
+[INFO] 23:07:16:478 requests/(22784:23418): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:07:16:478 requests/(22784:23418): Request de SELECT terminada por el socket 17 !
+
+[INFO] 23:07:18:574 requests/(22784:23418): Request de SELECT recibida por el socket 17 !
+[INFO] 23:07:18:574 requests/(22784:23418): [REQUEST] Se encontro la key: 10
+[INFO] 23:07:18:574 requests/(22784:23418): [REQUEST] El value: NANO
+
+[INFO] 23:07:18:574 requests/(22784:23418): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:07:18:574 requests/(22784:23418): Request de SELECT terminada por el socket 17 !
+
+[INFO] 23:25:32:122 requests/(24406:24420): Request de SELECT recibida por el socket 11 !
+[INFO] 23:25:32:122 requests/(24406:24420): [REQUEST] Se encontro la key: 10
+[INFO] 23:25:32:122 requests/(24406:24420): [REQUEST] El value: NANO
+
+[INFO] 23:25:32:122 requests/(24406:24420): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:25:32:123 requests/(24406:24420): Request de SELECT terminada por el socket 11 !
+
+[INFO] 23:25:40:536 requests/(24406:24420): Request de SELECT recibida por el socket 11 !
+[INFO] 23:25:40:536 requests/(24406:24420): [REQUEST] Se encontro la key: 99
+[INFO] 23:25:40:536 requests/(24406:24420): [REQUEST] El value: Super nani
+
+[INFO] 23:25:40:536 requests/(24406:24420): [REQUEST] El timestamp: 1564701646
+
+[INFO] 23:25:40:536 requests/(24406:24420): Request de SELECT terminada por el socket 11 !
+
+[INFO] 23:25:55:804 requests/(24406:24420): Request de SELECT recibida por el socket 11 !
+[INFO] 23:25:55:805 requests/(24406:24420): [REQUEST] Se encontro la key: 10
+[INFO] 23:25:55:805 requests/(24406:24420): [REQUEST] El value: NANO
+
+[INFO] 23:25:55:805 requests/(24406:24420): [REQUEST] El timestamp: 1564695995
+
+[INFO] 23:25:55:805 requests/(24406:24420): Request de SELECT terminada por el socket 11 !
+
+[INFO] 23:26:12:807 requests/(24406:24420): Request de CREATE recibida por el socket 11 !
+[INFO] 23:26:12:807 requests/(24406:24420): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 23:26:17:781 requests/(24406:24420): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 23:26:17:781 requests/(24406:24420): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 23:26:31:546 requests/(24406:24420): Request de DROP recibida por el socket 11 !
+[INFO] 23:26:31:546 requests/(24406:24420): Request de DROP solicitada por el socket 11 !
+
+[INFO] 23:26:34:508 requests/(24406:24420): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 23:26:34:509 requests/(24406:24420): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 23:40:48:722 requests/(24902:24921): Request de SELECT recibida por el socket 11 !
+[INFO] 23:40:48:722 requests/(24902:24921): NO SE ENCUENTRA LA TABLA
+[INFO] 23:40:48:722 requests/(24902:24921): No se encontro el dato, mando error
+[INFO] 23:40:48:722 requests/(24902:24921): Request de SELECT terminada por el socket 11 !
+
+[INFO] 23:40:51:973 requests/(24902:24921): Request de SELECT recibida por el socket 11 !
+[INFO] 23:40:51:973 requests/(24902:24921): NO SE ENCUENTRA LA TABLA
+[INFO] 23:40:51:973 requests/(24902:24921): No se encontro el dato, mando error
+[INFO] 23:40:51:973 requests/(24902:24921): Request de SELECT terminada por el socket 11 !
+
+[INFO] 23:40:55:132 requests/(24902:24921): Request de SELECT recibida por el socket 11 !
+[INFO] 23:40:55:132 requests/(24902:24921): NO SE ENCUENTRA LA TABLA
+[INFO] 23:40:55:132 requests/(24902:24921): No se encontro el dato, mando error
+[INFO] 23:40:55:132 requests/(24902:24921): Request de SELECT terminada por el socket 11 !
+
+[INFO] 23:41:00:863 requests/(24902:24921): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 23:41:00:864 requests/(24902:24921): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 23:41:10:523 requests/(24902:24921): Request de CREATE recibida por el socket 11 !
+[INFO] 23:41:10:524 requests/(24902:24921): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 23:41:16:73 requests/(24902:24921): Request de DROP recibida por el socket 11 !
+[INFO] 23:41:16:74 requests/(24902:24921): Request de DROP solicitada por el socket 11 !
+
+[INFO] 23:41:40:224 requests/(24902:24989): Request de SELECT recibida por el socket 12 !
+[INFO] 23:41:40:224 requests/(24902:24989): NO SE ENCUENTRA LA TABLA
+[INFO] 23:41:40:224 requests/(24902:24989): No se encontro el dato, mando error
+[INFO] 23:41:40:224 requests/(24902:24989): Request de SELECT terminada por el socket 12 !
+
+[INFO] 23:41:42:899 requests/(24902:24989): Request de SELECT recibida por el socket 12 !
+[INFO] 23:41:42:899 requests/(24902:24989): NO SE ENCUENTRA LA TABLA
+[INFO] 23:41:42:899 requests/(24902:24989): No se encontro el dato, mando error
+[INFO] 23:41:42:899 requests/(24902:24989): Request de SELECT terminada por el socket 12 !
+
+[INFO] 23:41:48:596 requests/(24902:24989): Request de SELECT recibida por el socket 12 !
+[INFO] 23:41:48:597 requests/(24902:24989): NO SE ENCUENTRA LA TABLA
+[INFO] 23:41:48:597 requests/(24902:24989): No se encontro el dato, mando error
+[INFO] 23:41:48:597 requests/(24902:24989): Request de SELECT terminada por el socket 12 !
+
+[INFO] 23:41:55:47 requests/(24902:24989): Request de CREATE recibida por el socket 12 !
+[INFO] 23:41:55:48 requests/(24902:24989): Request de CREATE terminada correctamente por el socket 12 !
+
+[INFO] 23:41:58:510 requests/(24902:24989): Request de DROP recibida por el socket 12 !
+[INFO] 23:41:58:510 requests/(24902:24989): Request de DROP solicitada por el socket 12 !
+
+[INFO] 23:47:04:60 requests/(25347:25361): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 23:47:04:61 requests/(25347:25361): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 23:47:19:109 requests/(25347:25361): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 23:47:19:110 requests/(25347:25361): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 23:47:19:639 requests/(25347:25361): Request de CREATE recibida por el socket 11 !
+[INFO] 23:47:19:640 requests/(25347:25361): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 23:47:25:839 requests/(25347:25361): Request de INSERT recibida por el socket 11 !
+[INFO] 23:47:25:840 requests/(25347:25361): Request de INSERT terminada por el socket 11 !
+
+[INFO] 23:47:25:841 requests/(25347:25361): Request de INSERT recibida por el socket 11 !
+[INFO] 23:47:25:841 requests/(25347:25361): Request de INSERT terminada por el socket 11 !
+
+[INFO] 00:05:38:563 requests/(25347:25361): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 00:05:38:580 requests/(25347:25361): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 00:06:25:590 requests/(26103:26118): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 00:06:25:592 requests/(26103:26118): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 00:06:29:143 requests/(26103:26118): Request de CREATE recibida por el socket 11 !
+[ERROR] 00:06:29:143 requests/(26103:26118): Ya existe la tabla
+
+[INFO] 00:06:29:143 requests/(26103:26118): Fallo la Request CREATE
+
+[INFO] 00:06:40:670 requests/(26103:26118): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 00:06:40:671 requests/(26103:26118): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 00:06:42:269 requests/(26103:26118): Request de DROP recibida por el socket 11 !
+[INFO] 00:06:42:270 requests/(26103:26118): Request de DROP solicitada por el socket 11 !
+
+[INFO] 00:06:49:504 requests/(26103:26118): Request de CREATE recibida por el socket 11 !
+[INFO] 00:06:49:505 requests/(26103:26118): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 00:06:55:499 requests/(26103:26118): Request de INSERT recibida por el socket 11 !
+[INFO] 00:06:55:499 requests/(26103:26118): Request de INSERT terminada por el socket 11 !
+
+[INFO] 00:06:55:501 requests/(26103:26118): Request de INSERT recibida por el socket 11 !
+[INFO] 00:06:55:502 requests/(26103:26118): Request de INSERT terminada por el socket 11 !
+
+[INFO] 00:06:55:679 requests/(26103:26118): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 00:06:55:695 requests/(26103:26118): Request de DESCRIBE terminada por el socket 11 !
+

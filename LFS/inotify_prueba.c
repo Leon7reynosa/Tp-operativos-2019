@@ -120,12 +120,12 @@ void* realizar_inotify(inotify_config argumento){
 					t_config* archivo_config = config_create(argumento->path_config);
 
 					pthread_rwlock_wrlock(&semaforo_tiempo_dump);
-					tiempo_dump = config_get_int_value(archivo_config, "TIEMPO_GOSSIPING");
+					tiempo_dump = config_get_int_value(archivo_config, "TIEMPO_DUMP");
 					pthread_rwlock_unlock(&semaforo_tiempo_dump);
 					//SEMAFORO
 
 					pthread_rwlock_wrlock(&semaforo_retardo);
-					retardo = config_get_int_value(archivo_config, "TIEMPO_JOURNAL");
+					retardo = config_get_int_value(archivo_config, "RETARDO");
 					pthread_rwlock_unlock(&semaforo_retardo);
 					//SEMAFORO
 

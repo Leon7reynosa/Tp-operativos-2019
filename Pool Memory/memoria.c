@@ -337,7 +337,6 @@ void realizar_journal(void){
 
 		if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-			printf("Lissandra esta conectada\n");
 
 			if(!enviar_request(request_a_enviar, socket_lissandra)){
 
@@ -432,7 +431,7 @@ Pagina solicitar_pagina(char* nombre_tabla, Segmento* segmento){
 	Pagina pagina_solicitada;
 
 	if(hay_pagina_libre(&pagina_solicitada)){
-		log_info(logger, "Hay una pagina libre para asignar");
+		log_info(logger, "Hay una pagina libre para asignar.");
 
 	}else{
 		log_info(logger, "Estan todas las paginas ocupadas");
@@ -463,8 +462,6 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
-		printf("Lissandra esta conectado\n");
-
 		if(!enviar_request(nuevo_select, socket_lissandra)){
 
 			desconectar_lissandra();
@@ -475,8 +472,6 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 		}else{
 
-			printf("ESTOY ESPERANDO LA RESPUESTA\n");
-
 			usleep(retardo_lfs* 1000);
 
 			t_dato* dato_crudo = recibir_dato_LFS(socket_lissandra);
@@ -486,8 +481,6 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 				dato_recibido = NULL;
 
 			}else{
-
-				printf("Llego la respuesta del File System\n");
 
 				dato_recibido = crear_dato(dato_crudo->key, (char *) dato_crudo->value->buffer, dato_crudo->timestamp);
 

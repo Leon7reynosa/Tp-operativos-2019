@@ -9648,3 +9648,23 @@
 
 [INFO] 15:06:05:923 lissandra/(17772:17820): Ingresamos un dato a la tabla NINTENDO con la key 89
 
+[INFO] 18:46:40:353 lissandra/(9281:9298): Ingresamos un dato a la tabla NANI con la key 10
+
+[INFO] 19:07:41:682 lissandra/(10105:10393): Ingresamos un dato a la tabla NANI con la key 12
+
+[INFO] 19:08:11:684 lissandra/(10105:10393): Ingresamos un dato a la tabla NANI con la key 25
+
+[INFO] 20:25:30:654 lissandra/(14771:14978): Ingresamos un dato a la tabla NANI con la key 99
+
+[INFO] 20:58:15:356 lissandra/(16780:16789): Ingresamos un dato a la tabla NANI con la key 67
+
+[INFO] 21:05:43:857 lissandra/(17127:17135): Ingresamos un dato a la tabla MONTES con la key 41
+
+[INFO] 23:47:25:839 lissandra/(25347:25361): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 23:47:25:841 lissandra/(25347:25361): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 00:06:55:499 lissandra/(26103:26118): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 00:06:55:502 lissandra/(26103:26118): Ingresamos un dato a la tabla COLORS con la key 2
+

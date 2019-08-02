@@ -11,7 +11,7 @@ char* obtener_path_log(void){
 
 	char* path_log = string_new();
 
-	string_append(&path_log, "Pool_Memory.log");
+	string_append(&path_log, "../Pool_Memory.log");
 
 	return path_log;
 }
@@ -20,7 +20,7 @@ char* obtener_path_log_gossip(void){
 
 	char* path_log = string_new();
 
-	string_append(&path_log, "Gossiplog");
+	string_append(&path_log, "../Gossip.log");
 
 	return path_log;
 }
@@ -29,7 +29,7 @@ char* obtener_path_log_journal(void){
 
 	char* path_log = string_new();
 
-	string_append(&path_log, "Journal.log");
+	string_append(&path_log, "../Journal.log");
 
 	return path_log;
 }

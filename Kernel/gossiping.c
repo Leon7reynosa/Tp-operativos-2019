@@ -191,10 +191,13 @@ memoria_t* tomar_socket_memoria_aleatorio(t_list* lista_memorias){
 	if(list_size(lista_memorias_conectadas) > 0){
 		numero_random = rand() % list_size(lista_memorias_conectadas);
 	}else{
+		list_destroy(lista_memorias_conectadas);
 		return NULL;
 	}
 
 	memoria_t* dato_lista = (memoria_t* ) list_get(lista_memorias_conectadas , numero_random);
+
+	list_destroy(lista_memorias_conectadas);
 
 	return dato_lista;
 

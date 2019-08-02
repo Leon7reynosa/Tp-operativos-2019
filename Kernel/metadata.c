@@ -34,11 +34,15 @@ void* refrescar_metadata(){
 
 		if(memoria_utilizada == NULL){
 
-			printf("\n///////////////////////////FIN ACTUALIZACION METADATA//////////////////////////////\n");
+			printf("\n///////////////////////////FIN ACTUALIZACION METADATAS//////////////////////////////\n");
+
+			liberar_dato_describe(dato_describe);
 
 			continue;
 
 		}
+
+		printf("dhsoiadas\n");
 
 		printf("Ya agarre una memoria: %d\n", memoria_utilizada->numero_memoria);
 
@@ -86,6 +90,8 @@ void* refrescar_metadata(){
 		}
 
 		pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
+
+		liberar_dato_describe(dato_describe);
 
 		printf("\n///////////////////////////FIN ACTUALIZACION METADATA//////////////////////////////\n");
 	}

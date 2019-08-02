@@ -48,7 +48,7 @@ void liberar_segmento(Segmento segmento_a_liberar){
 }
 
 bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encontrada){
-	printf("\n /////////////////ANALISIS DE PAGINA /////////////////////\n");
+//	printf("\n /////////////////ANALISIS DE PAGINA /////////////////////\n");
 	t_list* tabla_paginas = segmento_tabla->Tabla_paginas;
 
 	bool _condicion_pagina(void* pagina_a_analizar){
@@ -56,7 +56,7 @@ bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encont
 		bool es_la_key;
 		Dato dato_a_analizar = decodificar_dato_de_memoria(((Pagina)pagina_a_analizar)->referencia_memoria);
 
-		printf("Pagina a analizar, key: %i, deberia ser %i\n", dato_a_analizar->key, key);
+//		printf("Pagina a analizar, key: %i, deberia ser %i\n", dato_a_analizar->key, key);
 
 		es_la_key = dato_a_analizar->key == key;
 
@@ -66,7 +66,7 @@ bool existe_pagina(Segmento segmento_tabla, u_int16_t key, Pagina* pagina_encont
 
 	}
 	*pagina_encontrada = list_find(tabla_paginas, _condicion_pagina);
-	printf("\n//////////////////// FIN DE ANALISIS DE PAGINA /////////////////////////\n");
+//	printf("\n//////////////////// FIN DE ANALISIS DE PAGINA /////////////////////////\n");
 	return (*pagina_encontrada) != NULL;          // podria poner " ? true : false " para que quede mas entendible, pero es como medio caca
 
 }

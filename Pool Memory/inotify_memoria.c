@@ -10,6 +10,9 @@
 
 void liberar_inotify(inotify_config a_liberar){
 
+	inotify_rm_watch(a_liberar->fd_inotify, a_liberar->fd_watch);
+
+
 	close(a_liberar->fd_inotify);
 
 	free(a_liberar->path_config);

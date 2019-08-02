@@ -104,7 +104,7 @@ void mostrar_lista_describe(t_list* lista_describe){
 
 		Metadata dato_describe = (Metadata) dato_metadata;
 
-		printf("\n---TABLA: %s ---\n", (char*)dato_describe->tabla->buffer);
+		printf("=== TABLA: %s ===\n", (char*)dato_describe->tabla->buffer);
 
 			printf("consistencia: %s\n" , (char*)dato_describe->consistencia->buffer);
 
@@ -112,11 +112,14 @@ void mostrar_lista_describe(t_list* lista_describe){
 
 			printf("tiempo compactacion: %d\n" , dato_describe->tiempo_compactacion);
 
+			printf("\n");
+
 		}
 
 		list_iterate(lista_describe, _mostrar_metadata);
 
-		printf("\n");
+		printf("=========================\n");
+
 	}
 
 	else{

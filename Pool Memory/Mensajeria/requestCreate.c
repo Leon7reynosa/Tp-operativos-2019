@@ -81,8 +81,12 @@ create decodificar_create(int conexion){
 void* serializar_create(request request_create){
 
 	create dato_create = (create)(request_create->tipo_request);
+
 	void* buffer_serializado = malloc(dato_create->bytes);
+
 	int desplazamiento = 0;
+
+
 
 	memcpy(buffer_serializado + desplazamiento, &(request_create->cod_op), sizeof(request_create->cod_op) );
 	desplazamiento +=  sizeof(request_create->cod_op);
@@ -104,6 +108,8 @@ void* serializar_create(request request_create){
 
 	memcpy(buffer_serializado + desplazamiento, &(dato_create->compactacion), sizeof(dato_create->compactacion));
 	desplazamiento += sizeof(dato_create->compactacion);
+
+
 
 	return buffer_serializado;
 

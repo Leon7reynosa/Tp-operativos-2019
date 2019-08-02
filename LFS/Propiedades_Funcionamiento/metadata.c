@@ -9,8 +9,6 @@
 
 metadata_t* obtener_metadata(char* nombre_tabla){
 
-	printf("nombre_tabla: %s\n" , nombre_tabla);
-
 	metadata_t* obtener_metadata = malloc(sizeof(metadata_t));
 	t_config* metadata_config;
 

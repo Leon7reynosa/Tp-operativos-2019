@@ -11,7 +11,7 @@
 void eliminar_particion(char* path_particion){
 
 
-	printf("\n>Se ELIMINARÁ la siguiente Particion:\n");
+//	printf("\n>Se ELIMINARÁ la siguiente Particion:\n");
 
 	Particion particion = leer_particion(path_particion);
 

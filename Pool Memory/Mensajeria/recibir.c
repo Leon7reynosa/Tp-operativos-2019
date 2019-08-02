@@ -134,7 +134,6 @@ t_dato* recibir_dato_LFS(int conexion){
 		return NULL;
 	}
 
-	printf("Recibo los datos del select\n");
 
 	bytes = recv(conexion,&(dato_recibido->timestamp),sizeof(time_t), 0);
 
@@ -142,7 +141,6 @@ t_dato* recibir_dato_LFS(int conexion){
 		perror("NO RECIBIO EL TIMESTAMP");
 	}
 
-	printf("Timestamp: %i\n", dato_recibido->timestamp);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -152,8 +150,6 @@ t_dato* recibir_dato_LFS(int conexion){
 			perror("NO RECIBIO LA KEY;");
 	}
 
-	printf("Key: %i\n", dato_recibido->key);
-
 	///////////////////////////////////////////////////////////////////////////////////
 	bytes = recv(conexion, &(dato_recibido->value->size),sizeof(int), 0);
 
@@ -161,7 +157,6 @@ t_dato* recibir_dato_LFS(int conexion){
 		perror("NO RECIBIO EL TAMANIO Destado_request recibir_estado_request(int conexion)EL VALUE;");
 	}
 
-	printf("Size: %i\n", dato_recibido->value->size);
 
 	//////////////////////////////////////////////////////////////////////////////
 
@@ -184,6 +179,7 @@ estado_request recibir_estado_request(int conexion){
 	estado_request estado;
 	int bytes;
 
+
 	bytes = recv(conexion, &estado, sizeof(estado_request), 0);
 
 	if(bytes <= 0){
@@ -193,8 +189,6 @@ estado_request recibir_estado_request(int conexion){
 		return ERROR_CONEXION;
 
 	}
-
-	printf("Recibi el estado de la request\n");
 
 	return estado;
 
@@ -216,15 +210,10 @@ t_list* recibir_describe(int conexion){
 
 		error_recv = recv(conexion, &numero_tablas, sizeof(int), 0);
 
-		printf("LLEGO LA RESPUESTA\n");
-
-		printf("Cant tablas: %i\n", numero_tablas);
-
 		if(error_recv == -1){
 			perror("NO SE RECIBIO LA CANTIDAD DE TABLAS DESCRIBE");
 		}
 
-		printf("Recibo el/los datos metadata\n");
 		for(int i = 0; i < numero_tablas; i++){
 
 			Metadata metadata_recibida;
@@ -235,8 +224,6 @@ t_list* recibir_describe(int conexion){
 				perror("NO SE RECIBIO EL SIZE DE LA TABLA");
 			}
 
-			printf("size tabla: %i\n", size);
-
 			tabla_recibida = malloc(size);
 
 			error_recv = recv(conexion, tabla_recibida, size, 0);
@@ -245,15 +232,11 @@ t_list* recibir_describe(int conexion){
 				perror("NO SE RECIBIO LA TABLA");
 			}
 
-			printf("tabla: %s\n", tabla_recibida);
-
 			error_recv = recv(conexion, &size, sizeof(int), 0);
 
 			if(error_recv == -1){
 				perror("NO SE RECIBIO EL SIZE DE LA CONSISTENCIA");
 			}
-
-			printf("size consistencia: %i\n", size);
 
 			consistencia_recibida = malloc(size);
 
@@ -263,15 +246,11 @@ t_list* recibir_describe(int conexion){
 				perror("NO SE RECIBIO LA CONSISTENCIA");
 			}
 
-			printf("consistencia: %s\n", consistencia_recibida);
-
 			error_recv = recv(conexion, &particiones_recibidas, sizeof(int), 0);
 
 			if(error_recv == -1){
 				perror("NO SE RECIBIO EL NUMERO DE PARTICIONES");
 			}
-
-			printf("particiones: %i\n", particiones_recibidas);
 
 			error_recv = recv(conexion, &compactacion_recibida, sizeof(int), 0);
 
@@ -279,12 +258,8 @@ t_list* recibir_describe(int conexion){
 				perror("NO SE RECIBIO EL TIEMPO DE COMPACTACION");
 			}
 
-			printf("compactacion: %i\n", compactacion_recibida);
-
-			printf("Creo la estructura metadata con los datos anteriores\n");
 			metadata_recibida = crear_metadata(tabla_recibida, consistencia_recibida, particiones_recibidas, compactacion_recibida);
 
-			printf("Lo agrego a la lista\n");
 			list_add(datos_metadata, metadata_recibida);
 
 			free(tabla_recibida);

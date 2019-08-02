@@ -3,6 +3,10 @@
 
 void* compactar(thread_args* argumentos){
 
+	time_t tiempo_acumulado;
+
+	time_t tiempo_actual;
+
 
 	log_info(logger_compactador, "INICIO DE LA -- COMPACTACION -- DE LA TABLA %s", argumentos->nombre_tabla);
 	//los comentarios entre parentesis son para ver donde se libera cada variable;
@@ -85,6 +89,8 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_unlock(&(argumentos->lock_tabla));
 
+	tiempo_actual = time(NULL);
+
 	pthread_rwlock_wrlock(&(argumentos->lock_tabla));
 
 //	printf("[COMPACTACION] Libero las particiones de  %s\n", nombre_tabla);
@@ -134,6 +140,9 @@ void* compactar(thread_args* argumentos){
 
 	pthread_rwlock_unlock(&(argumentos->lock_tabla));
 
+	tiempo_acumulado = time(NULL) - tiempo_acumulado;
+
+	log_info(logger_compactador, "Se bloqueo la tabla %s por %i segundos", nombre_tabla, tiempo_acumulado);
 
 	//Por aca habria que liberar el "mutex"
 	//time_t fin_de_bloqueo = time(NULL)
@@ -248,7 +257,7 @@ void* ciclo_compactacion(thread_args* argumentos){
 
 		pthread_rwlock_rdlock(&(lock_diccionario_compactacion));
 
-		printf("\n>>>>>>>>>>>>compactacion de la tabla %s<<<<<<<<<<<<<<<<\n\n", argumentos->nombre_tabla);
+		printf("\n>>>>>>>>>>>>compactacion de la tabla %s<<<<<<<<<<<<<<<<\n", argumentos->nombre_tabla);
 
 		compactar(argumentos);
 

@@ -197,8 +197,6 @@ describe_t crear_dato_describe(char* nombre_tabla){
 
 		dato_describe->bytes = sizeof(cod_operacion) + sizeof(bool) + sizeof(dato_describe->tabla->size) + dato_describe->tabla->size;
 
-		printf("bytes a enviar: %i\n",dato_describe->bytes);
-
 	}
 	else{
 		dato_describe->global = true;
@@ -223,9 +221,9 @@ void mostrar_lista_describe(t_list* lista_describe){
 
 		Metadata dato_describe = (Metadata) dato_metadata;
 
-		printf("\n---TABLA: %s ---\n", dato_describe->tabla);
+		printf("\n---TABLA: %s ---\n", (char*)dato_describe->tabla->buffer);
 
-		printf("consistencia: %s\n" , dato_describe->consistencia);
+		printf("consistencia: %s\n" , (char*)dato_describe->consistencia->buffer);
 
 		printf("particiones: %d\n" , dato_describe->particiones);
 

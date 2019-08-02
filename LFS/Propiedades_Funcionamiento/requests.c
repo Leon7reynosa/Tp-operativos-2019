@@ -100,7 +100,7 @@ void trabajar_request(request request_a_operar , int conexion){
 
 		case DESCRIBE:
 
-			printf("[REQUEST] Se realizara un DESCRIBE");
+			printf("[REQUEST] Se realizara un DESCRIBE\n");
 
 			log_info(logger_request, "Request de DESCRIBE recibida por el socket %i !", conexion);
 
@@ -186,42 +186,42 @@ dato_t* request_select(select_t datos_select){
 
 		pthread_rwlock_rdlock(&(argumentos_tabla->lock_tabla));
 
-		printf("[SELECT %s : key %i] Existe la tabla\n", nombre_tabla, datos_select->key);
+//		printf("[SELECT %s : key %i] Existe la tabla\n", nombre_tabla, datos_select->key);
 
 		metadata_t* metadata_tabla = obtener_metadata(nombre_tabla);
 
-		printf("[SELECT] ya obtuve la metadata\n");
+//		printf("[SELECT] ya obtuve la metadata\n");
 
 		int particion_objetivo = calcular_particion(metadata_tabla->particion , datos_select->key);
 
-		printf("[SELECT %s : key %i] La particion de la key deberia ser %i\n", nombre_tabla, datos_select->key, particion_objetivo);
+//		printf("[SELECT %s : key %i] La particion de la key deberia ser %i\n", nombre_tabla, datos_select->key, particion_objetivo);
 
 		path_particion_a_buscar = obtenerPath_ParticionTabla(nombre_tabla, particion_objetivo);
 
-		printf("[SELECT] obtuvimos el path: %s\n" , path_particion_a_buscar);
+//		printf("[SELECT] obtuvimos el path: %s\n" , path_particion_a_buscar);
 
 		dato_binarios = buscar_dato_en_particion(path_particion_a_buscar, datos_select->key);
 
-		printf("[SELECT] ya buscamos el dato enla particion\n");
+//		printf("[SELECT] ya buscamos el dato enla particion\n");
 
 		dato_temporales = buscar_dato_en_temporales(nombre_tabla, datos_select->key);
 
 		pthread_rwlock_unlock(&(argumentos_tabla->lock_tabla));
 
-		printf("[SELECT] ya buscamos el dato en temporales\n");
+//		printf("[SELECT] ya buscamos el dato en temporales\n");
 
 		 //ACA HAY UN SEMAFORO DE MEMTABLE
         dato_memtable = obtener_dato_con_mayor_timestamp_tabla(nombre_tabla, datos_select->key);
 
-        printf("[SELECT] fallo en obtener_dato_mayor timestamp\n");
+//      printf("[SELECT] fallo en obtener_dato_mayor timestamp\n");
 
 		dato_t* dato_aux = timestamp_mas_grande(dato_temporales, dato_binarios);
 
-		 printf("[SELECT] fallo en obtener timestamp mas grande primero\n");
+//		printf("[SELECT] fallo en obtener timestamp mas grande primero\n");
 
 		dato_mas_nuevo = timestamp_mas_grande(dato_memtable, dato_aux);
 
-		printf("[SELECT] ya tenemos el mas grande\n");
+//		printf("[SELECT] ya tenemos el mas grande\n");
 
 		if(dato_aux != NULL){
 			 liberar_dato(dato_aux);
@@ -248,7 +248,7 @@ dato_t* request_select(select_t datos_select){
 
 	 else{
 
-		 printf("[SELECT %s : key %i] No existe la tabla\n", nombre_tabla, datos_select->key);
+//		 printf("[SELECT %s : key %i] No existe la tabla\n", nombre_tabla, datos_select->key);
 
 		 log_info(logger_request, "NO SE ENCUENTRA LA TABLA");
 
@@ -257,7 +257,7 @@ dato_t* request_select(select_t datos_select){
 
 	 pthread_rwlock_unlock(&(lock_diccionario_compactacion));
 
-	 printf("\nTERMINO LA REQUEST SELECT\n");
+//	 printf("\nTERMINO LA REQUEST SELECT\n");
 	 log_info(logger_lfs, "Request -- SELECT -- realizada !!!\n");
 	 return  dato_mas_nuevo;
 
@@ -338,25 +338,25 @@ dato_t* request_select(select_t datos_select){
 
 	 }
 
-	 printf("[CREATE] No existe la tabla\n");
+//	 printf("[CREATE] No existe la tabla\n");
 
 	 char* path_tabla = obtenerPathTabla(nombre_tabla);
 
 	 //ESTA FUNCION TE BLOQUEA EN ESCRITURA EL DICCIONARIO Y LA TABLA ESPECIFICA
 
-	 printf("[CREATE] Corro la compactacion de la tabla %s\n", nombre_tabla);
+//	 printf("[CREATE] Corro la compactacion de la tabla %s\n", nombre_tabla);
 
 	 correr_compactacion(datos_create->compactacion, nombre_tabla);
 
-	 printf("[CREATE] Creo el directorio asociado a la tabla\n");
+//	 printf("[CREATE] Creo el directorio asociado a la tabla\n");
 
 	 crear_directorio(path_tabla);
 
-	 printf("[CREATE] Creo la metadata asociada a la tabla\n");
+//	 printf("[CREATE] Creo la metadata asociada a la tabla\n");
 
 	 crear_metadata(nombre_tabla, criterio , datos_create->numero_particiones, datos_create->compactacion); //MAL?
 
-	 printf("[CREATE] Creo las particiones asociadas a la tabla\n");
+//	 printf("[CREATE] Creo las particiones asociadas a la tabla\n");
 
 	 crear_archivos_particiones(nombre_tabla, datos_create->numero_particiones);
 
@@ -601,13 +601,13 @@ estado_request request_drop(Drop request_drop){
 
 								Particion particion = leer_particion(path_para_archivo);
 
-								mostrar_particion(particion);
-								printf("\n");
+//								mostrar_particion(particion);
+//								printf("\n");
 								liberar_particion(particion);
 
 								eliminar_particion(path_para_archivo);
 
-								printf("====Se elimino dicha particion====\n");
+//								printf("====Se elimino dicha particion====\n");
 
 								//get_all_estados();
 							}
@@ -646,6 +646,7 @@ estado_request request_drop(Drop request_drop){
 
 	free(path_directorio_tabla);
 
+	printf("=== Se elimino la tabla %s ===\n", (char*)request_drop->tabla->buffer);
 	log_info(logger_lfs, "Request -- DROP-- realizada\n");
 
 	return estado;

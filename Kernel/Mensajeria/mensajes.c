@@ -81,10 +81,12 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 	if(error_send <= 0){
 		perror("FALLO EL SEND");
 
+		free(buffer);
+
 		return false;
 	}
 
-	//free(buffer);
+	free(buffer);
 
 	free(request);
 

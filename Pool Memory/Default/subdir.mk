@@ -9,6 +9,7 @@ C_SRCS += \
 ../consola.c \
 ../dato.c \
 ../gossiping.c \
+../inotify_memoria.c \
 ../memoria.c \
 ../pagina.c \
 ../pool.c \
@@ -20,6 +21,7 @@ OBJS += \
 ./consola.o \
 ./dato.o \
 ./gossiping.o \
+./inotify_memoria.o \
 ./memoria.o \
 ./pagina.o \
 ./pool.o \
@@ -31,6 +33,7 @@ C_DEPS += \
 ./consola.d \
 ./dato.d \
 ./gossiping.d \
+./inotify_memoria.d \
 ./memoria.d \
 ./pagina.d \
 ./pool.d \

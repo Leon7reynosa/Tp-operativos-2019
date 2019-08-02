@@ -236,11 +236,48 @@ bool existe_el_bitmap(){
 }
 
 void inicializar_loggers(){
-	logger_lissandra = 		log_create("/home/utnso/lfs-compactacion/lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
+
+	char* path_logger_lissandra = string_new();
+	char* path_logger_lfs = string_new();
+	char* path_logger_compactador = string_new();
+	char* path_logger_request = string_new();
+	char* path_logger_dump = string_new();
+
+	string_append(&path_logger_lissandra, punto_montaje);
+	string_append(&path_logger_lissandra, "lissandra.log");
+
+	string_append(&path_logger_lfs, punto_montaje);
+	string_append(&path_logger_lfs, "lfs.log");
+
+	string_append(&path_logger_compactador, punto_montaje);
+	string_append(&path_logger_compactador, "compactador.log");
+
+	string_append(&path_logger_request, punto_montaje);
+	string_append(&path_logger_request, "requests.log");
+
+	string_append(&path_logger_dump, punto_montaje);
+	string_append(&path_logger_dump, "dump.log");
+
+/*	logger_lissandra = 		log_create("/home/utnso/lfs-compactacion/lissandra.log", "lissandra", 0, LOG_LEVEL_INFO);
 	logger_lfs = 			log_create("/home/utnso/lfs-compactacion/lfs.log", "file system", 0, LOG_LEVEL_INFO);
 	logger_compactador = 	log_create("/home/utnso/lfs-compactacion/compactador.log", "compactador", 0, LOG_LEVEL_INFO);
 	logger_request = 		log_create("/home/utnso/lfs-compactacion/requests.log", "requests", 0, LOG_LEVEL_INFO );
 	logger_dump = 			log_create("/home/utnso/lfs-compactacion/dump.log", "dump", 0, LOG_LEVEL_INFO);
+*/
+
+	logger_lissandra = 		log_create(path_logger_lissandra, "lissandra", 0, LOG_LEVEL_INFO);
+	logger_lfs = 			log_create(path_logger_lfs, "file system", 0, LOG_LEVEL_INFO);
+	logger_compactador = 	log_create(path_logger_compactador, "compactador", 0, LOG_LEVEL_INFO);
+	logger_request = 		log_create(path_logger_request, "requests", 0, LOG_LEVEL_INFO );
+	logger_dump = 			log_create(path_logger_dump, "dump", 0, LOG_LEVEL_INFO);
+
+	free(path_logger_lissandra);
+	free(path_logger_lfs);
+	free(path_logger_compactador);
+	free(path_logger_request);
+	free(path_logger_dump);
+
+
 }
 
 void destruir_loggers(){

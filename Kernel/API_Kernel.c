@@ -147,6 +147,10 @@ int ejecutar_request(char* request_lql){
 
 					log_error(logger_kernel , "-La Tabla %s no existe en el registro de tablas.-" , nombre_tabla);
 
+					free(nombre_tabla);
+
+					free(value);
+
 					return 0;
 
 				}
@@ -158,6 +162,10 @@ int ejecutar_request(char* request_lql){
 				if(memoria_utilizada == NULL){
 
 					printf("\n>NO existen memorias para esa consistencia\n");
+
+					free(nombre_tabla);
+
+					free(value);
 
 					return 0;
 				}
@@ -178,6 +186,10 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					free(nombre_tabla);
+
+					free(value);
+
 					return 0;
 
 				}
@@ -189,6 +201,10 @@ int ejecutar_request(char* request_lql){
 					printf("\n>Se RECIBIO un estado de ERROR\n");
 
 					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
+
+					free(nombre_tabla);
+
+					free(value);
 
 					return 0;
 
@@ -203,6 +219,10 @@ int ejecutar_request(char* request_lql){
 				agregar_a_metrica(INSERT, insert_enviar , tiempo_fin_ejecucion_request);
 
 				liberar_dato_insert(insert_enviar);
+
+				free(nombre_tabla);
+
+				free(value);
 
 				return 1;
 			}
@@ -219,6 +239,10 @@ int ejecutar_request(char* request_lql){
 				memoria_utilizada = seleccionar_memoria_consistencia(CREATE, create_enviar);
 
 				if(memoria_utilizada == NULL){
+
+					free(consistencia);
+
+					free(nombre_tabla);
 
 					return 0;
 				}
@@ -237,6 +261,10 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					free(consistencia);
+
+					free(nombre_tabla);
+
 					return 0;
 
 				}
@@ -246,6 +274,10 @@ int ejecutar_request(char* request_lql){
 					log_error(logger_kernel, "-Fallo el CREATE.-");
 
 					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
+
+					free(consistencia);
+
+					free(nombre_tabla);
 
 					return 0;
 
@@ -257,6 +289,10 @@ int ejecutar_request(char* request_lql){
 				Metadata metadata_agregar =  crear_metadata(nombre_tabla, consistencia, particiones, tiempo_compactacion);
 
 				agregar_metadata_a_registro_tabla(metadata_agregar);
+
+				free(consistencia);
+
+				free(nombre_tabla);
 
 
 				return 1;
@@ -379,10 +415,14 @@ int ejecutar_request(char* request_lql){
 
 				request_add(numero_memoria, consistencia);
 
+				free(consistencia);
+
 				return 1;
 			}
 
 			printf("\n>La REQUEST ADD FALLO.-");
+
+			free(consistencia);
 
 			break;
 
