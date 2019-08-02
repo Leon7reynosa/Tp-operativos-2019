@@ -2350,3 +2350,59 @@
 [INFO] 17:23:33:496 Metricas/(18183:18191): Memoria 1 : 
 [INFO] 17:23:33:518 Metricas/(18183:18191): 11 Ejecuciones  ->  100 % Memory load
 
+[INFO] 17:59:57:402 Metricas/(20195:20201): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 17:59:57:402 Metricas/(20195:20201): >>STRONG CONSISTENCY<<
+
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Read Latency : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Write Latency : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Reads : 5
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Writes : 3
+
+[INFO] 17:59:57:402 Metricas/(20195:20201): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Read Latency : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Write Latency : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Reads : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Writes : 0
+
+[INFO] 17:59:57:402 Metricas/(20195:20201): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Read Latency : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Write Latency : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Reads : 0
+[INFO] 17:59:57:402 Metricas/(20195:20201): >Writes : 0
+
+[INFO] 17:59:57:403 Metricas/(20195:20201): --->MEMORY LOAD<---
+
+[INFO] 17:59:57:403 Metricas/(20195:20201): Memoria 1 : 
+[INFO] 17:59:57:403 Metricas/(20195:20201): 8 Ejecuciones  ->  100 % Memory load
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): >>>>>>>>>>EJECUCION HILO METRICS<<<<<<<<<
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): >>STRONG CONSISTENCY<<
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Read Latency : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Write Latency : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Reads : 6
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Writes : 3
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): >>EVENTUAL  CONSISTENCY<<
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Read Latency : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Write Latency : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Reads : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Writes : 0
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): >>STRONG HASH CONSISTENCY<<
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Read Latency : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Write Latency : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Reads : 0
+[INFO] 18:12:59:196 Metricas/(20844:20850): >Writes : 0
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): --->MEMORY LOAD<---
+
+[INFO] 18:12:59:196 Metricas/(20844:20850): Memoria 1 : 
+[INFO] 18:12:59:196 Metricas/(20844:20850): 9 Ejecuciones  ->  100 % Memory load
+
