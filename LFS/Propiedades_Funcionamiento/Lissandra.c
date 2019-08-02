@@ -6,9 +6,15 @@
  */
 #include "Lissandra.h"
 
+void liberar_lista_dato_t(t_list* listita){
+
+	list_destroy_and_destroy_elements(listita, eliminar_dato_t);
+
+}
+
 void liberar_memtable(void){
 
-	dictionary_destroy_and_destroy_elements(memtable, eliminar_dato_t);
+	dictionary_destroy_and_destroy_elements(memtable, liberar_lista_dato_t);
 
 }
 

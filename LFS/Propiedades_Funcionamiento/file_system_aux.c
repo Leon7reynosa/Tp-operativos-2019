@@ -309,7 +309,7 @@ void vaciar_memtable(){
 
 		t_list* lista_de_tabla = (t_list* ) elemento_memtable;
 
-		list_clean_and_destroy_elements(lista_de_tabla, liberar_dato);
+		list_destroy_and_destroy_elements(lista_de_tabla, liberar_dato);
 
 	}
 

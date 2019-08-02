@@ -198,11 +198,15 @@ char* obtener_path_de_temporal_para_compactar_de_tabla(char* nombre_tabla, int i
 
 	char* path = obtenerPathDirectorio_Tablas();
 
+	char* string_indice_elegido = string_itoa(indice_elegido);
+
 	string_append(&path, "/");
 	string_append(&path, nombre_tabla);
 	string_append(&path, "/");
-	string_append(&path, string_itoa(indice_elegido));
+	string_append(&path, string_indice_elegido);
 	string_append(&path, ".tmpc");
+
+	free(string_indice_elegido);
 
 	return path;
 
@@ -382,6 +386,8 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 	}
 
 	closedir(dir);
+
+	liberar_puntero_doble(aux);
 
 	free(raiz_de_tabla);
 }

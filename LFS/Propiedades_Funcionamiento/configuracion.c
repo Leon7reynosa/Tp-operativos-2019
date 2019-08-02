@@ -163,11 +163,11 @@ void obtener_datos_metadata(){
 
 char* obtener_path_config(void){
 
-	char* path_config;
+	char* path_config = string_new();
 
 	char* ruta = "../fileSystem.config";
 
-	memcpy(path_config, ruta, string_length(ruta) + 1);
+	string_append(&path_config, ruta);
 
 	return path_config;
 }

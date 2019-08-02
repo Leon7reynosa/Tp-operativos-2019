@@ -82,12 +82,12 @@ void liberar_puntero_doble(char** puntero){
 
 	int i = 0;
 	while(*(puntero + i) != NULL){
+
+		free(*(puntero + i));
+
 		i++;
 	}
 
-	for(; i > 0 ; i--){
-		free(*(puntero + i));
-	}
 	free(puntero);
 
 }

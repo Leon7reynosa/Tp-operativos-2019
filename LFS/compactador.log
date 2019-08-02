@@ -1973,3 +1973,149 @@
 [INFO] 17:15:01:350 compactador/(17757:17808): Se bloqueo la tabla COLORS por 1564776901 segundos
 [INFO] 17:15:01:350 compactador/(17757:17808): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
 
+[INFO] 18:09:47:504 compactador/(21019:21028): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:09:47:512 compactador/(21019:21028): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANI/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANI/0.tmpc"
+[INFO] 18:09:47:516 compactador/(21019:21028): Obtengo la metadata
+[INFO] 18:09:47:519 compactador/(21019:21028): Los datos finales
+[INFO] 18:11:31:971 compactador/(21202:21217): INICIO DE LA -- COMPACTACION -- DE LA TABLA SUPERNANO
+[INFO] 18:11:31:983 compactador/(21202:21217): Obtengo la metadata
+[INFO] 18:11:31:985 compactador/(21202:21217): Los datos finales
+[INFO] 18:22:34:497 compactador/(21599:21604): INICIO DE LA -- COMPACTACION -- DE LA TABLA SUPERNANO
+[INFO] 18:22:34:506 compactador/(21599:21604): Obtengo la metadata
+[INFO] 18:22:34:508 compactador/(21599:21604): Los datos finales
+[INFO] 18:39:46:22 compactador/(22419:22437): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:39:46:33 compactador/(22419:22437): Obtengo la metadata
+[INFO] 18:39:46:41 compactador/(22419:22437): Los datos finales
+[INFO] 18:39:46:63 compactador/(22419:22437): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:39:46:66 compactador/(22419:22437): Obtengo los datos de los temporales
+[INFO] 18:39:46:78 compactador/(22419:22437): Se bloqueo la tabla NANI por 1564781986 segundos
+[INFO] 18:39:46:80 compactador/(22419:22437): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:39:56:83 compactador/(22419:22437): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:39:56:83 compactador/(22419:22437): Obtengo la metadata
+[INFO] 18:39:56:84 compactador/(22419:22437): Los datos finales
+[INFO] 18:39:56:85 compactador/(22419:22437): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:39:56:92 compactador/(22419:22437): Obtengo los datos de los temporales
+[INFO] 18:39:56:95 compactador/(22419:22437): Se bloqueo la tabla NANI por 1564781996 segundos
+[INFO] 18:39:56:96 compactador/(22419:22437): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:40:06:97 compactador/(22419:22437): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:40:06:97 compactador/(22419:22437): Obtengo la metadata
+[INFO] 18:40:06:105 compactador/(22419:22437): Los datos finales
+[INFO] 18:40:06:106 compactador/(22419:22437): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:40:06:108 compactador/(22419:22437): Obtengo los datos de los temporales
+[INFO] 18:40:06:112 compactador/(22419:22437): Se bloqueo la tabla NANI por 1564782006 segundos
+[INFO] 18:40:06:112 compactador/(22419:22437): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:43:32:409 compactador/(22604:22608): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANO
+[INFO] 18:43:32:425 compactador/(22604:22608): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANO/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANO/0.tmpc"
+[INFO] 18:43:32:428 compactador/(22604:22608): Obtengo la metadata
+[INFO] 18:43:32:429 compactador/(22604:22608): Los datos finales
+[INFO] 18:43:32:450 compactador/(22604:22608): Particion 0 -> bloque: 1, esta vacio
+[INFO] 18:43:32:452 compactador/(22604:22608): Particion 1 -> bloque: 2, esta vacio
+[INFO] 18:43:32:454 compactador/(22604:22608): Obtengo los datos de los temporales
+[INFO] 18:43:32:461 compactador/(22604:22608): Particion 0 -> bloque: 0, tiene = 1564782009;99;NANEEE
+
+[INFO] 18:43:32:515 compactador/(22604:22608): Se bloqueo la tabla NANO por 1564782212 segundos
+[INFO] 18:43:32:516 compactador/(22604:22608): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANO
+
+[INFO] 18:43:47:517 compactador/(22604:22608): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANO
+[INFO] 18:43:47:518 compactador/(22604:22608): Obtengo la metadata
+[INFO] 18:43:47:519 compactador/(22604:22608): Los datos finales
+[INFO] 18:43:47:520 compactador/(22604:22608): Particion 0 -> bloque: 1, esta vacio
+[INFO] 18:43:47:521 compactador/(22604:22608): Particion 1 -> bloque: 2, tiene = 1564782009;99;NANEEE
+
+[INFO] 18:43:47:528 compactador/(22604:22608): Obtengo los datos de los temporales
+[INFO] 18:43:47:538 compactador/(22604:22608): Se bloqueo la tabla NANO por 1564782227 segundos
+[INFO] 18:43:47:538 compactador/(22604:22608): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANO
+
+[INFO] 18:48:11:722 compactador/(22796:22800): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANO
+[INFO] 18:48:11:735 compactador/(22796:22800): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANO/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANO/0.tmpc"
+[INFO] 18:48:11:737 compactador/(22796:22800): Obtengo la metadata
+[INFO] 18:48:11:738 compactador/(22796:22800): Los datos finales
+[INFO] 18:48:11:742 compactador/(22796:22800): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:48:11:744 compactador/(22796:22800): Particion 1 -> bloque: 1, tiene = 1564782009;99;NANEEE
+
+[INFO] 18:48:11:747 compactador/(22796:22800): Obtengo los datos de los temporales
+[INFO] 18:48:11:762 compactador/(22796:22800): Particion 0 -> bloque: 2, tiene = 1564782224;88;NANIOP
+
+[INFO] 18:48:11:806 compactador/(22796:22800): Se bloqueo la tabla NANO por 1564782491 segundos
+[INFO] 18:48:11:807 compactador/(22796:22800): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANO
+
+[INFO] 18:48:26:809 compactador/(22796:22800): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANO
+[INFO] 18:48:26:811 compactador/(22796:22800): Obtengo la metadata
+[INFO] 18:48:26:819 compactador/(22796:22800): Los datos finales
+[INFO] 18:48:26:823 compactador/(22796:22800): Particion 0 -> bloque: 0, tiene = 1564782224;88;NANIOP
+
+[INFO] 18:48:26:823 compactador/(22796:22800): Particion 1 -> bloque: 1, tiene = 1564782009;99;NANEEE
+
+[INFO] 18:48:26:824 compactador/(22796:22800): Obtengo los datos de los temporales
+[INFO] 18:48:26:882 compactador/(22796:22800): Se bloqueo la tabla NANO por 1564782506 segundos
+[INFO] 18:48:26:882 compactador/(22796:22800): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANO
+
+[INFO] 18:55:54:570 compactador/(23310:23331): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:55:54:585 compactador/(23310:23331): Obtengo la metadata
+[INFO] 18:55:54:593 compactador/(23310:23331): Los datos finales
+[INFO] 18:55:54:600 compactador/(23310:23331): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:55:54:610 compactador/(23310:23331): Obtengo los datos de los temporales
+[INFO] 18:55:54:666 compactador/(23310:23331): Se bloqueo la tabla NANI por 1564782954 segundos
+[INFO] 18:55:54:666 compactador/(23310:23331): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:56:09:684 compactador/(23310:23331): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:56:09:690 compactador/(23310:23331): Obtengo la metadata
+[INFO] 18:56:09:691 compactador/(23310:23331): Los datos finales
+[INFO] 18:56:09:701 compactador/(23310:23331): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:56:09:702 compactador/(23310:23331): Obtengo los datos de los temporales
+[INFO] 18:56:09:706 compactador/(23310:23331): Se bloqueo la tabla NANI por 1564782969 segundos
+[INFO] 18:56:09:706 compactador/(23310:23331): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:56:24:707 compactador/(23310:23331): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:56:24:707 compactador/(23310:23331): Obtengo la metadata
+[INFO] 18:56:24:708 compactador/(23310:23331): Los datos finales
+[INFO] 18:56:24:709 compactador/(23310:23331): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:56:24:710 compactador/(23310:23331): Obtengo los datos de los temporales
+[INFO] 18:56:24:719 compactador/(23310:23331): Se bloqueo la tabla NANI por 1564782984 segundos
+[INFO] 18:56:24:720 compactador/(23310:23331): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:56:39:722 compactador/(23310:23331): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:56:39:725 compactador/(23310:23331): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANI/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/NANI/0.tmpc"
+[INFO] 18:56:39:732 compactador/(23310:23331): Obtengo la metadata
+[INFO] 18:56:39:735 compactador/(23310:23331): Los datos finales
+[INFO] 18:56:39:738 compactador/(23310:23331): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:56:39:739 compactador/(23310:23331): Obtengo los datos de los temporales
+[INFO] 18:56:39:747 compactador/(23310:23331): Particion 0 -> bloque: 1, tiene = 0;10;NANEEE
+1564782980;99;OP
+
+[INFO] 18:56:39:777 compactador/(23310:23331): Se bloqueo la tabla NANI por 1564782999 segundos
+[INFO] 18:56:39:777 compactador/(23310:23331): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:56:54:778 compactador/(23310:23331): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:56:54:779 compactador/(23310:23331): Obtengo la metadata
+[INFO] 18:56:54:780 compactador/(23310:23331): Los datos finales
+[INFO] 18:56:54:781 compactador/(23310:23331): Particion 0 -> bloque: 0, tiene = 0;10;NANEEE
+1564782980;99;OP
+
+[INFO] 18:56:54:782 compactador/(23310:23331): Obtengo los datos de los temporales
+[INFO] 18:56:54:796 compactador/(23310:23331): Se bloqueo la tabla NANI por 1564783014 segundos
+[INFO] 18:56:54:797 compactador/(23310:23331): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:57:09:797 compactador/(23310:23331): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:57:09:798 compactador/(23310:23331): Obtengo la metadata
+[INFO] 18:57:09:800 compactador/(23310:23331): Los datos finales
+[INFO] 18:57:09:809 compactador/(23310:23331): Particion 0 -> bloque: 0, tiene = 0;10;NANEEE
+1564782980;99;OP
+
+[INFO] 18:57:09:811 compactador/(23310:23331): Obtengo los datos de los temporales
+[INFO] 18:57:09:844 compactador/(23310:23331): Se bloqueo la tabla NANI por 1564783029 segundos
+[INFO] 18:57:09:844 compactador/(23310:23331): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+
+[INFO] 18:59:44:807 compactador/(23540:23550): INICIO DE LA -- COMPACTACION -- DE LA TABLA NANI
+[INFO] 18:59:44:822 compactador/(23540:23550): Obtengo la metadata
+[INFO] 18:59:44:826 compactador/(23540:23550): Los datos finales
+[INFO] 18:59:44:831 compactador/(23540:23550): Particion 0 -> bloque: 0, esta vacio
+[INFO] 18:59:44:842 compactador/(23540:23550): Particion 1 -> bloque: 1, esta vacio
+[INFO] 18:59:44:843 compactador/(23540:23550): Particion 2 -> bloque: 2, esta vacio
+[INFO] 18:59:44:844 compactador/(23540:23550): Obtengo los datos de los temporales
+[INFO] 18:59:44:887 compactador/(23540:23550): Se bloqueo la tabla NANI por 1564783184 segundos
+[INFO] 18:59:44:888 compactador/(23540:23550): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA NANI
+

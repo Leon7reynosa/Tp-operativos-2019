@@ -9,7 +9,7 @@
 
 void* consola(void* argumento){
 
-	char* leido = string_new();
+	char* leido;
 
 	cod_operacion codigo;
 
@@ -17,8 +17,9 @@ void* consola(void* argumento){
 
 	leido = readline("");
 
-	while(!string_equals_ignore_case(leido, "exit")){
+//	getline(cin, leido, );
 
+	while(!string_equals_ignore_case(leido, "exit")){
 
 		codigo = identificar_request(leido);
 
@@ -31,7 +32,6 @@ void* consola(void* argumento){
 	}
 
 	free(leido);
-
 
 	pthread_exit(NULL);
 
@@ -132,6 +132,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 				liberar_dato_select(dato_select);
 
+				free(nombre_tabla);
+
 				fin_funcion = true;
 			}
 
@@ -160,6 +162,10 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 				fin_funcion = true;
 
+				free(nombre_tabla);
+
+				free(value);
+
 			}
 
 			break;
@@ -174,6 +180,11 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 				request_create(dato_create);
 
 				liberar_dato_create(dato_create);
+
+				free(nombre_tabla);
+
+				free(consistencia);
+
 
 				fin_funcion = true;
 			}
@@ -196,6 +207,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 				mostrar_lista_describe(lista_describe);
 
 				liberar_dato_describe(describe_enviar);
+
+				free(nombre_tabla);
 
 			}else if(cantidad_parametros == 1){
 
@@ -232,6 +245,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 				request_drop(drop_dato);
 
 				liberar_drop(drop_dato);
+
+				free(nombre_tabla);
 
 				fin_funcion = true;
 			}

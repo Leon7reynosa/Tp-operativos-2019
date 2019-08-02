@@ -1567,3 +1567,5 @@
 [INFO] 17:46:35:371 requests/(19022:19032): Request de DROP recibida por el socket 11 !
 [INFO] 17:46:35:371 requests/(19022:19032): Request de DROP solicitada por el socket 11 !
 
+[INFO] 18:01:53:508 requests/(20675:20680): NO SE ENCUENTRA LA TABLA
+[INFO] 18:25:28:180 requests/(21854:21861): NO SE ENCUENTRA LA TABLA
