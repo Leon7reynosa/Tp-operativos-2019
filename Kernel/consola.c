@@ -11,8 +11,6 @@ void* consola(){
 
 	char* leido;
 
-	char* consola = "consola";
-
 	menu();
 
 	leido = readline("");
@@ -23,8 +21,7 @@ void* consola(){
 
 		nuevo_script->cola_requests = queue_create();
 
-		nuevo_script->path_lql = malloc(strlen(consola) +1);
-		memcpy(nuevo_script->path_lql , consola, strlen(consola) +1);
+		nuevo_script->path_lql = "consola";
 
 		queue_push(nuevo_script->cola_requests , (void*) leido);
 

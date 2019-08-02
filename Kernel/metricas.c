@@ -167,20 +167,6 @@ void sumador_metrica( cod_operacion codigo_operacion , metrica_t* metrica,  time
 
 }
 
-void liberar_metricas(){
-
-	liberar_metrica(metrica_ec);
-	liberar_metrica(metrica_sc);
-	liberar_metrica(metrica_shc);
-}
-
-void liberar_metrica(metrica_t* metrica){
-
-	list_destroy_and_destroy_elements(metrica->lista_insert, free);
-	list_destroy_and_destroy_elements(metrica->lista_select, free);
-	free(metrica);
-
-}
 
 void reiniciar_memory_load(){
 

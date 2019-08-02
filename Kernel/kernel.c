@@ -7,6 +7,16 @@
 
 #include "kernel.h"
 
+void pruebas(){
+
+	char* request = "DESCrIBEs HOLA 43";
+
+	int auxiliar = identificar_request(request);
+
+	printf(	"el numero es: %d\n" , auxiliar);
+
+}
+
 int main (int argc , char* argv[]){
 
 	system("clear");
@@ -93,6 +103,7 @@ int main (int argc , char* argv[]){
 
 	cancelar_hilos_execute();
 
+
 	pthread_cancel(hilo_inotify);
 
 	pthread_cancel(hilo_metrics);
@@ -103,27 +114,17 @@ int main (int argc , char* argv[]){
 
 	pthread_cancel(hilo_planificador);  //me tira mal creeo
 
-	mostrar_cola_final_exit();
+	//mostrar_cola_final_exit();
 
 	liberar_inotify(argumento_inotify);
 
 	destruir_semaforos();
 
-	for(int j = 0; j < grado_multiprocesamiento ; j++){
-
-		queue_destroy_and_destroy_elements(colas_exec[j] , liberar_script);
-
-	}
-
-	void _destruir_hilo(void* _hilo){
-
-		pthread_t hilo = (pthread_t) _hilo;
-
-		pthread_cancel(hilo);
-
-	}
-
-	liberar_logs();
+//	for(int j = 0; j < grado_multiprocesamiento ; j++){
+//
+//		queue_destroy_and_destroy_elements(colas_exec[j] , liberar_script);
+//
+//	}
 
 	liberar_todo();
 
@@ -136,33 +137,17 @@ void inicializar_semaforos(){
 
 }
 
-void liberar_logs(){
-
-	log_destroy(logger_gossip);
-	log_destroy(logger_kernel);
-	log_destroy(logger_metricas);
-
-}
-
 
 void liberar_todo(){
 
 	queue_destroy_and_destroy_elements(cola_new, free);
 	queue_clean_and_destroy_elements(cola_ready, liberar_script);
-	queue_clean_and_destroy_elements(cola_exit, liberar_script);
-
-	dictionary_destroy_and_destroy_elements(registro_tabla , liberar_metadata);
-
-	list_destroy_and_destroy_elements(tabla_gossiping, liberar_memoria_t);
-
-	liberar_metricas();
+	//queue_clean_and_destroy_elements(cola_exit, liberar_script);
 
 	free(punto_montaje);
 	free(ip_memoria);
 
 }
-
-
 
 void destruir_semaforos(){
 

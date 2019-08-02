@@ -19,8 +19,6 @@ void* planificador(t_queue* cola_exec[]){
 
 		pthread_create(&hilo_exec , NULL, ejecutar_cola_exec , cola_exec[i]);
 
-		pthread_detach(hilo_exec);
-
 		list_add(lista_hilos_exec, hilo_exec);
 
 	}
@@ -54,7 +52,7 @@ void mostrar_cola_final_exit(){
 
 		}
 
-		//liberar_script(script);
+		liberar_script(script);
 	}
 
 	printf("\nLINEAS POR CONSOLA: %d\n" , contador_consola);
@@ -280,8 +278,6 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 				queue_push(cola_exit, siguiente_script);
 
 				printf("\n>Script movido a COLA DE EXIT\n");
-
-				log_info(logger_kernel, "SCRIPT movida a COLA DE EXIT");
 
 				queue_clean(cola_exec);  //agrego esto no se si esta bien
 
