@@ -122,6 +122,8 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 		}
 	}
 
+	closedir(dir);
+
 //	if(numeroParaTemporal >= 1 && ){
 //		numeroParaTemporal++;
 //	}
@@ -129,7 +131,7 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	numeroParaTemporal = mayor_temporal + 1;
 
 
-	char* numeroDesignado = string_new();
+	char* numeroDesignado; //borrado string new
 	numeroDesignado = string_itoa(numeroParaTemporal);
 
 	char* pathCompleto = string_new();
@@ -139,7 +141,7 @@ char* obtenerPathParaTemporalEnLaTabla(char* nombreTabla){
 	string_append(&pathCompleto, ".tmp");
 
 	free(pathBase);
-
+	free(numeroDesignado);
 	return pathCompleto;
 }
 
@@ -225,7 +227,7 @@ char* obtenerPath_ParticionTabla(char* nombre_tabla, int particion){
 char* obtenerPath_Bloque(int indice){
 
 	char* path = string_new();
-	char* string_indice = string_new();
+	char* string_indice;  //BORRE EL STRING NEW
 	string_indice = string_itoa(indice);
 
 	string_append(&path, punto_montaje);

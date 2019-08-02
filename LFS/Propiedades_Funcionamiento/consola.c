@@ -9,9 +9,7 @@
 
 void* consola(void* argumento){
 
-	char* leido;
-
-	char* string_codigo = string_new();
+	char* leido = string_new();
 
 	cod_operacion codigo;
 
@@ -24,10 +22,6 @@ void* consola(void* argumento){
 
 		codigo = identificar_request(leido);
 
-		string_codigo = obtener_string_codigo(codigo);
-
-		free(string_codigo);
-
 		ejecutar_request(codigo, leido);
 
 		free(leido);
@@ -38,12 +32,13 @@ void* consola(void* argumento){
 
 	free(leido);
 
+
 	pthread_exit(NULL);
 
 	return NULL;
 }
 
-
+/*
 char* obtener_string_codigo(cod_operacion codigo){
 	char* string_codigo = string_new();
 
@@ -77,7 +72,7 @@ char* obtener_string_codigo(cod_operacion codigo){
 
 	return string_codigo;
 }
-
+*/
 
 bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
@@ -236,6 +231,8 @@ bool ejecutar_request(cod_operacion codigo_request , char* linea_request){
 
 				request_drop(drop_dato);
 
+				liberar_drop(drop_dato);
+
 				fin_funcion = true;
 			}
 
@@ -271,19 +268,7 @@ int obtener_parametros_select(char* linea_request, char** nombre_tabla , u_int16
 
 			log_error(logger_request, "-la REQUEST SELECT recibio parametros incorrectos.-");
 
-			int obtener_parametros_drop(char* linea_request, char* nombre_tabla){
-
-				char* funcion = string_new();
-
-				int cantidad_parametros;
-
-				cantidad_parametros = sscanf(linea_request, "%s %s", funcion, nombre_tabla);
-
-				string_to_upper(nombre_tabla);
-
-				return cantidad_parametros;
-
-			}			printf("\n>La REQUEST SELECT recibio parametros incorrectos\n");
+			printf("\n>La REQUEST SELECT recibio parametros incorrectos\n");
 
 			liberar_puntero_doble(parametros);
 
