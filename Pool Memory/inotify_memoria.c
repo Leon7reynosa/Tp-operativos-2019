@@ -45,8 +45,6 @@ void* realizar_inotify(inotify_config argumento){
 		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 		pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
-		printf("[INOTIFY] Se creo el hilo\n");
-
 		int  tamanio_leido;
 
 		int tamanio_buffer = sizeof(struct inotify_event) + string_length("pool.config")  + 1;
@@ -55,14 +53,8 @@ void* realizar_inotify(inotify_config argumento){
 		char* buffer_aux;
 		struct inotify_event* cambio_config;
 
-		printf("[INOTIFY] VOY A EMPEZAR A MIRAR EL ARCHIVO");
-
-
 		while(1){
 
-
-
-			printf("\n[INOTIFY] voy a leer un nuevo evento\n");
 			tamanio_leido = read(argumento->fd_inotify, buffer, tamanio_buffer);
 
 			pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
@@ -86,12 +78,9 @@ void* realizar_inotify(inotify_config argumento){
 				cambio_config = (struct inotify_event*)buffer_aux;
 
 				if(cambio_config->mask & IN_OPEN){
-					printf("[INOTIFY] Abrieron el archivo config\n");
+//					printf("[INOTIFY] Abrieron el archivo config\n");
 
 				}else if(cambio_config->mask & IN_CLOSE_WRITE){ // mirar IN_MODIFY, diferencias
-
-					printf("[INOTIFY] Se modifico el metadata.config\n");
-
 
 					t_config* archivo_config = config_create(argumento->path_config);
 
@@ -105,16 +94,19 @@ void* realizar_inotify(inotify_config argumento){
 					pthread_rwlock_unlock(&semaforo_tiempo_journal);
 					//SEMAFORO
 
+					printf("[INOTIFY] Se modifico el metadata.config\n");
 					printf("[INOTIFY] TIEMPO GOSSIPING: %i\n", tiempo_gossiping);
 					printf("[INOTIFY] TIEMPO JOURNAL: %i\n", tiempo_journal);
 
-					config_destroy(archivo_config);
+					log_info(logger_estado, "Se modifico el Archivo de configuracion");
+					log_info(logger_estado, "TIEMPO GOSSIPING = %i", tiempo_gossiping);
+					log_info(logger_estado, "TIEMPO JOURNAL = %i", tiempo_journal);
 
-					printf("[INOTIFY] Se Cerro el metadata.config\n");
+					config_destroy(archivo_config);
 
 				}else if(cambio_config->mask & IN_CLOSE_NOWRITE){
 
-					printf("[INOTIFY] Cerraron el archivo\n");
+//					printf("[INOTIFY] Cerraron el archivo\n");
 
 				}else{
 

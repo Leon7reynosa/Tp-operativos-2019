@@ -180,3 +180,65 @@
 
 [INFO] 13:17:23:764 lissandra/(9186:9272): Ingresamos un dato a la tabla COLORS con la key 2
 
+[INFO] 15:35:57:421 lissandra/(13951:14088): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 15:35:57:422 lissandra/(13951:14088): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 15:36:37:427 lissandra/(13951:14088): Ingresamos un dato a la tabla MARCAS con la key 1
+
+[INFO] 15:57:06:903 lissandra/(14749:14985): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 15:57:06:903 lissandra/(14749:14985): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 16:13:01:215 lissandra/(15746:15757): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 16:13:01:216 lissandra/(15746:15757): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 16:18:51:968 lissandra/(15938:15950): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 16:18:51:968 lissandra/(15938:15950): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 16:31:37:213 lissandra/(16525:16534): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 16:31:59:187 lissandra/(16525:16534): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 16:36:15:810 lissandra/(16767:16777): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 16:49:58:629 lissandra/(17202:17215): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 16:49:58:641 lissandra/(17202:17215): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 16:57:09:497 lissandra/(17283:17378): Ingresamos un dato a la tabla COLORS con la key 10
+
+[INFO] 17:10:23:286 lissandra/(17757:17778): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 17:10:23:289 lissandra/(17757:17778): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 17:10:23:290 lissandra/(17757:17778): Ingresamos un dato a la tabla COLORS con la key 15
+
+[INFO] 17:10:39:249 lissandra/(17757:17778): Ingresamos un dato a la tabla COLORS con la key 99
+
+[INFO] 17:16:40:826 lissandra/(17757:17948): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 17:16:40:829 lissandra/(17757:17948): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 17:19:07:790 lissandra/(17757:18034): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 17:19:07:792 lissandra/(17757:18034): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 17:19:42:222 lissandra/(17757:18034): Ingresamos un dato a la tabla MARCAS con la key 1
+
+[INFO] 17:19:50:234 lissandra/(17757:18034): Ingresamos un dato a la tabla MARCAS con la key 1
+
+[INFO] 17:23:26:906 lissandra/(18108:18177): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 17:23:26:913 lissandra/(18108:18177): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 17:31:07:916 lissandra/(18108:18374): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 17:31:07:917 lissandra/(18108:18374): Ingresamos un dato a la tabla COLORS con la key 2
+
+[INFO] 17:46:31:919 lissandra/(19022:19032): Ingresamos un dato a la tabla COLORS con la key 1
+
+[INFO] 17:46:31:920 lissandra/(19022:19032): Ingresamos un dato a la tabla COLORS con la key 2
+

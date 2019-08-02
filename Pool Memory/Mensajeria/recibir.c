@@ -21,11 +21,13 @@ request recibir_request(int conexion){
 
 	if(pene == -1){
 			perror("Fallo al recibir el codigo de operacion.");
+			free(cod_op);
 			return crear_request(DESCONEXION, NULL);
 		}
 
 	if(pene == 0){
 
+		free(cod_op);
 		return crear_request(DESCONEXION, NULL);
 	}
 
@@ -127,6 +129,8 @@ t_dato* recibir_dato_LFS(int conexion){
 		return NULL;
 
 	}else if(estado == ERROR){
+
+		log_info(logger, "Se recibio un error sobre el dato solicitado");
 
 		free(dato_recibido->value);
 		free(dato_recibido);
@@ -265,7 +269,24 @@ t_list* recibir_describe(int conexion){
 			free(tabla_recibida);
 			free(consistencia_recibida);
 
+
+
 		}
+
+		if(numero_tablas == 0){
+			log_info(logger, "Me llego respuesta pero el File System no tiene tablas");
+
+		}else if(numero_tablas == 1){
+
+			log_info(logger, "Me llego la metadata");
+
+		}else if (numero_tablas > 1){
+
+			log_info(logger, "Me llegaron las metadatas");
+
+		}
+
+
 	}else if(estado == ERROR_CONEXION){
 
 		log_info(logger, "No se recibio respuesta del FileSystem, esta desconectado");
@@ -277,6 +298,8 @@ t_list* recibir_describe(int conexion){
 		desconectar_lissandra();
 
 	}else{
+
+		log_info(logger, "Se recibio un error de dato pedido por parte de Lissandra");
 
 		list_destroy(datos_metadata);
 
@@ -307,7 +330,9 @@ tabla_gossip_dto recibir_datos_gossip(int socket_seed){
 		return dato_recibido;
 	}
 
-	printf("Recibi cantidad de memorias : %i\n", cantidad_memorias);
+	printf(">Recibi cantidad de memorias : %i\n", cantidad_memorias);
+
+	log_info(logger_gossip, "Se recibio la tabla con %i memorias", cantidad_memorias);
 
 	dato_recibido = crear_dto_gossip(cantidad_memorias);
 
@@ -324,7 +349,7 @@ tabla_gossip_dto recibir_datos_gossip(int socket_seed){
 			perror("Recibir numero de memorias");
 		}
 
-		printf("Nro memoria: %i\n", nro);
+		printf(">Nro memoria: %i\n", nro);
 
 		bytes_recv = recv(socket_seed, &size_ip, sizeof(int), 0);
 
@@ -332,7 +357,7 @@ tabla_gossip_dto recibir_datos_gossip(int socket_seed){
 			perror("Recibir numero de memorias");
 		}
 
-		printf("Size ip: %i\n", size_ip);
+		printf(">Size ip: %i\n", size_ip);
 
 		ip = malloc(size_ip);
 
@@ -342,7 +367,7 @@ tabla_gossip_dto recibir_datos_gossip(int socket_seed){
 			perror("Recibir IP");
 		}
 
-		printf("IP: %s\n", ip);
+		printf(">IP: %s\n", ip);
 
 		bytes_recv = recv(socket_seed, &puerto, sizeof(int), 0);
 
@@ -350,7 +375,7 @@ tabla_gossip_dto recibir_datos_gossip(int socket_seed){
 			perror("Recibir puerto");
 		}
 
-		printf("Puerto: %i\n", puerto);
+		printf(">Puerto: %i\n", puerto);
 
 		memoria_dto memoria_ = crear_memoria_dto(nro, ip, puerto);
 
@@ -359,6 +384,8 @@ tabla_gossip_dto recibir_datos_gossip(int socket_seed){
 	}
 
 	printf("Termine de recibir\n");
+
+	log_info(logger_gossip, "Se recibieron todas las memorias");
 
 	return dato_recibido;
 

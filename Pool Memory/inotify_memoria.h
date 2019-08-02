@@ -16,6 +16,8 @@
 #include<errno.h>
 #include<unistd.h>
 
+#include"Mensajeria/logger.h"
+
 #include"Mensajeria/configuracion.h"
 
 struct inotifyEstructura{

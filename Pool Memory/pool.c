@@ -28,8 +28,6 @@ int main (int argc , char* argv[]){
 
 	conexion_lissandra = true;
 
-	arg_inotify = crear_inotify();
-
 	inicializar_memoria(tamanio, tamanio_value, tamanio_dato); //TODO ARREGLAR ESTA FUNCION UN POCO
 
 	inicializar_hilos();
@@ -52,7 +50,7 @@ int main (int argc , char* argv[]){
 
 	if(( listener = iniciar_servidor(ip_escucha, puerto_escucha) ) == -1){
 
-		perror("socket");
+		log_info(logger_estado, "No se pudo levantar el servidor para la memoria\n");
 		exit(-1);
 	}
 
@@ -79,11 +77,12 @@ int main (int argc , char* argv[]){
 				if( i == listener){
 
 					if((new_fd = aceptar_conexion(i)) == -1){
-						perror("Error al aceptar conexion");
+						log_info(logger_estado, "No se pudo aceptar una nueva conexion");
 
 					}else{
 
-						//log_info(logger, "Acepte una nueva conexion\n");
+						printf("\n>Se conecto un cliente\n\n");
+						log_info(logger_estado, "Se conecto un cliente\n");
 
 						FD_SET(new_fd, &master);
 
@@ -108,11 +107,13 @@ int main (int argc , char* argv[]){
 
 						FD_CLR(i, &master);
 						close(i);
-						log_info(logger, "[DESCONEXION] Se desconecto un cliente.\n\n");
+						log_info(logger_estado, "Se desconecto un cliente.");
+
+						printf("\n>Se desconecto un cliente\n");
 
 					}else{
 
-						log_info(logger, "Se recibio una nueva request.");
+						log_info(logger, "Se recibio una nueva REQUEST.");
 
 						printf("\n>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
@@ -124,7 +125,7 @@ int main (int argc , char* argv[]){
 					}
 
 					liberar_request(nueva_request);
-					log_info(logger, "Se termino de trabajar la request.\n");
+					log_info(logger, "Se termino de trabajar la REQUEST.\n");
 
 
 				}
@@ -139,7 +140,9 @@ int main (int argc , char* argv[]){
 
 	}
 
-	printf("SE CIERRA LA MEMORIA\n");
+	printf(">Se va a cerrar la memoria\n");
+
+
 
 	//CIERRO TODOS LOS CLIENTES
 	for(i = 1; i <= fd_max; i++){
@@ -157,7 +160,13 @@ int main (int argc , char* argv[]){
 
 	abortar_hilos();
 
+	log_info(logger_estado, "Se va a cerrar la memoria"); //ESTO ROMPIA , NANI?
+
 	if(conexion_lissandra){
+
+		printf("Se realiza un JOURNAL para cerrar la memoria correctamente\n");
+
+		log_info(logger_estado, "Se realiza un JOURNAL para cerrar la memoria correctamente");
 
 		realizar_journal();
 
@@ -171,9 +180,13 @@ int main (int argc , char* argv[]){
 	list_destroy_and_destroy_elements(puerto_seeds, free);
 
 	free(ip_lfs);
+	free(ip_escucha);
 
 	printf("Termino el programa memoria\n");
 
+	log_info(logger_estado, "Termino el programa memoria\n");
+
+	liberar_logger();
 
 	return EXIT_SUCCESS;
 }
@@ -194,6 +207,8 @@ void abortar_hilos(void){
 	pthread_mutex_destroy(&mutex_gossip);
 
 	liberar_inotify(arg_inotify);
+
+	log_info(logger_estado, "Se liberan los hilos de ejecucion");
 
 }
 
@@ -236,5 +251,7 @@ void inicializar_hilos(void){
 	}
 
 	pthread_attr_destroy(&attr);
+
+	log_info(logger_estado, "Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify");
 
 }

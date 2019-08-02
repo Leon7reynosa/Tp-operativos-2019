@@ -1882,3 +1882,94 @@
 [INFO] 12:53:11:425 compactador/(9186:9190): Se bloqueo la tabla MARCAS por 1564761191 segundos
 [INFO] 12:53:11:425 compactador/(9186:9190): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
 
+[INFO] 15:37:36:728 compactador/(13951:14176): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 15:37:36:729 compactador/(13951:14176): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/MARCAS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/MARCAS/0.tmpc"
+[INFO] 15:37:36:729 compactador/(13951:14176): Obtengo la metadata
+[INFO] 15:37:36:729 compactador/(13951:14176): Los datos finales
+[INFO] 15:37:36:729 compactador/(13951:14176): Particion 0 -> bloque: 5, esta vacio
+[INFO] 15:37:36:729 compactador/(13951:14176): Particion 1 -> bloque: 6, esta vacio
+[INFO] 15:37:36:729 compactador/(13951:14176): Particion 2 -> bloque: 7, esta vacio
+[INFO] 15:37:36:729 compactador/(13951:14176): Particion 3 -> bloque: 8, esta vacio
+[INFO] 15:37:36:729 compactador/(13951:14176): Obtengo los datos de los temporales
+[INFO] 15:37:36:729 compactador/(13951:14176): Particion 0 -> bloque: 9, tiene = 1564770996;1;Adidas
+
+[INFO] 15:37:36:731 compactador/(13951:14176): Se bloqueo la tabla MARCAS por 1564771056 segundos
+[INFO] 15:37:36:731 compactador/(13951:14176): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 16:28:30:540 compactador/(16223:16227): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 16:28:30:540 compactador/(16223:16227): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 16:28:30:540 compactador/(16223:16227): Obtengo la metadata
+[INFO] 16:28:30:540 compactador/(16223:16227): Los datos finales
+[INFO] 16:28:30:540 compactador/(16223:16227): Particion 0 -> bloque: 0, esta vacio
+[INFO] 16:28:30:540 compactador/(16223:16227): Particion 1 -> bloque: 1, esta vacio
+[INFO] 16:28:30:540 compactador/(16223:16227): Particion 2 -> bloque: 2, esta vacio
+[INFO] 16:28:30:540 compactador/(16223:16227): Particion 3 -> bloque: 3, esta vacio
+[INFO] 16:28:30:540 compactador/(16223:16227): Obtengo los datos de los temporales
+[INFO] 16:28:30:540 compactador/(16223:16227): Particion 0 -> bloque: 4, tiene = 1564773489;1;Black
+1564773489;2;Red
+
+[INFO] 16:28:30:542 compactador/(16223:16227): Se bloqueo la tabla COLORS por 1564774110 segundos
+[INFO] 16:28:30:542 compactador/(16223:16227): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 16:56:56:810 compactador/(17283:17287): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 16:56:56:810 compactador/(17283:17287): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 16:56:56:810 compactador/(17283:17287): Obtengo la metadata
+[INFO] 16:56:56:810 compactador/(17283:17287): Los datos finales
+[INFO] 16:56:56:810 compactador/(17283:17287): Particion 0 -> bloque: 0, esta vacio
+[INFO] 16:56:56:810 compactador/(17283:17287): Particion 1 -> bloque: 1, esta vacio
+[INFO] 16:56:56:810 compactador/(17283:17287): Particion 2 -> bloque: 2, esta vacio
+[INFO] 16:56:56:810 compactador/(17283:17287): Particion 3 -> bloque: 3, esta vacio
+[INFO] 16:56:56:810 compactador/(17283:17287): Obtengo los datos de los temporales
+[INFO] 16:56:56:810 compactador/(17283:17287): Particion 0 -> bloque: 4, tiene = 1564775378;1;Black
+1564775378;2;Red
+
+[INFO] 16:56:56:813 compactador/(17283:17287): Se bloqueo la tabla COLORS por 1564775816 segundos
+[INFO] 16:56:56:813 compactador/(17283:17287): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 17:01:56:623 compactador/(17283:17287): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 17:01:56:623 compactador/(17283:17287): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 17:01:56:623 compactador/(17283:17287): Obtengo la metadata
+[INFO] 17:01:56:623 compactador/(17283:17287): Los datos finales
+[INFO] 17:01:56:623 compactador/(17283:17287): Particion 0 -> bloque: 0, esta vacio
+[INFO] 17:01:56:623 compactador/(17283:17287): Particion 1 -> bloque: 1, tiene = 1564775378;1;Black
+
+[INFO] 17:01:56:623 compactador/(17283:17287): Particion 2 -> bloque: 2, tiene = 1564775378;2;Red
+
+[INFO] 17:01:56:623 compactador/(17283:17287): Particion 3 -> bloque: 3, esta vacio
+[INFO] 17:01:56:623 compactador/(17283:17287): Obtengo los datos de los temporales
+[INFO] 17:01:56:624 compactador/(17283:17287): Particion 0 -> bloque: 4, tiene = 1564775819;10;NANI
+
+[INFO] 17:01:56:626 compactador/(17283:17287): Se bloqueo la tabla COLORS por 1564776116 segundos
+[INFO] 17:01:56:626 compactador/(17283:17287): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 17:06:56:626 compactador/(17283:17287): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 17:06:56:627 compactador/(17283:17287): Obtengo la metadata
+[INFO] 17:06:56:627 compactador/(17283:17287): Los datos finales
+[INFO] 17:06:56:627 compactador/(17283:17287): Particion 0 -> bloque: 0, esta vacio
+[INFO] 17:06:56:627 compactador/(17283:17287): Particion 1 -> bloque: 1, tiene = 1564775378;1;Black
+
+[INFO] 17:06:56:627 compactador/(17283:17287): Particion 2 -> bloque: 2, tiene = 1564775378;2;Red
+1564775819;10;NANI
+
+[INFO] 17:06:56:627 compactador/(17283:17287): Particion 3 -> bloque: 3, esta vacio
+[INFO] 17:06:56:627 compactador/(17283:17287): Obtengo los datos de los temporales
+[INFO] 17:06:56:629 compactador/(17283:17287): Se bloqueo la tabla COLORS por 1564776416 segundos
+[INFO] 17:06:56:629 compactador/(17283:17287): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 17:15:01:347 compactador/(17757:17808): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 17:15:01:347 compactador/(17757:17808): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 17:15:01:347 compactador/(17757:17808): Obtengo la metadata
+[INFO] 17:15:01:347 compactador/(17757:17808): Los datos finales
+[INFO] 17:15:01:347 compactador/(17757:17808): Particion 0 -> bloque: 0, esta vacio
+[INFO] 17:15:01:347 compactador/(17757:17808): Particion 1 -> bloque: 1, esta vacio
+[INFO] 17:15:01:347 compactador/(17757:17808): Particion 2 -> bloque: 2, esta vacio
+[INFO] 17:15:01:347 compactador/(17757:17808): Particion 3 -> bloque: 3, esta vacio
+[INFO] 17:15:01:347 compactador/(17757:17808): Obtengo los datos de los temporales
+[INFO] 17:15:01:347 compactador/(17757:17808): Particion 0 -> bloque: 4, tiene = 1564776601;1;Black
+1564776601;2;Red
+1564776618;15;NANE
+100;99;SUPER NANE
+
+[INFO] 17:15:01:350 compactador/(17757:17808): Se bloqueo la tabla COLORS por 1564776901 segundos
+[INFO] 17:15:01:350 compactador/(17757:17808): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+

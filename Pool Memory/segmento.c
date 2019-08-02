@@ -106,6 +106,8 @@ Segmento agregar_segmento(char* tabla, t_list* tabla_segmentos){
 
 	list_add(tabla_segmentos, nuevo_segmento);
 
+	log_info(logger_estado, "Se creo el Segmento %s", nuevo_segmento->nombre_tabla);
+
 	return nuevo_segmento;
 
 }
@@ -115,6 +117,8 @@ void agregar_pagina(Segmento segmento, Pagina pagina){
 	pagina->flag_en_uso = 1;
 
 	list_add(segmento->Tabla_paginas, pagina);
+
+	log_info(logger_estado, "Se le agrego una pagina al Segmento %s", segmento->nombre_tabla);
 
 
 

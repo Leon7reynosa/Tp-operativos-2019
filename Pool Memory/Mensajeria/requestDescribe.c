@@ -106,6 +106,8 @@ describe_t decodificar_describe(int conexion){
 
 	if(error_recv == -1){
 		perror("Fallo al recibir si es global o no.\n");
+
+
 	}
 
 	printf("Es global?: %i\n", global);
@@ -113,6 +115,7 @@ describe_t decodificar_describe(int conexion){
 	if(global){
 
 		printf("perfecto, es global\n");
+
 		tabla = NULL;
 
 	}else{
@@ -138,6 +141,8 @@ describe_t decodificar_describe(int conexion){
 		string_to_upper(tabla);
 
 	}
+
+	free(size_tabla);
 
 	printf("Creo el dato describe\n");
 	describe_t dato = crear_dato_describe(tabla);

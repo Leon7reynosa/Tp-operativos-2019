@@ -34,11 +34,21 @@ char* obtener_path_log_journal(void){
 	return path_log;
 }
 
+char* obtener_path_log_estado(void){
+
+	char* path_log = string_new();
+
+	string_append(&path_log, "../Estado_General.log");
+
+	return path_log;
+}
+
 void inicializar_logger(void){
 
 	char* path_log = obtener_path_log();
 	char* path_gossip = obtener_path_log_gossip();
 	char* path_journal = obtener_path_log_journal();
+	char* path_estado = obtener_path_log_estado();
 
 	logger = log_create(path_log , "Pool Memory", 0 ,LOG_LEVEL_INFO);
 
@@ -46,9 +56,13 @@ void inicializar_logger(void){
 
 	logger_journal = log_create(path_journal, "Pool_memory", 0, LOG_LEVEL_INFO);
 
+	logger_estado = log_create(path_estado, "Pool Memory", 0, LOG_LEVEL_INFO);
+
 	free(path_log);
 	free(path_gossip);
 	free(path_journal);
+	free(path_estado);
+
 }
 
 
@@ -57,5 +71,7 @@ void liberar_logger(void){
 	log_destroy(logger);
 	log_destroy(logger_gossip);
 	log_destroy(logger_journal);
+
+	log_destroy(logger_estado);
 
 }

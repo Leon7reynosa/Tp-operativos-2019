@@ -24,8 +24,11 @@ void realizar_handshake(void){
 
 	if(socket_lissandra < 0){
 		printf("Error al conectar con LissandraFileSystem, intentarlo mas tarde.\n");
+		log_info(logger_estado, "No se pudo conectar con el File System Lissandra, intentar mas tarde.\n");
 		exit(1);
 	}
+
+	log_info(logger_estado, "Se establecio conexion con el File System Lissandra.");
 
 	desconexion_pool = false;
 
@@ -33,10 +36,11 @@ void realizar_handshake(void){
 
 	if(bytes_recibidos < 0){
 		printf("No pude recibir el tamanio del value\n No se realizo correctamente el handshake\n");
+		log_info(logger_estado, "No se realizo correctamente el handshake con el File System Lissandra, se aborta la ejecucion del proceso.\n");
 		exit(1);
 	}
 
-	log_info(logger, "Se establecio conexion con el File System.\n>> Tamanio value = %i\n", tamanio_value);
+	log_info(logger_estado, "Se realizo el handshake, obteniendo un tamanio value = %i", tamanio_value);
 
 }
 

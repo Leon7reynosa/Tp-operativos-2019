@@ -981,3 +981,589 @@
 [INFO] 13:17:27:841 requests/(9186:9272): Request de DROP recibida por el socket 11 !
 [INFO] 13:17:27:841 requests/(9186:9272): Request de DROP solicitada por el socket 11 !
 
+[INFO] 15:35:11:558 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:35:11:558 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:35:26:559 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:35:26:559 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:35:41:560 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:35:41:561 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:35:41:675 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:35:41:675 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:35:52:627 requests/(13951:14088): Request de CREATE recibida por el socket 11 !
+[INFO] 15:35:52:628 requests/(13951:14088): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 15:35:56:562 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:35:56:562 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:35:57:421 requests/(13951:14088): Request de INSERT recibida por el socket 11 !
+[INFO] 15:35:57:421 requests/(13951:14088): Request de INSERT terminada por el socket 11 !
+
+[INFO] 15:35:57:422 requests/(13951:14088): Request de INSERT recibida por el socket 11 !
+[INFO] 15:35:57:422 requests/(13951:14088): Request de INSERT terminada por el socket 11 !
+
+[INFO] 15:36:04:832 requests/(13951:14088): Request de SELECT recibida por el socket 11 !
+[INFO] 15:36:04:832 requests/(13951:14088): [REQUEST] Se encontro la key: 1
+[INFO] 15:36:04:833 requests/(13951:14088): [REQUEST] El value: Black
+
+[INFO] 15:36:04:833 requests/(13951:14088): [REQUEST] El timestamp: 1564770952
+
+[INFO] 15:36:04:833 requests/(13951:14088): Request de SELECT terminada por el socket 11 !
+
+[INFO] 15:36:11:563 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:36:11:564 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:36:12:769 requests/(13951:14088): Request de SELECT recibida por el socket 11 !
+[INFO] 15:36:12:769 requests/(13951:14088): [REQUEST] Se encontro la key: 1
+[INFO] 15:36:12:769 requests/(13951:14088): [REQUEST] El value: Black
+
+[INFO] 15:36:12:769 requests/(13951:14088): [REQUEST] El timestamp: 1564770952
+
+[INFO] 15:36:12:770 requests/(13951:14088): Request de SELECT terminada por el socket 11 !
+
+[INFO] 15:36:26:565 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:36:26:565 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:36:36:723 requests/(13951:14088): Request de CREATE recibida por el socket 11 !
+[INFO] 15:36:36:724 requests/(13951:14088): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 15:36:37:427 requests/(13951:14088): Request de INSERT recibida por el socket 11 !
+[INFO] 15:36:37:427 requests/(13951:14088): Request de INSERT terminada por el socket 11 !
+
+[INFO] 15:36:41:566 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:36:41:567 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:36:56:568 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:36:56:568 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:37:11:570 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:37:11:571 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:37:26:572 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:37:26:573 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:37:41:16 requests/(13951:14088): Request de SELECT recibida por el socket 11 !
+[INFO] 15:37:41:16 requests/(13951:14088): [REQUEST] Se encontro la key: 2
+[INFO] 15:37:41:16 requests/(13951:14088): [REQUEST] El value: Red
+
+[INFO] 15:37:41:16 requests/(13951:14088): [REQUEST] El timestamp: 1564770952
+
+[INFO] 15:37:41:17 requests/(13951:14088): Request de SELECT terminada por el socket 11 !
+
+[INFO] 15:37:41:574 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:37:41:575 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:37:53:464 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:37:53:464 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:37:56:575 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:37:56:576 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:37:56:663 requests/(13951:14088): Request de DROP recibida por el socket 11 !
+[INFO] 15:37:56:664 requests/(13951:14088): Request de DROP solicitada por el socket 11 !
+
+[INFO] 15:38:11:577 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:38:11:578 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:38:20:136 requests/(13951:14088): Request de SELECT recibida por el socket 11 !
+[INFO] 15:38:20:136 requests/(13951:14088): [REQUEST] Se encontro la key: 1
+[INFO] 15:38:20:136 requests/(13951:14088): [REQUEST] El value: Adidas
+
+[INFO] 15:38:20:136 requests/(13951:14088): [REQUEST] El timestamp: 1564770996
+
+[INFO] 15:38:20:136 requests/(13951:14088): Request de SELECT terminada por el socket 11 !
+
+[INFO] 15:38:25:87 requests/(13951:14088): Request de DROP recibida por el socket 11 !
+[INFO] 15:38:25:88 requests/(13951:14088): Request de DROP solicitada por el socket 11 !
+
+[INFO] 15:38:26:579 requests/(13951:14088): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:38:26:579 requests/(13951:14088): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:56:54:817 requests/(14749:14985): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:56:54:817 requests/(14749:14985): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:57:00:683 requests/(14749:14985): Request de CREATE recibida por el socket 11 !
+[INFO] 15:57:00:687 requests/(14749:14985): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 15:57:03:663 requests/(14749:14985): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:57:03:663 requests/(14749:14985): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 15:57:06:903 requests/(14749:14985): Request de INSERT recibida por el socket 11 !
+[INFO] 15:57:06:903 requests/(14749:14985): Request de INSERT terminada por el socket 11 !
+
+[INFO] 15:57:06:903 requests/(14749:14985): Request de INSERT recibida por el socket 11 !
+[INFO] 15:57:06:904 requests/(14749:14985): Request de INSERT terminada por el socket 11 !
+
+[INFO] 15:57:11:681 requests/(14749:14985): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 15:57:11:681 requests/(14749:14985): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:02:51:35 requests/(15062:15368): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:02:51:35 requests/(15062:15368): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:10:06:602 requests/(15746:15757): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:10:06:602 requests/(15746:15757): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:10:09:225 requests/(15746:15757): Request de DROP recibida por el socket 11 !
+[INFO] 16:10:09:226 requests/(15746:15757): Request de DROP solicitada por el socket 11 !
+
+[INFO] 16:12:18:367 requests/(15746:15757): Request de CREATE recibida por el socket 11 !
+[INFO] 16:12:18:369 requests/(15746:15757): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 16:12:18:371 requests/(15746:15757): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:12:18:372 requests/(15746:15757): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:13:01:214 requests/(15746:15757): Request de INSERT recibida por el socket 11 !
+[INFO] 16:13:01:215 requests/(15746:15757): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:13:01:216 requests/(15746:15757): Request de INSERT recibida por el socket 11 !
+[INFO] 16:13:01:216 requests/(15746:15757): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:14:35:591 requests/(15746:15757): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:14:35:592 requests/(15746:15757): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:16:00:49 requests/(15938:15950): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:16:00:51 requests/(15938:15950): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:16:02:809 requests/(15938:15950): Request de DROP recibida por el socket 11 !
+[INFO] 16:16:02:810 requests/(15938:15950): Request de DROP solicitada por el socket 11 !
+
+[INFO] 16:18:09:213 requests/(15938:15950): Request de CREATE recibida por el socket 11 !
+[INFO] 16:18:09:214 requests/(15938:15950): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 16:18:09:215 requests/(15938:15950): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:18:09:216 requests/(15938:15950): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:18:51:967 requests/(15938:15950): Request de INSERT recibida por el socket 11 !
+[INFO] 16:18:51:968 requests/(15938:15950): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:18:51:968 requests/(15938:15950): Request de INSERT recibida por el socket 11 !
+[INFO] 16:18:51:969 requests/(15938:15950): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:28:52:266 requests/(16477:16488): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:28:52:267 requests/(16477:16488): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:28:54:881 requests/(16477:16488): Request de DROP recibida por el socket 11 !
+[INFO] 16:28:54:882 requests/(16477:16488): Request de DROP solicitada por el socket 11 !
+
+[INFO] 16:29:00:398 requests/(16477:16488): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:29:00:400 requests/(16477:16488): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:29:01:4 requests/(16477:16488): Request de CREATE recibida por el socket 11 !
+[INFO] 16:29:01:5 requests/(16477:16488): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 16:29:34:362 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:29:34:364 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:29:45:411 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:29:45:411 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:29:46:672 requests/(16525:16534): Request de SELECT recibida por el socket 11 !
+[INFO] 16:29:46:672 requests/(16525:16534): No se encontro el dato, mando error
+[INFO] 16:29:46:672 requests/(16525:16534): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:29:50:455 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:29:50:456 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:29:53:376 requests/(16525:16534): Request de SELECT recibida por el socket 11 !
+[INFO] 16:29:53:376 requests/(16525:16534): No se encontro el dato, mando error
+[INFO] 16:29:53:376 requests/(16525:16534): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:30:00:413 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:30:00:415 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:30:02:63 requests/(16525:16534): Request de SELECT recibida por el socket 11 !
+[INFO] 16:30:02:64 requests/(16525:16534): No se encontro el dato, mando error
+[INFO] 16:30:02:64 requests/(16525:16534): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:30:04:551 requests/(16525:16534): Request de SELECT recibida por el socket 11 !
+[INFO] 16:30:04:551 requests/(16525:16534): No se encontro el dato, mando error
+[INFO] 16:30:04:552 requests/(16525:16534): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:30:15:62 requests/(16525:16534): Request de SELECT recibida por el socket 11 !
+[INFO] 16:30:15:64 requests/(16525:16534): No se encontro el dato, mando error
+[INFO] 16:30:15:64 requests/(16525:16534): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:30:15:416 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:30:15:416 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:30:25:382 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:30:25:384 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:30:30:418 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:30:30:418 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:30:45:420 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:30:45:424 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:31:00:425 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:31:00:426 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:31:08:141 requests/(16525:16534): Request de SELECT recibida por el socket 11 !
+[INFO] 16:31:08:141 requests/(16525:16534): No se encontro el dato, mando error
+[INFO] 16:31:08:141 requests/(16525:16534): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:31:15:427 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:31:15:427 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:31:30:429 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:31:30:429 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:31:37:213 requests/(16525:16534): Request de INSERT recibida por el socket 11 !
+[INFO] 16:31:37:215 requests/(16525:16534): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:31:43:356 requests/(16525:16534): Request de SELECT recibida por el socket 11 !
+[INFO] 16:31:43:356 requests/(16525:16534): [REQUEST] Se encontro la key: 1
+[INFO] 16:31:43:356 requests/(16525:16534): [REQUEST] El value: HOLAA
+
+[INFO] 16:31:43:356 requests/(16525:16534): [REQUEST] El timestamp: 1564774296
+
+[INFO] 16:31:43:357 requests/(16525:16534): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:31:45:431 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:31:45:431 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:31:59:187 requests/(16525:16534): Request de INSERT recibida por el socket 11 !
+[INFO] 16:31:59:188 requests/(16525:16534): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:32:00:432 requests/(16525:16534): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:32:00:433 requests/(16525:16534): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:32:13:208 requests/(16631:16642): Request de SELECT recibida por el socket 11 !
+[INFO] 16:32:13:209 requests/(16631:16642): [REQUEST] Se encontro la key: 2
+[INFO] 16:32:13:209 requests/(16631:16642): [REQUEST] El value: CHAAU
+
+[INFO] 16:32:13:209 requests/(16631:16642): [REQUEST] El timestamp: 2333
+
+[INFO] 16:32:13:220 requests/(16631:16642): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:32:15:434 requests/(16631:16642): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:32:15:435 requests/(16631:16642): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:32:16:90 requests/(16631:16642): Request de SELECT recibida por el socket 11 !
+[INFO] 16:32:16:91 requests/(16631:16642): [REQUEST] Se encontro la key: 1
+[INFO] 16:32:16:91 requests/(16631:16642): [REQUEST] El value: HOLAA
+
+[INFO] 16:32:16:91 requests/(16631:16642): [REQUEST] El timestamp: 1564774296
+
+[INFO] 16:32:16:91 requests/(16631:16642): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:32:30:436 requests/(16631:16642): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:32:30:437 requests/(16631:16642): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:32:31:273 requests/(16631:16642): Request de DROP recibida por el socket 11 !
+[INFO] 16:32:31:274 requests/(16631:16642): Request de DROP solicitada por el socket 11 !
+
+[INFO] 16:35:26:587 requests/(16727:16737): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:35:26:590 requests/(16727:16737): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:35:31:855 requests/(16727:16737): Request de CREATE recibida por el socket 11 !
+[INFO] 16:35:31:856 requests/(16727:16737): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 16:35:35:879 requests/(16727:16737): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:35:35:879 requests/(16727:16737): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:35:57:756 requests/(16767:16777): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:35:57:763 requests/(16767:16777): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:35:59:762 requests/(16767:16777): Request de SELECT recibida por el socket 11 !
+[INFO] 16:35:59:763 requests/(16767:16777): No se encontro el dato, mando error
+[INFO] 16:35:59:763 requests/(16767:16777): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:36:05:882 requests/(16767:16777): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:36:05:882 requests/(16767:16777): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:36:15:809 requests/(16767:16777): Request de INSERT recibida por el socket 11 !
+[INFO] 16:36:15:810 requests/(16767:16777): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:36:20:886 requests/(16767:16777): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:36:20:887 requests/(16767:16777): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:36:31:491 requests/(16792:16802): Request de SELECT recibida por el socket 11 !
+[INFO] 16:36:31:491 requests/(16792:16802): [REQUEST] Se encontro la key: 1
+[INFO] 16:36:31:491 requests/(16792:16802): [REQUEST] El value: HOLA
+
+[INFO] 16:36:31:491 requests/(16792:16802): [REQUEST] El timestamp: 1564774563
+
+[INFO] 16:36:31:492 requests/(16792:16802): Request de SELECT terminada por el socket 11 !
+
+[INFO] 16:36:35:9 requests/(16792:16802): Request de DROP recibida por el socket 11 !
+[INFO] 16:36:35:10 requests/(16792:16802): Request de DROP solicitada por el socket 11 !
+
+[INFO] 16:36:35:888 requests/(16792:16802): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:36:35:888 requests/(16792:16802): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:40:58:808 requests/(16885:16896): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:40:58:808 requests/(16885:16896): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:41:03:316 requests/(16885:16896): Request de CREATE recibida por el socket 11 !
+[INFO] 16:41:03:317 requests/(16885:16896): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 16:41:13:811 requests/(16885:16896): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:41:13:811 requests/(16885:16896): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:43:10:99 requests/(16984:16995): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:43:10:99 requests/(16984:16995): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:43:15:33 requests/(16984:16995): Request de DROP recibida por el socket 11 !
+[INFO] 16:43:15:34 requests/(16984:16995): Request de DROP solicitada por el socket 11 !
+
+[INFO] 16:43:19:347 requests/(16984:16995): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:43:19:347 requests/(16984:16995): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:43:25:103 requests/(16984:16995): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:43:25:104 requests/(16984:16995): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:43:26:52 requests/(16984:16995): Request de CREATE recibida por el socket 11 !
+[INFO] 16:43:26:53 requests/(16984:16995): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 16:49:23:682 requests/(17202:17215): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:49:23:682 requests/(17202:17215): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:49:30:757 requests/(17202:17215): Request de DROP recibida por el socket 11 !
+[INFO] 16:49:30:758 requests/(17202:17215): Request de DROP solicitada por el socket 11 !
+
+[INFO] 16:49:37:995 requests/(17202:17215): Request de CREATE recibida por el socket 11 !
+[INFO] 16:49:37:997 requests/(17202:17215): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 16:49:38:731 requests/(17202:17215): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:49:38:732 requests/(17202:17215): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:49:44:819 requests/(17202:17215): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:49:44:820 requests/(17202:17215): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:49:53:735 requests/(17202:17215): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 16:49:53:736 requests/(17202:17215): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 16:49:58:629 requests/(17202:17215): Request de INSERT recibida por el socket 11 !
+[INFO] 16:49:58:629 requests/(17202:17215): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:49:58:640 requests/(17202:17215): Request de INSERT recibida por el socket 11 !
+[INFO] 16:49:58:641 requests/(17202:17215): Request de INSERT terminada por el socket 11 !
+
+[INFO] 16:53:17:612 requests/(17283:17312): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 16:53:17:612 requests/(17283:17312): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 16:53:17:872 requests/(17283:17312): Request de CREATE recibida por el socket 12 !
+[ERROR] 16:53:17:872 requests/(17283:17312): Ya existe la tabla
+
+[INFO] 16:53:17:872 requests/(17283:17312): Fallo la Request CREATE
+
+[INFO] 16:53:23:809 requests/(17283:17312): Request de SELECT recibida por el socket 12 !
+[INFO] 16:53:23:809 requests/(17283:17312): [REQUEST] Se encontro la key: 1
+[INFO] 16:53:23:809 requests/(17283:17312): [REQUEST] El value: Black
+
+[INFO] 16:53:23:809 requests/(17283:17312): [REQUEST] El timestamp: 1564775378
+
+[INFO] 16:53:23:810 requests/(17283:17312): Request de SELECT terminada por el socket 12 !
+
+[INFO] 16:56:41:89 requests/(17283:17378): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 16:56:41:89 requests/(17283:17378): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 16:56:46:982 requests/(17283:17378): Request de SELECT recibida por el socket 13 !
+[INFO] 16:56:46:982 requests/(17283:17378): [REQUEST] Se encontro la key: 1
+[INFO] 16:56:46:982 requests/(17283:17378): [REQUEST] El value: Black
+
+[INFO] 16:56:46:982 requests/(17283:17378): [REQUEST] El timestamp: 1564775378
+
+[INFO] 16:56:46:982 requests/(17283:17378): Request de SELECT terminada por el socket 13 !
+
+[INFO] 16:56:50:409 requests/(17283:17378): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 16:56:50:410 requests/(17283:17378): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 16:56:56:182 requests/(17283:17378): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 16:56:56:182 requests/(17283:17378): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 16:57:09:497 requests/(17283:17378): Request de INSERT recibida por el socket 13 !
+[INFO] 16:57:09:497 requests/(17283:17378): Request de INSERT terminada por el socket 13 !
+
+[INFO] 16:57:11:187 requests/(17283:17378): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 16:57:11:188 requests/(17283:17378): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 16:57:26:198 requests/(17283:17378): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 16:57:26:198 requests/(17283:17378): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:09:40:969 requests/(17757:17778): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 17:09:40:970 requests/(17757:17778): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 17:09:50:693 requests/(17757:17778): Request de DROP recibida por el socket 11 !
+[INFO] 17:09:50:694 requests/(17757:17778): Request de DROP solicitada por el socket 11 !
+
+[INFO] 17:09:56:25 requests/(17757:17778): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 17:09:56:26 requests/(17757:17778): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 17:10:01:336 requests/(17757:17778): Request de CREATE recibida por el socket 11 !
+[INFO] 17:10:01:337 requests/(17757:17778): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 17:10:11:32 requests/(17757:17778): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 17:10:11:32 requests/(17757:17778): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 17:10:23:286 requests/(17757:17778): Request de INSERT recibida por el socket 11 !
+[INFO] 17:10:23:287 requests/(17757:17778): Request de INSERT terminada por el socket 11 !
+
+[INFO] 17:10:23:289 requests/(17757:17778): Request de INSERT recibida por el socket 11 !
+[INFO] 17:10:23:289 requests/(17757:17778): Request de INSERT terminada por el socket 11 !
+
+[INFO] 17:10:23:290 requests/(17757:17778): Request de INSERT recibida por el socket 11 !
+[INFO] 17:10:23:290 requests/(17757:17778): Request de INSERT terminada por el socket 11 !
+
+[INFO] 17:10:26:39 requests/(17757:17778): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 17:10:26:39 requests/(17757:17778): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 17:10:39:249 requests/(17757:17778): Request de INSERT recibida por el socket 11 !
+[INFO] 17:10:39:249 requests/(17757:17778): Request de INSERT terminada por el socket 11 !
+
+[INFO] 17:10:41:44 requests/(17757:17778): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 17:10:41:44 requests/(17757:17778): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 17:16:02:625 requests/(17757:17948): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 17:16:02:626 requests/(17757:17948): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 17:16:06:475 requests/(17757:17948): Request de DROP recibida por el socket 12 !
+[INFO] 17:16:06:476 requests/(17757:17948): Request de DROP solicitada por el socket 12 !
+
+[INFO] 17:16:09:895 requests/(17757:17948): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 17:16:09:895 requests/(17757:17948): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 17:16:24:899 requests/(17757:17948): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 17:16:24:899 requests/(17757:17948): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 17:16:32:493 requests/(17757:17948): Request de CREATE recibida por el socket 12 !
+[INFO] 17:16:32:494 requests/(17757:17948): Request de CREATE terminada correctamente por el socket 12 !
+
+[INFO] 17:16:39:903 requests/(17757:17948): Request de DESCRIBE recibida por el socket 12 !
+[INFO] 17:16:39:903 requests/(17757:17948): Request de DESCRIBE terminada por el socket 12 !
+
+[INFO] 17:16:40:826 requests/(17757:17948): Request de INSERT recibida por el socket 12 !
+[INFO] 17:16:40:826 requests/(17757:17948): Request de INSERT terminada por el socket 12 !
+
+[INFO] 17:16:40:829 requests/(17757:17948): Request de INSERT recibida por el socket 12 !
+[INFO] 17:16:40:829 requests/(17757:17948): Request de INSERT terminada por el socket 12 !
+
+[INFO] 17:16:47:676 requests/(17757:17948): Request de DROP recibida por el socket 12 !
+[INFO] 17:16:47:677 requests/(17757:17948): Request de DROP solicitada por el socket 12 !
+
+[INFO] 17:18:53:684 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:18:53:684 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:18:59:741 requests/(17757:18034): Request de CREATE recibida por el socket 13 !
+[INFO] 17:18:59:745 requests/(17757:18034): Request de CREATE terminada correctamente por el socket 13 !
+
+[INFO] 17:19:04:393 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:19:04:393 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:19:07:790 requests/(17757:18034): Request de INSERT recibida por el socket 13 !
+[INFO] 17:19:07:790 requests/(17757:18034): Request de INSERT terminada por el socket 13 !
+
+[INFO] 17:19:07:792 requests/(17757:18034): Request de INSERT recibida por el socket 13 !
+[INFO] 17:19:07:792 requests/(17757:18034): Request de INSERT terminada por el socket 13 !
+
+[INFO] 17:19:09:655 requests/(17757:18034): Request de DROP recibida por el socket 13 !
+[INFO] 17:19:09:656 requests/(17757:18034): Request de DROP solicitada por el socket 13 !
+
+[INFO] 17:19:19:413 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:19:19:413 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:19:28:954 requests/(17757:18034): Request de CREATE recibida por el socket 13 !
+[INFO] 17:19:28:955 requests/(17757:18034): Request de CREATE terminada correctamente por el socket 13 !
+
+[INFO] 17:19:34:417 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:19:34:418 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:19:42:222 requests/(17757:18034): Request de INSERT recibida por el socket 13 !
+[INFO] 17:19:42:222 requests/(17757:18034): Request de INSERT terminada por el socket 13 !
+
+[INFO] 17:19:49:425 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:19:49:425 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:19:50:234 requests/(17757:18034): Request de INSERT recibida por el socket 13 !
+[INFO] 17:19:50:234 requests/(17757:18034): Request de INSERT terminada por el socket 13 !
+
+[INFO] 17:20:00:993 requests/(17757:18034): Request de CREATE recibida por el socket 13 !
+[INFO] 17:20:00:994 requests/(17757:18034): Request de CREATE terminada correctamente por el socket 13 !
+
+[INFO] 17:20:04:429 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:20:04:430 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:20:04:568 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:20:04:569 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:20:07:623 requests/(17757:18034): Request de DROP recibida por el socket 13 !
+[INFO] 17:20:07:624 requests/(17757:18034): Request de DROP solicitada por el socket 13 !
+
+[INFO] 17:20:09:730 requests/(17757:18034): Request de DROP recibida por el socket 13 !
+[INFO] 17:20:09:731 requests/(17757:18034): Request de DROP solicitada por el socket 13 !
+
+[INFO] 17:20:11:763 requests/(17757:18034): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:20:11:763 requests/(17757:18034): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:23:09:978 requests/(18108:18177): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:23:09:978 requests/(18108:18177): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:23:15:247 requests/(18108:18177): Request de CREATE recibida por el socket 13 !
+[INFO] 17:23:15:248 requests/(18108:18177): Request de CREATE terminada correctamente por el socket 13 !
+
+[INFO] 17:23:18:482 requests/(18108:18177): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:23:18:483 requests/(18108:18177): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:23:26:906 requests/(18108:18177): Request de INSERT recibida por el socket 13 !
+[INFO] 17:23:26:907 requests/(18108:18177): Request de INSERT terminada por el socket 13 !
+
+[INFO] 17:23:26:913 requests/(18108:18177): Request de INSERT recibida por el socket 13 !
+[INFO] 17:23:26:914 requests/(18108:18177): Request de INSERT terminada por el socket 13 !
+
+[INFO] 17:23:28:928 requests/(18108:18177): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:23:28:929 requests/(18108:18177): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:23:33:123 requests/(18108:18177): Request de SELECT recibida por el socket 13 !
+[INFO] 17:23:33:124 requests/(18108:18177): [REQUEST] Se encontro la key: 2
+[INFO] 17:23:33:124 requests/(18108:18177): [REQUEST] El value: Red
+
+[INFO] 17:23:33:124 requests/(18108:18177): [REQUEST] El timestamp: 1564777395
+
+[INFO] 17:23:33:124 requests/(18108:18177): Request de SELECT terminada por el socket 13 !
+
+[INFO] 17:23:33:529 requests/(18108:18177): Request de DESCRIBE recibida por el socket 13 !
+[INFO] 17:23:33:529 requests/(18108:18177): Request de DESCRIBE terminada por el socket 13 !
+
+[INFO] 17:23:37:382 requests/(18108:18177): Request de DROP recibida por el socket 13 !
+[INFO] 17:23:37:383 requests/(18108:18177): Request de DROP solicitada por el socket 13 !
+
+[INFO] 17:30:53:620 requests/(18108:18374): Request de DESCRIBE recibida por el socket 14 !
+[INFO] 17:30:53:620 requests/(18108:18374): Request de DESCRIBE terminada por el socket 14 !
+
+[INFO] 17:30:59:903 requests/(18108:18374): Request de CREATE recibida por el socket 14 !
+[INFO] 17:30:59:904 requests/(18108:18374): Request de CREATE terminada correctamente por el socket 14 !
+
+[INFO] 17:31:02:475 requests/(18108:18374): Request de DESCRIBE recibida por el socket 14 !
+[INFO] 17:31:02:475 requests/(18108:18374): Request de DESCRIBE terminada por el socket 14 !
+
+[INFO] 17:31:07:916 requests/(18108:18374): Request de INSERT recibida por el socket 14 !
+[INFO] 17:31:07:916 requests/(18108:18374): Request de INSERT terminada por el socket 14 !
+
+[INFO] 17:31:07:917 requests/(18108:18374): Request de INSERT recibida por el socket 14 !
+[INFO] 17:31:07:917 requests/(18108:18374): Request de INSERT terminada por el socket 14 !
+
+[INFO] 17:31:12:633 requests/(18108:18374): Request de DROP recibida por el socket 14 !
+[INFO] 17:31:12:634 requests/(18108:18374): Request de DROP solicitada por el socket 14 !
+
+[INFO] 17:46:22:149 requests/(19022:19032): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 17:46:22:152 requests/(19022:19032): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 17:46:26:776 requests/(19022:19032): Request de CREATE recibida por el socket 11 !
+[INFO] 17:46:26:782 requests/(19022:19032): Request de CREATE terminada correctamente por el socket 11 !
+
+[INFO] 17:46:31:919 requests/(19022:19032): Request de INSERT recibida por el socket 11 !
+[INFO] 17:46:31:919 requests/(19022:19032): Request de INSERT terminada por el socket 11 !
+
+[INFO] 17:46:31:920 requests/(19022:19032): Request de INSERT recibida por el socket 11 !
+[INFO] 17:46:31:920 requests/(19022:19032): Request de INSERT terminada por el socket 11 !
+
+[INFO] 17:46:31:962 requests/(19022:19032): Request de DESCRIBE recibida por el socket 11 !
+[INFO] 17:46:31:962 requests/(19022:19032): Request de DESCRIBE terminada por el socket 11 !
+
+[INFO] 17:46:35:371 requests/(19022:19032): Request de DROP recibida por el socket 11 !
+[INFO] 17:46:35:371 requests/(19022:19032): Request de DROP solicitada por el socket 11 !
+

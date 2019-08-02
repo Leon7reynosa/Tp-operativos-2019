@@ -13,6 +13,8 @@ void desconectar_lissandra(void){
 
 	close(socket_lissandra);
 
+	log_info(logger_estado, "Se produjo una desconexion con lissandra");
+
 }
 
 bool comprobar_conexion_lissandra(char* ip_lissandra, int puerto_lissandra){
@@ -21,9 +23,13 @@ bool comprobar_conexion_lissandra(char* ip_lissandra, int puerto_lissandra){
 
 	if(!conexion_lissandra){
 
+		log_info(logger_estado, "No se posee una conexion con lissandra, nos intentamos reconectar");
+
 		socket_lissandra = conectar_servidor(ip_lissandra, puerto_lissandra);
 
 		if(socket_lissandra <= -1){
+
+			log_info(logger_estado, "No se pudo establecer la reconexion" );
 
 			conexion_lissandra = false;
 
@@ -34,6 +40,8 @@ bool comprobar_conexion_lissandra(char* ip_lissandra, int puerto_lissandra){
 			recv(socket_lissandra, &value_aux, sizeof(int), 0);
 
 			conexion_lissandra = true;
+
+			log_info(logger_estado, "Se reestablecio la conexion");
 
 		}
 
@@ -66,8 +74,9 @@ int conectar_servidor(char* ip, int puerto){
 
 	error_conexion = connect(socket_conexion,(struct sockaddr*)&their_addr,size_addr);
 
-	if(error_conexion == -1){
-//		perror("Fallo al conectar con el Servidor");
+	if(error_conexion <= -1){
+
+		perror("Fallo al conectar con el Servidor");
 
 		return error_conexion;
 	}
@@ -80,8 +89,9 @@ int conectar_servidor(char* ip, int puerto){
 		exit(1);
 	}
 
+
 	buffer[size] = '\0';
-	printf("%s",buffer);
+//	printf("%s",buffer);
 	free(buffer);
 
 	return socket_conexion;

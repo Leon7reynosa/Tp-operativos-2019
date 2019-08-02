@@ -62,6 +62,8 @@ insert decodificar_insert(int conexion){
 	free(key);
 	free(value);
 	free(timestamp);
+	free(size_tabla);
+	free(size_value);
 
 	return dato;
 

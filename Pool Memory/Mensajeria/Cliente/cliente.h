@@ -24,9 +24,13 @@
 #include<readline/history.h>
 #include<stdbool.h>
 
+#include<commons/log.h>
+
 int socket_lissandra;
 
 bool conexion_lissandra;
+
+t_log* logger_estado;
 
 int conectar_servidor(char* ip, int puerto);
 bool comprobar_conexion_lissandra(char* ip_lissandra, int puerto_lissandra);

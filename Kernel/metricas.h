@@ -37,6 +37,8 @@ void request_metrics(void);
 void mostrar_memory_load(void);
 int total_ejecuciones(void);
 void sumar_contador_memoria(memoria_t* memoria);
+void liberar_metricas(void);
+void liberar_metrica(metrica_t* metrica);
 void mostrar_metricas(metrica_t* metrica);
 int sumatoria_tiempos (t_list* lista_a_sumar);
 

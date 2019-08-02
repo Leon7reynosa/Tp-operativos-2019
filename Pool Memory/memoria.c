@@ -21,6 +21,11 @@ void liberar_memoria(void){
 	free(memoria->memoria_contigua);
 
 	free(memoria);
+
+	printf("Se libero la memoria principal\n");
+
+	log_info(logger_estado, "Se libero la memoria principal");
+
 }
 
 t_list* inicializar_paginas(){
@@ -66,7 +71,11 @@ void inicializar_memoria(int tamanio, int tamanio_value , int tamanio_dato){
 	memoria->tabla_gossiping = list_create();
 	inicializar_tabla_gossip();
 
-	log_info(logger, "Se inicializo correctamente la memoria.\n>> Tamanio de la memoria = %i -> Cantidad maxima de datos: %i \n", tamanio, memoria->cant_max_datos);
+	log_info(logger_estado, "Se inicializo la memoria con los siguientes atributos:");
+	log_info(logger_estado, "Tamanio de memoria: %i bytes", memoria->tamanio);
+	log_info(logger_estado, "Cantidad maxima de datos: %i", memoria->cant_max_datos);
+	log_info(logger_estado, "Numero de memoria: %i", memoria->numero_memoria);
+
 
 }
 
@@ -93,12 +102,20 @@ void inicializar_seeds(void){
 
 	Seed nueva_seed;
 
+	log_info(logger_estado, "Se guardan las siguientes seeds: ");
+
 	for(int i = 0; i < cantidad_ips; i++){
 
 		ip = list_get(ip_seeds, i);
 		puerto = list_get(puerto_seeds, i);
 
+		printf("Seed ip: %s y puerto %i", ip, *((int  *)puerto));
+
 		nueva_seed = crear_seed(0, ip, *((int *)puerto));
+
+		log_info(logger_estado, "IP: %s", nueva_seed->ip);
+
+		log_info(logger_estado, "PUERTO: %i", nueva_seed->puerto);
 
 		list_add(memoria->seed, nueva_seed);
 
@@ -148,6 +165,8 @@ void eliminar_segmentos(void){
 
 	list_clean_and_destroy_elements(memoria->tabla_segmentos, liberar_segmento);
 
+	log_info(logger_estado, "Se vacio la tabla de segmentos");
+
 }
 
 void sacar_segmento(Segmento segmento){
@@ -155,6 +174,8 @@ void sacar_segmento(Segmento segmento){
 	int index = list_get_index(memoria->tabla_segmentos, segmento);
 
 	list_remove(memoria->tabla_segmentos, index);
+
+	log_info(logger_estado, "Se elimina el segmento de la tabla %s, de la memoria", segmento->nombre_tabla);
 
 	liberar_segmento(segmento);
 
@@ -287,7 +308,6 @@ void realizar_journal(void){
 	//aca voy a tener todos los inserts a mandar
 	t_list* inserts = list_create();
 
-
 	void _crear_inserts(void* _segmento){
 
 		Segmento segmento = (Segmento)_segmento;
@@ -403,7 +423,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 	if(pagina_reemplazada == NULL){
 
-		log_info(logger, "La memoria esta FULL");
+		log_info(logger_estado, "La memoria esta en estado FULL");
 
 	}else{
 
@@ -415,7 +435,7 @@ Pagina realizar_algoritmo_reemplazo(void){
 
 		Dato dato_para_logg = decodificar_dato_de_memoria(pagina_reemplazada->referencia_memoria);
 
-		log_info(logger, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
+		log_info(logger_estado, "La pagina a reemplazar pertenecia a %s y tenia la key %i", segmento_modificado->nombre_tabla, dato_para_logg->key);
 
 		liberar_dato(dato_para_logg);
 	}
@@ -426,22 +446,25 @@ Pagina realizar_algoritmo_reemplazo(void){
 //en caso de realizar journal, vuelve a crear el segmento que le pases
 Pagina solicitar_pagina(char* nombre_tabla, Segmento* segmento){
 
-	log_info(logger, "Se solicita una nueva pagina");
+	log_info(logger_estado, "Se solicita una NUEVA PAGINA");
 
 	Pagina pagina_solicitada;
 
 	if(hay_pagina_libre(&pagina_solicitada)){
-		log_info(logger, "Hay una pagina libre para asignar.");
+		log_info(logger_estado, "Hay una PAGINA LIBRE para asignar.");
 
 	}else{
-		log_info(logger, "Estan todas las paginas ocupadas");
+
+		log_info(logger_estado, "Estan todas las PAGINAS OCUPADAS");
+
 		pagina_solicitada = realizar_algoritmo_reemplazo();
 
 		if(pagina_solicitada == NULL){
 
-			log_info(logger, "Realizo Journal para tener espacio disponible");
+			log_info(logger_estado, "Se realiza Journal para tener espacio disponible");
 
 			realizar_journal();
+
 			*segmento = agregar_segmento(nombre_tabla, memoria->tabla_segmentos);
 			pagina_solicitada = solicitar_pagina(nombre_tabla, segmento);
 		}
@@ -485,6 +508,8 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 				dato_recibido = crear_dato(dato_crudo->key, (char *) dato_crudo->value->buffer, dato_crudo->timestamp);
 
 				liberar_t_dato(dato_crudo);
+
+				log_info(logger, "Se recibio el dato desde el File System");
 			}
 
 		}
@@ -492,8 +517,10 @@ Dato pedir_dato_al_LFS(char* tabla, int key){
 
 	}else{
 
-		printf("Lissandra esta desconectada\n");
+		log_info(logger, "El File System no se encuentra conectado.");
 		//LISSANDRA NO ESTA CONECTADA
+
+		dato_recibido = NULL;
 
 	}
 

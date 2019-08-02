@@ -43,6 +43,11 @@ void trabajar_request(request nueva_request , int conexion){
 
 				enviar_dato(dato_a_enviar, conexion, estado);
 
+				log_info(logger, "Se encontro el dato con los siguientes parametros:");
+				log_info(logger, "Timestamp: %i", dato_select->timestamp);
+				log_info(logger, "Key: %i", dato_select->key);
+				log_info(logger, "Value: %s", dato_select->value);
+
 				liberar_t_dato(dato_a_enviar);
 
 				liberar_dato(dato_select);
@@ -63,6 +68,7 @@ void trabajar_request(request nueva_request , int conexion){
 			estado = SUCCESS;
 
 			enviar_estado(conexion, estado);
+
 
 			break;
 
@@ -118,11 +124,16 @@ void trabajar_request(request nueva_request , int conexion){
 
 			pthread_mutex_lock(&mutex_gossip);
 
-			log_info(logger, "Se realizar intercambio de tablas de gossiping");
+			log_info(logger, "Se recibio una request de GOSSIPING. Se realizara intercambio de tablas de gossiping");
 
-			printf("Pase el mutex gossip\n");
+			log_info(logger_gossip, "Se recibio una request de GOSSIPING");
 
 			intercambiar_datos( ((tabla_gossip_dto) nueva_request->tipo_request), conexion);
+
+			log_info(logger_gossip, "Se termino de realizar la request de GOSSIPING\n");
+
+			log_info(logger, "Se termino de realizar la request de GOSSIPING");
+
 
 			pthread_mutex_unlock(&mutex_gossip);
 
@@ -133,7 +144,13 @@ void trabajar_request(request nueva_request , int conexion){
 			printf("--JOURNAL--\n");
 
 			pthread_mutex_lock(&mutex_journal);
+
+			log_info(logger, "Se realizara un JOURNAL");
+
 			realizar_journal();
+
+			log_info(logger, "Se termino de realizar el JOURNAL");
+
 			pthread_mutex_unlock(&mutex_journal);
 
 			break;
@@ -149,23 +166,20 @@ void trabajar_request(request nueva_request , int conexion){
 
 Dato request_select(select_t dato){
 
-	printf("hola\n");
+	log_info(logger, "Se realizara un SELECT con los siguientes parametros:");
 
-	log_info(logger, "Se realizara un SELECT");
+	log_info(logger, "Tabla: %s", (char *)(dato->tabla->buffer));
+	log_info(logger, "Key: %i", dato->key);
 
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
 	Dato dato_encontrado;
 
-	printf("chaau\n");
-
 	pthread_mutex_lock(&mutex_journal);
-
-	printf("llegue aca\n");
 
 	if(existe_segmento(dato->tabla->buffer, &segmento_tabla)){
 
-		log_info(logger, "Existe un segmento para %s", (char*) dato->tabla->buffer);
+		log_info(logger, "Existe un segmento para la tabla %s", (char*) dato->tabla->buffer);
 
 		if(existe_pagina(segmento_tabla, dato->key, &pagina_encontrada)){
 
@@ -190,11 +204,13 @@ Dato request_select(select_t dato){
 
 			}
 			else{
+
 				log_info(logger, "Key encontrada en el File System");
 
 				pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
 
 				agregar_pagina(segmento_tabla, pagina_encontrada);
+
 				actualizar_pagina(pagina_encontrada, dato_lfs);
 
 				liberar_dato(dato_lfs);
@@ -221,33 +237,34 @@ Dato request_select(select_t dato){
 			dato_encontrado = NULL;
 
 		}else{
-
-			printf("alo\n");
 			pagina_encontrada = solicitar_pagina((char*)dato->tabla->buffer, &segmento_tabla);
-
-			printf("fue aca\n");
 
 			agregar_pagina(segmento_tabla, pagina_encontrada);
 
-			printf("fue aca\n");
 			actualizar_pagina(pagina_encontrada, dato_lfs);
-			printf("fue aca\n");
+
 			liberar_dato(dato_lfs);
-			printf("fue aca\n");
+
 			dato_encontrado = decodificar_dato_de_memoria(pagina_encontrada->referencia_memoria); //agrego esto y no trabajo con dato_lfs para hacer siempre
-			printf("fue aca\n");															 //lo mismo
+
 //			mostrar_datos(pagina_encontrada);
 		}
 
 	}
 	pthread_mutex_unlock(&mutex_journal);
 
+	log_info(logger, "Se termino de realizar el SELECT");
+
 	return dato_encontrado;
 }
 
 estado_request request_insert(insert dato){
 
-	log_info(logger, "Se realizara un INSERT");
+	log_info(logger, "Se realizara un INSERT con los siguientes parametros");
+
+	log_info(logger, "Tabla: %s",(char *)(dato->tabla->buffer));
+	log_info(logger, "Key: %i", dato->key);
+	log_info(logger, "Value: %s", (char *)(dato->value->buffer));
 
 	Segmento segmento_tabla;
 	Pagina pagina_encontrada;
@@ -268,7 +285,7 @@ estado_request request_insert(insert dato){
 		dato->timestamp = timestamp;
 	}
 
-//	printf("EN request_insert tabla: %s\n" , dato->tabla->buffer);
+	log_info(logger, "Timestamp: %i", dato->timestamp);
 
 	dato_insert = crear_dato(dato->key, (char *)dato->value->buffer, dato->timestamp );
 
@@ -333,13 +350,21 @@ estado_request request_insert(insert dato){
 
 	liberar_dato(dato_insert);
 
+	log_info(logger, "Se termino de realizar el INSERT");
+
 	return SUCCESS;
 }
 
 
 estado_request request_create(create dato_create){
 
-//	log_info(logger, "Se realizara un CREATE");
+	log_info(logger, "Se realizara un CREATE con los siguientes parametros: ");
+
+	log_info(logger, "Tabla: %s", (char *)(dato_create->tabla->buffer));
+	log_info(logger, "Consistencia: %s",  (char *)(dato_create->consistencia->buffer));
+	log_info(logger, "Cantidad de particiones: %i", dato_create->numero_particiones);
+	log_info(logger, "Tiempo de compactacion: %i", dato_create->compactacion);
+
 
 	request nuevo_create = crear_request(CREATE, dato_create);
 
@@ -409,7 +434,6 @@ estado_request request_create(create dato_create){
 
 	pthread_mutex_unlock(&mutex_journal);
 
-
 	free(nuevo_create);
 
 	return estado;
@@ -419,7 +443,17 @@ estado_request request_create(create dato_create){
 
 t_list* request_describe(describe_t dato_describe){
 
-	log_info(logger, "Se realizara un DESCRIBE %s", dato_describe->global ? "GLOBAL" : "DE TABLA: %s", dato_describe->global ? "" : (char *)dato_describe->tabla->buffer );
+	if(dato_describe->global){
+
+		log_info(logger, "Se realizara un DESCRIBE GLOBAL");
+
+	}else{
+
+		log_info(logger, "Se realizara un DESCRIBE de la TABLA %s", (char *)dato_describe->tabla->buffer);
+
+	}
+
+
 
 	request nuevo_describe = crear_request(DESCRIBE, dato_describe);
 
@@ -456,11 +490,24 @@ t_list* request_describe(describe_t dato_describe){
 
 		log_info(logger, "Lissandra no esta conectada");
 
+		datos_describe = NULL;
+
 	}
 
 	pthread_mutex_unlock(&mutex_journal);
 
 	free(nuevo_describe);
+
+	if(dato_describe->global){
+
+		log_info(logger, "Se termino de realizar el DESCRIBE GLOBAL");
+
+
+	}else{
+
+		log_info(logger, "Se termino de realizar el DESCRIBE de la TABLA %s", (char *)dato_describe->tabla->buffer);
+
+	}
 
 	return datos_describe;
 
@@ -468,7 +515,7 @@ t_list* request_describe(describe_t dato_describe){
 
 estado_request request_drop(Drop datos_drop){
 
-//	log_info(logger, "Se realizara un DROP de tabla: %s", (char *) datos_drop->tabla->buffer);
+	log_info(logger, "Se realizara un DROP de tabla: %s", (char *) datos_drop->tabla->buffer);
 
 	request request_drop = crear_request(DROP, datos_drop);
 
@@ -539,6 +586,8 @@ estado_request request_drop(Drop datos_drop){
 
 	free(request_drop);
 
+
+	log_info(logger, "Se termino de realizar el DROP");
 
 	return estado;
 }

@@ -12,6 +12,7 @@
 #include<stdlib.h>
 #include"pagina.h"
 #include<commons/collections/list.h>
+#include"Mensajeria/logger.h"
 
 struct SegmentoEstructura{
 
