@@ -26,6 +26,49 @@ void* planificador(t_queue* cola_exec[]){
 	return NULL;
 
 }
+///////////////////////////////////////////////////////////////////////
+
+void mostrar_cola_final_exit(){
+
+	printf("\n\nCOLA EXIT AL FINAL DEL PROGRAMA: \ņ");
+
+	int contador_consola = 0;
+
+	printf("size: %d\n" , queue_size(cola_exit));
+
+
+	for(int i = 0; i < queue_size(cola_exit) ; i++){
+
+		t_scripts* script = (t_scripts*) queue_pop(cola_exit);
+
+		if(string_equals_ignore_case(script->path_lql , "consola")){
+
+			contador_consola++;
+
+		}else{
+
+			printf("\nNombre Script: %s\n", script->path_lql);
+			printf("Lineas restantes: %d\n" , list_size(script->cola_requests) );
+
+		}
+
+		liberar_script(script);
+	}
+
+	printf("\nLINEAS POR CONSOLA: %d\n" , contador_consola);
+
+
+}
+
+//////////////////////////////////////////////////////////////////////////
+
+void liberar_script(t_scripts* script){
+
+	free(script->path_lql);
+	queue_destroy(script->cola_requests);
+	free(script);
+
+}
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -204,7 +247,11 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
+		pthread_rwlock_wrlock(&semaforo_cola_ready);
+
 		t_scripts* siguiente_script = (t_scripts*)queue_pop(cola_ready);
+
+		pthread_rwlock_unlock(&semaforo_cola_ready);
 
 		cola_exec = siguiente_script->cola_requests;
 
@@ -213,20 +260,24 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		pthread_rwlock_rdlock(&semaforo_quantum);
 
+		printf("\n====================Se Ejecutara el ARCHIVO %s====================\n" , siguiente_script->path_lql);
+
 		while( i < quantum && !queue_is_empty(cola_exec)){
 
 
 			char* request = (char*)queue_pop(cola_exec);
 
-
-
 			if(!ejecutar_request(request )){
 
 				log_error(logger_kernel , "FALLO al ejecutar la REQUEST:  %s.", request);
 
+				log_error(logger_kernel, "SCRIPT movida a COLA DE EXIT");
+
 				printf("\n>NO se seguira EJECTUANDO el SCRIPT\n");
 
 				queue_push(cola_exit, siguiente_script);
+
+				printf("\n>Script movido a COLA DE EXIT\n");
 
 				queue_clean(cola_exec);  //agrego esto no se si esta bien
 
@@ -238,14 +289,15 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			}
 
-			log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
+
+			//log_info(logger_kernel , ">>FIN de la REQUEST<<\n"); // ME ROMPE EN ESTE LOG , QUE SE VAYA A CAGAR
 
 			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
 				 //hay que inicializar las conexiones
 				 //deberia ahora recibir la operacion
 
-			free(request);
+			free(request);  //HAY QUE SACARLO
 			i++;
 
 		}
@@ -256,6 +308,14 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			queue_push(cola_exit, siguiente_script);
 
+			log_info(logger_kernel, "SCRIPT movida a COLA DE EXIT");
+
+			printf("\n>Script movido a COLA DE EXIT\n");
+
+			printf("\n==================Fin de Ejecucion del ARCHIVO %s===================\n" , siguiente_script->path_lql);
+
+
+
 			//menu();
 
 		}else{
@@ -264,7 +324,11 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			printf("\n>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
 
+			pthread_rwlock_wrlock(&semaforo_cola_ready);
+
 			queue_push(cola_ready, siguiente_script);
+
+			pthread_rwlock_unlock(&semaforo_cola_ready);
 
 			sem_post(&semaforo_ready);
 

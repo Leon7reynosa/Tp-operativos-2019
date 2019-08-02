@@ -37,6 +37,8 @@ int main (int argc , char* argv[]){
 
 	inicializar_semaforos_config();
 
+	inicializar_semaforos();
+
 	inicializar_tabla_gossiping();
 
 	inicializar_registro_tabla();
@@ -48,8 +50,6 @@ int main (int argc , char* argv[]){
 	//creacion_del_config();
 
 	obtener_datos_config();
-
-	printf("ya agarre el config-> multiprocesamiento:  %d\n" , grado_multiprocesamiento);
 
 	memoria_principal = crear_memoria_t(ip_memoria , puerto_memoria,  numero_memoria_seed); //si pasa pasa, modioficarlo en el config
 
@@ -103,6 +103,7 @@ int main (int argc , char* argv[]){
 
 	cancelar_hilos_execute();
 
+
 	pthread_cancel(hilo_inotify);
 
 	pthread_cancel(hilo_metrics);
@@ -111,13 +112,41 @@ int main (int argc , char* argv[]){
 
 	pthread_cancel(hilo_refresh_metadata);
 
-	pthread_cancel(hilo_planificador);
+	pthread_cancel(hilo_planificador);  //me tira mal creeo
+
+	mostrar_cola_final_exit();
 
 	liberar_inotify(argumento_inotify);
 
 	destruir_semaforos();
 
+//	for(int j = 0; j < grado_multiprocesamiento ; j++){
+//
+//		queue_destroy_and_destroy_elements(colas_exec[j] , liberar_script);
+//
+//	}
+
+	liberar_todo();
+
 	return EXIT_SUCCESS;
+}
+
+void inicializar_semaforos(){
+
+	pthread_rwlock_init(&semaforo_cola_ready , NULL);
+
+}
+
+
+void liberar_todo(){
+
+	queue_destroy_and_destroy_elements(cola_new, free);
+	queue_clean_and_destroy_elements(cola_ready, liberar_script);
+	queue_clean_and_destroy_elements(cola_exit, liberar_script);
+
+	free(punto_montaje);
+	free(ip_memoria);
+
 }
 
 void destruir_semaforos(){

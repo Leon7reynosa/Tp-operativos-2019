@@ -260,10 +260,18 @@ void crear_metadata(char* nombre_tabla, char* consistencia, int particion, time_
 	char* tiempo_compactacionAux;
 	char* pathMetadata = obtener_path_metadata_de_tabla(nombre_tabla);
 
+	printf("path: %s\n" , pathMetadata);
+
 	particionAux = string_itoa(particion);
 	tiempo_compactacionAux = string_itoa(tiempo_Compactacion);
 
 	FILE* archivo_metadata = fopen(pathMetadata, "wb+");
+
+	if(archivo_metadata == NULL){
+
+		printf("hiola\n");
+	}
+
 	fclose(archivo_metadata);
 
 	metadata_config = config_create(pathMetadata);

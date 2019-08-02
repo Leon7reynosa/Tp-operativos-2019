@@ -25,26 +25,36 @@ t_dato* crear_t_dato(u_int16_t key, time_t timestamp , char* value){
 
 }
 
-bool es_un_numero(char* numero){
+bool es_un_numero(char* numero_principal){
 
 	int i = 0;
 
-	if(numero == NULL){
+
+
+	if(numero_principal == NULL){
 
 		return false;
 	}
 
-	string_trim_left(&numero);
-
-	if(string_equals_ignore_case(numero , "\n") || string_is_empty(numero)){
+	if(string_equals_ignore_case(numero_principal , "\n") || string_is_empty(numero_principal)){
 
 		return false ;
 
 	}
 
+	char* numero = malloc(strlen(numero_principal) + 1);
+	memcpy(numero, numero_principal , strlen(numero_principal ) +1);
+
+	string_trim(&numero);
+
 	while( numero[i] != '\0' ){
 
+		if(numero[i] == '\n'){
+		}
+
 		if( !isdigit(numero[i]) ){
+
+			free(numero);
 
 			return false;
 
@@ -53,6 +63,7 @@ bool es_un_numero(char* numero){
 		i++;
 	}
 
+	free(numero);
 
 	return true;
 }

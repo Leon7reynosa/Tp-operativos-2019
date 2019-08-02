@@ -535,6 +535,16 @@ void actualizar_metadata(t_list* datos_describe){
 
 }
 
+void sacar_de_registro_tabla(char* nombre_tabla){
+
+	pthread_rwlock_wrlock(&semaforo_registro_tabla);
+
+	dictionary_remove_and_destroy(registro_tabla, nombre_tabla, liberar_metadata);
+
+	pthread_rwlock_unlock(&semaforo_registro_tabla);
+
+}
+
 
 void agregar_metadata_a_registro_tabla(Metadata metadata_guardar){
 

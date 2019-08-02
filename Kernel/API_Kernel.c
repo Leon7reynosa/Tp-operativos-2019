@@ -46,18 +46,13 @@ int ejecutar_request(char* request_lql){
 
 			if(obtener_parametros_select(request_lql, &nombre_tabla, &key)){
 
-				printf("[SELECT] CREO EL DATO\n");
 				select_t select_enviar = crear_dato_select(nombre_tabla, key);
-
-				printf("[SELECT] SELECCIONO LA MEMORIA\n");
 
 				memoria_utilizada = seleccionar_memoria_consistencia(SELECT, select_enviar);
 
-				printf("[SELECT] SELECCIONE LA MEMORIA\n");
-
 				if(memoria_utilizada == NULL){
 
-					printf("[SELECT] NO HAY MEMORIAS\n");
+					free(nombre_tabla);
 
 					return 0;
 
@@ -94,6 +89,8 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					free(nombre_tabla);
+
 					return 0;
 
 				}
@@ -116,6 +113,8 @@ int ejecutar_request(char* request_lql){
 
 					sumar_contador_memoria(memoria_utilizada);
 
+					free(nombre_tabla);
+
 					return 1;
 
 				}
@@ -130,6 +129,8 @@ int ejecutar_request(char* request_lql){
 
 				liberar_dato_select(select_enviar);
 
+				free(nombre_tabla);
+
 				return 1;
 			}
 			break;
@@ -143,7 +144,7 @@ int ejecutar_request(char* request_lql){
 
 				if( !existe_en_registro_tabla(nombre_tabla)){
 
-					printf("\n>No eciste la TABLA %s en el registro de tabla\n", nombre_tabla);
+					printf("\n>No existe la TABLA %s en el registro de tabla\n", nombre_tabla);
 
 					log_error(logger_kernel , "-La Tabla %s no existe en el registro de tablas.-" , nombre_tabla);
 
@@ -166,6 +167,8 @@ int ejecutar_request(char* request_lql){
 					free(nombre_tabla);
 
 					free(value);
+
+					liberar_dato_insert(insert_enviar);
 
 					return 0;
 				}
@@ -190,9 +193,12 @@ int ejecutar_request(char* request_lql){
 
 					free(value);
 
+					liberar_dato_insert(insert_enviar);
+
 					return 0;
 
 				}
+
 
 				if(recibir_estado_request(memoria_utilizada) == ERROR){
 
@@ -206,6 +212,8 @@ int ejecutar_request(char* request_lql){
 
 					free(value);
 
+					liberar_dato_insert(insert_enviar);
+
 					return 0;
 
 				}
@@ -214,15 +222,16 @@ int ejecutar_request(char* request_lql){
 
 				pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
-				tiempo_fin_ejecucion_request = time(NULL) - tiempo_inicio_ejecucion_request;
+				tiempo_fin_ejecucion_request = time(NULL) - tiempo_inicio_ejecucion_request; //ESTA PARA EL ORTO EL TIEMPO NOO SE QUE ONDA
 
 				agregar_a_metrica(INSERT, insert_enviar , tiempo_fin_ejecucion_request);
 
-				liberar_dato_insert(insert_enviar);
 
-				free(nombre_tabla);
+				free(nombre_tabla); //NO SE QUE MIERDA PASA CON LA TABLA
 
 				free(value);
+
+				liberar_dato_insert(insert_enviar); // LO SACO POR UQE ROMPE SINO Y NO ENCUENTRO DONDE, ES EN AGREGAR METRICAS PERO NO SE POR QUE
 
 				return 1;
 			}
@@ -243,6 +252,8 @@ int ejecutar_request(char* request_lql){
 					free(consistencia);
 
 					free(nombre_tabla);
+
+					liberar_dato_create(create_enviar);
 
 					return 0;
 				}
@@ -265,6 +276,8 @@ int ejecutar_request(char* request_lql){
 
 					free(nombre_tabla);
 
+					liberar_dato_create(create_enviar);
+
 					return 0;
 
 				}
@@ -278,6 +291,8 @@ int ejecutar_request(char* request_lql){
 					free(consistencia);
 
 					free(nombre_tabla);
+
+					liberar_dato_create(create_enviar);
 
 					return 0;
 
@@ -294,6 +309,7 @@ int ejecutar_request(char* request_lql){
 
 				free(nombre_tabla);
 
+				liberar_dato_create(create_enviar);
 
 				return 1;
 			}
@@ -315,6 +331,10 @@ int ejecutar_request(char* request_lql){
 
 				if(memoria_utilizada == NULL){
 
+					liberar_dato_describe(describe_enviar);
+
+					free(nombre_tabla);
+
 					return 0;
 
 				}
@@ -335,6 +355,10 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					liberar_dato_describe(describe_enviar);
+
+					free(nombre_tabla);
+
 					return 0;
 
 				}
@@ -349,6 +373,8 @@ int ejecutar_request(char* request_lql){
 				memoria_utilizada = tomar_memoria_al_azar();
 
 				if(memoria_utilizada == NULL){
+
+					liberar_dato_describe(describe_enviar);
 
 					return 0;
 
@@ -368,12 +394,17 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
+					liberar_dato_describe(describe_enviar);
+
 					return 0;
 
 				}
 
 
 			}else{
+
+				liberar_dato_describe(describe_enviar);
+
 				return 0;
 			}
 
@@ -388,6 +419,8 @@ int ejecutar_request(char* request_lql){
 				log_error(logger_kernel, "-Fallo la request DESCRIBE.-");
 
 				list_destroy(lista_describe);
+
+				liberar_dato_describe(describe_enviar);
 
 				return 1;
 
@@ -405,6 +438,8 @@ int ejecutar_request(char* request_lql){
 			}
 			list_destroy(lista_describe);
 
+			liberar_dato_describe(describe_enviar);
+
 			return 1;
 
 		case ADD:
@@ -421,8 +456,6 @@ int ejecutar_request(char* request_lql){
 			}
 
 			printf("\n>La REQUEST ADD FALLO.-");
-
-			free(consistencia);
 
 			break;
 
@@ -462,6 +495,10 @@ int ejecutar_request(char* request_lql){
 
 					log_error( logger_kernel, "-La Tabla %s No existe en el registro de tablas.-" , nombre_tabla);
 
+					liberar_drop(drop_enviar);
+
+					free(nombre_tabla);
+
 					return 0;
 
 				}
@@ -470,6 +507,11 @@ int ejecutar_request(char* request_lql){
 				memoria_utilizada = seleccionar_memoria_consistencia(DROP , drop_enviar);
 
 				if(memoria_utilizada == NULL){
+
+					liberar_drop(drop_enviar);
+
+					free(nombre_tabla);
+
 
 					return 0;
 
@@ -489,7 +531,10 @@ int ejecutar_request(char* request_lql){
 
 					remover_memoria_de_consistencia(memoria_utilizada);
 
-					//liberar_drop(drop_enviar);
+					liberar_drop(drop_enviar);
+
+					free(nombre_tabla);
+
 
 					return 0;
 
@@ -502,6 +547,11 @@ int ejecutar_request(char* request_lql){
 
 					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
+					liberar_drop(drop_enviar);
+
+					free(nombre_tabla);
+
+
 					return 0; //esto no se si esta bien
 
 				}else{
@@ -511,12 +561,14 @@ int ejecutar_request(char* request_lql){
 				}
 
 				pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
-
-				remover_tabla_de_registro(nombre_tabla);
-
 				//liberar_drop(drop_enviar);
 
-				//sacar del registro de tablas
+				sacar_de_registro_tabla(nombre_tabla);
+
+				liberar_drop(drop_enviar);
+
+				free(nombre_tabla);
+
 
 				return 1;
 			}
@@ -630,6 +682,7 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 	char** auxiliar;
 	char** parametros;
 	char* comillas = "\"";
+	//int numero;
 
 	auxiliar = string_split(linea_request, comillas  );
 
@@ -695,20 +748,22 @@ int obtener_parametros_insert(char* linea_request, char** nombre_tabla, u_int16_
 
 	*key = atoi(parametros[2]);
 
-	if( !es_un_numero(auxiliar[2]) ){
 
-		printf("ahora el timestamp esta en -1;");
+
+//	char* auxilio = malloc(strlen(auxiliar[2]) + 1);
+//	memcpy(auxilio, auxiliar[2] , strlen(auxiliar[2] ) +1);
+
+	if( !es_un_numero( auxiliar[2] ) ){
 
 		*timestamp = -1;
 
 	}else{
 
-		printf("no era NULL, era: %s\n" , auxiliar[2]);
-
+		string_trim(&auxiliar[2]);
 		*timestamp = atoi(auxiliar[2]);
 
-	}
 
+	}
 
 	liberar_puntero_doble(parametros);
 

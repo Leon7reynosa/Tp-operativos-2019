@@ -1,0 +1,1884 @@
+[INFO] 02:09:38:43 compactador/(30854:30906): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:09:38:48 compactador/(30854:30906): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/MARCAS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/MARCAS/0.tmpc"
+[INFO] 02:09:38:64 compactador/(30854:30906): Obtengo la metadata
+[INFO] 02:09:38:75 compactador/(30854:30906): Los datos finales
+[INFO] 02:09:38:80 compactador/(30854:30906): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:09:38:82 compactador/(30854:30906): Particion 1 -> bloque: 5, esta vacio
+[INFO] 02:09:38:85 compactador/(30854:30906): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:09:38:86 compactador/(30854:30906): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:09:38:88 compactador/(30854:30906): Obtengo los datos de los temporales
+[INFO] 02:09:38:97 compactador/(30854:30906): Particion 0 -> bloque: 9, tiene = 1564722518;1;Adidas
+
+[INFO] 02:09:38:157 compactador/(30854:30906): Se bloqueo la tabla MARCAS por 1564722578 segundos
+[INFO] 02:09:38:158 compactador/(30854:30906): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 02:16:19:848 compactador/(31104:31116): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:16:19:853 compactador/(31104:31116): Obtengo la metadata
+[INFO] 02:16:19:856 compactador/(31104:31116): Los datos finales
+[INFO] 02:16:19:864 compactador/(31104:31116): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:16:19:868 compactador/(31104:31116): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 02:16:19:871 compactador/(31104:31116): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:16:19:878 compactador/(31104:31116): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:16:19:880 compactador/(31104:31116): Obtengo los datos de los temporales
+[INFO] 02:16:19:992 compactador/(31104:31116): Se bloqueo la tabla MARCAS por 1564722979 segundos
+[INFO] 02:16:19:995 compactador/(31104:31116): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 02:54:36:433 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:54:36:433 compactador/(32108:32112): Obtengo la metadata
+[INFO] 02:54:36:433 compactador/(32108:32112): Los datos finales
+[INFO] 02:54:36:433 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:54:36:433 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 02:54:36:433 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:54:36:434 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:54:36:434 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 02:54:36:435 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725276 segundos
+[INFO] 02:54:36:435 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 02:55:36:437 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:55:36:437 compactador/(32108:32112): Obtengo la metadata
+[INFO] 02:55:36:437 compactador/(32108:32112): Los datos finales
+[INFO] 02:55:36:437 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:55:36:437 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 02:55:36:437 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:55:36:437 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:55:36:437 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 02:55:36:439 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725336 segundos
+[INFO] 02:55:36:439 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 02:56:36:439 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:56:36:439 compactador/(32108:32112): Obtengo la metadata
+[INFO] 02:56:36:439 compactador/(32108:32112): Los datos finales
+[INFO] 02:56:36:439 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:56:36:439 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 02:56:36:439 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:56:36:440 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:56:36:440 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 02:56:36:441 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725396 segundos
+[INFO] 02:56:36:441 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 02:57:36:442 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:57:36:442 compactador/(32108:32112): Obtengo la metadata
+[INFO] 02:57:36:442 compactador/(32108:32112): Los datos finales
+[INFO] 02:57:36:442 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:57:36:442 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 02:57:36:442 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:57:36:442 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:57:36:442 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 02:57:36:444 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725456 segundos
+[INFO] 02:57:36:445 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 02:58:36:446 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:58:36:446 compactador/(32108:32112): Obtengo la metadata
+[INFO] 02:58:36:446 compactador/(32108:32112): Los datos finales
+[INFO] 02:58:36:446 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:58:36:446 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 02:58:36:446 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:58:36:446 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:58:36:446 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 02:58:36:448 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725516 segundos
+[INFO] 02:58:36:448 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 02:59:36:448 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 02:59:36:448 compactador/(32108:32112): Obtengo la metadata
+[INFO] 02:59:36:448 compactador/(32108:32112): Los datos finales
+[INFO] 02:59:36:448 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 02:59:36:448 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 02:59:36:448 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 02:59:36:449 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 02:59:36:449 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 02:59:36:450 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725576 segundos
+[INFO] 02:59:36:450 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:00:36:453 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:00:36:453 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:00:36:453 compactador/(32108:32112): Los datos finales
+[INFO] 03:00:36:453 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:00:36:453 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:00:36:453 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:00:36:453 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:00:36:453 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:00:36:459 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725636 segundos
+[INFO] 03:00:36:459 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:00:47:455 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:00:47:455 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:00:47:456 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:00:47:456 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:00:47:456 compactador/(32108:32246): Los datos finales
+[INFO] 03:00:47:456 compactador/(32108:32246): Particion 0 -> bloque: 0, esta vacio
+[INFO] 03:00:47:456 compactador/(32108:32246): Particion 1 -> bloque: 1, esta vacio
+[INFO] 03:00:47:456 compactador/(32108:32246): Particion 2 -> bloque: 2, esta vacio
+[INFO] 03:00:47:456 compactador/(32108:32246): Particion 3 -> bloque: 3, esta vacio
+[INFO] 03:00:47:456 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:00:47:456 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 1564725347;1;Blue
+1564725347;2;Red
+1564725347;1;Black
+
+[INFO] 03:00:47:456 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 1564725618;4;HOLLA
+
+[INFO] 03:00:47:458 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564725647 segundos
+[INFO] 03:00:47:458 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:01:36:460 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:01:36:460 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:01:36:460 compactador/(32108:32112): Los datos finales
+[INFO] 03:01:36:460 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:01:36:460 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:01:36:460 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:01:36:460 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:01:36:460 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:01:36:511 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725696 segundos
+[INFO] 03:01:36:511 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:02:36:511 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:02:36:511 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:02:36:511 compactador/(32108:32112): Los datos finales
+[INFO] 03:02:36:511 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:02:36:511 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:02:36:511 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:02:36:511 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:02:36:511 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:02:36:513 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725756 segundos
+[INFO] 03:02:36:513 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:03:36:514 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:03:36:514 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:03:36:514 compactador/(32108:32112): Los datos finales
+[INFO] 03:03:36:514 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:03:36:514 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:03:36:514 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:03:36:514 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:03:36:514 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:03:36:516 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725816 segundos
+[INFO] 03:03:36:516 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:04:36:516 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:04:36:516 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:04:36:516 compactador/(32108:32112): Los datos finales
+[INFO] 03:04:36:516 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:04:36:516 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:04:36:517 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:04:36:517 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:04:36:517 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:04:36:518 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725876 segundos
+[INFO] 03:04:36:518 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:05:36:520 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:05:36:520 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:05:36:520 compactador/(32108:32112): Los datos finales
+[INFO] 03:05:36:520 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:05:36:520 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:05:36:520 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:05:36:520 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:05:36:520 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:05:36:535 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725936 segundos
+[INFO] 03:05:36:535 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:05:47:459 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:05:47:459 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:05:47:459 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:05:47:459 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmpc"
+[INFO] 03:05:47:459 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 03:05:47:459 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:05:47:459 compactador/(32108:32246): Los datos finales
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564725347;2;Red
+
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 3 -> bloque: 3, esta vacio
+[INFO] 03:05:47:459 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 0;6;CHAAAU
+
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;8;CHAAU
+
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 2 -> bloque: 10, tiene = 0;99;CHAAAAU
+
+[INFO] 03:05:47:459 compactador/(32108:32246): Particion 3 -> bloque: 11, tiene = 0;2;CHCSAOIHAS
+
+[INFO] 03:05:47:463 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564725947 segundos
+[INFO] 03:05:47:463 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:06:36:536 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:06:36:536 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:06:36:536 compactador/(32108:32112): Los datos finales
+[INFO] 03:06:36:536 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:06:36:536 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:06:36:536 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:06:36:536 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:06:36:536 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:06:36:538 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564725996 segundos
+[INFO] 03:06:36:538 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:07:36:539 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:07:36:539 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:07:36:539 compactador/(32108:32112): Los datos finales
+[INFO] 03:07:36:539 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:07:36:539 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:07:36:539 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:07:36:539 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:07:36:539 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:07:36:543 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726056 segundos
+[INFO] 03:07:36:543 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:08:36:545 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:08:36:545 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:08:36:545 compactador/(32108:32112): Los datos finales
+[INFO] 03:08:36:545 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:08:36:545 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:08:36:545 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:08:36:545 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:08:36:545 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:08:36:547 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726116 segundos
+[INFO] 03:08:36:547 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:09:36:550 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:09:36:550 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:09:36:550 compactador/(32108:32112): Los datos finales
+[INFO] 03:09:36:550 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:09:36:551 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:09:36:551 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:09:36:551 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:09:36:551 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:09:36:552 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726176 segundos
+[INFO] 03:09:36:552 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:10:36:555 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:10:36:555 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:10:36:555 compactador/(32108:32112): Los datos finales
+[INFO] 03:10:36:555 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:10:36:555 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:10:36:555 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:10:36:555 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:10:36:555 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:10:36:557 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726236 segundos
+[INFO] 03:10:36:557 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:10:47:471 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:10:47:471 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:10:47:471 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:10:47:471 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 03:10:47:471 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:10:47:471 compactador/(32108:32246): Los datos finales
+[INFO] 03:10:47:471 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 03:10:47:471 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+
+[INFO] 03:10:47:471 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564725347;2;Red
+0;6;CHAAAU
+
+[INFO] 03:10:47:471 compactador/(32108:32246): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+
+[INFO] 03:10:47:471 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:10:47:471 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 0;2;HOLAA
+
+[INFO] 03:10:47:471 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;9;HHAA
+
+[INFO] 03:10:47:471 compactador/(32108:32246): Particion 2 -> bloque: 10, tiene = 0;9;HOLAAAA
+
+[INFO] 03:10:47:485 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564726247 segundos
+[INFO] 03:10:47:486 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:11:36:557 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:11:36:557 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:11:36:557 compactador/(32108:32112): Los datos finales
+[INFO] 03:11:36:557 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:11:36:557 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:11:36:558 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:11:36:558 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:11:36:558 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:11:36:560 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726296 segundos
+[INFO] 03:11:36:560 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:12:36:560 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:12:36:561 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:12:36:561 compactador/(32108:32112): Los datos finales
+[INFO] 03:12:36:561 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:12:36:561 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:12:36:561 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:12:36:561 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:12:36:561 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:12:36:563 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726356 segundos
+[INFO] 03:12:36:563 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:13:36:563 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:13:36:563 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:13:36:563 compactador/(32108:32112): Los datos finales
+[INFO] 03:13:36:563 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:13:36:563 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:13:36:563 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:13:36:563 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:13:36:564 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:13:36:565 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726416 segundos
+[INFO] 03:13:36:565 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:14:36:566 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:14:36:566 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:14:36:566 compactador/(32108:32112): Los datos finales
+[INFO] 03:14:36:566 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:14:36:566 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:14:36:566 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:14:36:566 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:14:36:566 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:14:36:568 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726476 segundos
+[INFO] 03:14:36:568 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:15:36:570 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:15:36:570 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:15:36:570 compactador/(32108:32112): Los datos finales
+[INFO] 03:15:36:570 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:15:36:570 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:15:36:571 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:15:36:571 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:15:36:571 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:15:36:572 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726536 segundos
+[INFO] 03:15:36:572 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:15:47:486 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:15:47:486 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:15:47:486 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:15:47:486 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:15:47:486 compactador/(32108:32246): Los datos finales
+[INFO] 03:15:47:486 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 03:15:47:486 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+
+[INFO] 03:15:47:487 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564725347;2;Red
+0;6;CHAAAU
+
+[INFO] 03:15:47:487 compactador/(32108:32246): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+
+[INFO] 03:15:47:487 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:15:47:487 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 0;2;AAAA
+
+[INFO] 03:15:47:487 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;2;SDHJOIDAJHDA
+
+[INFO] 03:15:47:491 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564726547 segundos
+[INFO] 03:15:47:491 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:16:36:573 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:16:36:573 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:16:36:574 compactador/(32108:32112): Los datos finales
+[INFO] 03:16:36:574 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:16:36:574 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:16:36:574 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:16:36:574 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:16:36:574 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:16:36:576 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726596 segundos
+[INFO] 03:16:36:576 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:17:36:577 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:17:36:577 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:17:36:577 compactador/(32108:32112): Los datos finales
+[INFO] 03:17:36:577 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:17:36:577 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:17:36:578 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:17:36:578 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:17:36:578 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:17:36:580 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726656 segundos
+[INFO] 03:17:36:580 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:18:36:583 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:18:36:583 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:18:36:583 compactador/(32108:32112): Los datos finales
+[INFO] 03:18:36:583 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:18:36:583 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:18:36:583 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:18:36:583 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:18:36:583 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:18:36:585 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726716 segundos
+[INFO] 03:18:36:585 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:19:36:586 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:19:36:586 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:19:36:586 compactador/(32108:32112): Los datos finales
+[INFO] 03:19:36:586 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:19:36:586 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:19:36:586 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:19:36:586 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:19:36:586 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:19:36:588 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726776 segundos
+[INFO] 03:19:36:588 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:20:36:589 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:20:36:589 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:20:36:589 compactador/(32108:32112): Los datos finales
+[INFO] 03:20:36:589 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:20:36:589 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:20:36:589 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:20:36:589 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:20:36:589 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:20:36:591 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726836 segundos
+[INFO] 03:20:36:591 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:20:47:492 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:20:47:492 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:20:47:492 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:20:47:492 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:20:47:492 compactador/(32108:32246): Los datos finales
+[INFO] 03:20:47:492 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 03:20:47:492 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+
+[INFO] 03:20:47:492 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564725347;2;Red
+0;6;CHAAAU
+
+[INFO] 03:20:47:492 compactador/(32108:32246): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+
+[INFO] 03:20:47:492 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:20:47:492 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 0;2;BOSAHOA
+
+[INFO] 03:20:47:492 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;5;HOHJOFKSN
+
+[INFO] 03:20:47:496 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564726847 segundos
+[INFO] 03:20:47:496 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:21:36:592 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:21:36:592 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:21:36:592 compactador/(32108:32112): Los datos finales
+[INFO] 03:21:36:592 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:21:36:592 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:21:36:592 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:21:36:592 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:21:36:592 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:21:36:594 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726896 segundos
+[INFO] 03:21:36:594 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:22:36:594 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:22:36:594 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:22:36:594 compactador/(32108:32112): Los datos finales
+[INFO] 03:22:36:594 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:22:36:594 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:22:36:594 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:22:36:594 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:22:36:594 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:22:36:596 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564726956 segundos
+[INFO] 03:22:36:596 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:23:36:597 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:23:36:597 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:23:36:597 compactador/(32108:32112): Los datos finales
+[INFO] 03:23:36:597 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:23:36:597 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:23:36:597 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:23:36:597 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:23:36:597 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:23:36:599 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727016 segundos
+[INFO] 03:23:36:599 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:24:36:600 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:24:36:600 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:24:36:600 compactador/(32108:32112): Los datos finales
+[INFO] 03:24:36:600 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:24:36:600 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:24:36:600 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:24:36:600 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:24:36:600 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:24:36:602 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727076 segundos
+[INFO] 03:24:36:602 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:25:36:603 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:25:36:603 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:25:36:603 compactador/(32108:32112): Los datos finales
+[INFO] 03:25:36:603 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:25:36:603 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:25:36:603 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:25:36:603 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:25:36:603 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:25:36:605 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727136 segundos
+[INFO] 03:25:36:605 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:25:47:497 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:25:47:497 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:25:47:497 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:25:47:497 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmpc"
+[INFO] 03:25:47:497 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 03:25:47:497 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:25:47:497 compactador/(32108:32246): Los datos finales
+[INFO] 03:25:47:497 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 03:25:47:497 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 03:25:47:497 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564725347;2;Red
+0;6;CHAAAU
+
+[INFO] 03:25:47:497 compactador/(32108:32246): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+
+[INFO] 03:25:47:497 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:25:47:497 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 0;2;SJLKFHKLSFA
+
+[INFO] 03:25:47:497 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;2;JFHJASFHNA
+
+[INFO] 03:25:47:498 compactador/(32108:32246): Particion 2 -> bloque: 10, tiene = 0;2;FOFNJKO
+
+[INFO] 03:25:47:498 compactador/(32108:32246): Particion 3 -> bloque: 11, tiene = 0;2;HJSAHJASJHSF
+
+[INFO] 03:25:47:502 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564727147 segundos
+[INFO] 03:25:47:502 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:26:36:606 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:26:36:606 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:26:36:606 compactador/(32108:32112): Los datos finales
+[INFO] 03:26:36:607 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:26:36:607 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:26:36:607 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:26:36:607 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:26:36:607 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:26:36:612 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727196 segundos
+[INFO] 03:26:36:612 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:27:36:613 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:27:36:613 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:27:36:613 compactador/(32108:32112): Los datos finales
+[INFO] 03:27:36:613 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:27:36:613 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:27:36:613 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:27:36:613 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:27:36:613 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:27:36:615 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727256 segundos
+[INFO] 03:27:36:615 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:28:36:616 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:28:36:616 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:28:36:616 compactador/(32108:32112): Los datos finales
+[INFO] 03:28:36:616 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:28:36:616 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:28:36:616 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:28:36:616 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:28:36:616 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:28:36:617 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727316 segundos
+[INFO] 03:28:36:617 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:29:36:618 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:29:36:618 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:29:36:618 compactador/(32108:32112): Los datos finales
+[INFO] 03:29:36:618 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:29:36:618 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:29:36:618 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:29:36:618 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:29:36:619 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:29:36:620 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727376 segundos
+[INFO] 03:29:36:620 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:30:36:621 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:30:36:621 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:30:36:621 compactador/(32108:32112): Los datos finales
+[INFO] 03:30:36:621 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:30:36:621 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:30:36:621 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:30:36:621 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:30:36:621 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:30:36:623 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727436 segundos
+[INFO] 03:30:36:623 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:30:47:502 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:30:47:502 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:30:47:502 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:30:47:502 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 03:30:47:502 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:30:47:502 compactador/(32108:32246): Los datos finales
+[INFO] 03:30:47:502 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 03:30:47:503 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 03:30:47:503 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564725347;2;Red
+0;6;CHAAAU
+
+[INFO] 03:30:47:503 compactador/(32108:32246): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+
+[INFO] 03:30:47:503 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:30:47:503 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 0;2;JSHFA
+
+[INFO] 03:30:47:503 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;2;JNSAAJKHNDS
+
+[INFO] 03:30:47:503 compactador/(32108:32246): Particion 2 -> bloque: 10, tiene = 0;2;JJSHLFA
+
+[INFO] 03:30:47:507 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564727447 segundos
+[INFO] 03:30:47:507 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:31:36:623 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:31:36:623 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:31:36:623 compactador/(32108:32112): Los datos finales
+[INFO] 03:31:36:623 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:31:36:623 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:31:36:623 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:31:36:623 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:31:36:623 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:31:36:625 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727496 segundos
+[INFO] 03:31:36:625 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:32:36:626 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:32:36:626 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:32:36:626 compactador/(32108:32112): Los datos finales
+[INFO] 03:32:36:626 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:32:36:626 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:32:36:626 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:32:36:626 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:32:36:626 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:32:36:628 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727556 segundos
+[INFO] 03:32:36:628 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:33:36:629 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:33:36:629 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:33:36:629 compactador/(32108:32112): Los datos finales
+[INFO] 03:33:36:629 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:33:36:629 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:33:36:629 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:33:36:629 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:33:36:629 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:33:36:631 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727616 segundos
+[INFO] 03:33:36:631 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:34:36:634 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:34:36:634 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:34:36:634 compactador/(32108:32112): Los datos finales
+[INFO] 03:34:36:634 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:34:36:634 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:34:36:634 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:34:36:634 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:34:36:634 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:34:36:636 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727676 segundos
+[INFO] 03:34:36:636 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:35:36:501 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:35:36:501 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:35:36:501 compactador/(32108:32112): Los datos finales
+[INFO] 03:35:36:501 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:35:36:501 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:35:36:501 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:35:36:501 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:35:36:501 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:35:36:502 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727736 segundos
+[INFO] 03:35:36:503 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:35:47:369 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:35:47:369 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:35:47:369 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:35:47:369 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmpc"
+[INFO] 03:35:47:370 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 03:35:47:370 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:35:47:370 compactador/(32108:32246): Los datos finales
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564725347;2;Red
+0;6;CHAAAU
+
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+
+[INFO] 03:35:47:370 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 1564727517;2;JSAOASJ
+
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;2;HJSS
+
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 2 -> bloque: 10, tiene = 0;2;SAJSKF
+
+[INFO] 03:35:47:370 compactador/(32108:32246): Particion 3 -> bloque: 11, tiene = 0;3;SAJFDHASJ
+
+[INFO] 03:35:47:398 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564727747 segundos
+[INFO] 03:35:47:398 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:36:36:503 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:36:36:503 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:36:36:503 compactador/(32108:32112): Los datos finales
+[INFO] 03:36:36:503 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:36:36:503 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:36:36:503 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:36:36:503 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:36:36:503 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:36:36:506 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727796 segundos
+[INFO] 03:36:36:506 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:37:36:506 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:37:36:506 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:37:36:506 compactador/(32108:32112): Los datos finales
+[INFO] 03:37:36:507 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:37:36:507 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:37:36:507 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:37:36:507 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:37:36:507 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:37:36:508 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727856 segundos
+[INFO] 03:37:36:508 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:38:36:509 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:38:36:509 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:38:36:509 compactador/(32108:32112): Los datos finales
+[INFO] 03:38:36:509 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:38:36:509 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:38:36:509 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:38:36:509 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:38:36:509 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:38:36:511 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727916 segundos
+[INFO] 03:38:36:511 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:39:36:512 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:39:36:512 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:39:36:512 compactador/(32108:32112): Los datos finales
+[INFO] 03:39:36:512 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:39:36:512 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:39:36:512 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:39:36:512 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:39:36:512 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:39:36:514 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564727976 segundos
+[INFO] 03:39:36:514 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:40:36:514 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:40:36:515 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:40:36:515 compactador/(32108:32112): Los datos finales
+[INFO] 03:40:36:515 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:40:36:515 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:40:36:515 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:40:36:515 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:40:36:515 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:40:36:517 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564728036 segundos
+[INFO] 03:40:36:517 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:40:47:399 compactador/(32108:32246): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 03:40:47:399 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 03:40:47:399 compactador/(32108:32246): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 03:40:47:399 compactador/(32108:32246): Obtengo la metadata
+[INFO] 03:40:47:399 compactador/(32108:32246): Los datos finales
+[INFO] 03:40:47:399 compactador/(32108:32246): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 03:40:47:399 compactador/(32108:32246): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 03:40:47:399 compactador/(32108:32246): Particion 2 -> bloque: 2, tiene = 1564727517;2;JSAOASJ
+0;6;CHAAAU
+
+[INFO] 03:40:47:399 compactador/(32108:32246): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;SAJFDHASJ
+
+[INFO] 03:40:47:399 compactador/(32108:32246): Obtengo los datos de los temporales
+[INFO] 03:40:47:399 compactador/(32108:32246): Particion 0 -> bloque: 8, tiene = 0;2;SJLKF
+
+[INFO] 03:40:47:400 compactador/(32108:32246): Particion 1 -> bloque: 9, tiene = 0;2;JSKOFLSASJF
+
+[INFO] 03:40:47:404 compactador/(32108:32246): Se bloqueo la tabla COLORS por 1564728047 segundos
+[INFO] 03:40:47:404 compactador/(32108:32246): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 03:41:36:520 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:41:36:520 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:41:36:520 compactador/(32108:32112): Los datos finales
+[INFO] 03:41:36:521 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:41:36:521 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:41:36:521 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:41:36:521 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:41:36:521 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:41:36:522 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564728096 segundos
+[INFO] 03:41:36:522 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:42:36:523 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:42:36:523 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:42:36:523 compactador/(32108:32112): Los datos finales
+[INFO] 03:42:36:523 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:42:36:523 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:42:36:523 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:42:36:523 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:42:36:523 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:42:36:525 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564728156 segundos
+[INFO] 03:42:36:525 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 03:43:36:526 compactador/(32108:32112): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 03:43:36:526 compactador/(32108:32112): Obtengo la metadata
+[INFO] 03:43:36:526 compactador/(32108:32112): Los datos finales
+[INFO] 03:43:36:526 compactador/(32108:32112): Particion 0 -> bloque: 4, esta vacio
+[INFO] 03:43:36:526 compactador/(32108:32112): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 03:43:36:526 compactador/(32108:32112): Particion 2 -> bloque: 6, esta vacio
+[INFO] 03:43:36:526 compactador/(32108:32112): Particion 3 -> bloque: 7, esta vacio
+[INFO] 03:43:36:526 compactador/(32108:32112): Obtengo los datos de los temporales
+[INFO] 03:43:36:528 compactador/(32108:32112): Se bloqueo la tabla MARCAS por 1564728216 segundos
+[INFO] 03:43:36:528 compactador/(32108:32112): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:47:09:402 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:47:09:425 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:47:09:425 compactador/(5449:5453): Los datos finales
+[INFO] 11:47:09:426 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:47:09:434 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:47:09:435 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:47:09:435 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:47:09:436 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:47:09:437 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757229 segundos
+[INFO] 11:47:09:437 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:48:09:438 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:48:09:438 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:48:09:438 compactador/(5449:5453): Los datos finales
+[INFO] 11:48:09:438 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:48:09:438 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:48:09:438 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:48:09:438 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:48:09:438 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:48:09:440 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757289 segundos
+[INFO] 11:48:09:440 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:49:09:441 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:49:09:441 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:49:09:441 compactador/(5449:5453): Los datos finales
+[INFO] 11:49:09:441 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:49:09:441 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:49:09:441 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:49:09:441 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:49:09:441 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:49:09:443 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757349 segundos
+[INFO] 11:49:09:443 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:50:09:443 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:50:09:444 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:50:09:444 compactador/(5449:5453): Los datos finales
+[INFO] 11:50:09:444 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:50:09:444 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:50:09:444 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:50:09:444 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:50:09:444 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:50:09:445 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757409 segundos
+[INFO] 11:50:09:445 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:51:09:414 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 11:51:09:414 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 11:51:09:414 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/4.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/4.tmpc"
+[INFO] 11:51:09:414 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 11:51:09:414 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmpc"
+[INFO] 11:51:09:414 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 11:51:09:414 compactador/(5449:5454): Obtengo la metadata
+[INFO] 11:51:09:414 compactador/(5449:5454): Los datos finales
+[INFO] 11:51:09:435 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 11:51:09:445 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 11:51:09:446 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:51:09:446 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:51:09:446 compactador/(5449:5453): Los datos finales
+[INFO] 11:51:09:446 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:51:09:446 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:51:09:446 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:51:09:446 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:51:09:446 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:51:09:448 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564727517;2;JSAOASJ
+0;6;CHAAAU
+
+[INFO] 11:51:09:448 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757469 segundos
+[INFO] 11:51:09:448 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:51:09:449 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;SAJFDHASJ
+
+[INFO] 11:51:09:449 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 11:51:09:454 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 0;2;SJKAHSA
+
+[INFO] 11:51:09:462 compactador/(5449:5454): Particion 1 -> bloque: 9, tiene = 0;2;SLDKJDLDA
+
+[INFO] 11:51:09:470 compactador/(5449:5454): Particion 2 -> bloque: 10, tiene = 0;2;4DSAJNDSKA
+
+[INFO] 11:51:09:470 compactador/(5449:5454): Particion 3 -> bloque: 11, tiene = 0;2;HOLAAA
+
+[INFO] 11:51:09:470 compactador/(5449:5454): Particion 4 -> bloque: 12, tiene = 1564757222;2;HJOIOSJHOISD
+
+[INFO] 11:51:09:478 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564757469 segundos
+[INFO] 11:51:09:478 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 11:52:09:449 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:52:09:449 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:52:09:449 compactador/(5449:5453): Los datos finales
+[INFO] 11:52:09:449 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:52:09:449 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:52:09:449 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:52:09:449 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:52:09:449 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:52:09:451 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757529 segundos
+[INFO] 11:52:09:451 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:53:09:452 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:53:09:452 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:53:09:452 compactador/(5449:5453): Los datos finales
+[INFO] 11:53:09:452 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:53:09:452 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:53:09:452 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:53:09:452 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:53:09:452 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:53:09:454 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757589 segundos
+[INFO] 11:53:09:454 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:54:09:455 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:54:09:455 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:54:09:455 compactador/(5449:5453): Los datos finales
+[INFO] 11:54:09:455 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:54:09:455 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:54:09:455 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:54:09:455 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:54:09:455 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:54:09:457 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757649 segundos
+[INFO] 11:54:09:457 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:55:09:459 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:55:09:460 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:55:09:460 compactador/(5449:5453): Los datos finales
+[INFO] 11:55:09:460 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:55:09:460 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:55:09:460 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:55:09:460 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:55:09:460 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:55:09:481 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757709 segundos
+[INFO] 11:55:09:481 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:56:09:479 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 11:56:09:479 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 11:56:09:479 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 11:56:09:479 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 11:56:09:479 compactador/(5449:5454): Obtengo la metadata
+[INFO] 11:56:09:479 compactador/(5449:5454): Los datos finales
+[INFO] 11:56:09:479 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 11:56:09:479 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 11:56:09:479 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564757222;2;HJOIOSJHOISD
+0;6;CHAAAU
+
+[INFO] 11:56:09:479 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;SAJFDHASJ
+
+[INFO] 11:56:09:479 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 11:56:09:479 compactador/(5449:5454): Particion 0 -> bloque: 13, tiene = 0;2;SJKOLASDJ
+
+[INFO] 11:56:09:479 compactador/(5449:5454): Particion 1 -> bloque: 8, tiene = 0;2;SAJDAS
+
+[INFO] 11:56:09:479 compactador/(5449:5454): Particion 2 -> bloque: 9, tiene = 1564757711;2;IOKSJAA
+
+[INFO] 11:56:09:481 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:56:09:481 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:56:09:481 compactador/(5449:5453): Los datos finales
+[INFO] 11:56:09:481 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:56:09:481 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:56:09:481 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:56:09:482 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:56:09:482 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:56:09:483 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757769 segundos
+[INFO] 11:56:09:483 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:56:09:494 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564757769 segundos
+[INFO] 11:56:09:494 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 11:57:09:485 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:57:09:485 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:57:09:485 compactador/(5449:5453): Los datos finales
+[INFO] 11:57:09:485 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:57:09:485 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:57:09:485 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:57:09:485 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:57:09:485 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:57:09:487 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757829 segundos
+[INFO] 11:57:09:487 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:58:09:487 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:58:09:487 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:58:09:487 compactador/(5449:5453): Los datos finales
+[INFO] 11:58:09:487 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:58:09:487 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:58:09:487 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:58:09:487 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:58:09:487 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:58:09:489 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757889 segundos
+[INFO] 11:58:09:489 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 11:59:09:490 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 11:59:09:490 compactador/(5449:5453): Obtengo la metadata
+[INFO] 11:59:09:490 compactador/(5449:5453): Los datos finales
+[INFO] 11:59:09:490 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 11:59:09:490 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 11:59:09:490 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 11:59:09:490 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 11:59:09:490 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 11:59:09:492 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564757949 segundos
+[INFO] 11:59:09:492 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:00:09:492 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:00:09:492 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:00:09:492 compactador/(5449:5453): Los datos finales
+[INFO] 12:00:09:492 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:00:09:492 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:00:09:492 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:00:09:492 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:00:09:492 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:00:09:494 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758009 segundos
+[INFO] 12:00:09:494 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:01:09:495 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:01:09:495 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:01:09:495 compactador/(5449:5453): Los datos finales
+[INFO] 12:01:09:495 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:01:09:495 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:01:09:495 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:01:09:495 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:01:09:495 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:01:09:497 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758069 segundos
+[INFO] 12:01:09:497 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:01:09:498 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:01:09:498 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:01:09:498 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 12:01:09:498 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/3.tmpc"
+[INFO] 12:01:09:498 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 12:01:09:498 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:01:09:498 compactador/(5449:5454): Los datos finales
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564757711;2;IOKSJAA
+0;6;CHAAAU
+
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;SAJFDHASJ
+
+[INFO] 12:01:09:498 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 0;2;JASKLD
+
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 1 -> bloque: 9, tiene = 0;2;JJS
+
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 2 -> bloque: 10, tiene = 0;3;DDSOI
+
+[INFO] 12:01:09:498 compactador/(5449:5454): Particion 3 -> bloque: 11, tiene = 0;1;KLSFJKSFA
+
+[INFO] 12:01:09:509 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564758069 segundos
+[INFO] 12:01:09:509 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:02:09:497 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:02:09:497 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:02:09:497 compactador/(5449:5453): Los datos finales
+[INFO] 12:02:09:497 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:02:09:497 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:02:09:497 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:02:09:497 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:02:09:497 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:02:09:499 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758129 segundos
+[INFO] 12:02:09:499 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:03:09:500 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:03:09:500 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:03:09:500 compactador/(5449:5453): Los datos finales
+[INFO] 12:03:09:500 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:03:09:500 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:03:09:500 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:03:09:500 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:03:09:500 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:03:09:502 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758189 segundos
+[INFO] 12:03:09:502 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:04:09:503 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:04:09:503 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:04:09:503 compactador/(5449:5453): Los datos finales
+[INFO] 12:04:09:503 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:04:09:503 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:04:09:504 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:04:09:504 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:04:09:504 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:04:09:505 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758249 segundos
+[INFO] 12:04:09:505 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:05:09:506 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:05:09:506 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:05:09:507 compactador/(5449:5453): Los datos finales
+[INFO] 12:05:09:507 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:05:09:507 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:05:09:507 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:05:09:507 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:05:09:507 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:05:09:508 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758309 segundos
+[INFO] 12:05:09:508 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:06:09:509 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:06:09:509 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:06:09:509 compactador/(5449:5453): Los datos finales
+[INFO] 12:06:09:509 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:06:09:509 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:06:09:509 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:06:09:509 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:06:09:509 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:06:09:511 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758369 segundos
+[INFO] 12:06:09:511 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:06:09:526 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:06:09:526 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:06:09:526 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 12:06:09:526 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 12:06:09:526 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:06:09:526 compactador/(5449:5454): Los datos finales
+[INFO] 12:06:09:526 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:06:09:526 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564725347;1;Black
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:06:09:526 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564757711;2;IOKSJAA
+0;6;CHAAAU
+
+[INFO] 12:06:09:526 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;DDSOI
+
+[INFO] 12:06:09:526 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:06:09:526 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 1564758104;2;JKIDSA
+
+[INFO] 12:06:09:526 compactador/(5449:5454): Particion 1 -> bloque: 9, tiene = 1564758168;2;JIOSJAD
+
+[INFO] 12:06:09:526 compactador/(5449:5454): Particion 2 -> bloque: 10, tiene = 1564758235;1;LKJKFA
+
+[INFO] 12:06:09:531 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564758369 segundos
+[INFO] 12:06:09:531 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:07:09:512 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:07:09:512 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:07:09:512 compactador/(5449:5453): Los datos finales
+[INFO] 12:07:09:512 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:07:09:512 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:07:09:512 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:07:09:512 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:07:09:512 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:07:09:514 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758429 segundos
+[INFO] 12:07:09:514 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:08:09:515 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:08:09:515 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:08:09:515 compactador/(5449:5453): Los datos finales
+[INFO] 12:08:09:515 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:08:09:515 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:08:09:515 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:08:09:515 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:08:09:515 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:08:09:517 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758489 segundos
+[INFO] 12:08:09:517 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:09:09:518 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:09:09:518 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:09:09:518 compactador/(5449:5453): Los datos finales
+[INFO] 12:09:09:518 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:09:09:518 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:09:09:518 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:09:09:518 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:09:09:518 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:09:09:520 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758549 segundos
+[INFO] 12:09:09:520 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:10:09:520 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:10:09:521 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:10:09:521 compactador/(5449:5453): Los datos finales
+[INFO] 12:10:09:521 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:10:09:521 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:10:09:521 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:10:09:521 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:10:09:521 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:10:09:523 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758609 segundos
+[INFO] 12:10:09:523 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:11:09:524 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:11:09:524 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:11:09:524 compactador/(5449:5453): Los datos finales
+[INFO] 12:11:09:524 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:11:09:524 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:11:09:524 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:11:09:524 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:11:09:524 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:11:09:526 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758669 segundos
+[INFO] 12:11:09:527 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:11:09:532 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:11:09:532 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:11:09:532 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 12:11:09:533 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:11:09:533 compactador/(5449:5454): Los datos finales
+[INFO] 12:11:09:533 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:11:09:533 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564758235;1;LKJKFA
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:11:09:533 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564758168;2;JIOSJAD
+0;6;CHAAAU
+
+[INFO] 12:11:09:533 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;DDSOI
+
+[INFO] 12:11:09:533 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:11:09:533 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 1564758532;2;JKLDCLKA
+
+[INFO] 12:11:09:533 compactador/(5449:5454): Particion 1 -> bloque: 9, tiene = 42442;1;JSKLJFSA
+
+[INFO] 12:11:09:545 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564758669 segundos
+[INFO] 12:11:09:545 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:12:09:528 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:12:09:528 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:12:09:528 compactador/(5449:5453): Los datos finales
+[INFO] 12:12:09:528 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:12:09:528 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:12:09:528 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:12:09:528 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:12:09:528 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:12:09:530 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758729 segundos
+[INFO] 12:12:09:530 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:13:09:530 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:13:09:530 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:13:09:530 compactador/(5449:5453): Los datos finales
+[INFO] 12:13:09:530 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:13:09:530 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:13:09:530 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:13:09:530 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:13:09:530 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:13:09:532 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758789 segundos
+[INFO] 12:13:09:532 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:14:09:533 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:14:09:533 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:14:09:533 compactador/(5449:5453): Los datos finales
+[INFO] 12:14:09:533 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:14:09:533 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:14:09:533 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:14:09:533 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:14:09:533 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:14:09:536 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758849 segundos
+[INFO] 12:14:09:536 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:15:09:537 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:15:09:537 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:15:09:537 compactador/(5449:5453): Los datos finales
+[INFO] 12:15:09:537 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:15:09:537 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:15:09:537 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:15:09:537 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:15:09:537 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:15:09:539 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758909 segundos
+[INFO] 12:15:09:539 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:16:09:539 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:16:09:540 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:16:09:540 compactador/(5449:5453): Los datos finales
+[INFO] 12:16:09:540 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:16:09:540 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:16:09:540 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:16:09:540 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:16:09:540 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:16:09:542 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564758969 segundos
+[INFO] 12:16:09:546 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:16:09:554 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:16:09:555 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:16:09:555 compactador/(5449:5454): Los datos finales
+[INFO] 12:16:09:555 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:16:09:555 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564758235;1;LKJKFA
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:16:09:555 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564758532;2;JKLDCLKA
+0;6;CHAAAU
+
+[INFO] 12:16:09:555 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;DDSOI
+
+[INFO] 12:16:09:555 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:16:09:567 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564758969 segundos
+[INFO] 12:16:09:568 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:17:09:546 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:17:09:547 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:17:09:547 compactador/(5449:5453): Los datos finales
+[INFO] 12:17:09:547 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:17:09:547 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:17:09:547 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:17:09:547 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:17:09:547 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:17:09:549 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759029 segundos
+[INFO] 12:17:09:549 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:18:09:549 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:18:09:549 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:18:09:549 compactador/(5449:5453): Los datos finales
+[INFO] 12:18:09:549 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:18:09:549 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:18:09:549 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:18:09:549 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:18:09:549 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:18:09:552 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759089 segundos
+[INFO] 12:18:09:552 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:19:09:553 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:19:09:553 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:19:09:553 compactador/(5449:5453): Los datos finales
+[INFO] 12:19:09:553 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:19:09:553 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:19:09:553 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:19:09:553 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:19:09:553 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:19:09:555 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759149 segundos
+[INFO] 12:19:09:555 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:20:09:555 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:20:09:555 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:20:09:555 compactador/(5449:5453): Los datos finales
+[INFO] 12:20:09:555 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:20:09:556 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:20:09:556 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:20:09:556 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:20:09:556 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:20:09:557 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759209 segundos
+[INFO] 12:20:09:557 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:21:09:559 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:21:09:559 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:21:09:559 compactador/(5449:5453): Los datos finales
+[INFO] 12:21:09:559 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:21:09:559 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:21:09:559 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:21:09:559 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:21:09:559 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:21:09:561 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759269 segundos
+[INFO] 12:21:09:561 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:21:09:572 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:21:09:572 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:21:09:572 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 12:21:09:572 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/2.tmpc"
+[INFO] 12:21:09:572 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:21:09:572 compactador/(5449:5454): Los datos finales
+[INFO] 12:21:09:573 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:21:09:573 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564758235;1;LKJKFA
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:21:09:573 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564758532;2;JKLDCLKA
+0;6;CHAAAU
+
+[INFO] 12:21:09:573 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;DDSOI
+
+[INFO] 12:21:09:573 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:21:09:573 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 1564759014;2;KASDJADKDL
+
+[INFO] 12:21:09:573 compactador/(5449:5454): Particion 1 -> bloque: 9, tiene = 422442;2;SDJADJSA
+
+[INFO] 12:21:09:573 compactador/(5449:5454): Particion 2 -> bloque: 10, tiene = 42424242;2;DSAJADJSKA
+
+[INFO] 12:21:09:577 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564759269 segundos
+[INFO] 12:21:09:577 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:22:09:562 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:22:09:562 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:22:09:562 compactador/(5449:5453): Los datos finales
+[INFO] 12:22:09:562 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:22:09:562 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:22:09:562 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:22:09:562 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:22:09:563 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:22:09:564 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759329 segundos
+[INFO] 12:22:09:564 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:23:09:571 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:23:09:571 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:23:09:571 compactador/(5449:5453): Los datos finales
+[INFO] 12:23:09:571 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:23:09:571 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:23:09:571 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:23:09:571 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:23:09:571 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:23:09:573 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759389 segundos
+[INFO] 12:23:09:573 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:24:09:574 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:24:09:574 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:24:09:574 compactador/(5449:5453): Los datos finales
+[INFO] 12:24:09:574 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:24:09:574 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:24:09:574 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:24:09:574 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:24:09:574 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:24:09:576 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759449 segundos
+[INFO] 12:24:09:577 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:25:09:577 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:25:09:577 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:25:09:577 compactador/(5449:5453): Los datos finales
+[INFO] 12:25:09:577 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:25:09:577 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:25:09:577 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:25:09:577 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:25:09:577 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:25:09:580 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759509 segundos
+[INFO] 12:25:09:580 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:26:09:578 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:26:09:578 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:26:09:578 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:26:09:578 compactador/(5449:5454): Los datos finales
+[INFO] 12:26:09:578 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:26:09:578 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564758235;1;LKJKFA
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:26:09:578 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564759014;2;KASDJADKDL
+0;6;CHAAAU
+
+[INFO] 12:26:09:578 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;DDSOI
+
+[INFO] 12:26:09:578 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:26:09:578 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 424242;2;DSKAJSKL
+
+[INFO] 12:26:09:580 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:26:09:580 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:26:09:580 compactador/(5449:5453): Los datos finales
+[INFO] 12:26:09:580 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:26:09:580 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:26:09:580 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:26:09:580 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:26:09:580 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:26:09:582 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759569 segundos
+[INFO] 12:26:09:582 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:26:09:585 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564759569 segundos
+[INFO] 12:26:09:585 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:27:09:585 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:27:09:586 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:27:09:586 compactador/(5449:5453): Los datos finales
+[INFO] 12:27:09:586 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:27:09:586 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:27:09:586 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:27:09:586 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:27:09:586 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:27:09:588 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759629 segundos
+[INFO] 12:27:09:588 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:28:09:588 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:28:09:588 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:28:09:588 compactador/(5449:5453): Los datos finales
+[INFO] 12:28:09:588 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:28:09:588 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:28:09:589 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:28:09:589 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:28:09:589 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:28:09:590 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759689 segundos
+[INFO] 12:28:09:590 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:29:09:592 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:29:09:592 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:29:09:592 compactador/(5449:5453): Los datos finales
+[INFO] 12:29:09:592 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:29:09:592 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:29:09:592 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:29:09:592 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:29:09:592 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:29:09:594 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759749 segundos
+[INFO] 12:29:09:594 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:30:09:594 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:30:09:594 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:30:09:595 compactador/(5449:5453): Los datos finales
+[INFO] 12:30:09:595 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:30:09:595 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:30:09:595 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:30:09:595 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:30:09:595 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:30:09:596 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759809 segundos
+[INFO] 12:30:09:596 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:31:09:590 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:31:09:590 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:31:09:590 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:31:09:590 compactador/(5449:5454): Los datos finales
+[INFO] 12:31:09:590 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:31:09:590 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564758235;1;LKJKFA
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:31:09:590 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564759014;2;KASDJADKDL
+0;6;CHAAAU
+
+[INFO] 12:31:09:590 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;DDSOI
+
+[INFO] 12:31:09:590 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:31:09:591 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 4242244;2;SKAJLKDA
+1564759676;2;SADJKLJDS
+
+[INFO] 12:31:09:595 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564759869 segundos
+[INFO] 12:31:09:595 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:31:09:598 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:31:09:598 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:31:09:598 compactador/(5449:5453): Los datos finales
+[INFO] 12:31:09:598 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:31:09:598 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:31:09:598 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:31:09:598 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:31:09:598 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:31:09:600 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759869 segundos
+[INFO] 12:31:09:600 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:32:09:602 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:32:09:602 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:32:09:602 compactador/(5449:5453): Los datos finales
+[INFO] 12:32:09:602 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:32:09:602 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:32:09:602 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:32:09:602 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:32:09:602 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:32:09:604 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759929 segundos
+[INFO] 12:32:09:604 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:33:09:605 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:33:09:605 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:33:09:605 compactador/(5449:5453): Los datos finales
+[INFO] 12:33:09:605 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:33:09:605 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:33:09:605 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:33:09:605 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:33:09:605 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:33:09:607 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564759989 segundos
+[INFO] 12:33:09:607 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:34:09:607 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:34:09:607 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:34:09:607 compactador/(5449:5453): Los datos finales
+[INFO] 12:34:09:607 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:34:09:607 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:34:09:607 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:34:09:608 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:34:09:608 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:34:09:609 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760049 segundos
+[INFO] 12:34:09:609 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:35:09:610 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:35:09:610 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:35:09:610 compactador/(5449:5453): Los datos finales
+[INFO] 12:35:09:610 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:35:09:610 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:35:09:610 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:35:09:610 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:35:09:610 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:35:09:612 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760109 segundos
+[INFO] 12:35:09:612 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:36:09:596 compactador/(5449:5454): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:36:09:596 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:36:09:596 compactador/(5449:5454): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/1.tmpc"
+[INFO] 12:36:09:596 compactador/(5449:5454): Obtengo la metadata
+[INFO] 12:36:09:596 compactador/(5449:5454): Los datos finales
+[INFO] 12:36:09:596 compactador/(5449:5454): Particion 0 -> bloque: 0, tiene = 1564725618;4;HOLLA
+0;8;CHAAU
+
+[INFO] 12:36:09:596 compactador/(5449:5454): Particion 1 -> bloque: 1, tiene = 1564758235;1;LKJKFA
+0;9;HOLAAAA
+0;5;HOHJOFKSN
+
+[INFO] 12:36:09:596 compactador/(5449:5454): Particion 2 -> bloque: 2, tiene = 1564759676;2;SADJKLJDS
+0;6;CHAAAU
+
+[INFO] 12:36:09:596 compactador/(5449:5454): Particion 3 -> bloque: 3, tiene = 0;99;CHAAAAU
+0;3;DDSOI
+
+[INFO] 12:36:09:596 compactador/(5449:5454): Obtengo los datos de los temporales
+[INFO] 12:36:09:596 compactador/(5449:5454): Particion 0 -> bloque: 8, tiene = 1564759900;2;DSKLJAKLSJDA
+
+[INFO] 12:36:09:596 compactador/(5449:5454): Particion 1 -> bloque: 9, tiene = 1564760015;2;DSAKJLDAKL
+535335;2;FSDAJHKL
+1564760035;2;ÑÑAÑAÑAAÑA
+
+[INFO] 12:36:09:601 compactador/(5449:5454): Se bloqueo la tabla COLORS por 1564760169 segundos
+[INFO] 12:36:09:601 compactador/(5449:5454): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:36:09:613 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:36:09:613 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:36:09:613 compactador/(5449:5453): Los datos finales
+[INFO] 12:36:09:613 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:36:09:613 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:36:09:613 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:36:09:613 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:36:09:613 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:36:09:615 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760169 segundos
+[INFO] 12:36:09:615 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:37:09:615 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:37:09:615 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:37:09:616 compactador/(5449:5453): Los datos finales
+[INFO] 12:37:09:616 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:37:09:616 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:37:09:616 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:37:09:616 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:37:09:616 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:37:09:617 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760229 segundos
+[INFO] 12:37:09:617 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:38:09:618 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:38:09:618 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:38:09:618 compactador/(5449:5453): Los datos finales
+[INFO] 12:38:09:618 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:38:09:618 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:38:09:619 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:38:09:619 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:38:09:619 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:38:09:621 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760289 segundos
+[INFO] 12:38:09:621 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:39:09:625 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:39:09:625 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:39:09:625 compactador/(5449:5453): Los datos finales
+[INFO] 12:39:09:625 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:39:09:625 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:39:09:625 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:39:09:625 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:39:09:625 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:39:09:628 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760349 segundos
+[INFO] 12:39:09:628 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:40:09:630 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:40:09:631 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:40:09:631 compactador/(5449:5453): Los datos finales
+[INFO] 12:40:09:631 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:40:09:631 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:40:09:631 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:40:09:631 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:40:09:631 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:40:09:633 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760409 segundos
+[INFO] 12:40:09:633 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:41:09:633 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:41:09:633 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:41:09:633 compactador/(5449:5453): Los datos finales
+[INFO] 12:41:09:633 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:41:09:633 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:41:09:633 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:41:09:633 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:41:09:633 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:41:09:635 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760469 segundos
+[INFO] 12:41:09:635 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:41:52:605 compactador/(5449:7930): INICIO DE LA -- COMPACTACION -- DE LA TABLA COLORS
+[INFO] 12:41:52:605 compactador/(5449:7930): Cambio el nombre "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmp" a "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2019-1c-Te-Lo-Testeo-Asi-Nom-s/LFS/Tablas/COLORS/0.tmpc"
+[INFO] 12:41:52:605 compactador/(5449:7930): Obtengo la metadata
+[INFO] 12:41:52:605 compactador/(5449:7930): Los datos finales
+[INFO] 12:41:52:605 compactador/(5449:7930): Particion 0 -> bloque: 0, esta vacio
+[INFO] 12:41:52:605 compactador/(5449:7930): Particion 1 -> bloque: 1, esta vacio
+[INFO] 12:41:52:605 compactador/(5449:7930): Particion 2 -> bloque: 2, esta vacio
+[INFO] 12:41:52:605 compactador/(5449:7930): Particion 3 -> bloque: 3, esta vacio
+[INFO] 12:41:52:605 compactador/(5449:7930): Obtengo los datos de los temporales
+[INFO] 12:41:52:605 compactador/(5449:7930): Particion 0 -> bloque: 8, tiene = 1564760173;2;DASJKLSA
+1564760212;1;Black
+1564760212;2;Red
+
+[INFO] 12:41:52:607 compactador/(5449:7930): Se bloqueo la tabla COLORS por 1564760512 segundos
+[INFO] 12:41:52:607 compactador/(5449:7930): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA COLORS
+
+[INFO] 12:42:09:636 compactador/(5449:5453): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:42:09:636 compactador/(5449:5453): Obtengo la metadata
+[INFO] 12:42:09:636 compactador/(5449:5453): Los datos finales
+[INFO] 12:42:09:636 compactador/(5449:5453): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:42:09:636 compactador/(5449:5453): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:42:09:636 compactador/(5449:5453): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:42:09:636 compactador/(5449:5453): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:42:09:636 compactador/(5449:5453): Obtengo los datos de los temporales
+[INFO] 12:42:09:638 compactador/(5449:5453): Se bloqueo la tabla MARCAS por 1564760529 segundos
+[INFO] 12:42:09:638 compactador/(5449:5453): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:49:11:409 compactador/(9186:9190): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:49:11:409 compactador/(9186:9190): Obtengo la metadata
+[INFO] 12:49:11:409 compactador/(9186:9190): Los datos finales
+[INFO] 12:49:11:409 compactador/(9186:9190): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:49:11:409 compactador/(9186:9190): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:49:11:409 compactador/(9186:9190): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:49:11:409 compactador/(9186:9190): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:49:11:409 compactador/(9186:9190): Obtengo los datos de los temporales
+[INFO] 12:49:11:411 compactador/(9186:9190): Se bloqueo la tabla MARCAS por 1564760951 segundos
+[INFO] 12:49:11:411 compactador/(9186:9190): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:50:11:412 compactador/(9186:9190): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:50:11:412 compactador/(9186:9190): Obtengo la metadata
+[INFO] 12:50:11:412 compactador/(9186:9190): Los datos finales
+[INFO] 12:50:11:412 compactador/(9186:9190): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:50:11:412 compactador/(9186:9190): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:50:11:412 compactador/(9186:9190): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:50:11:412 compactador/(9186:9190): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:50:11:412 compactador/(9186:9190): Obtengo los datos de los temporales
+[INFO] 12:50:11:414 compactador/(9186:9190): Se bloqueo la tabla MARCAS por 1564761011 segundos
+[INFO] 12:50:11:414 compactador/(9186:9190): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:51:11:414 compactador/(9186:9190): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:51:11:414 compactador/(9186:9190): Obtengo la metadata
+[INFO] 12:51:11:414 compactador/(9186:9190): Los datos finales
+[INFO] 12:51:11:415 compactador/(9186:9190): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:51:11:415 compactador/(9186:9190): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:51:11:415 compactador/(9186:9190): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:51:11:415 compactador/(9186:9190): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:51:11:415 compactador/(9186:9190): Obtengo los datos de los temporales
+[INFO] 12:51:11:416 compactador/(9186:9190): Se bloqueo la tabla MARCAS por 1564761071 segundos
+[INFO] 12:51:11:416 compactador/(9186:9190): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:52:11:417 compactador/(9186:9190): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:52:11:417 compactador/(9186:9190): Obtengo la metadata
+[INFO] 12:52:11:417 compactador/(9186:9190): Los datos finales
+[INFO] 12:52:11:417 compactador/(9186:9190): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:52:11:417 compactador/(9186:9190): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:52:11:417 compactador/(9186:9190): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:52:11:417 compactador/(9186:9190): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:52:11:417 compactador/(9186:9190): Obtengo los datos de los temporales
+[INFO] 12:52:11:422 compactador/(9186:9190): Se bloqueo la tabla MARCAS por 1564761131 segundos
+[INFO] 12:52:11:422 compactador/(9186:9190): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+
+[INFO] 12:53:11:422 compactador/(9186:9190): INICIO DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+[INFO] 12:53:11:423 compactador/(9186:9190): Obtengo la metadata
+[INFO] 12:53:11:423 compactador/(9186:9190): Los datos finales
+[INFO] 12:53:11:423 compactador/(9186:9190): Particion 0 -> bloque: 4, esta vacio
+[INFO] 12:53:11:423 compactador/(9186:9190): Particion 1 -> bloque: 5, tiene = 1564722518;1;Adidas
+
+[INFO] 12:53:11:423 compactador/(9186:9190): Particion 2 -> bloque: 6, esta vacio
+[INFO] 12:53:11:423 compactador/(9186:9190): Particion 3 -> bloque: 7, esta vacio
+[INFO] 12:53:11:423 compactador/(9186:9190): Obtengo los datos de los temporales
+[INFO] 12:53:11:425 compactador/(9186:9190): Se bloqueo la tabla MARCAS por 1564761191 segundos
+[INFO] 12:53:11:425 compactador/(9186:9190): FINALIZACION DE LA -- COMPACTACION -- DE LA TABLA MARCAS
+

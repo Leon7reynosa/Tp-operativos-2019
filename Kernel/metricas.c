@@ -142,8 +142,7 @@ void agregar_a_metrica(cod_operacion codigo_operacion , void* tipo_request, time
 void sumador_metrica( cod_operacion codigo_operacion , metrica_t* metrica,  time_t tiempo_ejecucion ){
 
 	time_t* tiempo_a_guardar = malloc(sizeof(time_t));
-
-	memcpy(tiempo_a_guardar,  &tiempo_ejecucion, sizeof(time_t));
+	memcpy(tiempo_a_guardar, &tiempo_ejecucion, sizeof(time_t));
 
 
 	switch(codigo_operacion){
@@ -156,6 +155,7 @@ void sumador_metrica( cod_operacion codigo_operacion , metrica_t* metrica,  time
 		case INSERT:
 
 			list_add(metrica->lista_insert, tiempo_a_guardar);
+
 			break;
 
 		default:
@@ -361,6 +361,8 @@ int sumatoria_tiempos (t_list* lista_a_sumar){
 	void* _sumar(void* _numero){
 
 		time_t* tiempo = (time_t*) _numero;
+
+		printf("tiempo sumatoria tiempos: %d\n", *tiempo);
 
 		sumatoria += *tiempo;
 

@@ -90,6 +90,7 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 
 	free(request);
 
+
 	return true;
 }
 

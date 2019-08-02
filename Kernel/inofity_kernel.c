@@ -35,8 +35,6 @@ void* realizar_inotify(inotify_config argumento){
 		pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
 		pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 
-		printf("[INOTIFY] Se creo el hilo\n");
-
 		int  tamanio_leido;
 
 		int tamanio_buffer = sizeof(struct inotify_event) + string_length("kernel.config")  + 1;
@@ -45,14 +43,10 @@ void* realizar_inotify(inotify_config argumento){
 		char* buffer_aux;
 		struct inotify_event* cambio_config;
 
-		printf("[INOTIFY] VOY A EMPEZAR A MIRAR EL ARCHIVO");
-
 
 		while(1){
 
 
-
-			printf("\n[INOTIFY] voy a leer un nuevo evento\n");
 			tamanio_leido = read(argumento->fd_inotify, buffer, tamanio_buffer);
 
 			pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);

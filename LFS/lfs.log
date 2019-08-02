@@ -1,0 +1,2300 @@
+[INFO] 01:54:35:188 file system/(29925:29948): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 01:54:35:188 file system/(29925:29948): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 01:54:50:190 file system/(29925:29948): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 01:54:50:190 file system/(29925:29948): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 01:54:55:238 file system/(29925:29948): Inicio de request -- INSERT -- 
+
+[INFO] 01:57:19:270 file system/(30019:30031): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 01:57:19:270 file system/(30019:30031): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 01:57:21:426 file system/(30019:30031): Inicio de request -- INSERT -- 
+
+[INFO] 02:00:16:530 file system/(30171:30181): Inicio de request -- INSERT -- 
+
+[INFO] 02:04:51:873 file system/(30572:30700): Inicio de request -- INSERT -- 
+
+[INFO] 02:08:11:680 file system/(30854:30877): Inicio de request -- INSERT -- 
+
+[INFO] 02:08:11:806 file system/(30854:30877): Request -- INSERT -- realizada !!!
+
+[INFO] 02:08:19:425 file system/(30854:30877): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:08:19:440 file system/(30854:30877): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:08:19:455 file system/(30854:30877): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:08:19:470 file system/(30854:30877): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:08:20:882 file system/(30854:30877): Inicio de request -- INSERT -- 
+
+[INFO] 02:08:20:894 file system/(30854:30877): Request -- INSERT -- realizada !!!
+
+[INFO] 02:08:20:916 file system/(30854:30877): Inicio de request -- INSERT -- 
+
+[INFO] 02:08:20:921 file system/(30854:30877): Request -- INSERT -- realizada !!!
+
+[INFO] 02:08:26:636 file system/(30854:30877): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:08:26:641 file system/(30854:30877): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:08:26:642 file system/(30854:30877): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:08:26:651 file system/(30854:30877): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:08:34:542 file system/(30854:30877): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:08:34:544 file system/(30854:30877): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:08:34:546 file system/(30854:30877): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:08:34:550 file system/(30854:30877): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:08:37:995 file system/(30854:30877): Inicio de request -- INSERT -- 
+
+[INFO] 02:08:38:71 file system/(30854:30877): Request -- INSERT -- realizada !!!
+
+[INFO] 02:08:40:925 file system/(30854:30877): Inicio de request -- INSERT -- 
+
+[INFO] 02:08:40:930 file system/(30854:30877): Request -- INSERT -- realizada !!!
+
+[INFO] 02:08:49:600 file system/(30854:30877): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:08:49:603 file system/(30854:30877): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:08:49:614 file system/(30854:30877): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:08:49:618 file system/(30854:30877): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:08:49:621 file system/(30854:30877): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:08:49:642 file system/(30854:30877): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:15:47:308 file system/(31104:31124): Inicio de request -- INSERT -- 
+
+[INFO] 02:15:50:387 file system/(31104:31124): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:15:50:399 file system/(31104:31124): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:15:50:404 file system/(31104:31124): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:15:50:406 file system/(31104:31124): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:15:50:408 file system/(31104:31124): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:15:50:423 file system/(31104:31124): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:15:58:969 file system/(31104:31124): Inicio de request -- DROP --
+
+[INFO] 02:15:59:141 file system/(31104:31124): Request -- DROP-- realizada
+
+[INFO] 02:16:05:442 file system/(31104:31124): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:16:05:450 file system/(31104:31124): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:16:05:460 file system/(31104:31124): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:16:05:468 file system/(31104:31124): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:16:06:130 file system/(31104:31124): Inicio de request -- INSERT -- 
+
+[INFO] 02:16:06:205 file system/(31104:31124): Request -- INSERT -- realizada !!!
+
+[INFO] 02:16:12:893 file system/(31104:31124): Inicio de request -- INSERT -- 
+
+[INFO] 02:16:12:904 file system/(31104:31124): Request -- INSERT -- realizada !!!
+
+[INFO] 02:16:12:910 file system/(31104:31124): Inicio de request -- INSERT -- 
+
+[INFO] 02:16:12:921 file system/(31104:31124): Request -- INSERT -- realizada !!!
+
+[INFO] 02:16:20:487 file system/(31104:31124): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:16:20:490 file system/(31104:31124): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:16:20:504 file system/(31104:31124): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:16:20:508 file system/(31104:31124): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:16:20:510 file system/(31104:31124): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:16:20:522 file system/(31104:31124): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:16:35:543 file system/(31104:31124): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:16:35:545 file system/(31104:31124): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:16:35:547 file system/(31104:31124): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:16:35:549 file system/(31104:31124): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:16:35:555 file system/(31104:31124): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:16:35:561 file system/(31104:31124): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:19:58:704 file system/(31262:31274): Inicio de request -- INSERT -- 
+
+[INFO] 02:20:03:462 file system/(31262:31274): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:20:03:462 file system/(31262:31274): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:20:03:462 file system/(31262:31274): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:20:03:462 file system/(31262:31274): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:20:03:462 file system/(31262:31274): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:20:03:462 file system/(31262:31274): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:21:05:883 file system/(31306:31318): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:21:05:883 file system/(31306:31318): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:21:05:883 file system/(31306:31318): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:21:05:883 file system/(31306:31318): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:21:05:883 file system/(31306:31318): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:21:05:883 file system/(31306:31318): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:21:08:658 file system/(31306:31318): Inicio de request -- DROP --
+
+[INFO] 02:21:08:659 file system/(31306:31318): Request -- DROP-- realizada
+
+[INFO] 02:24:16:303 file system/(31440:31470): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:24:16:304 file system/(31440:31470): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:24:16:304 file system/(31440:31470): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:24:16:304 file system/(31440:31470): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:24:18:32 file system/(31440:31470): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:24:18:32 file system/(31440:31470): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:24:18:32 file system/(31440:31470): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:24:18:32 file system/(31440:31470): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:24:26:120 file system/(31440:31470): Inicio de request -- INSERT -- 
+
+[INFO] 02:24:26:121 file system/(31440:31470): Request -- INSERT -- realizada !!!
+
+[INFO] 02:24:28:689 file system/(31440:31470): Inicio de request -- INSERT -- 
+
+[INFO] 02:24:28:689 file system/(31440:31470): Request -- INSERT -- realizada !!!
+
+[INFO] 02:24:28:690 file system/(31440:31470): Inicio de request -- INSERT -- 
+
+[INFO] 02:24:28:691 file system/(31440:31470): Request -- INSERT -- realizada !!!
+
+[INFO] 02:28:13:602 file system/(31600:31622): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:28:13:602 file system/(31600:31622): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:28:13:602 file system/(31600:31622): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:28:13:602 file system/(31600:31622): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:28:13:602 file system/(31600:31622): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:28:13:602 file system/(31600:31622): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:28:16:153 file system/(31600:31622): Inicio de request -- DROP --
+
+[INFO] 02:28:16:153 file system/(31600:31622): Request -- DROP-- realizada
+
+[INFO] 02:28:17:359 file system/(31600:31622): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:28:17:359 file system/(31600:31622): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:28:17:359 file system/(31600:31622): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:28:17:359 file system/(31600:31622): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:28:20:4 file system/(31600:31622): Inicio de request -- INSERT -- 
+
+[INFO] 02:28:20:5 file system/(31600:31622): Request -- INSERT -- realizada !!!
+
+[INFO] 02:35:05:345 file system/(31719:31741): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:35:05:345 file system/(31719:31741): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:35:05:345 file system/(31719:31741): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:35:05:345 file system/(31719:31741): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:35:05:345 file system/(31719:31741): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:35:05:345 file system/(31719:31741): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:35:06:583 file system/(31719:31741): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:35:06:583 file system/(31719:31741): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:35:06:583 file system/(31719:31741): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:35:06:583 file system/(31719:31741): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:35:06:583 file system/(31719:31741): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:35:06:583 file system/(31719:31741): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:35:08:399 file system/(31719:31741): Inicio de request -- DROP --
+
+[INFO] 02:35:08:400 file system/(31719:31741): Request -- DROP-- realizada
+
+[INFO] 02:35:11:796 file system/(31719:31741): Inicio de request -- INSERT -- 
+
+[INFO] 02:35:11:797 file system/(31719:31741): Request -- INSERT -- realizada !!!
+
+[INFO] 02:36:19:767 file system/(31780:31801): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:36:19:767 file system/(31780:31801): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:36:19:767 file system/(31780:31801): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:36:19:767 file system/(31780:31801): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:36:19:767 file system/(31780:31801): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:36:19:767 file system/(31780:31801): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:36:21:70 file system/(31780:31801): Inicio de request -- DROP --
+
+[INFO] 02:36:21:71 file system/(31780:31801): Request -- DROP-- realizada
+
+[INFO] 02:36:24:265 file system/(31780:31801): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:36:24:265 file system/(31780:31801): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:36:24:266 file system/(31780:31801): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:36:24:266 file system/(31780:31801): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:36:28:728 file system/(31780:31801): Inicio de request -- INSERT -- 
+
+[INFO] 02:36:28:729 file system/(31780:31801): Request -- INSERT -- realizada !!!
+
+[INFO] 02:36:28:743 file system/(31780:31801): Inicio de request -- INSERT -- 
+
+[INFO] 02:36:28:744 file system/(31780:31801): Request -- INSERT -- realizada !!!
+
+[INFO] 02:36:28:744 file system/(31780:31801): Solicitud de request -- SELECT -- 
+
+[INFO] 02:36:28:744 file system/(31780:31801): Request -- SELECT -- realizada !!!
+
+[INFO] 02:55:31:384 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:55:31:384 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:55:31:384 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:55:31:384 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:55:31:384 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:55:31:384 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:55:37:577 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:55:37:577 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:55:37:577 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:55:37:577 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:55:37:577 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:55:37:577 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:55:43:153 file system/(32108:32120): Inicio de request -- DROP --
+
+[INFO] 02:55:43:154 file system/(32108:32120): Request -- DROP-- realizada
+
+[INFO] 02:55:46:386 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:55:46:386 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:55:46:386 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:55:46:386 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:55:47:451 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 02:55:47:452 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 02:55:47:478 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 02:55:47:478 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 02:55:47:478 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 02:55:47:478 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 02:55:47:482 file system/(32108:32120): Solicitud de request -- SELECT -- 
+
+[INFO] 02:55:47:482 file system/(32108:32120): Request -- SELECT -- realizada !!!
+
+[INFO] 02:55:47:496 file system/(32108:32120): Solicitud de request -- SELECT -- 
+
+[INFO] 02:55:47:497 file system/(32108:32120): Request -- SELECT -- realizada !!!
+
+[INFO] 02:55:57:479 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 02:55:57:479 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 02:56:01:391 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:56:01:391 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:56:01:391 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:56:01:391 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:56:01:391 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:56:01:391 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:56:48:616 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:56:48:616 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:56:48:616 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:56:48:616 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:56:48:616 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:56:48:616 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:56:53:14 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:56:53:14 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:56:53:14 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:56:53:14 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:56:53:14 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:56:53:14 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:59:49:948 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:59:49:948 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:59:49:948 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:59:49:948 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:59:49:948 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:59:49:948 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 02:59:59:548 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 02:59:59:548 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:59:59:548 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:59:59:548 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 02:59:59:548 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 02:59:59:548 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:00:14:550 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:00:14:550 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:00:14:550 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:00:14:550 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:00:14:550 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:00:14:550 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:00:27:495 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:00:27:495 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:00:29:551 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:00:29:551 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:00:29:551 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:00:29:551 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:00:29:552 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:00:29:552 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:00:37:497 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:00:37:497 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:01:46:402 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:01:46:402 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:01:46:402 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:01:46:402 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:01:46:403 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:01:46:403 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:01:54:158 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:01:54:158 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:01:54:158 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:01:54:158 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:01:54:158 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:01:54:158 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:01:57:505 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:01:57:505 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:03:18:537 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:03:18:537 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:03:18:537 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:03:18:537 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:03:18:537 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:03:18:537 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:03:26:136 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:03:26:136 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:03:26:136 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:03:26:136 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:03:26:136 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:03:26:136 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:03:37:513 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:03:37:513 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:04:19:928 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:04:19:928 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:04:19:928 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:04:19:928 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:04:19:928 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:04:19:928 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:04:37:518 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:04:37:519 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:05:19:399 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:05:19:399 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:05:19:399 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:05:19:399 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:05:19:399 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:05:19:399 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:05:37:523 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:05:37:523 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:07:11:989 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:07:11:989 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:07:11:989 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:07:11:989 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:07:11:989 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:07:11:989 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:07:27:536 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:07:27:536 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:10:18:690 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:10:18:690 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:10:18:690 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:10:18:690 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:10:18:690 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:10:18:690 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:10:27:546 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:10:27:546 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:11:07:873 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:11:07:873 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:11:07:873 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:11:07:873 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:11:07:873 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:11:07:873 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:11:17:550 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:11:17:550 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:11:50:889 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:11:50:889 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:11:50:889 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:11:50:889 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:11:50:889 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:11:50:889 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:12:07:553 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:12:07:553 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:17:41:652 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:17:41:652 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:17:41:652 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:17:41:652 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:17:41:652 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:17:41:652 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:17:57:578 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:17:57:578 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:19:18:618 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:19:18:618 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:19:18:618 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:19:18:618 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:19:18:618 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:19:18:618 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:19:27:583 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:19:27:583 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:19:56:34 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:19:56:34 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:19:56:34 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:19:56:34 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:19:56:34 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:19:56:34 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:20:06:24 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:20:06:24 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:20:06:24 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:20:06:24 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:20:06:24 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:20:06:24 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:20:07:585 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:20:07:585 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:20:38:337 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:20:38:337 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:20:38:337 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:20:38:337 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:20:38:337 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:20:38:337 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:20:47:589 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:20:47:589 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:22:11:544 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:22:11:544 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:22:11:544 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:22:11:544 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:22:11:544 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:22:11:544 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:22:27:596 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:22:27:597 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:23:14:535 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:23:14:535 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:23:14:535 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:23:14:535 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:23:14:535 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:23:14:535 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:23:27:600 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:23:27:601 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:24:42:358 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:24:42:358 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:24:42:358 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:24:42:358 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:24:42:358 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:24:42:358 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:24:53:612 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:24:53:612 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:24:53:612 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:24:53:612 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:24:53:612 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:24:53:612 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:24:57:607 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:24:57:607 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:25:50:893 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:25:50:893 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:25:50:893 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:25:50:893 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:25:50:893 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:25:50:893 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:26:07:612 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:26:07:612 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:27:52:948 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:27:52:948 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:27:52:948 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:27:52:948 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:27:52:948 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:27:52:948 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:28:11:988 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:28:11:988 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:28:11:988 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:28:11:988 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:28:11:988 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:28:11:988 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:28:27:620 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:28:27:620 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:29:32:778 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:29:32:779 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:29:32:779 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:29:32:779 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:29:32:779 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:29:32:779 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:29:47:626 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:29:47:627 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:31:52:450 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:31:52:450 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:31:52:450 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:31:52:450 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:31:52:450 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:31:52:450 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:31:57:636 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:31:57:636 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:32:03:591 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:32:03:591 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:32:03:591 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:32:03:591 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:32:03:591 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:32:03:591 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:32:18:593 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:32:18:593 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:32:18:593 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:32:18:593 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:32:18:593 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:32:18:593 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:32:37:639 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:32:37:639 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:33:28:896 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:33:28:896 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:33:28:896 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:33:28:896 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:33:28:896 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:33:28:896 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:33:37:644 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:33:37:644 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:35:16:881 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:35:16:881 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:35:16:881 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:35:16:881 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:35:16:882 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:35:16:882 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:35:27:517 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:35:27:517 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:37:37:310 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:37:37:310 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:37:37:310 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:37:37:310 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:37:37:310 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:37:37:310 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:37:47:527 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:37:47:527 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:39:58:604 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:39:58:604 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:39:58:604 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:39:58:604 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:39:58:604 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:39:58:604 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:40:07:546 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:40:07:548 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:40:49:690 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:40:49:690 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:40:49:690 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:40:49:690 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:40:49:690 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:40:49:690 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:40:57:551 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:40:57:551 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:41:23:257 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:41:23:257 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:41:23:257 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:41:23:258 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:41:23:258 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:41:23:258 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:41:37:556 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:41:37:556 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 03:42:52:864 file system/(32108:32120): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 03:42:52:864 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:42:52:864 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:42:52:864 file system/(32108:32120): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 03:42:52:864 file system/(32108:32120): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 03:42:52:864 file system/(32108:32120): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 03:43:07:564 file system/(32108:32120): Inicio de request -- INSERT -- 
+
+[INFO] 03:43:07:564 file system/(32108:32120): Request -- INSERT -- realizada !!!
+
+[INFO] 11:46:20:738 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:46:20:748 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:20:749 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:20:749 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:20:749 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:20:749 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:46:29:916 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:46:29:916 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:29:916 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:29:916 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:29:916 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:29:916 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:46:42:26 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:46:42:27 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 11:46:52:452 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:46:52:452 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:52:452 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:52:452 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:52:452 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:52:452 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:46:55:266 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:46:55:266 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:55:266 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:55:266 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:46:55:266 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:46:55:266 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:47:10:267 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:47:10:267 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:47:10:267 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:47:10:267 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:47:10:267 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:47:10:267 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:47:12:30 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:47:12:30 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 11:49:59:508 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:49:59:508 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:49:59:508 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:49:59:508 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:49:59:508 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:49:59:508 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:50:12:46 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:50:12:46 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 11:51:14:1 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:51:14:1 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:51:14:1 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:51:14:2 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:51:14:2 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:51:14:2 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:51:22:341 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:51:22:341 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:51:22:341 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:51:22:341 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:51:22:341 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:51:22:341 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:51:32:59 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:51:32:59 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 11:55:02:813 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:55:02:813 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:55:02:813 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:55:02:813 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:55:02:813 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:55:02:813 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:55:12:71 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:55:12:71 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 11:55:17:814 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:55:17:814 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:55:17:814 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:55:17:814 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:55:17:814 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:55:17:814 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:56:12:806 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:56:12:806 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:56:12:806 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:56:12:806 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:56:12:806 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:56:12:806 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:56:22:76 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:56:22:76 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 11:57:02:614 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:57:02:614 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:57:02:614 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:57:02:614 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:57:02:614 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:57:02:614 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:57:12:79 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:57:12:79 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 11:58:54:662 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 11:58:54:662 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:58:54:663 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:58:54:663 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 11:58:54:663 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 11:58:54:663 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 11:59:02:92 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 11:59:02:93 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:00:04:470 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:00:04:470 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:00:04:471 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:00:04:471 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:00:04:471 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:00:04:471 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:00:22:99 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:00:22:99 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:01:38:999 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:01:38:999 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:01:38:999 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:01:38:999 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:01:38:0 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:01:38:0 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:01:52:107 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:01:52:107 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:02:42:736 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:02:42:736 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:02:42:736 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:02:42:736 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:02:42:736 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:02:42:736 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:02:52:113 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:02:52:113 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:03:48:105 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:03:48:105 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:03:48:105 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:03:48:105 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:03:48:105 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:03:48:105 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:04:02:119 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:04:02:119 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:08:46:511 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:08:46:511 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:08:46:511 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:08:46:511 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:08:46:511 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:08:46:511 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:08:57:167 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:08:57:167 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:08:57:167 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:08:57:167 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:08:57:167 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:08:57:167 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:09:02:140 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:09:02:140 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:09:49:120 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:09:49:120 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:09:49:120 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:09:49:120 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:09:49:120 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:09:49:120 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:09:59:80 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:09:59:80 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:09:59:80 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:09:59:80 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:09:59:81 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:09:59:81 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:10:02:144 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:10:02:144 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:11:42:636 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:11:42:636 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:11:42:636 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:11:42:637 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:11:42:637 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:11:42:637 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:12:32:359 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:12:32:359 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:12:32:359 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:12:32:359 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:12:32:359 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:12:32:359 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:14:28:923 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:14:28:923 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:14:28:923 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:14:28:923 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:14:28:923 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:14:28:923 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:15:30:214 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:15:30:214 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:15:30:214 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:15:30:214 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:15:30:214 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:15:30:214 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:15:54:373 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:15:54:373 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:15:54:373 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:15:54:373 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:15:54:373 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:15:54:373 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:16:47:530 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:16:47:530 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:16:47:530 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:16:47:530 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:16:47:530 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:16:47:530 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:16:59:395 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:16:59:395 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:16:59:395 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:16:59:395 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:16:59:395 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:16:59:395 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:17:02:177 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:17:02:177 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:18:46:218 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:18:46:218 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:18:46:218 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:18:46:218 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:18:46:218 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:18:46:218 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:18:52:189 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:18:52:189 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:18:57:309 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:18:57:309 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:18:57:309 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:18:57:309 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:18:57:309 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:18:57:309 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:19:37:63 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:19:37:63 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:19:37:63 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:19:37:63 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:19:37:63 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:19:37:63 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:19:42:192 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:19:42:192 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:19:48:688 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:19:48:688 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:19:48:688 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:19:48:688 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:19:48:688 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:19:48:688 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:24:24:125 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:24:24:125 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:24:24:125 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:24:24:125 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:24:24:125 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:24:24:125 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:24:32:214 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:24:32:214 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:25:05:683 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:25:05:683 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:25:05:683 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:25:05:683 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:25:05:684 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:25:05:684 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:27:42:685 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:27:42:685 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:27:42:685 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:27:42:685 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:27:42:685 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:27:42:685 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:27:50:697 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:27:50:697 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:27:50:697 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:27:50:697 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:27:50:697 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:27:50:697 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:27:52:227 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:27:52:227 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:28:02:229 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:28:02:229 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:28:05:700 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:28:05:700 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:05:700 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:05:700 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:05:701 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:05:701 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:28:20:703 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:28:20:703 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:20:703 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:20:703 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:20:703 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:20:703 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:28:35:706 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:28:35:706 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:35:707 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:35:707 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:35:707 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:35:707 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:28:50:710 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:28:50:710 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:50:710 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:50:710 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:28:50:710 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:28:50:710 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:29:05:712 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:29:05:712 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:29:05:712 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:29:05:712 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:29:05:712 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:29:05:712 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:29:20:714 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:29:20:714 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:29:20:714 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:29:20:714 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:29:20:714 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:29:20:714 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:31:37:372 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:31:37:372 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:31:37:372 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:31:37:372 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:31:37:372 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:31:37:372 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:31:42:268 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:31:42:268 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:31:49:186 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:31:49:186 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:31:49:186 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:31:49:186 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:31:49:186 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:31:49:186 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:32:04:204 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:32:04:204 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:32:04:204 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:32:04:204 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:32:04:204 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:32:04:204 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:33:31:518 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:33:31:518 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:31:518 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:31:518 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:31:518 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:31:518 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:33:42:6 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:33:42:6 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:42:7 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:42:7 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:42:7 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:42:7 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:33:42:281 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:33:42:281 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:33:48:793 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:33:48:793 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:48:793 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:48:793 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:48:794 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:48:794 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:33:52:283 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:33:52:283 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:33:57:11 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:33:57:11 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:57:11 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:57:11 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:33:57:11 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:33:57:11 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:33:57:469 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:33:57:469 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:36:06:640 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:36:06:640 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:06:640 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:06:640 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:06:640 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:06:640 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:36:16:310 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:36:16:310 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:16:310 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:16:310 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:16:310 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:16:310 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:36:22:293 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:36:22:293 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:36:31:312 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:36:31:312 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:31:312 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:31:312 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:31:312 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:31:312 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:36:34:232 file system/(5449:5461): Solicitud de request -- SELECT -- 
+
+[INFO] 12:36:34:232 file system/(5449:5461): Request -- SELECT -- realizada !!!
+
+[INFO] 12:36:39:511 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:36:39:511 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:39:511 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:39:511 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:39:511 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:39:511 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:36:46:314 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:36:46:314 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:46:314 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:46:314 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:36:46:314 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:36:46:314 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:36:47:167 file system/(5449:5461): Inicio de request -- DROP --
+
+[INFO] 12:36:47:186 file system/(5449:5461): Request -- DROP-- realizada
+
+[INFO] 12:36:52:602 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:36:52:603 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:37:01:319 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:37:01:319 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:01:319 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:01:319 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:01:319 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:01:320 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:37:02:297 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:37:02:297 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:37:02:297 file system/(5449:5461): Inicio de request -- INSERT -- 
+
+[INFO] 12:37:02:297 file system/(5449:5461): Request -- INSERT -- realizada !!!
+
+[INFO] 12:37:16:322 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:37:16:322 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:16:322 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:16:322 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:16:322 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:16:322 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:37:31:325 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:37:31:325 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:31:325 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:31:325 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:31:325 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:31:325 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:37:46:328 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:37:46:328 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:46:328 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:46:328 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:37:46:328 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:37:46:328 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:38:01:336 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:38:01:336 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:01:336 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:01:336 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:01:336 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:01:336 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:38:16:339 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:38:16:339 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:16:339 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:16:339 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:16:339 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:16:339 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:38:31:342 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:38:31:342 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:31:342 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:31:342 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:31:342 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:31:342 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:38:46:347 file system/(5449:5461): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:38:46:347 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:46:347 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:46:347 file system/(5449:5461): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:38:46:347 file system/(5449:5461): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:38:46:347 file system/(5449:5461): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:49:23:434 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:49:23:434 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:23:434 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:23:435 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:23:435 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:23:435 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:49:26:354 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 12:49:26:356 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 12:49:30:953 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:49:30:954 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:49:31:921 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:49:31:921 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:31:922 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:31:922 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:31:922 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:31:922 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:49:33:594 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:49:33:594 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:49:33:595 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:49:33:595 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:49:46:929 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:49:46:929 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:46:929 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:46:929 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:46:930 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:46:930 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:49:57:773 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:49:57:773 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:57:773 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:57:773 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:49:57:773 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:49:57:773 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:50:01:938 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:50:01:938 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:50:01:938 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:50:01:938 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:50:01:938 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:50:01:938 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:50:09:107 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:50:09:108 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:50:12:236 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 12:50:12:236 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 12:52:26:426 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:52:26:426 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:52:26:426 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:52:26:426 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:52:26:426 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:52:26:426 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:52:28:840 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 12:52:28:840 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 12:52:32:376 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:52:32:377 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:52:32:377 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:52:32:377 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:52:32:485 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:52:32:486 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:52:33:609 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:52:33:609 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:52:33:610 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:52:33:610 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:52:37:540 file system/(9186:9272): Solicitud de request -- SELECT -- 
+
+[INFO] 12:52:37:540 file system/(9186:9272): Request -- SELECT -- realizada !!!
+
+[INFO] 12:52:41:876 file system/(9186:9272): Solicitud de request -- SELECT -- 
+
+[INFO] 12:52:41:876 file system/(9186:9272): Request -- SELECT -- realizada !!!
+
+[INFO] 12:52:44:388 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 12:52:44:388 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 12:52:47:383 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:52:47:383 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:52:47:383 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:52:47:383 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:52:48:908 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:52:48:908 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:52:48:908 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:52:48:908 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:52:59:764 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:52:59:764 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:52:59:764 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:52:59:764 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:53:02:393 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:53:02:393 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:53:02:393 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:53:02:393 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:53:15:916 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 12:53:15:916 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 12:53:17:399 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:53:17:399 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:56:19:646 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:56:19:646 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:56:27:100 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:56:27:101 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:56:30:2 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:56:30:2 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:56:30:2 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:56:30:2 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:56:33:634 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:56:33:635 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:56:33:635 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:56:33:635 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:56:42:982 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:56:42:982 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:56:46:45 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:56:46:45 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:56:46:45 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:56:46:45 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:56:47:61 file system/(9186:9272): Solicitud de request -- SELECT -- 
+
+[INFO] 12:56:47:61 file system/(9186:9272): Request -- SELECT -- realizada !!!
+
+[INFO] 12:56:56:161 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 12:56:56:161 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 12:58:23:615 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:58:23:615 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:58:31:510 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:58:31:511 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:58:33:641 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:58:33:641 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:58:33:642 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:58:33:642 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:58:34:516 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:58:34:516 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:58:34:516 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:58:34:516 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:58:35:480 file system/(9186:9272): Solicitud de request -- SELECT -- 
+
+[INFO] 12:58:35:481 file system/(9186:9272): Request -- SELECT -- realizada !!!
+
+[INFO] 12:58:49:543 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 12:58:49:543 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 12:58:49:543 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 12:58:49:543 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 12:58:53:643 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 12:58:53:644 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 12:58:55:288 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 12:58:55:289 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:01:01:409 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:01:01:409 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:01:02:481 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:01:02:481 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:01:07:927 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:01:07:927 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:01:13:654 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:01:13:654 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:01:13:654 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:01:13:654 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:01:17:487 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:01:17:487 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 13:01:17:487 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 13:01:17:487 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:01:23:363 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:01:23:364 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:03:55:405 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:03:55:406 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:04:04:679 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:04:04:679 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:04:13:916 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:04:13:917 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:04:19:713 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:04:19:713 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 13:04:19:713 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 13:04:19:713 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:04:23:673 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:04:23:673 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:04:23:674 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:04:23:674 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:04:33:676 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:04:33:676 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:04:34:290 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:04:34:290 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:04:34:742 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:04:34:742 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:05:45:433 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:05:45:433 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:05:56:865 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:05:56:866 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:06:00:152 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:06:00:153 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:06:03:687 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:06:03:687 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:06:03:688 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:06:03:688 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:06:05:276 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 13:06:05:276 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 13:06:10:127 file system/(9186:9272): Solicitud de request -- SELECT -- 
+
+[INFO] 13:06:10:127 file system/(9186:9272): Request -- SELECT -- realizada !!!
+
+[INFO] 13:06:11:871 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:06:11:871 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 13:06:11:871 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 13:06:11:871 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:06:13:549 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:06:13:550 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:10:21:53 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:10:21:53 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:10:31:187 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:10:31:187 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:10:31:851 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:10:31:852 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:10:33:728 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:10:33:728 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:10:33:728 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:10:33:728 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:10:39:666 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:10:39:667 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:10:43:729 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:10:43:729 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:10:44:106 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:10:44:107 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:10:46:28 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:10:46:28 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:10:46:198 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:10:46:198 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:12:39:748 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:12:39:748 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:12:44:342 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:12:44:342 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:12:50:634 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:12:50:635 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:12:50:889 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:12:50:889 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 13:12:50:889 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 13:12:50:889 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 13:12:50:889 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 13:12:50:889 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:12:53:739 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:12:53:739 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:12:53:740 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:12:53:740 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:12:53:741 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:12:53:741 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:12:54:67 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:12:54:67 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:12:58:324 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:12:58:325 file system/(9186:9272): Request -- DROP-- realizada
+
+[INFO] 13:13:05:937 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:13:05:938 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:17:16:267 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:17:16:267 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:17:20:373 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:17:20:374 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:17:23:763 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:17:23:763 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:17:23:764 file system/(9186:9272): Inicio de request -- INSERT -- 
+
+[INFO] 13:17:23:764 file system/(9186:9272): Request -- INSERT -- realizada !!!
+
+[INFO] 13:17:25:261 file system/(9186:9272): Inicio de request -- DESCRIBE GLOBAL --
+
+[INFO] 13:17:25:261 file system/(9186:9272): Inicio de request -- DESCRIBE PARTICULAR --
+
+[INFO] 13:17:25:261 file system/(9186:9272): Request -- DESCRIBE -- realizada !!!
+
+[INFO] 13:17:25:261 file system/(9186:9272): Request -- DESCRIBE GLOBAL -- realizada
+
+[INFO] 13:17:27:841 file system/(9186:9272): Inicio de request -- DROP --
+
+[INFO] 13:17:27:841 file system/(9186:9272): Request -- DROP-- realizada
+

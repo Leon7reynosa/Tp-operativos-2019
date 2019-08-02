@@ -66,6 +66,7 @@ void mostrar_memoria_utilizada(memoria_t* memoria_utilizada);
 void guardar_tabla_consistencia(char* tabla, metadata_t* metadata_tabla);
 int obtener_index_memoria(int key);
 void actualizar_metadata(t_list* datos_describe);
+char* dame_copia_char(char* copiar);
 
 
 
