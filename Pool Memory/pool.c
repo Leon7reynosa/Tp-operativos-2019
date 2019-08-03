@@ -190,7 +190,7 @@ void abortar_hilos(void){
 	pthread_cancel(gossip_thread);
 //	pthread_mutex_lock(&mutex_gossip);
 
-	//pthread_cancel(inotify_thread);
+	pthread_cancel(inotify_thread);
 
 	printf("Se realiza un JOURNAL para cerrar la memoria correctamente\n");
 	log_info(logger_estado, "Se realiza un JOURNAL para cerrar la memoria correctamente");
