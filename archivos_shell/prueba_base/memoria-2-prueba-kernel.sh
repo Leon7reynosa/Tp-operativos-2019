@@ -2,7 +2,7 @@ cd ..
 cd ..
 cp -r Pool\ Memory/ /home/utnso/
 cd configuraciones/
-cd prueba_kernel/
+cd prueba_base/
 cd memoria-2-config/
 cp pool.config /home/utnso/Pool\ Memory/
 cd ..

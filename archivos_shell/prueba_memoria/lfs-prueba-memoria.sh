@@ -2,7 +2,7 @@ cd ..
 cd ..
 cp -r LFS/ /home/utnso/
 cd configuraciones/
-cd prueba_kernel/
+cd prueba_lfs/
 cd lfs-config/
 cp fileSystem.config /home/utnso/LFS/
 cd ..

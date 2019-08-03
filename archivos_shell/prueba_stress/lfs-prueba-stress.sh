@@ -2,7 +2,7 @@ cd ..
 cd ..
 cp -r LFS/ /home/utnso/
 cd configuraciones/
-cd prueba_base/
+cd prueba_stress/
 cd lfs-config/
 cp fileSystem.config /home/utnso/LFS/
 cd ..
@@ -12,8 +12,8 @@ cd ..
 cd ..
 cd ..
 cd ..
-mv LFS lfs-base
-cd lfs-base/
+mv LFS lfs-stress
+cd lfs-stress/
 cd Default/
 make clean
 make all
