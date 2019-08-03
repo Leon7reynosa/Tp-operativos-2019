@@ -1,4 +1,5 @@
 cd ..
+cd ..
 cp -r Pool\ Memory/ /home/utnso/
 cd configuraciones/
 cd prueba_kernel/

@@ -1,4 +1,5 @@
 cd ..
+cd ..
 cp -r Kernel/ /home/utnso/
 cd configuraciones/
 cd prueba_kernel/
@@ -8,8 +9,8 @@ cd ..
 cd ..
 cd ..
 cd ..
-mv Kernel kernel-prueba-kernel
-cd kernel-prueba-kernel/
+mv Kernel kernel-base
+cd kernel-prueba-base/
 cd Default/
 make clean
 make all

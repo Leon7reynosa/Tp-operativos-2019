@@ -1,4 +1,5 @@
 cd ..
+cd ..
 cp -r LFS/ /home/utnso/
 cd configuraciones/
 cd prueba_kernel/
@@ -11,8 +12,8 @@ cd ..
 cd ..
 cd ..
 cd ..
-mv LFS lfs-prueba-kernel
-cd lfs-prueba-kernel/
+mv LFS lfs-base
+cd lfs-base/
 cd Default/
 make clean
 make all
