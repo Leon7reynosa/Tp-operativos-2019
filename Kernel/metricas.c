@@ -249,7 +249,7 @@ void loggear_memory_load(){
 	void _mostrar_memory_load(void*  _memoria){
 
 		memoria_t* memoria = (memoria_t* ) _memoria;
-		int porcentaje_memory_load;
+		float porcentaje_memory_load;
 
 		if(total_requests == 0){
 
@@ -284,11 +284,15 @@ int total_ejecuciones(){
 	int total_ejecuciones = 0;
 
 
-	total_ejecuciones += total_ejecucion_de_metrica(metrica_sc);
+	void _agregar_contador(void* _memoria){
 
-	total_ejecuciones += total_ejecucion_de_metrica(metrica_ec);
+		memoria_t* memoria = (memoria_t* ) _memoria;
 
-	total_ejecuciones += total_ejecucion_de_metrica(metrica_shc);
+		total_ejecuciones += memoria->contador_requests;
+
+	}
+
+	list_iterate(tabla_gossiping, _agregar_contador);
 
 	return total_ejecuciones;
 }
@@ -302,8 +306,8 @@ int total_ejecucion_de_metrica(metrica_t* metrica){
 
 void loggear_metricas(char* consistencia , metrica_t* metrica){
 
-	int read_latency = 0;
-	int write_latency = 0;
+	float read_latency = 0;
+	float write_latency = 0;
 
 	if(!list_is_empty(metrica->lista_select)){
 

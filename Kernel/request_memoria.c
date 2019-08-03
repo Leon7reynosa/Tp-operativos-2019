@@ -37,11 +37,10 @@ void request_add(int numero_memoria, char* consistencia){
 
 	}
 
-	printf("[ADD] Agarre el semaforo\n");
 
 	if( !memoria_agregar->conectado){
 
-		printf("[ADD]NO ESTA CONECTADA\n");
+		printf("\n>La memoria no estaba conectada\n\n");
 
 		memoria_agregar->socket = conectar_servidor(memoria_agregar->ip , memoria_agregar->puerto);
 
@@ -51,7 +50,7 @@ void request_add(int numero_memoria, char* consistencia){
 
 			log_error(logger_kernel , "-La MEMORIA no esta conectada, NO la agregamos a la consistencia.-");
 
-			printf("\n>La MEMORIA no esta conectada\n");
+			printf("\n>La MEMORIA sigue desconectada\n");
 
 			pthread_rwlock_unlock(&memoria_agregar->semaforo_memoria);
 
@@ -66,8 +65,6 @@ void request_add(int numero_memoria, char* consistencia){
 
 
 	}
-
-	printf("[ADD] ESTA CONECTADA\n");
 
 	pthread_rwlock_unlock(&memoria_agregar->semaforo_memoria);
 

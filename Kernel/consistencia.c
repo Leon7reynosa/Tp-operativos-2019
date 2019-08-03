@@ -1,6 +1,6 @@
 /*
  * consistencia.c
- *
+ *hola
  *  Created on: 14 jun. 2019
  *      Author: utnso
  */
@@ -40,11 +40,7 @@ void agregar_a_consistencia(cod_consistencia codigo, memoria_t* memoria_a_guarda
 
 		case EC:
 
-			printf("[ADD] Voy a agarrar el semaforo ec\n");
-
 			pthread_rwlock_wrlock(&semaforo_eventual_c);
-
-			printf("[ADD] Solte el semaforo ec\n");
 
 			list_add(Eventual_C, memoria_a_guardar);
 
@@ -136,6 +132,8 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 			break;
 	}
 
+
+
 	pthread_rwlock_rdlock(&semaforo_registro_tabla);
 
 	if(!dictionary_has_key(registro_tabla, tabla)){
@@ -148,7 +146,11 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 	}
 
-	codigo_consistencia =    identificar_consistencia(  (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia );
+	char* consis =  (( Metadata ) dictionary_get(registro_tabla , tabla ) )->consistencia ;
+
+	codigo_consistencia =    identificar_consistencia(  consis );
+
+	log_info(logger_kernel, "Consistencia utilizada: %s", consis );
 
 	pthread_rwlock_unlock(&semaforo_registro_tabla);
 
@@ -460,6 +462,8 @@ int funcion_hash(u_int16_t key) {
 
 
 void mostrar_memoria_utilizada(memoria_t* memoria_utilizada){
+
+	log_info(logger_kernel , "MEMORIA utilizada: %d" , memoria_utilizada->numero_memoria);
 
 	printf("\n>>La memoria utilizada sera: \n");
 	printf("Numero Memoria: %d\n" , memoria_utilizada->numero_memoria);

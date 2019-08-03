@@ -111,13 +111,13 @@ insert crear_dato_insert(char* tabla, u_int16_t key, char* value, time_t timesta
 
 void liberar_dato_insert(insert dato){
 
-	printf("rompi:C\n");
+
 	free(dato->tabla->buffer);
 	free(dato->tabla);
-printf("mentira :D\n");
+
 	free(dato->value->buffer);
 	free(dato->value);
-	printf("holaa\n");
+
 	free(dato);
-	printf("holaa\n");
+
 }

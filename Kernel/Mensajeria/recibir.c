@@ -58,8 +58,6 @@ t_list* recibir_describe(int conexion){
 
 	}
 
-	printf("Ya RECIBI\n");
-
 	if(estado == ERROR){
 
 		return datos_metadata;
@@ -67,9 +65,6 @@ t_list* recibir_describe(int conexion){
 	}
 
 	error_recv = recv(conexion, &numero_tablas, sizeof(int), MSG_WAITALL);
-
-	printf("EMPIEZO A RECIBIR\n");
-
 
 	for(int i = 0; i < numero_tablas; i++){
 
@@ -126,7 +121,7 @@ t_list* recibir_describe(int conexion){
 
 	if( numero_tablas == 0 ){
 
-		printf("\n--No Hay Tablas--\n");
+		printf("\n--No Hay Tablas en el FILE SYSTEM--\n");
 
 	}
 

@@ -261,6 +261,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 		pthread_rwlock_rdlock(&semaforo_quantum);
 
 		printf("\n====================Se Ejecutara el ARCHIVO %s====================\n" , siguiente_script->path_lql);
+		log_info(logger_kernel, "===SE EJECTURA EL ARCHIVO %s===" , siguiente_script->path_lql);
 
 		while( i < quantum && !queue_is_empty(cola_exec)){
 
@@ -269,9 +270,11 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			if(!ejecutar_request(request )){
 
+
+
 				log_error(logger_kernel , "FALLO al ejecutar la REQUEST:  %s.", request);
 
-				log_error(logger_kernel, "SCRIPT movida a COLA DE EXIT");
+				log_error(logger_kernel, "SCRIPT %s movida a COLA DE EXIT" ,siguiente_script->path_lql);
 
 				printf("\n>NO se seguira EJECTUANDO el SCRIPT\n");
 
@@ -283,7 +286,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 				log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
 
-				printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+				printf("\n>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<\n\n");
 
 				continue;
 
@@ -292,7 +295,8 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			//log_info(logger_kernel , ">>FIN de la REQUEST<<\n"); // ME ROMPE EN ESTE LOG , QUE SE VAYA A CAGAR
 
-			printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+			log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
+			printf("\n>>>>>>>>>>FIN DE LA REQUEST<<<<<<<<<<<<\n\n");
 
 				 //hay que inicializar las conexiones
 				 //deberia ahora recibir la operacion
@@ -308,9 +312,11 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 			queue_push(cola_exit, siguiente_script);
 
-			log_info(logger_kernel, "SCRIPT movida a COLA DE EXIT");
+			log_info(logger_kernel, "SCRIPT  %s movida a COLA DE EXIT" , siguiente_script->path_lql);
 
 			printf("\n>Script movido a COLA DE EXIT\n");
+
+			log_info(logger_kernel , "===FIN DE LA EJECUCION DEL ARCHIVO %s===\n" , siguiente_script->path_lql);
 
 			printf("\n==================Fin de Ejecucion del ARCHIVO %s===================\n" , siguiente_script->path_lql);
 
@@ -320,9 +326,9 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		}else{
 
-			log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
+			log_info(logger_kernel , ">>FIN de la REQUEST -- TERMINO EL QUANTUM<<\n");
 
-			printf("\n>>>>>>>>>>>>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n");
+			printf("\n>>>>>>>>>>>>Termino el Quantum<<<<<<<<<<<<<<<<\n\n");
 
 			pthread_rwlock_wrlock(&semaforo_cola_ready);
 

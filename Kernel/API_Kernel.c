@@ -14,7 +14,7 @@ int ejecutar_request(char* request_lql){
 
 	printf("\n>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<\n");
 
-	log_info(logger_kernel, "  >>>NUEVA REQUEST: %s<<< " , request_lql);
+	log_info(logger_kernel, " >>>NUEVA REQUEST: %s<<< " ,  request_lql);
 
 	printf("\n>REQUEST: %s\n" , request_lql);
 
@@ -54,6 +54,8 @@ int ejecutar_request(char* request_lql){
 
 					free(nombre_tabla);
 
+					liberar_dato_select(select_enviar);
+
 					return 0;
 
 				}
@@ -91,6 +93,8 @@ int ejecutar_request(char* request_lql){
 
 					free(nombre_tabla);
 
+					liberar_dato_select(select_enviar);
+
 					return 0;
 
 				}
@@ -115,7 +119,13 @@ int ejecutar_request(char* request_lql){
 
 					free(nombre_tabla);
 
+					liberar_dato_select(select_enviar);
+
 					return 1;
+
+				}else{
+
+					log_info(logger_kernel, "-Se recibio el dato con el value: %s" , (char*) dato_recibido->value->buffer);
 
 				}
 
@@ -215,6 +225,12 @@ int ejecutar_request(char* request_lql){
 					liberar_dato_insert(insert_enviar);
 
 					return 0;
+
+				}else{
+
+					log_info(logger_kernel , "-REQUEST CREATE realizada con exito");
+
+					printf("\nSe realizo bien la REQUEST CREATE\n");
 
 				}
 

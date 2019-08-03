@@ -10,7 +10,7 @@ cd ..
 cd ..
 cd ..
 mv Kernel kernel-stress
-cd kernel-prueba-stress/
+cd kernel-stress/
 cd Default/
 make clean
 make all

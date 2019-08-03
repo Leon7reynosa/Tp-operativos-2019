@@ -230,11 +230,11 @@ bool actualizar_gossiping(memoria_t* memoria){
 
 	if(  (send(memoria->socket , buffer, sizeof(cod_operacion) + sizeof(int) , 0) ) <= 0 ){
 
-		log_error(logger_gossip, "Fallo al enviar la request");
-
 		memoria->conectado = false;
 
 		pthread_rwlock_unlock(&memoria->semaforo_memoria);
+
+		log_error(logger_gossip, "Fallo al enviar la request");
 
 		free(buffer);
 
@@ -349,8 +349,9 @@ void ingresar_a_tabla_gossiping(memoria_t* dato_memoria_ingresar){
 
 	list_add(tabla_gossiping, dato_memoria_ingresar);
 
-	printf("\n>Memoria %d Agregada a Tabla de Gossiping--\n" , dato_memoria_ingresar->numero_memoria);
-
+	printf("\n==============================================\n");
+	printf(">Memoria %d Agregada a Tabla de Gossiping--\n" , dato_memoria_ingresar->numero_memoria);
+	printf("==============================================\n\n");
 	log_info(logger_gossip , "La Memoria %d agregada a la tabla de gossiping");
 
 	pthread_rwlock_unlock(&semaforo_tabla_gossiping);
@@ -399,14 +400,14 @@ memoria_t* crear_memoria_t(char* ip , int puerto , int numero_memoria){
 	if(memoria_creada->socket > 0){
 
 
-		log_info(logger_kernel, "-Se establecio la conexion con la MEMORIA %d.-" ,
+		log_info(logger_gossip, "-Se establecio la conexion con la MEMORIA %d.-\n" ,
 				memoria_creada->numero_memoria);
 
 		memoria_creada->conectado = true;
 
 	}else{
 
-		log_error(logger_kernel, "NO se pudo establecer la conexion con la MEMORIA%d.-",
+		log_error(logger_gossip, "NO se pudo establecer la conexion con la MEMORIA%d.-",
 				memoria_creada->numero_memoria);
 
 		memoria_creada->conectado = false;

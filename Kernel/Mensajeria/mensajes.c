@@ -40,7 +40,6 @@ bool enviar_request(cod_operacion cod_op, void* tipoRequest, int  conexion_memor
 		buffer= serializar_insert(request);
 		bytes = ((insert)(request->tipo_request))->bytes;
 
-		printf("timestamp que vamos a enviar: %d\n" , ((insert)(request->tipo_request))->timestamp);
 
 		break;
 
