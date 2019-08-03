@@ -14,11 +14,11 @@ void* auto_gossip(void* argumentos){
 
 	while(1){
 
-		pthread_rwlock_rdlock(&semaforo_tiempo_gossiping);
+//		pthread_rwlock_rdlock(&semaforo_tiempo_gossiping);
 
 		usleep(tiempo_gossiping * 1000);
 
-		pthread_rwlock_unlock(&semaforo_tiempo_gossiping);
+//		pthread_rwlock_unlock(&semaforo_tiempo_gossiping);
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
@@ -158,7 +158,9 @@ void liberar_dato_gossiping(struct DatoTablaGossiping* dato){
 
 tabla_gossip_dto generar_datos_gossip(t_list* memorias){
 
-	tabla_gossip_dto dato_a_enviar = crear_dto_gossip(list_size(memorias));
+	int cant_memorias = list_size(memorias);
+
+	tabla_gossip_dto dato_a_enviar = crear_dto_gossip(cant_memorias);
 
 	printf("Voy a enviar %i memorias\n", dato_a_enviar->cant_memorias);
 

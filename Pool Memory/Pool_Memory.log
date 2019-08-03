@@ -1,0 +1,2207 @@
+[INFO] 00:32:06:648 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:06:649 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:07:649 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:07:650 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:08:650 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:08:651 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:09:651 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:09:652 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:10:11 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:10:11 Pool Memory/(6298:6298): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:32:10:13 Pool Memory/(6298:6298): Me llegaron las metadatas
+[INFO] 00:32:10:13 Pool Memory/(6298:6298): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:32:10:13 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:10:652 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:10:652 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:11:653 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:11:653 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:12:654 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:12:654 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:13:655 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:13:655 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:14:655 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:14:656 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:15:656 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:15:656 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:16:657 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:16:657 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:17:82 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:17:82 Pool Memory/(6298:6298): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:32:17:84 Pool Memory/(6298:6298): Me llegaron las metadatas
+[INFO] 00:32:17:84 Pool Memory/(6298:6298): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:32:17:85 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:17:657 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:17:658 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:18:658 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:18:658 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:19:587 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:19:587 Pool Memory/(6298:6298): Se realizara un DROP de tabla: LIBRARY
+[INFO] 00:32:19:589 Pool Memory/(6298:6298): No existe el segmento asociado a LIBRARY
+[INFO] 00:32:19:589 Pool Memory/(6298:6298): Se termino de realizar el DROP
+[INFO] 00:32:19:590 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:19:658 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:19:659 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:20:648 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:20:648 Pool Memory/(6298:6298): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:32:20:651 Pool Memory/(6298:6298): Me llegaron las metadatas
+[INFO] 00:32:20:651 Pool Memory/(6298:6298): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:32:20:651 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:20:660 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:20:660 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:21:661 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:21:661 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:22:661 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:22:662 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:23:662 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:23:662 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:24:662 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:24:663 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:25:663 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:25:663 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:26:663 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:26:664 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:27:664 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:27:665 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:28:665 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:28:665 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:29:666 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:29:667 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:30:667 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:30:668 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:31:668 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:31:669 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:32:670 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:32:670 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:33:670 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:33:670 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:34:671 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:34:671 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:35:651 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:35:651 Pool Memory/(6298:6298): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:32:35:653 Pool Memory/(6298:6298): Me llegaron las metadatas
+[INFO] 00:32:35:653 Pool Memory/(6298:6298): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:32:35:654 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:35:671 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:35:672 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:36:673 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:36:673 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:37:673 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:37:673 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:38:673 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:38:674 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:39:675 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:39:675 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:40:676 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:40:676 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:41:676 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:41:677 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:42:677 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:42:677 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:43:678 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:43:678 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:44:678 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:44:679 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:45:680 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:45:680 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:46:681 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:46:682 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:47:682 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:47:682 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:48:683 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:48:683 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:49:684 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:49:684 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:50:654 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:50:654 Pool Memory/(6298:6298): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:32:50:656 Pool Memory/(6298:6298): Me llegaron las metadatas
+[INFO] 00:32:50:656 Pool Memory/(6298:6298): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:32:50:656 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:50:686 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:50:686 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:51:687 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:51:687 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:52:688 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:52:688 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:53:688 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:53:689 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:54:690 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:54:690 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:55:691 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:55:691 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:56:692 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:56:692 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:57:692 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:57:692 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:58:696 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:58:696 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:32:59:697 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:32:59:697 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:33:00:699 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:33:00:699 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:33:01:700 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:33:01:700 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:33:02:701 Pool Memory/(6298:6298): Se recibio una nueva REQUEST.
+[INFO] 00:33:02:701 Pool Memory/(6298:6298): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:34:78 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:34:126 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:35:116 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:35:122 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:36:129 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:36:142 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:36:838 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:36:839 Pool Memory/(6385:6385): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:34:36:861 Pool Memory/(6385:6385): Me llegaron las metadatas
+[INFO] 00:34:36:862 Pool Memory/(6385:6385): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:34:36:888 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:37:140 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:37:145 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:38:144 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:38:149 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:39:149 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:39:154 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:40:153 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:40:158 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:41:157 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:41:163 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:42:162 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:42:167 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:43:166 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:43:171 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:44:185 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:44:229 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:45:206 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:45:218 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:46:215 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:46:230 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:47:229 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:47:234 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:48:72 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:48:73 Pool Memory/(6385:6385): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:34:48:76 Pool Memory/(6385:6385): Me llegaron las metadatas
+[INFO] 00:34:48:76 Pool Memory/(6385:6385): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:34:48:87 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:48:233 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:48:238 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:49:237 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:49:242 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:50:241 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:50:246 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:51:245 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:51:250 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:52:250 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:52:255 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:53:254 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:53:259 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:54:259 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:54:264 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:55:263 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:55:268 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:56:268 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:56:272 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:57:272 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:57:278 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:58:277 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:58:282 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:59:282 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:59:288 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:34:59:373 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:34:59:374 Pool Memory/(6385:6385): Se realizara un DROP de tabla: NINTENDO
+[INFO] 00:34:59:387 Pool Memory/(6385:6385): No existe el segmento asociado a NINTENDO
+[INFO] 00:34:59:388 Pool Memory/(6385:6385): Se termino de realizar el DROP
+[INFO] 00:34:59:393 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:00:288 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:35:00:293 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:01:292 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:35:01:296 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:02:296 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:35:02:301 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:03:79 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:35:03:82 Pool Memory/(6385:6385): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:35:03:85 Pool Memory/(6385:6385): Me llegaron las metadatas
+[INFO] 00:35:03:86 Pool Memory/(6385:6385): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:35:03:87 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:03:301 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:35:03:306 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:04:306 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:35:04:312 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:05:185 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:35:05:186 Pool Memory/(6385:6385): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 00:35:05:191 Pool Memory/(6385:6385): Tabla: COLORS
+[INFO] 00:35:05:191 Pool Memory/(6385:6385): Consistencia: SC
+[INFO] 00:35:05:192 Pool Memory/(6385:6385): Cantidad de particiones: 4
+[INFO] 00:35:05:192 Pool Memory/(6385:6385): Tiempo de compactacion: 300000
+[INFO] 00:35:05:214 Pool Memory/(6385:6385): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 00:35:05:221 Pool Memory/(6385:6385): Se termino de trabajar la REQUEST.
+
+[INFO] 00:35:05:232 Pool Memory/(6385:6385): Se recibio una nueva REQUEST.
+[INFO] 00:39:50:28 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:50:86 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:51:77 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:51:82 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:52:81 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:52:86 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:53:87 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:53:92 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:54:91 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:54:96 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:55:96 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:55:104 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:56:103 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:56:108 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:57:107 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:57:112 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:57:691 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:57:692 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:39:57:711 Pool Memory/(6503:6503): No se recibio el estado de la request.
+[INFO] 00:39:57:712 Pool Memory/(6503:6503): No se recibio respuesta del FileSystem, esta desconectado
+[INFO] 00:39:57:722 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:39:57:726 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:58:112 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:58:117 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:39:59:116 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:39:59:120 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:00:119 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:00:136 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:01:129 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:01:134 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:02:134 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:02:139 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:03:138 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:03:144 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:03:537 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:03:538 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:40:03:541 Pool Memory/(6503:6503): Lissandra no esta conectada
+[INFO] 00:40:03:542 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:40:03:543 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:04:23 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:04:23 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:40:04:25 Pool Memory/(6503:6503): Lissandra no esta conectada
+[INFO] 00:40:04:25 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:40:04:26 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:04:143 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:04:147 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:05:147 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:05:152 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:06:151 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:06:156 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:07:156 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:07:160 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:08:160 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:08:165 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:09:165 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:09:173 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:10:172 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:10:176 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:11:176 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:11:181 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:12:180 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:12:185 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:13:185 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:13:190 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:14:190 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:14:198 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:15:197 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:15:202 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:16:202 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:16:207 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:17:206 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:17:214 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:18:214 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:18:219 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:19:27 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:19:27 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:40:19:29 Pool Memory/(6503:6503): Lissandra no esta conectada
+[INFO] 00:40:19:29 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:40:19:30 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:19:219 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:19:224 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:20:223 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:20:228 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:21:228 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:21:234 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:22:233 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:22:238 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:23:237 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:23:242 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:24:242 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:24:246 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:25:245 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:25:251 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:26:249 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:26:254 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:27:253 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:27:258 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:28:257 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:28:262 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:29:262 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:29:270 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:30:267 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:30:273 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:31:273 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:31:278 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:32:277 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:32:282 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:33:282 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:33:286 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:34:31 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:34:32 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:40:34:33 Pool Memory/(6503:6503): Lissandra no esta conectada
+[INFO] 00:40:34:34 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:40:34:34 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:34:286 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:34:291 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:35:291 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:35:296 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:36:295 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:36:300 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:37:300 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:37:304 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:38:304 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:38:309 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:39:309 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:39:314 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:40:314 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:40:322 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:41:318 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:41:323 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:42:323 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:42:328 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:43:327 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:43:332 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:44:331 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:44:336 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:45:336 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:45:340 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:46:340 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:46:345 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:47:345 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:47:350 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:48:349 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:48:354 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:49:38 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:49:38 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:40:49:40 Pool Memory/(6503:6503): Lissandra no esta conectada
+[INFO] 00:40:49:40 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:40:49:41 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:49:353 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:49:360 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:50:359 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:50:364 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:51:364 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:51:369 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:52:369 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:52:374 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:53:373 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:53:378 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:54:378 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:54:386 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:55:383 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:55:388 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:56:387 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:56:392 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:57:392 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:57:397 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:58:396 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:58:401 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:40:59:401 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:40:59:405 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:00:404 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:00:409 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:01:409 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:01:413 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:02:413 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:02:418 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:03:417 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:03:422 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:04:42 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:04:43 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:41:04:44 Pool Memory/(6503:6503): Lissandra no esta conectada
+[INFO] 00:41:04:45 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:41:04:46 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:04:421 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:04:426 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:05:425 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:05:431 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:06:429 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:06:434 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:07:434 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:07:439 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:08:438 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:08:443 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:09:442 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:09:453 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:10:449 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:10:454 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:11:453 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:11:458 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:12:458 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:12:463 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:13:462 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:13:467 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:14:466 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:14:470 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:15:470 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:15:475 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:16:474 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:16:479 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:17:478 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:17:483 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:18:482 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:18:487 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:19:47 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:19:47 Pool Memory/(6503:6503): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:41:19:49 Pool Memory/(6503:6503): Lissandra no esta conectada
+[INFO] 00:41:19:49 Pool Memory/(6503:6503): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:41:19:50 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:19:489 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:19:494 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:20:493 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:20:498 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:21:497 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:21:502 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:22:503 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:22:508 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:23:507 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:23:513 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:24:512 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:24:516 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:25:515 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:25:520 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:26:519 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:26:524 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:27:524 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:27:529 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:28:528 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:28:533 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:29:533 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:29:537 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:30:538 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:30:544 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:31:543 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:31:547 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:41:32:547 Pool Memory/(6503:6503): Se recibio una nueva REQUEST.
+[INFO] 00:41:32:551 Pool Memory/(6503:6503): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:13:166 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:13:249 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:14:224 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:14:229 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:15:228 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:15:235 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:16:233 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:16:238 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:17:237 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:17:246 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:17:291 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:17:293 Pool Memory/(6671:6671): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:46:17:327 Pool Memory/(6671:6671): Me llegaron las metadatas
+[INFO] 00:46:17:329 Pool Memory/(6671:6671): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:46:17:340 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:18:245 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:18:250 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:19:255 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:19:268 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:20:268 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:20:272 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:21:272 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:21:278 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:22:276 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:22:282 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:23:281 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:23:286 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:24:285 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:24:290 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:24:427 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:24:429 Pool Memory/(6671:6671): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 00:46:24:430 Pool Memory/(6671:6671): Tabla: COLORS
+[INFO] 00:46:24:430 Pool Memory/(6671:6671): Consistencia: SC
+[INFO] 00:46:24:431 Pool Memory/(6671:6671): Cantidad de particiones: 4
+[INFO] 00:46:24:432 Pool Memory/(6671:6671): Tiempo de compactacion: 300000
+[INFO] 00:46:24:437 Pool Memory/(6671:6671): No se pudo realizar el create en el FileSystem
+[INFO] 00:46:24:452 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:25:289 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:25:294 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:26:293 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:26:299 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:27:161 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:27:162 Pool Memory/(6671:6671): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:46:27:165 Pool Memory/(6671:6671): Me llegaron las metadatas
+[INFO] 00:46:27:166 Pool Memory/(6671:6671): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:46:27:167 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:27:298 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:27:303 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:28:303 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:28:307 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:29:307 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:29:314 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:29:906 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:29:908 Pool Memory/(6671:6671): Se realizara un DROP de tabla: COLORS
+[INFO] 00:46:29:916 Pool Memory/(6671:6671): No existe el segmento asociado a COLORS
+[INFO] 00:46:29:921 Pool Memory/(6671:6671): Se termino de realizar el DROP
+[INFO] 00:46:29:926 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:30:312 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:30:317 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:31:317 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:31:326 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:32:325 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:32:331 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:33:331 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:33:336 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:33:916 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:33:917 Pool Memory/(6671:6671): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 00:46:33:917 Pool Memory/(6671:6671): Tabla: COLORS
+[INFO] 00:46:33:918 Pool Memory/(6671:6671): Consistencia: SC
+[INFO] 00:46:33:918 Pool Memory/(6671:6671): Cantidad de particiones: 4
+[INFO] 00:46:33:918 Pool Memory/(6671:6671): Tiempo de compactacion: 300000
+[INFO] 00:46:33:922 Pool Memory/(6671:6671): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 00:46:33:925 Pool Memory/(6671:6671): Se termino de trabajar la REQUEST.
+
+[INFO] 00:46:33:939 Pool Memory/(6671:6671): Se recibio una nueva REQUEST.
+[INFO] 00:46:43:940 Pool Memory/(6671:6671): Se realizara un INSERT con los siguientes parametros
+[INFO] 00:46:43:943 Pool Memory/(6671:6671): Tabla: COLORS
+[INFO] 00:46:43:945 Pool Memory/(6671:6671): Key: 1
+[INFO] 00:46:43:946 Pool Memory/(6671:6671): Value: Blue
+[INFO] 00:46:43:947 Pool Memory/(6671:6671): Timestamp: 1564804003
+[INFO] 00:46:43:953 Pool Memory/(6671:6671): No existe el segmento. Se crea el segmento.
+[INFO] 00:55:20:687 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:20:793 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:21:767 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:21:773 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:22:776 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:22:792 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:23:791 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:23:796 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:24:796 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:24:801 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:25:800 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:25:807 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:26:107 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:26:108 Pool Memory/(7368:7368): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:55:26:134 Pool Memory/(7368:7368): Me llegaron las metadatas
+[INFO] 00:55:26:139 Pool Memory/(7368:7368): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:55:26:156 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:26:806 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:26:811 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:27:812 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:27:822 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:28:818 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:28:822 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:29:822 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:29:826 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:30:826 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:30:831 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:31:830 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:31:835 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:32:835 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:32:839 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:33:839 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:33:844 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:34:681 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:34:681 Pool Memory/(7368:7368): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:55:34:684 Pool Memory/(7368:7368): Me llegaron las metadatas
+[INFO] 00:55:34:684 Pool Memory/(7368:7368): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:55:34:686 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:34:843 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:34:848 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:35:848 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:35:855 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:36:855 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:36:860 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:37:860 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:37:877 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:38:876 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:38:880 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:39:880 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:39:900 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:40:898 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:40:903 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:41:904 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:41:909 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:42:794 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:42:796 Pool Memory/(7368:7368): Se realizara un DROP de tabla: STUDY
+[INFO] 00:55:42:804 Pool Memory/(7368:7368): No existe el segmento asociado a STUDY
+[INFO] 00:55:42:808 Pool Memory/(7368:7368): Se termino de realizar el DROP
+[INFO] 00:55:42:813 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:42:908 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:42:915 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:43:912 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:43:917 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:44:607 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:44:608 Pool Memory/(7368:7368): Se realizara un DROP de tabla: COLORS
+[INFO] 00:55:44:609 Pool Memory/(7368:7368): No existe el segmento asociado a COLORS
+[INFO] 00:55:44:610 Pool Memory/(7368:7368): Se termino de realizar el DROP
+[INFO] 00:55:44:611 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:44:917 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:44:921 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:45:920 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:45:925 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:46:925 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:46:931 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:47:930 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:47:935 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:48:934 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:48:939 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:49:504 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:49:509 Pool Memory/(7368:7368): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 00:55:49:510 Pool Memory/(7368:7368): Tabla: COLORS
+[INFO] 00:55:49:510 Pool Memory/(7368:7368): Consistencia: SC
+[INFO] 00:55:49:511 Pool Memory/(7368:7368): Cantidad de particiones: 4
+[INFO] 00:55:49:511 Pool Memory/(7368:7368): Tiempo de compactacion: 300000
+[INFO] 00:55:49:518 Pool Memory/(7368:7368): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 00:55:49:537 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:49:548 Pool Memory/(7368:7368): Se recibio una nueva REQUEST.
+[INFO] 00:55:59:550 Pool Memory/(7368:7368): Se realizara un INSERT con los siguientes parametros
+[INFO] 00:55:59:557 Pool Memory/(7368:7368): Tabla: COLORS
+[INFO] 00:55:59:557 Pool Memory/(7368:7368): Key: 1
+[INFO] 00:55:59:558 Pool Memory/(7368:7368): Value: Blue
+[INFO] 00:55:59:563 Pool Memory/(7368:7368): Timestamp: 1564804559
+[INFO] 00:55:59:589 Pool Memory/(7368:7368): Existe un segmento para COLORS
+[INFO] 00:55:59:594 Pool Memory/(7368:7368): No existe una pagina con la key: 1
+[INFO] 00:55:59:604 Pool Memory/(7368:7368): Se termino de realizar el INSERT
+[INFO] 00:55:59:607 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:55:59:620 Pool Memory/(7368:7368): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:36:94 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:36:207 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:37:180 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:37:189 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:38:187 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:38:192 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:39:191 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:39:196 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:40:195 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:40:200 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:41:194 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:41:196 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:56:41:217 Pool Memory/(7423:7423): Me llegaron las metadatas
+[INFO] 00:56:41:224 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:56:41:243 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:41:244 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:41:249 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:42:248 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:42:261 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:43:260 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:43:265 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:44:264 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:44:269 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:44:538 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:44:539 Pool Memory/(7423:7423): Se realizara un DROP de tabla: COLORS
+[INFO] 00:56:44:549 Pool Memory/(7423:7423): No existe el segmento asociado a COLORS
+[INFO] 00:56:44:551 Pool Memory/(7423:7423): Se termino de realizar el DROP
+[INFO] 00:56:44:556 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:45:269 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:45:273 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:46:273 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:46:277 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:47:276 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:47:281 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:48:280 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:48:286 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:49:285 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:49:290 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:49:381 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:49:382 Pool Memory/(7423:7423): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 00:56:49:383 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:56:49:383 Pool Memory/(7423:7423): Consistencia: SC
+[INFO] 00:56:49:390 Pool Memory/(7423:7423): Cantidad de particiones: 4
+[INFO] 00:56:49:390 Pool Memory/(7423:7423): Tiempo de compactacion: 300000
+[INFO] 00:56:49:397 Pool Memory/(7423:7423): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 00:56:49:412 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:49:419 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:59:420 Pool Memory/(7423:7423): Se realizara un INSERT con los siguientes parametros
+[INFO] 00:56:59:421 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:56:59:422 Pool Memory/(7423:7423): Key: 1
+[INFO] 00:56:59:422 Pool Memory/(7423:7423): Value: Blue
+[INFO] 00:56:59:423 Pool Memory/(7423:7423): Timestamp: 1564804619
+[INFO] 00:56:59:444 Pool Memory/(7423:7423): Existe un segmento para COLORS
+[INFO] 00:56:59:445 Pool Memory/(7423:7423): No existe una pagina con la key: 1
+[INFO] 00:56:59:459 Pool Memory/(7423:7423): Se termino de realizar el INSERT
+[INFO] 00:56:59:462 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:59:462 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:59:463 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:56:59:466 Pool Memory/(7423:7423): Me llegaron las metadatas
+[INFO] 00:56:59:467 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:56:59:469 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:59:470 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:56:59:499 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:56:59:504 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:09:507 Pool Memory/(7423:7423): Se realizara un SELECT con los siguientes parametros:
+[INFO] 00:57:09:513 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:57:09:514 Pool Memory/(7423:7423): Key: 1
+[INFO] 00:57:09:515 Pool Memory/(7423:7423): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 00:57:09:533 Pool Memory/(7423:7423): Se recibio el dato desde el File System
+[INFO] 00:57:09:548 Pool Memory/(7423:7423): Se termino de realizar el SELECT
+[INFO] 00:57:09:558 Pool Memory/(7423:7423): Se encontro el dato con los siguientes parametros:
+[INFO] 00:57:09:559 Pool Memory/(7423:7423): Timestamp: 1564804619
+[INFO] 00:57:09:559 Pool Memory/(7423:7423): Key: 1
+[INFO] 00:57:09:560 Pool Memory/(7423:7423): Value: Blue
+[INFO] 00:57:09:561 Pool Memory/(7423:7423): Se envio el dato encontrado
+[INFO] 00:57:09:561 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:09:562 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:09:567 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:09:658 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:19:659 Pool Memory/(7423:7423): Se realizara un INSERT con los siguientes parametros
+[INFO] 00:57:19:660 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:57:19:661 Pool Memory/(7423:7423): Key: 2
+[INFO] 00:57:19:661 Pool Memory/(7423:7423): Value: Red
+[INFO] 00:57:19:661 Pool Memory/(7423:7423): Timestamp: 1564804639
+[INFO] 00:57:19:666 Pool Memory/(7423:7423): Existe un segmento para COLORS
+[INFO] 00:57:19:669 Pool Memory/(7423:7423): No existe una pagina con la key: 2
+[INFO] 00:57:19:674 Pool Memory/(7423:7423): Se termino de realizar el INSERT
+[INFO] 00:57:19:680 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:19:681 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:19:697 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:19:698 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:19:702 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:57:19:706 Pool Memory/(7423:7423): Me llegaron las metadatas
+[INFO] 00:57:19:706 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:57:19:708 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:19:708 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:29:714 Pool Memory/(7423:7423): Se realizara un SELECT con los siguientes parametros:
+[INFO] 00:57:29:714 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:57:29:714 Pool Memory/(7423:7423): Key: 2
+[INFO] 00:57:29:715 Pool Memory/(7423:7423): Existe un segmento para la tabla COLORS
+[INFO] 00:57:29:716 Pool Memory/(7423:7423): Existe una pagina con la key: 2
+[INFO] 00:57:29:723 Pool Memory/(7423:7423): Se termino de realizar el SELECT
+[INFO] 00:57:29:726 Pool Memory/(7423:7423): Se encontro el dato con los siguientes parametros:
+[INFO] 00:57:29:731 Pool Memory/(7423:7423): Timestamp: 1564804639
+[INFO] 00:57:29:731 Pool Memory/(7423:7423): Key: 2
+[INFO] 00:57:29:732 Pool Memory/(7423:7423): Value: Red
+[INFO] 00:57:29:732 Pool Memory/(7423:7423): Se envio el dato encontrado
+[INFO] 00:57:29:734 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:29:735 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:29:750 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:29:750 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:32:205 Pool Memory/(7423:7429): No se recibio el estado de la request.
+[INFO] 00:57:39:752 Pool Memory/(7423:7423): Se realizara un SELECT con los siguientes parametros:
+[INFO] 00:57:39:752 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:57:39:752 Pool Memory/(7423:7423): Key: 2
+[INFO] 00:57:39:753 Pool Memory/(7423:7423): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 00:57:39:768 Pool Memory/(7423:7423): El File System no se encuentra conectado.
+[INFO] 00:57:39:768 Pool Memory/(7423:7423): No existe la key en el LFS
+[INFO] 00:57:39:769 Pool Memory/(7423:7423): Se termino de realizar el SELECT
+[INFO] 00:57:39:771 Pool Memory/(7423:7423): No se completo correctamente el select
+[INFO] 00:57:39:773 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:39:773 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:39:778 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:39:779 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:39:789 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:57:39:791 Pool Memory/(7423:7423): Lissandra no esta conectada
+[INFO] 00:57:39:792 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:57:39:793 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:39:873 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:49:874 Pool Memory/(7423:7423): Se realizara un SELECT con los siguientes parametros:
+[INFO] 00:57:49:874 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:57:49:875 Pool Memory/(7423:7423): Key: 1
+[INFO] 00:57:49:875 Pool Memory/(7423:7423): Existe un segmento para la tabla COLORS
+[INFO] 00:57:49:876 Pool Memory/(7423:7423): No existe una pagina con la key 1, la busco en el File System
+[INFO] 00:57:49:882 Pool Memory/(7423:7423): El File System no se encuentra conectado.
+[INFO] 00:57:49:883 Pool Memory/(7423:7423): No se encontro la key
+[INFO] 00:57:49:883 Pool Memory/(7423:7423): Se termino de realizar el SELECT
+[INFO] 00:57:49:887 Pool Memory/(7423:7423): No se completo correctamente el select
+[INFO] 00:57:49:888 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:49:889 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:49:908 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:49:910 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:59:913 Pool Memory/(7423:7423): Se realizara un INSERT con los siguientes parametros
+[INFO] 00:57:59:913 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:57:59:914 Pool Memory/(7423:7423): Key: 1
+[INFO] 00:57:59:914 Pool Memory/(7423:7423): Value: Black
+[INFO] 00:57:59:914 Pool Memory/(7423:7423): Timestamp: 1564804679
+[INFO] 00:57:59:914 Pool Memory/(7423:7423): Existe un segmento para COLORS
+[INFO] 00:57:59:915 Pool Memory/(7423:7423): No existe una pagina con la key: 1
+[INFO] 00:57:59:916 Pool Memory/(7423:7423): Se termino de realizar el INSERT
+[INFO] 00:57:59:922 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:59:922 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:59:949 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:59:950 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:57:59:951 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:57:59:952 Pool Memory/(7423:7423): Lissandra no esta conectada
+[INFO] 00:57:59:952 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:57:59:953 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:57:59:953 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:09:954 Pool Memory/(7423:7423): Se realizara un SELECT con los siguientes parametros:
+[INFO] 00:58:09:955 Pool Memory/(7423:7423): Tabla: COLORS
+[INFO] 00:58:09:955 Pool Memory/(7423:7423): Key: 1
+[INFO] 00:58:09:955 Pool Memory/(7423:7423): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 00:58:09:962 Pool Memory/(7423:7423): El File System no se encuentra conectado.
+[INFO] 00:58:09:963 Pool Memory/(7423:7423): No existe la key en el LFS
+[INFO] 00:58:09:963 Pool Memory/(7423:7423): Se termino de realizar el SELECT
+[INFO] 00:58:09:963 Pool Memory/(7423:7423): No se completo correctamente el select
+[INFO] 00:58:09:964 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:09:972 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:09:987 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:10:979 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:10:984 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:11:984 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:11:3 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:12:998 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:12:4 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:14:6 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:14:19 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:14:954 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:14:955 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:58:14:956 Pool Memory/(7423:7423): Lissandra no esta conectada
+[INFO] 00:58:14:956 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:58:14:957 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:15:18 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:15:23 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:16:23 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:16:28 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:17:27 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:17:35 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:18:31 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:18:37 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:19:36 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:19:41 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:20:42 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:20:67 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:21:56 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:21:74 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:22:60 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:22:70 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:23:68 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:23:85 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:24:72 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:24:77 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:25:77 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:25:83 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:26:81 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:26:86 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:27:85 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:27:90 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:28:90 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:28:95 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:29:94 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:29:99 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:29:958 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:29:958 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:58:29:960 Pool Memory/(7423:7423): Lissandra no esta conectada
+[INFO] 00:58:29:960 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:58:29:961 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:30:98 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:30:103 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:31:103 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:31:109 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:32:108 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:32:113 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:33:112 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:33:117 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:34:117 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:34:131 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:35:130 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:35:135 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:36:134 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:36:139 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:37:139 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:37:152 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:38:144 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:38:149 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:39:148 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:39:157 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:40:154 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:40:160 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:41:160 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:41:165 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:42:164 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:42:173 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:43:171 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:43:176 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:44:176 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:44:180 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:44:961 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:44:962 Pool Memory/(7423:7423): Se realizara un DESCRIBE GLOBAL
+[INFO] 00:58:44:964 Pool Memory/(7423:7423): Lissandra no esta conectada
+[INFO] 00:58:44:964 Pool Memory/(7423:7423): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 00:58:44:966 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:45:181 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:45:185 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:46:185 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:46:190 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:47:190 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:47:194 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:48:193 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:48:200 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:49:198 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:49:211 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:50:202 Pool Memory/(7423:7423): Se recibio una nueva REQUEST.
+[INFO] 00:58:50:207 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 00:58:50:745 Pool Memory/(7423:7423): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:34:118 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:34:118 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:35:118 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:35:119 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:36:119 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:36:119 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:37:120 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:37:120 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:38:120 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:38:120 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:38:0 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:38:0 Pool Memory/(7571:7571): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:02:38:2 Pool Memory/(7571:7571): Me llegaron las metadatas
+[INFO] 01:02:38:2 Pool Memory/(7571:7571): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:02:38:2 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:39:121 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:39:122 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:40:123 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:40:123 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:41:123 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:41:124 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:42:124 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:42:125 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:42:392 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:42:392 Pool Memory/(7571:7571): Se realizara un DROP de tabla: COLORS
+[INFO] 01:02:42:393 Pool Memory/(7571:7571): No existe el segmento asociado a COLORS
+[INFO] 01:02:42:393 Pool Memory/(7571:7571): Se termino de realizar el DROP
+[INFO] 01:02:42:394 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:43:125 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:43:125 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:44:126 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:44:126 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:44:232 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:44:232 Pool Memory/(7571:7571): Se realizara un DROP de tabla: CITIES
+[INFO] 01:02:44:233 Pool Memory/(7571:7571): No existe el segmento asociado a CITIES
+[INFO] 01:02:44:233 Pool Memory/(7571:7571): Se termino de realizar el DROP
+[INFO] 01:02:44:233 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:45:126 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:45:127 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:46:127 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:46:127 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:46:736 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:46:736 Pool Memory/(7571:7571): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:02:46:737 Pool Memory/(7571:7571): Me llegaron las metadatas
+[INFO] 01:02:46:737 Pool Memory/(7571:7571): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:02:46:737 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:47:127 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:47:128 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:48:118 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:48:118 Pool Memory/(7571:7571): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:02:48:119 Pool Memory/(7571:7571): Me llegaron las metadatas
+[INFO] 01:02:48:119 Pool Memory/(7571:7571): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:02:48:120 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:48:128 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:48:130 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:49:128 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:49:129 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:50:130 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:50:130 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:51:130 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:51:131 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:51:645 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:02:51:645 Pool Memory/(7571:7571): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 01:02:51:645 Pool Memory/(7571:7571): Tabla: COLORS
+[INFO] 01:02:51:645 Pool Memory/(7571:7571): Consistencia: SC
+[INFO] 01:02:51:645 Pool Memory/(7571:7571): Cantidad de particiones: 4
+[INFO] 01:02:51:645 Pool Memory/(7571:7571): Tiempo de compactacion: 300000
+[INFO] 01:02:51:646 Pool Memory/(7571:7571): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 01:02:51:647 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:02:51:647 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Tabla: COLORS
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Key: 1
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Value: Blue
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Timestamp: 1564804981
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): No existe el segmento. Se crea el segmento.
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Se termino de realizar el INSERT
+[INFO] 01:03:01:648 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:03:01:648 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:01:648 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:03:01:648 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Tabla: COLORS
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Key: 1
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Existe un segmento para la tabla COLORS
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Existe una pagina con la key: 1
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Se termino de realizar el SELECT
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Se encontro el dato con los siguientes parametros:
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Timestamp: 1564804981
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Key: 1
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Value: Blue
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Se envio el dato encontrado
+[INFO] 01:03:11:649 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:03:11:650 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:11:650 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:03:11:650 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:11:650 Pool Memory/(7571:7571): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:03:11:652 Pool Memory/(7571:7571): Me llegaron las metadatas
+[INFO] 01:03:11:652 Pool Memory/(7571:7571): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:03:11:653 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:03:11:750 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Tabla: COLORS
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Key: 2
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Value: Red
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Timestamp: 1564805001
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Existe un segmento para COLORS
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): No existe una pagina con la key: 2
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Se termino de realizar el INSERT
+[INFO] 01:03:21:751 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:03:21:751 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:21:752 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:03:21:752 Pool Memory/(7571:7571): Se recibio una nueva REQUEST.
+[INFO] 01:03:30:261 Pool Memory/(7571:7575): No se recibio el estado de la request.
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): Tabla: COLORS
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): Key: 2
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): El File System no se encuentra conectado.
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): No existe la key en el LFS
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): Se termino de realizar el SELECT
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): No se completo correctamente el select
+[INFO] 01:03:31:753 Pool Memory/(7571:7571): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:51:97 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:51:99 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:52:98 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:52:98 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:53:99 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:53:99 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:54:100 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:54:100 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:55:100 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:55:101 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:55:188 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:55:188 Pool Memory/(8094:8094): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:06:55:189 Pool Memory/(8094:8094): Me llegaron las metadatas
+[INFO] 01:06:55:189 Pool Memory/(8094:8094): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:06:55:189 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:56:101 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:56:101 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:57:102 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:57:102 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:57:892 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:57:892 Pool Memory/(8094:8094): Se realizara un DROP de tabla: COLORS
+[INFO] 01:06:57:894 Pool Memory/(8094:8094): No existe el segmento asociado a COLORS
+[INFO] 01:06:57:894 Pool Memory/(8094:8094): Se termino de realizar el DROP
+[INFO] 01:06:57:894 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:58:102 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:58:103 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:06:59:103 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:06:59:103 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:00:103 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:00:104 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:01:104 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:01:105 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:02:105 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:02:105 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:03:105 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:03:106 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:03:672 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:03:672 Pool Memory/(8094:8094): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 01:07:03:673 Pool Memory/(8094:8094): Tabla: COLORS
+[INFO] 01:07:03:673 Pool Memory/(8094:8094): Consistencia: SC
+[INFO] 01:07:03:673 Pool Memory/(8094:8094): Cantidad de particiones: 4
+[INFO] 01:07:03:673 Pool Memory/(8094:8094): Tiempo de compactacion: 300000
+[INFO] 01:07:03:674 Pool Memory/(8094:8094): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 01:07:03:674 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:03:675 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Tabla: COLORS
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Key: 1
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Value: Blue
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Timestamp: 1564805233
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Existe un segmento para COLORS
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): No existe una pagina con la key: 1
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Se termino de realizar el INSERT
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:13:677 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:13:677 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:13:677 Pool Memory/(8094:8094): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:07:13:680 Pool Memory/(8094:8094): Me llegaron las metadatas
+[INFO] 01:07:13:680 Pool Memory/(8094:8094): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:07:13:680 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:13:680 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Tabla: COLORS
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Key: 1
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Existe un segmento para la tabla COLORS
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Existe una pagina con la key: 1
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Se termino de realizar el SELECT
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Se encontro el dato con los siguientes parametros:
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Timestamp: 1564805233
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Key: 1
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Value: Blue
+[INFO] 01:07:23:681 Pool Memory/(8094:8094): Se envio el dato encontrado
+[INFO] 01:07:23:684 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:23:684 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:23:684 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:07:23:782 Pool Memory/(8094:8094): Se recibio una nueva REQUEST.
+[INFO] 01:07:30:723 Pool Memory/(8094:8098): No se recibio el estado de la request.
+[INFO] 01:07:33:782 Pool Memory/(8094:8094): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:07:33:782 Pool Memory/(8094:8094): Tabla: COLORS
+[INFO] 01:07:33:782 Pool Memory/(8094:8094): Key: 2
+[INFO] 01:07:33:782 Pool Memory/(8094:8094): Value: Red
+[INFO] 01:07:33:782 Pool Memory/(8094:8094): Timestamp: 1564805253
+[INFO] 01:07:33:783 Pool Memory/(8094:8094): No existe el segmento. Se crea el segmento.
+[INFO] 01:07:33:783 Pool Memory/(8094:8094): Se termino de realizar el INSERT
+[INFO] 01:07:33:783 Pool Memory/(8094:8094): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:34:223 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:34:224 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:35:224 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:35:225 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:36:225 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:36:225 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:37:226 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:37:226 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:37:745 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:37:745 Pool Memory/(8331:8331): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:10:37:747 Pool Memory/(8331:8331): Me llegaron las metadatas
+[INFO] 01:10:37:747 Pool Memory/(8331:8331): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:10:37:747 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:38:227 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:38:227 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:39:228 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:39:228 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:39:984 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:39:984 Pool Memory/(8331:8331): Se realizara un DROP de tabla: COLORS
+[INFO] 01:10:39:986 Pool Memory/(8331:8331): No existe el segmento asociado a COLORS
+[INFO] 01:10:39:986 Pool Memory/(8331:8331): Se termino de realizar el DROP
+[INFO] 01:10:39:986 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:40:229 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:40:229 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:41:229 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:41:230 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:42:230 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:42:231 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:43:231 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:43:234 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:44:232 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:44:233 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:45:233 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:45:233 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:45:357 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:45:357 Pool Memory/(8331:8331): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 01:10:45:357 Pool Memory/(8331:8331): Tabla: COLORS
+[INFO] 01:10:45:357 Pool Memory/(8331:8331): Consistencia: SC
+[INFO] 01:10:45:357 Pool Memory/(8331:8331): Cantidad de particiones: 4
+[INFO] 01:10:45:357 Pool Memory/(8331:8331): Tiempo de compactacion: 300000
+[INFO] 01:10:45:358 Pool Memory/(8331:8331): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 01:10:45:358 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:45:359 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Tabla: COLORS
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Key: 1
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Value: Blue
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Timestamp: 1564805455
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Existe un segmento para COLORS
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): No existe una pagina con la key: 1
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Se termino de realizar el INSERT
+[INFO] 01:10:55:360 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:55:360 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:55:360 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:55:360 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:10:55:360 Pool Memory/(8331:8331): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:10:55:362 Pool Memory/(8331:8331): Me llegaron las metadatas
+[INFO] 01:10:55:362 Pool Memory/(8331:8331): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:10:55:363 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:10:55:363 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:05:363 Pool Memory/(8331:8331): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:11:05:363 Pool Memory/(8331:8331): Tabla: COLORS
+[INFO] 01:11:05:363 Pool Memory/(8331:8331): Key: 1
+[INFO] 01:11:05:363 Pool Memory/(8331:8331): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Se recibio el dato desde el File System
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Se termino de realizar el SELECT
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Se encontro el dato con los siguientes parametros:
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Timestamp: 1564805455
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Key: 1
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Value: Blue
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Se envio el dato encontrado
+[INFO] 01:11:05:365 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:11:05:365 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:05:365 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:11:05:465 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Tabla: COLORS
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Key: 2
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Value: Red
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Timestamp: 1564805475
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Existe un segmento para COLORS
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): No existe una pagina con la key: 2
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Se termino de realizar el INSERT
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): No se recibio el estado de la request.
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): No se recibio respuesta del FileSystem, esta desconectado
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:11:15:468 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:11:15:468 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Tabla: COLORS
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Key: 2
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Existe un segmento para la tabla COLORS
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Existe una pagina con la key: 2
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Se termino de realizar el SELECT
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Se encontro el dato con los siguientes parametros:
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Timestamp: 1564805475
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Key: 2
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Value: Red
+[INFO] 01:11:25:468 Pool Memory/(8331:8331): Se envio el dato encontrado
+[INFO] 01:11:25:469 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:11:25:469 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:25:469 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:11:25:469 Pool Memory/(8331:8331): Se recibio una nueva REQUEST.
+[INFO] 01:11:35:470 Pool Memory/(8331:8331): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:11:35:471 Pool Memory/(8331:8331): Tabla: COLORS
+[INFO] 01:11:35:471 Pool Memory/(8331:8331): Key: 2
+[INFO] 01:11:35:471 Pool Memory/(8331:8331): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:11:35:471 Pool Memory/(8331:8331): El File System no se encuentra conectado.
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): No existe la key en el LFS
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): Se termino de realizar el SELECT
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): No se completo correctamente el select
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:34:604 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:34:604 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:35:604 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:35:605 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:36:605 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:36:605 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:37:606 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:37:606 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:38:103 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:38:103 Pool Memory/(8435:8435): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:12:38:106 Pool Memory/(8435:8435): Me llegaron las metadatas
+[INFO] 01:12:38:106 Pool Memory/(8435:8435): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:12:38:106 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:38:607 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:38:608 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:39:608 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:39:609 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:40:609 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:40:610 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:40:711 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:40:711 Pool Memory/(8435:8435): Se realizara un DROP de tabla: COLORS
+[INFO] 01:12:40:712 Pool Memory/(8435:8435): No existe el segmento asociado a COLORS
+[INFO] 01:12:40:712 Pool Memory/(8435:8435): Se termino de realizar el DROP
+[INFO] 01:12:40:712 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:41:610 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:41:611 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:42:611 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:42:611 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:43:612 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:43:612 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:44:613 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:44:614 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:45:615 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:45:615 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:46:615 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:46:616 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:47:68 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:47:68 Pool Memory/(8435:8435): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 01:12:47:68 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:12:47:68 Pool Memory/(8435:8435): Consistencia: SC
+[INFO] 01:12:47:68 Pool Memory/(8435:8435): Cantidad de particiones: 4
+[INFO] 01:12:47:68 Pool Memory/(8435:8435): Tiempo de compactacion: 300000
+[INFO] 01:12:47:70 Pool Memory/(8435:8435): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 01:12:47:70 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:47:70 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Key: 1
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Value: Blue
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Timestamp: 1564805577
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Existe un segmento para COLORS
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): No existe una pagina con la key: 1
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Se termino de realizar el INSERT
+[INFO] 01:12:57:71 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:57:71 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:57:71 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:57:72 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:12:57:72 Pool Memory/(8435:8435): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:12:57:73 Pool Memory/(8435:8435): Me llegaron las metadatas
+[INFO] 01:12:57:73 Pool Memory/(8435:8435): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:12:57:74 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:12:57:74 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:07:75 Pool Memory/(8435:8435): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:13:07:75 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:13:07:75 Pool Memory/(8435:8435): Key: 1
+[INFO] 01:13:07:75 Pool Memory/(8435:8435): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Se recibio el dato desde el File System
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Se termino de realizar el SELECT
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Se encontro el dato con los siguientes parametros:
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Timestamp: 1564805577
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Key: 1
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Value: Blue
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Se envio el dato encontrado
+[INFO] 01:13:07:77 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:07:77 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:07:78 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:07:177 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Key: 2
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Value: Red
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Timestamp: 1564805597
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Existe un segmento para COLORS
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): No existe una pagina con la key: 2
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Se termino de realizar el INSERT
+[INFO] 01:13:17:178 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:17:178 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:17:179 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:17:179 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:17:179 Pool Memory/(8435:8435): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:13:17:180 Pool Memory/(8435:8435): Me llegaron las metadatas
+[INFO] 01:13:17:180 Pool Memory/(8435:8435): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:13:17:181 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:17:181 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Key: 2
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Existe un segmento para la tabla COLORS
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Existe una pagina con la key: 2
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Se termino de realizar el SELECT
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Se encontro el dato con los siguientes parametros:
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Timestamp: 1564805597
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Key: 2
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Value: Red
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Se envio el dato encontrado
+[INFO] 01:13:27:182 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:27:183 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:27:183 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:27:183 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:31:838 Pool Memory/(8435:8439): No se recibio el estado de la request.
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): Key: 2
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): El File System no se encuentra conectado.
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): No existe la key en el LFS
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): Se termino de realizar el SELECT
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): No se completo correctamente el select
+[INFO] 01:13:37:190 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:37:190 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): Lissandra no esta conectada
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:37:286 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): Key: 1
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): Existe un segmento para la tabla COLORS
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): No existe una pagina con la key 1, la busco en el File System
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): El File System no se encuentra conectado.
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): No se encontro la key
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): Se termino de realizar el SELECT
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): No se completo correctamente el select
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:47:288 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:47:288 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:47:288 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Key: 1
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Value: Black
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Timestamp: 1564805637
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Existe un segmento para COLORS
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): No existe una pagina con la key: 1
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Se termino de realizar el INSERT
+[INFO] 01:13:57:290 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:57:290 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:57:290 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:57:290 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:13:57:291 Pool Memory/(8435:8435): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:13:57:291 Pool Memory/(8435:8435): Lissandra no esta conectada
+[INFO] 01:13:57:291 Pool Memory/(8435:8435): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:13:57:291 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:13:57:291 Pool Memory/(8435:8435): Se recibio una nueva REQUEST.
+[INFO] 01:14:07:293 Pool Memory/(8435:8435): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:14:07:293 Pool Memory/(8435:8435): Tabla: COLORS
+[INFO] 01:14:07:293 Pool Memory/(8435:8435): Key: 1
+[INFO] 01:14:07:293 Pool Memory/(8435:8435): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:14:07:294 Pool Memory/(8435:8435): El File System no se encuentra conectado.
+[INFO] 01:14:07:294 Pool Memory/(8435:8435): No existe la key en el LFS
+[INFO] 01:14:07:294 Pool Memory/(8435:8435): Se termino de realizar el SELECT
+[INFO] 01:14:07:294 Pool Memory/(8435:8435): No se completo correctamente el select
+[INFO] 01:14:07:294 Pool Memory/(8435:8435): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:23:183 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:23:184 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:24:184 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:24:185 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:25:185 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:25:185 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:25:249 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:25:249 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:20:25:250 Pool Memory/(8997:8997): Me llego respuesta pero el File System no tiene tablas
+[INFO] 01:20:25:250 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:20:25:250 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:26:185 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:26:186 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:27:186 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:27:187 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:28:187 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:28:187 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:29:188 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:29:188 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:30:189 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:30:189 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:31:189 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:31:190 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:32:190 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:32:191 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:33:191 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:33:192 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:34:192 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:34:192 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:35:193 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:35:193 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:36:194 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:36:194 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:37:183 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:37:184 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:20:37:184 Pool Memory/(8997:8997): Me llego respuesta pero el File System no tiene tablas
+[INFO] 01:20:37:184 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:20:37:185 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:37:198 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:37:198 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:38:198 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:38:199 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:39:200 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:39:200 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:40:201 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:40:202 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:40:654 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:40:654 Pool Memory/(8997:8997): Se realizara un CREATE con los siguientes parametros: 
+[INFO] 01:20:40:654 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:20:40:654 Pool Memory/(8997:8997): Consistencia: SC
+[INFO] 01:20:40:654 Pool Memory/(8997:8997): Cantidad de particiones: 4
+[INFO] 01:20:40:654 Pool Memory/(8997:8997): Tiempo de compactacion: 300000
+[INFO] 01:20:40:655 Pool Memory/(8997:8997): No existe un segmento asociado a COLORS. Se crea el segmento.
+[INFO] 01:20:40:656 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:40:656 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Value: Blue
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Timestamp: 1564806050
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Existe un segmento para COLORS
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): No existe una pagina con la key: 1
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Se termino de realizar el INSERT
+[INFO] 01:20:50:657 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:50:657 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:20:50:658 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:20:50:658 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:00:658 Pool Memory/(8997:8997): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:21:00:658 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:21:00:658 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:21:00:658 Pool Memory/(8997:8997): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Se recibio el dato desde el File System
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Se termino de realizar el SELECT
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Se encontro el dato con los siguientes parametros:
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Timestamp: 1564806050
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Value: Blue
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Se envio el dato encontrado
+[INFO] 01:21:00:660 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:00:660 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:00:660 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:00:661 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:00:661 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:21:00:661 Pool Memory/(8997:8997): Me llego la metadata
+[INFO] 01:21:00:661 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:21:00:662 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:00:760 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Key: 2
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Value: Red
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Timestamp: 1564806070
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Existe un segmento para COLORS
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): No existe una pagina con la key: 2
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Se termino de realizar el INSERT
+[INFO] 01:21:10:761 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:10:761 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:10:761 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:10:761 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:20:762 Pool Memory/(8997:8997): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:21:20:762 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:21:20:762 Pool Memory/(8997:8997): Key: 2
+[INFO] 01:21:20:762 Pool Memory/(8997:8997): No existe el segmento. Se crea el segmento y se pide el dato al File System.
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se recibio el dato desde el File System
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se termino de realizar el SELECT
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se encontro el dato con los siguientes parametros:
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Timestamp: 1564806070
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Key: 2
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Value: Red
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se envio el dato encontrado
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:20:764 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:20:764 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:21:20:765 Pool Memory/(8997:8997): Me llego la metadata
+[INFO] 01:21:20:765 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:21:20:765 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:20:765 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Key: 2
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Existe un segmento para la tabla COLORS
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Existe una pagina con la key: 2
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Se termino de realizar el SELECT
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Se encontro el dato con los siguientes parametros:
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Timestamp: 1564806070
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Key: 2
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Value: Red
+[INFO] 01:21:30:765 Pool Memory/(8997:8997): Se envio el dato encontrado
+[INFO] 01:21:30:766 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:30:766 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:30:766 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:30:866 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:40:866 Pool Memory/(8997:8997): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:21:40:866 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:21:40:866 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:21:40:866 Pool Memory/(8997:8997): Existe un segmento para la tabla COLORS
+[INFO] 01:21:40:866 Pool Memory/(8997:8997): No existe una pagina con la key 1, la busco en el File System
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Se recibio el dato desde el File System
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Key encontrada en el File System
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Se termino de realizar el SELECT
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Se encontro el dato con los siguientes parametros:
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Timestamp: 1564806050
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Value: Blue
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Se envio el dato encontrado
+[INFO] 01:21:40:868 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:40:868 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:40:868 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:40:869 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:40:869 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:21:40:869 Pool Memory/(8997:8997): Me llego la metadata
+[INFO] 01:21:40:869 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:21:40:870 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:40:870 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Se realizara un INSERT con los siguientes parametros
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Value: Black
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Timestamp: 1564806110
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): No existe el segmento. Se crea el segmento.
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Se termino de realizar el INSERT
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:50:871 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:21:50:871 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:21:50:871 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Se realizara un SELECT con los siguientes parametros:
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Tabla: COLORS
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Existe un segmento para la tabla COLORS
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Existe una pagina con la key: 1
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Se termino de realizar el SELECT
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Se encontro el dato con los siguientes parametros:
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Timestamp: 1564806110
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Key: 1
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Value: Black
+[INFO] 01:22:00:871 Pool Memory/(8997:8997): Se envio el dato encontrado
+[INFO] 01:22:00:872 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:00:872 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:00:872 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:00:872 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:00:872 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:22:00:873 Pool Memory/(8997:8997): Me llego la metadata
+[INFO] 01:22:00:873 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:22:00:874 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:01:872 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:01:873 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:02:873 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:02:874 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:03:874 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:03:874 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:04:875 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:04:875 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:05:876 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:05:876 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:06:877 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:06:878 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:07:879 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:07:879 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:08:880 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:08:880 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:09:881 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:09:881 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:10:882 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:10:883 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:11:884 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:11:885 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:12:886 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:12:886 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:13:887 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:13:887 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:14:888 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:14:889 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:15:874 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:15:874 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:22:15:875 Pool Memory/(8997:8997): Me llego la metadata
+[INFO] 01:22:15:875 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:22:15:876 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:15:889 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:15:890 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:16:890 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:16:891 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:17:891 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:17:891 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:18:23 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:18:23 Pool Memory/(8997:8997): Se realizara un DESCRIBE GLOBAL
+[INFO] 01:22:18:24 Pool Memory/(8997:8997): Me llego la metadata
+[INFO] 01:22:18:24 Pool Memory/(8997:8997): Se termino de realizar el DESCRIBE GLOBAL
+[INFO] 01:22:18:24 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:18:892 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:18:892 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:19:892 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:19:893 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:20:893 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:20:893 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:21:894 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:21:895 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:22:895 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:22:895 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:23:896 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:23:896 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:24:896 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:24:897 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:25:898 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:25:898 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:26:899 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:26:899 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:27:899 Pool Memory/(8997:8997): Se recibio una nueva REQUEST.
+[INFO] 01:22:27:900 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+
+[INFO] 01:22:27:985 Pool Memory/(8997:8997): Se termino de trabajar la REQUEST.
+

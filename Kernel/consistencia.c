@@ -114,8 +114,6 @@ cod_consistencia identificar_consitencia_para_request(int cod_request, void* tip
 
 			tabla = (char*)((create) tipo_request)->consistencia->buffer; //en este caso usamos la consistencia
 
-			printf("la consistencia es esta: %s\n" , tabla);
-
 			return identificar_consistencia(tabla);
 
 			break;
@@ -165,8 +163,6 @@ memoria_t* tomar_memoria_al_azar(){
 	t_list* lista_de_consistencias = lista_memorias_de_consistencia();
 
 	if(list_is_empty(lista_de_consistencias)){
-
-		printf("\n>Todavia NO hay memorias en las consistencias\n");
 
 		return NULL;
 

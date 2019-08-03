@@ -15,5 +15,6 @@
 t_log* logger_kernel;
 t_log* logger_metricas;
 t_log* logger_gossip;
+t_log* logger_metadata;
 
 #endif /* MENSAJERIA_LOGGERS_H_ */

@@ -99,6 +99,28 @@ void liberar_dato_describe(describe_t dato){
 	free(dato);
 }
 
+void mostrar_lista_describe_log( t_list* lista_describe ){
+
+	if(list_size(lista_describe) == 0){
+
+		log_info(logger_metadata , "NO SE RECIBIERON METADATAS");
+
+
+	}
+
+	void _mostrar_metadata(void* dato_metadata){
+
+		Metadata dato_describe = (Metadata) dato_metadata;
+
+		log_info(logger_metadata, ">TABLA: %s", dato_describe->tabla);
+
+	}
+
+	list_iterate(lista_describe, _mostrar_metadata);
+
+
+}
+
 
 void mostrar_lista_describe(t_list* lista_describe){
 

@@ -70,10 +70,10 @@ void* realizar_inotify(inotify_config argumento){
 				cambio_config = (struct inotify_event*)buffer_aux;
 
 				if(cambio_config->mask & IN_OPEN){
-					printf("[INOTIFY] Abrieron el archivo config\n");
+					printf("\n=========Se ABRIO el archivo Config =========");
 
 				}else if(cambio_config->mask & IN_CLOSE_WRITE){ // mirar IN_MODIFY, diferencias
-					printf("[INOTIFY] Se modifico el metadata.config\n");
+					printf(">>>>Se modifico el metadata.config<<<<<\n");
 
 
 					t_config* archivo_config = config_create(argumento->path_config);
@@ -92,17 +92,13 @@ void* realizar_inotify(inotify_config argumento){
 					quantum = config_get_int_value(archivo_config, "QUANTUM");
 					pthread_rwlock_unlock(&semaforo_quantum);
 
-					printf("[INOTIFY] REFRESH METADATA: %i\n", tiempo_refresh_metadata);
-					printf("[INOTIFY] TIEMPO EJECUCION: %i\n", tiempo_ejecucion);
-					printf("[INOTIFY] QUANTUM: %i\n", quantum);
-
 					config_destroy(archivo_config);
 
-					printf("[INOTIFY] Se Cerro el metadata.config\n");
+					printf("===============================================\n\n");
 
 				}else if(cambio_config->mask & IN_CLOSE_NOWRITE){
 
-					printf("[INOTIFY] Cerraron el archivo\n");
+					printf(">>>>>>>Cerraron el archivo<<<<<<<<<\n");
 
 				}else{
 

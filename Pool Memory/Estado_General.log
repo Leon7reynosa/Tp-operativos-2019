@@ -1,0 +1,377 @@
+[INFO] 00:32:01:118 Pool Memory/(6298:6298): Se establecio conexion con el File System Lissandra.
+[INFO] 00:32:01:118 Pool Memory/(6298:6298): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): Se guardan las siguientes seeds: 
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): IP: 192.168.1.50
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): PUERTO: 8002
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): Se inicializo la memoria con los siguientes atributos:
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): Tamanio de memoria: 4096 bytes
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): Cantidad maxima de datos: 62
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): Numero de memoria: 1
+[INFO] 00:32:01:119 Pool Memory/(6298:6298): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 00:32:05:646 Pool Memory/(6298:6298): Se conecto un cliente
+
+[INFO] 00:32:31:119 Pool Memory/(6298:6302): Se vacio la tabla de segmentos
+[INFO] 00:33:01:119 Pool Memory/(6298:6302): Se vacio la tabla de segmentos
+[INFO] 00:33:02:762 Pool Memory/(6298:6298): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 00:33:02:762 Pool Memory/(6298:6298): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 00:33:02:762 Pool Memory/(6298:6298): Se vacio la tabla de segmentos
+[INFO] 00:33:02:763 Pool Memory/(6298:6298): Se liberan los hilos de ejecucion
+[INFO] 00:33:02:763 Pool Memory/(6298:6298): Se va a cerrar la memoria
+[INFO] 00:33:02:763 Pool Memory/(6298:6298): Se vacio la tabla de segmentos
+[INFO] 00:33:02:763 Pool Memory/(6298:6298): Se libero la memoria principal
+[INFO] 00:33:02:763 Pool Memory/(6298:6298): Termino el programa memoria
+
+[INFO] 00:34:30:7 Pool Memory/(6385:6385): Se establecio conexion con el File System Lissandra.
+[INFO] 00:34:31:43 Pool Memory/(6385:6385): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 00:34:31:51 Pool Memory/(6385:6385): Se guardan las siguientes seeds: 
+[INFO] 00:34:31:61 Pool Memory/(6385:6385): IP: 192.168.1.50
+[INFO] 00:34:31:62 Pool Memory/(6385:6385): PUERTO: 8002
+[INFO] 00:34:31:64 Pool Memory/(6385:6385): Se inicializo la memoria con los siguientes atributos:
+[INFO] 00:34:31:64 Pool Memory/(6385:6385): Tamanio de memoria: 4096 bytes
+[INFO] 00:34:31:65 Pool Memory/(6385:6385): Cantidad maxima de datos: 62
+[INFO] 00:34:31:65 Pool Memory/(6385:6385): Numero de memoria: 1
+[INFO] 00:34:31:97 Pool Memory/(6385:6385): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 00:34:33:72 Pool Memory/(6385:6385): Se conecto un cliente
+
+[INFO] 00:35:01:100 Pool Memory/(6385:6389): Se vacio la tabla de segmentos
+[INFO] 00:35:05:216 Pool Memory/(6385:6385): Se creo el Segmento COLORS
+[INFO] 00:39:44:143 Pool Memory/(6503:6503): Se establecio conexion con el File System Lissandra.
+[INFO] 00:39:44:192 Pool Memory/(6503:6503): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 00:39:44:201 Pool Memory/(6503:6503): Se guardan las siguientes seeds: 
+[INFO] 00:39:44:212 Pool Memory/(6503:6503): IP: 192.168.1.50
+[INFO] 00:39:44:213 Pool Memory/(6503:6503): PUERTO: 8002
+[INFO] 00:39:44:215 Pool Memory/(6503:6503): Se inicializo la memoria con los siguientes atributos:
+[INFO] 00:39:44:216 Pool Memory/(6503:6503): Tamanio de memoria: 4096 bytes
+[INFO] 00:39:44:216 Pool Memory/(6503:6503): Cantidad maxima de datos: 62
+[INFO] 00:39:44:217 Pool Memory/(6503:6503): Numero de memoria: 1
+[INFO] 00:39:44:249 Pool Memory/(6503:6503): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 00:39:49:24 Pool Memory/(6503:6503): Se conecto un cliente
+
+[INFO] 00:39:57:718 Pool Memory/(6503:6503): Se produjo una desconexion con lissandra
+[INFO] 00:40:03:539 Pool Memory/(6503:6503): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:40:03:540 Pool Memory/(6503:6503): No se pudo establecer la reconexion
+[INFO] 00:40:04:23 Pool Memory/(6503:6503): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:40:04:24 Pool Memory/(6503:6503): No se pudo establecer la reconexion
+[INFO] 00:40:14:284 Pool Memory/(6503:6509): Se vacio la tabla de segmentos
+[INFO] 00:40:19:27 Pool Memory/(6503:6503): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:40:19:28 Pool Memory/(6503:6503): No se pudo establecer la reconexion
+[INFO] 00:40:34:32 Pool Memory/(6503:6503): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:40:34:33 Pool Memory/(6503:6503): No se pudo establecer la reconexion
+[INFO] 00:40:44:296 Pool Memory/(6503:6509): Se vacio la tabla de segmentos
+[INFO] 00:40:49:39 Pool Memory/(6503:6503): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:40:49:39 Pool Memory/(6503:6503): No se pudo establecer la reconexion
+[INFO] 00:41:04:43 Pool Memory/(6503:6503): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:41:04:44 Pool Memory/(6503:6503): No se pudo establecer la reconexion
+[INFO] 00:41:14:298 Pool Memory/(6503:6509): Se vacio la tabla de segmentos
+[INFO] 00:41:19:48 Pool Memory/(6503:6503): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:41:19:48 Pool Memory/(6503:6503): No se pudo establecer la reconexion
+[INFO] 00:41:33:561 Pool Memory/(6503:6503): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 00:41:33:564 Pool Memory/(6503:6503): Se liberan los hilos de ejecucion
+[INFO] 00:41:33:566 Pool Memory/(6503:6503): Se va a cerrar la memoria
+[INFO] 00:41:33:568 Pool Memory/(6503:6503): Se vacio la tabla de segmentos
+[INFO] 00:41:33:571 Pool Memory/(6503:6503): Se libero la memoria principal
+[INFO] 00:41:33:572 Pool Memory/(6503:6503): Termino el programa memoria
+
+[INFO] 00:46:10:688 Pool Memory/(6671:6671): Se establecio conexion con el File System Lissandra.
+[INFO] 00:46:10:729 Pool Memory/(6671:6671): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 00:46:10:750 Pool Memory/(6671:6671): Se guardan las siguientes seeds: 
+[INFO] 00:46:10:761 Pool Memory/(6671:6671): IP: 192.168.1.50
+[INFO] 00:46:10:761 Pool Memory/(6671:6671): PUERTO: 8002
+[INFO] 00:46:10:763 Pool Memory/(6671:6671): Se inicializo la memoria con los siguientes atributos:
+[INFO] 00:46:10:763 Pool Memory/(6671:6671): Tamanio de memoria: 4096 bytes
+[INFO] 00:46:10:764 Pool Memory/(6671:6671): Cantidad maxima de datos: 62
+[INFO] 00:46:10:764 Pool Memory/(6671:6671): Numero de memoria: 1
+[INFO] 00:46:10:796 Pool Memory/(6671:6671): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 00:46:12:160 Pool Memory/(6671:6671): Se conecto un cliente
+
+[INFO] 00:46:33:924 Pool Memory/(6671:6671): Se creo el Segmento COLORS
+[INFO] 00:46:40:859 Pool Memory/(6671:6677): Se vacio la tabla de segmentos
+[INFO] 00:46:43:959 Pool Memory/(6671:6671): Se creo el Segmento COLORS
+[INFO] 00:46:43:973 Pool Memory/(6671:6671): Se solicita una NUEVA PAGINA
+[INFO] 00:53:29:825 Pool Memory/(7064:7064): No se pudo conectar con el File System Lissandra, intentar mas tarde.
+
+[INFO] 00:54:28:270 Pool Memory/(7204:7204): No se pudo conectar con el File System Lissandra, intentar mas tarde.
+
+[INFO] 00:55:01:741 Pool Memory/(7245:7245): No se pudo conectar con el File System Lissandra, intentar mas tarde.
+
+[INFO] 00:55:17:730 Pool Memory/(7368:7368): Se establecio conexion con el File System Lissandra.
+[INFO] 00:55:17:767 Pool Memory/(7368:7368): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 00:55:17:796 Pool Memory/(7368:7368): Se guardan las siguientes seeds: 
+[INFO] 00:55:17:809 Pool Memory/(7368:7368): IP: 192.168.1.41
+[INFO] 00:55:17:809 Pool Memory/(7368:7368): PUERTO: 8002
+[INFO] 00:55:17:811 Pool Memory/(7368:7368): Se inicializo la memoria con los siguientes atributos:
+[INFO] 00:55:17:812 Pool Memory/(7368:7368): Tamanio de memoria: 4096 bytes
+[INFO] 00:55:17:812 Pool Memory/(7368:7368): Cantidad maxima de datos: 62
+[INFO] 00:55:17:813 Pool Memory/(7368:7368): Numero de memoria: 1
+[INFO] 00:55:17:848 Pool Memory/(7368:7368): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 00:55:19:680 Pool Memory/(7368:7368): Se conecto un cliente
+
+[INFO] 00:55:47:859 Pool Memory/(7368:7375): Se vacio la tabla de segmentos
+[INFO] 00:55:49:528 Pool Memory/(7368:7368): Se creo el Segmento COLORS
+[INFO] 00:55:59:594 Pool Memory/(7368:7368): Se solicita una NUEVA PAGINA
+[INFO] 00:55:59:595 Pool Memory/(7368:7368): Hay una PAGINA LIBRE para asignar.
+[INFO] 00:55:59:603 Pool Memory/(7368:7368): Se le agrego una pagina al Segmento COLORS
+[INFO] 00:55:59:615 Pool Memory/(7368:7368): Se desconecto un cliente.
+[INFO] 00:56:31:28 Pool Memory/(7423:7423): Se establecio conexion con el File System Lissandra.
+[INFO] 00:56:32:69 Pool Memory/(7423:7423): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 00:56:32:88 Pool Memory/(7423:7423): Se guardan las siguientes seeds: 
+[INFO] 00:56:32:99 Pool Memory/(7423:7423): IP: 192.168.1.41
+[INFO] 00:56:32:99 Pool Memory/(7423:7423): PUERTO: 8002
+[INFO] 00:56:32:101 Pool Memory/(7423:7423): Se inicializo la memoria con los siguientes atributos:
+[INFO] 00:56:32:102 Pool Memory/(7423:7423): Tamanio de memoria: 4096 bytes
+[INFO] 00:56:32:103 Pool Memory/(7423:7423): Cantidad maxima de datos: 62
+[INFO] 00:56:32:103 Pool Memory/(7423:7423): Numero de memoria: 1
+[INFO] 00:56:32:142 Pool Memory/(7423:7423): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 00:56:35:87 Pool Memory/(7423:7423): Se conecto un cliente
+
+[INFO] 00:56:49:399 Pool Memory/(7423:7423): Se creo el Segmento COLORS
+[INFO] 00:56:59:453 Pool Memory/(7423:7423): Se solicita una NUEVA PAGINA
+[INFO] 00:56:59:454 Pool Memory/(7423:7423): Hay una PAGINA LIBRE para asignar.
+[INFO] 00:56:59:458 Pool Memory/(7423:7423): Se le agrego una pagina al Segmento COLORS
+[INFO] 00:57:02:192 Pool Memory/(7423:7429): Se vacio la tabla de segmentos
+[INFO] 00:57:09:516 Pool Memory/(7423:7423): Se creo el Segmento COLORS
+[INFO] 00:57:09:544 Pool Memory/(7423:7423): Se solicita una NUEVA PAGINA
+[INFO] 00:57:09:545 Pool Memory/(7423:7423): Hay una PAGINA LIBRE para asignar.
+[INFO] 00:57:09:546 Pool Memory/(7423:7423): Se le agrego una pagina al Segmento COLORS
+[INFO] 00:57:19:673 Pool Memory/(7423:7423): Se solicita una NUEVA PAGINA
+[INFO] 00:57:19:673 Pool Memory/(7423:7423): Hay una PAGINA LIBRE para asignar.
+[INFO] 00:57:19:674 Pool Memory/(7423:7423): Se le agrego una pagina al Segmento COLORS
+[INFO] 00:57:32:209 Pool Memory/(7423:7429): Se produjo una desconexion con lissandra
+[INFO] 00:57:32:214 Pool Memory/(7423:7429): Se vacio la tabla de segmentos
+[INFO] 00:57:39:753 Pool Memory/(7423:7423): Se creo el Segmento COLORS
+[INFO] 00:57:39:753 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:57:39:767 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:57:39:790 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:57:39:791 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:57:49:876 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:57:49:882 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:57:59:915 Pool Memory/(7423:7423): Se solicita una NUEVA PAGINA
+[INFO] 00:57:59:915 Pool Memory/(7423:7423): Hay una PAGINA LIBRE para asignar.
+[INFO] 00:57:59:916 Pool Memory/(7423:7423): Se le agrego una pagina al Segmento COLORS
+[INFO] 00:57:59:951 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:57:59:952 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:58:02:219 Pool Memory/(7423:7429): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:58:02:231 Pool Memory/(7423:7429): No se pudo establecer la reconexion
+[INFO] 00:58:02:232 Pool Memory/(7423:7429): Se vacio la tabla de segmentos
+[INFO] 00:58:09:956 Pool Memory/(7423:7423): Se creo el Segmento COLORS
+[INFO] 00:58:09:956 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:58:09:962 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:58:14:955 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:58:14:956 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:58:29:959 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:58:29:959 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:58:32:235 Pool Memory/(7423:7429): Se vacio la tabla de segmentos
+[INFO] 00:58:44:962 Pool Memory/(7423:7423): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 00:58:44:963 Pool Memory/(7423:7423): No se pudo establecer la reconexion
+[INFO] 00:58:50:743 Pool Memory/(7423:7423): Se desconecto un cliente.
+[INFO] 00:58:52:819 Pool Memory/(7423:7423): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 00:58:52:821 Pool Memory/(7423:7423): Se liberan los hilos de ejecucion
+[INFO] 00:58:52:822 Pool Memory/(7423:7423): Se va a cerrar la memoria
+[INFO] 00:58:52:823 Pool Memory/(7423:7423): Se vacio la tabla de segmentos
+[INFO] 00:58:52:825 Pool Memory/(7423:7423): Se libero la memoria principal
+[INFO] 00:58:52:826 Pool Memory/(7423:7423): Termino el programa memoria
+
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Se establecio conexion con el File System Lissandra.
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Se guardan las siguientes seeds: 
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): IP: 192.168.1.41
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): PUERTO: 8002
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Se inicializo la memoria con los siguientes atributos:
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Tamanio de memoria: 4096 bytes
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Cantidad maxima de datos: 62
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Numero de memoria: 1
+[INFO] 01:02:30:260 Pool Memory/(7571:7571): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 01:02:33:116 Pool Memory/(7571:7571): Se conecto un cliente
+
+[INFO] 01:02:51:646 Pool Memory/(7571:7571): Se creo el Segmento COLORS
+[INFO] 01:03:00:260 Pool Memory/(7571:7575): Se vacio la tabla de segmentos
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Se creo el Segmento COLORS
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Se solicita una NUEVA PAGINA
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:03:01:647 Pool Memory/(7571:7571): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Se solicita una NUEVA PAGINA
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:03:21:750 Pool Memory/(7571:7571): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:03:30:261 Pool Memory/(7571:7575): Se produjo una desconexion con lissandra
+[INFO] 01:03:30:261 Pool Memory/(7571:7575): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:03:30:261 Pool Memory/(7571:7575): No se pudo establecer la reconexion
+[INFO] 01:03:30:261 Pool Memory/(7571:7575): Se vacio la tabla de segmentos
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): Se creo el Segmento COLORS
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:03:31:752 Pool Memory/(7571:7571): No se pudo establecer la reconexion
+[INFO] 01:03:31:755 Pool Memory/(7571:7571): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 01:03:31:755 Pool Memory/(7571:7571): Se liberan los hilos de ejecucion
+[INFO] 01:03:31:755 Pool Memory/(7571:7571): Se va a cerrar la memoria
+[INFO] 01:03:31:755 Pool Memory/(7571:7571): Se vacio la tabla de segmentos
+[INFO] 01:03:31:755 Pool Memory/(7571:7571): Se libero la memoria principal
+[INFO] 01:03:31:755 Pool Memory/(7571:7571): Termino el programa memoria
+
+[INFO] 01:06:02:512 Pool Memory/(7959:7959): No se pudo conectar con el File System Lissandra, intentar mas tarde.
+
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Se establecio conexion con el File System Lissandra.
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Se guardan las siguientes seeds: 
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): IP: 192.168.1.41
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): PUERTO: 8002
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Se inicializo la memoria con los siguientes atributos:
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Tamanio de memoria: 4096 bytes
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Cantidad maxima de datos: 62
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Numero de memoria: 1
+[INFO] 01:06:30:721 Pool Memory/(8094:8094): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 01:06:50:95 Pool Memory/(8094:8094): Se conecto un cliente
+
+[INFO] 01:07:00:722 Pool Memory/(8094:8098): Se vacio la tabla de segmentos
+[INFO] 01:07:03:674 Pool Memory/(8094:8094): Se creo el Segmento COLORS
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Se solicita una NUEVA PAGINA
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:07:13:676 Pool Memory/(8094:8094): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:07:30:724 Pool Memory/(8094:8098): Se produjo una desconexion con lissandra
+[INFO] 01:07:30:724 Pool Memory/(8094:8098): Se vacio la tabla de segmentos
+[INFO] 01:07:33:783 Pool Memory/(8094:8094): Se creo el Segmento COLORS
+[INFO] 01:07:33:783 Pool Memory/(8094:8094): Se solicita una NUEVA PAGINA
+[INFO] 01:07:33:783 Pool Memory/(8094:8094): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:07:33:783 Pool Memory/(8094:8094): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:07:33:785 Pool Memory/(8094:8094): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 01:07:33:785 Pool Memory/(8094:8094): Se liberan los hilos de ejecucion
+[INFO] 01:07:33:785 Pool Memory/(8094:8094): Se va a cerrar la memoria
+[INFO] 01:07:33:785 Pool Memory/(8094:8094): Se vacio la tabla de segmentos
+[INFO] 01:07:33:785 Pool Memory/(8094:8094): Se libero la memoria principal
+[INFO] 01:07:33:785 Pool Memory/(8094:8094): Termino el programa memoria
+
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Se establecio conexion con el File System Lissandra.
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Se guardan las siguientes seeds: 
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): IP: 192.168.1.41
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): PUERTO: 8002
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Se inicializo la memoria con los siguientes atributos:
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Tamanio de memoria: 4096 bytes
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Cantidad maxima de datos: 62
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Numero de memoria: 1
+[INFO] 01:10:31:163 Pool Memory/(8331:8331): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 01:10:33:221 Pool Memory/(8331:8331): Se conecto un cliente
+
+[INFO] 01:10:45:358 Pool Memory/(8331:8331): Se creo el Segmento COLORS
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Se solicita una NUEVA PAGINA
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:10:55:359 Pool Memory/(8331:8331): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:11:01:167 Pool Memory/(8331:8335): Se vacio la tabla de segmentos
+[INFO] 01:11:05:363 Pool Memory/(8331:8331): Se creo el Segmento COLORS
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Se solicita una NUEVA PAGINA
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:11:05:364 Pool Memory/(8331:8331): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Se solicita una NUEVA PAGINA
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:11:15:466 Pool Memory/(8331:8331): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:11:15:467 Pool Memory/(8331:8331): Se produjo una desconexion con lissandra
+[INFO] 01:11:31:167 Pool Memory/(8331:8335): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:11:31:168 Pool Memory/(8331:8335): No se pudo establecer la reconexion
+[INFO] 01:11:31:168 Pool Memory/(8331:8335): Se vacio la tabla de segmentos
+[INFO] 01:11:35:471 Pool Memory/(8331:8331): Se creo el Segmento COLORS
+[INFO] 01:11:35:471 Pool Memory/(8331:8331): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:11:35:471 Pool Memory/(8331:8331): No se pudo establecer la reconexion
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): Se liberan los hilos de ejecucion
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): Se va a cerrar la memoria
+[INFO] 01:11:35:472 Pool Memory/(8331:8331): Se vacio la tabla de segmentos
+[INFO] 01:11:35:473 Pool Memory/(8331:8331): Se libero la memoria principal
+[INFO] 01:11:35:473 Pool Memory/(8331:8331): Termino el programa memoria
+
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Se establecio conexion con el File System Lissandra.
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Se guardan las siguientes seeds: 
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): IP: 192.168.1.41
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): PUERTO: 8002
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Se inicializo la memoria con los siguientes atributos:
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Tamanio de memoria: 4096 bytes
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Cantidad maxima de datos: 62
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Numero de memoria: 1
+[INFO] 01:12:31:835 Pool Memory/(8435:8435): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 01:12:33:599 Pool Memory/(8435:8435): Se conecto un cliente
+
+[INFO] 01:12:47:70 Pool Memory/(8435:8435): Se creo el Segmento COLORS
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Se solicita una NUEVA PAGINA
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:12:57:70 Pool Memory/(8435:8435): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:13:01:837 Pool Memory/(8435:8439): Se vacio la tabla de segmentos
+[INFO] 01:13:07:75 Pool Memory/(8435:8435): Se creo el Segmento COLORS
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Se solicita una NUEVA PAGINA
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:13:07:76 Pool Memory/(8435:8435): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Se solicita una NUEVA PAGINA
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:13:17:177 Pool Memory/(8435:8435): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:13:31:838 Pool Memory/(8435:8439): Se produjo una desconexion con lissandra
+[INFO] 01:13:31:838 Pool Memory/(8435:8439): Se vacio la tabla de segmentos
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): Se creo el Segmento COLORS
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:13:37:185 Pool Memory/(8435:8435): No se pudo establecer la reconexion
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:13:37:191 Pool Memory/(8435:8435): No se pudo establecer la reconexion
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:13:47:287 Pool Memory/(8435:8435): No se pudo establecer la reconexion
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Se solicita una NUEVA PAGINA
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:13:57:289 Pool Memory/(8435:8435): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:13:57:291 Pool Memory/(8435:8435): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:13:57:291 Pool Memory/(8435:8435): No se pudo establecer la reconexion
+[INFO] 01:14:01:839 Pool Memory/(8435:8439): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:14:01:839 Pool Memory/(8435:8439): No se pudo establecer la reconexion
+[INFO] 01:14:01:839 Pool Memory/(8435:8439): Se vacio la tabla de segmentos
+[INFO] 01:14:07:293 Pool Memory/(8435:8435): Se creo el Segmento COLORS
+[INFO] 01:14:07:294 Pool Memory/(8435:8435): No se posee una conexion con lissandra, nos intentamos reconectar
+[INFO] 01:14:07:294 Pool Memory/(8435:8435): No se pudo establecer la reconexion
+[INFO] 01:14:07:295 Pool Memory/(8435:8435): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 01:14:07:295 Pool Memory/(8435:8435): Se liberan los hilos de ejecucion
+[INFO] 01:14:07:295 Pool Memory/(8435:8435): Se va a cerrar la memoria
+[INFO] 01:14:07:295 Pool Memory/(8435:8435): Se vacio la tabla de segmentos
+[INFO] 01:14:07:295 Pool Memory/(8435:8435): Se libero la memoria principal
+[INFO] 01:14:07:295 Pool Memory/(8435:8435): Termino el programa memoria
+
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): Se establecio conexion con el File System Lissandra.
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): Se realizo el handshake, obteniendo un tamanio value = 60
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): Se guardan las siguientes seeds: 
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): IP: 192.168.1.41
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): PUERTO: 8002
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): Se inicializo la memoria con los siguientes atributos:
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): Tamanio de memoria: 4096 bytes
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): Cantidad maxima de datos: 62
+[INFO] 01:20:20:709 Pool Memory/(8997:8997): Numero de memoria: 1
+[INFO] 01:20:20:710 Pool Memory/(8997:8997): Se inicializaron hilos para el Auto-Gossiping, Auto-Journal e Inotify
+[INFO] 01:20:22:181 Pool Memory/(8997:8997): Se conecto un cliente
+
+[INFO] 01:20:40:655 Pool Memory/(8997:8997): Se creo el Segmento COLORS
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Se solicita una NUEVA PAGINA
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:20:50:656 Pool Memory/(8997:8997): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:20:50:711 Pool Memory/(8997:9001): Se vacio la tabla de segmentos
+[INFO] 01:21:00:658 Pool Memory/(8997:8997): Se creo el Segmento COLORS
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Se solicita una NUEVA PAGINA
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:21:00:659 Pool Memory/(8997:8997): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Se solicita una NUEVA PAGINA
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:21:10:760 Pool Memory/(8997:8997): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:21:20:712 Pool Memory/(8997:9001): Se vacio la tabla de segmentos
+[INFO] 01:21:20:762 Pool Memory/(8997:8997): Se creo el Segmento COLORS
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se solicita una NUEVA PAGINA
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:21:20:763 Pool Memory/(8997:8997): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Se solicita una NUEVA PAGINA
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:21:40:867 Pool Memory/(8997:8997): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:21:50:713 Pool Memory/(8997:9001): Se vacio la tabla de segmentos
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Se creo el Segmento COLORS
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Se solicita una NUEVA PAGINA
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Hay una PAGINA LIBRE para asignar.
+[INFO] 01:21:50:870 Pool Memory/(8997:8997): Se le agrego una pagina al Segmento COLORS
+[INFO] 01:22:20:715 Pool Memory/(8997:9001): Se vacio la tabla de segmentos
+[INFO] 01:22:27:984 Pool Memory/(8997:8997): Se desconecto un cliente.
+[INFO] 01:22:29:840 Pool Memory/(8997:8997): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 01:22:29:840 Pool Memory/(8997:8997): Se realiza un JOURNAL para cerrar la memoria correctamente
+[INFO] 01:22:29:840 Pool Memory/(8997:8997): Se vacio la tabla de segmentos
+[INFO] 01:22:29:840 Pool Memory/(8997:8997): Se liberan los hilos de ejecucion
+[INFO] 01:22:29:840 Pool Memory/(8997:8997): Se va a cerrar la memoria
+[INFO] 01:22:29:840 Pool Memory/(8997:8997): Se vacio la tabla de segmentos
+[INFO] 01:22:29:840 Pool Memory/(8997:8997): Se libero la memoria principal
+[INFO] 01:22:29:841 Pool Memory/(8997:8997): Termino el programa memoria
+

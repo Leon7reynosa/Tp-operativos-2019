@@ -12,7 +12,7 @@
 //no es el mismo que enviar_request
 int ejecutar_request(char* request_lql){
 
-	printf("\n>>>>>>>>>>>>>>>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+	printf("\n>>>>>>>>>>NUEVA REQUEST<<<<<<<<<<<<<\n");
 
 	log_info(logger_kernel, "  >>>NUEVA REQUEST: %s<<< " , request_lql);
 
@@ -284,7 +284,9 @@ int ejecutar_request(char* request_lql){
 
 				if( recibir_estado_request(memoria_utilizada) == ERROR ){
 
-					log_error(logger_kernel, "-Fallo el CREATE.-");
+					log_error(logger_kernel, "-Fallo el CREATE, la tabla ya existe o de desconecto el LFS.-");
+
+					printf("\n>Fallo el CREATE, la tabla ya existe o de desconecto el LFS\n");
 
 					pthread_rwlock_unlock(&memoria_utilizada->semaforo_memoria);
 
@@ -347,7 +349,7 @@ int ejecutar_request(char* request_lql){
 
 					log_error(logger_kernel, "-FALLO al enviar el DESCRIBE, eliminamos la MEMORIA %d.-" , memoria_utilizada->numero_memoria);
 
-					printf("\nconsistencia de la request: %s\n" , consistencia);
+					printf("\n>Fallo al enviar el DESCRIBE\n");
 
 					memoria_utilizada->conectado = false;
 
@@ -367,6 +369,8 @@ int ejecutar_request(char* request_lql){
 			}else if(cantidad_parametros == 1){
 
 				log_info(logger_kernel, "---SE REALIZARA UN DESCRIBE GLOBAL--");
+
+				printf("\n>SE REALIZARA UN DESCRIBE GLOBAL\n");
 
 				describe_enviar = crear_dato_describe(NULL);  //creo que hay que lierar el dato este
 

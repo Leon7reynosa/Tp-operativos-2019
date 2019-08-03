@@ -14,6 +14,7 @@
 #include<commons/collections/list.h>
 
 #include"request.h"
+#include"loggers.h"
 
 struct describeEstructura{
 	int bytes;

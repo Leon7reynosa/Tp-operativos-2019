@@ -16,12 +16,10 @@
 #include"gossiping.h"
 #include"consistencia.h"
 
+
 #include"Mensajeria/requestDescribe.h"
 #include"Mensajeria/t_dato.h"
-
-t_log* logger_kernel;
-t_log* logger_metricas;
-t_log* logger_gossip;
+#include"Mensajeria/loggers.h"
 
 t_queue* cola_new;
 

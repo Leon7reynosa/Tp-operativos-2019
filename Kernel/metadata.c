@@ -28,13 +28,15 @@ void* refrescar_metadata(){
 
 		dato_describe = crear_dato_describe(NULL);
 
-		printf("\n////////////////////////////ACTUALIZACION METADATA/////////////////////////////\n");
+		log_info(logger_metadata , "INICIO ACTUALIZACION DE METADATA");
 
 		memoria_utilizada = tomar_memoria_al_azar();
 
 		if(memoria_utilizada == NULL){
 
-			printf("\n///////////////////////////FIN ACTUALIZACION METADATAS//////////////////////////////\n");
+			log_error(logger_metadata , "NO hay memorias disponibles");
+
+			log_info(logger_metadata , "FIN ACTUALIZACION METADATA\n");
 
 			liberar_dato_describe(dato_describe);
 
@@ -42,45 +44,39 @@ void* refrescar_metadata(){
 
 		}
 
-		printf("dhsoiadas\n");
-
-		printf("Ya agarre una memoria: %d\n", memoria_utilizada->numero_memoria);
+		log_info(logger_metadata, "Se utilizará la memoria: %d" , memoria_utilizada->numero_memoria);
 
 		pthread_rwlock_wrlock(&memoria_utilizada->semaforo_memoria);
-
-		printf("Ya agarre el semaforo de la memoria\n");
 
 
 		if(enviar_request(DESCRIBE, dato_describe ,memoria_utilizada->socket)){
 
-			printf("Se envio bien\n");
 
 			t_list* lista_describe = recibir_describe(memoria_utilizada->socket);
 
 			if(!list_is_empty(lista_describe)){
 
-				printf("la lista no esta vacia\n");
+				log_info(logger_metadata , "Se recibieron %d TABLAS" , list_size(lista_describe));
 
-				mostrar_lista_describe(lista_describe);
+				mostrar_lista_describe_log(lista_describe);
 
 				actualizar_metadata(lista_describe);
 
-				printf("ya actualice\n");
+
 
 			}else{
 
 
-				printf("NO SE PUDO ACTUALIZAR LA METADATA, INTENTELO MAS TARDE\n");
+				log_info(logger_metadata , "NO se pudo actualizar la METADATA. intentelo mas tarde");
 
 			}
-
 
 
 			list_destroy(lista_describe); //aca no se si libearar los datos tambien
 
 		}else{
 
-			printf("LA MEMORIA UTILIZADA FALLO\n");
+			log_error(logger_metadata, "La MEMORIA utilizada FALLO");
 
 			memoria_utilizada->conectado = false;
 
@@ -93,7 +89,7 @@ void* refrescar_metadata(){
 
 		liberar_dato_describe(dato_describe);
 
-		printf("\n///////////////////////////FIN ACTUALIZACION METADATA//////////////////////////////\n");
+		log_info(logger_metadata , "FIN ACTUALIZACION METADATA\n");
 	}
 
 

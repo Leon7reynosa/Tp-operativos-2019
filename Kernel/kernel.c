@@ -193,6 +193,7 @@ void inicializar_loggers(){
 	logger_kernel = log_create("../kernel.log" , "kernel" , 0 , LOG_LEVEL_INFO);
 	logger_metricas = log_create("../metricas.log" , "Metricas" , 0, LOG_LEVEL_INFO);
 	logger_gossip = log_create("../gossiping.log" , "Gossiping_Kernel", 0 , LOG_LEVEL_INFO);
+	logger_metadata = log_create("../metadata.log" , "Refresh_Metadata_Kernel" , 0 ,LOG_LEVEL_INFO);
 
 }
 

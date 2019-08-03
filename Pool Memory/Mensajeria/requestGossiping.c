@@ -54,7 +54,7 @@ void eliminar_memoria_dto(memoria_dto memory){
 
 tabla_gossip_dto crear_dto_gossip(int cant_memorias){
 
-	tabla_gossip_dto tabla = malloc(sizeof(tabla_gossip_dto));
+	tabla_gossip_dto tabla = malloc(sizeof(struct DatoTablaGossiping));
 
 	tabla->cant_memorias = cant_memorias;
 	tabla->memorias = list_create();
