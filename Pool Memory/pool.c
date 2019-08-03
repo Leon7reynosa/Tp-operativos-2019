@@ -182,16 +182,16 @@ int main (int argc , char* argv[]){
 void abortar_hilos(void){
 
 //	pthread_mutex_lock(&mutex_journal);
-	printf("pene\n");
+
 	pthread_cancel(journal_thread);
 //	pthread_mutex_unlock(&mutex_journal);
-	printf("pene\n");
+
 //	pthread_mutex_lock(&mutex_gossip);
 	pthread_cancel(gossip_thread);
 //	pthread_mutex_lock(&mutex_gossip);
-	printf("pene\n");
+
 	pthread_cancel(inotify_thread);
-	printf("pene\n");
+
 	printf("Se realiza un JOURNAL para cerrar la memoria correctamente\n");
 	log_info(logger_estado, "Se realiza un JOURNAL para cerrar la memoria correctamente");
 
