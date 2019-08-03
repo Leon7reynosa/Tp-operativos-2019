@@ -381,13 +381,13 @@ void transformar_tmp_a_tmpc(char* nombre_tabla){
 				free(viejo);
 				free(nuevo);
 
+				liberar_puntero_doble(aux);
+
 			}
 		}
 	}
 
 	closedir(dir);
-
-	liberar_puntero_doble(aux);
 
 	free(raiz_de_tabla);
 }

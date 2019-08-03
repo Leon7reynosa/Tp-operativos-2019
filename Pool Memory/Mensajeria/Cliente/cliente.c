@@ -78,6 +78,8 @@ int conectar_servidor(char* ip, int puerto){
 
 		perror("Fallo al conectar con el Servidor");
 
+		close(socket_conexion);
+
 		return error_conexion;
 	}
 
@@ -86,6 +88,9 @@ int conectar_servidor(char* ip, int puerto){
 
 	if((size = recv(socket_conexion,buffer,26,0)) == -1){
 		perror("No llego la notificacion");
+
+		close(socket_conexion);
+
 		exit(1);
 	}
 

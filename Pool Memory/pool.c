@@ -162,18 +162,6 @@ int main (int argc , char* argv[]){
 
 	log_info(logger_estado, "Se va a cerrar la memoria"); //ESTO ROMPIA , NANI?
 
-	if(conexion_lissandra){
-
-		printf("Se realiza un JOURNAL para cerrar la memoria correctamente\n");
-
-		log_info(logger_estado, "Se realiza un JOURNAL para cerrar la memoria correctamente");
-
-		realizar_journal();
-
-		close(socket_lissandra);
-
-	}
-
 	liberar_memoria();
 
 	list_destroy_and_destroy_elements(ip_seeds, free);
@@ -202,6 +190,21 @@ void abortar_hilos(void){
 //	pthread_mutex_lock(&mutex_gossip);
 
 	pthread_cancel(inotify_thread);
+
+	printf("Se realiza un JOURNAL para cerrar la memoria correctamente\n");
+	log_info(logger_estado, "Se realiza un JOURNAL para cerrar la memoria correctamente");
+
+
+	if(conexion_lissandra){
+		printf("Se realiza un JOURNAL para cerrar la memoria correctamente\n");
+		log_info(logger_estado, "Se realiza un JOURNAL para cerrar la memoria correctamente");
+
+		realizar_journal();
+
+		close(socket_lissandra);
+
+	}
+
 
 	pthread_mutex_destroy(&mutex_journal);
 	pthread_mutex_destroy(&mutex_gossip);
