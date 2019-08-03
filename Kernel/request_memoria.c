@@ -23,8 +23,6 @@ void request_add(int numero_memoria, char* consistencia){
 
 	}
 
-	printf("[ADD] Voy a agarrar el semaforo\n");
-
 	pthread_rwlock_wrlock(&memoria_agregar->semaforo_memoria);
 
 	if(ya_estas_en_consistencia(memoria_agregar, codigo)){

@@ -63,7 +63,9 @@ int main (int argc , char* argv[]){
 
 	argumento_inotify = crear_inotify();
 
-	t_queue* colas_exec[grado_multiprocesamiento];
+	estructura_ejecucion* colas_exec[grado_multiprocesamiento];
+
+	//t_queue* colas_exec[grado_multiprocesamiento];
 
 	inicializar_cola_exec(colas_exec , grado_multiprocesamiento);
 	inicializar_cola_new(argc, argv);

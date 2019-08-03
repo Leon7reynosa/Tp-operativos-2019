@@ -9,7 +9,7 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-void* planificador(t_queue* cola_exec[]){
+void* planificador(estructura_ejecucion* cola_exec[]){
 
 	lista_hilos_exec = list_create();
 
@@ -154,11 +154,17 @@ char* parsear_una_linea(FILE* archivo_lql){
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-void inicializar_cola_exec(t_queue* colas[] , int grado_multiprocesamiento){
+void inicializar_cola_exec(estructura_ejecucion* colas[] , int grado_multiprocesamiento){
+
+
 
 	for(int i = 0 ; i < grado_multiprocesamiento; i++){
 
+		colas[i] = malloc(sizeof(estructura_ejecucion));
+
 		colas[i] = queue_create();
+
+		colas[i]->numero_cola_ejecucion = i+1;
 
 	}
 
@@ -237,7 +243,7 @@ void cola_new_to_ready(){
 ////////////////////////////////////////////////////////////////////////////////
 
 //esta funcion deberia repetirse varias veces mientras la cola_ready no este vacia
-void ejecutar_cola_exec(t_queue* cola_exec){
+void ejecutar_cola_exec(estructura_ejecucion* cola_exec){
 
 	while(1){
 
@@ -253,20 +259,20 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		pthread_rwlock_unlock(&semaforo_cola_ready);
 
-		cola_exec = siguiente_script->cola_requests;
+		cola_exec->cola_exec = siguiente_script->cola_requests;
 
 
 		int i = 0;
 
 		pthread_rwlock_rdlock(&semaforo_quantum);
 
-		printf("\n====================Se Ejecutara el ARCHIVO %s====================\n" , siguiente_script->path_lql);
-		log_info(logger_kernel, "===SE EJECTURA EL ARCHIVO %s===" , siguiente_script->path_lql);
+		printf("\n========Se Ejecutara el ARCHIVO %s en la COLA EXEC %d==========\n" , siguiente_script->path_lql , cola_exec->numero_cola_ejecucion);
+		log_info(logger_kernel, "===SE EJECTURA EL ARCHIVO %s En la cola de ejecucion %d===" , siguiente_script->path_lql, cola_exec->numero_cola_ejecucion);
 
-		while( i < quantum && !queue_is_empty(cola_exec)){
+		while( i < quantum && !queue_is_empty(cola_exec->cola_exec)){
 
 
-			char* request = (char*)queue_pop(cola_exec);
+			char* request = (char*)queue_pop(cola_exec->cola_exec);
 
 			if(!ejecutar_request(request )){
 
@@ -282,7 +288,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 				printf("\n>Script movido a COLA DE EXIT\n");
 
-				queue_clean(cola_exec);  //agrego esto no se si esta bien
+				queue_clean(cola_exec->cola_exec);  //agrego esto no se si esta bien
 
 				log_info(logger_kernel , ">>FIN de la REQUEST<<\n");
 
@@ -308,7 +314,7 @@ void ejecutar_cola_exec(t_queue* cola_exec){
 
 		pthread_rwlock_unlock(&semaforo_quantum);
 
-		if(queue_is_empty(cola_exec)){
+		if(queue_is_empty(cola_exec->cola_exec)){
 
 			queue_push(cola_exit, siguiente_script);
 

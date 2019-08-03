@@ -15,7 +15,7 @@ void* realizar_metrics(){
 
 		sleep(30);
 
-		printf("\n>>>>>>>>>>>SE REALIZARAN LAS METRICAS<<<<<<<<<<<<<<<\n");
+
 
 		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
 
@@ -55,7 +55,6 @@ void* realizar_metrics(){
 		reiniciar_memory_load();
 
 
-		printf("\n>>>>>>>>>>>FIN DE LAS METRICAS<<<<<<<<<<<<<<<\n");
 
 	}
 
@@ -140,6 +139,8 @@ void agregar_a_metrica(cod_operacion codigo_operacion , void* tipo_request, time
 
 
 void sumador_metrica( cod_operacion codigo_operacion , metrica_t* metrica,  time_t tiempo_ejecucion ){
+
+
 
 	time_t* tiempo_a_guardar = malloc(sizeof(time_t));
 	memcpy(tiempo_a_guardar, &tiempo_ejecucion, sizeof(time_t));
@@ -308,8 +309,11 @@ void loggear_metricas(char* consistencia , metrica_t* metrica){
 
 	float read_latency = 0;
 	float write_latency = 0;
+	int mostrar = 0;
 
 	if(!list_is_empty(metrica->lista_select)){
+
+		mostrar = 1;
 
 		read_latency = sumatoria_tiempos(metrica->lista_select) / list_size(metrica->lista_select);
 
@@ -317,16 +321,18 @@ void loggear_metricas(char* consistencia , metrica_t* metrica){
 
 	if( !list_is_empty(metrica->lista_insert) ){
 
+		mostrar = 1;
+
 		write_latency = sumatoria_tiempos(metrica->lista_insert) / list_size(metrica->lista_insert);
 
 	}
 
-	log_info(logger_metricas , ">>%s<<\n" , consistencia);
+	log_info(logger_metricas , "[%d]>>%s<<\n" , mostrar, consistencia);
 
-	log_info(logger_metricas , ">Read Latency : %d" , read_latency);
-	log_info(logger_metricas , ">Write Latency : %d" , write_latency);
-	log_info(logger_metricas , ">Reads : %d" , list_size(metrica->lista_select));
-	log_info(logger_metricas , ">Writes : %d\n" , list_size(metrica->lista_insert));
+	log_info(logger_metricas , "[%d]>Read Latency : %d" ,mostrar,  read_latency);
+	log_info(logger_metricas , "[%d]>Write Latency : %d" , mostrar ,write_latency);
+	log_info(logger_metricas , "[%d]>Reads : %d" ,mostrar , list_size(metrica->lista_select));
+	log_info(logger_metricas , "[%d]>Writes : %d\n" , mostrar, list_size(metrica->lista_insert));
 
 
 
