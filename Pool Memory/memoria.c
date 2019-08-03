@@ -286,7 +286,7 @@ void* auto_journal(void* argumento){
 
 		pthread_mutex_lock(&mutex_journal);
 
-		log_info(logger_journal, "Inicia el Auto-Journal");
+		log_info(logger_journal, "Inicia el Auto-Journal\n");
 
 		realizar_journal();
 
@@ -304,6 +304,8 @@ void* auto_journal(void* argumento){
 }
 
 void realizar_journal(void){
+
+	log_info(logger_journal, "Se realiza el Journal");
 
 	//aca voy a tener todos los inserts a mandar
 	t_list* inserts = list_create();
@@ -357,6 +359,7 @@ void realizar_journal(void){
 
 		if(comprobar_conexion_lissandra(ip_lfs, puerto_lfs)){
 
+			log_info(logger_journal, "Se va a enviar un insert al LFS");
 
 			if(!enviar_request(request_a_enviar, socket_lissandra)){
 
@@ -410,6 +413,7 @@ void realizar_journal(void){
 
 	list_destroy_and_destroy_elements(inserts, liberar_request);
 
+	log_info(logger_journal, "Termino de realizarse el Journal\n");
 
 }
 

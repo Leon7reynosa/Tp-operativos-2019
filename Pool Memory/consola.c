@@ -96,6 +96,7 @@ void parsear_request(cod_operacion operacion, char** tokens){
 	if(operacion != INSERT){
 
 		cantidad_argumentos = obtener_cantidad_argumentos(tokens);
+
 	}else{
 
 		cantidad_argumentos = obtener_parametros_insert(*tokens , &tabla , &key , &value , &timestamp);
@@ -296,7 +297,7 @@ void parsear_request(cod_operacion operacion, char** tokens){
 
 				realizar_journal();
 
-				pthread_mutex_lock(&mutex_journal);
+				pthread_mutex_unlock(&mutex_journal);
 
 				printf("Se realizo el Journal\n");
 

@@ -362,8 +362,6 @@ int sumatoria_tiempos (t_list* lista_a_sumar){
 
 		time_t* tiempo = (time_t*) _numero;
 
-		printf("tiempo sumatoria tiempos: %d\n", *tiempo);
-
 		sumatoria += *tiempo;
 
 		return NULL;

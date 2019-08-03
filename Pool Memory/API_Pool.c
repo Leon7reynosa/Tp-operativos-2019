@@ -124,7 +124,7 @@ void trabajar_request(request nueva_request , int conexion){
 
 			pthread_mutex_lock(&mutex_gossip);
 
-			log_info(logger, "Se recibio una request de GOSSIPING. Se realizara intercambio de tablas de gossiping");
+//			log_info(logger, "Se recibio una request de GOSSIPING. Se realizara intercambio de tablas de gossiping");
 
 			log_info(logger_gossip, "Se recibio una request de GOSSIPING");
 
@@ -132,7 +132,7 @@ void trabajar_request(request nueva_request , int conexion){
 
 			log_info(logger_gossip, "Se termino de realizar la request de GOSSIPING\n");
 
-			log_info(logger, "Se termino de realizar la request de GOSSIPING");
+//			log_info(logger, "Se termino de realizar la request de GOSSIPING");
 
 
 			pthread_mutex_unlock(&mutex_gossip);
