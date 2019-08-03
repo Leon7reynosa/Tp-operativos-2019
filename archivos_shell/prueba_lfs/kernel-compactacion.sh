@@ -2,7 +2,7 @@ cd ..
 cd ..
 cp -r Kernel/ /home/utnso/
 cd configuraciones/
-cd prueba_kernel/
+cd prueba_lfs/
 cd kernel-config/
 cp kernel.config /home/utnso/Kernel/
 cd ..

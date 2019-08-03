@@ -2,7 +2,7 @@ cd ..
 cd ..
 cp -r LFS/ /home/utnso/
 cd configuraciones/
-cd prueba_kernel/
+cd prueba_lfs/
 cd lfs-config/
 cp fileSystem.config /home/utnso/LFS/
 cd ..
@@ -12,8 +12,8 @@ cd ..
 cd ..
 cd ..
 cd ..
-mv LFS lfs-prueba-compactacion
-cd lfs-prueba-compactacion/
+mv LFS lfs-compactacion
+cd lfs-compactacion/
 cd Default/
 make clean
 make all
